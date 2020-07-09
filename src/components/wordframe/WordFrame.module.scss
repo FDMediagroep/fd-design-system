@@ -1,0 +1,69 @@
+@import "../../utils/map-deep-get.scss";
+@import "../../design-tokens/colors.scss";
+@import "../../design-tokens/media.scss";
+@import "../../design-tokens/typography.scss";
+
+.wordFrame {
+    margin: 3rem 0;
+    width: 100%;
+    @media screen and (min-width: map-deep-get($media, "sizes", "s")) {
+        margin: 3.5rem 0;
+    }
+    @media screen and (min-width: map-deep-get($media, "sizes", "l")) {
+        margin: 4rem 0;
+    }
+
+    h3,
+    p {
+        font-family: map-deep-get($typography, "font-family", "bold");
+        padding: 0;
+        margin: 0;
+        line-height: 1.333;
+        font-size: 1.5rem;
+        -webkit-font-smoothing: unset;
+        color: var(--wordframe);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, "colors", "neutrals", 30)};
+        }
+
+        @media screen and (min-width: map-deep-get($media, "sizes", "s")) {
+            font-size: 1.625rem;
+        }
+        @media screen and (min-width: map-deep-get($media, "sizes", "l")) {
+            font-size: 1.75rem;
+        }
+    }
+
+    h3 {
+        &:before {
+            content: "";
+            padding: 1rem 0 0 0;
+            display: block;
+            width: 68px;
+            border-top: 8px solid var(--wordframe);
+            @media screen and (min-width: map-deep-get($media, "sizes", "s")) {
+                width: 79.36px;
+                border-top: 9.34px solid var(--wordframe);
+            }
+            @media screen and (min-width: map-deep-get($media, "sizes", "l")) {
+                width: 91px;
+                border-top: 11px solid var(--wordframe);
+            }
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border-top: 11px solid #{map-deep-get(
+                        $colors,
+                        "colors",
+                        "neutrals",
+                        30
+                    )};
+            }
+        }
+    }
+    p:empty {
+        display: none;
+    }
+}

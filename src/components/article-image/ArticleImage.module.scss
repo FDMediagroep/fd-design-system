@@ -1,0 +1,42 @@
+@import "../../utils/map-deep-get.scss";
+@import "../../design-tokens/colors.scss";
+@import "../../design-tokens/media.scss";
+@import "../../design-tokens/typography.scss";
+
+.articleImage {
+    margin: 0 0 2.5rem 0;
+    flex: 1 1 auto;
+    img {
+        width: 100%;
+    }
+
+    figcaption {
+        font-family: map-deep-get($typography, "font-family", "regular"),
+            sans-serif;
+        line-height: 1.2;
+        font-size: 0.8125rem;
+        @media screen and (min-width: map-deep-get($media, "sizes", "s")) {
+            font-size: 0.875rem;
+        }
+
+        .caption {
+            color: var(--captions);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, "colors", "neutrals", 20)};
+            }
+        }
+
+        .credit {
+            color: var(--credits);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, "colors", "neutrals", 30)};
+            }
+            margin-left: 5px;
+            white-space: nowrap;
+        }
+    }
+}

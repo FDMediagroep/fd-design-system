@@ -1,0 +1,55 @@
+@import '../utils/map-deep-get.scss';
+@import '../design-tokens/colors.scss';
+@import '../design-tokens/media.scss';
+
+.ab {
+    display: flex;
+    flex-direction: column;
+    color: var(--content-copy);
+    padding-right: 1rem;
+
+    a {
+        color: var(--link);
+        &:hover {
+            color: var(--link-hover);
+        }
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            &:hover {
+                color: #{map-deep-get($colors, 'colors', 'primary', 50)};
+            }
+        }
+    }
+
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+    }
+    :global(.css-variant-1) {
+        color: red;
+    }
+    :global(.css-variant-2) {
+        color: green;
+    }
+    :global(.css-variant-3) {
+        color: blue;
+    }
+    :global(.css-variant-4) {
+        color: orange;
+    }
+
+    textarea {
+        flex: 1 1 auto;
+        height: 300px;
+        color: var(--content-copy);
+        background-color: var(--content-background);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        }
+    }
+}

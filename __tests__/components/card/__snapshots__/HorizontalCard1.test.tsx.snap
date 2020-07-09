@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HorizontalCard1 should render is-read correctly 1`] = `
+<div>
+  <article
+    class="horizontalCard1 isRead"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <div
+        class="figure"
+        style="background-image: url(https://images.example.com/image.png);"
+      />
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+          <time>
+            11:40
+          </time>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+        </div>
+      </div>
+    </a>
+  </article>
+</div>
+`;
+
+exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
+<div>
+  <article
+    class="horizontalCard1 longread"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <div
+        class="figure"
+        style="background-image: url(https://images.example.com/image.png);"
+      />
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+          <time>
+            11:40
+          </time>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+        </div>
+      </div>
+    </a>
+  </article>
+</div>
+`;

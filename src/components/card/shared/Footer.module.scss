@@ -1,0 +1,53 @@
+@import '../../../utils/map-deep-get.scss';
+@import '../../../design-tokens/colors.scss';
+@import '../../../design-tokens/media.scss';
+@import '../../../design-tokens/typography.scss';
+
+.footer {
+    display: none;
+    margin-top: 0.5rem;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+        display: inline-block;
+    }
+    font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
+    font-size: 0.875rem;
+    color: var(--meta-copy);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+    }
+    menu {
+        margin: 0;
+        text-align: right;
+    }
+    a {
+        display: inline;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+        font-size: 0.875rem;
+        color: var(--meta-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+        }
+    }
+
+    .icon {
+        svg {
+            position: relative;
+            bottom: -3px;
+            width: 1rem;
+            height: 1rem;
+            fill: var(--meta-copy);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                fill: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+            }
+        }
+    }
+}

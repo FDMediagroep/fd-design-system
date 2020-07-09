@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'icons';
+  src:  url('fonts/icons.eot?2rhx0y');
+  src:  url('fonts/icons.eot?2rhx0y#iefix') format('embedded-opentype'),
+    url('fonts/icons.ttf?2rhx0y') format('truetype'),
+    url('fonts/icons.woff?2rhx0y') format('woff'),
+    url('fonts/icons.svg?2rhx0y#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook-square:before {
+  content: "\f082";
+}
+.icon-twitter:before {
+  content: "\f099";
+}
+.icon-linkedin-in:before {
+  content: "\f0e1";
+}
+.icon-whatsapp:before {
+  content: "\f232";
+}
+.icon-bookmark:before {
+  content: "\f02e";
+}
+.icon-bell:before {
+  content: "\f0f3";
+}
+.icon-comment-alt:before {
+  content: "\f27a";
+}
+.icon-search:before {
+  content: "\f002";
+}
+.icon-user:before {
+  content: "\f007";
+}
+.icon-check:before {
+  content: "\f00c";
+}
+.icon-times:before {
+  content: "\f00d";
+}
+.icon-download:before {
+  content: "\f019";
+}
+.icon-bookmark1:before {
+  content: "\f02f";
+}
+.icon-chevron-left:before {
+  content: "\f053";
+}
+.icon-chevron-right:before {
+  content: "\f054";
+}
+.icon-chevron-up:before {
+  content: "\f077";
+}
+.icon-chevron-down:before {
+  content: "\f078";
+}
+.icon-envelope:before {
+  content: "\f0e0";
+}
+.icon-bell1:before {
+  content: "\f0f4";
+}
+.icon-circle:before {
+  content: "\f111";
+}
+.icon-share-alt:before {
+  content: "\f1e0";
+}
+.icon-pencil-alt:before {
+  content: "\f303";
+}

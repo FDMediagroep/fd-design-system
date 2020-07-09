@@ -1,0 +1,101 @@
+@import "../../utils/map-deep-get.scss";
+@import "../../design-tokens/typography.scss";
+@import "../../design-tokens/colors.scss";
+
+.fdInputSwitch {
+    input {
+        opacity: 0;
+        position: absolute;
+    }
+    .switch {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        width: 2.5rem;
+        height: 1.5rem;
+        display: inline-block;
+        margin-right: 0.5rem;
+        cursor: pointer;
+        &:before {
+            content: "";
+            position: absolute;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+            background-color: #fff;
+            transition: all 0.3s ease-out;
+            width: 100%;
+            height: 1rem;
+            top: 0.25rem;
+            border-radius: 0.5rem;
+            background-color: #f3f3f3;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            transition: all 0.3s ease-out;
+            transform: rotate(-45deg);
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+            background-color: #999;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    input:checked ~ .switch {
+        &:before {
+            background-color: var(--switch-fill);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        "colors",
+                        "persoonlijk",
+                        100
+                    )};
+            }
+
+            border-radius: 0.5rem;
+        }
+        &:after {
+            left: calc(100% - 1.5rem);
+            background-color: var(--switch-active);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        "colors",
+                        "persoonlijk",
+                        50
+                    )};
+            }
+        }
+    }
+
+    label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+        font-size: 1rem;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, "colors", "neutrals", 10)};
+        }
+        position: relative;
+        font-family: map-deep-get($typography, "font-family", "regular"),
+            sans-serif;
+    }
+
+    .switchLabel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

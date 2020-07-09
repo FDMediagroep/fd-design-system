@@ -1,0 +1,116 @@
+@import '../../../utils/map-deep-get.scss';
+@import '../../../design-tokens/colors.scss';
+@import '../../../design-tokens/media.scss';
+@import '../../../design-tokens/typography.scss';
+
+.article {
+    margin: 0 0.5rem;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        margin: 0 1rem;
+    }
+    max-width: 719px;
+    color: var(--content-copy);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 80)};
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+    }
+    align-self: center;
+
+    header {
+        margin-bottom: 40px;
+
+        > h1 {
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.08em;
+            font-size: 1.5625rem;
+            margin: 1rem 0;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                font-size: 2.8125rem;
+            }
+            @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+                font-size: 3.25rem;
+                max-width: 88%;
+            }
+            font-family: map-deep-get($typography, 'font-family', 'bold-serif'),
+                serif;
+        }
+    }
+
+    > h2 {
+        -webkit-font-smoothing: antialiased;
+        font-family: map-deep-get($typography, 'font-family', 'bold-serif'),
+            serif;
+        font-size: 1.375rem;
+        line-height: 1.432;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            margin-top: 2.25rem;
+            margin-bottom: 0;
+        }
+    }
+
+    > h3 {
+        line-height: 1.15;
+        -webkit-font-smoothing: antialiased;
+        font-family: map-deep-get($typography, 'font-family', 'regular-serif');
+        font-weight: normal;
+        font-size: 1.5625rem;
+        margin-top: 24px;
+        margin-bottom: 7px;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            font-size: 1.875rem;
+            margin-top: 27px;
+            margin-bottom: 13px;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            font-size: 2.8125rem;
+            margin-top: 80px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .intro {
+        font-size: 1.375rem;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            font-size: 1.5625rem;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            font-size: 1.75rem;
+            width: 84%;
+        }
+        font-family: map-deep-get($typography, 'font-family', 'regular-serif'),
+            serif;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    > p {
+        margin: 0 0 0.5rem 0;
+        line-height: 1.5;
+        font-size: 1.125rem;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            font-size: 1.1875rem;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            font-size: 1.3125rem;
+        }
+        font-family: map-deep-get($typography, 'font-family', 'regular-serif'),
+            serif;
+
+        > a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+            color: var(--primary);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+        }
+    }
+}

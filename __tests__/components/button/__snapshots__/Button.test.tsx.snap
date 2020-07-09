@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should handle sizes correctly 1`] = `
+<div>
+  <button
+    class="fdButton "
+  >
+    Knopje
+  </button>
+</div>
+`;
+
+exports[`Button should handle sizes correctly 2`] = `
+<div>
+  <button
+    class="fdButton m"
+  >
+    Knopje
+  </button>
+</div>
+`;
+
+exports[`Button should handle sizes correctly 3`] = `
+<div>
+  <button
+    class="fdButton l"
+  >
+    Knopje
+  </button>
+</div>
+`;

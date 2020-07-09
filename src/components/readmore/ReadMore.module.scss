@@ -1,0 +1,142 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.readMore {
+    margin: 3rem 0;
+    width: 100%;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        margin: 3.5rem 0;
+    }
+    @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+        margin: 4rem 0;
+    }
+
+    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        font-size: 17px;
+        line-height: 1.471;
+    }
+    @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+        font-size: 19px;
+        line-height: 1.474;
+    }
+    background-color: var(--card-2);
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+    color: var(--content-copy);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 80)};
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+    }
+
+    h3,
+    p {
+        display: block;
+        padding: 12px 10px;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            padding: 12px;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            padding: 12px 15px;
+        }
+    }
+
+    h3 {
+        font-size: 18px;
+        line-height: 1.222;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            font-size: 19px;
+            line-height: 1.316;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            font-size: 21px;
+            line-height: 1.333;
+        }
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+        margin: 0;
+    }
+
+    p {
+        border-top: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border-top: 1px solid #{map-deep-get(
+                    $colors,
+                    'colors',
+                    'neutrals',
+                    50
+                )};
+        }
+        box-sizing: border-box;
+        margin: 0;
+        display: inline-block;
+        &:empty {
+            display: none;
+        }
+        width: 100%;
+        a {
+            text-decoration: none;
+            color: var(--link);
+            &:hover {
+                color: var(--link-hover);
+            }
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+                &:hover {
+                    color: #{map-deep-get($colors, 'colors', 'primary', 50)};
+                }
+            }
+        }
+    }
+
+    &[data-variant='variant-1'] {
+        h3,
+        p a {
+            color: var(--link-longread);
+            &:hover {
+                color: var(--link-longread-hover);
+            }
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'longread', 50)};
+                &:hover {
+                    color: #{map-deep-get($colors, 'colors', 'longread', 25)};
+                }
+            }
+        }
+    }
+    &[data-variant='variant-2'] {
+        h3,
+        p a {
+            color: var(--link-persoonlijk);
+            &:hover {
+                color: var(--link-persoonlijk-hover);
+            }
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'persoonlijk', 75)};
+                &:hover {
+                    color: #{map-deep-get($colors, 'colors', 'persoonlijk', 50)};
+                }
+            }
+        }
+    }
+
+    strong {
+        font-family: map-deep-get(
+            $typography,
+            'font-family',
+            'bold'
+        ) !important;
+    }
+}

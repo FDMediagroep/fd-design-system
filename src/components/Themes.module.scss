@@ -1,0 +1,18 @@
+@import '../utils/map-deep-get.scss';
+@import '../design-tokens/colors.scss';
+
+.themeControls {
+    color: var(--content-copy);
+    display: flex;
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        display: none;
+    }
+
+    flex-wrap: wrap;
+    flex-direction: column;
+    label {
+        cursor: pointer;
+    }
+}

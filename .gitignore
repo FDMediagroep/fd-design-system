@@ -1,0 +1,9 @@
+.env*
+.next
+.now
+.vscode
+analyzer
+dist*
+out/
+js-coverage
+node_modules

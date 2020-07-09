@@ -1,0 +1,130 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.horizontalCard2 {
+    margin-bottom: 1px;
+    justify-content: space-between;
+    background-color: var(--card);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
+    }
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+
+    .theme {
+        flex: 0 0 100px;
+        min-height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        }
+        display: block;
+        overflow: visible;
+        &:hover {
+            h1 {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .teaserText {
+        position: relative;
+        flex: 1;
+
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            position: inherit;
+            top: auto;
+            left: auto;
+            right: auto;
+            margin: 0 0 8px 0;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+            font-size: 0.8125rem;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                font-size: 0.9375rem;
+            }
+            color: var(--primary);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+
+            span {
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            time {
+                font-family: map-deep-get($typography, 'font-family', 'bold'),
+                    sans-serif;
+                color: var(--meta-copy);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+                }
+                white-space: nowrap;
+            }
+        }
+
+        h1 {
+            font-family: map-deep-get($typography, 'font-family', 'bold-serif'),
+                serif;
+            font-size: 1.4375rem;
+            line-height: 27px;
+            margin: 0;
+        }
+
+        p {
+            font-family: map-deep-get($typography, 'font-family', 'regular'),
+                sans-serif;
+            margin: 4px 0 0 0;
+        }
+    }
+
+    footer menu {
+        float: none;
+    }
+
+    .favorite .ico {
+        margin: inherit;
+        top: inherit;
+    }
+
+    footer menu > * {
+        min-height: inherit;
+        line-height: 22px;
+    }
+
+    footer {
+        min-height: inherit;
+    }
+
+    &.isRead {
+        .meta .prefix {
+            color: var(--meta-copy);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+            }
+        }
+        .textContainer h1 {
+            opacity: 0.5;
+        }
+    }
+}

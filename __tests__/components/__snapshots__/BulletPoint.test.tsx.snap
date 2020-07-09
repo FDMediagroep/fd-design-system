@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BulletPoint should align correctly 1`] = `
+<div>
+  <div
+    class="bulletPoint "
+  >
+    <p>
+      <span
+        class="icon"
+      />
+      one
+    </p>
+    <p>
+      <span
+        class="icon"
+      />
+      two
+    </p>
+    <p>
+      <span
+        class="icon"
+      />
+      three
+    </p>
+  </div>
+</div>
+`;
+
+exports[`BulletPoint should align correctly 2`] = `
+<div>
+  <div
+    class="bulletPoint right"
+  >
+    <p>
+      <span
+        class="icon"
+      />
+      one
+    </p>
+    <p>
+      <span
+        class="icon"
+      />
+      two
+    </p>
+    <p>
+      <span
+        class="icon"
+      />
+      three
+    </p>
+  </div>
+</div>
+`;
+
+exports[`BulletPoint should render variants correctly 1`] = `
+<div>
+  <div
+    class="bulletPoint "
+    data-variant="variant-1"
+  >
+    <p>
+      <span
+        class="icon"
+      />
+      one
+    </p>
+    <p>
+      <span
+        class="icon"
+      />
+      two
+    </p>
+    <p>
+      <span
+        class="icon"
+      />
+      three
+    </p>
+  </div>
+</div>
+`;

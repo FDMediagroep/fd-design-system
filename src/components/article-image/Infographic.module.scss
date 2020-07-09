@@ -1,0 +1,11 @@
+.infographic {
+    margin: 2.5rem 0;
+    flex: 1 1 auto;
+    img {
+        width: 100%;
+    }
+}
+
+.invertable {
+    filter: var(--filter-invert);
+}

@@ -1,0 +1,141 @@
+@import "../../utils/map-deep-get.scss";
+@import "../../design-tokens/colors.scss";
+@import "../../design-tokens/media.scss";
+@import "../../design-tokens/typography.scss";
+
+.summary {
+    margin: 2.5rem 0;
+    border-bottom: 1px solid var(--dividers);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        border-bottom: 1px solid #{map-deep-get(
+                $colors,
+                "colors",
+                "neutrals",
+                50
+            )};
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        line-height: 1;
+        font-family: map-deep-get($typography, "font-family", "bold"),
+            sans-serif;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, "colors", "neutrals", 10)};
+        }
+        margin-bottom: 1rem;
+        position: relative;
+        background: linear-gradient(var(--dividers), var(--dividers)) 0 0/100%
+                1px no-repeat,
+            linear-gradient(var(--dividers), var(--dividers)) 0 4px/100% 1px
+                no-repeat,
+            linear-gradient(var(--dividers), var(--dividers)) 0 8px/100% 1px
+                no-repeat;
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background: linear-gradient(
+                        #{map-deep-get($colors, "colors", "neutrals", 50)},
+                        #{map-deep-get($colors, "colors", "neutrals", 50)}
+                    )
+                    0 0/100% 1px no-repeat,
+                linear-gradient(
+                        #{map-deep-get($colors, "colors", "neutrals", 50)},
+                        #{map-deep-get($colors, "colors", "neutrals", 50)}
+                    )
+                    0 4px/100% 1px no-repeat,
+                linear-gradient(
+                        #{map-deep-get($colors, "colors", "neutrals", 50)},
+                        #{map-deep-get($colors, "colors", "neutrals", 50)}
+                    )
+                    0 8px/100% 1px no-repeat;
+        }
+
+        padding: 22px 0 15px 0;
+        border-bottom: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border-bottom: 1px solid #{map-deep-get(
+                    $colors,
+                    "colors",
+                    "neutrals",
+                    50
+                )};
+        }
+        margin-top: initial;
+    }
+
+    p {
+        font-family: map-deep-get($typography, "font-family", "regular"),
+            sans-serif;
+        font-size: 1.0625rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, "colors", "neutrals", 10)};
+        }
+
+        &:before {
+            content: "";
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            float: left;
+            margin: 0.5rem 0.5rem 0 0;
+            background-color: var(--primary);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        "colors",
+                        "primary",
+                        75
+                    )};
+            }
+        }
+    }
+
+    &[data-variant="variant-1"] {
+        p {
+            &:before {
+                background-color: var(--link-longread);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    background-color: #{map-deep-get(
+                            $colors,
+                            "colors",
+                            "longread",
+                            50
+                        )};
+                }
+            }
+        }
+    }
+    &[data-variant="variant-2"] {
+        p {
+            &:before {
+                background-color: var(--link-persoonlijk);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    background-color: #{map-deep-get(
+                            $colors,
+                            "colors",
+                            "persoonlijk",
+                            75
+                        )};
+                }
+            }
+        }
+    }
+}

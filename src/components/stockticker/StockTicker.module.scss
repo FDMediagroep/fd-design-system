@@ -1,0 +1,267 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.stockTicker {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    .stockContainer {
+        color: var(--content-copy);
+        text-decoration: none;
+        user-select: none;
+        display: none;
+        flex-direction: row;
+        flex: 1 1 auto;
+        align-items: center;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            align-items: flex-start;
+        }
+        justify-content: center;
+        &:not(:first-child) {
+            margin-left: 1rem;
+        }
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5) {
+            display: flex;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            &:nth-child(6) {
+                display: flex;
+            }
+        }
+    }
+
+    .arrow {
+        display: none;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            display: inline;
+            svg {
+                margin-top: 4px;
+                margin-right: 0.5rem;
+                width: 24px;
+                height: 24px;
+            }
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            svg {
+                margin-top: 4px;
+                margin-right: 0.5rem;
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+
+    .stock {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            text-align: left;
+            width: 105px;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            width: 128px;
+        }
+        > span {
+            flex: 1 1 50%;
+            &:first-child {
+                flex: 1 1 100%;
+            }
+        }
+    }
+
+    .stockName {
+        white-space: nowrap;
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+        font-size: 14px;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            font-size: 1rem;
+        }
+    }
+
+    .percentage {
+        text-align: center;
+    }
+
+    .percentage,
+    .price {
+        position: relative;
+        height: 21px;
+        box-sizing: border-box;
+        overflow: hidden;
+        font-size: 14px;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            font-size: 1rem;
+        }
+    }
+
+    .current,
+    .next {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        animation-fill-mode: forwards;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+    }
+
+    .current {
+        &.up,
+        &.down {
+            color: var(--product-background);
+            @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+                color: var(--content-copy);
+            }
+        }
+        &.up {
+            animation-name: up;
+        }
+        &.down {
+            animation-name: down;
+        }
+    }
+
+    .next {
+        color: var(--product-background);
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            color: var(--content-copy);
+        }
+        &.up {
+            top: 21px;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                top: 15.5px;
+            }
+            @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+                top: 18px;
+            }
+            animation-name: up;
+        }
+        &.down {
+            top: -21px;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                top: -15.5px;
+            }
+            @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+                top: -18px;
+            }
+            animation-name: down;
+        }
+    }
+
+    .stockContainerNegative {
+        background-color: var(--stock-negative);
+        color: var(--product-background);
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            background-color: transparent;
+            color: var(--content-copy);
+            .percentage {
+                background-color: var(--stock-negative-fill);
+            }
+        }
+    }
+    .stockContainerPositive {
+        background-color: var(--stock-positive);
+        color: var(--product-background);
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            background-color: transparent;
+            color: var(--content-copy);
+            .percentage {
+                background-color: var(--stock-positive-fill);
+            }
+        }
+    }
+
+    .transitioning {
+        color: transparent;
+    }
+
+    .closed {
+        background-color: transparent !important;
+        color: var(--stock-closed);
+        .current {
+            display: none;
+        }
+        .next {
+            display: none;
+        }
+
+        svg {
+            fill: var(--stock-closed);
+            * {
+                fill: var(--stock-closed);
+            }
+        }
+    }
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-21px);
+    }
+}
+@media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+    @keyframes up {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-15.5px);
+        }
+    }
+}
+@media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+    @keyframes up {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-18px);
+        }
+    }
+}
+
+@keyframes down {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(21px);
+    }
+}
+@media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+    @keyframes down {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(15.5px);
+        }
+    }
+}
+@media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+    @keyframes down {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(18px);
+        }
+    }
+}

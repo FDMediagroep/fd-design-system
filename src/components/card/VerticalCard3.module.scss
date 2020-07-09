@@ -1,0 +1,227 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.verticalCard3 {
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    position: relative;
+    padding: 1rem;
+    background-color: var(--card);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
+    }
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+    line-height: 1.2em;
+    font-size: 17px;
+
+    .cardContent {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column-reverse;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            flex-direction: column;
+        }
+    }
+
+    a {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        text-decoration: none;
+        &:hover h1 {
+            text-decoration: underline;
+        }
+    }
+
+    figure {
+        flex: 0 0 auto; // IE11 fix
+        margin: -1rem -1rem 0 -1rem;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            margin: 0 -1rem -1rem -1rem;
+        }
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        &.themed {
+            justify-content: center;
+            align-items: center;
+            &:before {
+                content: '';
+                display: block;
+                width: 100%;
+                padding-top: 66.5%;
+            }
+            picture {
+                position: absolute;
+                width: 33%;
+                top: 16%;
+                left: 50%;
+                margin: 0 -16.5%;
+                height: auto;
+                flex: 0 0 auto;
+            }
+            &:after {
+                content: none;
+            }
+
+            figcaption {
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 12%;
+                font-size: 19px;
+                color: var(--content-copy);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+                }
+                padding: 0 10px;
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    figcaption {
+        display: none;
+    }
+
+    .textContent {
+        flex: 1 1 auto;
+        margin: 1rem 0 0 0 !important;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            margin: 0 0 1rem 0 !important;
+        }
+        padding: 0 !important; // override styles from outside component. Remove this when outer-styles are removed.
+    }
+
+    .teaserText {
+        flex: 1 1 auto;
+        padding: 0 !important; // override styles from outside component. Remove this when outer-styles are removed.
+    }
+
+    .meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        .prefix {
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            color: var(--primary);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+            letter-spacing: 1px;
+        }
+    }
+
+    &[data-variant='variant-1'] {
+        .prefix {
+            color: var(--link-longread);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'longread', 75)};
+            }
+        }
+    }
+    &[data-variant='variant-2'] {
+        .prefix {
+            padding: 1px 8px;
+            color: #ffeadb;
+            background-color: var(--primary);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'primary',
+                        75
+                    )};
+            }
+
+            line-height: 2rem;
+            font-size: 0.625rem;
+            letter-spacing: 2.5px;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+            text-transform: uppercase;
+        }
+    }
+
+    &[data-variant='variant-3'] {
+        .prefix {
+            font-size: 16px;
+            padding: 8px 16px;
+            color: #fff;
+            background-color: var(--link-longread);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'longread',
+                        75
+                    )};
+            }
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+        }
+    }
+
+    h1 {
+        font-size: 1.4375rem;
+        line-height: 27px;
+        margin: 0;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        }
+        -webkit-font-smoothing: antialiased;
+        font-family: map-deep-get($typography, 'font-family', 'bold-serif'),
+            serif;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            font-size: 2.375rem;
+            line-height: 40px;
+            margin-bottom: 6px;
+        }
+    }
+
+    .intro {
+        margin: 0;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        }
+        line-height: 1.5em;
+        font-size: 1.0625rem;
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
+    }
+}

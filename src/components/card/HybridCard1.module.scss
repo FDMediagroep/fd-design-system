@@ -1,0 +1,241 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.hybridCard1 {
+    box-sizing: border-box;
+    flex-direction: column;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        padding: 1rem;
+    }
+    display: flex;
+    position: relative;
+    width: 100%;
+
+    background-color: var(--card);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
+    }
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+    line-height: 1.2em;
+    font-size: 17px;
+
+    > a {
+        display: flex;
+        flex: 1 1 auto;
+        min-height: 100px;
+        flex-direction: row;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            flex-direction: column;
+        }
+        text-decoration: none;
+        &:hover h1 {
+            text-decoration: underline;
+        }
+    }
+
+    .figure.empty img {
+        max-width: 100%;
+    }
+    figure,
+    .figure.empty {
+        position: relative;
+        display: flex;
+        margin: 0;
+        flex: 0 0 100px;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            margin: -1rem -1rem 12px -1rem;
+            flex: 0 0 auto;
+        }
+
+        picture {
+            position: relative;
+            width: 100px;
+            overflow: hidden;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                width: 100%;
+            }
+        }
+
+        img {
+            display: block;
+            position: absolute;
+            height: 100%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: auto;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                width: 100%;
+                height: auto;
+                left: 0;
+                position: relative;
+                transform: none;
+            }
+        }
+
+        figcaption {
+            display: none;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+        }
+
+        &.themed {
+            justify-content: center;
+            align-items: center;
+            &:before {
+                content: '';
+                display: block;
+                width: 100%;
+                padding-top: 66.5%;
+            }
+            picture {
+                top: 0;
+                left: -50%;
+                margin: 0 -50%;
+                border-radius: 50%;
+                flex: 0 0 80px;
+                height: 80px;
+                @media screen and (min-width: map-deep-get($media, 'sizes', 'xs')) {
+                    position: absolute;
+                    width: 33%;
+                    top: 16%;
+                    left: 50%;
+                    margin: 0 -16.5%;
+                    height: auto;
+                    flex: 0 0 auto;
+                }
+            }
+            &:after {
+                content: none;
+            }
+
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                figcaption {
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 12%;
+                    font-size: 19px;
+                    color: #ffeadb;
+                    padding: 0 10px;
+                    text-align: center;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            &.theme1 {
+                background-color: #677381;
+            }
+            &.theme2 {
+                background-color: #f05031;
+            }
+            &.theme3 {
+                background-color: #ddac68;
+            }
+            &.theme4 {
+                background-color: #f3736b;
+            }
+            &.theme5 {
+                background-color: #917caa;
+            }
+            &.theme6 {
+                background-color: #4393ab;
+            }
+            &.theme7 {
+                background-color: #49a4a2;
+            }
+            &.theme8 {
+                background-color: #c5324b;
+            }
+        }
+    }
+
+    figcaption {
+        display: none;
+    }
+
+    .teaserText {
+        flex: 1 1 auto;
+        padding: 12px 8px 8px 12px;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            padding: 0;
+        }
+        .textContainer {
+            flex: 1 1 auto;
+        }
+    }
+
+    .meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        .prefix {
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            color: var(--primary);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+            letter-spacing: 1px;
+        }
+    }
+
+    &[data-variant='variant-1'] {
+        .prefix {
+            color: var(--link-longread);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'longread', 75)};
+            }
+        }
+    }
+
+    h1 {
+        font-size: 1rem;
+        line-height: 20px;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            font-size: 1.4375rem;
+            line-height: 27px;
+        }
+
+        margin: 0;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        }
+        -webkit-font-smoothing: antialiased;
+        font-family: map-deep-get($typography, 'font-family', 'bold-serif'),
+            serif;
+    }
+
+    .intro {
+        margin: 0;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        }
+        line-height: 1.5em;
+        font-size: 1.0625rem;
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
+        display: none;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            display: block;
+        }
+    }
+}

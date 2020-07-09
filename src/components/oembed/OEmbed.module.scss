@@ -1,0 +1,15 @@
+@import "../../utils/map-deep-get.scss";
+@import "../../design-tokens/media.scss";
+
+.oembed {
+    max-width: 500px;
+    margin: 40px auto;
+    @media screen and (min-width: map-deep-get($media, "sizes", "s")) {
+        float: right;
+        margin: 40px 0 40px 60px;
+        width: 50%;
+    }
+    twitter-widget {
+        width: auto;
+    }
+}

@@ -1,0 +1,678 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HybridCard1 should render is-read correctly 1`] = `
+<div>
+  <article
+    class="hybridCard1"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <figure>
+        <picture>
+          <img
+            alt="This is the caption"
+            src="https://images.example.com/image.png"
+          />
+        </picture>
+        <figcaption>
+          This is the caption
+        </figcaption>
+      </figure>
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+          <p
+            class="intro"
+          >
+            This is the intro
+          </p>
+        </div>
+      </div>
+    </a>
+    <footer
+      class="footer"
+    >
+      <menu>
+        <a>
+          <span
+            class="icon"
+          />
+          <span
+            data-bookmark="bookmark"
+          >
+            Bewaren
+          </span>
+        </a>
+      </menu>
+    </footer>
+  </article>
+</div>
+`;
+
+exports[`HybridCard1 should render themes correctly 1`] = `
+<div>
+  <article
+    class="hybridCard1"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <figure
+        class="themed theme1"
+      >
+        <picture>
+          <img
+            alt="This is the caption"
+            src="https://images.example.com/image.png"
+          />
+        </picture>
+        <figcaption>
+          This is the caption
+        </figcaption>
+      </figure>
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+          <p
+            class="intro"
+          >
+            This is the intro
+          </p>
+        </div>
+      </div>
+    </a>
+    <footer
+      class="footer"
+    >
+      <menu>
+        <a>
+          <span
+            class="icon"
+          />
+          <span
+            data-bookmark="bookmark"
+          >
+            Bewaren
+          </span>
+        </a>
+      </menu>
+    </footer>
+  </article>
+</div>
+`;
+
+exports[`HybridCard1 should render themes correctly 2`] = `
+<div>
+  <article
+    class="hybridCard1"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <figure
+        class="themed theme2"
+      >
+        <picture>
+          <img
+            alt="This is the caption"
+            src="https://images.example.com/image.png"
+          />
+        </picture>
+        <figcaption>
+          This is the caption
+        </figcaption>
+      </figure>
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+          <p
+            class="intro"
+          >
+            This is the intro
+          </p>
+        </div>
+      </div>
+    </a>
+    <footer
+      class="footer"
+    >
+      <menu>
+        <a>
+          <span
+            class="icon"
+          />
+          <span
+            data-bookmark="bookmark"
+          >
+            Bewaren
+          </span>
+        </a>
+      </menu>
+    </footer>
+  </article>
+</div>
+`;
+
+exports[`HybridCard1 should render themes correctly 3`] = `
+<div>
+  <article
+    class="hybridCard1"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <figure
+        class="themed theme3"
+      >
+        <picture>
+          <img
+            alt="This is the caption"
+            src="https://images.example.com/image.png"
+          />
+        </picture>
+        <figcaption>
+          This is the caption
+        </figcaption>
+      </figure>
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+          <p
+            class="intro"
+          >
+            This is the intro
+          </p>
+        </div>
+      </div>
+    </a>
+    <footer
+      class="footer"
+    >
+      <menu>
+        <a>
+          <span
+            class="icon"
+          />
+          <span
+            data-bookmark="bookmark"
+          >
+            Bewaren
+          </span>
+        </a>
+      </menu>
+    </footer>
+  </article>
+</div>
+`;
+
+exports[`HybridCard1 should render themes correctly 4`] = `
+<div>
+  <article
+    class="hybridCard1"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <figure
+        class="themed theme4"
+      >
+        <picture>
+          <img
+            alt="This is the caption"
+            src="https://images.example.com/image.png"
+          />
+        </picture>
+        <figcaption>
+          This is the caption
+        </figcaption>
+      </figure>
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+          <p
+            class="intro"
+          >
+            This is the intro
+          </p>
+        </div>
+      </div>
+    </a>
+    <footer
+      class="footer"
+    >
+      <menu>
+        <a>
+          <span
+            class="icon"
+          />
+          <span
+            data-bookmark="bookmark"
+          >
+            Bewaren
+          </span>
+        </a>
+      </menu>
+    </footer>
+  </article>
+</div>
+`;
+
+exports[`HybridCard1 should render themes correctly 5`] = `
+<div>
+  <article
+    class="hybridCard1"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <figure
+        class="themed theme5"
+      >
+        <picture>
+          <img
+            alt="This is the caption"
+            src="https://images.example.com/image.png"
+          />
+        </picture>
+        <figcaption>
+          This is the caption
+        </figcaption>
+      </figure>
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+          <p
+            class="intro"
+          >
+            This is the intro
+          </p>
+        </div>
+      </div>
+    </a>
+    <footer
+      class="footer"
+    >
+      <menu>
+        <a>
+          <span
+            class="icon"
+          />
+          <span
+            data-bookmark="bookmark"
+          >
+            Bewaren
+          </span>
+        </a>
+      </menu>
+    </footer>
+  </article>
+</div>
+`;
+
+exports[`HybridCard1 should render themes correctly 6`] = `
+<div>
+  <article
+    class="hybridCard1"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <figure
+        class="themed theme6"
+      >
+        <picture>
+          <img
+            alt="This is the caption"
+            src="https://images.example.com/image.png"
+          />
+        </picture>
+        <figcaption>
+          This is the caption
+        </figcaption>
+      </figure>
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+          <p
+            class="intro"
+          >
+            This is the intro
+          </p>
+        </div>
+      </div>
+    </a>
+    <footer
+      class="footer"
+    >
+      <menu>
+        <a>
+          <span
+            class="icon"
+          />
+          <span
+            data-bookmark="bookmark"
+          >
+            Bewaren
+          </span>
+        </a>
+      </menu>
+    </footer>
+  </article>
+</div>
+`;
+
+exports[`HybridCard1 should render themes correctly 7`] = `
+<div>
+  <article
+    class="hybridCard1"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <figure
+        class="themed theme7"
+      >
+        <picture>
+          <img
+            alt="This is the caption"
+            src="https://images.example.com/image.png"
+          />
+        </picture>
+        <figcaption>
+          This is the caption
+        </figcaption>
+      </figure>
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+          <p
+            class="intro"
+          >
+            This is the intro
+          </p>
+        </div>
+      </div>
+    </a>
+    <footer
+      class="footer"
+    >
+      <menu>
+        <a>
+          <span
+            class="icon"
+          />
+          <span
+            data-bookmark="bookmark"
+          >
+            Bewaren
+          </span>
+        </a>
+      </menu>
+    </footer>
+  </article>
+</div>
+`;
+
+exports[`HybridCard1 should render themes correctly 8`] = `
+<div>
+  <article
+    class="hybridCard1"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <figure
+        class="themed theme8"
+      >
+        <picture>
+          <img
+            alt="This is the caption"
+            src="https://images.example.com/image.png"
+          />
+        </picture>
+        <figcaption>
+          This is the caption
+        </figcaption>
+      </figure>
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+          <p
+            class="intro"
+          >
+            This is the intro
+          </p>
+        </div>
+      </div>
+    </a>
+    <footer
+      class="footer"
+    >
+      <menu>
+        <a>
+          <span
+            class="icon"
+          />
+          <span
+            data-bookmark="bookmark"
+          >
+            Bewaren
+          </span>
+        </a>
+      </menu>
+    </footer>
+  </article>
+</div>
+`;
+
+exports[`HybridCard1 should render variant-1 correctly 1`] = `
+<div>
+  <article
+    class="hybridCard1"
+    data-variant="variant-1"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <figure>
+        <picture>
+          <img
+            alt="This is the caption"
+            src="https://images.example.com/image.png"
+          />
+        </picture>
+        <figcaption>
+          This is the caption
+        </figcaption>
+      </figure>
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+          <p
+            class="intro"
+          >
+            This is the intro
+          </p>
+        </div>
+      </div>
+    </a>
+    <footer
+      class="footer"
+    >
+      <menu>
+        <a>
+          <span
+            class="icon"
+          />
+          <span
+            data-bookmark="bookmark"
+          >
+            Bewaren
+          </span>
+        </a>
+      </menu>
+    </footer>
+  </article>
+</div>
+`;

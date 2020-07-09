@@ -1,0 +1,54 @@
+import React from 'react';
+import styles from './FinancialAgenda.module.scss';
+
+type AgendaItem = {
+    date: string;
+    source: string;
+    description: string;
+};
+
+interface Props {
+    agendaItems?: AgendaItem[];
+}
+
+function FinancialAgenda(props: Props) {
+    return (
+        <div className={styles.financialAgenda}>
+            <table>
+                <tr>
+                    <th>
+                        Datum:
+                        <b />
+                    </th>
+                    <th>
+                        <b>Bedrijf/land:</b>
+                    </th>
+                    <th>
+                        <b>Betreft:</b>
+                    </th>
+                </tr>
+
+                {props?.agendaItems?.map((agendaItem) => (
+                    <tr>
+                        <td>{agendaItem.date}</td>
+                        <td>{agendaItem.source}</td>
+                        <td>{agendaItem.description}</td>
+                    </tr>
+                ))}
+
+                <tr>
+                    <th colSpan={2} align="center">
+                        Bron: FD Research
+                    </th>
+                    <td>*=voorlopige datum</td>
+                </tr>
+            </table>
+        </div>
+    );
+}
+
+function getCssClassNames() {
+    return [styles.financialAgenda];
+}
+
+export { FinancialAgenda, getCssClassNames };

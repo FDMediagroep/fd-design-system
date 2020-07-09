@@ -1,0 +1,65 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/typography.scss';
+
+.bulletPoint {
+    clear: both;
+    display: block;
+    width: auto;
+    margin: 40px auto;
+    box-sizing: border-box;
+
+    @media only screen and (min-width: 641px) {
+        &.right {
+            float: right;
+            margin: 40px 0 40px 60px;
+            width: 50%;
+        }
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+        margin: 0 0 0.9375rem 0;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        }
+
+        font-weight: normal;
+        font-size: 1.25rem;
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
+        line-height: 1.2;
+    }
+
+    .icon {
+        svg {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            bottom: -3px;
+            margin-right: 5px;
+            fill: var(--primary);
+            /* IE11 */
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+        }
+    }
+    &[data-variant='variant-1'] {
+        .icon {
+            svg {
+                fill: var(--link-longread);
+                /* IE11 */
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    fill: #{map-deep-get($colors, 'colors', 'longread', 75)};
+                }
+            }
+        }
+    }
+}

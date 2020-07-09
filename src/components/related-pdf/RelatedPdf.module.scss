@@ -1,0 +1,45 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.pdf {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 40px auto;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        float: right;
+        margin: 40px 0 40px 60px;
+        width: 50%;
+    }
+    padding: 1rem;
+    color: var(--content-copy);
+    background: var(--card-2);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        background: #{map-deep-get($colors, 'colors', 'neutrals', 80)};
+    }
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+
+    i {
+        margin: 0 1rem 0 0;
+    }
+
+    h2 {
+        font-weight: normal;
+        display: inline-block;
+        -webkit-font-smoothing: antialiased;
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1rem;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            font-size: 1.0625rem;
+        }
+        line-height: 1.2;
+    }
+}

@@ -1,0 +1,122 @@
+{
+    "name": "@fdmg/design-system",
+    "version": "0.4.10",
+    "description": "FD Design System",
+    "types": "main.d.ts",
+    "main": "main.js",
+    "sideEffects": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:FDMediagroep/fd-design-system.git"
+    },
+    "scripts": {
+        "build": "next build",
+        "build:npm": "npm run webpack:prod && npm run copy:dts",
+        "copy:dts": "npx cpx -v \"./dist.d.ts/src/**/*.d.ts\" \"./dist\"",
+        "dev": "next dev",
+        "json-to-scss": "json-to-scss public/assets/design-tokens/* src/design-tokens",
+        "test": "jest --passWithNoTests",
+        "test:updateSnapshots": "jest -u --passWithNoTests",
+        "webpack:prod": "cross-env NODE_ENV=production webpack --mode=production",
+        "webpack-bundle-analyzer:npm": "cross-env WEBPACK_BUNDLE_ANALYZER=true npm run webpack:prod",
+        "webpack-bundle-analyzer:next": "cross-env WEBPACK_BUNDLE_ANALYZER=true NOW_SERVERLESS=false next build"
+    },
+    "author": "Willem Liu",
+    "license": "ISC",
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.10.1",
+        "@testing-library/react": "^10.4.1",
+        "@testing-library/user-event": "^12.0.11",
+        "@types/fetch-jsonp": "^1.0.0",
+        "@types/jest": "^26.0.3",
+        "@types/js-cookie": "^2.2.6",
+        "@types/micro-cors": "^0.1.1",
+        "@types/node": "^14.0.14",
+        "@types/react": "^16.9.39",
+        "@types/react-dom": "^16.9.8",
+        "@types/react-modal": "^3.10.6",
+        "@types/xmldom": "^0.1.29",
+        "autoprefixer": "^9.8.4",
+        "copy-webpack-plugin": "^6.0.3",
+        "core-js": "^3.6.5",
+        "cpx": "^1.5.0",
+        "cross-env": "^7.0.2",
+        "css-loader": "^3.6.0",
+        "date-input-polyfill": "^2.14.0",
+        "fetch-jsonp": "^1.1.3",
+        "jest": "^25.5.4",
+        "jest-css-modules": "^2.1.0",
+        "json-to-scss": "^1.5.0",
+        "micro-cors": "^0.1.1",
+        "mini-css-extract-plugin": "^0.9.0",
+        "next": "^9.4.4",
+        "nookies": "^2.3.2",
+        "path-to-regexp": "^6.1.0",
+        "postcss-flexbugs-fixes": "^4.2.1",
+        "postcss-loader": "^3.0.0",
+        "postcss-normalize": "^9.0.0",
+        "postcss-preset-env": "^6.7.0",
+        "pretty": "^2.0.0",
+        "raw-loader": "^4.0.1",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "sass": "^1.26.9",
+        "sass-loader": "^9.0.1",
+        "style-loader": "^1.2.1",
+        "svgo": "^1.3.2",
+        "svgo-loader": "^2.2.1",
+        "ts-jest": "^25.5.1",
+        "ts-loader": "^7.0.5",
+        "typescript": "^3.9.5",
+        "webpack": "^4.43.0",
+        "webpack-bundle-analyzer": "^3.8.0",
+        "webpack-cli": "^3.3.12",
+        "xmldom": "^0.3.0"
+    },
+    "dependencies": {
+        "js-cookie": "^2.2.1",
+        "react-modal": "^3.11.2"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all",
+            "ie 11"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version",
+            "last 1 edge version",
+            "ie 11"
+        ]
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "collectCoverage": true,
+        "coverageDirectory": "js-coverage",
+        "coverageReporters": [
+            "lcov",
+            "text"
+        ],
+        "globals": {
+            "ts-jest": {
+                "tsConfig": "tsconfig.test.json"
+            }
+        },
+        "testPathIgnorePatterns": [
+            "/cypress/",
+            "__tests__/mockdata/"
+        ],
+        "moduleNameMapper": {
+            "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules"
+        },
+        "transform": {
+            "\\.svg$": "./jest/transformers/raw-loader.js"
+        }
+    }
+}

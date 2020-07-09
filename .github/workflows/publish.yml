@@ -1,0 +1,81 @@
+name: Publish
+on:
+  release:
+    types:
+      - created
+env:
+  CI: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Get the version
+      id: get_version
+      run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF/refs\/tags\//}
+    - name: Release version
+      run: |
+        echo $RELEASE_VERSION
+        echo ${{ env.RELEASE_VERSION }}
+    - name: Use Node.js (NPMJS) ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+        always-auth: true
+        registry-url: 'https://registry.npmjs.org'
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+    - name: Install dependencies
+      run: npm ci
+    - name: Build
+      run: npm run build:npm --if-present
+    - name: Publish NPMJS @fdmg
+      if: contains(github.ref, 'canary') == false
+      run: npm publish dist
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+      continue-on-error: true
+    - name: Publish NPMJS @fdmg (canary)
+      if: contains(github.ref, 'canary')
+      run: npm publish dist --tag next
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+      continue-on-error: true
+    - name: Use specific package.json for GHP
+      run: cp ./dist/package.github.json ./dist/package.json
+    - name: Publish NPMJS @fdmediagroep
+      if: contains(github.ref, 'canary') == false
+      run: npm publish dist
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+      continue-on-error: true
+    - name: Publish NPMJS @fdmediagroep (canary)
+      if: contains(github.ref, 'canary')
+      run: npm publish dist --tag next
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+      continue-on-error: true
+    - name: Use Node.js (GitHub) ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        always-auth: true
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@FDMediagroep'
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish GPR
+      if: contains(github.ref, 'canary') == false
+      run: npm publish dist
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      continue-on-error: true
+    - name: Publish GPR (canary)
+      if: contains(github.ref, 'canary')
+      run: npm publish dist --tag next
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      continue-on-error: true
+      

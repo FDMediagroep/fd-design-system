@@ -1,0 +1,118 @@
+@import "../../utils/map-deep-get.scss";
+@import "../../design-tokens/colors.scss";
+
+.fdFollowButton {
+    outline: none; /* Sorry, visually impaired, I tried */
+    position: relative;
+    border-radius: 2px;
+    white-space: nowrap;
+    padding: 5px 10px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        border: 1px solid #{map-deep-get($colors, "colors", "primary", 75)};
+        color: #{map-deep-get($colors, "colors", "primary", 75)};
+    }
+
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: "ProximaNovaRegular", sans-serif;
+    font-size: 14px;
+
+    &:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: var(--content-background);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, "colors", "primary", 75)};
+            border-color: #{map-deep-get($colors, "colors", "primary", 75)};
+            color: #{map-deep-get($colors, "colors", "neutrals", 90)};
+        }
+    }
+    .cross {
+        &:before {
+            content: "+";
+            display: block;
+            width: 10px;
+            height: 10px;
+            line-height: 10px;
+        }
+        display: inline-block;
+        transform: rotate(0deg);
+        transition: transform 0.5s;
+        transform-origin: center center;
+        font-size: 20px;
+        position: relative;
+        top: 2px;
+    }
+
+    .buttonText {
+        margin-left: 5px;
+    }
+
+    .activeText {
+        display: none;
+    }
+
+    &[data-selected="true"] {
+        background-color: var(--primary);
+        color: var(--content-background);
+        &:hover {
+            color: var(--primary);
+            background-color: transparent;
+        }
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, "colors", "primary", 75)};
+            color: #{map-deep-get($colors, "colors", "neutrals", 90)};
+            &:hover {
+                color: #{map-deep-get($colors, "colors", "primary", 75)};
+            }
+        }
+
+        .cross {
+            transform: rotate(45deg);
+        }
+
+        .defaultText {
+            display: none;
+        }
+        .default-icon,
+        .activeText {
+            display: inline;
+        }
+    }
+
+    &.persoonlijk {
+        .cross,
+        .buttonText {
+            color: #000000;
+        }
+
+        &:hover {
+            .cross,
+            .buttonText {
+                color: #ffffff;
+            }
+        }
+
+        &[data-selected="true"] {
+            .buttonText,
+            .cross {
+                color: #ffffff;
+            }
+            &:hover {
+                .buttonText,
+                .cross {
+                    color: #000000;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

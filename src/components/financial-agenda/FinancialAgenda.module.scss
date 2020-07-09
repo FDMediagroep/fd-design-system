@@ -1,0 +1,121 @@
+/* 
+ * Override CSS variables with explicit values 
+ * Don't use the values given by the website itself because the financial agenda is a propriatary piece of code
+ * not maintained by the web developer. 
+ */
+:root {
+    &:global(.dark) {
+        .financialAgenda {
+            --card-2: #332f2c;
+            --content-copy: #ffeadb;
+            --dividers: #4c4642;
+            --primary: #41afb0;
+        }
+    }
+    &:global(.light),
+    & {
+        .financialAgenda {
+            --card-2: #f1ded2;
+            --content-copy: #191919;
+            --dividers: #cdbeb4;
+            --primary: #379596;
+        }
+    }
+}
+/* System default */
+:root:global(.dark-theme-enabled) .financialAgenda,
+:root:global(.system) .financialAgenda {
+    @media (prefers-color-scheme: light) {
+        --card-2: #f1ded2;
+        --content-copy: #191919;
+        --dividers: #cdbeb4;
+        --primary: #379596;
+    }
+    @media (prefers-color-scheme: dark) {
+        --card-2: #332f2c;
+        --content-copy: #ffeadb;
+        --dividers: #4c4642;
+        --primary: #41afb0;
+    }
+}
+
+.financialAgenda {
+    table {
+        width: 100%;
+        max-width: 640px;
+        color: var(--content-copy);
+        background-color: var(--card-2);
+        /* IE11 */
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #191919;
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+        font-size: 0.8em;
+        font-family: 'ArnhemPro', 'ProximaNovaRegular', sans-serif;
+        font-weight: 400;
+        line-height: 1em;
+        margin: 0 auto;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        padding: 1em;
+        border: 0;
+        @media only screen and (max-width: 460px) {
+            width: 95%;
+            margin: 1em;
+            padding: 1em;
+            padding: 1em 0.5em 1em 0.2em;
+            line-height: 1.2em;
+            display: table-cell;
+            vertical-align: inherit;
+            border-bottom: 1px solid var(--dividers);
+            /* IE11 */
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    th {
+        font-size: 1.2em;
+        font-family: 'ProximaNovaBold', sans-serif;
+        margin-bottom: 1em;
+        padding: 0.5em 1em 0.5em 0.1em;
+        border-bottom: 1px solid var(--dividers);
+        color: var(--primary);
+        /* IE11 */
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #49a4a2;
+        }
+        font-weight: bold;
+        text-align: left;
+    }
+    tr {
+        width: 100%;
+        padding: 1em;
+        border-bottom: 1px solid var(--dividers);
+        /* IE11 */
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        box-sizing: border-box;
+        margin-top: 1em;
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+    td {
+        padding: 1em 0.5em 1em 0.2em;
+        display: table-cell;
+        vertical-align: inherit;
+        border-bottom: 1px solid var(--dividers);
+        /* IE11 */
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+}

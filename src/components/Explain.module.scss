@@ -1,0 +1,173 @@
+@import '../utils/map-deep-get.scss';
+@import '../design-tokens/colors.scss';
+@import '../design-tokens/media.scss';
+
+.title {
+    margin: 2rem 0 1rem 0;
+    color: var(--content-copy);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+    }
+}
+
+.anchor {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.previewContainer {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid var(--dividers);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        border: 5px solid #{map-deep-get($colors, 'colors', 'neutrals', 50)};
+        background-color: 5px solid #{map-deep-get(
+                $colors,
+                'colors',
+                'neutrals',
+                80
+            )};
+    }
+
+    box-sizing: border-box;
+    &.row {
+        flex-direction: row;
+    }
+    padding: 1rem;
+    min-height: 40vh;
+}
+
+.description {
+    color: var(--content-copy);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+    }
+    margin-bottom: 1rem;
+    a {
+        color: var(--link);
+        &:hover {
+            color: var(--link-hover);
+        }
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            &:hover {
+                color: #{map-deep-get($colors, 'colors', 'primary', 50)};
+            }
+        }
+    }
+    p {
+        margin: 0;
+    }
+}
+
+.invertable {
+    filter: var(--filter-invert);
+}
+
+.codeToggle {
+    cursor: pointer;
+    color: var(--content-copy);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+    }
+}
+
+.codeContainer {
+    color: var(--content-copy);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+        flex-direction: row;
+    }
+    flex: 1 1 auto;
+    margin-bottom: 1rem;
+    > section {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        textarea {
+            flex: 1 1 auto;
+            min-height: 150px;
+        }
+    }
+
+    &.hideCode {
+        display: none;
+    }
+}
+
+.copyIcon {
+    cursor: pointer;
+    color: var(--content-copy);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+    }
+}
+
+.copyIconLabel {
+    color: var(--content-copy);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    form {
+        margin: 0 0.5rem;
+    }
+}
+
+.tags {
+    display: flex;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+
+    a,
+    span {
+        padding: 0.5rem 0;
+        margin-right: 0.5rem;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        }
+    }
+
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.textArea {
+    color: var(--content-copy);
+    background-color: var(--content-background);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
+    }
+
+    box-sizing: border-box;
+}

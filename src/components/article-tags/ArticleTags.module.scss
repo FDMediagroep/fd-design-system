@@ -1,0 +1,128 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.fdArticleTags {
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+    color: var(--primary);
+    background-color: var(--card-2);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 80)};
+        color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    }
+    h3 {
+        font-size: 18px;
+        line-height: 1.222;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            font-size: 19px;
+            line-height: 1.316;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            font-size: 21px;
+            line-height: 1.333;
+        }
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+        padding: 0.5rem 1rem;
+        margin: 0;
+    }
+
+    h3 a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    li {
+        display: inline-block;
+        width: 100%;
+        border-top: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border-top: 1px solid #{map-deep-get(
+                    $colors,
+                    'colors',
+                    'neutrals',
+                    50
+                )};
+        }
+        > div {
+            margin: 0.5rem 1rem;
+            display: flex;
+            position: relative;
+            height: 30px;
+        }
+    }
+    .tagContainer a {
+        flex-grow: 1;
+        position: relative;
+        top: 5px;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        }
+        &:hover {
+            color: var(--primary);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+        }
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-decoration: none;
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
+    }
+    .tagControls {
+        display: flex;
+        justify-content: flex-end;
+        flex: 0 0 140px;
+        .alert {
+            margin-right: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .defaultIcon,
+    .activeIcon {
+        display: none;
+        cursor: pointer;
+        svg {
+            width: 1rem;
+            height: 1rem;
+            fill: var(--meta-copy);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                fill: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+            }
+        }
+    }
+    .tagContainer.selected {
+        .defaultIcon {
+            display: inline;
+        }
+    }
+    .alert.selected {
+        .defaultIcon {
+            display: none;
+        }
+        .activeIcon {
+            display: inline;
+        }
+    }
+}

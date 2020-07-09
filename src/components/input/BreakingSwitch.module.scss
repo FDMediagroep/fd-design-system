@@ -1,0 +1,159 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.breakingSwitch {
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    clear: both;
+    text-decoration: none;
+    display: block;
+    width: auto;
+    background-color: var(--card);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
+    }
+
+    h3,
+    .content {
+        display: block;
+        padding: 12px 10px;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            padding: 12px;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            padding: 12px 15px;
+        }
+    }
+
+    h3 {
+        font-size: 18px;
+        line-height: 1.222;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            font-size: 19px;
+            line-height: 1.316;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            font-size: 21px;
+            line-height: 1.333;
+        }
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+        margin: 0;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        }
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        color: var(--content-copy);
+        border-top: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+            border-top: 1px solid #{map-deep-get(
+                    $colors,
+                    'colors',
+                    'neutrals',
+                    50
+                )};
+        }
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
+        font-size: 1rem;
+        @media only screen and (min-width: 641px) {
+            font-size: 1.0625rem;
+        }
+        .description {
+            flex: 1 1 auto;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            min-width: 76px;
+            width: 76px;
+            height: 40px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+        .switchInput {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        .switchLabel {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: inherit;
+            font-size: 10px;
+            text-transform: uppercase;
+            background: var(--dividers);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
+            }
+            border-radius: 28px;
+            transition: opacity 0.15s ease-out, background 0.15s ease-out;
+            .iconCheck,
+            .iconTimes {
+                display: flex;
+                svg {
+                    fill: #ffffff;
+                    transition: visibility 0.1s ease-out;
+                    width: 23px;
+                    height: 23px;
+                }
+            }
+            .iconCheck {
+                width: 20px;
+                height: 20px;
+                visibility: hidden;
+                margin-left: 0.5rem;
+                margin-bottom: 4px;
+            }
+            .iconTimes {
+                margin-right: 0.5rem;
+            }
+        }
+        .switchInput:checked ~ .switchLabel {
+            background: var(--primary);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+            .iconCheck {
+                visibility: visible;
+            }
+            .iconTimes {
+                visibility: hidden;
+            }
+        }
+        .switchHandle {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 32px;
+            height: 32px;
+            background: #ffeadb;
+            border-radius: 16px;
+            transition: left 0.15s ease-out;
+        }
+        .switchInput:checked ~ .switchHandle {
+            left: 40px;
+        }
+    }
+}

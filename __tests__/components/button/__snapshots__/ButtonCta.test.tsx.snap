@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonCta should handle sizes correctly 1`] = `
+<div>
+  <button
+    class="fdButtonCta "
+  >
+    Knopje
+  </button>
+</div>
+`;
+
+exports[`ButtonCta should handle sizes correctly 2`] = `
+<div>
+  <button
+    class="fdButtonCta m"
+  >
+    Knopje
+  </button>
+</div>
+`;
+
+exports[`ButtonCta should handle sizes correctly 3`] = `
+<div>
+  <button
+    class="fdButtonCta l"
+  >
+    Knopje
+  </button>
+</div>
+`;

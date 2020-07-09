@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HorizontalCard2 should render is-read correctly 1`] = `
+<div>
+  <article
+    class="horizontalCard2 isRead"
+    id="1"
+  >
+    <a
+      href="https://example.com/1/This is the title"
+    >
+      <div
+        class="teaserText"
+      >
+        <div
+          class="meta"
+        >
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
+          <time>
+            11:50
+          </time>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1>
+            This is the title
+          </h1>
+          <p
+            class="intro"
+          >
+            This is the intro of the card
+          </p>
+        </div>
+      </div>
+    </a>
+  </article>
+</div>
+`;

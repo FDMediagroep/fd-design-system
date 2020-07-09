@@ -1,0 +1,15 @@
+@import '../utils/map-deep-get.scss';
+@import '../design-tokens/colors.scss';
+@import '../design-tokens/typography.scss';
+
+.index {
+    color: var(--content-copy);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+    }
+    h1 {
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+    }
+}

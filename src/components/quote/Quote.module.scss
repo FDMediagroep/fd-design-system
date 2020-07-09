@@ -1,0 +1,82 @@
+@import "../../utils/map-deep-get.scss";
+@import "../../design-tokens/colors.scss";
+@import "../../design-tokens/media.scss";
+@import "../../design-tokens/typography.scss";
+
+.quote {
+    margin: 3rem 0;
+    width: 100%;
+
+    blockquote {
+        box-sizing: border-box;
+        display: block;
+        font-weight: normal;
+        font-size: 1.5rem;
+        font-family: map-deep-get($typography, "font-family", "bold"),
+            sans-serif;
+        color: var(--quote);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, "colors", "neutrals", 30)};
+        }
+        line-height: 1.333;
+        margin: 0;
+        &:before {
+            content: "";
+            padding: 1rem 0 0 0;
+            display: block;
+            width: 68px;
+            border-top: 8px solid var(--quote);
+            @media screen and (min-width: map-deep-get($media, "sizes", "s")) {
+                width: 79.36px;
+                border-top: 9.34px solid var(--quote);
+            }
+            @media screen and (min-width: map-deep-get($media, "sizes", "l")) {
+                width: 91px;
+                border-top: 11px solid var(--quote);
+            }
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border-top: 11px solid #{map-deep-get(
+                        $colors,
+                        "colors",
+                        "neutrals",
+                        30
+                    )};
+            }
+        }
+    }
+
+    figcaption {
+        margin-top: 1rem;
+        padding: 0;
+        color: var(--quote);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, "colors", "neutrals", 30)};
+        }
+        font-family: map-deep-get($typography, "font-family", "regular"),
+            sans-serif;
+        font-size: 1rem;
+        display: inline-block;
+    }
+
+    @media screen and (min-width: map-deep-get($media, "sizes", "s")) {
+        margin: 3.5rem 0;
+
+        blockquote {
+            font-size: 1.625rem;
+        }
+    }
+
+    @media screen and (min-width: map-deep-get($media, "sizes", "l")) {
+        margin: 4rem 0;
+
+        blockquote {
+            font-size: 1.75rem;
+        }
+    }
+}
