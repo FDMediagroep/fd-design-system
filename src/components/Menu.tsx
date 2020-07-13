@@ -183,7 +183,7 @@ function Menu() {
                         />
                         <source
                             media="(min-width:641px)"
-                            srcSet={`/assets/github/GitHub-Mark-32px.png, /assets/github/GitHub-Mark-64px.png 2x, /assets/github/GitHub-Mark-120px.png 3x`}
+                            srcSet={`/assets/github/GitHub-Mark-32px.png, /assets/github/GitHub-Mark-64px.png 2x, /assets/github/GitHub-Mark-120px-plus.png 3x`}
                         />
                         <img
                             alt="GitHub"
