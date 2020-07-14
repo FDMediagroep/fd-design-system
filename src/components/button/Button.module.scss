@@ -1,8 +1,8 @@
-@import "../../utils/map-deep-get.scss";
-@import "../../design-tokens/colors.scss";
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
 
 .fdButton {
-    outline: none; /* Sorry, visually impaired, I tried */
+    outline: none;
     position: relative;
     min-height: 2rem;
     display: inline-block;
@@ -23,16 +23,16 @@
     }
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, "colors", "neutrals", 40)};
+        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
         &:hover {
-            background-color: #{map-deep-get($colors, "colors", "neutrals", 30)};
+            background-color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
         }
     }
 
     box-shadow: rgba(0, 0, 0, 0.2) 0px -2px 0px 0px inset;
     border-radius: 2px;
     transition: background-color 0.1s;
-    font-family: "ProximaNovaBold", sans-serif;
+    font-family: 'ProximaNovaBold', sans-serif;
     font-weight: normal;
     &.m {
         min-height: 2.5rem;
