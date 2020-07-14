@@ -1,8 +1,8 @@
-@import "../../utils/map-deep-get.scss";
-@import "../../design-tokens/colors.scss";
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
 
 .fdFollowButton {
-    outline: none; /* Sorry, visually impaired, I tried */
+    outline: none;
     position: relative;
     border-radius: 2px;
     white-space: nowrap;
@@ -11,14 +11,14 @@
     color: var(--primary);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        border: 1px solid #{map-deep-get($colors, "colors", "primary", 75)};
-        color: #{map-deep-get($colors, "colors", "primary", 75)};
+        border: 1px solid #{map-deep-get($colors, 'colors', 'primary', 75)};
+        color: #{map-deep-get($colors, 'colors', 'primary', 75)};
     }
 
     background-color: transparent;
     cursor: pointer;
     transition: background-color 0.2s;
-    font-family: "ProximaNovaRegular", sans-serif;
+    font-family: 'ProximaNovaRegular', sans-serif;
     font-size: 14px;
 
     &:hover {
@@ -28,14 +28,14 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, "colors", "primary", 75)};
-            border-color: #{map-deep-get($colors, "colors", "primary", 75)};
-            color: #{map-deep-get($colors, "colors", "neutrals", 90)};
+            background-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            border-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
         }
     }
     .cross {
         &:before {
-            content: "+";
+            content: '+';
             display: block;
             width: 10px;
             height: 10px;
@@ -58,7 +58,7 @@
         display: none;
     }
 
-    &[data-selected="true"] {
+    &[data-selected='true'] {
         background-color: var(--primary);
         color: var(--content-background);
         &:hover {
@@ -68,10 +68,10 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, "colors", "primary", 75)};
-            color: #{map-deep-get($colors, "colors", "neutrals", 90)};
+            background-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
             &:hover {
-                color: #{map-deep-get($colors, "colors", "primary", 75)};
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
             }
         }
 
@@ -101,7 +101,7 @@
             }
         }
 
-        &[data-selected="true"] {
+        &[data-selected='true'] {
             .buttonText,
             .cross {
                 color: #ffffff;
