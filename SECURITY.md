@@ -12,4 +12,5 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-https://github.com/FDMediagroep/fd-design-system/issues
+If you happen upon a security vulnerability we'd appreciate it if you could be discrete about it and e-mail the details to security@fdmediagroep.nl and permit us some time to reply.
+Many thanks in advance.
