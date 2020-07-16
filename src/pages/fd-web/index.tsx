@@ -37,8 +37,8 @@ function Page(props: Props) {
                                     }
                                     title={breakingTeaser?.title}
                                     url={`https://dev.fd.nl${breakingTeaser?.publicationUrl}`}
-                                    imageUrl={`${breakingTeaser?.image?.squareUrl}&q=45&w=300&h=300`}
-                                    imageUrlS={`${breakingTeaser?.image?.squareUrl}&q=45&w=300&h=300`}
+                                    imageUrl={`${breakingTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                    imageUrlS={`${breakingTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                     imageUrlM={`${breakingTeaser?.image?.normalUrl}&q=45&w=351&h=234`}
                                     imageUrlL={`${breakingTeaser?.image?.wideUrl}&q=45&w=599&h=399`}
                                 />
@@ -60,8 +60,8 @@ function Page(props: Props) {
                                     }
                                     title={singleOpeningTeaser?.title}
                                     url={`https://dev.fd.nl${singleOpeningTeaser?.publicationUrl}`}
-                                    imageUrl={`${singleOpeningTeaser?.image?.squareUrl}&q=45&w=300&h=300`}
-                                    imageUrlS={`${singleOpeningTeaser?.image?.squareUrl}&q=45&w=300&h=300`}
+                                    imageUrl={`${singleOpeningTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                    imageUrlS={`${singleOpeningTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                     imageUrlM={`${singleOpeningTeaser?.image?.normalUrl}&q=45&w=351&h=234`}
                                     imageUrlL={`${singleOpeningTeaser?.image?.wideUrl}&q=45&w=599&h=399`}
                                 />
@@ -87,8 +87,8 @@ function Page(props: Props) {
                                             }
                                             title={teaser?.title}
                                             url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                            imageUrl={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
-                                            imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
+                                            imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                            imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                             imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
                                             imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
                                         />
@@ -116,8 +116,8 @@ function Page(props: Props) {
                                                 teaser?.image?.backgroundColor
                                             }
                                             url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                            imageUrl={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
-                                            imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
+                                            imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                            imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                             imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
                                             imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
                                         />
@@ -144,8 +144,8 @@ function Page(props: Props) {
                                                 teaser?.image?.backgroundColor
                                             }
                                             url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                            imageUrl={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
-                                            imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
+                                            imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                            imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                             imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
                                             imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
                                         />
@@ -172,8 +172,8 @@ function Page(props: Props) {
                                                 teaser?.image?.backgroundColor
                                             }
                                             url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                            imageUrl={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
-                                            imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
+                                            imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                            imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                             imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
                                             imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
                                         />
@@ -220,8 +220,8 @@ function Page(props: Props) {
                                 title={teaser?.title}
                                 theme={teaser?.image?.backgroundColor}
                                 url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
-                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
+                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                 imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
                                 imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
                             />
@@ -243,8 +243,8 @@ function Page(props: Props) {
                                 title={teaser?.title}
                                 theme={teaser?.image?.backgroundColor}
                                 url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
-                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
+                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                 imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
                                 imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
                             />
@@ -266,8 +266,8 @@ function Page(props: Props) {
                                 title={teaser?.title}
                                 theme={teaser?.image?.backgroundColor}
                                 url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
-                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
+                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                 imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
                                 imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
                             />
@@ -289,8 +289,8 @@ function Page(props: Props) {
                                 title={teaser?.title}
                                 theme={teaser?.image?.backgroundColor}
                                 url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
-                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
+                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                 imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
                                 imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
                             />
@@ -312,8 +312,8 @@ function Page(props: Props) {
                                 title={teaser?.title}
                                 theme={teaser?.image?.backgroundColor}
                                 url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
-                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=300&h=300`}
+                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                 imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
                                 imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
                             />
