@@ -1,0 +1,110 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.fdAccordion {
+    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.529;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        font-size: 1.1875rem;
+        line-height: 1.474;
+    }
+    @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+        font-size: 1.3125rem;
+        line-height: 1.429;
+    }
+
+    color: var(--content-copy);
+    background-color: var(--card-2);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 80)};
+    }
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+
+    section {
+        padding: 0.5rem 1rem;
+    }
+
+    section:not(:last-child) {
+        border-bottom: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border-bottom: 1px solid #{map-deep-get(
+                    $colors,
+                    'colors',
+                    'neutrals',
+                    50
+                )};
+        }
+    }
+
+    h2 {
+        user-select: none;
+        cursor: pointer;
+        margin: 0;
+        font-weight: normal;
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
+
+        font-size: 1.0625rem;
+        line-height: 1.529;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            font-size: 1.1875rem;
+            line-height: 1.474;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            font-size: 1.3125rem;
+            line-height: 1.429;
+        }
+    }
+
+    a {
+        color: var(--link);
+        text-decoration: none;
+        &:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            &:hover {
+                color: #{map-deep-get($colors, 'colors', 'primary', 50)};
+            }
+        }
+    }
+
+    input {
+        display: none;
+    }
+
+    div {
+        transition: all 0.3s linear;
+        height: 0;
+        opacity: 0;
+        margin: 0;
+        box-sizing: border-box;
+        * {
+            pointer-events: none;
+            margin: 0;
+        }
+    }
+    input:checked ~ div {
+        height: auto;
+        opacity: 1;
+        * {
+            pointer-events: all;
+        }
+    }
+
+    input:checked ~ label h2 {
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+    }
+}

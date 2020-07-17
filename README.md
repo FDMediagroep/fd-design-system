@@ -1309,6 +1309,35 @@ function Foo() {
 </details>
 
 <details>
+<summary>Accordion</summary>
+
+[Demo](https://fd-design-system.now.sh/accordion)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/accordion/Accordion.css";
+```
+
+```
+import { Accordion } from '@fdmg/design-system/components/accordion/Accordion';
+
+function Foo() {
+    return (
+        <Accordion items={[
+            {
+                title: 'title',
+                content: <span>description</span>,
+            },
+        ]} />
+    );
+}
+```
+
+</details>
+
+<details>
 <summary>AuthorInfo</summary>
 
 [Demo](https://fd-design-system.now.sh/author-info)

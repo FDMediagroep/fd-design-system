@@ -1,3 +1,6 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/typography.scss';
+
 /* 
  * Override CSS variables with explicit values 
  * Don't use the values given by the website itself because the financial agenda is a propriatary piece of code
@@ -52,7 +55,8 @@
             background-color: rgba(0, 0, 0, 0.03);
         }
         font-size: 0.8em;
-        font-family: 'ArnhemPro', 'ProximaNovaRegular', sans-serif;
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
         font-weight: 400;
         line-height: 1em;
         margin: 0 auto;
@@ -79,7 +83,8 @@
 
     th {
         font-size: 1.2em;
-        font-family: 'ProximaNovaBold', sans-serif;
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
         margin-bottom: 1em;
         padding: 0.5em 1em 0.5em 0.1em;
         border-bottom: 1px solid var(--dividers);

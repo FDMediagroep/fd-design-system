@@ -1,5 +1,6 @@
 @import '../../utils/map-deep-get.scss';
 @import '../../design-tokens/colors.scss';
+@import '../../design-tokens/typography.scss';
 
 .fdCheckbox {
     input {
@@ -22,7 +23,8 @@
         }
 
         font-size: 1rem;
-        font-family: 'ProximaNovaRegular', sans-serif;
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
         white-space: normal;
         &:before {
             content: '';

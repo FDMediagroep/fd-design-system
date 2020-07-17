@@ -160,6 +160,9 @@ function Menu() {
                 <Link href="/ab">
                     <a>A/B Testing component</a>
                 </Link>
+                <Link href="/accordion">
+                    <a>WIP: Accordion</a>
+                </Link>
                 <Link href="/author-info">
                     <a>Author Info</a>
                 </Link>
@@ -195,7 +198,7 @@ function Menu() {
 
             <Themes className={styles.themeControls} />
 
-            <Link href="/achtergrond/1324449/alle-verrijking-op-een-rijtje">
+            <Link href="/[section]/[id]/[title]" as="/achtergrond/1324449/alle-verrijking-op-een-rijtje">
                 <a>Test article</a>
             </Link>
             <Link href="/fd-web">

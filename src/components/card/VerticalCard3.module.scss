@@ -19,7 +19,7 @@
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
     font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     line-height: 1.2em;
-    font-size: 17px;
+    font-size: 1.0625rem;
 
     .cardContent {
         flex: 1 1 auto;
@@ -79,7 +79,7 @@
                 left: 0;
                 right: 0;
                 bottom: 12%;
-                font-size: 19px;
+                font-size: 1.1875rem;
                 color: var(--content-copy);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
@@ -169,7 +169,7 @@
 
     &[data-variant='variant-3'] {
         .prefix {
-            font-size: 16px;
+            font-size: 1rem;
             padding: 8px 16px;
             color: #fff;
             background-color: var(--link-longread);

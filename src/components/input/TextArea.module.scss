@@ -1,10 +1,11 @@
 @import '../../utils/map-deep-get.scss';
 @import '../../design-tokens/colors.scss';
+@import '../../design-tokens/typography.scss';
 
 .fdTextArea {
     display: inline-block;
     p {
-        font-size: 12px;
+        font-size: 0.75rem;
         color: var(--credits);
         // IE11
         @media screen and (-ms-high-contrast: active),
@@ -15,10 +16,12 @@
     .textArea {
         position: relative;
         float: left;
-        font-family: 'ProximaNovaRegular', sans-serif;
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
         width: 100%;
         textarea {
-            font-family: 'ProximaNovaRegular', sans-serif;
+            font-family: map-deep-get($typography, 'font-family', 'regular'),
+                sans-serif;
             padding: 1.4rem 1rem 0.6rem 1rem;
             font-size: 1rem;
             vertical-align: bottom;
@@ -117,7 +120,8 @@
             }
         }
         label {
-            font-family: 'ProximaNovaRegular', sans-serif;
+            font-family: map-deep-get($typography, 'font-family', 'regular'),
+                sans-serif;
             position: absolute;
             top: 0.7rem;
             left: 0;
@@ -182,7 +186,8 @@
                 color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
             }
             line-height: 1;
-            font-family: 'ProximaNovaRegular', sans-serif;
+            font-family: map-deep-get($typography, 'font-family', 'regular'),
+                sans-serif;
             font-weight: normal;
             margin-left: 1rem;
             &:not(.errorMessage):not(:empty) {
@@ -194,7 +199,8 @@
             opacity: 0;
             color: var(--input-error);
             max-height: 0;
-            font-family: 'ProximaNovaBold', sans-serif;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
         }
     }
     /**
