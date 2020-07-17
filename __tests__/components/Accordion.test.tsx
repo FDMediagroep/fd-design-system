@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
-import { Explain } from '../components/Explain';
-import { Accordion, getCssClassNames } from '../components/accordion/Accordion';
-import PageStore from '../stores/PageStore';
+import React from 'react';
+import {
+    Accordion,
+    getCssClassNames,
+} from '../../src/components/accordion/Accordion';
+import { render, fireEvent } from '@testing-library/react';
 
 const items = [
     {
@@ -152,34 +154,34 @@ const items = [
     },
 ];
 
-function Page() {
-    /**
-     * Use article background.
-     */
-    useEffect(() => {
-        PageStore.setPageType('article');
+describe('Accordion', () => {
+    test('should render correctly', async () => {
+        const { getByText } = render(<Accordion id="test" items={items} />);
 
-        return () => {
-            PageStore.setPageType('overview');
-        };
-    }, []);
+        expect(
+            getByText('Mag ik content van FD Mediagroep-websites verspreiden?')
+        ).toBeTruthy();
+        expect(
+            getByText(
+                'Samenvatten van artikelen is wel toegestaan, mits aan een aantal voorwaarden is voldaan',
+                { exact: false }
+            )
+        ).toBeTruthy();
+        expect(
+            getByText(
+                'zoals foto’s en artikelen van (foto)persbureau en freelance makers',
+                { exact: false }
+            )
+        ).toBeTruthy();
+    });
 
-    return (
-        <>
-            <Explain
-                cssClassNames={getCssClassNames()}
-                legend="WIP: Accordion"
-                description={
-                    <>
-                        <p>Used as accordion.</p>
-                        <p>This element is used to display an accordion.</p>
-                    </>
-                }
-            >
-                <Accordion id="example" items={items} />
-            </Explain>
-        </>
-    );
-}
+    test('should have correct class name', () => {
+        const { container } = render(<Accordion id="test" items={items} />);
 
-export default Page;
+        expect(
+            container.firstElementChild.classList.contains(
+                getCssClassNames()[0]
+            )
+        ).toBeTruthy();
+    });
+});

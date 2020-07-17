@@ -21,7 +21,10 @@ function Accordion(props: Props) {
             }`}
         >
             {props.items.map((item, idx) => (
-                <section id={item.anchor ?? `q-${idx}`}>
+                <section
+                    key={`${item.title}-${idx}`}
+                    id={item.anchor ?? `q-${idx}`}
+                >
                     <input
                         id={encodeURIComponent(item.title)}
                         type="radio"
