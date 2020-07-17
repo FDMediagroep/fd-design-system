@@ -84,11 +84,11 @@
     }
 
     legend {
-        color: var(--meta-copy);
+        color: var(--credits);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
         }
     }
 }
