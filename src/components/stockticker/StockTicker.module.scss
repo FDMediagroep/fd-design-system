@@ -85,7 +85,7 @@
         white-space: nowrap;
         font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
-        font-size: 14px;
+        font-size: 0.875rem;
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             font-size: 1rem;
         }
@@ -101,7 +101,7 @@
         height: 21px;
         box-sizing: border-box;
         overflow: hidden;
-        font-size: 14px;
+        font-size: 0.875rem;
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             font-size: 1rem;
         }

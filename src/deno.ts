@@ -48,5 +48,6 @@ export { VerticalCard3 } from './components/card/VerticalCard3';
 
 // Misc.
 export * from './components/ab/ab';
+export { Accordion } from './components/accordion/Accordion';
 export { AuthorInfo } from './components/author-info/AuthorInfo';
 export { StockTicker } from './components/stockticker/StockTicker';

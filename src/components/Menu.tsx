@@ -160,6 +160,9 @@ function Menu() {
                 <Link href="/ab">
                     <a>A/B Testing component</a>
                 </Link>
+                <Link href="/accordion">
+                    <a>WIP: Accordion</a>
+                </Link>
                 <Link href="/author-info">
                     <a>Author Info</a>
                 </Link>

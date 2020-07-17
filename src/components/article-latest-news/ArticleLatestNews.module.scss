@@ -12,14 +12,14 @@
     }
 
     h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 1.222;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            font-size: 19px;
+            font-size: 1.1875rem;
             line-height: 1.316;
         }
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
-            font-size: 21px;
+            font-size: 1.3125rem;
             line-height: 1.333;
         }
         font-family: map-deep-get($typography, 'font-family', 'bold'),
@@ -114,9 +114,9 @@
             color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
         }
         display: block;
-        font-size: 13px;
+        font-size: 0.8125rem;
         @media only screen and (min-width: 641px) {
-            font-size: 14px;
+            font-size: 0.875rem;
         }
     }
 }

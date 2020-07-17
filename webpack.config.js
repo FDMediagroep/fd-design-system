@@ -174,6 +174,9 @@ module.exports = {
 
         // Misc.
         '/components/ab/ab': ['./src/components/ab/ab.tsx'],
+        '/components/accordion/Accordion': [
+            './src/components/accordion/Accordion.tsx',
+        ],
         '/components/author-info/AuthorInfo': [
             './src/components/author-info/AuthorInfo.tsx',
         ],
