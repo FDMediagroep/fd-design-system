@@ -26,21 +26,21 @@ By following these tips and guidelines you'll find that you can contribute more 
 
 Tagging the repository on GitHub with a release will automatically start the GitHub Actions. It currently consists of 2 workflows:
 
-* build
-* release
+-   build
+-   release
 
 After the build has completed the release will be run which does the actual packaging of the Component Library and publishes it to both NPMJS and GitHub Packages.
 
 Versioning convention:
 
-`v{major}.{minor}.{patch}[canary.{patch}]`
+`v{major}.{minor}.{patch}[-canary.{patch}]`
 
 Examples:
 
-* v0.3.5
-* v1.2.2
-* v1.2.3
-* v1.2.3-canary.1
+-   v0.3.5
+-   v1.2.2
+-   v1.2.3
+-   v1.2.3-canary.1
 
 Canary releases are pre-releases. So version `v1.2.3-canary.1` is considered as an older release than `v1.2.3`. Canary releases are useful if you want to test it in your own application without risking other users installing it by mistake.
 
