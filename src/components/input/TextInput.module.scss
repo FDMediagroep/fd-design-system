@@ -1,5 +1,6 @@
 @import '../../utils/map-deep-get.scss';
 @import '../../design-tokens/colors.scss';
+@import '../../design-tokens/typography.scss';
 
 .fdInput {
     display: inline-block;
@@ -15,10 +16,12 @@
     .input {
         position: relative;
         float: left;
-        font-family: 'ProximaNovaRegular', sans-serif;
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
         width: 100%;
         input {
-            font-family: 'ProximaNovaRegular', sans-serif;
+            font-family: map-deep-get($typography, 'font-family', 'regular'),
+                sans-serif;
             padding: 1.4rem 1rem 0.6rem 1rem;
             font-size: 1rem;
             vertical-align: bottom;
@@ -122,7 +125,8 @@
             }
         }
         label {
-            font-family: 'ProximaNovaRegular', sans-serif;
+            font-family: map-deep-get($typography, 'font-family', 'regular'),
+                sans-serif;
             position: absolute;
             top: 1.2rem;
             left: 1rem;
@@ -186,7 +190,8 @@
                 color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
             }
             line-height: 1;
-            font-family: 'ProximaNovaRegular', sans-serif;
+            font-family: map-deep-get($typography, 'font-family', 'regular'),
+                sans-serif;
             font-weight: normal;
             margin-left: 1rem;
             &:not(.errorMessage):not(:empty) {
@@ -203,7 +208,8 @@
                 color: #{map-deep-get($colors, 'colors', 'negative', 25)};
             }
             max-height: 0;
-            font-family: 'ProximaNovaBold', sans-serif;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
         }
     }
     /**

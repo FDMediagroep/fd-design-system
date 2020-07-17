@@ -1,5 +1,6 @@
 @import '../../utils/map-deep-get.scss';
 @import '../../design-tokens/colors.scss';
+@import '../../design-tokens/typography.scss';
 
 .fdButtonCta {
     outline: none;
@@ -36,7 +37,7 @@
     box-shadow: rgba(0, 0, 0, 0.2) 0px -2px 0px 0px inset;
     border-radius: 2px;
     transition: background-color 0.1s;
-    font-family: 'ProximaNovaBold', sans-serif;
+    font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     font-weight: normal;
     &.m {
         min-height: 2.5rem;
