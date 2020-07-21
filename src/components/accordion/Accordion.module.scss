@@ -27,6 +27,7 @@
 
     section {
         padding: 0.5rem 1rem;
+        display: flex;
     }
 
     section:not(:last-child) {
@@ -84,7 +85,7 @@
         display: none;
     }
 
-    div {
+    .textContent > div {
         transition: all 0.3s linear;
         height: 0;
         opacity: 0;
@@ -95,7 +96,7 @@
             margin: 0;
         }
     }
-    input:checked ~ div {
+    input:checked ~ .textContent > div {
         height: auto;
         opacity: 1;
         * {
@@ -103,8 +104,43 @@
         }
     }
 
-    input:checked ~ label h2 {
+    input:checked ~ .textContent label h2 {
         font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
+    }
+
+    .icon {
+        cursor: pointer;
+        margin-right: 1rem;
+        display: flex;
+        align-items: center;
+        svg {
+            fill: var(--primary) !important;
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                fill: #{map-deep-get($colors, 'colors', 'primary', 75)} !important;
+            }
+            * {
+                fill: var(--primary) !important;
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    fill: #{map-deep-get($colors, 'colors', 'primary', 75)} !important;
+                }
+            }
+        }
+    }
+
+    .minimise {
+        display: none;
+    }
+    input:checked ~ .icon {
+        &.minimise {
+            display: block;
+        }
+        &.expand {
+            display: none;
+        }
     }
 }

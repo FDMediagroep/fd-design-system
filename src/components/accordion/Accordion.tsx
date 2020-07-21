@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Accordion.module.scss';
+import { MinimiseIcon, ExpandIcon } from '../../design-tokens/icons';
 
 export interface Item {
     anchor?: string;
@@ -30,10 +31,22 @@ function Accordion(props: Props) {
                         type="radio"
                         name={props.id}
                     />
-                    <label htmlFor={encodeURIComponent(item.title)}>
-                        <h2>{item.title}</h2>
-                    </label>
-                    <div>{item.content}</div>
+                    <label
+                        htmlFor={encodeURIComponent(item.title)}
+                        className={`${styles.icon} ${styles.minimise}`}
+                        dangerouslySetInnerHTML={{ __html: MinimiseIcon }}
+                    />
+                    <label
+                        htmlFor={encodeURIComponent(item.title)}
+                        className={`${styles.icon} ${styles.expand}`}
+                        dangerouslySetInnerHTML={{ __html: ExpandIcon }}
+                    />
+                    <div className={styles.textContent}>
+                        <label htmlFor={encodeURIComponent(item.title)}>
+                            <h2>{item.title}</h2>
+                        </label>
+                        <div>{item.content}</div>
+                    </div>
                 </section>
             ))}
         </div>
