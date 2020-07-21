@@ -24,25 +24,26 @@ function Accordion(props: Props) {
             {props.items.map((item, idx) => (
                 <section
                     key={`${item.title}-${idx}`}
-                    id={item.anchor ?? `q-${idx}`}
+                    id={`section-${item.anchor ?? `q-${idx}`}`}
                 >
                     <input
-                        id={encodeURIComponent(item.title)}
-                        type="radio"
-                        name={props.id}
+                        id={item.anchor ?? `q-${idx}`}
+                        type="checkbox"
+                        name={item.anchor ?? `q-${idx}`}
+                        onChange={console.log}
                     />
                     <label
-                        htmlFor={encodeURIComponent(item.title)}
+                        htmlFor={item.anchor ?? `q-${idx}`}
                         className={`${styles.icon} ${styles.minimise}`}
                         dangerouslySetInnerHTML={{ __html: MinimiseIcon }}
                     />
                     <label
-                        htmlFor={encodeURIComponent(item.title)}
+                        htmlFor={item.anchor ?? `q-${idx}`}
                         className={`${styles.icon} ${styles.expand}`}
                         dangerouslySetInnerHTML={{ __html: ExpandIcon }}
                     />
                     <div className={styles.textContent}>
-                        <label htmlFor={encodeURIComponent(item.title)}>
+                        <label htmlFor={item.anchor ?? `q-${idx}`}>
                             <h2>{item.title}</h2>
                         </label>
                         <div>{item.content}</div>
