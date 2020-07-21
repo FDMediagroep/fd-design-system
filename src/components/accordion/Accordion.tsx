@@ -9,7 +9,6 @@ export interface Item {
 }
 
 interface Props {
-    id: string;
     items: Item[];
     [x: string]: any;
 }

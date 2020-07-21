@@ -176,7 +176,7 @@ function Page() {
                     </>
                 }
             >
-                <Accordion id="example" items={items} />
+                <Accordion items={items} />
             </Explain>
         </>
     );
