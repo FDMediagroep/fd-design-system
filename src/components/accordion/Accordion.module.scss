@@ -4,6 +4,7 @@
 @import '../../design-tokens/typography.scss';
 
 .fdAccordion {
+    margin: 1rem 0;
     font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     font-size: 1.0625rem;
     line-height: 1.529;
