@@ -86,9 +86,7 @@
     }
 
     .textContent > div {
-        transition: all 0.15s linear;
-        height: 0;
-        opacity: 0;
+        display: none;
         margin: 0;
         box-sizing: border-box;
         * {
@@ -97,8 +95,7 @@
         }
     }
     input:checked ~ .textContent > div {
-        height: auto;
-        opacity: 1;
+        display: block;
         * {
             pointer-events: all;
         }
