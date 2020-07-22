@@ -88,11 +88,9 @@
 
     .textContent > div {
         display: none;
-        margin: 0;
         box-sizing: border-box;
         * {
             pointer-events: none;
-            margin: 0;
         }
     }
     input:checked ~ .textContent > div {
