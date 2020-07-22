@@ -156,7 +156,7 @@ const items = [
 
 describe('Accordion', () => {
     test('should render correctly', async () => {
-        const { getByText } = render(<Accordion id="test" items={items} />);
+        const { getByText } = render(<Accordion items={items} />);
 
         expect(
             getByText('Mag ik content van FD Mediagroep-websites verspreiden?')
@@ -176,7 +176,7 @@ describe('Accordion', () => {
     });
 
     test('should have correct class name', () => {
-        const { container } = render(<Accordion id="test" items={items} />);
+        const { container } = render(<Accordion items={items} />);
 
         expect(
             container.firstElementChild.classList.contains(

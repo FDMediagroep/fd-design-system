@@ -19,6 +19,8 @@ jobs:
       run: npm ci
     - name: Test
       run: npm test
+    - name: Build
+      run: npm run build:ci
     - name: Code coverage reporting
       uses: coverallsapp/github-action@master
       with:

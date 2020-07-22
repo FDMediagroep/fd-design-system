@@ -168,15 +168,18 @@ function Page() {
         <>
             <Explain
                 cssClassNames={getCssClassNames()}
-                legend="WIP: Accordion"
+                legend="Accordion"
                 description={
                     <>
                         <p>Used as accordion.</p>
-                        <p>This element is used to display an accordion.</p>
+                        <p>
+                            This element is used to display an accordion. No
+                            JavaScript is required for its function.
+                        </p>
                     </>
                 }
             >
-                <Accordion id="example" items={items} />
+                <Accordion items={items} />
             </Explain>
         </>
     );

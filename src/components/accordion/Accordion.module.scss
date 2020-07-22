@@ -4,6 +4,7 @@
 @import '../../design-tokens/typography.scss';
 
 .fdAccordion {
+    margin: 1rem 0;
     font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     font-size: 1.0625rem;
     line-height: 1.529;
@@ -26,7 +27,8 @@
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
 
     section {
-        padding: 0.5rem 1rem;
+        padding: 1rem;
+        display: flex;
     }
 
     section:not(:last-child) {
@@ -84,27 +86,58 @@
         display: none;
     }
 
-    div {
-        transition: all 0.3s linear;
-        height: 0;
-        opacity: 0;
-        margin: 0;
+    .textContent > div {
+        display: none;
         box-sizing: border-box;
         * {
             pointer-events: none;
-            margin: 0;
         }
     }
-    input:checked ~ div {
-        height: auto;
-        opacity: 1;
+    input:checked ~ .textContent > div {
+        display: block;
         * {
             pointer-events: all;
         }
     }
 
-    input:checked ~ label h2 {
+    input:checked ~ .textContent label h2 {
         font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
+    }
+
+    .icon {
+        display: flex;
+        margin-top: 3px;
+        user-select: none;
+        cursor: pointer;
+        margin-right: 1rem;
+        svg {
+            fill: var(--primary) !important;
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                fill: #{map-deep-get($colors, 'colors', 'primary', 75)} !important;
+            }
+            * {
+                fill: var(--primary) !important;
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    fill: #{map-deep-get($colors, 'colors', 'primary', 75)} !important;
+                }
+            }
+        }
+    }
+
+    .minimise {
+        display: none;
+    }
+    input:checked ~ .icon {
+        &.minimise {
+            display: flex;
+        }
+        &.expand {
+            display: none;
+        }
     }
 }
