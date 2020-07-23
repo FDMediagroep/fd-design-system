@@ -3,6 +3,17 @@
 @import '../design-tokens/typography.scss';
 
 .menu {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    padding: 1rem;
+    box-sizing: border-box;
+    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+    overflow-y: auto;
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
+
     &::-webkit-scrollbar {
         width: 0.5rem;
         height: 0.5rem;
@@ -33,17 +44,6 @@
         background: rgba(0, 0, 0, 0.1);
     }
 
-    display: flex;
-    flex-direction: column;
-    white-space: nowrap;
-    padding: 1rem;
-    box-sizing: border-box;
-    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
-    overflow: auto;
-    height: 100vh;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
     a {
         color: var(--content-copy);
         // IE11
@@ -74,6 +74,8 @@
     }
 
     fieldset {
+        flex-shrink: 0; // Safari fix
+        flex-basis: auto; // Safari fix
         display: flex;
         flex-direction: column;
         border: 1px solid var(--dividers);
@@ -111,6 +113,8 @@
 }
 
 .image {
+    flex-shrink: 0; // Safari fix
+    flex-basis: auto; // Safari fix
     display: flex;
     justify-content: center;
     opacity: 0.5;

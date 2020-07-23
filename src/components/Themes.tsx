@@ -1,39 +1,39 @@
-import React, { useState, useEffect } from "react";
-import styles from "./Themes.module.scss";
+import React, { useState, useEffect } from 'react';
+import styles from './Themes.module.scss';
 
-type Theme = "system" | "dark" | "light";
+type Theme = 'system' | 'dark' | 'light';
 
 function Themes(props: any) {
-    const [theme, setTheme] = useState<Theme>("system");
+    const [theme, setTheme] = useState<Theme>('system');
 
     function changeTheme(theme: Theme | string) {
         switch (theme) {
-            case "light":
-                document.querySelector("html").classList.remove("dark");
-                document.querySelector("html").classList.remove("light");
-                document.querySelector("html").classList.remove("system");
-                document.querySelector("html").classList.add("light");
+            case 'light':
+                document.querySelector('html').classList.remove('dark');
+                document.querySelector('html').classList.remove('light');
+                document.querySelector('html').classList.remove('system');
+                document.querySelector('html').classList.add('light');
                 break;
-            case "dark":
-                document.querySelector("html").classList.remove("dark");
-                document.querySelector("html").classList.remove("light");
-                document.querySelector("html").classList.remove("system");
-                document.querySelector("html").classList.add("dark");
+            case 'dark':
+                document.querySelector('html').classList.remove('dark');
+                document.querySelector('html').classList.remove('light');
+                document.querySelector('html').classList.remove('system');
+                document.querySelector('html').classList.add('dark');
                 break;
-            case "system":
+            case 'system':
             default:
-                document.querySelector("html").classList.remove("dark");
-                document.querySelector("html").classList.remove("light");
-                document.querySelector("html").classList.remove("system");
-                document.querySelector("html").classList.add("system");
+                document.querySelector('html').classList.remove('dark');
+                document.querySelector('html').classList.remove('light');
+                document.querySelector('html').classList.remove('system');
+                document.querySelector('html').classList.add('system');
         }
-        localStorage.setItem("theme", theme);
+        localStorage.setItem('theme', theme);
         setTheme(theme as Theme);
     }
 
     useEffect(() => {
-        document.documentElement.style.backgroundColor = "";
-        const savedTheme = localStorage.getItem("theme");
+        document.documentElement.style.backgroundColor = '';
+        const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             changeTheme(savedTheme);
         }
@@ -47,7 +47,7 @@ function Themes(props: any) {
         <section
             {...props}
             className={`${styles.themeControls}${
-                props.className ? ` ${props.className}` : ""
+                props.className ? ` ${props.className}` : ''
             }`}
         >
             <label>
@@ -56,9 +56,9 @@ function Themes(props: any) {
                     name="theme"
                     radioGroup="themes"
                     value="system"
-                    checked={theme === "system"}
+                    checked={theme === 'system'}
                     onChange={handleThemeChange}
-                />{" "}
+                />{' '}
                 system
             </label>
             <label>
@@ -68,8 +68,8 @@ function Themes(props: any) {
                     radioGroup="themes"
                     value="light"
                     onChange={handleThemeChange}
-                    checked={theme === "light"}
-                />{" "}
+                    checked={theme === 'light'}
+                />{' '}
                 ☀️
             </label>
             <label>
@@ -79,8 +79,8 @@ function Themes(props: any) {
                     radioGroup="themes"
                     value="dark"
                     onChange={handleThemeChange}
-                    checked={theme === "dark"}
-                />{" "}
+                    checked={theme === 'dark'}
+                />{' '}
                 🌒
             </label>
         </section>

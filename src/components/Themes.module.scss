@@ -3,6 +3,8 @@
 
 .themeControls {
     color: var(--content-copy);
+    flex-shrink: 0; // Safari fix
+    flex-basis: auto; // Safari fix
     display: flex;
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
