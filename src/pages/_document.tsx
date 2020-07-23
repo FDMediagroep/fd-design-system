@@ -100,14 +100,14 @@ export default class MyDocument extends Document<any> {
 
                     <meta
                         property="og:site_name"
-                        content="fd-design-system.now.sh"
+                        content="design-system.fd.nl"
                     />
 
                     <meta property="og:type" content="article" />
 
                     <meta
                         property="og:url"
-                        content="https://fd-design-system.now.sh"
+                        content="https://design-system.fd.nl"
                     />
 
                     <meta
@@ -121,7 +121,7 @@ export default class MyDocument extends Document<any> {
 
                     <meta
                         property="twitter:site"
-                        content="fd-design-system.now.sh"
+                        content="design-system.fd.nl"
                     />
 
                     <meta
