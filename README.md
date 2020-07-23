@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://fd-design-system.now.sh" target="_BLANK">
+    <a href="https://design-system.fd.nl" target="_BLANK">
         <img width="160" src="https://github.com/FDMediagroep/fd-design-system/raw/master/public/assets/icons/logo.svg?sanitize=true" alt="FD Design System">
     </a>
 </p>
@@ -24,7 +24,7 @@
 
 # fd-design-system
 
-[Design System](https://fd-design-system.now.sh) for components used by [FD.nl](https://fd.nl).
+[Design System](https://design-system.fd.nl) for components used by [FD.nl](https://fd.nl).
 
 ## Installation
 
@@ -139,7 +139,7 @@ function Foo() {
 <details>
 <summary>ArticleImage</summary>
 
-[Demo](https://fd-design-system.now.sh/article-image)
+[Demo](https://design-system.fd.nl/article-image)
 
 Component CSS:
 
@@ -167,7 +167,7 @@ function Foo() {
 <details>
 <summary>ArticleTags</summary>
 
-[Demo](https://fd-design-system.now.sh/article-tags)
+[Demo](https://design-system.fd.nl/article-tags)
 
 Component CSS:
 
@@ -237,7 +237,7 @@ function Foo() {
 <details>
 <summary>Financial Agenda</summary>
 
-[Demo](https://fd-design-system.now.sh/financial-agenda)
+[Demo](https://design-system.fd.nl/financial-agenda)
 
 Component CSS:
 
@@ -276,7 +276,7 @@ function Foo() {
 <details>
 <summary>Infographic</summary>
 
-[Demo](https://fd-design-system.now.sh/article-infographic)
+[Demo](https://design-system.fd.nl/article-infographic)
 
 Component CSS:
 
@@ -300,7 +300,7 @@ function Foo() {
 <details>
 <summary>Latest News (article)</summary>
 
-[Demo](https://fd-design-system.now.sh/article-latest-news)
+[Demo](https://design-system.fd.nl/article-latest-news)
 
 Component CSS:
 
@@ -352,7 +352,7 @@ function Foo() {
 <details>
 <summary>LinkBlock</summary>
 
-[Demo](https://fd-design-system.now.sh/article-link-block)
+[Demo](https://design-system.fd.nl/article-link-block)
 
 Component CSS:
 
@@ -376,7 +376,7 @@ function Foo() {
 <details>
 <summary>LinkCard</summary>
 
-[Demo](https://fd-design-system.now.sh/article-link-card)
+[Demo](https://design-system.fd.nl/article-link-card)
 
 Component CSS:
 
@@ -404,7 +404,7 @@ function Foo() {
 <details>
 <summary>NumberFrame</summary>
 
-[Demo](https://fd-design-system.now.sh/numberframe)
+[Demo](https://design-system.fd.nl/numberframe)
 
 Component CSS:
 
@@ -431,7 +431,7 @@ function Foo() {
 <details>
 <summary>Quote</summary>
 
-[Demo](https://fd-design-system.now.sh/quote)
+[Demo](https://design-system.fd.nl/quote)
 
 Component CSS:
 
@@ -459,7 +459,7 @@ function Foo() {
 <details>
 <summary>ReadMore</summary>
 
-[Demo](https://fd-design-system.now.sh/readmore)
+[Demo](https://design-system.fd.nl/readmore)
 
 Component CSS:
 
@@ -489,7 +489,7 @@ function Foo() {
 <details>
 <summary>Summary</summary>
 
-[Demo](https://fd-design-system.now.sh/article-summary)
+[Demo](https://design-system.fd.nl/article-summary)
 
 Component CSS:
 
@@ -519,7 +519,7 @@ function Foo() {
 <details>
 <summary>TextArea</summary>
 
-[Demo](https://fd-design-system.now.sh/input/textarea)
+[Demo](https://design-system.fd.nl/input/textarea)
 
 Component CSS:
 
@@ -543,7 +543,7 @@ function Foo() {
 <details>
 <summary>TextFrame</summary>
 
-[Demo](https://fd-design-system.now.sh/input/textframe)
+[Demo](https://design-system.fd.nl/input/textframe)
 
 Component CSS:
 
@@ -594,7 +594,7 @@ function Foo() {
 <details>
 <summary>WordFrame</summary>
 
-[Demo](https://fd-design-system.now.sh/wordframe)
+[Demo](https://design-system.fd.nl/wordframe)
 
 Component CSS:
 
@@ -647,7 +647,7 @@ function Foo() {
 <details>
 <summary>Breaking Switch</summary>
 
-[Demo](https://fd-design-system.now.sh/input/breaking-switch)
+[Demo](https://design-system.fd.nl/input/breaking-switch)
 
 Component CSS:
 
@@ -685,7 +685,7 @@ function Foo(props: Props) {
 <details>
 <summary>Button</summary>
 
-[Demo](https://fd-design-system.now.sh/button/default)
+[Demo](https://design-system.fd.nl/button/default)
 
 Component CSS:
 
@@ -713,7 +713,7 @@ function Foo() {
 <details>
 <summary>Button CTA (call-to-action)</summary>
 
-[Demo](https://fd-design-system.now.sh/button/cta)
+[Demo](https://design-system.fd.nl/button/cta)
 
 Component CSS:
 
@@ -741,7 +741,7 @@ function Foo() {
 <details>
 <summary>Button Follow</summary>
 
-[Demo](https://fd-design-system.now.sh/button/follow)
+[Demo](https://design-system.fd.nl/button/follow)
 
 Component CSS:
 
@@ -772,7 +772,7 @@ function Foo() {
 <details>
 <summary>Checkbox</summary>
 
-[Demo](https://fd-design-system.now.sh/input/checkbox)
+[Demo](https://design-system.fd.nl/input/checkbox)
 
 Component CSS:
 
@@ -799,7 +799,7 @@ function Foo() {
 <details>
 <summary>Date input</summary>
 
-[Demo](https://fd-design-system.now.sh/input/dateinput)
+[Demo](https://design-system.fd.nl/input/dateinput)
 
 Component CSS:
 
@@ -823,7 +823,7 @@ function Foo() {
 <details>
 <summary>Email input</summary>
 
-[Demo](https://fd-design-system.now.sh/input/emailinput)
+[Demo](https://design-system.fd.nl/input/emailinput)
 
 Component CSS:
 
@@ -847,7 +847,7 @@ function Foo() {
 <details>
 <summary>Mobile input (tel)</summary>
 
-[Demo](https://fd-design-system.now.sh/input/mobileinput)
+[Demo](https://design-system.fd.nl/input/mobileinput)
 
 Component CSS:
 
@@ -871,7 +871,7 @@ function Foo() {
 <details>
 <summary>Radio</summary>
 
-[Demo](https://fd-design-system.now.sh/input/radio)
+[Demo](https://design-system.fd.nl/input/radio)
 
 Component CSS:
 
@@ -907,7 +907,7 @@ function Foo() {
 <details>
 <summary>Switch</summary>
 
-[Demo](https://fd-design-system.now.sh/input/switch)
+[Demo](https://design-system.fd.nl/input/switch)
 
 Component CSS:
 
@@ -934,7 +934,7 @@ function Foo() {
 <details>
 <summary>Text input</summary>
 
-[Demo](https://fd-design-system.now.sh/input/textinput)
+[Demo](https://design-system.fd.nl/input/textinput)
 
 Component CSS:
 
@@ -960,7 +960,7 @@ function Foo() {
 <details>
 <summary>Horizontal Card 1</summary>
 
-[Demo](https://fd-design-system.now.sh/card/horizontal-1)
+[Demo](https://design-system.fd.nl/card/horizontal-1)
 
 Component CSS:
 
@@ -991,7 +991,7 @@ function Foo() {
 <details>
 <summary>Horizontal Card 2</summary>
 
-[Demo](https://fd-design-system.now.sh/card/horizontal-2)
+[Demo](https://design-system.fd.nl/card/horizontal-2)
 
 Component CSS:
 
@@ -1022,7 +1022,7 @@ function Foo() {
 <details>
 <summary>Horizontal Card 3</summary>
 
-[Demo](https://fd-design-system.now.sh/card/horizontal-3)
+[Demo](https://design-system.fd.nl/card/horizontal-3)
 
 Component CSS:
 
@@ -1054,7 +1054,7 @@ function Foo() {
 <details>
 <summary>Hybrid Card 1</summary>
 
-[Demo](https://fd-design-system.now.sh/card/hybrid-1)
+[Demo](https://design-system.fd.nl/card/hybrid-1)
 
 Component CSS:
 
@@ -1096,7 +1096,7 @@ function Foo() {
 <details>
 <summary>Hybrid Card 2</summary>
 
-[Demo](https://fd-design-system.now.sh/card/hybrid-2)
+[Demo](https://design-system.fd.nl/card/hybrid-2)
 
 Component CSS:
 
@@ -1134,7 +1134,7 @@ function Foo() {
 <details>
 <summary>LinkCard</summary>
 
-[Demo](https://fd-design-system.now.sh/card/link-card)
+[Demo](https://design-system.fd.nl/card/link-card)
 
 Component CSS:
 
@@ -1162,7 +1162,7 @@ function Foo() {
 <details>
 <summary>Vertical Card 1</summary>
 
-[Demo](https://fd-design-system.now.sh/card/vertical-1)
+[Demo](https://design-system.fd.nl/card/vertical-1)
 
 Component CSS:
 
@@ -1204,7 +1204,7 @@ function Foo() {
 <details>
 <summary>Vertical Card 2</summary>
 
-[Demo](https://fd-design-system.now.sh/card/vertical-2)
+[Demo](https://design-system.fd.nl/card/vertical-2)
 
 Component CSS:
 
@@ -1237,7 +1237,7 @@ function Foo() {
 <details>
 <summary>Vertical Card 3</summary>
 
-[Demo](https://fd-design-system.now.sh/card/vertical-3)
+[Demo](https://design-system.fd.nl/card/vertical-3)
 
 Component CSS:
 
@@ -1273,7 +1273,7 @@ function Foo() {
 <details>
 <summary>A/B Testing component</summary>
 
-[Demo](https://fd-design-system.now.sh/ab)
+[Demo](https://design-system.fd.nl/ab)
 
 Component CSS:
 
@@ -1311,7 +1311,7 @@ function Foo() {
 <details>
 <summary>Accordion</summary>
 
-[Demo](https://fd-design-system.now.sh/accordion)
+[Demo](https://design-system.fd.nl/accordion)
 
 Component CSS:
 
@@ -1340,7 +1340,7 @@ function Foo() {
 <details>
 <summary>AuthorInfo</summary>
 
-[Demo](https://fd-design-system.now.sh/author-info)
+[Demo](https://design-system.fd.nl/author-info)
 
 Component CSS:
 

@@ -25,7 +25,7 @@ function JorienBeukers() {
             <Head>
                 <title>Dorien Beukers</title>
 
-                <link rel="canonical" href="https://fd-design-system.now.sh" />
+                <link rel="canonical" href="https://design-system.fd.nl" />
 
                 <meta
                     name="description"
@@ -38,17 +38,11 @@ function JorienBeukers() {
                     content="‘Weet iemand waar Jorien is?’"
                 />
 
-                <meta
-                    property="og:site_name"
-                    content="fd-design-system.now.sh"
-                />
+                <meta property="og:site_name" content="design-system.fd.nl" />
 
                 <meta property="og:type" content="article" />
 
-                <meta
-                    property="og:url"
-                    content="https://fd-design-system.now.sh"
-                />
+                <meta property="og:url" content="https://design-system.fd.nl" />
 
                 <meta
                     property="og:image"
@@ -59,10 +53,7 @@ function JorienBeukers() {
 
                 <meta property="twitter:title" content="FD Design System" />
 
-                <meta
-                    property="twitter:site"
-                    content="fd-design-system.now.sh"
-                />
+                <meta property="twitter:site" content="design-system.fd.nl" />
 
                 <meta
                     property="twitter:image"
