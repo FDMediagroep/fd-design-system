@@ -42,6 +42,7 @@
     overflow: auto;
     height: 100vh;
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     a {
         color: var(--content-copy);
