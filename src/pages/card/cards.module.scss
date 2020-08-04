@@ -32,6 +32,8 @@
 
 .verticalCard1,
 .verticalCard2 {
+    margin: 0 1rem 1rem 0;
+
     @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
         max-width: 300px;
     }
@@ -48,7 +50,7 @@
         margin: 0 1rem 1rem 0;
     }
 }
-.hybridCard1Preview {
+.horizontalFlexPreview {
     flex-direction: column;
     @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
         > *:not(:last-child) {

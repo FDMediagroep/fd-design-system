@@ -68,12 +68,12 @@ function VerticalCard2(props: Props) {
                         <h1>{props.title}</h1>
 
                         <p className={styles.intro}>{props.intro}</p>
-
-                        {props.readingTime && (
-                            <ReadingTime readingTime={props.readingTime} />
-                        )}
                     </div>
                 </div>
+
+                {props.readingTime && (
+                    <ReadingTime readingTime={props.readingTime} />
+                )}
             </a>
         </article>
     );
