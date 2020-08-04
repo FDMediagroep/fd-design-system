@@ -48,6 +48,18 @@
         }
     }
 
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        .readingTime {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+        .footer {
+            display: none;
+        }
+    }
+
     .meta {
         display: flex;
         justify-content: space-between;

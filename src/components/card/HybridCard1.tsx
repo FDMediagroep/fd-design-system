@@ -153,17 +153,22 @@ function HybridCard1(props: Props) {
                         {props.intro && (
                             <p className={styles.intro}>{props.intro}</p>
                         )}
-                    </div>
 
-                    {props.readingTime && (
-                        <ReadingTime readingTime={props.readingTime} />
-                    )}
+                        {props.readingTime && (
+                            <ReadingTime
+                                className={styles.readingTime}
+                                readingTime={props.readingTime}
+                            />
+                        )}
+                    </div>
                 </div>
             </a>
 
             <Footer
+                className={styles.footer}
                 bookmarked={props.bookmarked}
                 onBookmark={props.onBookmark}
+                readingTime={props.readingTime}
             />
         </article>
     );
