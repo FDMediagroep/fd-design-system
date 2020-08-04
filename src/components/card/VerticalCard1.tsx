@@ -4,6 +4,7 @@ import {
     Footer,
     getCssClassNames as getFooterCssClassNames,
 } from './shared/Footer';
+import { ReadingTime } from './shared/ReadingTime';
 
 interface Props {
     id: string;
@@ -15,6 +16,10 @@ interface Props {
     imageUrlL?: string;
     caption?: string;
     label: string;
+    /**
+     * Reading time in minutes.
+     */
+    readingTime?: number;
     title: string;
     printTitle?: string;
     intro: string;
@@ -73,6 +78,10 @@ function VerticalCard1(props: Props) {
                         <h1>{props.title}</h1>
 
                         <p className={styles.intro}>{props.intro}</p>
+
+                        {props.readingTime && (
+                            <ReadingTime readingTime={props.readingTime} />
+                        )}
                     </div>
                 </div>
             </a>

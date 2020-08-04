@@ -14,6 +14,7 @@ const horizontalCards2: any = [
         title: 'Levensgevaarlijk Libanon',
         intro:
             'Ondanks een op het eerste gezicht veel gevaarlijker levensstijl, verschilt de levensverwachting van Libanezen nog maar drie jaar met die van ons.',
+        readingTime: 3,
     },
     {
         id: '1343825',
@@ -36,6 +37,7 @@ const horizontalCards2: any = [
         title: 'VVD botst met kabinet en coalitie over steuneisen KLM',
         intro:
             "Liberalen hekelen duurzaamheidsvoorwaarden. 'Het is een reddingsoperatie, geen strafexpeditie', vindt Tweede Kamerlid Roald van der Linde.",
+        readingTime: 7,
     },
 ];
 

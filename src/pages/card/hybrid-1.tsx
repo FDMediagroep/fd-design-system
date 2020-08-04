@@ -22,6 +22,7 @@ const hybridCards1: any = [
         url:
             'https://fd.nl/beurs/1345386/amerikaanse-technologiebeurs-nasdaq-wordt-mogelijk-strenger-dan-euronext',
         intro: `Een tweede coronagolf staat bovenaan de lijst met zorgen van fondsmanagers, volgens een enquête van Bank of America.`,
+        readingTime: 3,
     },
     {
         id: '1345186',
@@ -39,6 +40,7 @@ const hybridCards1: any = [
             'https://fd.nl/profiel/1345186/deloitte-krijgt-met-rianne-jans-een-onverstoorbare-cfo-in-huis',
         intro: `Na een kortstondig avontuur bij het ruziënde Centric vindt financieel bestuurder Rianne Jans onderdak bij accountants. `,
         variant: 'variant-1',
+        readingTime: 5,
     },
     {
         id: '1345406',
@@ -50,6 +52,7 @@ const hybridCards1: any = [
         url: 'https://fd.nl/opinie/1345406/hoogovens-of-klm',
         intro: `De staalindustrie is misschien wel belangrijker voor de bv Nederland dan de KLM.`,
         theme: 'theme-7',
+        readingTime: 7,
     },
     {
         id: '1345444',

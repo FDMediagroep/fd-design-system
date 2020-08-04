@@ -22,6 +22,7 @@ const hybridCards1: any = [
         url:
             'https://fd.nl/beurs/1345386/amerikaanse-technologiebeurs-nasdaq-wordt-mogelijk-strenger-dan-euronext',
         intro: `Een tweede coronagolf staat bovenaan de lijst met zorgen van fondsmanagers, volgens een enquête van Bank of America.`,
+        readingTime: 3,
     },
     {
         id: '1345186',
@@ -50,6 +51,7 @@ const hybridCards1: any = [
         url: 'https://fd.nl/opinie/1345406/hoogovens-of-klm',
         intro: `De staalindustrie is misschien wel belangrijker voor de bv Nederland dan de KLM.`,
         theme: 'theme-7',
+        readingTime: 7,
     },
     {
         id: '1345444',
@@ -57,6 +59,7 @@ const hybridCards1: any = [
         title: 'Bulk van de werklozen komt in de komende maanden',
         url:
             'https://fd.nl/economie-politiek/1345444/grootste-toename-werkloosheid-sinds-2003',
+        readingTime: 11,
     },
 ];
 

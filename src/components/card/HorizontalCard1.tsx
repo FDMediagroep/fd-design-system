@@ -1,11 +1,17 @@
 import React from 'react';
 import styles from './HorizontalCard1.module.scss';
+import { ReadingTime } from './shared/ReadingTime';
+import { getCssClassNames as getReadingTimeCssClassNames } from './shared/ReadingTime';
 
 interface Props {
     id: string;
     url: string;
     imageUrl: string;
     label: string;
+    /**
+     * Reading time in minutes.
+     */
+    readingTime?: number;
     time: string;
     title: string;
     isRead?: boolean;
@@ -50,6 +56,10 @@ function HorizontalCard1(props: Props) {
                     <div className={styles.textContainer}>
                         <h1>{props.title}</h1>
                     </div>
+
+                    {props.readingTime && (
+                        <ReadingTime readingTime={props.readingTime} />
+                    )}
                 </div>
             </a>
         </article>
@@ -57,7 +67,7 @@ function HorizontalCard1(props: Props) {
 }
 
 function getCssClassNames() {
-    return [styles.horizontalCard1];
+    return [styles.horizontalCard1, ...getReadingTimeCssClassNames()];
 }
 
 export { HorizontalCard1, getCssClassNames };

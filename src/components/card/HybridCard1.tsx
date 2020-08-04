@@ -4,6 +4,7 @@ import {
     Footer,
     getCssClassNames as getFooterCssClassNames,
 } from './shared/Footer';
+import { ReadingTime } from './shared/ReadingTime';
 
 export type Variants = 'default' | 'variant-1';
 export type Themes =
@@ -34,6 +35,10 @@ interface Props {
     imageUrlL?: string;
     caption?: string;
     label: string;
+    /**
+     * Reading time in minutes.
+     */
+    readingTime?: number;
     time?: string;
     title: string;
     intro: string;
@@ -149,6 +154,10 @@ function HybridCard1(props: Props) {
                             <p className={styles.intro}>{props.intro}</p>
                         )}
                     </div>
+
+                    {props.readingTime && (
+                        <ReadingTime readingTime={props.readingTime} />
+                    )}
                 </div>
             </a>
 
