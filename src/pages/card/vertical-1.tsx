@@ -30,16 +30,17 @@ const verticalCards1: any = [
         label: 'Detailhandel',
         title: 'Den Haag zet druk op verhuurders om huurverlaging te slikken',
         imageUrl:
-            'https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0018761726078799%2c.9999999999999999%2c.99812382739212&fit=crop&crop=faces&auto=format&q=45&w=560&h=315',
+            'https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0018761726078799%2c.9999999999999999%2c.99812382739212&fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         imageUrlS:
-            'https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0018761726078799%2c.9999999999999999%2c.99812382739212&fit=crop&crop=faces&auto=format&q=45&w=560&h=315',
+            'https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0018761726078799%2c.9999999999999999%2c.99812382739212&fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         imageUrlM:
-            'https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0637898686679174%2c.9999999999999999%2c.8442776735459663&fit=crop&crop=faces&auto=format&q=45&w=944&h=531',
+            'https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0637898686679174%2c.9999999999999999%2c.8442776735459663&fit=crop&crop=faces&auto=format&q=45&w=351&h=234',
         imageUrlL:
-            'https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0637898686679174%2c.9999999999999999%2c.8442776735459663&fit=crop&crop=faces&auto=format&q=45&w=944&h=531',
+            'https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0637898686679174%2c.9999999999999999%2c.8442776735459663&fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url:
             'https://fd.nl/ondernemen/1321841/den-haag-zet-druk-op-pandeigenaren-om-huurverlaging-winkeliers-te-slikken',
         intro: `Het Rijk sluit overheidsingrijpen niet uit om een akkoord tussen verhuurders en winkeliers af te dwingen, nu onderhandelingen moeizaam verlopen.`,
+        readingTime: 5,
     },
 ];
 
@@ -53,6 +54,7 @@ function Page() {
     return (
         <>
             <Explain
+                previewClassName={styles.horizontalFlexPreview}
                 anchor="vertical1"
                 cssClassNames={getCssClassNames()}
                 legend="Vertical Card 1"
@@ -66,12 +68,20 @@ function Page() {
                     </>
                 }
             >
-                <VerticalCard1
-                    className={styles.verticalCard1}
-                    onBookmark={toggleBookmark}
-                    bookmarked={bookmarked}
-                    {...verticalCards1[0]}
-                />
+                <>
+                    <VerticalCard1
+                        className={styles.verticalCard1}
+                        onBookmark={toggleBookmark}
+                        bookmarked={bookmarked}
+                        {...verticalCards1[0]}
+                    />
+                    <VerticalCard1
+                        className={styles.verticalCard1}
+                        onBookmark={toggleBookmark}
+                        bookmarked={bookmarked}
+                        {...verticalCards1[1]}
+                    />
+                </>
             </Explain>
         </>
     );

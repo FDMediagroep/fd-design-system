@@ -78,10 +78,6 @@ function VerticalCard1(props: Props) {
                         <h1>{props.title}</h1>
 
                         <p className={styles.intro}>{props.intro}</p>
-
-                        {props.readingTime && (
-                            <ReadingTime readingTime={props.readingTime} />
-                        )}
                     </div>
                 </div>
             </a>
@@ -89,6 +85,7 @@ function VerticalCard1(props: Props) {
             <Footer
                 bookmarked={props.bookmarked}
                 onBookmark={props.onBookmark}
+                readingTime={props.readingTime}
             />
         </article>
     );

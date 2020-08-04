@@ -36,7 +36,7 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
       </div>
     </a>
     <footer
-      class="footer"
+      class="footer footer"
     >
       <menu>
         <a>
@@ -92,7 +92,7 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
       </div>
     </a>
     <footer
-      class="footer"
+      class="footer footer"
     >
       <menu>
         <a>

@@ -73,7 +73,7 @@ function Page() {
     return (
         <>
             <Explain
-                previewClassName={styles.hybridCard1Preview}
+                previewClassName={styles.horizontalFlexPreview}
                 anchor="hybrid1"
                 cssClassNames={getCssClassNames()}
                 legend="Hybrid Card 1"

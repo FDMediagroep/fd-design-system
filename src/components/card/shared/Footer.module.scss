@@ -4,11 +4,7 @@
 @import '../../../design-tokens/typography.scss';
 
 .footer {
-    display: none;
-    margin-top: 0.5rem;
-    @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
-        display: inline-block;
-    }
+    display: inline-block;
     font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     font-size: 0.875rem;
     color: var(--meta-copy);
@@ -19,9 +15,19 @@
     menu {
         margin: 0;
         text-align: right;
+        padding-inline-start: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
     }
+
     a {
-        display: inline;
+        margin-top: 0.5rem;
+        display: none;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            display: inline;
+        }
+
         cursor: pointer;
         background-color: transparent;
         border: none;
