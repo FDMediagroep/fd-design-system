@@ -15,6 +15,7 @@ const horizontalCards1: any = [
         label: 'Energie',
         time: '08:10',
         title: 'Omzet Alfen stijgt in eerste coronakwartaal met 58%',
+        readingTime: 3,
     },
     {
         id: '1343728',
@@ -26,6 +27,7 @@ const horizontalCards1: any = [
         time: '07:49',
         title: 'Staalfabrikant Aperam verwacht forse daling verkopen',
         updated: true,
+        readingTime: 5,
     },
     {
         id: '1343728',
@@ -37,6 +39,7 @@ const horizontalCards1: any = [
         time: '07:18',
         title: "'Leraren hebben straks geen klassen van 32 leerlingen meer'",
         isRead: true,
+        readingTime: 7,
     },
     {
         id: '1343780',

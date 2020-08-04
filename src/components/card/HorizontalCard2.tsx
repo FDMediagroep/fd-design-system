@@ -1,10 +1,15 @@
 import React from 'react';
 import styles from './HorizontalCard2.module.scss';
+import { ReadingTime } from './shared/ReadingTime';
 
 interface Props {
     id: string;
     url: string;
     label: string;
+    /**
+     * Reading time in minutes.
+     */
+    readingTime?: number;
     time: string;
     title: string;
     intro: string;
@@ -37,6 +42,10 @@ function HorizontalCard2(props: Props) {
                         <h1>{props.title}</h1>
                         <p className={styles.intro}>{props.intro}</p>
                     </div>
+
+                    {props.readingTime && (
+                        <ReadingTime readingTime={props.readingTime} />
+                    )}
                 </div>
             </a>
         </article>

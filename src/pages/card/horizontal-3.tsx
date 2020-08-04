@@ -26,6 +26,7 @@ const horizontalCards3: any = [
         printTitle: 'Door crisis veel meer publiek geld nodig voor Green Deal',
         intro:
             "De rechterhand van klimaatcommissaris Frans Timmerman waarschuwt voor een 'investeringsgat'. De private sector kan door coronacrisis veel minder bijdragen.",
+        readingTime: 5,
     },
     {
         id: '1343823a',
@@ -37,6 +38,7 @@ const horizontalCards3: any = [
         intro:
             "Liberalen hekelen duurzaamheidsvoorwaarden. 'Het is een reddingsoperatie, geen strafexpeditie', vindt Tweede Kamerlid Roald van der Linde.",
         isRead: true,
+        readingTime: 7,
     },
 ];
 
