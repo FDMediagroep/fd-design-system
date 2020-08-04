@@ -1,5 +1,6 @@
 @import '../utils/map-deep-get.scss';
 @import '../design-tokens/colors.scss';
+@import '../design-tokens/media.scss';
 @import '../design-tokens/typography.scss';
 
 .menu {
@@ -11,8 +12,10 @@
     font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     overflow-y: auto;
     max-height: 100vh;
+    position: relative;
     position: sticky;
     top: 0;
+    margin-right: 1rem;
 
     &::-webkit-scrollbar {
         width: 0.5rem;
@@ -99,11 +102,29 @@
 .menuClosed {
     padding: 0;
     margin: 0;
+    overflow: inherit;
+    z-index: 1;
 
     .toggle {
         flex: 1 1 auto;
-        padding: 1rem 0.5rem;
+        padding: 0.5rem;
         text-align: center;
+        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+            position: absolute;
+            top: 0;
+            background-color: var(--dividers);
+            border-radius: 50%;
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutrals',
+                        50
+                    )};
+            }
+        }
     }
     a,
     .themeControls,
