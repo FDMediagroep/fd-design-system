@@ -47,7 +47,7 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
       </div>
     </a>
     <footer
-      class="footer"
+      class="footer footer"
     >
       <menu>
         <a>
@@ -115,7 +115,7 @@ exports[`HybridCard1 should render themes correctly 1`] = `
       </div>
     </a>
     <footer
-      class="footer"
+      class="footer footer"
     >
       <menu>
         <a>
@@ -183,7 +183,7 @@ exports[`HybridCard1 should render themes correctly 2`] = `
       </div>
     </a>
     <footer
-      class="footer"
+      class="footer footer"
     >
       <menu>
         <a>
@@ -251,7 +251,7 @@ exports[`HybridCard1 should render themes correctly 3`] = `
       </div>
     </a>
     <footer
-      class="footer"
+      class="footer footer"
     >
       <menu>
         <a>
@@ -319,7 +319,7 @@ exports[`HybridCard1 should render themes correctly 4`] = `
       </div>
     </a>
     <footer
-      class="footer"
+      class="footer footer"
     >
       <menu>
         <a>
@@ -387,7 +387,7 @@ exports[`HybridCard1 should render themes correctly 5`] = `
       </div>
     </a>
     <footer
-      class="footer"
+      class="footer footer"
     >
       <menu>
         <a>
@@ -455,7 +455,7 @@ exports[`HybridCard1 should render themes correctly 6`] = `
       </div>
     </a>
     <footer
-      class="footer"
+      class="footer footer"
     >
       <menu>
         <a>
@@ -523,7 +523,7 @@ exports[`HybridCard1 should render themes correctly 7`] = `
       </div>
     </a>
     <footer
-      class="footer"
+      class="footer footer"
     >
       <menu>
         <a>
@@ -591,7 +591,7 @@ exports[`HybridCard1 should render themes correctly 8`] = `
       </div>
     </a>
     <footer
-      class="footer"
+      class="footer footer"
     >
       <menu>
         <a>
@@ -658,7 +658,7 @@ exports[`HybridCard1 should render variant-1 correctly 1`] = `
       </div>
     </a>
     <footer
-      class="footer"
+      class="footer footer"
     >
       <menu>
         <a>
