@@ -32,6 +32,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Summary"
+                reactComponentName="Summary"
                 description={
                     <>
                         <p>Used as summary in articles.</p>
@@ -45,6 +46,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Summary (variant-1)"
+                reactComponentName="Summary"
                 description={
                     <>
                         <p>Used as summary in longread articles.</p>
@@ -58,6 +60,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Summary (variant-2)"
+                reactComponentName="Summary"
                 description={
                     <>
                         <p>Used as summary in persoonlijk articles.</p>

@@ -34,6 +34,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Bullet point"
+                reactComponentName={BulletPoint.name}
                 description={
                     <>
                         <p>Used as bullet points in articles.</p>
@@ -53,6 +54,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Bullet point (align: right)"
+                reactComponentName="BulletPoint"
                 description={
                     <>
                         <p>Used as right-aligned bullet points in articles.</p>
@@ -72,6 +74,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Summary (variant-1)"
+                reactComponentName="BulletPoint"
                 description={
                     <>
                         <p>Used as bullet points in longread articles.</p>
@@ -91,6 +94,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Bullet point (variant-1, align: right)"
+                reactComponentName="BulletPoint"
                 description={
                     <>
                         <p>

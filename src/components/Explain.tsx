@@ -51,6 +51,13 @@ interface Props {
      * Title for this Explain component.
      */
     legend: string;
+
+    /**
+     * React component name.
+     * In the production build the component name is minified.
+     * Set this property to use this as the component name instead.
+     */
+    reactComponentName?: string;
 }
 
 function Explain(props: Props) {
@@ -64,7 +71,16 @@ function Explain(props: Props) {
     const [showCode, setShowCode] = useState(false);
 
     useEffect(() => {
-        setReact(reactElementToJSXString(props.children));
+        setReact(
+            reactElementToJSXString(
+                props.children,
+                props.reactComponentName
+                    ? {
+                          displayName: () => props.reactComponentName,
+                      }
+                    : {}
+            )
+        );
         setHtml(
             pretty(
                 renderToString(props.children).replace('data-reactroot=""', '')

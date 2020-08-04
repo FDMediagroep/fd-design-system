@@ -25,6 +25,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Link Block"
+                reactComponentName="LinkBlock"
                 description={
                     <>
                         <p>Used to show the link block on article page.</p>
@@ -43,6 +44,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Link Block (align: right)"
+                reactComponentName="LinkBlock"
                 description={
                     <>
                         <p>Used to show the link block on article page.</p>

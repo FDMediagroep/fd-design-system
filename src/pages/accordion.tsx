@@ -169,6 +169,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Accordion"
+                reactComponentName="Accordion"
                 description={
                     <>
                         <p>Used as accordion.</p>

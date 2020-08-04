@@ -53,6 +53,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Latest news"
+                reactComponentName="ArticleLatestNews"
                 description={
                     <>
                         <p>Used to show the latest news on article page.</p>
