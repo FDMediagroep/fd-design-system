@@ -27,6 +27,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Inline Quote"
+                reactComponentName="Quote"
                 description={
                     <>
                         <p>Used as inline content in articles.</p>

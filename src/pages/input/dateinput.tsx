@@ -9,6 +9,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Date (mandatory)"
+                reactComponentName="TextInput"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -47,6 +48,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Date (description)"
+                reactComponentName="TextInput"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -85,6 +87,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Date YYYY-MM (mandatory)"
+                reactComponentName="TextInput"
                 description={
                     <>
                         <p>Can be used in forms.</p>

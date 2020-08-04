@@ -8,6 +8,7 @@ function DefaultButton() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Button (default)"
+                reactComponentName="Button"
                 description={
                     <>
                         <p>
@@ -30,6 +31,7 @@ function DefaultButton() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Button (M)"
+                reactComponentName="Button"
                 description={
                     <>
                         <p>
@@ -54,6 +56,7 @@ function DefaultButton() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Button (L)"
+                reactComponentName="Button"
                 description={
                     <>
                         <p>

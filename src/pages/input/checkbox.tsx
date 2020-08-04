@@ -8,6 +8,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Checkbox"
+                reactComponentName="Checkbox"
                 description={
                     <>
                         <p>Can be used in forms.</p>

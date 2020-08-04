@@ -9,6 +9,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (mandatory)"
+                reactComponentName="TextArea"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -36,6 +37,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (description)"
+                reactComponentName="TextArea"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -66,6 +68,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (mandatory, placeholder)"
+                reactComponentName="TextArea"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -100,6 +103,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (description, placeholder)"
+                reactComponentName="TextArea"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -131,6 +135,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (mandatory, default value)"
+                reactComponentName="TextArea"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -165,6 +170,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (default value)"
+                reactComponentName="TextArea"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -196,6 +202,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (max words)"
+                reactComponentName="TextArea"
                 description={
                     <>
                         <p>Can be used in forms.</p>

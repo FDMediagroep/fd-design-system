@@ -8,6 +8,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Link Card"
+                reactComponentName="LinkCard"
                 description={
                     <>
                         <p>Used to show the LinkCard on the My News page.</p>

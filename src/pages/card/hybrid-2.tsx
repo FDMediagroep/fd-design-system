@@ -73,6 +73,7 @@ function Page() {
                 anchor="hybrid2"
                 cssClassNames={getCssClassNames()}
                 legend="Hybrid Card 2"
+                reactComponentName="HybridCard2"
                 description={
                     <>
                         <p>Used on homepage. This card has no image.</p>

@@ -55,6 +55,7 @@ function Page() {
                 anchor="vertical1"
                 cssClassNames={getCssClassNames()}
                 legend="Vertical Card 1"
+                reactComponentName="VerticalCard1"
                 description={
                     <>
                         <p>Used on homepage.</p>

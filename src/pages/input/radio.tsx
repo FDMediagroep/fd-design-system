@@ -9,6 +9,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Radio"
+                reactComponentName="Radio"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -35,6 +36,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Radio (default: checked)"
+                reactComponentName="Radio"
                 description={
                     <>
                         <p>Can be used in forms.</p>

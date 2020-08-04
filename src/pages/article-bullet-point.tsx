@@ -34,7 +34,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Bullet point"
-                reactComponentName={BulletPoint.name}
+                reactComponentName="BulletPoint"
                 description={
                     <>
                         <p>Used as bullet points in articles.</p>

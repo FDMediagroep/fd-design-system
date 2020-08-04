@@ -46,6 +46,7 @@ function Page() {
                 anchor="horizontal2"
                 cssClassNames={getCssClassNames()}
                 legend="Horizontal Card 2"
+                reactComponentName="HorizontalCard2"
                 description={
                     <>
                         <p>Used on latest news, my news pages.</p>

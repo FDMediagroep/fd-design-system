@@ -13,6 +13,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Mobile (mandatory)"
+                reactComponentName="TextInput"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -57,6 +58,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Mobile (mandatory, default value)"
+                reactComponentName="TextInput"
                 description={
                     <>
                         <p>Can be used in forms.</p>

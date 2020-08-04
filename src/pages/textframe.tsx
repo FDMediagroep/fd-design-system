@@ -28,6 +28,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="TextFrame"
+                reactComponentName="TextFrame"
                 description={
                     <>
                         <p>Used as text-frame in articles.</p>

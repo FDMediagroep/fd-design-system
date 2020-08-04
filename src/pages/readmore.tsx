@@ -29,6 +29,7 @@ function Page() {
                 bgcolor="var(--product-background-2)"
                 cssClassNames={getCssClassNames()}
                 legend="ReadMore"
+                reactComponentName="ReadMore"
                 description={
                     <>
                         <p>Used as inline content in articles.</p>
@@ -47,6 +48,7 @@ function Page() {
                 bgcolor="var(--product-background-2)"
                 cssClassNames={getCssClassNames()}
                 legend="ReadMore (variant-1)"
+                reactComponentName="ReadMore"
                 description={
                     <>
                         <p>Used as inline content in longread articles.</p>
@@ -64,6 +66,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="ReadMore (variant-2)"
+                reactComponentName="ReadMore"
                 description={
                     <>
                         <p>Used as inline content in persoonlijk articles.</p>

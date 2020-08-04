@@ -27,6 +27,7 @@ function Index() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="WordFrame"
+                reactComponentName="WordFrame"
                 description={
                     <>
                         <p>Used as inline content in articles.</p>

@@ -23,6 +23,7 @@ function Follow() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Follow button (default)"
+                reactComponentName="ButtonFollow"
                 description={
                     <>
                         <p>Use to follow content.</p>
@@ -42,6 +43,7 @@ function Follow() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Follow button (following)"
+                reactComponentName="ButtonFollow"
                 description={
                     <>
                         <p>Use to follow content.</p>

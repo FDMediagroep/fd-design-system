@@ -8,6 +8,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Switch"
+                reactComponentName="Switch"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -33,6 +34,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Switch (default: checked)"
+                reactComponentName="Switch"
                 description={
                     <>
                         <p>Can be used in forms.</p>
