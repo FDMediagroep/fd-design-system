@@ -28,6 +28,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="NumberFrame"
+                reactComponentName="NumberFrame"
                 description={
                     <>
                         <p>Used as inline content in articles.</p>

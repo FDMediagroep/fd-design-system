@@ -29,6 +29,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Image"
+                reactComponentName="ArticleImage"
                 description={
                     <>
                         <p>Used as inline image in articles.</p>

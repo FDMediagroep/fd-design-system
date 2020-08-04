@@ -9,6 +9,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Text (mandatory)"
+                reactComponentName="TextInput"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -32,6 +33,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Text (description)"
+                reactComponentName="TextInput"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -62,6 +64,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Text (description, placeholder)"
+                reactComponentName="TextInput"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -93,6 +96,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Number (description, default value)"
+                reactComponentName="TextInput"
                 description={
                     <>
                         <p>Can be used in forms.</p>
@@ -126,6 +130,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Number (description, default value, hidden spinners)"
+                reactComponentName="TextInput"
                 description={
                     <>
                         <p>

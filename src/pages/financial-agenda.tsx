@@ -176,6 +176,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Financial Agenda"
+                reactComponentName="FinancialAgenda"
                 description={
                     <>
                         <p>

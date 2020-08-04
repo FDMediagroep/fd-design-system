@@ -30,6 +30,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Infographic"
+                reactComponentName="InfographicExtended"
                 description={
                     <>
                         <p>Used as inline infographic in articles.</p>

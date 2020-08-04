@@ -19,6 +19,7 @@ function Page() {
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Author Info"
+                reactComponentName="AuthorInfo"
                 description={
                     <>
                         <p>Used to show the author info on the author page.</p>

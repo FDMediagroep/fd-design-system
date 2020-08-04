@@ -17,6 +17,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Breaking Switch"
+                reactComponentName="BreakingSwitch"
                 description={
                     <>
                         <p>Is used on the my news page.</p>

@@ -8,6 +8,7 @@ function CTA() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Button CTA (default)"
+                reactComponentName="ButtonCta"
                 description={
                     <>
                         <p>
@@ -30,6 +31,7 @@ function CTA() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Button CTA (M)"
+                reactComponentName="ButtonCta"
                 description={
                     <>
                         <p>
@@ -52,6 +54,7 @@ function CTA() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Button CTA (L)"
+                reactComponentName="ButtonCta"
                 description={
                     <>
                         <p>

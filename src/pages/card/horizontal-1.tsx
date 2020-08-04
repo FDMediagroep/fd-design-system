@@ -58,6 +58,7 @@ function Page() {
                 anchor="horizontal1"
                 cssClassNames={getCssClassNames()}
                 legend="Horizontal Card 1"
+                reactComponentName="HorizontalCard1"
                 description={
                     <>
                         <p>Used on category, dossier pages.</p>

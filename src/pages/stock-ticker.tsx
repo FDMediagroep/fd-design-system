@@ -124,6 +124,7 @@ function Page() {
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Stock Ticker"
+                reactComponentName="StockTicker"
                 description={
                     <>
                         <p>This is the reference stock ticker.</p>
