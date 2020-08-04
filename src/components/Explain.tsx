@@ -6,6 +6,7 @@ import pretty from 'pretty';
 import { getStyle } from '../utils/styles';
 import { getTags, getDestination } from '../utils/paths';
 import Link from 'next/link';
+import reactElementToJSXString from 'react-element-to-jsx-string';
 
 declare let window: Window | any;
 declare let cssbeautify: (css: string) => string;
@@ -57,11 +58,13 @@ function Explain(props: Props) {
     const [css, setCss] = useState('');
     const [cssBase64, setCssBase64] = useState(null);
     const [html, setHtml] = useState('');
+    const [react, setReact] = useState('');
     const [tags, setTags] = useState([]);
     const [destination, setDestination] = useState('');
     const [showCode, setShowCode] = useState(false);
 
     useEffect(() => {
+        setReact(reactElementToJSXString(props.children));
         setHtml(
             pretty(
                 renderToString(props.children).replace('data-reactroot=""', '')
@@ -84,6 +87,15 @@ function Explain(props: Props) {
             window.clipboardData.setData('Text', css);
         }
         alert('CSS copied to clipboard');
+    }
+
+    function copyReact() {
+        if ('clipboard' in navigator) {
+            (navigator as any).clipboard.writeText(react);
+        } else if ('clipboardData' in window) {
+            window.clipboardData.setData('Text', react);
+        }
+        alert('React code copied to clipboard');
     }
 
     function copyHtml() {
@@ -255,6 +267,23 @@ function Explain(props: Props) {
                     <textarea
                         className={styles.textArea}
                         value={html}
+                        readOnly={true}
+                    />
+                </section>
+                <section>
+                    <section>
+                        <a
+                            className={styles.copyIcon}
+                            onClick={copyReact}
+                            title="Copy React code to clipboard"
+                        >
+                            📋
+                        </a>
+                        React
+                    </section>
+                    <textarea
+                        className={styles.textArea}
+                        value={react}
                         readOnly={true}
                     />
                 </section>
