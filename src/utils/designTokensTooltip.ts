@@ -39,9 +39,15 @@ function getTokenName(hex: string) {
 function tooltipHandler(e: MouseEvent) {
     let summary: Summary = {};
     styleProps.forEach((styleProp) => {
-        const color = getComputedStyle(e.target as Element).getPropertyValue(
+        let color = getComputedStyle(e.target as Element).getPropertyValue(
             styleProp
         );
+        // In case the child component is transparent we use the root
+        if (styleProp === 'background-color' && color === 'rgba(0, 0, 0, 0)') {
+            color = getComputedStyle(
+                e.currentTarget as Element
+            ).getPropertyValue(styleProp);
+        }
         if (color) {
             const matches = color.match(/\d+/g);
             if (matches && matches.length === 3) {
