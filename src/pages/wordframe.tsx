@@ -11,6 +11,10 @@ mi porta gravida at eget metus. Cum sociis natoque penatibus et
 magnis dis parturient montes, nascetur ridiculus mus.`,
 };
 
+const metaTitle = 'Word frame';
+const metaDescription =
+    'Word frame, used to display an inline word frame in articles';
+
 function Index() {
     /**
      * Use article background.
@@ -27,11 +31,15 @@ function Index() {
         <>
             <Head>
                 <title>
-                    Word frame - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Word frame, used to display an inline word frame in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

@@ -45,16 +45,23 @@ const verticalCards1: any = [
     },
 ];
 
+const metaTitle = 'Vertical Card 2';
+const metaDescription = 'Vertical Card 2, used on the dossier overview page';
+
 function Page() {
     return (
         <>
             <Head>
                 <title>
-                    Vertical Card 2 - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Vertical Card 2, used on the dossier overview page"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

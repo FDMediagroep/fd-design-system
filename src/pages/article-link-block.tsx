@@ -8,6 +8,9 @@ import PageStore from '../stores/PageStore';
 import styles from './article-link-block.module.scss';
 import Head from 'next/head';
 
+const metaTitle = 'Link block';
+const metaDescription = 'Link block, used to display a link block in articles';
+
 function Page() {
     /**
      * Use article background.
@@ -24,11 +27,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Link block - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Link block, used to display a link block in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

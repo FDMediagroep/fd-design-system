@@ -14,6 +14,10 @@ const initialProps = {
         'https://fd-external-development.imgix.net/83122edfd074e501eb2bccec93df979e64942b26.png',
 };
 
+const metaTitle = 'Infographic extended';
+const metaDescription =
+    'Infographic extended, used to display an inline infographic in articles';
+
 function Page() {
     /**
      * Use article background.
@@ -30,12 +34,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Infographic extended - Design System - Het Financieele
-                    Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Infographic extended, used to display an inline infographic in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

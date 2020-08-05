@@ -101,6 +101,10 @@ const props2: Props = {
     ],
 };
 
+const metaTitle = 'Stock ticker';
+const metaDescription =
+    'Stock ticker, used to display a stock ticker on the homepage';
+
 function Page() {
     const [stockState, setStockState] = useState(initialProps);
 
@@ -124,11 +128,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Stock ticker - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Stock ticker, used to display a stock ticker on the homepage"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

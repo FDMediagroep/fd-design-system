@@ -2,15 +2,24 @@ import React from 'react';
 import { Explain } from '../../components/Explain';
 import { Button, getCssClassNames } from '../../components/button/Button';
 import Head from 'next/head';
+const metaTitle = 'Button';
+const metaDescription =
+    'Button, used to interact with the content: comment, share and vote';
 
 function DefaultButton() {
     return (
         <>
             <Head>
-                <title>Button - Design System - Het Financieele Dagblad</title>
+                <title>
+                    {metaTitle} - Design System - Het Financieele Dagblad
+                </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Button, used to interact with the content: comment, share and vote"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

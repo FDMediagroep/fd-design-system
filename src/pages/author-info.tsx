@@ -7,6 +7,9 @@ import {
 import styles from './article-link-block.module.scss';
 import Head from 'next/head';
 
+const metaTitle = 'Author info';
+const metaDescription =
+    'Author info, used to display the author info in articles';
 function Page() {
     const [followState, setFollowState] = useState(false);
 
@@ -18,11 +21,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Author info - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Author info, used to display the author info in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

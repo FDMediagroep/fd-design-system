@@ -52,6 +52,21 @@ function App({ Component, pageProps }) {
                 <title>
                     FD Design System - Design System - Het Financieele Dagblad
                 </title>
+
+                <meta
+                    name="description"
+                    content="Collection of all the styled components for FD.nl"
+                />
+                <meta property="og:title" content="FD Design System" />
+                <meta
+                    property="og:description"
+                    content="Collection of all the styled components for FD.nl"
+                />
+                <meta property="twitter:title" content="FD Design System" />
+                <meta
+                    property="twitter:description"
+                    content="Collection of all the styled components for FD.nl"
+                />
             </Head>
             <section className={pageStyle}>
                 <aside>

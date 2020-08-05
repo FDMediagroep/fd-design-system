@@ -12,6 +12,11 @@ interface Props {
     typography: any;
     [x: string]: any;
 }
+
+const metaTitle = 'Design tokens';
+const metaDescription =
+    'Design tokens, collection of design tokens used by the components in this Design System';
+
 function Tokens(props: Props) {
     function handleFocusColor(e: React.FocusEvent<HTMLInputElement>) {
         e.currentTarget.select();
@@ -73,11 +78,15 @@ function Tokens(props: Props) {
         <section className={styles.tokens}>
             <Head>
                 <title>
-                    Design tokens - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Design tokens, collection of design tokens used by the components in this Design System"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

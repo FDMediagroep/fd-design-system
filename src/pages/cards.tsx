@@ -1,20 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './cards.module.scss';
 import Link from 'next/link';
 import Head from 'next/head';
 
+const metaTitle = 'Cards';
+const metaDescription = 'Collection of all cards';
+
 function Page() {
-    const [bookmarked, setBookmarked] = useState(false);
-
-    function toggleBookmark() {
-        setBookmarked(!bookmarked);
-    }
-
     return (
         <>
             <Head>
-                <title>Cards - Design System - Het Financieele Dagblad</title>
-                <meta name="description" content="Collection of all cards" />
+                <title>
+                    {metaTitle} - Design System - Het Financieele Dagblad
+                </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
+                <meta
+                    property="twitter:description"
+                    content={metaDescription}
+                />
             </Head>
             <h1>Table of Contents</h1>
             <table className={styles.table}>

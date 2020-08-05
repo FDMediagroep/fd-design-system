@@ -11,6 +11,9 @@ de andere partij niet. Hoe werkt dat in een echtscheidingszaak?`,
     figcaption: `Bregje Dijksterhuis, rechtssocioloog VU`,
 };
 
+const metaTitle = 'Quote';
+const metaDescription = 'Quote, used to display an inline quote in articles';
+
 function Page() {
     /**
      * Use article background.
@@ -26,10 +29,16 @@ function Page() {
     return (
         <>
             <Head>
-                <title>Quote - Design System - Het Financieele Dagblad</title>
+                <title>
+                    {metaTitle} - Design System - Het Financieele Dagblad
+                </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Quote, used to display an inline quote in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

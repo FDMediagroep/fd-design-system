@@ -12,6 +12,9 @@ const initialProps = {
     ],
 };
 
+const metaTitle = 'Text frame';
+const metaDescription =
+    'Text frame, used to display an inline text frame in articles';
 function Page() {
     /**
      * Use article background.
@@ -28,11 +31,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Text frame - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Text frame, used to display an inline text frame in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

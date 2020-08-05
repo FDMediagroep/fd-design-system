@@ -3,14 +3,24 @@ import { Explain } from '../../components/Explain';
 import { Radio, getCssClassNames } from '../../components/input/Radio';
 import Head from 'next/head';
 
+const metaTitle = 'Radio input';
+const metaDescription = 'Radio input, used in forms';
+
 function Page() {
     return (
         <>
             <Head>
                 <title>
-                    Radio input - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
-                <meta name="description" content="Radio input, used in forms" />
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
+                <meta
+                    property="twitter:description"
+                    content={metaDescription}
+                />
             </Head>
 
             <Explain

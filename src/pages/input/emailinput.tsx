@@ -7,16 +7,23 @@ import {
 } from '../../components/input/TextInput';
 import Head from 'next/head';
 
+const metaTitle = 'E-mail input';
+const metaDescription = 'E-mail input, used in forms';
+
 function Page() {
     return (
         <>
             <Head>
                 <title>
-                    E-mail input - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="E-mail input, used in forms"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

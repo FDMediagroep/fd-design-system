@@ -6,7 +6,8 @@ import {
 } from '../../components/button/ButtonFollow';
 import { useState } from 'react';
 import Head from 'next/head';
-
+const metaTitle = 'Follow button';
+const metaDescription = 'Follow Button, used to follow content';
 function Follow() {
     const [followState, setFollowState] = useState(false);
     const [followState2, setFollowState2] = useState(true);
@@ -23,11 +24,15 @@ function Follow() {
         <>
             <Head>
                 <title>
-                    Follow Button - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Follow Button, used to follow content"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

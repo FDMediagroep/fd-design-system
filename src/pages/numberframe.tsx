@@ -12,6 +12,10 @@ const initialProps = {
     description: `Nama betaalde €31,8 mrd voor bankleningen en onderpand met een boekwaarde van €74 mrd, een korting van 57%`,
 };
 
+const metaTitle = 'Number frame';
+const metaDescription =
+    'Number frame, used to display an inline number frame in articles';
+
 function Page() {
     /**
      * Use article background.
@@ -28,11 +32,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Number frame - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Number frame, used to display an inline number frame in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 
