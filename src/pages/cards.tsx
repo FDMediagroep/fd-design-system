@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './cards.module.scss';
 import Link from 'next/link';
+import Head from 'next/head';
 
 function Page() {
     const [bookmarked, setBookmarked] = useState(false);
@@ -11,6 +12,10 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>Cards - Design System - Het Financieele Dagblad</title>
+                <meta name="description" content="Collection of all cards" />
+            </Head>
             <h1>Table of Contents</h1>
             <table className={styles.table}>
                 <thead>

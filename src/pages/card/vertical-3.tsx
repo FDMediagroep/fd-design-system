@@ -5,6 +5,7 @@ import {
     VerticalCard3,
     getCssClassNames,
 } from '../../components/card/VerticalCard3';
+import Head from 'next/head';
 
 const verticalCards1: any = [
     {
@@ -47,6 +48,16 @@ const verticalCards1: any = [
 function Page() {
     return (
         <>
+            <Head>
+                <title>
+                    Vertical Card 3 - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Vertical Card 3, used as opening/breaking on the homepage"
+                />
+            </Head>
+
             <Explain
                 anchor="vertical3"
                 cssClassNames={getCssClassNames()}
