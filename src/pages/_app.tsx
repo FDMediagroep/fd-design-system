@@ -48,25 +48,6 @@ function App({ Component, pageProps }) {
                     name="viewport"
                     content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"
                 />
-
-                <title>
-                    FD Design System - Design System - Het Financieele Dagblad
-                </title>
-
-                <meta
-                    name="description"
-                    content="Collection of all the styled components for FD.nl"
-                />
-                <meta property="og:title" content="FD Design System" />
-                <meta
-                    property="og:description"
-                    content="Collection of all the styled components for FD.nl"
-                />
-                <meta property="twitter:title" content="FD Design System" />
-                <meta
-                    property="twitter:description"
-                    content="Collection of all the styled components for FD.nl"
-                />
             </Head>
             <section className={pageStyle}>
                 <aside>
