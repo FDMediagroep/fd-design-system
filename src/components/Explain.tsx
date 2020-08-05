@@ -75,11 +75,11 @@ function Explain(props: Props) {
 
     useEffect(() => {
         if (formRef.current) {
-            (formRef.current as HTMLElement).childNodes.forEach(
-                (child: HTMLElement) => {
+            [].slice
+                .call((formRef.current as HTMLElement).childNodes)
+                .forEach((child: HTMLElement) => {
                     initializeDesignTokensTooltip(child);
-                }
-            );
+                });
         }
     }, [formRef]);
 
