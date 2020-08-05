@@ -3,17 +3,24 @@ import { Explain } from '../../components/Explain';
 import { ButtonCta, getCssClassNames } from '../../components/button/ButtonCta';
 import Head from 'next/head';
 
+const metaTitle = 'Button call-to-action';
+const metaDescription =
+    'Button call-to-action, used for e-mails, registration, subscription or sign-up-flows, log-in, banners and other non-editorial elements';
+
 function CTA() {
     return (
         <>
             <Head>
                 <title>
-                    Button call-to-action - Design System - Het Financieele
-                    Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Button call-to-action, used for e-mails, registration, subscription or sign-up-flows, log-in, banners and other non-editorial elements"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

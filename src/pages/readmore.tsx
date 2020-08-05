@@ -12,6 +12,9 @@ const initialProps = {
     ],
 };
 
+const metaTitle = 'Read more';
+const metaDescription =
+    'Read more, used to display links related to the article';
 function Page() {
     /**
      * Use article background.
@@ -28,11 +31,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Read more - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Read more, used to display links related to the article"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

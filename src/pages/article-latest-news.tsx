@@ -37,6 +37,10 @@ const initialProps = {
     ],
 };
 
+const metaTitle = 'Latest news';
+const metaDescription =
+    'Latest news, used to display the latest news in articles';
+
 function Page() {
     /**
      * Use article background.
@@ -53,11 +57,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Latest news - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Latest news, used to display the latest news in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

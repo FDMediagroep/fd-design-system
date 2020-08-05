@@ -3,14 +3,24 @@ import { Explain } from '../../components/Explain';
 import { Switch, getCssClassNames } from '../../components/input/Switch';
 import Head from 'next/head';
 
+const metaTitle = 'Switch';
+const metaDescription =
+    'Switch, used in forms. Functions like a checkbox but differs visually';
+
 function Page() {
     return (
         <>
             <Head>
-                <title>Switch - Design System - Het Financieele Dagblad</title>
+                <title>
+                    {metaTitle} - Design System - Het Financieele Dagblad
+                </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Switch, used in forms. Functions like a checkbox but differs visually"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

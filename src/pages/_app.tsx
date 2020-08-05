@@ -48,10 +48,6 @@ function App({ Component, pageProps }) {
                     name="viewport"
                     content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"
                 />
-
-                <title>
-                    FD Design System - Design System - Het Financieele Dagblad
-                </title>
             </Head>
             <section className={pageStyle}>
                 <aside>

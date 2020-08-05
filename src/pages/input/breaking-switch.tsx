@@ -6,6 +6,10 @@ import {
 } from '../../components/input/BreakingSwitch';
 import Head from 'next/head';
 
+const metaTitle = 'Breaking Switch';
+const metaDescription =
+    'Breaking Switch, used on the My News page to turn breaking alerts on/off';
+
 function Page() {
     const [checked, setChecked] = useState(false);
 
@@ -17,11 +21,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Breaking Switch - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Breaking Switch, used on the My News page to turn breaking alerts on/off"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

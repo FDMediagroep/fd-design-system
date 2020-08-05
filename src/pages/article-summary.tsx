@@ -16,6 +16,9 @@ const initialProps = {
     ],
 };
 
+const metaTitle = 'Summary';
+const metaDescription = 'Summary, used to display a summary in articles';
+
 function Page() {
     /**
      * Use article background.
@@ -31,10 +34,16 @@ function Page() {
     return (
         <>
             <Head>
-                <title>Summary - Design System - Het Financieele Dagblad</title>
+                <title>
+                    {metaTitle} - Design System - Het Financieele Dagblad
+                </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Summary, used to display a summary in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

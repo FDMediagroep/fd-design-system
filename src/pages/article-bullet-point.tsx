@@ -17,6 +17,9 @@ const initialProps = {
     ],
 };
 
+const metaTitle = 'Bullet point';
+const metaDescription = 'Bullet point, used in articles';
+
 function Page() {
     /**
      * Use article background.
@@ -33,11 +36,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Bullet point - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Bullet point, used in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

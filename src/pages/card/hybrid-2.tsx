@@ -64,6 +64,10 @@ const hybridCards1: any = [
     },
 ];
 
+const metaTitle = 'Hybrid Card 2';
+const metaDescription =
+    'Hybrid Card 2, without image, on small screens its similar to Horizontal Card 1 and wider screens similar to Vertical Card 1';
+
 function Page() {
     const [bookmarked, setBookmarked] = useState(false);
 
@@ -75,11 +79,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Hybrid Card 2 - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Hybrid Card 2, without image, on small screens its similar to Horizontal Card 1 and wider screens similar to Vertical Card 1"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

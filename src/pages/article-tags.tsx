@@ -8,6 +8,9 @@ import styles from './article-link-block.module.scss';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
 
+const metaTitle = 'Article tags';
+const metaDescription = 'Article tags, used to display tags in articles';
+
 function Page() {
     const [tags, setTags] = useState([
         {
@@ -94,11 +97,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Article tags - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Article tags, used to display tags in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

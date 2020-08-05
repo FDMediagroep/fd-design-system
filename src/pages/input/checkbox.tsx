@@ -3,14 +3,24 @@ import { Explain } from '../../components/Explain';
 import { Checkbox, getCssClassNames } from '../../components/input/Checkbox';
 import Head from 'next/head';
 
+const metaTitle = 'Checkbox';
+const metaDescription = 'Checkbox, used in forms';
+
 function Page() {
     return (
         <>
             <Head>
                 <title>
-                    Checkbox - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
-                <meta name="description" content="Checkbox, used in forms" />
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
+                <meta
+                    property="twitter:description"
+                    content={metaDescription}
+                />
             </Head>
 
             <Explain

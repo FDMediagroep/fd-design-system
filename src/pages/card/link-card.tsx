@@ -3,16 +3,23 @@ import { Explain } from '../../components/Explain';
 import { LinkCard, getCssClassNames } from '../../components/card/LinkCard';
 import Head from 'next/head';
 
+const metaTitle = 'Link Card';
+const metaDescription = 'Link Card, used on the My News page';
+
 function Page() {
     return (
         <>
             <Head>
                 <title>
-                    Link Card - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Link Card, used on the My News page"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

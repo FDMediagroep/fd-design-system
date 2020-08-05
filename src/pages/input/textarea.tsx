@@ -3,14 +3,24 @@ import { Explain } from '../../components/Explain';
 import { TextArea, getCssClassNames } from '../../components/input/TextArea';
 import Head from 'next/head';
 
+const metaTitle = 'Text area';
+const metaDescription = 'Text area, used in forms';
+
 function Page() {
     return (
         <>
             <Head>
                 <title>
-                    Text area - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
-                <meta name="description" content="Text area, used in forms" />
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
+                <meta
+                    property="twitter:description"
+                    content={metaDescription}
+                />
             </Head>
 
             <Explain

@@ -9,6 +9,9 @@ interface Props {
     cookies: { [cookieName: string]: string };
 }
 
+const metaTitle = 'A/B';
+const metaDescription = 'A/B, used to do multi-variate testing';
+
 function Demo(props: Props) {
     const [cssVariant, setCssVariant] = useState(null);
     function handleRunExperiment(experimentName, variantName) {
@@ -21,10 +24,16 @@ function Demo(props: Props) {
     return (
         <div className={styles.ab}>
             <Head>
-                <title>A/B - Design System - Het Financieele Dagblad</title>
+                <title>
+                    {metaTitle} - Design System - Het Financieele Dagblad
+                </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="A/B, used to do multi-variate testing"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

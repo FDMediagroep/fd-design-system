@@ -13,6 +13,10 @@ const initialProps = {
     fileName: '8de629dcb6211812af36b6824df2058f83deba9c.jpg',
 };
 
+const metaTitle = 'Article image';
+const metaDescription =
+    'Article image, used to display an inline image/photo in articles';
+
 function Page() {
     /**
      * Use article background.
@@ -29,11 +33,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Article image - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Article image, used to display an inline image/photo in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

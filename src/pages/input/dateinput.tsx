@@ -3,14 +3,24 @@ import { Explain } from '../../components/Explain';
 import { TextInput, getCssClassNames } from '../../components/input/TextInput';
 import Head from 'next/head';
 
+const metaTitle = 'Date input';
+const metaDescription = 'Date input, used in forms';
+
 function Page() {
     return (
         <>
             <Head>
                 <title>
-                    Date input - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
-                <meta name="description" content="Date input, used in forms" />
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
+                <meta
+                    property="twitter:description"
+                    content={metaDescription}
+                />
             </Head>
 
             <Explain

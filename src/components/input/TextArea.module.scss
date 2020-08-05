@@ -6,7 +6,7 @@
     display: inline-block;
     p {
         font-size: 0.75rem;
-        color: var(--credits);
+        color: var(--writer);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
@@ -129,7 +129,7 @@
             line-height: 1;
             padding: 0.5rem 1rem 0.5rem 1rem;
             transition: all 0.1s ease-out;
-            color: var(--credits);
+            color: var(--writer);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -179,7 +179,7 @@
         .textareaMessage {
             transition: all 0.3s ease-out;
             font-size: 0.75rem;
-            color: var(--credits);
+            color: var(--writer);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {

@@ -7,6 +7,9 @@ import {
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
 
+const metaTitle = 'Link card';
+const metaDescription = 'Link card, used to display a link card in articles';
+
 function Page() {
     /**
      * Use article background.
@@ -23,11 +26,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Link card - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Link card, used to display a link card in articles"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

@@ -153,6 +153,10 @@ const items = [
     },
 ];
 
+const metaTitle = 'Accordion';
+const metaDescription =
+    "Accordion, used to display an accordion for use in e.g. FAQ's";
+
 function Page() {
     /**
      * Use article background.
@@ -169,11 +173,15 @@ function Page() {
         <>
             <Head>
                 <title>
-                    Accordion - Design System - Het Financieele Dagblad
+                    {metaTitle} - Design System - Het Financieele Dagblad
                 </title>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="twitter:title" content="FD Design System" />
                 <meta
-                    name="description"
-                    content="Accordion, used to display an accordion for use in e.g. FAQ's"
+                    property="twitter:description"
+                    content={metaDescription}
                 />
             </Head>
 

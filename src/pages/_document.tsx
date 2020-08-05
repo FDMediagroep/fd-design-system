@@ -6,11 +6,6 @@ export default class MyDocument extends Document<any> {
         return (
             <Html lang="nl">
                 <Head>
-                    <meta
-                        name="description"
-                        content="Collection of all the styled components for FD.nl"
-                    />
-
                     <link href="/favicon.ico" rel="shortcut icon" />
                     <link
                         rel="apple-touch-icon"
@@ -91,24 +86,9 @@ export default class MyDocument extends Document<any> {
                     <script src="/assets/cssbeautify.js" />
                     <link href="/assets/fonts/style.css" rel="stylesheet" />
 
-                    <meta property="og:title" content="FD Design System" />
-
-                    <meta
-                        property="og:description"
-                        content="Collection of all the styled components for FD.nl"
-                    />
-
-                    <meta
-                        property="og:site_name"
-                        content="design-system.fd.nl"
-                    />
+                    <meta property="og:site_name" content="FD Design System" />
 
                     <meta property="og:type" content="article" />
-
-                    <meta
-                        property="og:url"
-                        content="https://design-system.fd.nl"
-                    />
 
                     <meta
                         property="og:image"
@@ -117,22 +97,13 @@ export default class MyDocument extends Document<any> {
 
                     <meta property="twitter:name" content="summary" />
 
-                    <meta property="twitter:title" content="FD Design System" />
-
-                    <meta
-                        property="twitter:site"
-                        content="design-system.fd.nl"
-                    />
+                    <meta property="twitter:site" content="FD Design System" />
 
                     <meta
                         property="twitter:image"
                         content="/assets/images/default-share.png"
                     />
 
-                    <meta
-                        property="twitter:description"
-                        content="Collection of all the styled components for FD.nl"
-                    />
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `try {
