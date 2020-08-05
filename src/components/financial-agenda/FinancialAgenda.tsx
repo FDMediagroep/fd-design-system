@@ -15,33 +15,39 @@ function FinancialAgenda(props: Props) {
     return (
         <div className={styles.financialAgenda}>
             <table>
-                <tr>
-                    <th>
-                        Datum:
-                        <b />
-                    </th>
-                    <th>
-                        <b>Bedrijf/land:</b>
-                    </th>
-                    <th>
-                        <b>Betreft:</b>
-                    </th>
-                </tr>
-
-                {props?.agendaItems?.map((agendaItem) => (
+                <thead>
                     <tr>
-                        <td>{agendaItem.date}</td>
-                        <td>{agendaItem.source}</td>
-                        <td>{agendaItem.description}</td>
+                        <th>
+                            Datum:
+                            <b />
+                        </th>
+                        <th>
+                            <b>Bedrijf/land:</b>
+                        </th>
+                        <th>
+                            <b>Betreft:</b>
+                        </th>
                     </tr>
-                ))}
-
-                <tr>
-                    <th colSpan={2} align="center">
-                        Bron: FD Research
-                    </th>
-                    <td>*=voorlopige datum</td>
-                </tr>
+                </thead>
+                <tbody>
+                    {props?.agendaItems?.map((agendaItem) => (
+                        <tr
+                            key={`${agendaItem.date}-${agendaItem.source}-${agendaItem.description}`}
+                        >
+                            <td>{agendaItem.date}</td>
+                            <td>{agendaItem.source}</td>
+                            <td>{agendaItem.description}</td>
+                        </tr>
+                    ))}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colSpan={2} align="center">
+                            Bron: FD Research
+                        </th>
+                        <td>*=voorlopige datum</td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     );

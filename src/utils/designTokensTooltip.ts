@@ -44,7 +44,7 @@ function tooltipHandler(e: MouseEvent) {
         );
         if (color) {
             const matches = color.match(/\d+/g);
-            if (matches.length === 3) {
+            if (matches && matches.length === 3) {
                 const hex = rgbToHex(
                     parseInt(matches[0], 10),
                     parseInt(matches[1], 10),
