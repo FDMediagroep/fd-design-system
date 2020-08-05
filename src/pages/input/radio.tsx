@@ -1,10 +1,18 @@
 import React from 'react';
 import { Explain } from '../../components/Explain';
 import { Radio, getCssClassNames } from '../../components/input/Radio';
+import Head from 'next/head';
 
 function Page() {
     return (
         <>
+            <Head>
+                <title>
+                    Radio input - Design System - Het Financieele Dagblad
+                </title>
+                <meta name="description" content="Radio input, used in forms" />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"

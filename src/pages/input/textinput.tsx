@@ -1,10 +1,18 @@
 import React from 'react';
 import { Explain } from '../../components/Explain';
 import { TextInput, getCssClassNames } from '../../components/input/TextInput';
+import Head from 'next/head';
 
 function Page() {
     return (
         <>
+            <Head>
+                <title>
+                    Text input - Design System - Het Financieele Dagblad
+                </title>
+                <meta name="description" content="Text input, used in forms" />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"

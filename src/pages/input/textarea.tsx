@@ -1,10 +1,18 @@
 import React from 'react';
 import { Explain } from '../../components/Explain';
 import { TextArea, getCssClassNames } from '../../components/input/TextArea';
+import Head from 'next/head';
 
 function Page() {
     return (
         <>
+            <Head>
+                <title>
+                    Text area - Design System - Het Financieele Dagblad
+                </title>
+                <meta name="description" content="Text area, used in forms" />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"

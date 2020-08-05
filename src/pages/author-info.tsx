@@ -5,6 +5,7 @@ import {
     getCssClassNames,
 } from '../components/author-info/AuthorInfo';
 import styles from './article-link-block.module.scss';
+import Head from 'next/head';
 
 function Page() {
     const [followState, setFollowState] = useState(false);
@@ -15,6 +16,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Author info - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Author info, used to display the author info in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}

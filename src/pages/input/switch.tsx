@@ -1,10 +1,19 @@
 import React from 'react';
 import { Explain } from '../../components/Explain';
 import { Switch, getCssClassNames } from '../../components/input/Switch';
+import Head from 'next/head';
 
 function Page() {
     return (
         <>
+            <Head>
+                <title>Switch - Design System - Het Financieele Dagblad</title>
+                <meta
+                    name="description"
+                    content="Switch, used in forms. Functions like a checkbox but differs visually"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Switch"

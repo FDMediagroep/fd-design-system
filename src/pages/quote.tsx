@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Explain } from '../components/Explain';
 import { Quote, getCssClassNames } from '../components/quote/Quote';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 const initialProps = {
     blockquote: `Je moet je afvragen wat er gebeurt als je één partij hebt – in
@@ -24,6 +25,14 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>Quote - Design System - Het Financieele Dagblad</title>
+                <meta
+                    name="description"
+                    content="Quote, used to display an inline quote in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Inline Quote"

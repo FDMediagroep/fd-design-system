@@ -1,10 +1,18 @@
 import React from 'react';
 import { Explain } from '../../components/Explain';
 import { Checkbox, getCssClassNames } from '../../components/input/Checkbox';
+import Head from 'next/head';
 
 function Page() {
     return (
         <>
+            <Head>
+                <title>
+                    Checkbox - Design System - Het Financieele Dagblad
+                </title>
+                <meta name="description" content="Checkbox, used in forms" />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Checkbox"

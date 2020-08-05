@@ -6,6 +6,7 @@ import {
 } from '../components/bullet-point/BulletPoint';
 import PageStore from '../stores/PageStore';
 import styles from './article-bullet-point.module.scss';
+import Head from 'next/head';
 
 const initialProps = {
     bullets: [
@@ -30,6 +31,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Bullet point - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Bullet point, used in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
@@ -39,11 +50,6 @@ function Page() {
                     <>
                         <p>Used as bullet points in articles.</p>
                         <p>This element is used to display bullet points.</p>
-                        <p>
-                            Note: There is a reference to the arrow icon in the
-                            CSS. Make sure your site contains this icon and the
-                            CSS points to the correct location.
-                        </p>
                     </>
                 }
             >
@@ -59,11 +65,6 @@ function Page() {
                     <>
                         <p>Used as right-aligned bullet points in articles.</p>
                         <p>This element is used to display bullet points.</p>
-                        <p>
-                            Note: There is a reference to the arrow icon in the
-                            CSS. Make sure your site contains this icon and the
-                            CSS points to the correct location.
-                        </p>
                     </>
                 }
             >
@@ -79,11 +80,6 @@ function Page() {
                     <>
                         <p>Used as bullet points in longread articles.</p>
                         <p>This element is used to display bullet points.</p>
-                        <p>
-                            Note: There is a reference to the arrow icon in the
-                            CSS. Make sure your site contains this icon and the
-                            CSS points to the correct location.
-                        </p>
                     </>
                 }
             >
@@ -102,11 +98,6 @@ function Page() {
                             articles.
                         </p>
                         <p>This element is used to display bullet points.</p>
-                        <p>
-                            Note: There is a reference to the arrow icon in the
-                            CSS. Make sure your site contains this icon and the
-                            CSS points to the correct location.
-                        </p>
                     </>
                 }
             >

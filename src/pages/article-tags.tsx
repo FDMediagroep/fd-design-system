@@ -6,6 +6,7 @@ import {
 } from '../components/article-tags/ArticleTags';
 import styles from './article-link-block.module.scss';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 function Page() {
     const [tags, setTags] = useState([
@@ -91,6 +92,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Article tags - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Article tags, used to display tags in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}

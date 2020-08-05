@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Explain } from '../components/Explain';
 import { WordFrame, getCssClassNames } from '../components/wordframe/WordFrame';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 const initialProps = {
     title: `WordFrame test`,
@@ -24,6 +25,16 @@ function Index() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Word frame - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Word frame, used to display an inline word frame in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="WordFrame"

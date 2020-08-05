@@ -5,6 +5,7 @@ import {
     HybridCard2,
     getCssClassNames,
 } from '../../components/card/HybridCard2';
+import Head from 'next/head';
 
 const hybridCards1: any = [
     {
@@ -72,6 +73,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Hybrid Card 2 - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Hybrid Card 2, without image, on small screens its similar to Horizontal Card 1 and wider screens similar to Vertical Card 1"
+                />
+            </Head>
+
             <Explain
                 anchor="hybrid2"
                 cssClassNames={getCssClassNames()}

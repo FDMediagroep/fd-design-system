@@ -5,6 +5,7 @@ import {
     getCssClassNames,
 } from '../components/article-image/ArticleImage';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 const initialProps = {
     caption: `What a photo`,
@@ -26,6 +27,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Article image - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Article image, used to display an inline image/photo in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Image"

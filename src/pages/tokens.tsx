@@ -3,6 +3,7 @@ import styles from './tokens.module.scss';
 import fs from 'fs';
 import path from 'path';
 import { BookmarkIcon } from '../design-tokens/icons';
+import Head from 'next/dist/next-server/lib/head';
 
 interface Props {
     colors: any;
@@ -70,6 +71,16 @@ function Tokens(props: Props) {
 
     return (
         <section className={styles.tokens}>
+            <Head>
+                <title>
+                    Design tokens - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Design tokens, collection of design tokens used by the components in this Design System"
+                />
+            </Head>
+
             <h1>Design tokens</h1>
             <small>Page generated on: {props.updated}</small>
             <fieldset>

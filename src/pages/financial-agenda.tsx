@@ -5,6 +5,7 @@ import {
     getCssClassNames,
 } from '../components/financial-agenda/FinancialAgenda';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 const data = [
     {
@@ -173,6 +174,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Financial agenda - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Financial agenda, used to display the financial agenda in a table in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Financial Agenda"

@@ -4,6 +4,7 @@ import {
     BreakingSwitch,
     getCssClassNames,
 } from '../../components/input/BreakingSwitch';
+import Head from 'next/head';
 
 function Page() {
     const [checked, setChecked] = useState(false);
@@ -14,6 +15,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Breaking Switch - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Breaking Switch, used on the My News page to turn breaking alerts on/off"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Breaking Switch"

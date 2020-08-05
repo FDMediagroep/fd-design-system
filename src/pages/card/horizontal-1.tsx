@@ -4,6 +4,7 @@ import {
     HorizontalCard1,
     getCssClassNames,
 } from '../../components/card/HorizontalCard1';
+import Head from 'next/head';
 
 const horizontalCards1: any = [
     {
@@ -57,6 +58,16 @@ const horizontalCards1: any = [
 function Page() {
     return (
         <>
+            <Head>
+                <title>
+                    Horizontal Card 1 - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Horizontal Card 1, used on category, dossier pages"
+                />
+            </Head>
+
             <Explain
                 anchor="horizontal1"
                 cssClassNames={getCssClassNames()}

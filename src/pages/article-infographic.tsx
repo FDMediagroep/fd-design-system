@@ -5,6 +5,7 @@ import {
     getCssClassNames,
 } from '../components/article-image/Infographic';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 const initialProps = {
     smallImageUrl:
@@ -27,6 +28,17 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Infographic extended - Design System - Het Financieele
+                    Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Infographic extended, used to display an inline infographic in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Infographic"

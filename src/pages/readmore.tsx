@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Explain } from '../components/Explain';
 import { ReadMore, getCssClassNames } from '../components/readmore/ReadMore';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 const initialProps = {
     title: `Ridiculus Sollicitudin Cras Ipsum Ornare`,
@@ -25,6 +26,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Read more - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Read more, used to display links related to the article"
+                />
+            </Head>
+
             <Explain
                 bgcolor="var(--product-background-2)"
                 cssClassNames={getCssClassNames()}

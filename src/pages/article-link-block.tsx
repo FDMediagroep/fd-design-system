@@ -6,6 +6,7 @@ import {
 } from '../components/article-link-block/LinkBlock';
 import PageStore from '../stores/PageStore';
 import styles from './article-link-block.module.scss';
+import Head from 'next/head';
 
 function Page() {
     /**
@@ -21,6 +22,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Link block - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Link block, used to display a link block in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}

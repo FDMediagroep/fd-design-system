@@ -5,10 +5,21 @@ import {
     getCssClassNames,
     Patterns,
 } from '../../components/input/TextInput';
+import Head from 'next/head';
 
 function Page() {
     return (
         <>
+            <Head>
+                <title>
+                    E-mail input - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="E-mail input, used in forms"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"

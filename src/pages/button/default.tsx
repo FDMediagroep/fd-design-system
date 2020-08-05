@@ -1,10 +1,19 @@
 import React from 'react';
 import { Explain } from '../../components/Explain';
 import { Button, getCssClassNames } from '../../components/button/Button';
+import Head from 'next/head';
 
 function DefaultButton() {
     return (
         <>
+            <Head>
+                <title>Button - Design System - Het Financieele Dagblad</title>
+                <meta
+                    name="description"
+                    content="Button, used to interact with the content: comment, share and vote"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Button (default)"
@@ -12,11 +21,8 @@ function DefaultButton() {
                 description={
                     <>
                         <p>
-                            Use to interact with the content: comment, share and
-                            vote. Button is also used to show more articles on
-                            overviewpages for authors, tags, beurs, dossiers
-                            (overview and single dossierpage), search and Mijn
-                            nieuws.
+                            Used to interact with the content: comment, share
+                            and vote.
                         </p>
                         <p>
                             Supportive: button supports editorial content, but
@@ -35,11 +41,8 @@ function DefaultButton() {
                 description={
                     <>
                         <p>
-                            Use to interact with the content: comment, share and
-                            vote. Button is also used to show more articles on
-                            overviewpages for authors, tags, beurs, dossiers
-                            (overview and single dossierpage), search and Mijn
-                            nieuws.
+                            Used to interact with the content: comment, share
+                            and vote.
                         </p>
                         <p>
                             Supportive: button supports editorial content, but
@@ -60,11 +63,8 @@ function DefaultButton() {
                 description={
                     <>
                         <p>
-                            Use to interact with the content: comment, share and
-                            vote. Button is also used to show more articles on
-                            overviewpages for authors, tags, beurs, dossiers
-                            (overview and single dossierpage), search and Mijn
-                            nieuws.
+                            Used to interact with the content: comment, share
+                            and vote.
                         </p>
                         <p>
                             Supportive: button supports editorial content, but

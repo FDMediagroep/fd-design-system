@@ -5,10 +5,22 @@ import {
     getCssClassNames,
     Patterns,
 } from '../../components/input/TextInput';
+import Head from 'next/head';
 
 function Page() {
     return (
         <>
+            <Head>
+                <title>
+                    Mobile number input - Design System - Het Financieele
+                    Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Mobile number input, used in forms"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"

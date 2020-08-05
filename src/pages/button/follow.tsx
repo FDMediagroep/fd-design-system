@@ -5,6 +5,7 @@ import {
     getCssClassNames,
 } from '../../components/button/ButtonFollow';
 import { useState } from 'react';
+import Head from 'next/head';
 
 function Follow() {
     const [followState, setFollowState] = useState(false);
@@ -20,6 +21,16 @@ function Follow() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Follow Button - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Follow Button, used to follow content"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Follow button (default)"

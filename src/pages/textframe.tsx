@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Explain } from '../components/Explain';
 import { TextFrame, getCssClassNames } from '../components/textframe/TextFrame';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 const initialProps = {
     title:
@@ -25,6 +26,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Text frame - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Text frame, used to display an inline text frame in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="TextFrame"

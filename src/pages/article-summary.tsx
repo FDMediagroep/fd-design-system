@@ -5,6 +5,7 @@ import {
     getCssClassNames,
 } from '../components/article-summary/Summary';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 const initialProps = {
     title: 'In het kort',
@@ -29,6 +30,14 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>Summary - Design System - Het Financieele Dagblad</title>
+                <meta
+                    name="description"
+                    content="Summary, used to display a summary in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Summary"
