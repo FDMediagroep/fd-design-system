@@ -1,0 +1,51 @@
+@import '../utils/map-deep-get.scss';
+@import '../design-tokens/colors.scss';
+@import '../design-tokens/media.scss';
+
+.tooltip {
+    display: none;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        display: flex;
+    }
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 20vw;
+    border: 5px solid var(--dividers);
+    background-color: var(--card);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
+        border: 5px solid #{map-deep-get($colors, 'colors', 'neutrals', 50)};
+    }
+
+    h3,
+    p {
+        margin: 0;
+    }
+
+    h3 {
+        font-size: 0.8rem;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+
+    fieldset {
+        border: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border: 1px solid #{map-deep-get($colors, 'colors', 'neutrals', 50)};
+        }
+    }
+    legend {
+        color: var(--writer);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+        }
+    }
+}

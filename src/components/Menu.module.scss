@@ -16,6 +16,8 @@
     position: sticky;
     top: 0;
     margin-right: 1rem;
+    background: inherit;
+    z-index: 1;
 
     &::-webkit-scrollbar {
         width: 0.5rem;
