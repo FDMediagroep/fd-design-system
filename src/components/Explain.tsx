@@ -1,4 +1,4 @@
-import React, { useState, ReactElement, useEffect } from 'react';
+import React, { useState, ReactElement, useEffect, useRef } from 'react';
 import styles from './Explain.module.scss';
 import { getCodePenData } from '../utils/codepen';
 import { renderToString } from 'react-dom/server';
@@ -7,6 +7,8 @@ import { getStyle } from '../utils/styles';
 import { getTags, getDestination } from '../utils/paths';
 import Link from 'next/link';
 import reactElementToJSXString from 'react-element-to-jsx-string';
+import { initializeDesignTokensTooltip } from '../utils/designTokensTooltip';
+import { Tooltip } from './Tooltip';
 
 declare let window: Window | any;
 declare let cssbeautify: (css: string) => string;
@@ -69,6 +71,17 @@ function Explain(props: Props) {
     const [tags, setTags] = useState([]);
     const [destination, setDestination] = useState('');
     const [showCode, setShowCode] = useState(false);
+    const formRef = useRef(null);
+
+    useEffect(() => {
+        if (formRef.current) {
+            (formRef.current as HTMLElement).childNodes.forEach(
+                (child: HTMLElement) => {
+                    initializeDesignTokensTooltip(child);
+                }
+            );
+        }
+    }, [formRef]);
 
     useEffect(() => {
         setReact(
@@ -162,6 +175,7 @@ function Explain(props: Props) {
                 </section>
             )}
             <form
+                ref={formRef}
                 className={`${styles.previewContainer}${
                     props.previewFlexDirection === 'row' ? ` ${styles.row}` : ''
                 }${props.previewClassName ? ` ${props.previewClassName}` : ''}`}

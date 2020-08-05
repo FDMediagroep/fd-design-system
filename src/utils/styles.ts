@@ -2,6 +2,7 @@ declare let document: any;
 
 export function getStyle(...classNames: string[]) {
     let result: string = '';
+    let rootStyles: string = '';
     if (typeof document.styleSheets === 'undefined') {
         return result;
     }
@@ -32,7 +33,9 @@ export function getStyle(...classNames: string[]) {
             const style = styles[idx];
             // Add :root styles as well for CSS Variables.
             if (style.cssText?.indexOf(':root') > -1) {
-                result = `${result ? `${result}\r\n` : ''}${style.cssText}`;
+                rootStyles = `${rootStyles ? `${rootStyles}\r\n` : ''}${
+                    style.cssText
+                }`;
             }
             classNames.forEach((className) => {
                 if (style.cssText?.indexOf(`.${className}`) > -1) {
@@ -41,5 +44,5 @@ export function getStyle(...classNames: string[]) {
             });
         }
     }
-    return result;
+    return `${rootStyles}\r\n${result}`;
 }
