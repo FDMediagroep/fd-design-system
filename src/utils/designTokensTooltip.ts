@@ -66,7 +66,7 @@ function tooltipHandler(e: MouseEvent) {
 
 const register = [];
 
-function clearRegister() {
+export function clearDesignTokensTooltips() {
     register.forEach((el) => {
         el.removeEventListener('mouseover', tooltipHandler);
     });
@@ -74,7 +74,6 @@ function clearRegister() {
 
 export function initializeDesignTokensTooltip(el: HTMLElement) {
     if (window.getComputedStyle) {
-        clearRegister();
         el.addEventListener('mouseover', tooltipHandler);
         register.push(el);
     }
