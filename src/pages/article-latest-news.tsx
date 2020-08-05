@@ -5,6 +5,7 @@ import {
     getCssClassNames,
 } from '../components/article-latest-news/ArticleLatestNews';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 const initialProps = {
     news: [
@@ -50,6 +51,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Latest news - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Latest news, used to display the latest news in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Latest news"

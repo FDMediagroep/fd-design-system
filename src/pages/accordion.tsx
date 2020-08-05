@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Explain } from '../components/Explain';
 import { Accordion, getCssClassNames } from '../components/accordion/Accordion';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 const items = [
     {
@@ -166,6 +167,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Accordion - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Accordion, used to display an accordion for use in e.g. FAQ's"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Accordion"

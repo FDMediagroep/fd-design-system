@@ -5,6 +5,7 @@ import {
     getCssClassNames,
 } from '../components/numberframe/NumberFrame';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 const initialProps = {
     number: `57%`,
@@ -25,6 +26,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Number frame - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Number frame, used to display an inline number frame in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="NumberFrame"

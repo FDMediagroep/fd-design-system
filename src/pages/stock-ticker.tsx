@@ -5,6 +5,7 @@ import {
     getCssClassNames,
     Props,
 } from '../components/stockticker/StockTicker';
+import Head from 'next/head';
 
 const initialProps: Props = {
     stocks: [
@@ -121,6 +122,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Stock ticker - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Stock ticker, used to display a stock ticker on the homepage"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Stock Ticker"

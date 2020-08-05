@@ -5,6 +5,7 @@ import {
     getCssClassNames,
 } from '../components/article-link-card/LinkCard';
 import PageStore from '../stores/PageStore';
+import Head from 'next/head';
 
 function Page() {
     /**
@@ -20,6 +21,16 @@ function Page() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Link card - Design System - Het Financieele Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Link card, used to display a link card in articles"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Link Card"

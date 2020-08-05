@@ -3,6 +3,7 @@ import { ABProvider, Experiment, Variant } from '../components/ab/ab';
 import { parseCookies } from 'nookies';
 import styles from './ab.module.scss';
 import { GetServerSidePropsContext } from 'next';
+import Head from 'next/head';
 
 interface Props {
     cookies: { [cookieName: string]: string };
@@ -19,6 +20,14 @@ function Demo(props: Props) {
 
     return (
         <div className={styles.ab}>
+            <Head>
+                <title>A/B - Design System - Het Financieele Dagblad</title>
+                <meta
+                    name="description"
+                    content="A/B, used to do multi-variate testing"
+                />
+            </Head>
+
             <ABProvider initialState={props.cookies}>
                 <Experiment
                     name="ab-headline-demo"
