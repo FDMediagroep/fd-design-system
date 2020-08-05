@@ -1,10 +1,22 @@
 import React from 'react';
 import { Explain } from '../../components/Explain';
 import { ButtonCta, getCssClassNames } from '../../components/button/ButtonCta';
+import Head from 'next/head';
 
 function CTA() {
     return (
         <>
+            <Head>
+                <title>
+                    Button call-to-action - Design System - Het Financieele
+                    Dagblad
+                </title>
+                <meta
+                    name="description"
+                    content="Button call-to-action, used for e-mails, registration, subscription or sign-up-flows, log-in, banners and other non-editorial elements"
+                />
+            </Head>
+
             <Explain
                 cssClassNames={getCssClassNames()}
                 legend="Button CTA (default)"
