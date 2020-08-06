@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Tooltip.module.scss';
 import TooltipStore from '../stores/TooltipStore';
 
@@ -17,33 +17,41 @@ export interface Summary {
     borderLeftColor?: Token;
 }
 
-interface Props {
-    title: string;
-    description: Summary;
-}
+function Tooltip() {
+    const [tooltipSummary, setTooltipSummary] = useState<Summary>(null);
 
-function Tooltip(props: Props) {
+    useEffect(() => {
+        const tooltipSubscriptionId = TooltipStore.subscribe(() => {
+            setTooltipSummary(TooltipStore.getSummary());
+        });
+        setTooltipSummary(TooltipStore.getSummary());
+
+        return () => {
+            TooltipStore.unsubscribe(tooltipSubscriptionId);
+        };
+    }, []);
+
     function handleClick() {
         TooltipStore.setSummary(null);
     }
 
-    return (
+    return tooltipSummary ? (
         <div className={styles.tooltip} onClick={handleClick}>
-            <h3>{props.title}</h3>
+            <h3>Design Tokens</h3>
             {styleProps.map((styleProp) => {
-                if (props.description && props.description[styleProp]) {
+                if (tooltipSummary[styleProp]) {
                     return (
                         <fieldset key={styleProp}>
                             <legend>{styleProp}</legend>
-                            <p>{props?.description?.[styleProp]?.name}</p>
-                            <p>{props?.description?.[styleProp]?.rgb}</p>
-                            <p>{props?.description?.[styleProp]?.hex}</p>
+                            <p>{tooltipSummary?.[styleProp]?.name}</p>
+                            <p>{tooltipSummary?.[styleProp]?.rgb}</p>
+                            <p>{tooltipSummary?.[styleProp]?.hex}</p>
                         </fieldset>
                     );
                 }
             })}
         </div>
-    );
+    ) : null;
 }
 
 const styleProps = [
