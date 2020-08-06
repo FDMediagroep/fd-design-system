@@ -6,10 +6,8 @@ import { Menu } from '../components/Menu';
 import PageStore, { Page } from '../stores/PageStore';
 import Head from 'next/head';
 import { Tooltip } from '../components/Tooltip';
-import TooltipStore from '../stores/TooltipStore';
 
 function App({ Component, pageProps }) {
-    const [tooltipSummary, setTooltipSummary] = useState(null);
     const [pageType, setPageType] = useState<Page>(PageStore.getPageType());
     const [pageStyle, setPageStyle] = useState(styles.overview);
     const darkModeMediaQuery =
@@ -28,14 +26,8 @@ function App({ Component, pageProps }) {
         });
         setPageType(PageStore.getPageType());
 
-        const tooltipSubscriptionId = TooltipStore.subscribe(() => {
-            setTooltipSummary(TooltipStore.getSummary());
-        });
-        setTooltipSummary(TooltipStore.getSummary());
-
         return () => {
             PageStore.unsubscribe(subscriptionId);
-            TooltipStore.unsubscribe(tooltipSubscriptionId);
         };
     }, []);
 
@@ -65,12 +57,7 @@ function App({ Component, pageProps }) {
                 <main>
                     <Component {...pageProps} />
                 </main>
-                {tooltipSummary && (
-                    <Tooltip
-                        title="Design Tokens"
-                        description={tooltipSummary}
-                    />
-                )}
+                <Tooltip />
             </section>
         </>
     );

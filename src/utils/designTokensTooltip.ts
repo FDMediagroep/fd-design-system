@@ -79,14 +79,21 @@ function tooltipHandler(e: MouseEvent) {
 
 const register = [];
 
+function handleMouseOut() {
+    TooltipStore.setSummary(null);
+}
+
 export function clearDesignTokensTooltips() {
     register.forEach((el) => {
+        el.removeEventListener('mouseout', handleMouseOut);
         el.removeEventListener('mouseover', tooltipHandler);
     });
+    TooltipStore.setSummary(null);
 }
 
 export function initializeDesignTokensTooltip(el: HTMLElement) {
     if (window.getComputedStyle) {
+        el.addEventListener('mouseout', handleMouseOut);
         el.addEventListener('mouseover', tooltipHandler);
         register.push(el);
     }
