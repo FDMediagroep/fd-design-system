@@ -29,7 +29,7 @@ function Menu() {
                 <a>Design Tokens</a>
             </Link>
             <a
-                href="/downloads"
+                href="https://fdmediagroep.atlassian.net/wiki/spaces/SHAR/pages/729186428/Bestandslijsten"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
             >
