@@ -202,10 +202,10 @@ function Menu() {
                 href="/[section]/[id]/[title]"
                 as="/achtergrond/1324449/alle-verrijking-op-een-rijtje"
             >
-                <a>Test article</a>
+                <a rel="nofollow">Test article</a>
             </Link>
             <Link href="/fd-web">
-                <a>Test page</a>
+                <a rel="nofollow">Test page</a>
             </Link>
         </nav>
     );

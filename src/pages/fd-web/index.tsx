@@ -5,6 +5,7 @@ import { getPayload } from '../api/fd-web';
 import { HybridCard1 } from '../../components/card/HybridCard1';
 import { VerticalCard3 } from '../../components/card/VerticalCard3';
 import { HybridCard2 } from '../../components/card/HybridCard2';
+import Head from 'next/head';
 
 interface Props {
     data: any;
@@ -18,6 +19,9 @@ function Page(props: Props) {
     try {
         return (
             <section className={styles.page}>
+                <Head>
+                    <meta name="robots" content="noindex" />
+                </Head>
                 <p>Last update: {new Date(props.timestamp).toLocaleString()}</p>
 
                 <section className={styles.topNews}>

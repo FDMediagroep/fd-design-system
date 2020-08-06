@@ -6,6 +6,7 @@ import PageStore from '../../../stores/PageStore';
 import { OEmbedLoader } from '../../../utils/OEmbedLoader';
 import { ArticleMeta } from '../../../components/article-meta/ArticleMeta';
 import { getPayload } from '../../api/[section]/[id]/[title]';
+import Head from 'next/head';
 
 interface Props {
     section: string;
@@ -52,6 +53,10 @@ function Article(props: Props) {
 
         return (
             <article className={styles.article}>
+                <Head>
+                    <meta name="robots" content="noindex" />
+                </Head>
+
                 <header>
                     <ArticleMeta
                         authors={props.authors}
