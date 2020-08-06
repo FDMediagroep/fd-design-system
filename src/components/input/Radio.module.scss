@@ -7,7 +7,7 @@
     color: var(--content-copy);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     }
 
     input {
@@ -27,7 +27,7 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
 
         font-size: 1rem;
@@ -49,7 +49,7 @@
                 border: 1px solid #{map-deep-get(
                         $colors,
                         'colors',
-                        'neutrals',
+                        'neutral',
                         50
                     )};
             }

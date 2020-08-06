@@ -1,54 +1,54 @@
-@import "../../utils/map-deep-get.scss";
-@import "../../design-tokens/colors.scss";
-@import "../../design-tokens/media.scss";
-@import "../../design-tokens/typography.scss";
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
 
 .numberFrame {
     margin: 3rem 0;
     width: 100%;
-    @media screen and (min-width: map-deep-get($media, "sizes", "s")) {
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         margin: 3.5rem 0;
     }
-    @media screen and (min-width: map-deep-get($media, "sizes", "l")) {
+    @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
         margin: 4rem 0;
     }
 
     color: var(--numberframe);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, "colors", "neutrals", 30)};
+        color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     }
     h2 {
         -webkit-font-smoothing: antialiased;
         line-height: 1;
         margin: 0;
         padding: 0;
-        font-family: map-deep-get($typography, "font-family", "bold"),
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
         font-size: 2.5rem;
-        @media screen and (min-width: map-deep-get($media, "sizes", "s")) {
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             font-size: 2.65rem;
         }
-        @media screen and (min-width: map-deep-get($media, "sizes", "l")) {
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             font-size: 2.925rem;
         }
 
         &:before {
-            content: "";
+            content: '';
             padding: 1rem 0 0 0;
             display: block;
             width: 68px;
             border-top: 8px solid #{map-deep-get(
                     $colors,
-                    "colors",
-                    "neutrals",
+                    'colors',
+                    'neutral',
                     30
                 )};
-            @media screen and (min-width: map-deep-get($media, "sizes", "s")) {
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
                 width: 79.36px;
                 border-top: 9.34px solid var(--numberframe);
             }
-            @media screen and (min-width: map-deep-get($media, "sizes", "l")) {
+            @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
                 width: 91px;
                 border-top: 11px solid var(--numberframe);
             }
@@ -62,15 +62,15 @@
 
     p {
         margin-top: 1rem;
-        font-family: map-deep-get($typography, "font-family", "bold"),
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
         font-size: 1rem;
         line-height: 1.5;
-        @media screen and (min-width: map-deep-get($media, "sizes", "s")) {
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             line-height: 1.5;
             font-size: 1.05625rem;
         }
-        @media screen and (min-width: map-deep-get($media, "sizes", "l")) {
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             line-height: 1.5;
             font-size: 1.16875rem;
         }

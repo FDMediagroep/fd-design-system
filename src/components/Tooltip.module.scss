@@ -16,8 +16,8 @@
     background-color: var(--card);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        border: 5px solid #{map-deep-get($colors, 'colors', 'neutrals', 50)};
+        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        border: 5px solid #{map-deep-get($colors, 'colors', 'neutral', 50)};
     }
 
     h3,
@@ -37,7 +37,7 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            border: 1px solid #{map-deep-get($colors, 'colors', 'neutrals', 50)};
+            border: 1px solid #{map-deep-get($colors, 'colors', 'neutral', 50)};
         }
     }
     legend {
@@ -45,7 +45,7 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         }
     }
 }

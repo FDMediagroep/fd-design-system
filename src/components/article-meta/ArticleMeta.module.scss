@@ -16,7 +16,7 @@
     color: var(--writer);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+        color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     }
 
     a.author:hover {
@@ -33,7 +33,7 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         }
         text-decoration: none;
         &:not(:first-child):before {

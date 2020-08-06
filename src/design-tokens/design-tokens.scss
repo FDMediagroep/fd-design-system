@@ -11,18 +11,13 @@
     &.dark {
         --filter-invert: invert(1);
 
-        --product-background: #{map-deep-get($colors, 'colors', 'neutrals', 0)};
-        --product-background-2: #{map-deep-get(
-                $colors,
-                'colors',
-                'neutrals',
-                10
-            )};
-        --content-background: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        --product-background: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+        --product-background-2: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        --content-background: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         --navigation-background: #{map-deep-get(
                 $colors,
                 'colors',
-                'neutrals',
+                'neutral',
                 10
             )};
         --opaque-label-background: #{map-deep-get(
@@ -43,30 +38,30 @@
                 'persoonlijk',
                 50
             )};
-        --dividers: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --content-copy: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --opaque-label-copy: #{map-deep-get($colors, 'colors', 'neutrals', 100)};
-        --title-copy: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --meta-copy: #{map-deep-get($colors, 'colors', 'neutrals', 60)};
-        --quote: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --numberframe: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --textframe: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --wordframe: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --functional-copy: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --captions: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
-        --credits: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
-        --writer: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
-        --time: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
-        --card: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
-        --card-2: #{map-deep-get($colors, 'colors', 'neutrals', 20)};
+        --dividers: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --content-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --opaque-label-copy: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+        --title-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --meta-copy: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+        --quote: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --numberframe: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --textframe: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --wordframe: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --functional-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --captions: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+        --credits: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+        --writer: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+        --time: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+        --card: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        --card-2: #{map-deep-get($colors, 'colors', 'neutral', 20)};
 
         --primary: #{map-deep-get($colors, 'colors', 'primary', 50)};
-        --input-color: #{map-deep-get($colors, 'colors', 'neutrals', 20)};
-        --input-underline: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
+        --input-color: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+        --input-underline: #{map-deep-get($colors, 'colors', 'neutral', 50)};
         --input-underline-hover: #{map-deep-get(
                 $colors,
                 'colors',
-                'neutrals',
+                'neutral',
                 40
             )};
         --input-error: #{map-deep-get($colors, 'colors', 'negative', 25)};
@@ -90,10 +85,10 @@
         --stock-negative-fill: #{map-deep-get($colors, 'colors', 'negative', 25)};
         --stock-positive: #{map-deep-get($colors, 'colors', 'primary', 50)};
         --stock-positive-fill: #{map-deep-get($colors, 'colors', 'primary', 50)};
-        --stock-closed: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+        --stock-closed: #{map-deep-get($colors, 'colors', 'neutral', 40)};
 
-        --button: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
-        --button-hover: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+        --button: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+        --button-hover: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         --button-cta: #{map-deep-get($colors, 'colors', 'persoonlijk', 75)};
         --button-cta-hover: #{map-deep-get($colors, 'colors', 'persoonlijk', 50)};
 
@@ -109,18 +104,13 @@
     & {
         --filter-invert: invert(0);
 
-        --product-background: #{map-deep-get($colors, 'colors', 'neutrals', 80)};
-        --product-background-2: #{map-deep-get(
-                $colors,
-                'colors',
-                'neutrals',
-                90
-            )};
-        --content-background: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
+        --product-background: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+        --product-background-2: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --content-background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
         --navigation-background: #{map-deep-get(
                 $colors,
                 'colors',
-                'neutrals',
+                'neutral',
                 70
             )};
         --opaque-label-background: #{map-deep-get(
@@ -141,30 +131,30 @@
                 'persoonlijk',
                 75
             )};
-        --dividers: #{map-deep-get($colors, 'colors', 'neutrals', 60)};
-        --content-copy: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
-        --opaque-label-copy: #{map-deep-get($colors, 'colors', 'neutrals', 100)};
-        --title-copy: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
-        --meta-copy: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
-        --quote: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --numberframe: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --textframe: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --wordframe: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --functional-copy: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --captions: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
-        --credits: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
-        --writer: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --time: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --card: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --card-2: #{map-deep-get($colors, 'colors', 'neutrals', 80)};
+        --dividers: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+        --content-copy: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        --opaque-label-copy: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+        --title-copy: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        --meta-copy: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+        --quote: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --numberframe: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --textframe: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --wordframe: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --functional-copy: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --captions: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --credits: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+        --writer: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --time: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --card: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --card-2: #{map-deep-get($colors, 'colors', 'neutral', 80)};
 
         --primary: #{map-deep-get($colors, 'colors', 'primary', 75)};
-        --input-color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
-        --input-underline: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
+        --input-color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        --input-underline: #{map-deep-get($colors, 'colors', 'neutral', 50)};
         --input-underline-hover: #{map-deep-get(
                 $colors,
                 'colors',
-                'neutrals',
+                'neutral',
                 40
             )};
         --input-error: #{map-deep-get($colors, 'colors', 'negative', 25)};
@@ -188,10 +178,10 @@
         --stock-negative-fill: #{map-deep-get($colors, 'colors', 'negative', 25)};
         --stock-positive: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --stock-positive-fill: #{map-deep-get($colors, 'colors', 'primary', 50)};
-        --stock-closed: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+        --stock-closed: #{map-deep-get($colors, 'colors', 'neutral', 40)};
 
-        --button: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
-        --button-hover: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+        --button: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+        --button-hover: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         --button-cta: #{map-deep-get($colors, 'colors', 'persoonlijk', 100)};
         --button-cta-hover: #{map-deep-get($colors, 'colors', 'persoonlijk', 75)};
 
@@ -209,18 +199,13 @@
     @media (prefers-color-scheme: dark) {
         --filter-invert: invert(1);
 
-        --product-background: #{map-deep-get($colors, 'colors', 'neutrals', 0)};
-        --product-background-2: #{map-deep-get(
-                $colors,
-                'colors',
-                'neutrals',
-                10
-            )};
-        --content-background: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        --product-background: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+        --product-background-2: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        --content-background: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         --navigation-background: #{map-deep-get(
                 $colors,
                 'colors',
-                'neutrals',
+                'neutral',
                 10
             )};
         --opaque-label-background: #{map-deep-get(
@@ -241,30 +226,30 @@
                 'persoonlijk',
                 50
             )};
-        --dividers: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --content-copy: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --opaque-label-copy: #{map-deep-get($colors, 'colors', 'neutrals', 100)};
-        --title-copy: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --meta-copy: #{map-deep-get($colors, 'colors', 'neutrals', 60)};
-        --quote: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --numberframe: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --textframe: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --wordframe: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --functional-copy: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --captions: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
-        --credits: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
-        --writer: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
-        --time: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
-        --card: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
-        --card-2: #{map-deep-get($colors, 'colors', 'neutrals', 20)};
+        --dividers: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --content-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --opaque-label-copy: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+        --title-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --meta-copy: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+        --quote: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --numberframe: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --textframe: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --wordframe: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --functional-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --captions: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+        --credits: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+        --writer: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+        --time: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+        --card: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        --card-2: #{map-deep-get($colors, 'colors', 'neutral', 20)};
 
         --primary: #{map-deep-get($colors, 'colors', 'primary', 50)};
-        --input-color: #{map-deep-get($colors, 'colors', 'neutrals', 20)};
-        --input-underline: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
+        --input-color: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+        --input-underline: #{map-deep-get($colors, 'colors', 'neutral', 50)};
         --input-underline-hover: #{map-deep-get(
                 $colors,
                 'colors',
-                'neutrals',
+                'neutral',
                 40
             )};
         --input-error: #{map-deep-get($colors, 'colors', 'negative', 25)};
@@ -288,10 +273,10 @@
         --stock-negative-fill: #{map-deep-get($colors, 'colors', 'negative', 25)};
         --stock-positive: #{map-deep-get($colors, 'colors', 'primary', 50)};
         --stock-positive-fill: #{map-deep-get($colors, 'colors', 'primary', 50)};
-        --stock-closed: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+        --stock-closed: #{map-deep-get($colors, 'colors', 'neutral', 40)};
 
-        --button: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
-        --button-hover: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+        --button: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+        --button-hover: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         --button-cta: #{map-deep-get($colors, 'colors', 'persoonlijk', 75)};
         --button-cta-hover: #{map-deep-get($colors, 'colors', 'persoonlijk', 50)};
 
@@ -305,18 +290,13 @@
     @media (prefers-color-scheme: light) {
         --filter-invert: invert(0);
 
-        --product-background: #{map-deep-get($colors, 'colors', 'neutrals', 80)};
-        --product-background-2: #{map-deep-get(
-                $colors,
-                'colors',
-                'neutrals',
-                90
-            )};
-        --content-background: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
+        --product-background: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+        --product-background-2: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --content-background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
         --navigation-background: #{map-deep-get(
                 $colors,
                 'colors',
-                'neutrals',
+                'neutral',
                 70
             )};
         --opaque-label-background: #{map-deep-get(
@@ -337,30 +317,30 @@
                 'persoonlijk',
                 75
             )};
-        --dividers: #{map-deep-get($colors, 'colors', 'neutrals', 60)};
-        --content-copy: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
-        --opaque-label-copy: #{map-deep-get($colors, 'colors', 'neutrals', 100)};
-        --title-copy: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
-        --meta-copy: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
-        --quote: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --numberframe: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --textframe: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --wordframe: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --functional-copy: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --captions: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --credits: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
-        --writer: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --time: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
-        --card: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-        --card-2: #{map-deep-get($colors, 'colors', 'neutrals', 80)};
+        --dividers: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+        --content-copy: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        --opaque-label-copy: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+        --title-copy: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        --meta-copy: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+        --quote: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --numberframe: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --textframe: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --wordframe: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --functional-copy: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --captions: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --credits: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+        --writer: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --time: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        --card: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        --card-2: #{map-deep-get($colors, 'colors', 'neutral', 80)};
 
         --primary: #{map-deep-get($colors, 'colors', 'primary', 75)};
-        --input-color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
-        --input-underline: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
+        --input-color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        --input-underline: #{map-deep-get($colors, 'colors', 'neutral', 50)};
         --input-underline-hover: #{map-deep-get(
                 $colors,
                 'colors',
-                'neutrals',
+                'neutral',
                 40
             )};
         --input-error: #{map-deep-get($colors, 'colors', 'negative', 25)};
@@ -384,10 +364,10 @@
         --stock-negative-fill: #{map-deep-get($colors, 'colors', 'negative', 25)};
         --stock-positive: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --stock-positive-fill: #{map-deep-get($colors, 'colors', 'primary', 50)};
-        --stock-closed: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+        --stock-closed: #{map-deep-get($colors, 'colors', 'neutral', 40)};
 
-        --button: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
-        --button-hover: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+        --button: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+        --button-hover: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         --button-cta: #{map-deep-get($colors, 'colors', 'persoonlijk', 100)};
         --button-cta-hover: #{map-deep-get($colors, 'colors', 'persoonlijk', 75)};
 

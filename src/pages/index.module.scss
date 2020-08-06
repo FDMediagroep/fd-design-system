@@ -6,7 +6,7 @@
     color: var(--content-copy);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     }
     h1 {
         font-family: map-deep-get($typography, 'font-family', 'bold'),

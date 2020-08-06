@@ -7,7 +7,7 @@
     background-color: var(--product-background);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
+        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     }
 
     display: flex;

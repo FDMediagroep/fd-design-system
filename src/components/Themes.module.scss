@@ -8,7 +8,7 @@
     display: flex;
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         display: none;
     }
 

@@ -10,7 +10,7 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         }
     }
     .input {
@@ -39,7 +39,7 @@
                 border-bottom: 0.125rem solid #{map-deep-get(
                         $colors,
                         'colors',
-                        'neutrals',
+                        'neutral',
                         50
                     )};
             }
@@ -65,7 +65,7 @@
                     background-color: #{map-deep-get(
                             $colors,
                             'colors',
-                            'neutrals',
+                            'neutral',
                             50
                         )};
                 }
@@ -79,7 +79,7 @@
                     border-color: #{map-deep-get(
                             $colors,
                             'colors',
-                            'neutrals',
+                            'neutral',
                             40
                         )};
                 }
@@ -121,7 +121,7 @@
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
             }
         }
         label {
@@ -137,7 +137,7 @@
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
             }
 
             font-size: 1rem;
@@ -187,7 +187,7 @@
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
             }
             line-height: 1;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
