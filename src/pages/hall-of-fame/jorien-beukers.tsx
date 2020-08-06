@@ -31,14 +31,14 @@ function JorienBeukers() {
                     name="description"
                     content="‘Weet iemand waar Jorien is?’"
                 />
-                <meta property="og:title" content="FD Design System" />
+                <meta property="og:title" content="Dorien Beukers" />
 
                 <meta
                     property="og:description"
                     content="‘Weet iemand waar Jorien is?’"
                 />
 
-                <meta property="og:site_name" content="design-system.fd.nl" />
+                <meta property="og:site_name" content="FD Design System" />
 
                 <meta property="og:type" content="article" />
 
@@ -51,9 +51,9 @@ function JorienBeukers() {
 
                 <meta property="twitter:name" content="summary" />
 
-                <meta property="twitter:title" content="FD Design System" />
+                <meta property="twitter:title" content="Dorien Beukers" />
 
-                <meta property="twitter:site" content="design-system.fd.nl" />
+                <meta property="twitter:site" content="FD Design System" />
 
                 <meta
                     property="twitter:image"
