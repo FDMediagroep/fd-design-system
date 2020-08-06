@@ -83,6 +83,7 @@ export function clearDesignTokensTooltips() {
     register.forEach((el) => {
         el.removeEventListener('mouseover', tooltipHandler);
     });
+    TooltipStore.setSummary(null);
 }
 
 export function initializeDesignTokensTooltip(el: HTMLElement) {
