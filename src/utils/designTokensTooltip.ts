@@ -36,18 +36,25 @@ function getTokenName(hex: string) {
     return token;
 }
 
+function getColorRecursively(el: HTMLElement, styleProp: string) {
+    let color = getComputedStyle(el).getPropertyValue(styleProp);
+    if (styleProp === 'background-color' && color === 'rgba(0, 0, 0, 0)') {
+        return getColorRecursively(el.parentElement, styleProp);
+    } else if (color) {
+        const matches = color.match(/\d+/g);
+        if (matches && matches.length === 3) {
+            return color;
+        } else {
+            return getColorRecursively(el.parentElement, styleProp);
+        }
+    }
+    return '';
+}
+
 function tooltipHandler(e: MouseEvent) {
     let summary: Summary = {};
     styleProps.forEach((styleProp) => {
-        let color = getComputedStyle(e.target as Element).getPropertyValue(
-            styleProp
-        );
-        // In case the child component is transparent we use the root
-        if (styleProp === 'background-color' && color === 'rgba(0, 0, 0, 0)') {
-            color = getComputedStyle(
-                e.currentTarget as Element
-            ).getPropertyValue(styleProp);
-        }
+        let color = getColorRecursively(e.target as HTMLElement, styleProp);
         if (color) {
             const matches = color.match(/\d+/g);
             if (matches && matches.length === 3) {
