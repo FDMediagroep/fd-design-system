@@ -25,7 +25,7 @@
 
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     }
     :global(.css-variant-1) {
         color: red;
@@ -48,8 +48,8 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
-            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
     }
 }

@@ -24,9 +24,9 @@
     }
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+        background-color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
         &:hover {
-            background-color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         }
     }
 

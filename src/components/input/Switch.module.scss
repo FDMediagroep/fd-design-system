@@ -1,6 +1,6 @@
-@import "../../utils/map-deep-get.scss";
-@import "../../design-tokens/typography.scss";
-@import "../../design-tokens/colors.scss";
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/typography.scss';
+@import '../../design-tokens/colors.scss';
 
 .fdInputSwitch {
     input {
@@ -17,7 +17,7 @@
         margin-right: 0.5rem;
         cursor: pointer;
         &:before {
-            content: "";
+            content: '';
             position: absolute;
             box-sizing: border-box;
             transition: border-color 0.3s;
@@ -30,7 +30,7 @@
             background-color: #f3f3f3;
         }
         &:after {
-            content: "";
+            content: '';
             position: absolute;
             transition: all 0.3s ease-out;
             transform: rotate(-45deg);
@@ -52,8 +52,8 @@
                 (-ms-high-contrast: none) {
                 background-color: #{map-deep-get(
                         $colors,
-                        "colors",
-                        "persoonlijk",
+                        'colors',
+                        'persoonlijk',
                         100
                     )};
             }
@@ -68,8 +68,8 @@
                 (-ms-high-contrast: none) {
                 background-color: #{map-deep-get(
                         $colors,
-                        "colors",
-                        "persoonlijk",
+                        'colors',
+                        'persoonlijk',
                         50
                     )};
             }
@@ -86,10 +86,10 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, "colors", "neutrals", 10)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
         position: relative;
-        font-family: map-deep-get($typography, "font-family", "regular"),
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;
     }
 

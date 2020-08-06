@@ -8,7 +8,7 @@
     background-color: var(--card-2);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 80)};
+        background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
     }
 
     h3 {
@@ -29,7 +29,7 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
     }
 
@@ -56,11 +56,11 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
             border-top: 1px solid #{map-deep-get(
                     $colors,
                     'colors',
-                    'neutrals',
+                    'neutral',
                     50
                 )};
         }
@@ -99,7 +99,7 @@
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+                fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
             }
             height: 23px;
             width: 23px;
@@ -111,7 +111,7 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutrals', 30)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         }
         display: block;
         font-size: 0.8125rem;

@@ -7,7 +7,10 @@ import { getStyle } from '../utils/styles';
 import { getTags, getDestination } from '../utils/paths';
 import Link from 'next/link';
 import reactElementToJSXString from 'react-element-to-jsx-string';
-import { initializeDesignTokensTooltip } from '../utils/designTokensTooltip';
+import {
+    initializeDesignTokensTooltip,
+    clearDesignTokensTooltips,
+} from '../utils/designTokensTooltip';
 import { Tooltip } from './Tooltip';
 
 declare let window: Window | any;
@@ -81,6 +84,9 @@ function Explain(props: Props) {
                     initializeDesignTokensTooltip(child);
                 });
         }
+        return () => {
+            clearDesignTokensTooltips();
+        };
     }, [formRef]);
 
     useEffect(() => {

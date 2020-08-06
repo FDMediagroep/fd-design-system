@@ -36,12 +36,25 @@ function getTokenName(hex: string) {
     return token;
 }
 
+function getColorRecursively(el: HTMLElement, styleProp: string) {
+    let color = getComputedStyle(el).getPropertyValue(styleProp);
+    if (styleProp === 'background-color' && color === 'rgba(0, 0, 0, 0)') {
+        return getColorRecursively(el.parentElement, styleProp);
+    } else if (color) {
+        const matches = color.match(/\d+/g);
+        if (matches && matches.length === 3) {
+            return color;
+        } else {
+            return getColorRecursively(el.parentElement, styleProp);
+        }
+    }
+    return '';
+}
+
 function tooltipHandler(e: MouseEvent) {
     let summary: Summary = {};
     styleProps.forEach((styleProp) => {
-        const color = getComputedStyle(e.target as Element).getPropertyValue(
-            styleProp
-        );
+        let color = getColorRecursively(e.target as HTMLElement, styleProp);
         if (color) {
             const matches = color.match(/\d+/g);
             if (matches && matches.length === 3) {
@@ -66,7 +79,7 @@ function tooltipHandler(e: MouseEvent) {
 
 const register = [];
 
-function clearRegister() {
+export function clearDesignTokensTooltips() {
     register.forEach((el) => {
         el.removeEventListener('mouseover', tooltipHandler);
     });
@@ -74,7 +87,6 @@ function clearRegister() {
 
 export function initializeDesignTokensTooltip(el: HTMLElement) {
     if (window.getComputedStyle) {
-        clearRegister();
         el.addEventListener('mouseover', tooltipHandler);
         register.push(el);
     }

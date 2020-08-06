@@ -29,7 +29,7 @@ function Follow() {
                 <meta name="description" content={metaDescription} />
                 <meta property="og:title" content={metaTitle} />
                 <meta property="og:description" content={metaDescription} />
-                <meta property="twitter:title" content="FD Design System" />
+                <meta property="twitter:title" content={metaTitle} />
                 <meta
                     property="twitter:description"
                     content={metaDescription}

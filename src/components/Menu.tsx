@@ -19,7 +19,7 @@ function Menu() {
                 <a>Home</a>
             </Link>
             <a
-                href="/colors"
+                href="https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/771162327/Colors"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
             >
@@ -29,7 +29,7 @@ function Menu() {
                 <a>Design Tokens</a>
             </Link>
             <a
-                href="/downloads"
+                href="https://fdmediagroep.atlassian.net/wiki/spaces/SHAR/pages/729186428/Bestandslijsten"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
             >

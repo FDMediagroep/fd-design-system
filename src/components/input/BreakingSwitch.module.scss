@@ -13,7 +13,7 @@
     background-color: var(--card);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutrals', 90)};
+        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     }
 
     h3,
@@ -46,7 +46,7 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
     }
 
@@ -58,11 +58,11 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutrals', 10)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
             border-top: 1px solid #{map-deep-get(
                     $colors,
                     'colors',
-                    'neutrals',
+                    'neutral',
                     50
                 )};
         }
@@ -103,7 +103,7 @@
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                background: #{map-deep-get($colors, 'colors', 'neutrals', 50)};
+                background: #{map-deep-get($colors, 'colors', 'neutral', 50)};
             }
             border-radius: 28px;
             transition: opacity 0.15s ease-out, background 0.15s ease-out;

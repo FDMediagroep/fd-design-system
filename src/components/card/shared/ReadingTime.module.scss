@@ -11,7 +11,7 @@
     color: var(--meta-copy);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+        color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
     }
     white-space: nowrap;
 
@@ -27,7 +27,7 @@
                 // IE11
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
-                    fill: #{map-deep-get($colors, 'colors', 'neutrals', 40)};
+                    fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
                 }
             }
         }

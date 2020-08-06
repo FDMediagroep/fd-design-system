@@ -1,7 +1,7 @@
-@import "../../utils/map-deep-get.scss";
-@import "../../design-tokens/colors.scss";
-@import "../../design-tokens/media.scss";
-@import "../../design-tokens/typography.scss";
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
 
 .textFrame {
     margin: 2.5rem 0;
@@ -10,8 +10,8 @@
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         border-bottom: 1px solid #{map-deep-get(
                 $colors,
-                "colors",
-                "neutrals",
+                'colors',
+                'neutral',
                 50
             )};
     }
@@ -19,13 +19,13 @@
     h3 {
         font-size: 1.25rem;
         line-height: 1;
-        font-family: map-deep-get($typography, "font-family", "bold"),
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
         color: var(--content-copy);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, "colors", "neutrals", 10)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
         margin-bottom: 1rem;
         position: relative;
@@ -39,18 +39,18 @@
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
             background: linear-gradient(
-                        #{map-deep-get($colors, "colors", "neutrals", 50)},
-                        #{map-deep-get($colors, "colors", "neutrals", 50)}
+                        #{map-deep-get($colors, 'colors', 'neutral', 50)},
+                        #{map-deep-get($colors, 'colors', 'neutral', 50)}
                     )
                     0 0/100% 1px no-repeat,
                 linear-gradient(
-                        #{map-deep-get($colors, "colors", "neutrals", 50)},
-                        #{map-deep-get($colors, "colors", "neutrals", 50)}
+                        #{map-deep-get($colors, 'colors', 'neutral', 50)},
+                        #{map-deep-get($colors, 'colors', 'neutral', 50)}
                     )
                     0 4px/100% 1px no-repeat,
                 linear-gradient(
-                        #{map-deep-get($colors, "colors", "neutrals", 50)},
-                        #{map-deep-get($colors, "colors", "neutrals", 50)}
+                        #{map-deep-get($colors, 'colors', 'neutral', 50)},
+                        #{map-deep-get($colors, 'colors', 'neutral', 50)}
                     )
                     0 8px/100% 1px no-repeat;
         }
@@ -62,8 +62,8 @@
             (-ms-high-contrast: none) {
             border-bottom: 1px solid #{map-deep-get(
                     $colors,
-                    "colors",
-                    "neutrals",
+                    'colors',
+                    'neutral',
                     50
                 )};
         }
@@ -83,12 +83,12 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, "colors", "primary", 75)};
+            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
         }
     }
 
     p {
-        font-family: map-deep-get($typography, "font-family", "regular"),
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;
         font-size: 1.0625rem;
         line-height: 1.2;
@@ -97,11 +97,11 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, "colors", "neutrals", 10)};
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
     }
 
-    @media screen and (min-width: map-deep-get($media, "sizes", "s")) {
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         &.right {
             float: right;
             margin: 40px 0 40px 60px;
