@@ -19,7 +19,7 @@ function Menu() {
                 <a>Home</a>
             </Link>
             <a
-                href="/colors"
+                href="https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/771162327/Colors"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
             >
