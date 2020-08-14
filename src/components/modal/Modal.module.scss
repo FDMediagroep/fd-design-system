@@ -42,8 +42,6 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    padding: 2rem;
-    box-sizing: border-box;
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         max-width: 560px;
         max-height: 80vh;
@@ -86,6 +84,8 @@
 }
 
 .content {
+    padding: 2rem;
+    box-sizing: border-box;
     overflow-y: auto;
     :first-child {
         margin-top: 0;
@@ -130,7 +130,8 @@
 
 .buttonContainer {
     display: none;
-    margin-top: 1rem;
+    padding: 1rem 0 2rem 0;
+    box-sizing: border-box;
     @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
         display: flex;
     }
