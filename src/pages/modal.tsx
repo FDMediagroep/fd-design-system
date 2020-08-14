@@ -44,6 +44,10 @@ function Page() {
                     <>
                         <p>Used as modal overlay.</p>
                         <p>This element is solely used to display a modal.</p>
+                        <p>
+                            Add the class .fdOpenModal to the root modal element
+                            to show the modal.
+                        </p>
                         <Switch
                             id="modalSwitch"
                             label={opened ? 'Hide modal' : 'Show modal'}

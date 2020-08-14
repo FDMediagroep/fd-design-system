@@ -6,9 +6,6 @@
 .modal {
     .modalBackground {
         display: none;
-        &.modalBackgroundOpened {
-            display: block;
-        }
         position: fixed;
         justify-content: center;
         align-items: center;
@@ -28,9 +25,6 @@
 
     .contentBackground {
         display: none;
-        &.contentBackgroundOpened {
-            display: flex;
-        }
         position: fixed;
         top: 0;
         right: 0;
@@ -39,6 +33,15 @@
         z-index: 99999;
         justify-content: center;
         align-items: center;
+    }
+
+    &:global(.fdOpenModal) {
+        .modalBackground {
+            display: block;
+        }
+        .contentBackground {
+            display: flex;
+        }
     }
 
     .contentBox {
@@ -52,6 +55,11 @@
         @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
             width: 100vw;
             height: 100vh;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
         }
         font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;

@@ -21,16 +21,16 @@ export default function Modal(props: Props) {
     );
 
     return (
-        <div className={styles.modal}>
+        <div className={`${styles.modal}${props.opened ? ` fdOpenModal` : ''}`}>
             <div
                 className={`${styles.modalBackground}${
                     props.className ? ` ${props.className}` : ''
-                }${props.opened ? ` ${styles.modalBackgroundOpened}` : ''}`}
+                }`}
             />
             <div
                 className={`${styles.contentBackground}${
                     props.contentClassName ? ` ${props.contentClassName}` : ''
-                }${props.opened ? ` ${styles.contentBackgroundOpened}` : ''}`}
+                }`}
                 onClick={handleModalClose}
             >
                 <div
