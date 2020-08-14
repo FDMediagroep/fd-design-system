@@ -17,7 +17,7 @@
     background-color: var(--content-copy);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        background-color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     }
 }
 
@@ -93,6 +93,13 @@
     :last-child {
         margin-bottom: 0;
     }
+
+    color: var(--content-copy);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+    }
+
     @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
         flex: 1 1 auto;
     }
