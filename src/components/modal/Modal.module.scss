@@ -6,6 +6,9 @@
 .modal {
     .modalBackground {
         display: none;
+        .modalBackgroundOpened {
+            display: block;
+        }
         position: fixed;
         justify-content: center;
         align-items: center;
@@ -23,19 +26,17 @@
         }
     }
 
-    .opened {
-        display: block;
-    }
-
     .contentBackground {
         display: none;
+        &.contentBackgroundOpened {
+            display: flex;
+        }
         position: fixed;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         z-index: 99999;
-        display: flex;
         justify-content: center;
         align-items: center;
     }

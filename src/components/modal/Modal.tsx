@@ -20,23 +20,17 @@ export default function Modal(props: Props) {
         [props.onClose]
     );
 
-    function handleContentClick(
-        e: React.MouseEvent<HTMLDivElement, MouseEvent>
-    ) {
-        e.stopPropagation();
-    }
-
     return (
         <div className={styles.modal}>
             <div
                 className={`${styles.modalBackground}${
                     props.className ? ` ${props.className}` : ''
-                }${props.opened ? ` ${styles.opened}` : ''}`}
+                }${props.opened ? ` ${styles.modalBackgroundOpened}` : ''}`}
             />
             <div
                 className={`${styles.contentBackground}${
                     props.contentClassName ? ` ${props.contentClassName}` : ''
-                }${props.opened ? ` ${styles.opened}` : ''}`}
+                }${props.opened ? ` ${styles.contentBackgroundOpened}` : ''}`}
                 onClick={handleModalClose}
             >
                 <div
