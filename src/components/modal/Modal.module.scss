@@ -14,7 +14,7 @@
     left: 0;
     z-index: 99998;
     opacity: 0.8;
-    background-color: var(--content-copy);
+    background-color: var(--content-background);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         background-color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
