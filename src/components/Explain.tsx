@@ -107,8 +107,9 @@ function Explain(props: Props) {
                 props.reactComponentName
                     ? {
                           displayName: (el: ReactElement<any, any>) => {
-                              console.log(el);
-                              return el.type?.name || el.type;
+                              return typeof el.type === 'string'
+                                  ? el.type
+                                  : props.reactComponentName;
                           },
                       }
                     : {}
