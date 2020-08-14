@@ -1,0 +1,91 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.modal {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99998;
+    opacity: 0.8;
+    background-color: var(--content-copy);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+    }
+}
+
+.opened {
+    display: block;
+}
+
+.contentContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    position: relative;
+    padding: 2rem;
+    max-width: 560px;
+    background-color: var(--product-background);
+    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+    font-size: 17px;
+    line-height: 1.412;
+
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 22px;
+        line-height: 1.1;
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--primary);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+        }
+    }
+}
+
+.closeIcon svg {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    margin: 0;
+    cursor: pointer;
+    fill: var(--primary);
+    width: 23px;
+    height: 23px;
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    }
+}
