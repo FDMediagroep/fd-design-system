@@ -106,7 +106,7 @@ function Explain(props: Props) {
                 props.children,
                 props.reactComponentName
                     ? {
-                          displayName: (el: ReactElement) => {
+                          displayName: (el: ReactElement<any, any>) => {
                               console.log(el);
                               return el.type?.name || el.type;
                           },
