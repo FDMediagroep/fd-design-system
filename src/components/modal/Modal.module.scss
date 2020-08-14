@@ -41,12 +41,20 @@
 .content {
     position: relative;
     padding: 2rem;
-    max-width: 560px;
-    background-color: var(--product-background);
+    box-sizing: border-box;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        max-width: 560px;
+    }
+    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+        width: 100vw;
+        height: 100vh;
+    }
+    overflow-y: auto;
     font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     font-size: 17px;
     line-height: 1.412;
 
+    background-color: var(--product-background);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
