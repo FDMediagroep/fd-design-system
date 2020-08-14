@@ -4,6 +4,7 @@ import { CloseIcon } from '../../design-tokens/icons';
 
 export interface Props {
     className?: string;
+    contentClassName?: string;
     opened?: boolean;
     onClose?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     [x: string]: any;
@@ -33,8 +34,8 @@ export default function Modal(props: Props) {
             />
             <div
                 className={`${styles.contentContainer}${
-                    props.opened ? ` ${styles.opened}` : ''
-                }`}
+                    props.contentClassName ? ` ${props.contentClassName}` : ''
+                }${props.opened ? ` ${styles.opened}` : ''}`}
                 onClick={handleModalClose}
             >
                 <div
