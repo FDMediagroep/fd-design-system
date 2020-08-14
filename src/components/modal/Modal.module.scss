@@ -6,7 +6,7 @@
 .modal {
     .modalBackground {
         display: none;
-        .modalBackgroundOpened {
+        &.modalBackgroundOpened {
             display: block;
         }
         position: fixed;
