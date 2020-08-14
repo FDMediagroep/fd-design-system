@@ -46,13 +46,12 @@
     box-sizing: border-box;
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         max-width: 560px;
-        max-height: 100vh;
+        max-height: 80vh;
     }
     @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
         width: 100vw;
         height: 100vh;
     }
-    overflow-y: auto;
     font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     font-size: 17px;
     line-height: 1.412;
@@ -87,16 +86,51 @@
 }
 
 .content {
+    overflow-y: auto;
     :first-child {
         margin-top: 0;
     }
     :last-child {
         margin-bottom: 0;
     }
+    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+        flex: 1 1 auto;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        -webkit-border-radius: 0.25rem;
+        border-radius: 0.25rem;
+        background: var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+        }
+    }
+
+    &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 0.25rem;
+        border-radius: 0.25rem;
+        background: var(--meta-copy);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--functional-copy);
+    }
+
+    &::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(0, 0, 0, 0.1);
+    }
 }
 
 .buttonContainer {
     display: none;
+    margin-top: 1rem;
     @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
         display: flex;
     }
@@ -115,5 +149,9 @@
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    }
+
+    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+        display: none;
     }
 }
