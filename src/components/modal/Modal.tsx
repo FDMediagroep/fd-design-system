@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import styles from './Modal.module.scss';
 import { CloseIcon } from '../../design-tokens/icons';
+import { ButtonCta } from '../button/ButtonCta';
 
 export interface Props {
     className?: string;
@@ -33,13 +34,13 @@ export default function Modal(props: Props) {
                 }${props.opened ? ` ${styles.opened}` : ''}`}
             />
             <div
-                className={`${styles.contentContainer}${
+                className={`${styles.contentBackground}${
                     props.contentClassName ? ` ${props.contentClassName}` : ''
                 }${props.opened ? ` ${styles.opened}` : ''}`}
                 onClick={handleModalClose}
             >
                 <div
-                    className={styles.content}
+                    className={styles.contentBox}
                     onClick={(e) => e.stopPropagation()}
                 >
                     <span
@@ -47,7 +48,12 @@ export default function Modal(props: Props) {
                         dangerouslySetInnerHTML={{ __html: CloseIcon }}
                         onClick={handleModalClose}
                     />
-                    {props.children}
+                    <div className={styles.content}>{props.children}</div>
+                    <div className={styles.buttonContainer}>
+                        <ButtonCta onClick={handleModalClose}>
+                            Sluiten
+                        </ButtonCta>
+                    </div>
                 </div>
             </div>
         </>

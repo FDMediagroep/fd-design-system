@@ -25,7 +25,7 @@
     display: block;
 }
 
-.contentContainer {
+.contentBackground {
     display: none;
     position: fixed;
     top: 0;
@@ -38,12 +38,15 @@
     align-items: center;
 }
 
-.content {
+.contentBox {
+    display: flex;
+    flex-direction: column;
     position: relative;
     padding: 2rem;
     box-sizing: border-box;
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         max-width: 560px;
+        max-height: 100vh;
     }
     @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
         width: 100vw;
@@ -81,6 +84,23 @@
             color: #{map-deep-get($colors, 'colors', 'primary', 75)};
         }
     }
+}
+
+.content {
+    :first-child {
+        margin-top: 0;
+    }
+    :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.buttonContainer {
+    display: none;
+    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+        display: flex;
+    }
+    justify-content: center;
 }
 
 .closeIcon svg {
