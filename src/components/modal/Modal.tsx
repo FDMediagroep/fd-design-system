@@ -27,9 +27,9 @@ export default function Modal(props: Props) {
     }
 
     return (
-        <>
+        <div className={styles.modal}>
             <div
-                className={`${styles.modal}${
+                className={`${styles.modalBackground}${
                     props.className ? ` ${props.className}` : ''
                 }${props.opened ? ` ${styles.opened}` : ''}`}
             />
@@ -56,7 +56,7 @@ export default function Modal(props: Props) {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
