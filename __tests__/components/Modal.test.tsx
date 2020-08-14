@@ -24,6 +24,7 @@ describe('Modal', () => {
         expect(spy).toBeCalledTimes(1);
         fireEvent.click(document.querySelector('.test-modal span'));
         expect(spy).toBeCalledTimes(2);
+        // Should stopPropagation when clicking on the content.
         fireEvent.click(document.querySelector('.test-modal h1'));
         expect(spy).toBeCalledTimes(2);
     });
