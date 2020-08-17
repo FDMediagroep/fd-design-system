@@ -4,6 +4,10 @@
 
 html {
     overflow-x: hidden;
+    padding-left: env(safe-area-inset-left); // Safari notch fix
+    padding-right: env(safe-area-inset-right); // Safari notch fix
+    padding-top: env(safe-area-inset-top); // Safari notch fix
+    padding-bottom: env(safe-area-inset-bottom); // Safari notch fix
 }
 
 html,
