@@ -101,6 +101,7 @@
 
         box-sizing: border-box;
         overflow-y: auto;
+        overscroll-behavior: contain;
         :first-child {
             margin-top: 0;
         }
