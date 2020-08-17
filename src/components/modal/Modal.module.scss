@@ -33,6 +33,7 @@
         z-index: 99999;
         justify-content: center;
         align-items: center;
+        touch-action: none; // Safari overscroll bug fix
     }
 
     &:global(.fdOpenModal) {
@@ -45,6 +46,7 @@
     }
 
     .contentBox {
+        touch-action: none; // Safari overscroll bug fix
         position: fixed;
         display: flex;
         flex-direction: column;
@@ -152,6 +154,8 @@
         box-sizing: border-box;
         display: flex;
         justify-content: center;
+        touch-action: none; // Safari overscroll bug fix
+
         @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
             display: none;
         }
