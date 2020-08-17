@@ -12,13 +12,6 @@ export interface Props {
 }
 
 export default function Modal(props: Props) {
-    useEffect(() => {
-        setTimeout(function () {
-            // Hide the address bar!
-            window.scrollTo(0, 1);
-        }, 0);
-    }, []);
-
     const handleModalClose = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
