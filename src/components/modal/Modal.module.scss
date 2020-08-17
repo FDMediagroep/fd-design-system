@@ -157,6 +157,18 @@
             display: flex;
         }
         justify-content: center;
+
+        border-top: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border-top: 1px solid #{map-deep-get(
+                    $colors,
+                    'colors',
+                    'neutral',
+                    50
+                )};
+        }
     }
 
     .closeIcon svg {

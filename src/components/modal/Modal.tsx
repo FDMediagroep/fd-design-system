@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import styles from './Modal.module.scss';
 import { CloseIcon } from '../../design-tokens/icons';
 import { ButtonCta } from '../button/ButtonCta';
@@ -12,6 +12,13 @@ export interface Props {
 }
 
 export default function Modal(props: Props) {
+    useEffect(() => {
+        setTimeout(function () {
+            // Hide the address bar!
+            window.scrollTo(0, 1);
+        }, 0);
+    }, []);
+
     const handleModalClose = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
