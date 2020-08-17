@@ -166,6 +166,9 @@ function Menu() {
                 <Link href="/author-info">
                     <a>Author Info</a>
                 </Link>
+                <Link href="/modal">
+                    <a>Modal</a>
+                </Link>
                 <Link href="/stock-ticker">
                     <a>Stock Ticker</a>
                 </Link>

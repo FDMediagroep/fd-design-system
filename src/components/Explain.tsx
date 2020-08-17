@@ -12,6 +12,7 @@ import {
     clearDesignTokensTooltips,
 } from '../utils/designTokensTooltip';
 import { Tooltip } from './Tooltip';
+import ReactDOM from 'react-dom';
 
 declare let window: Window | any;
 declare let cssbeautify: (css: string) => string;
@@ -32,6 +33,16 @@ interface Props {
      * Also accepts an array of class names.
      */
     cssClassNames: string[];
+
+    /**
+     * Hide the preview pane.
+     */
+    hidePreview?: boolean;
+    /**
+     * Hide buttons to external code editors like: CodePen and JSFiddle.
+     */
+    hideExternalCodeEditors?: boolean;
+
     /**
      * Default: column
      */
@@ -95,7 +106,11 @@ function Explain(props: Props) {
                 props.children,
                 props.reactComponentName
                     ? {
-                          displayName: () => props.reactComponentName,
+                          displayName: (el: ReactElement<any, any>) => {
+                              return typeof el.type === 'string'
+                                  ? el.type
+                                  : props.reactComponentName;
+                          },
                       }
                     : {}
             )
@@ -180,76 +195,90 @@ function Explain(props: Props) {
                     {props.description}
                 </section>
             )}
-            <form
-                ref={formRef}
-                className={`${styles.previewContainer}${
-                    props.previewFlexDirection === 'row' ? ` ${styles.row}` : ''
-                }${props.previewClassName ? ` ${props.previewClassName}` : ''}`}
-                onSubmit={handleSubmit}
-            >
-                {props.children}
-            </form>
-            <footer className={styles.footer}>
+            {!props.hidePreview && (
                 <form
-                    target="_blank"
-                    action="https://codepen.io/pen/define/"
-                    method="post"
+                    ref={formRef}
+                    className={`${styles.previewContainer}${
+                        props.previewFlexDirection === 'row'
+                            ? ` ${styles.row}`
+                            : ''
+                    }${
+                        props.previewClassName
+                            ? ` ${props.previewClassName}`
+                            : ''
+                    }`}
+                    onSubmit={handleSubmit}
                 >
-                    <input
-                        type="hidden"
-                        name="data"
-                        value={getCodePenData(
-                            'Fd Test Component',
-                            [],
-                            html,
-                            css,
-                            '',
-                            props.js_external,
-                            bgcolor
-                        )}
-                    />
-                    <input
-                        className={styles.invertable}
-                        type="image"
-                        src="/assets/codepen/Button-Black.png"
-                        width="16"
-                        height="16"
-                        defaultValue="Open in CodePen"
-                        title="Open in CodePen"
-                    />
+                    {props.children}
                 </form>
-                <form
-                    action="https://jsfiddle.net/api/post/library/pure"
-                    method="post"
-                    target="_blank"
-                >
-                    <input
-                        type="image"
-                        src="/assets/jsfiddle/logo.png"
-                        width="16"
-                        height="16"
-                        value="Open in JSFiddle"
-                        title="Open in JSFiddle"
-                    />
-                    <input type="hidden" name="title" value={props.legend} />
-                    <input
-                        type="hidden"
-                        name="description"
-                        value={props.legend}
-                    />
-                    <input type="hidden" name="html" value={html ?? ''} />
-                    <input
-                        type="hidden"
-                        name="css"
-                        value={`body { background-color: ${bgcolor}; }\r\n\r\n${css}`}
-                    />
-                    <input
-                        type="hidden"
-                        name="resources"
-                        value={`${props.js_external},https://static.fd.nl/style-guide/assets/fonts/style.css,https://static.fd.nl/style-guide/assets/icons/style.css`}
-                    />
-                </form>
-            </footer>
+            )}
+            {!props.hideExternalCodeEditors && (
+                <footer className={styles.footer}>
+                    <form
+                        target="_blank"
+                        action="https://codepen.io/pen/define/"
+                        method="post"
+                    >
+                        <input
+                            type="hidden"
+                            name="data"
+                            value={getCodePenData(
+                                'Fd Test Component',
+                                [],
+                                html,
+                                css,
+                                '',
+                                props.js_external,
+                                bgcolor
+                            )}
+                        />
+                        <input
+                            className={styles.invertable}
+                            type="image"
+                            src="/assets/codepen/Button-Black.png"
+                            width="16"
+                            height="16"
+                            defaultValue="Open in CodePen"
+                            title="Open in CodePen"
+                        />
+                    </form>
+                    <form
+                        action="https://jsfiddle.net/api/post/library/pure"
+                        method="post"
+                        target="_blank"
+                    >
+                        <input
+                            type="image"
+                            src="/assets/jsfiddle/logo.png"
+                            width="16"
+                            height="16"
+                            value="Open in JSFiddle"
+                            title="Open in JSFiddle"
+                        />
+                        <input
+                            type="hidden"
+                            name="title"
+                            value={props.legend}
+                        />
+                        <input
+                            type="hidden"
+                            name="description"
+                            value={props.legend}
+                        />
+                        <input type="hidden" name="html" value={html ?? ''} />
+                        <input
+                            type="hidden"
+                            name="css"
+                            value={`body { background-color: ${bgcolor}; }\r\n\r\n${css}`}
+                        />
+                        <input
+                            type="hidden"
+                            name="resources"
+                            value={`${props.js_external},https://static.fd.nl/style-guide/assets/fonts/style.css,https://static.fd.nl/style-guide/assets/icons/style.css`}
+                        />
+                    </form>
+                </footer>
+            )}
 
             <h3
                 className={styles.codeToggle}

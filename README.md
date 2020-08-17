@@ -1377,6 +1377,49 @@ function Foo() {
 </details>
 
 <details>
+<summary>Modal</summary>
+
+[Demo](https://design-system.fd.nl/modal)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/modal/Modal.css";
+```
+
+```
+import { AuthorInfo } from '@fdmg/design-system/components/modal/Modal';
+
+function Foo() {
+    return (
+        <Modal opened={true} onClose={() => {}>
+            <>
+                <h2>Abonnement wijzigen of opzeggen</h2>
+                <p>
+                    Voor wijzigingen kunt u elk moment bellen. Voor
+                    opzeggen geeft u dit uiterlijk 1 maand voor het
+                    einde van de abonnements- of actieperiode
+                    telefonisch door aan Klantenservice
+                </p>
+                <p>
+                    <a href="tel:0800 666 6667">0800 666 6667</a>{' '}
+                    (gratis, ma t/m vr 07.30 - 18.00 uur en za 07.30 -
+                    11.30 uur).
+                </p>
+                <p>
+                    Ook kijken we graag samen met u naar een
+                    abonnementsvorm die wellicht beter bij u past.
+                </p>
+            </>
+        </Modal>
+    );
+}
+```
+
+</details>
+
+<details>
 <summary>StockTicker</summary>
 
 Component CSS:

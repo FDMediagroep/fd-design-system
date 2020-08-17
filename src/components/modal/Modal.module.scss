@@ -1,0 +1,196 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.modal {
+    .modalBackground {
+        display: none;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 99998;
+        opacity: 0.8;
+        background-color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        }
+    }
+
+    .contentBackground {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 99999;
+        justify-content: center;
+        align-items: center;
+        touch-action: none; // Safari overscroll bug fix
+    }
+
+    &:global(.fdOpenModal) {
+        .modalBackground {
+            display: block;
+        }
+        .contentBackground {
+            display: flex;
+        }
+    }
+
+    .contentBox {
+        touch-action: none; // Safari overscroll bug fix
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            position: relative;
+            max-width: 560px;
+            max-height: 80vh;
+        }
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
+        font-size: 17px;
+        line-height: 1.412;
+
+        background-color: var(--product-background);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 22px;
+            line-height: 1.1;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+        }
+    }
+
+    .content {
+        flex: 1 1 auto;
+        padding: 2rem;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            padding: 2rem 3rem 2rem 2rem;
+        }
+
+        box-sizing: border-box;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        :first-child {
+            margin-top: 0;
+        }
+        :last-child {
+            margin-bottom: 0;
+        }
+
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        }
+
+        &::-webkit-scrollbar {
+            width: 0.5rem;
+            height: 0.5rem;
+        }
+
+        &::-webkit-scrollbar-track {
+            -webkit-border-radius: 0.25rem;
+            border-radius: 0.25rem;
+            background: var(--dividers);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+            }
+        }
+
+        &::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 0.25rem;
+            border-radius: 0.25rem;
+            background: var(--meta-copy);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: var(--functional-copy);
+        }
+
+        &::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .buttonContainer {
+        padding: 1rem 0 2rem 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        touch-action: none; // Safari overscroll bug fix
+
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            display: none;
+        }
+
+        border-top: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border-top: 1px solid #{map-deep-get(
+                    $colors,
+                    'colors',
+                    'neutral',
+                    50
+                )};
+        }
+    }
+
+    .closeIcon svg {
+        display: none;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        margin: 0;
+        cursor: pointer;
+        fill: var(--primary);
+        width: 23px;
+        height: 23px;
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
+        }
+
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            display: block;
+        }
+    }
+}
