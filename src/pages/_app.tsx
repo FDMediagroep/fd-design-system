@@ -47,7 +47,7 @@ function App({ Component, pageProps }) {
             <Head>
                 <meta
                     name="viewport"
-                    content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no, minimal-ui, viewport-fit=cover"
+                    content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no, minimal-ui"
                 />
             </Head>
             <section className={pageStyle}>
