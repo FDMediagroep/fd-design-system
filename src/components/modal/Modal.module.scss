@@ -45,22 +45,18 @@
     }
 
     .contentBox {
+        position: fixed;
         display: flex;
         flex-direction: column;
-        position: relative;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        height: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            position: relative;
             max-width: 560px;
             max-height: 80vh;
-        }
-        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-            max-width: 100vw;
-            width: 100vw;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
         }
         font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;
@@ -98,7 +94,12 @@
     }
 
     .content {
+        flex: 1 1 auto;
         padding: 2rem;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            padding: 2rem 3rem 2rem 2rem;
+        }
+
         box-sizing: border-box;
         overflow-y: auto;
         :first-child {
@@ -113,10 +114,6 @@
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
             color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
-
-        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-            flex: 1 1 auto;
         }
 
         &::-webkit-scrollbar {
@@ -151,13 +148,13 @@
     }
 
     .buttonContainer {
-        display: none;
         padding: 1rem 0 2rem 0;
         box-sizing: border-box;
-        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-            display: flex;
-        }
+        display: flex;
         justify-content: center;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            display: none;
+        }
 
         border-top: 1px solid var(--dividers);
         // IE11
@@ -173,6 +170,7 @@
     }
 
     .closeIcon svg {
+        display: none;
         position: absolute;
         top: 1rem;
         right: 1rem;
@@ -187,8 +185,8 @@
             fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
         }
 
-        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-            display: none;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            display: block;
         }
     }
 }
