@@ -54,8 +54,6 @@
         right: 0;
         left: 0;
         bottom: 0;
-        max-height: 100%; // Safari viewport fix
-        max-height: -webkit-fill-available; // Safari viewport fix
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             position: relative;
             max-width: 560px;
@@ -101,6 +99,14 @@
         padding: 2rem;
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             padding: 2rem 3rem 2rem 2rem;
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            /* CSS specific to iOS devices */
+            @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
+                max-height: calc(100vh - 44px); // Safari viewport fix
+                max-height: -webkit-fill-available; // Safari viewport fix
+            }
         }
 
         box-sizing: border-box;
