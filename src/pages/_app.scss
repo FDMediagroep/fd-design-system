@@ -6,11 +6,6 @@ html {
     overflow-x: hidden;
 }
 
-body {
-    padding: env(safe-area-inset-top) env(safe-area-inset-right)
-        env(safe-area-inset-bottom) env(safe-area-inset-left); // Safari notch fix
-}
-
 html,
 html.dark,
 html.light {
@@ -29,4 +24,11 @@ body {
     padding: 0;
     margin: 0;
     font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+}
+
+@supports (-webkit-touch-callout: none) {
+    body {
+        padding: env(safe-area-inset-top) env(safe-area-inset-right)
+            env(safe-area-inset-bottom) env(safe-area-inset-left); // Safari notch fix
+    }
 }

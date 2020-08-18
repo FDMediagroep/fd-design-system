@@ -101,11 +101,16 @@
             padding: 2rem 3rem 2rem 2rem;
         }
 
+        // Safari fixes
         @supports (-webkit-touch-callout: none) {
             /* CSS specific to iOS devices */
             @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
                 max-height: calc(100vh - 44px); // Safari viewport fix
                 max-height: -webkit-fill-available; // Safari viewport fix
+                padding: calc(2rem + env(safe-area-inset-top))
+                    calc(2rem + env(safe-area-inset-right))
+                    calc(2rem + env(safe-area-inset-bottom))
+                    calc(2rem + env(safe-area-inset-left)); // Safari notch fix
             }
         }
 
