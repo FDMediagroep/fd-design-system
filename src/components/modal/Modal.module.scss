@@ -54,7 +54,7 @@
         right: 0;
         left: 0;
         bottom: 0;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             position: relative;
             max-width: 560px;
             max-height: 80vh;
@@ -97,8 +97,21 @@
     .content {
         flex: 1 1 auto;
         padding: 2rem;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             padding: 2rem 3rem 2rem 2rem;
+        }
+
+        // Safari fixes
+        @supports (-webkit-touch-callout: none) {
+            /* CSS specific to iOS devices */
+            @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
+                max-height: calc(100vh - 44px); // Safari viewport fix
+                max-height: -webkit-fill-available; // Safari viewport fix
+                padding: calc(2rem + env(safe-area-inset-top))
+                    calc(2rem + env(safe-area-inset-right))
+                    calc(2rem + env(safe-area-inset-bottom))
+                    calc(2rem + env(safe-area-inset-left)); // Safari notch fix
+            }
         }
 
         box-sizing: border-box;
@@ -156,7 +169,7 @@
         justify-content: center;
         touch-action: none; // Safari overscroll bug fix
 
-        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             display: none;
         }
 
@@ -189,7 +202,7 @@
             fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
         }
 
-        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             display: block;
         }
     }
