@@ -20,6 +20,7 @@
         }
     }
     h1 {
+        margin: 2rem 0 1rem 0;
         font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
         flex: 1 1 100%;

@@ -73,6 +73,8 @@
         }
     }
     .toggle {
+        position: sticky;
+        top: 0;
         cursor: pointer;
         text-align: right;
         padding: 0.5rem 0;
@@ -112,7 +114,7 @@
         padding: 0.5rem;
         text-align: center;
         @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-            position: absolute;
+            position: fixed;
             top: 0;
             background-color: var(--dividers);
             border-radius: 50%;
