@@ -1,6 +1,6 @@
 {
     "name": "@fdmg/design-system",
-    "version": "0.4.21",
+    "version": "0.4.22",
     "description": "FD Design System",
     "types": "main.d.ts",
     "main": "main.js",
