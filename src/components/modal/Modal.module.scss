@@ -46,14 +46,27 @@
     }
 
     .contentBox {
-        touch-action: none; // Safari overscroll bug fix
         position: fixed;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         top: 0;
         right: 0;
-        left: 0;
         bottom: 0;
+        left: 0;
+
+        // Safari fixes
+        @supports (-webkit-touch-callout: none) {
+            /* CSS specific to iOS devices */
+            @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
+                max-height: calc(
+                    100vh - calc(100vh - 100%) - 44px
+                ); // Safari viewport fix
+                // max-height: -webkit-fill-available; // Safari viewport fix
+                bottom: 44px; // Safari viewport fix
+            }
+        }
+
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             position: relative;
             max-width: 560px;
@@ -105,8 +118,9 @@
         @supports (-webkit-touch-callout: none) {
             /* CSS specific to iOS devices */
             @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
-                max-height: calc(100vh - 44px); // Safari viewport fix
-                max-height: -webkit-fill-available; // Safari viewport fix
+                max-height: calc(
+                    100vh - calc(100vh - 100%) - 44px
+                ); // Safari viewport fix
                 padding: calc(2rem + env(safe-area-inset-top))
                     calc(2rem + env(safe-area-inset-right))
                     calc(2rem + env(safe-area-inset-bottom))
@@ -168,6 +182,14 @@
         display: flex;
         justify-content: center;
         touch-action: none; // Safari overscroll bug fix
+
+        // Safari fixes
+        @supports (-webkit-touch-callout: none) {
+            /* CSS specific to iOS devices */
+            @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
+                padding-bottom: env(safe-area-inset-bottom); // Safari notch fix
+            }
+        }
 
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             display: none;

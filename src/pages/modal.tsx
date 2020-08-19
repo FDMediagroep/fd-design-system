@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { Switch } from '../components/input/Switch';
 
 const metaTitle = 'Modal';
-const metaDescription = 'Modal, used to display an modal overlay';
+const metaDescription = 'Modal, used to display a modal overlay';
 
 function Page() {
     const [opened, setOpened] = useState(false);
