@@ -48,6 +48,7 @@
     .contentBox {
         touch-action: none; // Safari overscroll bug fix
         position: fixed;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         top: 0;
@@ -114,7 +115,6 @@
             /* CSS specific to iOS devices */
             @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
                 max-height: calc(100vh - 44px); // Safari viewport fix
-                max-height: -webkit-fill-available; // Safari viewport fix
                 padding: calc(2rem + env(safe-area-inset-top))
                     calc(2rem + env(safe-area-inset-right))
                     calc(2rem + env(safe-area-inset-bottom))
