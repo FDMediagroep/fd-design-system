@@ -54,6 +54,14 @@
         right: 0;
         left: 0;
         bottom: 0;
+        // Safari fixes
+        @supports (-webkit-touch-callout: none) {
+            /* CSS specific to iOS devices */
+            @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
+                bottom: env(safe-area-inset-bottom);
+            }
+        }
+
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             position: relative;
             max-width: 560px;
