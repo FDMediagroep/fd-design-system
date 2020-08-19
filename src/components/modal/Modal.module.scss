@@ -57,17 +57,13 @@
 
         // Safari fixes
         @supports (-webkit-touch-callout: none) {
-            &:before {
-                content: calc(0 + env(safe-area-inset-bottom));
-                background: red;
-                position: absolute;
-                top: 0;
-                z-index: 1111;
-                width: 100px;
-                height: 100px;
-            }
             /* CSS specific to iOS devices */
             @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
+                max-height: calc(100vh - 44px); // Safari viewport fix
+                padding: calc(2rem + env(safe-area-inset-top))
+                    calc(2rem + env(safe-area-inset-right))
+                    calc(2rem + env(safe-area-inset-bottom))
+                    calc(2rem + env(safe-area-inset-left)); // Safari notch fix
             }
         }
 
@@ -116,18 +112,6 @@
         padding: 2rem;
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             padding: 2rem 3rem 2rem 2rem;
-        }
-
-        // Safari fixes
-        @supports (-webkit-touch-callout: none) {
-            /* CSS specific to iOS devices */
-            @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
-                max-height: calc(100vh - 44px); // Safari viewport fix
-                padding: calc(2rem + env(safe-area-inset-top))
-                    calc(2rem + env(safe-area-inset-right))
-                    calc(2rem + env(safe-area-inset-bottom))
-                    calc(2rem + env(safe-area-inset-left)); // Safari notch fix
-            }
         }
 
         box-sizing: border-box;
