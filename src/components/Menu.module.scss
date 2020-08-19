@@ -120,14 +120,14 @@
     margin: 0;
     overflow: inherit;
     z-index: 1;
+    position: relative;
 
     .toggle {
-        flex: 1 1 auto;
-        padding: 0.5rem;
+        box-sizing: content-box;
         text-align: center;
         @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
             position: fixed;
-            top: 0;
+            padding: 0.5rem;
             background-color: var(--dividers);
             border-radius: 50%;
             // IE11
