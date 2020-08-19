@@ -62,7 +62,6 @@
                 max-height: calc(
                     100vh - calc(100vh - 100%) - 44px
                 ); // Safari viewport fix
-                // max-height: -webkit-fill-available; // Safari viewport fix
                 bottom: 44px; // Safari viewport fix
             }
         }

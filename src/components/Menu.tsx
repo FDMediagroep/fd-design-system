@@ -35,8 +35,9 @@ function Menu() {
             >
                 Downloads 📤
             </a>
-            <fieldset>
-                <legend>Article</legend>
+
+            <section>
+                <h3>Article</h3>
                 <Link href="/article-bullet-point">
                     <a>BulletPoint</a>
                 </Link>
@@ -79,10 +80,9 @@ function Menu() {
                 <Link href="/wordframe">
                     <a>WordFrame</a>
                 </Link>
-            </fieldset>
-
-            <fieldset>
-                <legend>Controls</legend>
+            </section>
+            <section>
+                <h3>Controls</h3>
                 <Link href="/input/breaking-switch">
                     <a>Breaking Switch</a>
                 </Link>
@@ -119,10 +119,9 @@ function Menu() {
                 <Link href="/input/textinput">
                     <a>Text</a>
                 </Link>
-            </fieldset>
-
-            <fieldset>
-                <legend>Cards</legend>
+            </section>
+            <section>
+                <h3>Cards</h3>
                 <Link href="/cards">
                     <a>Cards</a>
                 </Link>
@@ -153,10 +152,9 @@ function Menu() {
                 <Link href="/card/vertical-3">
                     <a>Vertical 3</a>
                 </Link>
-            </fieldset>
-
-            <fieldset>
-                <legend>Misc.</legend>
+            </section>
+            <section>
+                <h3>Misc.</h3>
                 <Link href="/ab">
                     <a>A/B Testing component</a>
                 </Link>
@@ -172,8 +170,7 @@ function Menu() {
                 <Link href="/stock-ticker">
                     <a>Stock Ticker</a>
                 </Link>
-            </fieldset>
-
+            </section>
             <a
                 className={styles.image}
                 href="https://github.com/FDMediagroep/fd-design-system"

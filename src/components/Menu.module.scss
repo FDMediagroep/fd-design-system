@@ -7,17 +7,25 @@
     display: flex;
     flex-direction: column;
     white-space: nowrap;
-    padding: 1rem;
     box-sizing: border-box;
     font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     overflow-y: auto;
-    max-height: 100vh;
-    position: relative;
     position: sticky;
+    height: 100vh;
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        height: 100%;
+    }
     top: 0;
     margin-right: 1rem;
     background: inherit;
     z-index: 1;
+
+    > *,
+    section > * {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 
     &::-webkit-scrollbar {
         width: 0.5rem;
@@ -50,6 +58,7 @@
     }
 
     a {
+        display: block;
         color: var(--content-copy);
         // IE11
         @media screen and (-ms-high-contrast: active),
@@ -58,7 +67,8 @@
         }
 
         text-decoration: none;
-        padding: 0.5rem 0;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
 
         &:hover {
             text-decoration: underline;
@@ -73,31 +83,36 @@
         }
     }
     .toggle {
+        position: sticky;
+        top: 0;
         cursor: pointer;
         text-align: right;
-        padding: 0.5rem 0;
+        z-index: 1;
+        margin: 0;
     }
 
-    fieldset {
-        flex-shrink: 0; // Safari fix
-        flex-basis: auto; // Safari fix
-        display: flex;
+    section {
+        display: block;
         flex-direction: column;
-        border: 1px solid var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border: 1px solid #{map-deep-get($colors, 'colors', 'neutral', 50)};
+        margin: 0;
+        > * {
+            display: block;
         }
     }
 
-    legend {
-        color: var(--writer);
+    h3 {
+        position: sticky;
+        top: 0;
+        margin: 0;
+        background-color: var(--dividers);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
         }
+        text-align: center;
+        font-style: italic;
+        font-weight: normal;
     }
 }
 
@@ -106,14 +121,14 @@
     margin: 0;
     overflow: inherit;
     z-index: 1;
+    position: relative;
 
     .toggle {
-        flex: 1 1 auto;
-        padding: 0.5rem;
+        box-sizing: content-box;
         text-align: center;
         @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-            position: absolute;
-            top: 0;
+            position: fixed;
+            padding: 0.5rem;
             background-color: var(--dividers);
             border-radius: 50%;
             // IE11
@@ -130,7 +145,7 @@
     }
     a,
     .themeControls,
-    fieldset {
+    h3 {
         display: none;
     }
 }
