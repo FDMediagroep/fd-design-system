@@ -46,20 +46,28 @@
     }
 
     .contentBox {
-        touch-action: none; // Safari overscroll bug fix
         position: fixed;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         top: 0;
         right: 0;
-        left: 0;
         bottom: 0;
+        left: 0;
+
         // Safari fixes
         @supports (-webkit-touch-callout: none) {
+            &:before {
+                content: calc(0 + env(safe-area-inset-bottom));
+                background: red;
+                position: absolute;
+                top: 0;
+                z-index: 1111;
+                width: 100px;
+                height: 100px;
+            }
             /* CSS specific to iOS devices */
             @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
-                bottom: env(safe-area-inset-bottom);
             }
         }
 
@@ -176,6 +184,14 @@
         display: flex;
         justify-content: center;
         touch-action: none; // Safari overscroll bug fix
+
+        // Safari fixes
+        @supports (-webkit-touch-callout: none) {
+            /* CSS specific to iOS devices */
+            @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
+                padding-bottom: env(safe-area-inset-bottom); // Safari notch fix
+            }
+        }
 
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             display: none;
