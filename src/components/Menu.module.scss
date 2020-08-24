@@ -126,21 +126,14 @@
     .toggle {
         box-sizing: content-box;
         text-align: center;
-        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-            position: fixed;
-            padding: 0.5rem;
-            background-color: var(--dividers);
-            border-radius: 50%;
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        50
-                    )};
-            }
+        position: fixed;
+        padding: 0.5rem;
+        background-color: var(--dividers);
+        border-radius: 50%;
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
         }
     }
     a,
