@@ -37,7 +37,7 @@ function getTokenName(hex: string) {
 }
 
 function getColorRecursively(el: HTMLElement, styleProp: string) {
-    let color = getComputedStyle(el).getPropertyValue(styleProp);
+    let color = getComputedStyle(el)?.getPropertyValue(styleProp);
     if (styleProp === 'background-color' && color === 'rgba(0, 0, 0, 0)') {
         return getColorRecursively(el.parentElement, styleProp);
     } else if (color) {
