@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './tokens.module.scss';
 import fs from 'fs';
 import path from 'path';
-import { BookmarkIcon } from '../design-tokens/icons';
 import Head from 'next/dist/next-server/lib/head';
 
 interface Props {

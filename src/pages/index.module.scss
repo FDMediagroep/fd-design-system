@@ -2,6 +2,29 @@
 @import '../design-tokens/colors.scss';
 @import '../design-tokens/typography.scss';
 
+:root:global(.dark) {
+    .index {
+        img[alt='FD Design System'] {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+        }
+    }
+}
+:root:not(:global(.light)),
+:root:global(.system) {
+    @media (prefers-color-scheme: dark) {
+        .index {
+            img[alt='FD Design System'] {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        80
+                    )};
+            }
+        }
+    }
+}
+
 .index {
     color: var(--content-copy);
     // IE11
@@ -12,5 +35,87 @@
         margin: 2rem 0 1rem 0;
         font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
+    }
+
+    a {
+        color: var(--link);
+        &:hover {
+            color: var(--link-hover);
+        }
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            &:hover {
+                color: #{map-deep-get($colors, 'colors', 'primary', 50)};
+            }
+        }
+    }
+
+    code {
+        color: var(--captions);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+        }
+    }
+
+    img[alt='FD Design System'] {
+        padding: 37px 1rem;
+        border-radius: 15px;
+    }
+
+    pre,
+    code {
+        padding: 0.2rem 0.3rem;
+        background-color: var(--card);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        }
+    }
+    pre {
+        padding: 1rem;
+        overflow: auto;
+        max-width: 100%;
+        &::-webkit-scrollbar {
+            width: 0.5rem;
+            height: 0.5rem;
+        }
+
+        &::-webkit-scrollbar-track {
+            -webkit-border-radius: 0.25rem;
+            border-radius: 0.25rem;
+            background: var(--dividers);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+            }
+        }
+
+        &::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 0.25rem;
+            border-radius: 0.25rem;
+            background: var(--meta-copy);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: var(--functional-copy);
+        }
+
+        &::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    code {
+        display: inline-block;
+    }
+
+    summary {
+        cursor: pointer;
     }
 }

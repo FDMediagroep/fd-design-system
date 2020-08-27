@@ -22,7 +22,7 @@
     </a>
 </p>
 
-# fd-design-system
+# FD Design System
 
 [Design System](https://design-system.fd.nl) for components used by [FD.nl](https://fd.nl).
 
@@ -49,16 +49,16 @@ You can replace date-input-polyfill with an empty component.
 Install `null-loader` and add the following to your Webpack configuration rules.
 
 ```
-    module: {
-        rules: [
-            {
-                // Test for a polyfill (or any file) and it won't be included in your
-                // bundle
-                test: /date-input-polyfill.dist.js$/,
-                use: 'null-loader',
-            }
-        ]
-    }
+module: {
+    rules: [
+        {
+            // Test for a polyfill (or any file) and it won't be included in your
+            // bundle
+            test: /date-input-polyfill.dist.js$/,
+            use: 'null-loader',
+        }
+    ]
+}
 ```
 
 ## TypeScript support
