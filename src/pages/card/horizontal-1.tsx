@@ -43,15 +43,23 @@ const horizontalCards1: any = [
         readingTime: 7,
     },
     {
-        id: '1343780',
-        url:
-            'https://fd.nl/economie-politiek/1343780/maak-meer-gebruik-van-het-placebo-effect-in-het-coronabeleid',
+        id: '1334870',
+        url: 'http://local.fd.nl:8888/opinie/1334870/een-europese-rente',
         imageUrl:
-            'https://images.fd.nl/tB2lwMoC_9MPDyo28ovDjM-YPz8.jpg?fit=crop&crop=faces&auto=format&q=45&w=300',
-        label: 'Coronaspreekuur',
-        time: '06:00',
-        title: "'Maak meer gebruik van het placebo-effect in het coronabeleid'",
+            'https://fd-external-development.imgix.net/bd426d8e140cd2b07ee8e4ee8e4c70e4bc9dd3b4.jpg?fit=crop&crop=faces&auto=format,compress&q=45&w=300&h=300',
+        label: 'Kleintje groot',
+        time: '1 aug',
+        title: 'Eén Europese rente',
         variant: 'variant-1',
+        theme: 'theme-7',
+    },
+    {
+        id: '1353344',
+        url:
+            'https://fd.nl/economie-politiek/1353344/huiseigenaren-minder-bezorgd-over-kanteling-op-woningmarkt',
+        label: 'Woningmarkt',
+        time: '6 aug',
+        title: 'Huiseigenaren minder bezorgd over kanteling op woningmarkt',
     },
 ];
 
@@ -87,7 +95,8 @@ function Page() {
                             <li>default</li>
                             <li>updated</li>
                             <li>is read</li>
-                            <li>variant-1</li>
+                            <li>variant-1 themed</li>
+                            <li>no image</li>
                         </ul>
                     </>
                 }
@@ -97,6 +106,7 @@ function Page() {
                     <HorizontalCard1 {...horizontalCards1[1]} />
                     <HorizontalCard1 {...horizontalCards1[2]} />
                     <HorizontalCard1 {...horizontalCards1[3]} />
+                    <HorizontalCard1 {...horizontalCards1[4]} />
                 </>
             </Explain>
         </>
