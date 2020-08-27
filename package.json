@@ -65,6 +65,7 @@
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-element-to-jsx-string": "^14.3.1",
+        "react-markdown": "^4.3.1",
         "sass": "^1.26.9",
         "sass-loader": "^10.0.1",
         "style-loader": "^1.2.1",

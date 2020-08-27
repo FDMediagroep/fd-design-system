@@ -2,6 +2,29 @@
 @import '../design-tokens/colors.scss';
 @import '../design-tokens/typography.scss';
 
+:root:global(.dark) {
+    .index {
+        img[alt='FD Design System'] {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+        }
+    }
+}
+:root:not(:global(.light)),
+:root:global(.system) {
+    @media (prefers-color-scheme: dark) {
+        .index {
+            img[alt='FD Design System'] {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        80
+                    )};
+            }
+        }
+    }
+}
+
 .index {
     color: var(--content-copy);
     // IE11
@@ -12,5 +35,34 @@
         margin: 2rem 0 1rem 0;
         font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
+    }
+
+    a {
+        color: var(--link);
+        &:hover {
+            color: var(--link-hover);
+        }
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            &:hover {
+                color: #{map-deep-get($colors, 'colors', 'primary', 50)};
+            }
+        }
+    }
+
+    code {
+        color: var(--captions);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+        }
+    }
+
+    img[alt='FD Design System'] {
+        padding: 37px 1rem;
+        border-radius: 15px;
     }
 }

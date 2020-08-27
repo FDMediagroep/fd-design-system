@@ -22,7 +22,7 @@
     </a>
 </p>
 
-# fd-design-system
+# FD Design System
 
 [Design System](https://design-system.fd.nl) for components used by [FD.nl](https://fd.nl).
 
