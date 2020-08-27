@@ -65,4 +65,49 @@
         padding: 37px 1rem;
         border-radius: 15px;
     }
+
+    pre,
+    code {
+        padding: 0.2rem 0.3rem;
+        background-color: var(--card);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        }
+    }
+    pre {
+        padding: 1rem;
+        overflow: auto;
+        max-width: 100%;
+        &::-webkit-scrollbar {
+            width: 0.5rem;
+            height: 0.5rem;
+        }
+
+        &::-webkit-scrollbar-track {
+            -webkit-border-radius: 0.25rem;
+            border-radius: 0.25rem;
+            background: var(--dividers);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+            }
+        }
+
+        &::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 0.25rem;
+            border-radius: 0.25rem;
+            background: var(--meta-copy);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: var(--functional-copy);
+        }
+
+        &::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    }
 }
