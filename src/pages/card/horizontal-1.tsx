@@ -53,6 +53,14 @@ const horizontalCards1: any = [
         title: "'Maak meer gebruik van het placebo-effect in het coronabeleid'",
         variant: 'variant-1',
     },
+    {
+        id: '1353344',
+        url:
+            'https://fd.nl/economie-politiek/1353344/huiseigenaren-minder-bezorgd-over-kanteling-op-woningmarkt',
+        label: 'Woningmarkt',
+        time: '6 aug',
+        title: 'Huiseigenaren minder bezorgd over kanteling op woningmarkt',
+    },
 ];
 
 const metaTitle = 'Horizontal Card 1';
@@ -88,6 +96,7 @@ function Page() {
                             <li>updated</li>
                             <li>is read</li>
                             <li>variant-1</li>
+                            <li>no image</li>
                         </ul>
                     </>
                 }
@@ -97,6 +106,7 @@ function Page() {
                     <HorizontalCard1 {...horizontalCards1[1]} />
                     <HorizontalCard1 {...horizontalCards1[2]} />
                     <HorizontalCard1 {...horizontalCards1[3]} />
+                    <HorizontalCard1 {...horizontalCards1[4]} />
                 </>
             </Explain>
         </>

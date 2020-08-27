@@ -6,7 +6,7 @@ import { getCssClassNames as getReadingTimeCssClassNames } from './shared/Readin
 interface Props {
     id: string;
     url: string;
-    imageUrl: string;
+    imageUrl?: string;
     label: string;
     /**
      * Reading time in minutes.
@@ -34,12 +34,20 @@ function HorizontalCard1(props: Props) {
             id={props.id}
         >
             <a href={props.url}>
-                <div
-                    className={styles.figure}
-                    style={{
-                        backgroundImage: `url(${props.imageUrl})`,
-                    }}
-                ></div>
+                {props.imageUrl && (
+                    <div
+                        className={styles.figure}
+                        style={{
+                            backgroundImage: `url(${props.imageUrl})`,
+                        }}
+                    ></div>
+                )}
+
+                {!props.imageUrl && (
+                    <div className={`${styles.figure} ${styles.empty}`}>
+                        <img src="/assets/images/fd-logo.svg" />
+                    </div>
+                )}
 
                 <div className={styles.teaserText}>
                     <div className={styles.meta}>
