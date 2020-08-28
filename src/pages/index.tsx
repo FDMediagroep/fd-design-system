@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import styles from './index.module.scss';
-import fs from 'fs';
-import path from 'path';
 import Head from 'next/head';
 import ReactMD from 'react-markdown/with-html';
 import { useRouter } from 'next/router';
@@ -94,14 +92,11 @@ function Page(props: Props) {
 }
 
 export async function getStaticProps() {
-    const readme = fs.readFileSync(
-        path.join(process.cwd(), 'README.md'),
-        'utf-8'
-    );
+    const readme = require('../../README.md');
 
     return {
         props: {
-            readme,
+            readme: readme.default,
         },
     };
 }

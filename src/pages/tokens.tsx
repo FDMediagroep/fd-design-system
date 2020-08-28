@@ -3,12 +3,12 @@ import styles from './tokens.module.scss';
 import fs from 'fs';
 import path from 'path';
 import Head from 'next/dist/next-server/lib/head';
+import colors from '../../public/assets/design-tokens/colors.json';
+import media from '../../public/assets/design-tokens/media.json';
+import typography from '../../public/assets/design-tokens/typography.json';
 
 interface Props {
-    colors: any;
     icons: any;
-    media: any;
-    typography: any;
     [x: string]: any;
 }
 
@@ -21,53 +21,49 @@ function Tokens(props: Props) {
         e.currentTarget.select();
     }
 
-    const colorGroups = Object.entries(JSON.parse(props.colors).colors).map(
-        (colors) => (
-            <div key={colors[0]} className={styles.group}>
-                <h2>{colors[0]}</h2>
-                <div>
-                    {Object.entries(colors[1]).map((value) => {
-                        return (
-                            <div key={`${colors[0]}-${value[0]}`}>
-                                <label
-                                    htmlFor={`${colors[0]}-${value[0]}`}
-                                    className={styles.colorTile}
-                                    style={{ backgroundColor: value[1] }}
-                                />
-                                <label htmlFor={`${colors[0]}-${value[0]}`}>
-                                    {value[0]}:
-                                </label>
-                                <input
-                                    id={`${colors[0]}-${value[0]}`}
-                                    readOnly={true}
-                                    value={value[1]}
-                                    onFocus={handleFocusColor}
-                                />
-                            </div>
-                        );
-                    })}
-                </div>
+    const colorGroups = Object.entries(colors.colors).map((colors) => (
+        <div key={colors[0]} className={styles.group}>
+            <h2>{colors[0]}</h2>
+            <div>
+                {Object.entries(colors[1]).map((value) => {
+                    return (
+                        <div key={`${colors[0]}-${value[0]}`}>
+                            <label
+                                htmlFor={`${colors[0]}-${value[0]}`}
+                                className={styles.colorTile}
+                                style={{ backgroundColor: value[1] }}
+                            />
+                            <label htmlFor={`${colors[0]}-${value[0]}`}>
+                                {value[0]}:
+                            </label>
+                            <input
+                                id={`${colors[0]}-${value[0]}`}
+                                readOnly={true}
+                                value={value[1]}
+                                onFocus={handleFocusColor}
+                            />
+                        </div>
+                    );
+                })}
             </div>
-        )
-    );
+        </div>
+    ));
 
-    const fonts = Object.entries(
-        JSON.parse(props.typography)['font-family']
-    ).map((fonts) => (
+    const fonts = Object.entries(typography['font-family']).map((fonts) => (
         <div key={fonts[0]} className={styles.group}>
             <div>
                 <label
                     htmlFor={`${fonts[0]}-${fonts[0]}`}
-                    style={{ fontFamily: fonts[1] as string }}
+                    style={{ fontFamily: fonts[1] }}
                 >
                     {fonts[0]}:
                 </label>
                 <input
                     id={`${fonts[0]}-${fonts[0]}`}
                     readOnly={true}
-                    value={fonts[1] as string}
+                    value={fonts[1]}
                     onFocus={handleFocusColor}
-                    style={{ fontFamily: fonts[1] as string }}
+                    style={{ fontFamily: fonts[1] }}
                 />
             </div>
         </div>
@@ -94,11 +90,7 @@ function Tokens(props: Props) {
             <fieldset>
                 <legend>Colors:</legend>
                 <textarea
-                    defaultValue={JSON.stringify(
-                        JSON.parse(props.colors),
-                        null,
-                        2
-                    )}
+                    defaultValue={JSON.stringify(colors, null, 2)}
                     readOnly={true}
                 />
             </fieldset>
@@ -108,11 +100,7 @@ function Tokens(props: Props) {
             <fieldset>
                 <legend>Typography:</legend>
                 <textarea
-                    defaultValue={JSON.stringify(
-                        JSON.parse(props.typography),
-                        null,
-                        2
-                    )}
+                    defaultValue={JSON.stringify(typography, null, 2)}
                     readOnly={true}
                 />
             </fieldset>
@@ -125,11 +113,7 @@ function Tokens(props: Props) {
             <fieldset>
                 <legend>Media query sizes:</legend>
                 <textarea
-                    defaultValue={JSON.stringify(
-                        JSON.parse(props.media),
-                        null,
-                        2
-                    )}
+                    defaultValue={JSON.stringify(media, null, 2)}
                     readOnly={true}
                 />
             </fieldset>
@@ -151,36 +135,6 @@ function Tokens(props: Props) {
 }
 
 export async function getStaticProps() {
-    const colors = fs.readFileSync(
-        path.join(
-            process.cwd(),
-            'public',
-            'assets',
-            'design-tokens',
-            'colors.json'
-        ),
-        'utf-8'
-    );
-    const media = fs.readFileSync(
-        path.join(
-            process.cwd(),
-            'public',
-            'assets',
-            'design-tokens',
-            'media.json'
-        ),
-        'utf-8'
-    );
-    const typography = fs.readFileSync(
-        path.join(
-            process.cwd(),
-            'public',
-            'assets',
-            'design-tokens',
-            'typography.json'
-        ),
-        'utf-8'
-    );
     const dirents = fs.readdirSync(
         path.join(process.cwd(), 'public', 'assets', 'icons'),
         { encoding: 'utf-8', withFileTypes: true }
@@ -198,10 +152,7 @@ export async function getStaticProps() {
     const updated = new Date().toLocaleString();
     return {
         props: {
-            colors,
             icons,
-            media,
-            typography,
             updated,
         },
         // we will attempt to re-generate the page:
