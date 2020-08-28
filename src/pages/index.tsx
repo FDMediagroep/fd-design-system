@@ -41,7 +41,8 @@ function Page(props: Props) {
                         'href'
                     );
                     const route = url.replace(baseUrl, '');
-                    route && router.push(route);
+                    route &&
+                        router.push(route).then(() => window.scrollTo(0, 0));
                 });
             });
     }, []);
