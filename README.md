@@ -117,7 +117,7 @@ So as of the time of writing Webpack still offers the best of both worlds with t
 import React from 'react';
 ```
 
-All components import React even though the example codes don't show that.
+All components import React even though the example codes don't reflect that.
 
 ---
 

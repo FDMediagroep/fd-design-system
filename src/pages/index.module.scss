@@ -37,6 +37,22 @@
             sans-serif;
     }
 
+    h1,
+    h2 {
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border-bottom: 1px solid #{map-deep-get(
+                    $colors,
+                    'colors',
+                    'neutral',
+                    60
+                )};
+        }
+    }
+
     a {
         color: var(--link);
         &:hover {
@@ -123,18 +139,23 @@
         display: inline-block;
     }
 
+    details {
+        margin-bottom: 1rem;
+    }
+
     summary {
         cursor: pointer;
         user-select: none;
     }
 
     hr {
-        border-style: solid;
-        border-color: var(--dividers);
+        height: 0.25rem;
+        background-color: var(--dividers);
+        border: none;
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            border-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
         }
     }
 
