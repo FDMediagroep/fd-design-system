@@ -19,6 +19,9 @@ function Page(props: Props) {
     const router = useRouter();
 
     useEffect(() => {
+        /**
+         * Add id attribute to heading elements so anchors still work.
+         */
         [].slice
             .call(document.querySelectorAll('h2'))
             .forEach((heading: HTMLHeadingElement) => {
@@ -28,19 +31,20 @@ function Page(props: Props) {
                 );
             });
 
+        /**
+         * Intercept all links starting with `baseUrl`.
+         * Convert them to Next.js `router.push` calls to enforce SPA behaviour.
+         */
         [].slice
-            .call(document.querySelectorAll('a[href]'))
+            .call(document.querySelectorAll(`a[href^="${baseUrl}"]`))
             .forEach((link: HTMLAnchorElement) => {
                 link.addEventListener('click', (e) => {
+                    e.preventDefault();
                     const url = (e.currentTarget as HTMLAnchorElement).getAttribute(
                         'href'
                     );
-                    if (url.startsWith(baseUrl)) {
-                        e.preventDefault();
-                        const route = url.replace(baseUrl, '');
-                        console.log(route);
-                        router.push(route);
-                    }
+                    const route = url.replace(baseUrl, '');
+                    route && router.push(route);
                 });
             });
     }, []);
