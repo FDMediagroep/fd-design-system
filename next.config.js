@@ -2,9 +2,10 @@ const withOffline = require('next-offline');
 const rewriteConfig = require('./rewrites');
 
 module.exports = withOffline({
+    generateInDevMode: true,
     workboxOpts: {
         cleanupOutdatedCaches: true,
-        swDest: 'static/service-worker.js',
+        swDest: '../public/service-worker.js',
         runtimeCaching: [
             {
                 urlPattern: /^https?.*\.[a-zA-Z0-9]*\??.*$/,
@@ -31,10 +32,6 @@ module.exports = withOffline({
             return [
                 ...rewriteConfig,
                 {
-                    source: '/service-worker.js',
-                    destination: '/_next/static/service-worker.js',
-                },
-                {
                     source: '/colors',
                     destination:
                         'https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/771162327/Colors',
@@ -53,19 +50,6 @@ module.exports = withOffline({
                     destination:
                         '/achtergrond/1324449/alle-verrijking-op-een-rijtje',
                     permanent: false,
-                },
-            ];
-        },
-        async headers() {
-            return [
-                {
-                    source: '/service-worker.js',
-                    headers: [
-                        {
-                            key: 'Service-Worker-Allowed',
-                            value: '/',
-                        },
-                    ],
                 },
             ];
         },
