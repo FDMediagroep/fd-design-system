@@ -215,6 +215,8 @@ function Foo() {
 <details>
 <summary>BulletPoint</summary>
 
+[Demo](https://design-system.fd.nl/article-bullet-point)
+
 Component CSS:
 
 ```
@@ -1421,6 +1423,8 @@ function Foo() {
 
 <details>
 <summary>StockTicker</summary>
+
+[Demo](https://design-system.fd.nl/stock-ticker)
 
 Component CSS:
 
