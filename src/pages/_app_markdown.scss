@@ -2,17 +2,17 @@
 @import '../design-tokens/colors.scss';
 @import '../design-tokens/typography.scss';
 
-:root:global(.dark) {
-    .index {
+:root.dark {
+    .markdown {
         img[alt='FD Design System'] {
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
         }
     }
 }
-:root:not(:global(.light)),
-:root:global(.system) {
+:root:not(.light),
+:root.system {
     @media (prefers-color-scheme: dark) {
-        .index {
+        .markdown {
             img[alt='FD Design System'] {
                 background-color: #{map-deep-get(
                         $colors,
@@ -25,7 +25,7 @@
     }
 }
 
-.index {
+.markdown {
     color: var(--content-copy);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -162,21 +162,5 @@
             (-ms-high-contrast: none) {
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
         }
-    }
-
-    .github {
-        figure {
-            text-align: center;
-        }
-        img {
-            opacity: 0.5;
-            &:hover {
-                opacity: 1;
-            }
-        }
-    }
-
-    .invertable {
-        filter: var(--filter-invert);
     }
 }

@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Menu.module.scss';
 import { Themes } from './Themes';
 
-function Menu() {
+interface Props {
+    onVisibilityChange?: (closed: boolean) => void;
+}
+
+function Menu(props: Props) {
     const [closed, setClosed] = useState(false);
 
     function toggle() {
-        setClosed(!closed);
+        const newState = !closed;
+        props?.onVisibilityChange?.(newState);
+        setClosed(newState);
     }
 
     return (

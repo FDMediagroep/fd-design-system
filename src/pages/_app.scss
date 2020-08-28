@@ -32,3 +32,19 @@ body {
             env(safe-area-inset-bottom) env(safe-area-inset-left); // Safari notch fix
     }
 }
+
+.github {
+    figure {
+        text-align: center;
+    }
+    img {
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.invertable {
+    filter: var(--filter-invert);
+}

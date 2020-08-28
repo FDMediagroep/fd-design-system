@@ -24,6 +24,7 @@ function Page() {
             </Head>
 
             <Explain
+                anchor="mandatory"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (mandatory)"
@@ -52,6 +53,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="description"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (description)"
@@ -83,6 +85,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="mandatory-placeholder"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (mandatory, placeholder)"
@@ -118,6 +121,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="description-placeholder"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (description, placeholder)"
@@ -150,6 +154,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="mandatory-default-value"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (mandatory, default value)"
@@ -185,6 +190,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="default-value"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (default value)"
@@ -217,6 +223,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="max-words"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="TextArea (max words)"

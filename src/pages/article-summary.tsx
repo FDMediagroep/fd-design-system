@@ -48,6 +48,7 @@ function Page() {
             </Head>
 
             <Explain
+                anchor="default"
                 cssClassNames={getCssClassNames()}
                 legend="Summary"
                 reactComponentName="Summary"
@@ -62,6 +63,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="variant-1"
                 cssClassNames={getCssClassNames()}
                 legend="Summary (variant-1)"
                 reactComponentName="Summary"
@@ -76,6 +78,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="variant-2"
                 cssClassNames={getCssClassNames()}
                 legend="Summary (variant-2)"
                 reactComponentName="Summary"

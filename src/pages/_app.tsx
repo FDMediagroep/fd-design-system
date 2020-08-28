@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../design-tokens/design-tokens.scss';
 import './_app.scss';
+import './_app_markdown.scss';
 import styles from './_app.module.scss';
 import { Menu } from '../components/Menu';
 import PageStore, { Page } from '../stores/PageStore';

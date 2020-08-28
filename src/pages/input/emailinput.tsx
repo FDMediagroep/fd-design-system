@@ -28,6 +28,7 @@ function Page() {
             </Head>
 
             <Explain
+                anchor="mandatory"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="E-mail (mandatory)"
@@ -72,6 +73,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="mandatory-description"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="E-mail (mandatory, description)"

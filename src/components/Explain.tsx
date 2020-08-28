@@ -21,6 +21,7 @@ interface Props {
     /**
      * E.g.: component
      * If you want to use # anchors in the URL to jump to the position of this component on the page.
+     * You can provide the anchor name here excluding the #.
      */
     anchor?: string;
     /**

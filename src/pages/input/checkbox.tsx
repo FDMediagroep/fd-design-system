@@ -24,6 +24,7 @@ function Page() {
             </Head>
 
             <Explain
+                anchor="default"
                 cssClassNames={getCssClassNames()}
                 legend="Checkbox"
                 reactComponentName="Checkbox"
@@ -46,6 +47,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="checked"
                 cssClassNames={getCssClassNames()}
                 legend="Checkbox (default: checked)"
                 description={

@@ -23,6 +23,7 @@ function Page() {
             </Head>
 
             <Explain
+                anchor="mandatory"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Text (mandatory)"
@@ -47,6 +48,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="description"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Text (description)"
@@ -78,6 +80,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="description-placeholder"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Text (description, placeholder)"
@@ -110,6 +113,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="description-default-value"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Number (description, default value)"
@@ -144,6 +148,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="description-default-value-hidden-spinners"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Number (description, default value, hidden spinners)"

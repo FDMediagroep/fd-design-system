@@ -35,6 +35,12 @@ module.exports = {
             fs: 'empty',
         };
 
+        // Markdown
+        config.module.rules.push({
+            test: /\.md$/,
+            use: ['raw-loader'],
+        });
+
         // SVG
         config.module.rules.push({
             test: /\.svg$/,

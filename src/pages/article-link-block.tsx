@@ -40,6 +40,7 @@ function Page() {
             </Head>
 
             <Explain
+                anchor="default"
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Link Block"
@@ -59,6 +60,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="align-right"
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Link Block (align: right)"

@@ -24,6 +24,7 @@ function Page() {
             </Head>
 
             <Explain
+                anchor="mandatory"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Date (mandatory)"
@@ -63,6 +64,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="description"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Date (description)"
@@ -102,6 +104,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="yyyy-mm"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Date YYYY-MM (mandatory)"

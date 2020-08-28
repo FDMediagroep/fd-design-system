@@ -273,6 +273,11 @@ module.exports = {
         strictExportPresence: true,
         rules: [
             { parser: { requireEnsure: false } },
+            // Markdown
+            {
+                test: /\.md$/,
+                use: ['raw-loader'],
+            },
             // SVG
             {
                 test: /\.svg$/,
