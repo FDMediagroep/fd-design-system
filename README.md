@@ -29,7 +29,7 @@
 The Design System is created to be used in the following ways:
 
 -   **Component Library**
-    -   Skip to [installation](#installation) if you intend to use it as a Component Library within your own frontend project. [List of components](#components) and how to use it is described further [below](#components).
+    -   Skip to [installation](#installation) if you intend to use it as a Component Library within your own [React](https://reactjs.org/) project. [List of components](#components) and how to use it is described further [below](#components).
 -   **Design Documentation**
     -   The [Design Documentation](https://design-system.fd.nl) is a website which allows you to preview the components. It also documents the design tokens and reasoning behind the designs.
 -   **CSS + HTML code generator**
