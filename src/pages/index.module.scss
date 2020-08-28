@@ -31,10 +31,31 @@
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     }
-    h1 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         margin: 2rem 0 1rem 0;
         font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
+    }
+
+    h1,
+    h2 {
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border-bottom: 1px solid #{map-deep-get(
+                    $colors,
+                    'colors',
+                    'neutral',
+                    60
+                )};
+        }
     }
 
     a {
@@ -123,18 +144,23 @@
         display: inline-block;
     }
 
+    details {
+        margin-bottom: 1rem;
+    }
+
     summary {
         cursor: pointer;
         user-select: none;
     }
 
     hr {
-        border-style: solid;
-        border-color: var(--dividers);
+        height: 0.25rem;
+        background-color: var(--dividers);
+        border: none;
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            border-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
         }
     }
 
