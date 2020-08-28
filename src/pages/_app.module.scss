@@ -1,5 +1,6 @@
 @import '../utils/map-deep-get.scss';
 @import '../design-tokens/colors.scss';
+@import '../design-tokens/media.scss';
 
 .overview,
 .article {
@@ -22,11 +23,8 @@
 
         flex-direction: column;
         min-height: 100vh;
-        padding-right: 1rem;
-    }
-
-    &.menuClosed {
-        main {
+        padding: 0 0.5rem;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             padding: 0 1rem;
         }
     }

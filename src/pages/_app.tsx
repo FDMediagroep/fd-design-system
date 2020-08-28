@@ -9,7 +9,6 @@ import Head from 'next/head';
 import { Tooltip } from '../components/Tooltip';
 
 function App({ Component, pageProps }) {
-    const [menuClosed, setMenuClosed] = useState(false);
     const [pageType, setPageType] = useState<Page>(PageStore.getPageType());
     const [pageStyle, setPageStyle] = useState(styles.overview);
     const darkModeMediaQuery =
@@ -20,10 +19,6 @@ function App({ Component, pageProps }) {
         console.log(`System is 🌒`);
     } else {
         console.log(`System is ☀️`);
-    }
-
-    function handleMenuVisibilityChange(closed: boolean) {
-        setMenuClosed(closed);
     }
 
     useEffect(() => {
@@ -56,13 +51,9 @@ function App({ Component, pageProps }) {
                     content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no, minimal-ui, viewport-fit=cover"
                 />
             </Head>
-            <section
-                className={`${pageStyle} ${
-                    menuClosed ? ` ${styles.menuClosed}` : ''
-                }`}
-            >
+            <section className={pageStyle}>
                 <aside>
-                    <Menu onVisibilityChange={handleMenuVisibilityChange} />
+                    <Menu />
                 </aside>
                 <main>
                     <Component {...pageProps} />

@@ -12,7 +12,7 @@ function Menu(props: Props) {
 
     function toggle() {
         const newState = !closed;
-        props.onVisibilityChange(newState);
+        props?.onVisibilityChange?.(newState);
         setClosed(newState);
     }
 
