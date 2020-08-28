@@ -4534,6 +4534,9 @@ precacheAndRoute([{
   "url": "_next/static/chunks/pages/_error.js",
   "revision": "5ee1ef4cb8df2dac12266f2a8c6ede1e"
 }, {
+  "url": "_next/static/chunks/pages/index.js",
+  "revision": "a51b8674e94f508aaf75c3721d9d2859"
+}, {
   "url": "_next/static/chunks/pages/next/dist/pages/_error.js",
   "revision": "514578514500846fb1742fae389662be"
 }, {
@@ -4544,10 +4547,10 @@ precacheAndRoute([{
   "revision": "780ff9d5332e4e8d3fb79cb436af38b0"
 }, {
   "url": "_next/static/chunks/webpack.js",
-  "revision": "74f12662d8bf9e0133b2a0199d439309"
+  "revision": "df665ec2c49f1e16d87db1a5baaa9326"
 }, {
   "url": "_next/static/development/_buildManifest.js",
-  "revision": "6f7d322961d5e9ea9e091c976d3561a4"
+  "revision": "78ec6f6ae4520506a8def1e64aa137f9"
 }, {
   "url": "_next/static/development/_buildManifest.module.js",
   "revision": "fb96ae7926f5104f50f0cf1b3a23a9b5"
@@ -4558,8 +4561,8 @@ precacheAndRoute([{
   "url": "_next/static/development/_ssgManifest.module.js",
   "revision": "abee47769bf307639ace4945f9cfd4ff"
 }, {
-  "url": "_next/static/webpack/727070f5979db9002ce1.hot-update.json",
-  "revision": "71cd512191e9435bf39d297a290be658"
+  "url": "_next/static/webpack/f189cb18602367ceb057.hot-update.json",
+  "revision": "25a37f7ea544d3972e70cc665d556afd"
 }], {});
 cleanupOutdatedCaches();
 registerRoute(/^https?.*\.[a-zA-Z0-9]*\??.*$/, new NetworkFirst({

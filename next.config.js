@@ -23,7 +23,7 @@ module.exports = withOffline({
                 },
             },
         ],
-        importScripts: ['/sw-push-listener.js'],
+        importScripts: [],
     },
     experimental: {
         modern: true,
