@@ -128,6 +128,16 @@
         user-select: none;
     }
 
+    hr {
+        border-style: solid;
+        border-color: var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+        }
+    }
+
     .github {
         figure {
             text-align: center;
