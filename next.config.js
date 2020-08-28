@@ -31,6 +31,10 @@ module.exports = withOffline({
             return [
                 ...rewriteConfig,
                 {
+                    source: '/service-worker.js',
+                    destination: '/_next/static/service-worker.js',
+                },
+                {
                     source: '/colors',
                     destination:
                         'https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/771162327/Colors',
@@ -50,6 +54,20 @@ module.exports = withOffline({
                         '/achtergrond/1324449/alle-verrijking-op-een-rijtje',
                     permanent: false,
                 },
+            ];
+        },
+        async headers() {
+            return [
+                {
+                    source: '/service-worker.js',
+                    headers: [
+                        {
+                            key: 'Service-Worker-Allowed',
+                            value: '/',
+                        },
+                    ],
+                },
+                ,
             ];
         },
     },
