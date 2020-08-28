@@ -80,6 +80,14 @@
         padding: 1rem;
         overflow: auto;
         max-width: 100%;
+
+        border: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border: 1px solid #{map-deep-get($colors, 'colors', 'neutral', 60)};
+        }
+
         &::-webkit-scrollbar {
             width: 0.5rem;
             height: 0.5rem;
@@ -117,5 +125,22 @@
 
     summary {
         cursor: pointer;
+        user-select: none;
+    }
+
+    .github {
+        figure {
+            text-align: center;
+        }
+        img {
+            opacity: 0.5;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .invertable {
+        filter: var(--filter-invert);
     }
 }
