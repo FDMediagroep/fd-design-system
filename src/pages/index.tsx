@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import styles from './index.module.scss';
 import Head from 'next/head';
 import ReactMD from 'react-markdown/with-html';
 import { useRouter } from 'next/router';
@@ -48,7 +47,7 @@ function Page(props: Props) {
     }, []);
 
     return (
-        <section className={styles.index}>
+        <section>
             <Head>
                 <title>
                     {metaTitle} - Design System - Het Financieele Dagblad
@@ -62,15 +61,19 @@ function Page(props: Props) {
                     content={metaDescription}
                 />
             </Head>
-            <ReactMD source={props.readme} escapeHtml={false} />
+            <ReactMD
+                className="markdown"
+                source={props.readme}
+                escapeHtml={false}
+            />
             <a
-                className={styles.github}
+                className="github"
                 href="https://github.com/FDMediagroep/fd-design-system"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="GitHub"
             >
-                <figure className={styles.invertable}>
+                <figure className="invertable">
                     <picture>
                         <source
                             media="(max-width: 640px)"
