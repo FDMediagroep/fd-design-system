@@ -44,6 +44,7 @@ function Page() {
             </Head>
 
             <Explain
+                anchor="default"
                 bgcolor="var(--product-background-2)"
                 cssClassNames={getCssClassNames()}
                 legend="ReadMore"
@@ -63,6 +64,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="variant-1"
                 bgcolor="var(--product-background-2)"
                 cssClassNames={getCssClassNames()}
                 legend="ReadMore (variant-1)"
@@ -82,6 +84,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="variant-2"
                 cssClassNames={getCssClassNames()}
                 legend="ReadMore (variant-2)"
                 reactComponentName="ReadMore"

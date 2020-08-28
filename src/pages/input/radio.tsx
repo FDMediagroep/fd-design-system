@@ -24,6 +24,7 @@ function Page() {
             </Head>
 
             <Explain
+                anchor="default"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Radio"
@@ -51,6 +52,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="checked"
                 cssClassNames={getCssClassNames()}
                 previewFlexDirection="row"
                 legend="Radio (default: checked)"

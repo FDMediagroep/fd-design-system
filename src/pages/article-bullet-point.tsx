@@ -49,6 +49,7 @@ function Page() {
             </Head>
 
             <Explain
+                anchor="default"
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Bullet point"
@@ -64,6 +65,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="align-right"
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Bullet point (align: right)"
@@ -79,6 +81,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="variant-1"
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Summary (variant-1)"
@@ -94,6 +97,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="variant-1-align-right"
                 cssClassNames={getCssClassNames()}
                 previewClassName={styles.preview}
                 legend="Bullet point (variant-1, align: right)"

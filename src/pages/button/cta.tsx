@@ -25,6 +25,7 @@ function CTA() {
             </Head>
 
             <Explain
+                anchor="default"
                 cssClassNames={getCssClassNames()}
                 legend="Button CTA (default)"
                 reactComponentName="ButtonCta"
@@ -48,6 +49,7 @@ function CTA() {
             </Explain>
 
             <Explain
+                anchor="m"
                 cssClassNames={getCssClassNames()}
                 legend="Button CTA (M)"
                 reactComponentName="ButtonCta"
@@ -71,6 +73,7 @@ function CTA() {
             </Explain>
 
             <Explain
+                anchor="l"
                 cssClassNames={getCssClassNames()}
                 legend="Button CTA (L)"
                 reactComponentName="ButtonCta"

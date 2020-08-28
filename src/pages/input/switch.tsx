@@ -25,6 +25,7 @@ function Page() {
             </Head>
 
             <Explain
+                anchor="default"
                 cssClassNames={getCssClassNames()}
                 legend="Switch"
                 reactComponentName="Switch"
@@ -51,6 +52,7 @@ function Page() {
             </Explain>
 
             <Explain
+                anchor="switch-default-checked"
                 cssClassNames={getCssClassNames()}
                 legend="Switch (default: checked)"
                 reactComponentName="Switch"
