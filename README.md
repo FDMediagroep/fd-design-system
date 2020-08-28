@@ -26,6 +26,15 @@
 
 [Design System](https://design-system.fd.nl) for components used by [FD.nl](https://fd.nl).
 
+The Design System is created to be used in the following ways:
+
+-   **Component Library**
+    -   Skip to [installation](#installation) if you intend to use it as a Component Library within your own frontend project. [List of components](#components) and how to use it is described further [below](#components).
+-   **Design Documentation**
+    -   The [Design Documentation](https://design-system.fd.nl) is a website which allows you to preview the components. It also documents the design tokens and reasoning behind the designs.
+-   **CSS + HTML code generator**
+    -   Each component also outputs generated CSS and HTML which you can copy and use stand-alone in your own website. This is useful if you can't or don't want to make use of the Component Library. Just keep in mind that each component CSS generated this way works completely stand-alone and includes all the [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (variables). If you intend to use multiple components then including the CSS Custom Properties only once in your own website is enough. Remember to strip the CSS Custom Properties from subsequent components you add to your website.
+
 ## Installation
 
 Install the `Design System` as dependency for your project:
