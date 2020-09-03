@@ -16,7 +16,11 @@ describe('Modal', () => {
     test('should propagate close event correctly', () => {
         const spy = jest.fn();
         render(
-            <Modal contentClassName="test-modal" opened={true} onClose={spy}>
+            <Modal
+                contentBackgroundClassName="test-modal"
+                opened={true}
+                onClose={spy}
+            >
                 <h1>Testing 123</h1>
             </Modal>
         );

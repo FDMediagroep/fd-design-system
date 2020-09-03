@@ -13,7 +13,7 @@
         "url": "git@github.com:FDMediagroep/fd-design-system.git"
     },
     "scripts": {
-        "build": "next build",
+        "build": "npx next build",
         "build:ci": "npm run build && npm run build:npm",
         "build:npm": "npm run webpack:prod && npm run copy:dts",
         "copy:dts": "npx cpx -v \"./dist.d.ts/src/**/*.d.ts\" \"./dist\"",
@@ -21,9 +21,9 @@
         "json-to-scss": "json-to-scss public/assets/design-tokens/* src/design-tokens",
         "test": "jest --passWithNoTests",
         "test:updateSnapshots": "jest -u --passWithNoTests",
-        "webpack:prod": "cross-env NODE_ENV=production webpack --mode=production",
-        "webpack-bundle-analyzer:npm": "cross-env WEBPACK_BUNDLE_ANALYZER=true npm run webpack:prod",
-        "webpack-bundle-analyzer:next": "cross-env WEBPACK_BUNDLE_ANALYZER=true NOW_SERVERLESS=false next build"
+        "webpack:prod": "npx cross-env NODE_ENV=production webpack --mode=production",
+        "webpack-bundle-analyzer:npm": "npx cross-env WEBPACK_BUNDLE_ANALYZER=true npm run webpack:prod",
+        "webpack-bundle-analyzer:next": "npx cross-env WEBPACK_BUNDLE_ANALYZER=true NOW_SERVERLESS=false next build"
     },
     "author": "Willem Liu",
     "license": "ISC",

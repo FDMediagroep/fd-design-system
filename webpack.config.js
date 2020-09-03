@@ -180,6 +180,9 @@ module.exports = {
         '/components/author-info/AuthorInfo': [
             './src/components/author-info/AuthorInfo.tsx',
         ],
+        '/components/cookieconsent/CookieConsent': [
+            './src/components/cookieconsent/CookieConsent.tsx',
+        ],
         '/components/modal/Modal': ['./src/components/modal/Modal.tsx'],
         '/components/stockticker/StockTicker': [
             './src/components/stockticker/StockTicker.tsx',
