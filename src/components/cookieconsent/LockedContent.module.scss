@@ -1,0 +1,83 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.fdLockedContent {
+    user-select: none;
+    .blockedContentContainer {
+        margin: 1rem 0;
+        width: 560px;
+        max-width: 100%;
+        background-color: var(--card-2);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+        }
+        box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+        height: auto;
+
+        .lockText {
+            color: var(--content-copy);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+            }
+            font-family: 'ProximaNovaRegular', 'Helvetica', sans-serif;
+        }
+
+        &:hover {
+            .lockText {
+                color: var(--primary);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+                }
+            }
+            .lock {
+                opacity: 1;
+            }
+        }
+
+        .lockText {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            cursor: pointer;
+            padding: 1rem;
+            font-size: 1rem;
+            @media only screen and (min-width: 641px) {
+                font-size: 17px;
+            }
+            font-family: 'ProximaNovaRegular', sans-serif;
+            line-height: 1.2em;
+            box-sizing: border-box;
+            z-index: 1;
+            color: var(--content-copy);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+            }
+        }
+        .lock {
+            margin-right: 1rem;
+            opacity: 0.2;
+            transition: opacity 0.2s ease-in;
+            color: var(--credits);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+            }
+            font-size: 2rem;
+            svg {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+    }
+}

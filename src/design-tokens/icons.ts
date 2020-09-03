@@ -9,9 +9,11 @@ export { default as ChevronRightIcon } from '../../public/assets/icons/chevron-r
 export { default as CloseIcon } from '../../public/assets/icons/close.svg';
 export { default as EnvelopeIcon } from '../../public/assets/icons/envelope.svg';
 export { default as ExpandIcon } from '../../public/assets/icons/expand.svg';
+export { default as FdmgIcon } from '../../public/assets/icons/logo-fdmg.svg';
 export { default as LinkedInIcon } from '../../public/assets/icons/linkedin.svg';
 export { default as MinimiseIcon } from '../../public/assets/icons/minimise.svg';
 export { default as ReadingTimeIcon } from '../../public/assets/icons/reading-time.svg';
+export { default as SpyglassIcon } from '../../public/assets/icons/spyglass.svg';
 export { default as TwitterIcon } from '../../public/assets/icons/twitter.svg';
 
 export { default as ValueDownIcon } from '../../public/assets/icons/value-down.svg';
