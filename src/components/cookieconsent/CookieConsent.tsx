@@ -22,7 +22,9 @@ interface Props {
     acceptAllLabel?: string;
     denyAllLabel?: string;
     description?: JSX.Element | String;
+    onAcceptAll?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     onClose?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    onDenyAll?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     opened?: boolean;
     title?: JSX.Element | String;
 }
@@ -40,18 +42,20 @@ function CookieConsent(props: Props) {
                 VendorNames['vimeo'],
                 VendorNames['youtube'],
             ]);
+            props?.onAcceptAll?.(e);
             props?.onClose?.(e);
         },
-        [props.onClose]
+        [props.onClose, props.onAcceptAll]
     );
 
     const handleDenyAll = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
             CookieConsentStore.setVendorNames([]);
+            props?.onDenyAll?.(e);
             props?.onClose?.(e);
         },
-        [props.onClose]
+        [props.onClose, props.onDenyAll]
     );
 
     return (
