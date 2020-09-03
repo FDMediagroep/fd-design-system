@@ -1390,7 +1390,7 @@ function Foo() {
 <details>
 <summary>CookieConsent</summary>
 
-[Demo](https://design-system.fd.nl/cookieconsent)
+[Demo](https://design-system.fd.nl/cookieconsent#cookie-consent)
 
 Component CSS:
 
@@ -1445,7 +1445,7 @@ function Foo() {
 <details>
 <summary>LockedContent</summary>
 
-[Demo](https://design-system.fd.nl/cookieconsent)
+[Demo](https://design-system.fd.nl/cookieconsent#locked-content)
 
 Component CSS:
 
