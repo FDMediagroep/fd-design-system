@@ -177,10 +177,10 @@ function Menu(props: Props) {
                 <Link href="/author-info">
                     <a>Author Info</a>
                 </Link>
-                <Link href="/cookieconsent">
+                <Link href="/cookieconsent#cookie-consent">
                     <a>Cookie Consent</a>
                 </Link>
-                <Link href="/cookieconsent">
+                <Link href="/cookieconsent#locked-content">
                     <a>Locked content</a>
                 </Link>
                 <Link href="/modal">
