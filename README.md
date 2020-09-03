@@ -1451,7 +1451,7 @@ Component CSS:
 
 ```
 import "@fdmg/design-system/components/design-tokens/design-tokens.css";
-import "@fdmg/design-system/components/cookieconsent/LockedContent.css";
+import "@fdmg/design-system/components/cookieconsent/CookieConsent.css";
 ```
 
 ```
