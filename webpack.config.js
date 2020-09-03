@@ -183,9 +183,6 @@ module.exports = {
         '/components/cookieconsent/CookieConsent': [
             './src/components/cookieconsent/CookieConsent.tsx',
         ],
-        '/components/cookieconsent/CookieConsentStore': [
-            './src/components/cookieconsent/CookieConsentStore.tsx',
-        ],
         '/components/cookieconsent/LockedContent': [
             './src/components/cookieconsent/LockedContent.tsx',
         ],
