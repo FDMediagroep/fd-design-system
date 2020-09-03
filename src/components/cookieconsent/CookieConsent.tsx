@@ -87,4 +87,4 @@ function getCssClassNames() {
     ];
 }
 
-export { CookieConsent, LockedContent, getCssClassNames };
+export { CookieConsent, LockedContent, CookieConsentStore, getCssClassNames };
