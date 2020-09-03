@@ -1388,6 +1388,107 @@ function Foo() {
 </details>
 
 <details>
+<summary>CookieConsent</summary>
+
+[Demo](https://design-system.fd.nl/cookieconsent)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/cookieconsent/CookieConsent.css";
+```
+
+```
+import { CookieConsent } from '@fdmg/design-system/components/cookieconsent/CookieConsent';
+
+function Foo() {
+    return (
+        <CookieConsent
+            description={
+                <>
+                    <p>
+                        FD Mediagroep (FDMG) en de daarbij horende
+                        website: FD.nl en door haar geselecteerde
+                        Partners hebben toegang tot uw gegevens en
+                        gebruiken deze informatie voor de onderstaande
+                        doeleinden. Klik op een doel om uw voorkeuren
+                        aan te passen en om meer te weten te komen over
+                        wie er om uw toestemming vraagt en/of rechtmatig
+                        belang claimt om uw gegevens voor dat doel te
+                        verwerken. Houd er rekening mee dat wanneer alle
+                        doeleinden zijn geweigerd, dit een negatief
+                        effect op bepaalde functies van de website kan
+                        hebben.
+                    </p>
+                    <p>
+                        Voor sommige doeleinden kunnen jouw
+                        persoonsgegevens worden verwerkt op de
+                        juridische grond van rechtmatig belang
+                    </p>
+                </>
+            }
+            title={
+                <header className={styles.header}>
+                    <h1>Cookies</h1>
+                </header>
+            }
+            opened={true}
+            onClose={() => {}}
+        />
+    );
+}
+```
+
+</details>
+
+<details>
+<summary>LockedContent</summary>
+
+[Demo](https://design-system.fd.nl/cookieconsent)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/cookieconsent/LockedContent.css";
+```
+
+```
+import { LockedContent } from '@fdmg/design-system/components/cookieconsent/LockedContent';
+
+function Foo() {
+    return (
+        <LockedContent
+            vendorName="youtube"
+            lockDescription={
+                <p>
+                    In verband met de door u gekozen
+                    cookievoorkeuren kunnen wij deze Youtube-video
+                    niet tonen. Klik hier om akkoord te gaan met de
+                    cookievoorkeuren die nodig zijn om deze
+                    Youtube-video te laden.
+                </p>
+            }
+        >
+            <div className="embed-container">
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube-nocookie.com/embed/T_tN4CnushY"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                />
+            </div>
+        </LockedContent>
+    );
+}
+```
+
+</details>
+
+<details>
 <summary>Modal</summary>
 
 [Demo](https://design-system.fd.nl/modal)
@@ -1400,7 +1501,7 @@ import "@fdmg/design-system/components/modal/Modal.css";
 ```
 
 ```
-import { AuthorInfo } from '@fdmg/design-system/components/modal/Modal';
+import { Modal } from '@fdmg/design-system/components/modal/Modal';
 
 function Foo() {
     return (

@@ -50,5 +50,7 @@ export { VerticalCard3 } from './components/card/VerticalCard3';
 export * from './components/ab/ab';
 export { Accordion } from './components/accordion/Accordion';
 export { AuthorInfo } from './components/author-info/AuthorInfo';
+export { CookieConsent } from './components/cookieconsent/CookieConsent';
+export { LockedContent } from './components/cookieconsent/LockedContent';
 export { Modal } from './components/modal/Modal';
 export { StockTicker } from './components/stockticker/StockTicker';
