@@ -328,6 +328,8 @@ function Page() {
                 }
             >
                 <CookieConsent
+                    acceptAllLabel="Accepteer alles"
+                    denyAllLabel="Weiger alles"
                     description={
                         <>
                             <p>

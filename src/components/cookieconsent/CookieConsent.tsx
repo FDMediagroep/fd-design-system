@@ -15,6 +15,8 @@ import {
 import CookieConsentStore, { VendorNames } from './CookieConsentStore';
 
 interface Props {
+    acceptAllLabel?: string;
+    denyAllLabel?: string;
     description?: JSX.Element | String;
     onClose?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     opened?: boolean;
@@ -60,8 +62,12 @@ function CookieConsent(props: Props) {
             {props.title ?? <h1>Cookiewall</h1>}
             {props.description ?? <p>This is the cookiewall</p>}
             <footer>
-                <Button onClick={handleDenyAll}>Deny all</Button>
-                <ButtonCta onClick={handleAcceptAll}>Accept all</ButtonCta>
+                <Button onClick={handleDenyAll}>
+                    {props.denyAllLabel ?? 'Deny all'}
+                </Button>
+                <ButtonCta onClick={handleAcceptAll}>
+                    {props.acceptAllLabel ?? 'Accept all'}
+                </ButtonCta>
             </footer>
         </Modal>
     );
