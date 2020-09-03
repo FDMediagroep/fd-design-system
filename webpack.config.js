@@ -183,9 +183,6 @@ module.exports = {
         '/components/cookieconsent/CookieConsent': [
             './src/components/cookieconsent/CookieConsent.tsx',
         ],
-        '/components/cookieconsent/LockedContent': [
-            './src/components/cookieconsent/LockedContent.tsx',
-        ],
         '/components/modal/Modal': ['./src/components/modal/Modal.tsx'],
         '/components/stockticker/StockTicker': [
             './src/components/stockticker/StockTicker.tsx',

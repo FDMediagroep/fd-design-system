@@ -6,9 +6,9 @@ import { Switch } from '../components/input/Switch';
 import {
     CookieConsent,
     getCssClassNames,
+    LockedContent,
 } from '../components/cookieconsent/CookieConsent';
 import { FdmgIcon } from '../design-tokens/icons';
-import { LockedContent } from '../components/cookieconsent/LockedContent';
 import PageStore from '../stores/PageStore';
 
 const metaTitle = 'CookieConsent';

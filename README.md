@@ -1455,7 +1455,7 @@ import "@fdmg/design-system/components/cookieconsent/LockedContent.css";
 ```
 
 ```
-import { LockedContent } from '@fdmg/design-system/components/cookieconsent/LockedContent';
+import { LockedContent } from '@fdmg/design-system/components/cookieconsent/CookieConsent';
 
 function Foo() {
     return (

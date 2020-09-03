@@ -13,6 +13,7 @@ import {
     getCssClassNames as getModalCssClassNames,
 } from '../modal/Modal';
 import CookieConsentStore, { VendorNames } from './CookieConsentStore';
+import { LockedContent } from './LockedContent';
 
 interface Props {
     acceptAllLabel?: string;
@@ -82,4 +83,4 @@ function getCssClassNames() {
     ];
 }
 
-export { CookieConsent, getCssClassNames };
+export { CookieConsent, LockedContent, getCssClassNames };
