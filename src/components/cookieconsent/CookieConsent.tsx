@@ -13,7 +13,10 @@ import {
     getCssClassNames as getModalCssClassNames,
 } from '../modal/Modal';
 import CookieConsentStore, { VendorNames } from './CookieConsentStore';
-import { LockedContent } from './LockedContent';
+import {
+    LockedContent,
+    getCssClassNames as getLockedContentCssClassNames,
+} from './LockedContent';
 
 interface Props {
     acceptAllLabel?: string;
@@ -77,6 +80,7 @@ function CookieConsent(props: Props) {
 function getCssClassNames() {
     return [
         styles.fdCookieConsent,
+        ...getLockedContentCssClassNames(),
         ...getModalCssClassNames(),
         ...getButtonCssClassNames(),
         ...getButtonCtaCssClassNames(),
