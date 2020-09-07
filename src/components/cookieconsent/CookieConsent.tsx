@@ -34,13 +34,11 @@ interface Props {
 
 function CookieConsent(props: Props) {
     const refIFrame = useRef<HTMLIFrameElement>(null);
-    const [storage, setStorage] = useState([]);
     const [checkmarks, setCheckmarks] = useState([]);
 
     function handleMessage(event: MessageEvent) {
         if (event?.data?.hostname) {
-            console.log(event?.data);
-            setCheckmarks(event.data.consents || []);
+            CookieConsentStore.setVendorNames(event.data.consents || []);
         }
     }
 
@@ -82,24 +80,28 @@ function CookieConsent(props: Props) {
             const consents = [
                 VendorNames['fdmg'],
                 VendorNames['fdmg-personalized'],
+                VendorNames['inline-html'],
+                VendorNames['instagram'],
                 VendorNames['soundcloud'],
                 VendorNames['twitter'],
                 VendorNames['vimeo'],
                 VendorNames['youtube'],
             ];
             CookieConsentStore.setVendorNames(consents);
+            post(consents);
             setTimeout(() => {
                 props?.onAcceptAll?.(e);
                 props?.onClose?.(e);
             }, 10);
         },
-        [props.onClose, props.onAcceptAll, setStorage]
+        [props.onClose, props.onAcceptAll]
     );
 
     const handleDenyAll = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
             CookieConsentStore.setVendorNames([]);
+            remove();
             setTimeout(() => {
                 props?.onDenyAll?.(e);
                 props?.onClose?.(e);
@@ -111,12 +113,17 @@ function CookieConsent(props: Props) {
     const handleClose = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
-            CookieConsentStore.setVendorNames(storage);
+            CookieConsentStore.setVendorNames(checkmarks);
+            if (checkmarks.length) {
+                post(checkmarks);
+            } else {
+                remove();
+            }
             setTimeout(() => {
                 props?.onClose?.(e);
             }, 10);
         },
-        [props.onClose, props.onDenyAll]
+        [props.onClose, checkmarks]
     );
 
     useEffect(() => {
@@ -136,17 +143,16 @@ function CookieConsent(props: Props) {
         } else {
             CookieConsentStore.removeVendorName(target.id);
         }
+        if (CookieConsentStore.getVendorNames().length) {
+            post(CookieConsentStore.getVendorNames());
+        } else {
+            remove();
+        }
     }
 
     useEffect(() => {
         const subscriptionId = CookieConsentStore.subscribe(() => {
-            setStorage(CookieConsentStore.getVendorNames());
             setCheckmarks(CookieConsentStore.getVendorNames());
-            if (CookieConsentStore.getVendorNames().length) {
-                post(CookieConsentStore.getVendorNames());
-            } else {
-                remove();
-            }
         });
 
         return () => {
@@ -195,6 +201,16 @@ function CookieConsent(props: Props) {
                                         checked={
                                             checkmarks.indexOf(
                                                 VendorNames['fdmg']
+                                            ) !== -1
+                                        }
+                                        onChange={handleCheckChange}
+                                    />
+                                    <Checkbox
+                                        id={VendorNames['inline-html']}
+                                        label="Inline HTML"
+                                        checked={
+                                            checkmarks.indexOf(
+                                                VendorNames['inline-html']
                                             ) !== -1
                                         }
                                         onChange={handleCheckChange}
@@ -269,7 +285,11 @@ function CookieConsent(props: Props) {
                     {props.acceptAllLabel ?? 'Accept all'}
                 </ButtonCta>
             </footer>
-            <iframe ref={refIFrame} src="https://responder.vercel.app" />
+            <iframe
+                ref={refIFrame}
+                src="https://responder.vercel.app"
+                width="100%"
+            />
         </Modal>
     );
 }
