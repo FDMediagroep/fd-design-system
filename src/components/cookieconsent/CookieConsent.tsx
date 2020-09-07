@@ -92,10 +92,10 @@ function CookieConsent(props: Props) {
 
     useEffect(() => {
         if (refIFrame?.current) {
-            ResponderApi.setIFrame(refIFrame.current);
-
-            ResponderApi.get().then((event) => {
-                CookieConsentStore.setVendorNames(event?.data?.consents);
+            ResponderApi.setResponder(refIFrame.current).then(() => {
+                ResponderApi.get().then((event) => {
+                    CookieConsentStore.setVendorNames(event?.data?.consents);
+                });
             });
         }
     }, [refIFrame.current]);

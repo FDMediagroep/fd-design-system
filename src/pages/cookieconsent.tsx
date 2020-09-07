@@ -43,9 +43,10 @@ function Page() {
 
     useEffect(() => {
         if (refIFrame?.current) {
-            CookieConsentApi.setIFrame(refIFrame.current);
-            CookieConsentApi.get().then((event) => {
-                CookieConsentStore.setVendorNames(event?.data?.consents);
+            CookieConsentApi.setResponder(refIFrame.current).then(() => {
+                CookieConsentApi.get().then((event) => {
+                    CookieConsentStore.setVendorNames(event?.data?.consents);
+                });
             });
         }
     }, [refIFrame.current]);
