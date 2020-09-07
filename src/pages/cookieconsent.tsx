@@ -54,6 +54,7 @@ function Page() {
             </Head>
 
             <Explain
+                anchor="locked-content"
                 cssClassNames={getCssClassNames()}
                 legend="Locked content"
                 reactComponentName="LockedContent"
@@ -310,6 +311,7 @@ function Page() {
                 </>
             </Explain>
             <Explain
+                anchor="cookie-consent"
                 cssClassNames={getCssClassNames()}
                 hideExternalCodeEditors={true}
                 hidePreview={!opened}
