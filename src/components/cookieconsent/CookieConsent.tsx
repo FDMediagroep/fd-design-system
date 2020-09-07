@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './CookieConsent.module.scss';
 import {
     Button,
@@ -17,9 +17,12 @@ import {
     LockedContent,
     getCssClassNames as getLockedContentCssClassNames,
 } from './LockedContent';
+import { Accordion } from '../accordion/Accordion';
+import Checkbox from '../input/Checkbox';
 
 interface Props {
     acceptAllLabel?: string;
+    closeLabel?: string;
     denyAllLabel?: string;
     description?: JSX.Element | String;
     onAcceptAll?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
@@ -30,33 +33,126 @@ interface Props {
 }
 
 function CookieConsent(props: Props) {
+    const refIFrame = useRef<HTMLIFrameElement>(null);
+    const [storage, setStorage] = useState([]);
+    const [checkmarks, setCheckmarks] = useState([]);
+
+    function handleMessage(event: MessageEvent) {
+        if (event?.data?.hostname) {
+            console.log(event?.data);
+            setCheckmarks(event.data.consents || []);
+        }
+    }
+
+    function post(consents: string[]) {
+        refIFrame.current.contentWindow.postMessage(
+            {
+                method: 'POST',
+                hostname: window.location.hostname,
+                timestamp: +new Date(),
+                consents,
+            },
+            '*'
+        );
+    }
+
+    function get() {
+        refIFrame.current.contentWindow.postMessage(
+            {
+                method: 'GET',
+                hostname: window.location.hostname,
+            },
+            '*'
+        );
+    }
+
+    function remove() {
+        refIFrame.current.contentWindow.postMessage(
+            {
+                method: 'DELETE',
+                hostname: window.location.hostname,
+            },
+            '*'
+        );
+    }
+
     const handleAcceptAll = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
-            CookieConsentStore.setVendorNames([
+            const consents = [
+                VendorNames['fdmg'],
                 VendorNames['fdmg-personalized'],
-                VendorNames['inline-html'],
-                VendorNames['instagram'],
                 VendorNames['soundcloud'],
                 VendorNames['twitter'],
                 VendorNames['vimeo'],
                 VendorNames['youtube'],
-            ]);
-            props?.onAcceptAll?.(e);
-            props?.onClose?.(e);
+            ];
+            CookieConsentStore.setVendorNames(consents);
+            setTimeout(() => {
+                props?.onAcceptAll?.(e);
+                props?.onClose?.(e);
+            }, 10);
         },
-        [props.onClose, props.onAcceptAll]
+        [props.onClose, props.onAcceptAll, setStorage]
     );
 
     const handleDenyAll = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
             CookieConsentStore.setVendorNames([]);
-            props?.onDenyAll?.(e);
-            props?.onClose?.(e);
+            setTimeout(() => {
+                props?.onDenyAll?.(e);
+                props?.onClose?.(e);
+            }, 10);
         },
         [props.onClose, props.onDenyAll]
     );
+
+    const handleClose = useCallback(
+        (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            e.preventDefault();
+            CookieConsentStore.setVendorNames(storage);
+            setTimeout(() => {
+                props?.onClose?.(e);
+            }, 10);
+        },
+        [props.onClose, props.onDenyAll]
+    );
+
+    useEffect(() => {
+        if (refIFrame?.current) {
+            window.addEventListener('message', handleMessage, false);
+            refIFrame.current.addEventListener('load', get);
+        }
+        return () => {
+            window.removeEventListener('message', handleMessage);
+        };
+    }, [refIFrame.current]);
+
+    function handleCheckChange(e: React.ChangeEvent<HTMLInputElement>) {
+        const target = e.currentTarget;
+        if (target.checked) {
+            CookieConsentStore.addVendorName(target.id);
+        } else {
+            CookieConsentStore.removeVendorName(target.id);
+        }
+    }
+
+    useEffect(() => {
+        const subscriptionId = CookieConsentStore.subscribe(() => {
+            setStorage(CookieConsentStore.getVendorNames());
+            setCheckmarks(CookieConsentStore.getVendorNames());
+            if (CookieConsentStore.getVendorNames().length) {
+                post(CookieConsentStore.getVendorNames());
+            } else {
+                remove();
+            }
+        });
+
+        return () => {
+            CookieConsentStore.unsubscribe(subscriptionId);
+        };
+    }, []);
 
     return (
         <Modal
@@ -67,9 +163,105 @@ function CookieConsent(props: Props) {
             opened={props.opened}
             onClose={props.onClose}
         >
-            {props.title ?? <h1>Cookiewall</h1>}
-            {props.description ?? <p>This is the cookiewall</p>}
+            <Accordion
+                items={[
+                    {
+                        checked: true,
+                        title: 'Informatie',
+                        content: (
+                            <div>
+                                {props.title ?? <h1>Cookiewall</h1>}
+                                {props.description ?? (
+                                    <p>This is the cookiewall</p>
+                                )}
+                            </div>
+                        ),
+                    },
+                    {
+                        title: 'Toestemmingen',
+                        content: (
+                            <div>
+                                <p>
+                                    Voor sommige doeleinden kunnen jouw
+                                    persoonsgegevens worden verwerkt op de
+                                    juridische grond van rechtmatig belang
+                                </p>
+
+                                <h2>FDMG</h2>
+                                <div className={styles.settings}>
+                                    <Checkbox
+                                        id={VendorNames['fdmg']}
+                                        label="FDMG"
+                                        checked={
+                                            checkmarks.indexOf(
+                                                VendorNames['fdmg']
+                                            ) !== -1
+                                        }
+                                        onChange={handleCheckChange}
+                                    />
+                                </div>
+                                <h2>Derde partijen</h2>
+                                <div className={styles.settings}>
+                                    <Checkbox
+                                        id={VendorNames['fdmg-personalized']}
+                                        label="Personalisatie"
+                                        checked={
+                                            checkmarks.indexOf(
+                                                VendorNames['fdmg-personalized']
+                                            ) !== -1
+                                        }
+                                        onChange={handleCheckChange}
+                                    />
+                                    <Checkbox
+                                        id={VendorNames['soundcloud']}
+                                        label="SoundCloud"
+                                        checked={
+                                            checkmarks.indexOf(
+                                                VendorNames['soundcloud']
+                                            ) !== -1
+                                        }
+                                        onChange={handleCheckChange}
+                                    />
+                                    <Checkbox
+                                        id={VendorNames['twitter']}
+                                        checked={
+                                            checkmarks.indexOf(
+                                                VendorNames['twitter']
+                                            ) !== -1
+                                        }
+                                        label="Twitter"
+                                        onChange={handleCheckChange}
+                                    />
+                                    <Checkbox
+                                        id={VendorNames['vimeo']}
+                                        label="Vimeo"
+                                        checked={
+                                            checkmarks.indexOf(
+                                                VendorNames['vimeo']
+                                            ) !== -1
+                                        }
+                                        onChange={handleCheckChange}
+                                    />
+                                    <Checkbox
+                                        id={VendorNames['youtube']}
+                                        label="Youtube"
+                                        checked={
+                                            checkmarks.indexOf(
+                                                VendorNames['youtube']
+                                            ) !== -1
+                                        }
+                                        onChange={handleCheckChange}
+                                    />
+                                </div>
+                            </div>
+                        ),
+                    },
+                ]}
+            />
             <footer>
+                <Button onClick={handleClose}>
+                    {props.closeLabel ?? 'Close'}
+                </Button>
                 <Button onClick={handleDenyAll}>
                     {props.denyAllLabel ?? 'Deny all'}
                 </Button>
@@ -77,6 +269,7 @@ function CookieConsent(props: Props) {
                     {props.acceptAllLabel ?? 'Accept all'}
                 </ButtonCta>
             </footer>
+            <iframe ref={refIFrame} src="https://responder.vercel.app" />
         </Modal>
     );
 }

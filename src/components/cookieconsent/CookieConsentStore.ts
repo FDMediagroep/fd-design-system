@@ -6,6 +6,7 @@ export enum VendorNames {
     'instagram' = 'instagram',
     'soundcloud' = 'soundcloud',
     'vimeo' = 'vimeo',
+    'fdmg' = 'fdmg',
     'fdmg-personalized' = 'fdmg-personalized',
     'inline-html' = 'inline-html',
 }
@@ -20,6 +21,15 @@ class CookieConsentStore extends ReSubstitute {
 
     addVendorName(vendorName: VendorNames | string) {
         this._vendorNames = [...this._vendorNames, vendorName];
+        this.trigger();
+    }
+
+    removeVendorName(vendorName: VendorNames | string) {
+        this._vendorNames = [
+            ...this._vendorNames.filter(
+                (_vendorName) => _vendorName !== vendorName
+            ),
+        ];
         this.trigger();
     }
 
