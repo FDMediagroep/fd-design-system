@@ -78,8 +78,8 @@ function LockedContent(props: Props) {
     }, [unlocked, unlockedRef.current]);
 
     function unlock() {
-        props?.onUnlock?.();
         CookieConsentStore.addVendorName(props.vendorName);
+        props?.onUnlock?.();
     }
 
     return unlocked ? (

@@ -4,6 +4,15 @@
 @import '../../design-tokens/typography.scss';
 
 .fdCookieConsent {
+    .contentBox {
+        background-color: var(--product-background-2);
+    }
+    .settings {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     footer {
         display: flex;
         justify-content: space-between;

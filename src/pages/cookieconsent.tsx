@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import styles from './cookieconsent.module.scss';
 import { Explain } from '../components/Explain';
 import Head from 'next/head';
@@ -7,6 +7,8 @@ import {
     CookieConsent,
     getCssClassNames,
     LockedContent,
+    CookieConsentApi,
+    CookieConsentStore,
 } from '../components/cookieconsent/CookieConsent';
 import { FdmgIcon } from '../design-tokens/icons';
 import PageStore from '../stores/PageStore';
@@ -15,7 +17,11 @@ const metaTitle = 'CookieConsent';
 const metaDescription =
     'CookieConsent, used to display a cookie consent overlay';
 
+const cookieConsentApi = new CookieConsentApi();
+
 function Page() {
+    const refIFrame = useRef<HTMLIFrameElement>(null);
+
     /**
      * Use article background.
      */
@@ -36,6 +42,23 @@ function Page() {
     const handleModalClose = useCallback(() => {
         setOpened(false);
     }, [opened]);
+
+    useEffect(() => {
+        if (refIFrame?.current) {
+            cookieConsentApi.setResponder(refIFrame.current).then(() => {
+                cookieConsentApi.get().then((event) => {
+                    CookieConsentStore.setVendorNames(
+                        event?.data?.consents ?? []
+                    );
+                });
+            });
+        }
+    }, [refIFrame.current]);
+
+    const handleUnlock = useCallback(() => {
+        console.log(CookieConsentStore.getVendorNames());
+        cookieConsentApi.store();
+    }, []);
 
     return (
         <div className={styles.cookieConsent}>
@@ -75,6 +98,7 @@ function Page() {
             >
                 <>
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="youtube"
                         lockDescription={
                             <p>
@@ -99,6 +123,7 @@ function Page() {
                     </LockedContent>
 
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="twitter"
                         lockDescription={
                             <p>
@@ -143,6 +168,7 @@ function Page() {
                     </LockedContent>
 
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="instagram"
                         lockDescription={
                             <p>
@@ -163,6 +189,7 @@ function Page() {
                     </LockedContent>
 
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="soundcloud"
                         lockDescription={
                             <p>
@@ -185,6 +212,7 @@ function Page() {
                     </LockedContent>
 
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="vimeo"
                         lockDescription={
                             <p>
@@ -208,6 +236,7 @@ function Page() {
                         </div>
                     </LockedContent>
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="inline-html"
                         lockDescription={
                             <p>
@@ -222,6 +251,7 @@ function Page() {
                         <h1>SIKE!</h1>
                     </LockedContent>
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="inline-html"
                         lockDescription={
                             <p>
@@ -245,6 +275,7 @@ function Page() {
                         </>
                     </LockedContent>
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="inline-html"
                         lockDescription={
                             <p>
@@ -266,6 +297,7 @@ function Page() {
                         </>
                     </LockedContent>
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="fdmg-personalized"
                         lockDescription={
                             <p>
@@ -310,6 +342,7 @@ function Page() {
                     </LockedContent>
                 </>
             </Explain>
+
             <Explain
                 anchor="cookie-consent"
                 cssClassNames={getCssClassNames()}
@@ -331,6 +364,7 @@ function Page() {
             >
                 <CookieConsent
                     acceptAllLabel="Accepteer alles"
+                    closeLabel="Sluiten"
                     denyAllLabel="Weiger alles"
                     description={
                         <>
@@ -369,6 +403,14 @@ function Page() {
                     onClose={handleModalClose}
                 />
             </Explain>
+
+            <iframe
+                ref={refIFrame}
+                src="https://responder.vercel.app"
+                width="0"
+                height="0"
+                style={{ visibility: 'hidden' }}
+            />
         </div>
     );
 }

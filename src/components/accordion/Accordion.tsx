@@ -4,6 +4,7 @@ import { MinimiseIcon, ExpandIcon } from '../../design-tokens/icons';
 
 export interface Item {
     anchor?: string;
+    checked?: boolean;
     title: string;
     content: JSX.Element;
 }
@@ -30,6 +31,7 @@ function Accordion(props: Props) {
                         type="checkbox"
                         name={item.anchor ?? `q-${idx}`}
                         onChange={console.log}
+                        defaultChecked={item.checked}
                     />
                     <label
                         htmlFor={item.anchor ?? `q-${idx}`}
