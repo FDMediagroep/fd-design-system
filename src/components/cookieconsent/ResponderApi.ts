@@ -24,7 +24,7 @@ class ResponderApi {
      */
     handleMessage(event: MessageEvent) {
         if (event?.data?.hostname) {
-            CookieConsentStore.setVendorNames(event.data.consents || []);
+            CookieConsentStore.setVendorNames(event?.data?.consents || []);
         }
     }
 
@@ -43,18 +43,11 @@ class ResponderApi {
     setResponder(iframe: HTMLIFrameElement): Promise<any> {
         this.contentWindow = iframe.contentWindow;
         return new Promise((resolve, reject) => {
-            let timer;
             const cb = () => {
                 this.loaded = true;
-                clearTimeout(timer);
                 resolve();
             };
             iframe.addEventListener('load', cb);
-
-            timer = setTimeout(() => {
-                iframe.removeEventListener('load', cb);
-                resolve();
-            }, 5000);
         });
     }
 
@@ -77,20 +70,13 @@ class ResponderApi {
             '*'
         );
         return new Promise((resolve, reject) => {
-            let timer;
             const cb = (event: MessageEvent) => {
                 if (event?.data?.hostname) {
-                    clearTimeout(timer);
                     window.removeEventListener('message', cb);
                     resolve(event);
                 }
             };
             window.addEventListener('message', cb, false);
-
-            timer = setTimeout(() => {
-                window.removeEventListener('message', cb);
-                reject(new Error('timeout waiting for GET'));
-            }, 5000);
         });
     }
 
@@ -109,20 +95,13 @@ class ResponderApi {
             '*'
         );
         return new Promise((resolve, reject) => {
-            let timer;
             const cb = (event: MessageEvent) => {
                 if (event?.data?.hostname) {
-                    clearTimeout(timer);
                     window.removeEventListener('message', cb);
                     resolve(event);
                 }
             };
             window.addEventListener('message', cb, false);
-
-            timer = setTimeout(() => {
-                window.removeEventListener('message', cb);
-                reject(new Error('timeout waiting for GET'));
-            }, 5000);
         });
     }
 
@@ -141,20 +120,13 @@ class ResponderApi {
             '*'
         );
         return new Promise((resolve, reject) => {
-            let timer;
             const cb = (event: MessageEvent) => {
                 if (event?.data?.hostname) {
-                    clearTimeout(timer);
                     window.removeEventListener('message', cb);
                     resolve(event);
                 }
             };
             window.addEventListener('message', cb, false);
-
-            timer = setTimeout(() => {
-                window.removeEventListener('message', cb);
-                reject(new Error('timeout waiting for GET'));
-            }, 5000);
         });
     }
 

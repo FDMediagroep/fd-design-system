@@ -96,7 +96,9 @@ function CookieConsent(props: Props) {
         if (refIFrame?.current) {
             responderApi.setResponder(refIFrame.current).then(() => {
                 responderApi.get().then((event) => {
-                    CookieConsentStore.setVendorNames(event?.data?.consents);
+                    CookieConsentStore.setVendorNames(
+                        event?.data?.consents ?? []
+                    );
                 });
             });
         }
@@ -119,7 +121,7 @@ function CookieConsent(props: Props) {
 
     useEffect(() => {
         const subscriptionId = CookieConsentStore.subscribe(() => {
-            setCheckmarks(CookieConsentStore.getVendorNames());
+            setCheckmarks([...CookieConsentStore.getVendorNames()]);
         });
 
         return () => {
@@ -255,7 +257,9 @@ function CookieConsent(props: Props) {
             <iframe
                 ref={refIFrame}
                 src="https://responder.vercel.app"
-                width="100%"
+                width="0"
+                height="0"
+                style={{ visibility: 'hidden' }}
             />
         </Modal>
     );

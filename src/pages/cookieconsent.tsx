@@ -47,11 +47,18 @@ function Page() {
         if (refIFrame?.current) {
             cookieConsentApi.setResponder(refIFrame.current).then(() => {
                 cookieConsentApi.get().then((event) => {
-                    CookieConsentStore.setVendorNames(event?.data?.consents);
+                    CookieConsentStore.setVendorNames(
+                        event?.data?.consents ?? []
+                    );
                 });
             });
         }
     }, [refIFrame.current]);
+
+    const handleUnlock = useCallback(() => {
+        console.log(CookieConsentStore.getVendorNames());
+        cookieConsentApi.store();
+    }, []);
 
     return (
         <div className={styles.cookieConsent}>
@@ -91,6 +98,7 @@ function Page() {
             >
                 <>
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="youtube"
                         lockDescription={
                             <p>
@@ -115,6 +123,7 @@ function Page() {
                     </LockedContent>
 
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="twitter"
                         lockDescription={
                             <p>
@@ -159,6 +168,7 @@ function Page() {
                     </LockedContent>
 
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="instagram"
                         lockDescription={
                             <p>
@@ -179,6 +189,7 @@ function Page() {
                     </LockedContent>
 
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="soundcloud"
                         lockDescription={
                             <p>
@@ -201,6 +212,7 @@ function Page() {
                     </LockedContent>
 
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="vimeo"
                         lockDescription={
                             <p>
@@ -224,6 +236,7 @@ function Page() {
                         </div>
                     </LockedContent>
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="inline-html"
                         lockDescription={
                             <p>
@@ -238,6 +251,7 @@ function Page() {
                         <h1>SIKE!</h1>
                     </LockedContent>
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="inline-html"
                         lockDescription={
                             <p>
@@ -261,6 +275,7 @@ function Page() {
                         </>
                     </LockedContent>
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="inline-html"
                         lockDescription={
                             <p>
@@ -282,6 +297,7 @@ function Page() {
                         </>
                     </LockedContent>
                     <LockedContent
+                        onUnlock={handleUnlock}
                         vendorName="fdmg-personalized"
                         lockDescription={
                             <p>
@@ -326,6 +342,7 @@ function Page() {
                     </LockedContent>
                 </>
             </Explain>
+
             <Explain
                 anchor="cookie-consent"
                 cssClassNames={getCssClassNames()}
@@ -390,7 +407,9 @@ function Page() {
             <iframe
                 ref={refIFrame}
                 src="https://responder.vercel.app"
-                width="100%"
+                width="0"
+                height="0"
+                style={{ visibility: 'hidden' }}
             />
         </div>
     );
