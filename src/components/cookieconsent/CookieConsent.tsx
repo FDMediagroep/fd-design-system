@@ -20,6 +20,8 @@ import {
 import { Accordion } from '../accordion/Accordion';
 import Checkbox from '../input/Checkbox';
 
+import ResponderApi from './ResponderApi';
+
 interface Props {
     acceptAllLabel?: string;
     closeLabel?: string;
@@ -36,44 +38,6 @@ function CookieConsent(props: Props) {
     const refIFrame = useRef<HTMLIFrameElement>(null);
     const [checkmarks, setCheckmarks] = useState([]);
 
-    function handleMessage(event: MessageEvent) {
-        if (event?.data?.hostname) {
-            CookieConsentStore.setVendorNames(event.data.consents || []);
-        }
-    }
-
-    function post(consents: string[]) {
-        refIFrame.current.contentWindow.postMessage(
-            {
-                method: 'POST',
-                hostname: window.location.hostname,
-                timestamp: +new Date(),
-                consents,
-            },
-            '*'
-        );
-    }
-
-    function get() {
-        refIFrame.current.contentWindow.postMessage(
-            {
-                method: 'GET',
-                hostname: window.location.hostname,
-            },
-            '*'
-        );
-    }
-
-    function remove() {
-        refIFrame.current.contentWindow.postMessage(
-            {
-                method: 'DELETE',
-                hostname: window.location.hostname,
-            },
-            '*'
-        );
-    }
-
     const handleAcceptAll = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
@@ -88,7 +52,7 @@ function CookieConsent(props: Props) {
                 VendorNames['youtube'],
             ];
             CookieConsentStore.setVendorNames(consents);
-            post(consents);
+            ResponderApi.post(consents);
             setTimeout(() => {
                 props?.onAcceptAll?.(e);
                 props?.onClose?.(e);
@@ -101,7 +65,7 @@ function CookieConsent(props: Props) {
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
             CookieConsentStore.setVendorNames([]);
-            remove();
+            ResponderApi.remove();
             setTimeout(() => {
                 props?.onDenyAll?.(e);
                 props?.onClose?.(e);
@@ -114,10 +78,10 @@ function CookieConsent(props: Props) {
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
             CookieConsentStore.setVendorNames(checkmarks);
-            if (checkmarks.length) {
-                post(checkmarks);
+            if (CookieConsentStore.getVendorNames().length) {
+                ResponderApi.post(CookieConsentStore.getVendorNames());
             } else {
-                remove();
+                ResponderApi.remove();
             }
             setTimeout(() => {
                 props?.onClose?.(e);
@@ -128,12 +92,12 @@ function CookieConsent(props: Props) {
 
     useEffect(() => {
         if (refIFrame?.current) {
-            window.addEventListener('message', handleMessage, false);
-            refIFrame.current.addEventListener('load', get);
+            ResponderApi.setIFrame(refIFrame.current);
+
+            ResponderApi.get().then((event) => {
+                CookieConsentStore.setVendorNames(event?.data?.consents);
+            });
         }
-        return () => {
-            window.removeEventListener('message', handleMessage);
-        };
     }, [refIFrame.current]);
 
     function handleCheckChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -143,10 +107,11 @@ function CookieConsent(props: Props) {
         } else {
             CookieConsentStore.removeVendorName(target.id);
         }
+
         if (CookieConsentStore.getVendorNames().length) {
-            post(CookieConsentStore.getVendorNames());
+            ResponderApi.post(CookieConsentStore.getVendorNames());
         } else {
-            remove();
+            ResponderApi.remove();
         }
     }
 
@@ -304,4 +269,10 @@ function getCssClassNames() {
     ];
 }
 
-export { CookieConsent, LockedContent, CookieConsentStore, getCssClassNames };
+export {
+    CookieConsent,
+    LockedContent,
+    CookieConsentStore,
+    getCssClassNames,
+    ResponderApi as CookieConsentApi,
+};
