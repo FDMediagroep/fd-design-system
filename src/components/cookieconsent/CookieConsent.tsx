@@ -132,26 +132,20 @@ function CookieConsent(props: Props) {
     return (
         <Modal
             className={styles.fdCookieConsent}
+            contentBoxClassName={styles.contentBox}
             disableBackgroundClose={true}
             hideCloseButton={true}
             hideCloseIcon={true}
             opened={props.opened}
             onClose={props.onClose}
         >
+            <div>
+                {props.title ?? <h1>Cookiewall</h1>}
+                {props.description ?? <p>This is the cookiewall</p>}
+            </div>
+
             <Accordion
                 items={[
-                    {
-                        checked: true,
-                        title: 'Informatie',
-                        content: (
-                            <div>
-                                {props.title ?? <h1>Cookiewall</h1>}
-                                {props.description ?? (
-                                    <p>This is the cookiewall</p>
-                                )}
-                            </div>
-                        ),
-                    },
                     {
                         title: 'Toestemmingen',
                         content: (
