@@ -14,7 +14,6 @@ import CookieConsentStore from './CookieConsentStore';
  */
 class ResponderApi {
     private loaded = false;
-    private iframe: HTMLIFrameElement;
     private contentWindow: WindowProxy;
 
     /**
@@ -41,10 +40,8 @@ class ResponderApi {
      *
      * @param iframe
      */
-    setResponder(iframe: HTMLIFrameElement): Promise<void> {
-        this.iframe = iframe;
+    setResponder(iframe: HTMLIFrameElement): Promise<any> {
         this.contentWindow = iframe.contentWindow;
-        this.iframe.addEventListener('load', this.get);
         return new Promise((resolve, reject) => {
             let timer;
             const cb = () => {
@@ -52,12 +49,12 @@ class ResponderApi {
                 clearTimeout(timer);
                 resolve();
             };
-            this.iframe.addEventListener('load', cb);
+            iframe.addEventListener('load', cb);
 
             timer = setTimeout(() => {
-                this.iframe.removeEventListener('load', cb);
-                reject(new Error('timeout waiting for Responder to load'));
-            }, 10000);
+                iframe.removeEventListener('load', cb);
+                resolve();
+            }, 5000);
         });
     }
 
@@ -68,7 +65,7 @@ class ResponderApi {
      */
     post(consents: string[]): Promise<MessageEvent> {
         if (!this.loaded) {
-            console.error('Responder iFrame not loaded');
+            console.error(new Error('Responder iFrame not loaded'));
         }
         this.contentWindow.postMessage(
             {
@@ -93,7 +90,7 @@ class ResponderApi {
             timer = setTimeout(() => {
                 window.removeEventListener('message', cb);
                 reject(new Error('timeout waiting for GET'));
-            }, 10000);
+            }, 5000);
         });
     }
 
@@ -102,7 +99,7 @@ class ResponderApi {
      */
     get(): Promise<MessageEvent> {
         if (!this.loaded) {
-            console.error('Responder iFrame not loaded');
+            console.error(new Error('Responder iFrame not loaded'));
         }
         this.contentWindow.postMessage(
             {
@@ -125,7 +122,7 @@ class ResponderApi {
             timer = setTimeout(() => {
                 window.removeEventListener('message', cb);
                 reject(new Error('timeout waiting for GET'));
-            }, 10000);
+            }, 5000);
         });
     }
 
@@ -134,7 +131,7 @@ class ResponderApi {
      */
     remove(): Promise<MessageEvent> {
         if (!this.loaded) {
-            console.error('Responder iFrame not loaded');
+            console.error(new Error('Responder iFrame not loaded'));
         }
         this.contentWindow.postMessage(
             {
@@ -157,7 +154,7 @@ class ResponderApi {
             timer = setTimeout(() => {
                 window.removeEventListener('message', cb);
                 reject(new Error('timeout waiting for GET'));
-            }, 10000);
+            }, 5000);
         });
     }
 
@@ -174,4 +171,4 @@ class ResponderApi {
     }
 }
 
-export default new ResponderApi();
+export { ResponderApi };

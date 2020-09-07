@@ -20,7 +20,7 @@ import {
 import { Accordion } from '../accordion/Accordion';
 import Checkbox from '../input/Checkbox';
 
-import ResponderApi from './ResponderApi';
+import { ResponderApi } from './ResponderApi';
 
 interface Props {
     acceptAllLabel?: string;
@@ -33,6 +33,8 @@ interface Props {
     opened?: boolean;
     title?: JSX.Element | String;
 }
+
+const responderApi = new ResponderApi();
 
 function CookieConsent(props: Props) {
     const refIFrame = useRef<HTMLIFrameElement>(null);
@@ -52,7 +54,7 @@ function CookieConsent(props: Props) {
                 VendorNames['youtube'],
             ];
             CookieConsentStore.setVendorNames(consents);
-            ResponderApi.post(consents);
+            responderApi.post(consents);
             setTimeout(() => {
                 props?.onAcceptAll?.(e);
                 props?.onClose?.(e);
@@ -65,7 +67,7 @@ function CookieConsent(props: Props) {
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
             CookieConsentStore.setVendorNames([]);
-            ResponderApi.remove();
+            responderApi.remove();
             setTimeout(() => {
                 props?.onDenyAll?.(e);
                 props?.onClose?.(e);
@@ -79,9 +81,9 @@ function CookieConsent(props: Props) {
             e.preventDefault();
             CookieConsentStore.setVendorNames(checkmarks);
             if (CookieConsentStore.getVendorNames().length) {
-                ResponderApi.post(CookieConsentStore.getVendorNames());
+                responderApi.post(CookieConsentStore.getVendorNames());
             } else {
-                ResponderApi.remove();
+                responderApi.remove();
             }
             setTimeout(() => {
                 props?.onClose?.(e);
@@ -92,8 +94,8 @@ function CookieConsent(props: Props) {
 
     useEffect(() => {
         if (refIFrame?.current) {
-            ResponderApi.setResponder(refIFrame.current).then(() => {
-                ResponderApi.get().then((event) => {
+            responderApi.setResponder(refIFrame.current).then(() => {
+                responderApi.get().then((event) => {
                     CookieConsentStore.setVendorNames(event?.data?.consents);
                 });
             });
@@ -109,9 +111,9 @@ function CookieConsent(props: Props) {
         }
 
         if (CookieConsentStore.getVendorNames().length) {
-            ResponderApi.post(CookieConsentStore.getVendorNames());
+            responderApi.post(CookieConsentStore.getVendorNames());
         } else {
-            ResponderApi.remove();
+            responderApi.remove();
         }
     }
 

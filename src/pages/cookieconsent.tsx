@@ -17,6 +17,8 @@ const metaTitle = 'CookieConsent';
 const metaDescription =
     'CookieConsent, used to display a cookie consent overlay';
 
+const cookieConsentApi = new CookieConsentApi();
+
 function Page() {
     const refIFrame = useRef<HTMLIFrameElement>(null);
 
@@ -43,8 +45,8 @@ function Page() {
 
     useEffect(() => {
         if (refIFrame?.current) {
-            CookieConsentApi.setResponder(refIFrame.current).then(() => {
-                CookieConsentApi.get().then((event) => {
+            cookieConsentApi.setResponder(refIFrame.current).then(() => {
+                cookieConsentApi.get().then((event) => {
                     CookieConsentStore.setVendorNames(event?.data?.consents);
                 });
             });
