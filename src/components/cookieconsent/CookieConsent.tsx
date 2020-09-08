@@ -251,9 +251,8 @@ function CookieConsent(props: Props) {
             <iframe
                 ref={refIFrame}
                 src="https://responder.vercel.app"
-                width="0"
-                height="0"
-                style={{ visibility: 'hidden' }}
+                frameBorder="none"
+                style={{ display: 'block' }}
             />
         </Modal>
     );

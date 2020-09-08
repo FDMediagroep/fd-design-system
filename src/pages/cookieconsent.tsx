@@ -47,6 +47,7 @@ function Page() {
         if (refIFrame?.current) {
             cookieConsentApi.setResponder(refIFrame.current).then(() => {
                 cookieConsentApi.get().then((event) => {
+                    console.log(event);
                     CookieConsentStore.setVendorNames(
                         event?.data?.consents ?? []
                     );
@@ -407,9 +408,8 @@ function Page() {
             <iframe
                 ref={refIFrame}
                 src="https://responder.vercel.app"
-                width="0"
-                height="0"
-                style={{ visibility: 'hidden' }}
+                frameBorder="none"
+                style={{ display: 'block' }}
             />
         </div>
     );
