@@ -31,42 +31,47 @@ class ResponderApi {
         return this.loaded;
     }
 
-    /**
-     * Assumes event.data to have the following properties:
-     * - hostname: string - the hostname this data belongs to.
-     * - consents: string[] - array of cookiewall consents.
-     * @param event
-     */
-    handleMessage(event: MessageEvent) {
-        console.info(`Responder API handle message`, event);
-        if (event?.data?.hostname) {
-            CookieConsentStore.setVendorNames(event?.data?.consents || []);
+    private removeOldIFrame(id: string) {
+        const oldIFrame = document.getElementById(id);
+        if (oldIFrame) {
+            oldIFrame.parentElement.removeChild(oldIFrame);
         }
     }
 
     /**
-     * Set the iFrame for which the Responder page is the source.
+     * Create an iFrame loading the Responder page.
      * This iFrame needs to be set before anything else.
      *
-     * A promise is returned and is resolved when iframe
-     * the load event has been fired.
+     * A promise is returned and is resolved when the iframe
+     * load event has been fired.
      *
      * After the promise resolved you can make use of the other
      * functions.
      *
-     * @param iFrame
+     * @param id
      */
-    setResponder(iFrame: HTMLIFrameElement): Promise<any> {
-        console.info('Responder frame', iFrame);
-        this.iFrame = iFrame;
-        this.contentWindow = iFrame.contentWindow;
+    init(id?: string): Promise<any> {
         return new Promise((resolve, reject) => {
+            const iFrame = document.createElement('iframe');
+            if (id) {
+                this.removeOldIFrame(id);
+                iFrame.setAttribute('id', id);
+            }
+            iFrame.setAttribute(
+                'style',
+                'width: 0; height: 0; frame-border: none; display: block;'
+            );
+
             const cb = () => {
                 console.info('Responder iFrame loaded', iFrame);
                 this.loaded = true;
                 resolve();
             };
             iFrame.addEventListener('load', cb);
+            iFrame.setAttribute('src', 'https://responder.vercel.app');
+            document.documentElement.appendChild(iFrame);
+            this.iFrame = iFrame;
+            this.contentWindow = iFrame.contentWindow;
         });
     }
 

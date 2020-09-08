@@ -37,7 +37,6 @@ interface Props {
 const responderApi = new ResponderApi();
 
 function CookieConsent(props: Props) {
-    const refIFrame = useRef<HTMLIFrameElement>(null);
     const [checkmarks, setCheckmarks] = useState([]);
 
     const handleAcceptAll = useCallback(
@@ -88,19 +87,6 @@ function CookieConsent(props: Props) {
         [props.onClose, checkmarks]
     );
 
-    useEffect(() => {
-        if (refIFrame?.current) {
-            responderApi.setResponder(refIFrame.current).then(() => {
-                responderApi.get().then((event) => {
-                    CookieConsentStore.setVendorNames(
-                        event?.data?.consents ?? []
-                    );
-                });
-            });
-            refIFrame.current.src = `https://responder.vercel.app?${+new Date()}`;
-        }
-    }, [refIFrame.current]);
-
     function handleCheckChange(e: React.ChangeEvent<HTMLInputElement>) {
         const target = e.currentTarget;
         if (target.checked) {
@@ -115,6 +101,12 @@ function CookieConsent(props: Props) {
     useEffect(() => {
         const subscriptionId = CookieConsentStore.subscribe(() => {
             setCheckmarks([...CookieConsentStore.getVendorNames()]);
+        });
+
+        responderApi.init('modal-consent').then(() => {
+            responderApi.get().then((event) => {
+                CookieConsentStore.setVendorNames(event?.data?.consents ?? []);
+            });
         });
 
         return () => {
@@ -241,14 +233,6 @@ function CookieConsent(props: Props) {
                     {props.acceptAllLabel ?? 'Accept all'}
                 </ButtonCta>
             </footer>
-            <iframe
-                id="modal-frame"
-                ref={refIFrame}
-                width="0"
-                height="0"
-                frameBorder="none"
-                style={{ display: 'block' }}
-            />
         </Modal>
     );
 }
