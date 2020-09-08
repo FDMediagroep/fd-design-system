@@ -13,7 +13,6 @@ interface Props {
 }
 
 export default function CodeBlock(props: Props) {
-    console.log('LANG', props.language);
     return (
         <Lowlight
             language={props.language || 'typescript'}
