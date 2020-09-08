@@ -2,26 +2,26 @@ const withOffline = require('next-offline');
 const rewriteConfig = require('./rewrites');
 
 module.exports = withOffline({
-    generateInDevMode: true,
+    generateInDevMode: false,
     workboxOpts: {
         cleanupOutdatedCaches: true,
         swDest: '../public/service-worker.js',
         runtimeCaching: [
-            {
-                urlPattern: /^https?.*\.[a-zA-Z0-9]*\??.*$/,
-                handler: 'NetworkFirst',
-                options: {
-                    cacheName: 'https-calls',
-                    networkTimeoutSeconds: 15,
-                    expiration: {
-                        maxEntries: 250,
-                        maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
-                    },
-                    cacheableResponse: {
-                        statuses: [0, 200],
-                    },
-                },
-            },
+            // {
+            //     urlPattern: /^https?.*\.[a-zA-Z0-9]*\??.*$/,
+            //     handler: 'NetworkFirst',
+            //     options: {
+            //         cacheName: 'https-calls',
+            //         networkTimeoutSeconds: 15,
+            //         expiration: {
+            //             maxEntries: 250,
+            //             maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
+            //         },
+            //         cacheableResponse: {
+            //             statuses: [0, 200],
+            //         },
+            //     },
+            // },
         ],
         importScripts: [],
     },
