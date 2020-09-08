@@ -149,7 +149,7 @@ function CookieConsent(props: Props) {
                                     juridische grond van rechtmatig belang
                                 </p>
 
-                                <h2>FDMG</h2>
+                                <h3>FDMG</h3>
                                 <div className={styles.settings}>
                                     <Checkbox
                                         id={VendorNames['fdmg']}
@@ -172,7 +172,7 @@ function CookieConsent(props: Props) {
                                         onChange={handleCheckChange}
                                     />
                                 </div>
-                                <h2>Derde partijen</h2>
+                                <h3>Derde partijen</h3>
                                 <div className={styles.settings}>
                                     <Checkbox
                                         id={VendorNames['fdmg-personalized']}

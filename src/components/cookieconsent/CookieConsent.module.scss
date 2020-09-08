@@ -4,9 +4,13 @@
 @import '../../design-tokens/typography.scss';
 
 .fdCookieConsent {
-    .contentBox {
-        background-color: var(--product-background-2);
+    // Increase specificity
+    &#{&} {
+        .contentBox {
+            background-color: var(--product-background-2);
+        }
     }
+
     .settings {
         display: flex;
         flex-direction: column;
