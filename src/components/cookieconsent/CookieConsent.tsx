@@ -67,7 +67,7 @@ function CookieConsent(props: Props) {
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
             CookieConsentStore.setVendorNames([]);
-            responderApi.remove();
+            responderApi.post([]);
             setTimeout(() => {
                 props?.onDenyAll?.(e);
                 props?.onClose?.(e);
@@ -80,11 +80,7 @@ function CookieConsent(props: Props) {
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
             CookieConsentStore.setVendorNames(checkmarks);
-            if (CookieConsentStore.getVendorNames().length) {
-                responderApi.post(CookieConsentStore.getVendorNames());
-            } else {
-                responderApi.remove();
-            }
+            responderApi.post(checkmarks);
             setTimeout(() => {
                 props?.onClose?.(e);
             }, 10);
@@ -101,6 +97,7 @@ function CookieConsent(props: Props) {
                     );
                 });
             });
+            refIFrame.current.src = `https://responder.vercel.app?${+new Date()}`;
         }
     }, [refIFrame.current]);
 
@@ -112,11 +109,7 @@ function CookieConsent(props: Props) {
             CookieConsentStore.removeVendorName(target.id);
         }
 
-        if (CookieConsentStore.getVendorNames().length) {
-            responderApi.post(CookieConsentStore.getVendorNames());
-        } else {
-            responderApi.remove();
-        }
+        responderApi.post(CookieConsentStore.getVendorNames());
     }
 
     useEffect(() => {
@@ -238,19 +231,21 @@ function CookieConsent(props: Props) {
                 ]}
             />
             <footer>
-                <Button onClick={handleClose}>
+                <Button onClick={handleClose} className={styles.button}>
                     {props.closeLabel ?? 'Close'}
                 </Button>
-                <Button onClick={handleDenyAll}>
+                <Button onClick={handleDenyAll} className={styles.button}>
                     {props.denyAllLabel ?? 'Deny all'}
                 </Button>
-                <ButtonCta onClick={handleAcceptAll}>
+                <ButtonCta onClick={handleAcceptAll} className={styles.button}>
                     {props.acceptAllLabel ?? 'Accept all'}
                 </ButtonCta>
             </footer>
             <iframe
+                id="modal-frame"
                 ref={refIFrame}
-                src="https://responder.vercel.app"
+                width="0"
+                height="0"
                 frameBorder="none"
                 style={{ display: 'block' }}
             />

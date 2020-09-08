@@ -21,6 +21,7 @@ const cookieConsentApi = new CookieConsentApi();
 
 function Page() {
     const refIFrame = useRef<HTMLIFrameElement>(null);
+    const [opened, setOpened] = useState(false);
 
     /**
      * Use article background.
@@ -33,8 +34,6 @@ function Page() {
         };
     }, []);
 
-    const [opened, setOpened] = useState(false);
-
     const handleOverlayToggle = useCallback(() => {
         setOpened(!opened);
     }, [opened]);
@@ -45,14 +44,19 @@ function Page() {
 
     useEffect(() => {
         if (refIFrame?.current) {
+            console.info('iframe loaded');
             cookieConsentApi.setResponder(refIFrame.current).then(() => {
                 cookieConsentApi.get().then((event) => {
-                    console.log(event);
+                    console.log('EVENT MESSAGE', event);
+                    if (!event?.data?.consents) {
+                        setOpened(true);
+                    }
                     CookieConsentStore.setVendorNames(
                         event?.data?.consents ?? []
                     );
                 });
             });
+            refIFrame.current.src = `https://responder.vercel.app?${+new Date()}`;
         }
     }, [refIFrame.current]);
 
@@ -406,8 +410,10 @@ function Page() {
             </Explain>
 
             <iframe
+                id="page-frame"
                 ref={refIFrame}
-                src="https://responder.vercel.app"
+                width="0"
+                height="0"
                 frameBorder="none"
                 style={{ display: 'block' }}
             />
