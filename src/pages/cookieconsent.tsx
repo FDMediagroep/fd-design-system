@@ -21,7 +21,6 @@ const metaDescription =
 const cookieConsentApi = new CookieConsentApi();
 
 function Page() {
-    const refIFrame = useRef<HTMLIFrameElement>(null);
     const [opened, setOpened] = useState(false);
 
     /**
@@ -29,6 +28,16 @@ function Page() {
      */
     useEffect(() => {
         PageStore.setPageType('article');
+
+        cookieConsentApi.init('page-consent').then(() => {
+            cookieConsentApi.get().then((event) => {
+                console.log('EVENT MESSAGE', event);
+                if (!event?.data?.consents) {
+                    setOpened(true);
+                }
+                CookieConsentStore.setVendorNames(event?.data?.consents ?? []);
+            });
+        });
 
         return () => {
             PageStore.setPageType('overview');
@@ -42,24 +51,6 @@ function Page() {
     const handleModalClose = useCallback(() => {
         setOpened(false);
     }, [opened]);
-
-    useEffect(() => {
-        if (refIFrame?.current) {
-            console.info('iframe loaded');
-            cookieConsentApi.setResponder(refIFrame.current).then(() => {
-                cookieConsentApi.get().then((event) => {
-                    console.log('EVENT MESSAGE', event);
-                    if (!event?.data?.consents) {
-                        setOpened(true);
-                    }
-                    CookieConsentStore.setVendorNames(
-                        event?.data?.consents ?? []
-                    );
-                });
-            });
-            refIFrame.current.src = `https://responder.vercel.app?${+new Date()}`;
-        }
-    }, [refIFrame.current]);
 
     const handleUnlock = useCallback(() => {
         console.log(CookieConsentStore.getVendorNames());
@@ -408,27 +399,17 @@ function Page() {
                             source={`
 \`\`\`javascript
 import { 
-    CookieConsentApi, 
-    CookieConsentStore
+    CookieConsentApi
 } from '@fdmg/design-system/components/cookieconsent/CookieConsent';
 
 const cookieConsentApi = new CookieConsentApi();
 
 async function checkCookieconsent() {
-    // Iframe to https://responder.vercel.app
-    const responderIframe = document.querySelector('#responderIframe');
-
-    // Set the responder iframe in the consent API so it can exchange messages with it
-    await cookieConsentApi.setResponder(responderIframe);
+    // First init the Cookie Consent API.
+    await cookieConsentApi.init('example-consent');
 
     // Get the cookie consents from Responder.
-    const event = await cookieConsentApi.get();
-
-    // Check if the consents array exists. If it doesn't we can assume.
-    // the user never completed the cookie consent setup and we show the
-    // cookie consent modal.
-    //
-    // The data property of the event follows this interface:
+    // The event.data property follows this interface:
     //
     // interface MessageData {
     //    consents?: string[];
@@ -436,13 +417,20 @@ async function checkCookieconsent() {
     //    hostname?: string;
     //    timestamp?: number;
     // }
+    const event = await cookieConsentApi.get();
+
+    // Check if the consents array exists. If it doesn't we can assume
+    // the user never completed the cookie consent setup and we show the
+    // cookie consent modal.
     if (!event?.data?.consents) {
-        setOpened(true);
+        // ...
+        // Open the Cookie Consent modal.
+        // ...
     }
 
-    // We store the retrieved consents in the CookieConsentStore.
-    CookieConsentStore.setVendorNames(
-        event?.data?.consents ?? []
+    // Check the consents
+    console.table(
+        event?.data?.consents
     );
 }
 \`\`\`
@@ -494,14 +482,14 @@ async function checkCookieconsent() {
                 />
             </Explain>
 
-            <iframe
+            {/* <iframe
                 id="page-frame"
                 ref={refIFrame}
                 width="0"
                 height="0"
                 frameBorder="none"
                 style={{ display: 'block' }}
-            />
+            /> */}
         </div>
     );
 }
