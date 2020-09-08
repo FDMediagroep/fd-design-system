@@ -177,6 +177,16 @@ function CookieConsent(props: Props) {
                                         onChange={handleCheckChange}
                                     />
                                     <Checkbox
+                                        id={VendorNames['instagram']}
+                                        label="Instagram"
+                                        checked={
+                                            checkmarks.indexOf(
+                                                VendorNames['instagram']
+                                            ) !== -1
+                                        }
+                                        onChange={handleCheckChange}
+                                    />
+                                    <Checkbox
                                         id={VendorNames['soundcloud']}
                                         label="SoundCloud"
                                         checked={
