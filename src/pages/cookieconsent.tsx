@@ -13,6 +13,7 @@ import {
 import { FdmgIcon } from '../design-tokens/icons';
 import PageStore from '../stores/PageStore';
 import ReactMD from 'react-markdown/with-html';
+import CodeBlock from '../utils/CodeBlock';
 
 const metaTitle = 'CookieConsent';
 const metaDescription =
@@ -396,8 +397,9 @@ function Page() {
                         </p>
                         <ReactMD
                             className="markdown"
+                            renderers={{ code: CodeBlock }}
                             source={`
-\`\`\`javascript
+\`\`\`typescript
 import { 
     CookieConsentApi
 } from '@fdmg/design-system/components/cookieconsent/CookieConsent';

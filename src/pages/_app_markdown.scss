@@ -73,15 +73,6 @@
         }
     }
 
-    code {
-        color: var(--captions);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 20)};
-        }
-    }
-
     img[alt='FD Design System'] {
         padding: 37px 1rem;
         border-radius: 15px;
