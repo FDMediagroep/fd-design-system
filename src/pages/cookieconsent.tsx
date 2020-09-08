@@ -391,9 +391,9 @@ function Page() {
                             your messages to Responder.
                         </p>
                         <p>
-                            In order to remove your consents completely to
+                            In order to remove your consents completely, to
                             retrigger the automatic Cookie Consent modal upon
-                            revisit you simply navigate to{' '}
+                            revisit, you simply navigate to{' '}
                             <a
                                 href="https://responder.vercel.app"
                                 target="_blank"
