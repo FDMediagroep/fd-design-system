@@ -12,6 +12,7 @@ import {
 } from '../components/cookieconsent/CookieConsent';
 import { FdmgIcon } from '../design-tokens/icons';
 import PageStore from '../stores/PageStore';
+import ReactMD from 'react-markdown/with-html';
 
 const metaTitle = 'CookieConsent';
 const metaDescription =
@@ -363,6 +364,90 @@ function Page() {
                             label={opened ? 'Hide overlay' : 'Show overlay'}
                             onChange={handleOverlayToggle}
                             checked={opened}
+                        />
+                        <p>
+                            The code snippet below shows how you can
+                            automatically show the Cookie Consent modal when the
+                            user has never finished setting up the cookie
+                            consents.
+                        </p>
+                        <p>
+                            If the user did finish setting up the cookie
+                            consents then the Cookie Consent modal will not be
+                            shown again.
+                        </p>
+                        <p>
+                            This Cookie Consent component makes use of
+                            Responder. Responder is a static web page with{' '}
+                            <span style={{ whiteSpace: 'nowrap' }}>
+                                parent &lt;-&gt; child
+                            </span>{' '}
+                            iFrame communication built in. Messages sent to
+                            Responder are stored in localStorage and can be
+                            retrieved again.
+                        </p>
+                        <p>
+                            Using the CookieConsentApi you can get, delete, post
+                            your messages to Responder.
+                        </p>
+                        <p>
+                            In order to remove your consents completely to
+                            retrigger the automatic Cookie Consent modal upon
+                            revisit you simply navigate to{' '}
+                            <a
+                                href="https://responder.vercel.app"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://responder.vercel.app
+                            </a>{' '}
+                            and delete your consents from that page.
+                        </p>
+                        <ReactMD
+                            className="markdown"
+                            source={`
+\`\`\`javascript
+import { 
+    CookieConsentApi, 
+    CookieConsentStore
+} from '@fdmg/design-system/components/cookieconsent/CookieConsent';
+
+const cookieConsentApi = new CookieConsentApi();
+
+async function checkCookieconsent() {
+    // Iframe to https://responder.vercel.app
+    const responderIframe = document.querySelector('#responderIframe');
+
+    // Set the responder iframe in the consent API so it can exchange messages with it
+    await cookieConsentApi.setResponder(responderIframe);
+
+    // Get the cookie consents from Responder.
+    const event = await cookieConsentApi.get();
+
+    // Check if the consents array exists. If it doesn't we can assume.
+    // the user never completed the cookie consent setup and we show the
+    // cookie consent modal.
+    //
+    // The data property of the event follows this interface:
+    //
+    // interface MessageData {
+    //    consents?: string[];
+    //    method: 'GET' | 'POST' | 'DELETE';
+    //    hostname?: string;
+    //    timestamp?: number;
+    // }
+    if (!event?.data?.consents) {
+        setOpened(true);
+    }
+
+    // We store the retrieved consents in the CookieConsentStore.
+    CookieConsentStore.setVendorNames(
+        event?.data?.consents ?? []
+    );
+}
+\`\`\`
+`}
+                            escapeHtml={false}
                         />
                     </>
                 }

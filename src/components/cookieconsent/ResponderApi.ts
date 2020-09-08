@@ -1,6 +1,16 @@
 import CookieConsentStore from './CookieConsentStore';
 
 /**
+ * Interface of the MessageEvent.data property.
+ */
+export interface MessageData {
+    consents?: string[];
+    method: 'GET' | 'POST' | 'DELETE';
+    hostname?: string;
+    timestamp?: number;
+}
+
+/**
  * Convenience API for Responder.
  * Responder is a static web page is used as an iframe.
  * Using this API it's possible to send and retrieve messages from Responder.
