@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -34,20 +35,22 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
             options: {
                 // Necessary for external CSS imports to work
                 // https://github.com/facebook/create-react-app/issues/2677
-                ident: 'postcss',
-                plugins: () => [
-                    require('postcss-flexbugs-fixes'),
-                    require('postcss-preset-env')({
-                        autoprefixer: {
-                            flexbox: 'no-2009',
-                        },
-                        stage: 3,
-                    }),
-                    // Adds PostCSS Normalize as the reset css with default options,
-                    // so that it honors browserslist config in package.json
-                    // which in turn let's users customize the target behavior as per their needs.
-                    postcssNormalize(),
-                ],
+                postcssOptions: {
+                    ident: 'postcss',
+                    plugins: () => [
+                        require('postcss-flexbugs-fixes'),
+                        require('postcss-preset-env')({
+                            autoprefixer: {
+                                flexbox: 'no-2009',
+                            },
+                            stage: 3,
+                        }),
+                        // Adds PostCSS Normalize as the reset css with default options,
+                        // so that it honors browserslist config in package.json
+                        // which in turn let's users customize the target behavior as per their needs.
+                        postcssNormalize(),
+                    ],
+                },
                 sourceMap: isDev,
             },
         },
