@@ -48,6 +48,11 @@
     .contentBox {
         position: fixed;
         overflow: hidden;
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            overflow: auto;
+        }
         display: flex;
         flex-direction: column;
         top: 0;
