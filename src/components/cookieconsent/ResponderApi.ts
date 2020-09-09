@@ -1,12 +1,16 @@
-import CookieConsentStore from './CookieConsentStore';
+interface Options {
+    /**
+     * The hostname is used as key when interfacing with Responder.
+     */
+    hostname?: string;
+}
 
 /**
  * Interface of the MessageEvent.data property.
  */
-export interface MessageData {
+export interface MessageData extends Options {
     consents?: string[];
     method: 'GET' | 'POST' | 'DELETE';
-    hostname?: string;
     timestamp?: number;
 }
 
@@ -23,19 +27,21 @@ export interface MessageData {
  * across multiple domains.
  */
 class ResponderApi {
-    private loaded = false;
-    private iFrame: HTMLIFrameElement;
-    private contentWindow: WindowProxy;
+    private static loaded = false;
+    private static iFrame: HTMLIFrameElement;
+    private static contentWindow: WindowProxy;
+    private hostname: string;
 
     isLoaded() {
-        return this.loaded;
+        return ResponderApi.loaded;
     }
 
-    private removeOldIFrame(id: string) {
-        const oldIFrame = document.getElementById(id);
-        if (oldIFrame) {
-            oldIFrame.parentElement.removeChild(oldIFrame);
-        }
+    setHostname(hostname: string) {
+        this.hostname = hostname;
+    }
+
+    getHostname() {
+        return this.hostname;
     }
 
     /**
@@ -50,30 +56,31 @@ class ResponderApi {
      *
      * @param id
      */
-    init(id?: string): Promise<any> {
+    init(options?: Options): Promise<any> {
+        this.hostname = options?.hostname ?? window.location.hostname;
         return new Promise((resolve, reject) => {
-            const iFrame = document.createElement('iframe');
-            if (id) {
-                // We cannot re-use iFrames because browsers will
-                // block us from accessing a cross-origin frame
-                this.removeOldIFrame(id);
-                iFrame.setAttribute('id', id);
+            if (ResponderApi.iFrame) {
+                resolve();
+                return;
             }
+
+            const iFrame = document.createElement('iframe');
+            iFrame.setAttribute('id', 'responderFrame');
             iFrame.setAttribute(
                 'style',
-                'width: 0; height: 0; frame-border: none; display: block;'
+                'width: 0; height: 0; border: none; display: block;'
             );
 
             const cb = () => {
-                console.info('Responder iFrame loaded', iFrame);
-                this.loaded = true;
+                console.info('Responder API iFrame loaded', iFrame);
+                ResponderApi.loaded = true;
                 resolve();
             };
             iFrame.addEventListener('load', cb);
             iFrame.setAttribute('src', 'https://responder.vercel.app');
             document.documentElement.appendChild(iFrame);
-            this.iFrame = iFrame;
-            this.contentWindow = iFrame.contentWindow;
+            ResponderApi.iFrame = iFrame;
+            ResponderApi.contentWindow = iFrame.contentWindow;
         });
     }
 
@@ -83,13 +90,10 @@ class ResponderApi {
      * @param consents
      */
     post(consents: string[]): Promise<MessageEvent> {
-        if (!this.loaded) {
-            console.error(new Error('Responder iFrame not loaded'));
+        if (!ResponderApi.loaded) {
+            console.error(new Error('Responder API iFrame not loaded'));
         }
-        console.info(
-            `Responder API POST: ${window.location.hostname}`,
-            consents
-        );
+        console.info(`Responder API POST: ${this.hostname}`, consents);
         return new Promise((resolve, reject) => {
             const cb = (event: MessageEvent) => {
                 if (event?.data?.hostname) {
@@ -98,10 +102,10 @@ class ResponderApi {
                 }
             };
             window.addEventListener('message', cb, false);
-            this.contentWindow.postMessage(
+            ResponderApi.contentWindow.postMessage(
                 {
                     method: 'POST',
-                    hostname: window.location.hostname,
+                    hostname: this.hostname,
                     timestamp: +new Date(),
                     consents,
                 },
@@ -114,34 +118,47 @@ class ResponderApi {
      * Retrieve message from Responder associated with the hostname.
      */
     get(): Promise<MessageEvent> {
-        if (!this.loaded) {
-            console.error(new Error('Responder iFrame not loaded'));
+        if (!ResponderApi.loaded) {
+            console.error(new Error('Responder API iFrame not loaded'));
         }
         console.info(
-            `Responder API GET: ${window.location.hostname}`,
-            this.iFrame
+            `Responder API GET: ${this.hostname}`,
+            ResponderApi.iFrame
         );
         return new Promise((resolve, reject) => {
             let timeout;
             const cb = (event: MessageEvent) => {
                 if (event?.data?.hostname) {
+                    console.info('Responder API clear timeout', timeout);
                     clearTimeout(timeout);
                     window.removeEventListener('message', cb);
                     resolve(event);
+                } else {
+                    console.info('Responder API event unknown');
                 }
             };
             window.addEventListener('message', cb, false);
-            this.contentWindow.postMessage(
+            timeout = setTimeout(() => {
+                console.error(
+                    'Responder API timed out',
+                    timeout,
+                    ResponderApi.iFrame
+                );
+                resolve(new MessageEvent('message'));
+            }, 2000);
+            console.info(
+                'Responder API new timeout',
+                timeout,
+                ResponderApi.iFrame
+            );
+
+            ResponderApi.contentWindow.postMessage(
                 {
                     method: 'GET',
-                    hostname: window.location.hostname,
+                    hostname: this.hostname,
                 },
                 '*'
             );
-            timeout = setTimeout(() => {
-                console.error('Timed out', this.iFrame);
-                resolve(new MessageEvent('message'));
-            }, 4000);
         });
     }
 
@@ -149,10 +166,10 @@ class ResponderApi {
      * Remove message from responder associated with the hostname.
      */
     remove(): Promise<MessageEvent> {
-        if (!this.loaded) {
-            console.error(new Error('Responder iFrame not loaded'));
+        if (!ResponderApi.loaded) {
+            console.error(new Error('Responder API iFrame not loaded'));
         }
-        console.info(`Responder API DELETE: ${window.location.hostname}`);
+        console.info(`Responder API DELETE: ${this.hostname}`);
         return new Promise((resolve, reject) => {
             const cb = (event: MessageEvent) => {
                 if (event?.data?.hostname) {
@@ -161,10 +178,10 @@ class ResponderApi {
                 }
             };
             window.addEventListener('message', cb, false);
-            this.contentWindow.postMessage(
+            ResponderApi.contentWindow.postMessage(
                 {
                     method: 'DELETE',
-                    hostname: window.location.hostname,
+                    hostname: this.hostname,
                 },
                 '*'
             );

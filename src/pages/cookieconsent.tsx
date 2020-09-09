@@ -30,9 +30,13 @@ function Page() {
     useEffect(() => {
         PageStore.setPageType('article');
 
-        cookieConsentApi.init('page-consent').then(() => {
+        cookieConsentApi.init({ hostname: 'design-system.fd.nl' }).then(() => {
             cookieConsentApi.get().then((event) => {
-                console.log('EVENT MESSAGE', event);
+                console.log(
+                    'Responder API Event received',
+                    'page-consent',
+                    event
+                );
                 if (!event?.data?.consents) {
                     setOpened(true);
                 }
@@ -408,7 +412,7 @@ const cookieConsentApi = new CookieConsentApi();
 
 async function checkCookieconsent() {
     // First init the Cookie Consent API.
-    await cookieConsentApi.init('example-consent');
+    await cookieConsentApi.init();
 
     // Get the cookie consents from Responder.
     // The event.data property follows this interface:
