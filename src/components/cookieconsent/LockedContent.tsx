@@ -83,9 +83,7 @@ function LockedContent(props: Props) {
     }
 
     return unlocked ? (
-        <span ref={unlockedRef} className="unblocked inline-content block">
-            {props.children}
-        </span>
+        <span ref={unlockedRef}>{props.children}</span>
     ) : (
         <div className={styles.fdLockedContent}>
             <div className={styles.blockedContentContainer} onClick={unlock}>
