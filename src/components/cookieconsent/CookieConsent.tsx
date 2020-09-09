@@ -103,8 +103,13 @@ function CookieConsent(props: Props) {
             setCheckmarks([...CookieConsentStore.getVendorNames()]);
         });
 
-        responderApi.init('modal-consent').then(() => {
+        responderApi.init().then(() => {
             responderApi.get().then((event) => {
+                console.info(
+                    'Responder API Event received',
+                    'modal-consent',
+                    event
+                );
                 CookieConsentStore.setVendorNames(event?.data?.consents ?? []);
             });
         });
