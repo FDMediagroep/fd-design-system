@@ -3,6 +3,7 @@ import { Explain } from '../components/Explain';
 import { Modal, getCssClassNames } from '../components/modal/Modal';
 import Head from 'next/head';
 import { Switch } from '../components/input/Switch';
+import styles from './modal.module.scss';
 
 const metaTitle = 'Modal';
 const metaDescription = 'Modal, used to display a modal overlay';
@@ -57,7 +58,11 @@ function Page() {
                     </>
                 }
             >
-                <Modal opened={opened} onClose={handleModalClose}>
+                <Modal
+                    contentBoxClassName={styles.modal}
+                    opened={opened}
+                    onClose={handleModalClose}
+                >
                     <>
                         <h2>Abonnement wijzigen of opzeggen</h2>
                         <p>
