@@ -25,6 +25,7 @@ import { ResponderApi } from './ResponderApi';
 interface Props {
     acceptAllLabel?: string;
     closeLabel?: string;
+    domain?: string;
     denyAllLabel?: string;
     description?: JSX.Element | String;
     onAcceptAll?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
@@ -103,7 +104,7 @@ function CookieConsent(props: Props) {
             setCheckmarks([...CookieConsentStore.getVendorNames()]);
         });
 
-        responderApi.init().then(() => {
+        responderApi.init({ hostname: 'design-system.fd.nl' }).then(() => {
             responderApi.get().then((event) => {
                 console.info(
                     'Responder API Event received',

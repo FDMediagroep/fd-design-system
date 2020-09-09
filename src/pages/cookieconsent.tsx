@@ -30,7 +30,7 @@ function Page() {
     useEffect(() => {
         PageStore.setPageType('article');
 
-        cookieConsentApi.init().then(() => {
+        cookieConsentApi.init({ hostname: 'design-system.fd.nl' }).then(() => {
             cookieConsentApi.get().then((event) => {
                 console.log(
                     'Responder API Event received',

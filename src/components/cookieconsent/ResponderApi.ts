@@ -1,12 +1,16 @@
-import CookieConsentStore from './CookieConsentStore';
+interface Options {
+    /**
+     * The hostname is used as key when interfacing with Responder.
+     */
+    hostname?: string;
+}
 
 /**
  * Interface of the MessageEvent.data property.
  */
-export interface MessageData {
+export interface MessageData extends Options {
     consents?: string[];
     method: 'GET' | 'POST' | 'DELETE';
-    hostname?: string;
     timestamp?: number;
 }
 
@@ -26,9 +30,18 @@ class ResponderApi {
     private static loaded = false;
     private static iFrame: HTMLIFrameElement;
     private static contentWindow: WindowProxy;
+    private hostname: string;
 
     isLoaded() {
         return ResponderApi.loaded;
+    }
+
+    setHostname(hostname: string) {
+        this.hostname = hostname;
+    }
+
+    getHostname() {
+        return this.hostname;
     }
 
     /**
@@ -43,7 +56,8 @@ class ResponderApi {
      *
      * @param id
      */
-    init(): Promise<any> {
+    init(options?: Options): Promise<any> {
+        this.hostname = options?.hostname ?? window.location.hostname;
         return new Promise((resolve, reject) => {
             if (ResponderApi.iFrame) {
                 resolve();
@@ -79,10 +93,7 @@ class ResponderApi {
         if (!ResponderApi.loaded) {
             console.error(new Error('Responder API iFrame not loaded'));
         }
-        console.info(
-            `Responder API POST: ${window.location.hostname}`,
-            consents
-        );
+        console.info(`Responder API POST: ${this.hostname}`, consents);
         return new Promise((resolve, reject) => {
             const cb = (event: MessageEvent) => {
                 if (event?.data?.hostname) {
@@ -94,7 +105,7 @@ class ResponderApi {
             ResponderApi.contentWindow.postMessage(
                 {
                     method: 'POST',
-                    hostname: window.location.hostname,
+                    hostname: this.hostname,
                     timestamp: +new Date(),
                     consents,
                 },
@@ -111,7 +122,7 @@ class ResponderApi {
             console.error(new Error('Responder API iFrame not loaded'));
         }
         console.info(
-            `Responder API GET: ${window.location.hostname}`,
+            `Responder API GET: ${this.hostname}`,
             ResponderApi.iFrame
         );
         return new Promise((resolve, reject) => {
@@ -144,7 +155,7 @@ class ResponderApi {
             ResponderApi.contentWindow.postMessage(
                 {
                     method: 'GET',
-                    hostname: window.location.hostname,
+                    hostname: this.hostname,
                 },
                 '*'
             );
@@ -158,7 +169,7 @@ class ResponderApi {
         if (!ResponderApi.loaded) {
             console.error(new Error('Responder API iFrame not loaded'));
         }
-        console.info(`Responder API DELETE: ${window.location.hostname}`);
+        console.info(`Responder API DELETE: ${this.hostname}`);
         return new Promise((resolve, reject) => {
             const cb = (event: MessageEvent) => {
                 if (event?.data?.hostname) {
@@ -170,7 +181,7 @@ class ResponderApi {
             ResponderApi.contentWindow.postMessage(
                 {
                     method: 'DELETE',
-                    hostname: window.location.hostname,
+                    hostname: this.hostname,
                 },
                 '*'
             );
