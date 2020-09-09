@@ -55,8 +55,8 @@ function Page() {
 
     const handleUnlock = useCallback(() => {
         console.log(CookieConsentStore.getVendorNames());
-        cookieConsentApi.store();
-    }, []);
+        cookieConsentApi.post(CookieConsentStore.getVendorNames());
+    }, [cookieConsentApi]);
 
     return (
         <div className={styles.cookieConsent}>

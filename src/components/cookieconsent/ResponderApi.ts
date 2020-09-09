@@ -54,6 +54,8 @@ class ResponderApi {
         return new Promise((resolve, reject) => {
             const iFrame = document.createElement('iframe');
             if (id) {
+                // We cannot re-use iFrames because browsers will
+                // block us from accessing a cross-origin frame
                 this.removeOldIFrame(id);
                 iFrame.setAttribute('id', id);
             }
@@ -139,7 +141,7 @@ class ResponderApi {
             timeout = setTimeout(() => {
                 console.error('Timed out', this.iFrame);
                 resolve(new MessageEvent('message'));
-            }, 2000);
+            }, 4000);
         });
     }
 
@@ -167,18 +169,6 @@ class ResponderApi {
                 '*'
             );
         });
-    }
-
-    /**
-     * Using vendornames from CookieConsentStore determines to store or remove
-     * the message from Responder associated with the hostname.
-     */
-    store() {
-        if (CookieConsentStore.getVendorNames().length) {
-            this.post(CookieConsentStore.getVendorNames());
-        } else {
-            this.remove();
-        }
     }
 }
 
