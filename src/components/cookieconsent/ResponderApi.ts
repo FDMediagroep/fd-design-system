@@ -141,7 +141,7 @@ class ResponderApi {
             timeout = setTimeout(() => {
                 console.error('Timed out', this.iFrame);
                 resolve(new MessageEvent('message'));
-            }, 4000);
+            }, 2000);
         });
     }
 
