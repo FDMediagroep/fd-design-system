@@ -126,11 +126,12 @@ class ResponderApi {
             ResponderApi.iFrame
         );
         return new Promise((resolve, reject) => {
-            let timeout;
+            let interval;
+            let retryCount = 0;
             const cb = (event: MessageEvent) => {
                 if (event?.data?.hostname) {
-                    console.info('Responder API clear timeout', timeout);
-                    clearTimeout(timeout);
+                    console.info('Responder API clear timeout', interval);
+                    clearInterval(interval);
                     window.removeEventListener('message', cb);
                     resolve(event);
                 } else {
@@ -138,17 +139,27 @@ class ResponderApi {
                 }
             };
             window.addEventListener('message', cb, false);
-            timeout = setTimeout(() => {
-                console.error(
-                    'Responder API timed out',
-                    timeout,
-                    ResponderApi.iFrame
+            interval = setInterval(() => {
+                if (retryCount > 30) {
+                    console.error(
+                        'Responder API timed out',
+                        interval,
+                        ResponderApi.iFrame
+                    );
+                    resolve(new MessageEvent('message'));
+                }
+                ResponderApi.contentWindow.postMessage(
+                    {
+                        method: 'GET',
+                        hostname: this.hostname,
+                    },
+                    '*'
                 );
-                resolve(new MessageEvent('message'));
-            }, 2000);
+                retryCount++;
+            }, 100);
             console.info(
                 'Responder API new timeout',
-                timeout,
+                interval,
                 ResponderApi.iFrame
             );
 
