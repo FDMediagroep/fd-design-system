@@ -68,11 +68,7 @@ function App({ Component, pageProps }) {
 // Will be called once for every metric that has to be reported.
 export function reportWebVitals(metric) {
     // These metrics can be sent to any analytics service
-    if ('table' in console) {
-        console.table(metric);
-    } else {
-        (console as any).log(metric);
-    }
+    // console.log(metric);
 }
 
 export default App;

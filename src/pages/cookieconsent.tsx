@@ -32,7 +32,7 @@ function Page() {
 
         cookieConsentApi.init('page-consent').then(() => {
             cookieConsentApi.get().then((event) => {
-                console.log('EVENT MESSAGE', event);
+                console.log('Responder Event received', event);
                 if (!event?.data?.consents) {
                     setOpened(true);
                 }

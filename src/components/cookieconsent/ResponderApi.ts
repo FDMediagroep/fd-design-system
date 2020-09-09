@@ -61,7 +61,7 @@ class ResponderApi {
             }
             iFrame.setAttribute(
                 'style',
-                'width: 0; height: 0; frame-border: none; display: block;'
+                'width: 0; height: 0; border: none; display: block;'
             );
 
             const cb = () => {
