@@ -4,6 +4,7 @@
 @import '../../design-tokens/typography.scss';
 
 .fdButton {
+    user-select: none;
     position: relative;
     overflow: hidden;
     min-height: 2rem;
