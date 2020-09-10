@@ -86,7 +86,7 @@
         }
     }
 
-    &:hover:not(:active):focus:before {
+    &:not(:active):before {
         content: '';
         transform: skewX(15deg);
         animation: ripple 0.5s;
