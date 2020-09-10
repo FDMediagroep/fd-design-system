@@ -19,13 +19,3 @@ exports[`Button should handle sizes correctly 2`] = `
   </button>
 </div>
 `;
-
-exports[`Button should handle sizes correctly 3`] = `
-<div>
-  <button
-    class="fdButton l"
-  >
-    Knopje
-  </button>
-</div>
-`;
