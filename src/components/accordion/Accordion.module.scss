@@ -83,7 +83,21 @@
     }
 
     input {
-        display: none;
+        position: absolute;
+        opacity: 0;
+        &:focus ~ .textContent label h2 {
+            border: 1px solid var(--dividers);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border: 1px solid #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        50
+                    )};
+            }
+        }
     }
 
     .textContent > div {

@@ -32,6 +32,7 @@ function Accordion(props: Props) {
                         name={item.anchor ?? `q-${idx}`}
                         onChange={console.log}
                         defaultChecked={item.checked}
+                        aria-label={item.title}
                     />
                     <label
                         htmlFor={item.anchor ?? `q-${idx}`}
