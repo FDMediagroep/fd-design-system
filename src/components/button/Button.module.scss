@@ -52,9 +52,8 @@
     }
 
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-        &:hover,
-        &:focus {
-            transform: scale(1.05);
+        &:active {
+            transform: scale(0.95);
         }
     }
 
@@ -85,10 +84,9 @@
             (-ms-high-contrast: none) {
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 0)};
         }
-        transform: scale(1);
 
         @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-            transform: scale(1.02);
+            transform: scale(0.98);
         }
     }
 
@@ -115,7 +113,9 @@
         }
     }
 
-    &:disabled {
+    &:disabled,
+    &:disabled:active {
+        outline: none;
         background-color: var(--button-disabled);
         // IE11
         @media screen and (-ms-high-contrast: active),
