@@ -90,6 +90,23 @@
             top: 0;
             left: 0;
             opacity: 0;
+
+            &:hover,
+            &:focus {
+                ~ .switchLabel {
+                    outline: 1px solid var(--dividers);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        outline: 1px solid #{map-deep-get(
+                                $colors,
+                                'colors',
+                                'neutral',
+                                50
+                            )};
+                    }
+                }
+            }
         }
         .switchLabel {
             position: relative;

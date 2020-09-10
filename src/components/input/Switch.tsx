@@ -60,6 +60,7 @@ function Switch(props: Props) {
                     name={props.name ? props.name : props.id}
                     value={props.value ? props.value : '1'}
                     defaultChecked={props.defaultChecked}
+                    aria-label={props.label}
                 />
                 <span className={styles.switch}></span>
                 <span className={styles.switchLabel}>{props.label}</span>

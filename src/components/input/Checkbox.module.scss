@@ -6,6 +6,20 @@
     input {
         opacity: 0;
         position: absolute;
+        &:hover ~ .checkbox:before,
+        &:focus ~ .checkbox:before {
+            outline: 1px solid var(--dividers);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                outline: 1px solid #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        50
+                    )};
+            }
+        }
     }
     .checkbox {
         user-select: none;

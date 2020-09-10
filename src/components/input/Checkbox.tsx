@@ -49,6 +49,7 @@ export default function Checkbox(props: Props) {
                 name={props.name ? props.name : props.id}
                 value={props.value ? props.value : '1'}
                 defaultChecked={props.defaultChecked}
+                aria-label={props.label}
             />
             <span className={styles.checkbox}>{props.label}</span>
         </label>

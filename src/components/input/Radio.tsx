@@ -60,6 +60,7 @@ function Radio(props: Props) {
                 name={props.name ? props.name : props.id}
                 value={props.value}
                 defaultChecked={props.defaultChecked}
+                aria-label={props.label}
             />
             <span className={styles.radio}>{props.label}</span>
         </label>

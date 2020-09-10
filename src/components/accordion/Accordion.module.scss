@@ -83,7 +83,22 @@
     }
 
     input {
-        display: none;
+        position: absolute;
+        opacity: 0;
+        &:focus ~ .textContent label h2,
+        &:active ~ .textContent label h2 {
+            outline: 1px solid var(--dividers);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                outline: 1px solid #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        50
+                    )};
+            }
+        }
     }
 
     .textContent > div {

@@ -184,7 +184,7 @@ function TextInput(props: Props) {
                     {...props}
                     id={props.id}
                     data-hide-number-spinners={props.hideNumberSpinners}
-                    name={props.name ? props.name : props.id}
+                    name={props.name ?? props.id}
                     defaultValue={props.defaultValue}
                     type={props.type ?? 'text'}
                     min={props.min}
@@ -196,13 +196,14 @@ function TextInput(props: Props) {
                     required={props.required}
                     pattern={props.pattern}
                     onInvalid={handleInvalid}
-                    title={props.title ? props.title : props.label || 'Value'}
+                    title={props.title ?? props.label ?? 'Value'}
                     onFocus={props.onFocus}
                     onBlur={props.onBlur}
                     placeholder={props.placeholder ? props.placeholder : ' '}
+                    aria-label={props.label ?? props.title ?? 'Value'}
                 />
                 <div>
-                    <label htmlFor={props.id}>{props.label || 'Value'}</label>
+                    <label htmlFor={props.id}>{props.label ?? 'Value'}</label>
                     <span
                         className={styles.iconCheck}
                         dangerouslySetInnerHTML={{ __html: CheckIcon }}
