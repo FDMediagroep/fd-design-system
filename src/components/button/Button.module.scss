@@ -23,6 +23,7 @@
     border-radius: 0;
     font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     font-weight: normal;
+    letter-spacing: -0.2px;
 
     background-color: var(--button);
     &:hover {
