@@ -86,14 +86,18 @@ function DefaultButton() {
                     <Button id="demoButtonM" size="m">
                         Button (medium)
                     </Button>
-                    <Button id="demoButtonMIcon">
+                    <Button id="demoButtonMIcon" size="m">
                         <span
                             dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
                         />
                         <span>Icon (medium)</span>
                     </Button>
 
-                    <Button id="demoButtonMDisabled" disabled="disabled">
+                    <Button
+                        id="demoButtonMDisabled"
+                        disabled="disabled"
+                        size="m"
+                    >
                         <span
                             dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
                         />
