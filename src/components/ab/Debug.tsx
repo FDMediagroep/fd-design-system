@@ -19,40 +19,39 @@ export function Debug(props: Props) {
     }
 
     return (
-        <>
-            <Modal
-                className={styles.debug}
-                opened={props.open}
-                onClose={props.handleClose}
-            >
-                <div>
-                    <section className={styles.content}>
-                        <h2>
-                            {props.name}
-                            <span
-                                className={styles.icon}
-                                onClick={handleRemoveExperiment}
-                                title="Remove experiment cookie"
-                                dangerouslySetInnerHTML={{ __html: CloseIcon }}
-                            />
-                        </h2>
-                        {props.children.map(
-                            (child: React.ReactElement, idx: number) => (
-                                <label key={child.props.name}>
-                                    <input
-                                        type="radio"
-                                        value={idx}
-                                        name={props.name}
-                                        onChange={props.debugChange}
-                                        checked={idx === props.variant}
-                                    />
-                                    {child.props.name}
-                                </label>
-                            )
-                        )}
-                    </section>
-                </div>
-            </Modal>
-        </>
+        <Modal
+            className={`${styles.debug} debug-modal`}
+            contentBoxClassName="debug-modal-content"
+            opened={props.open}
+            onClose={props.handleClose}
+        >
+            <div>
+                <section className={styles.content}>
+                    <h2>
+                        {props.name}
+                        <span
+                            className={styles.icon}
+                            onClick={handleRemoveExperiment}
+                            title="Remove experiment cookie"
+                            dangerouslySetInnerHTML={{ __html: CloseIcon }}
+                        />
+                    </h2>
+                    {props.children.map(
+                        (child: React.ReactElement, idx: number) => (
+                            <label key={child.props.name}>
+                                <input
+                                    type="radio"
+                                    value={idx}
+                                    name={props.name}
+                                    onChange={props.debugChange}
+                                    checked={idx === props.variant}
+                                />
+                                {child.props.name}
+                            </label>
+                        )
+                    )}
+                </section>
+            </div>
+        </Modal>
     );
 }

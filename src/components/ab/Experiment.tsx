@@ -185,7 +185,7 @@ export function Experiment(props: Experiment) {
                   )
                 : null}
 
-            {typeof document !== 'undefined' && debug && (
+            {typeof document !== 'undefined' && debug ? (
                 <Debug
                     debugChange={debugChange}
                     handleClose={handleClose}
@@ -196,7 +196,7 @@ export function Experiment(props: Experiment) {
                 >
                     {childrenWithProps}
                 </Debug>
-            )}
+            ) : null}
         </>
     );
 }

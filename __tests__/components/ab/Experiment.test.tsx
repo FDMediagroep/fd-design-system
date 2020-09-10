@@ -68,13 +68,15 @@ describe('AB Experiment', () => {
 
         // Assert we are in variant 1
         expect(getByText('Headline 1')).toBeTruthy();
-        // Assert debug modal isn't rendered
-        expect(document.querySelectorAll('h2').length).toEqual(0);
+        // Assert debug button is rendered
+        expect(document.querySelectorAll('h2').length).toEqual(1);
         // Click on debug button
         fireEvent.click(getByText('A/B Test experiment', { exact: false }));
         // Assert debug modal is rendered
         expect(getByText('Test experiment')).toBeTruthy();
-        expect(document.querySelectorAll('h2').length).toEqual(1);
+        expect(
+            document.querySelectorAll('.debug-modal-content h2').length
+        ).toEqual(1);
         expect(getByTitle('Remove experiment cookie')).toBeTruthy();
         fireEvent.click(getByTitle('Remove experiment cookie'));
 
@@ -82,8 +84,8 @@ describe('AB Experiment', () => {
         fireEvent.click(document.querySelectorAll('label')[1]);
 
         // Close debug modal
-        fireEvent.click(document.querySelector('.ReactModal__Overlay'));
-        expect(document.querySelectorAll('h2').length).toEqual(0);
+        fireEvent.click(document.querySelector('.debug-modal-content h2 span'));
+        expect(document.querySelectorAll('h2').length).toEqual(1);
 
         // Assert we are in variant 2
         expect(getByText('Headline 2')).toBeTruthy();
