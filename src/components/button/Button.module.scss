@@ -86,6 +86,10 @@
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 0)};
         }
         transform: scale(1);
+
+        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+            transform: scale(1.02);
+        }
     }
 
     &:hover {
