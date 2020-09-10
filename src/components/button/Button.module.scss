@@ -1,8 +1,10 @@
 @import '../../utils/map-deep-get.scss';
 @import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
 @import '../../design-tokens/typography.scss';
 
 .fdButton {
+    flex: 1 1 auto;
     position: relative;
     overflow: hidden;
     min-height: 2rem;
@@ -10,8 +12,8 @@
     align-items: center;
     justify-content: center;
     vertical-align: middle;
-    font-size: 1rem;
-    line-height: 1;
+    font-size: 0.875rem;
+    line-height: 1.25;
     color: var(--button-text);
     text-decoration: none;
     cursor: pointer;
@@ -24,6 +26,9 @@
     font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     font-weight: normal;
     letter-spacing: -0.2px;
+    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+        width: 100%;
+    }
 
     background-color: var(--button);
     &:hover {
@@ -39,17 +44,15 @@
     }
 
     &.m {
-        min-height: 2.5rem;
-    }
-    &.l {
-        font-size: 1.25rem;
-        padding: 0 1.5rem;
-        min-height: 3.5rem;
+        font-size: 1rem;
+        min-height: 3rem;
     }
 
-    &:hover,
-    &:focus {
-        transform: scale(1.01);
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        &:hover,
+        &:focus {
+            transform: scale(1.05);
+        }
     }
 
     &:hover,
