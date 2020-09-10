@@ -1,7 +1,7 @@
 import React from 'react';
-import Modal from 'react-modal';
 import styles from './Debug.module.scss';
 import { CloseIcon } from '../../design-tokens/icons';
+import { Modal } from '../modal/Modal';
 
 interface Props {
     name: string;
@@ -13,8 +13,6 @@ interface Props {
     [x: string]: any;
 }
 
-Modal.setAppElement('body');
-
 export function Debug(props: Props) {
     function handleRemoveExperiment() {
         props.handleRemoveExperiment(props.name);
@@ -23,10 +21,9 @@ export function Debug(props: Props) {
     return (
         <>
             <Modal
-                isOpen={props.open}
-                onRequestClose={props.handleClose}
                 className={styles.debug}
-                contentLabel="Example Modal"
+                opened={props.open}
+                onClose={props.handleClose}
             >
                 <div>
                     <section className={styles.content}>
