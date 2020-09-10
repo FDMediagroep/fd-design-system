@@ -4,18 +4,25 @@
 
 .fdButton {
     position: relative;
+    overflow: hidden;
     min-height: 2rem;
-    display: inline-block;
+    display: flex;
     align-items: center;
+    justify-content: center;
     vertical-align: middle;
     font-size: 1rem;
     line-height: 1;
-    color: #ffffff;
+    color: var(--button-text);
     text-decoration: none;
     cursor: pointer;
     padding: 0 1rem;
     border: none;
     text-align: center;
+    background-position: center;
+    transition: transform 0.15s ease-out, background-color 0.1s;
+    border-radius: 0;
+    font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
+    font-weight: normal;
 
     background-color: var(--button);
     &:hover {
@@ -23,17 +30,13 @@
     }
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
         background-color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
         &:hover {
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         }
     }
 
-    box-shadow: rgba(0, 0, 0, 0.2) 0px -2px 0px 0px inset;
-    border-radius: 2px;
-    transition: background-color 0.1s;
-    font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
-    font-weight: normal;
     &.m {
         min-height: 2.5rem;
     }
@@ -42,7 +45,85 @@
         padding: 0 1.5rem;
         min-height: 3.5rem;
     }
+
+    &:hover,
+    &:focus {
+        transform: scale(1.01);
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        outline: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            outline: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+        }
+    }
+
+    &:focus {
+        background-color: var(--button-focus);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+        }
+    }
+
     &:active {
-        box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2) inset;
+        background-color: var(--button-active);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+        }
+        transform: scale(1);
+    }
+
+    &:hover {
+        background-color: var(--button-hover);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        }
+
+        &:active {
+            background-color: var(--button-active);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        0
+                    )};
+            }
+        }
+    }
+
+    &:disabled {
+        background-color: var(--button-disabled);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+        }
+        transform: scale(1);
+    }
+
+    svg {
+        fill: #ffffff;
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            fill: #ffffff;
+        }
+
+        width: 1rem;
+        height: 1rem;
+        margin: 0 0.5rem;
     }
 }
