@@ -89,6 +89,7 @@
 
         --button-text: #{map-deep-get($colors, 'colors', 'neutral', 100)};
         --button: #{map-deep-get($colors, 'colors', 'primary', 75)};
+        --button-outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-hover: #{map-deep-get($colors, 'colors', 'primary', 100)};
         --button-focus: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-active: #{map-deep-get($colors, 'colors', 'primary', 100)};
@@ -186,6 +187,7 @@
 
         --button-text: #{map-deep-get($colors, 'colors', 'neutral', 100)};
         --button: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        --button-outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-hover: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         --button-focus: #{map-deep-get($colors, 'colors', 'neutral', 0)};
         --button-active: #{map-deep-get($colors, 'colors', 'neutral', 0)};
@@ -285,6 +287,7 @@
 
         --button-text: #{map-deep-get($colors, 'colors', 'neutral', 100)};
         --button: #{map-deep-get($colors, 'colors', 'primary', 75)};
+        --button-outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-hover: #{map-deep-get($colors, 'colors', 'primary', 100)};
         --button-focus: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-active: #{map-deep-get($colors, 'colors', 'primary', 100)};
@@ -380,6 +383,7 @@
 
         --button-text: #{map-deep-get($colors, 'colors', 'neutral', 100)};
         --button: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        --button-outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-hover: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         --button-focus: #{map-deep-get($colors, 'colors', 'neutral', 0)};
         --button-active: #{map-deep-get($colors, 'colors', 'neutral', 0)};

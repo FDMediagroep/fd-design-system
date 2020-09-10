@@ -60,11 +60,11 @@
     &:hover,
     &:active,
     &:focus {
-        outline: 1px solid var(--dividers);
+        outline: 1px solid var(--button-outline);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            outline: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+            outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
         }
     }
 
