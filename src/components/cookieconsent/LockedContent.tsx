@@ -82,17 +82,33 @@ function LockedContent(props: Props) {
         props?.onUnlock?.();
     }
 
+    function handleActivation(event: React.KeyboardEvent) {
+        switch (event.key) {
+            case 'Enter':
+            case ' ':
+                event.stopPropagation();
+                event.preventDefault();
+                unlock();
+                break;
+        }
+    }
+
     return unlocked ? (
         <span ref={unlockedRef}>{props.children}</span>
     ) : (
         <div className={styles.fdLockedContent}>
-            <div className={styles.blockedContentContainer} onClick={unlock}>
+            <div
+                className={styles.blockedContentContainer}
+                tabIndex={0}
+                onClick={unlock}
+                onKeyPress={handleActivation}
+            >
                 <span className={styles.lockText}>
                     <span
                         className={styles.lock}
                         dangerouslySetInnerHTML={{ __html: SpyglassIcon }}
                     />{' '}
-                    {props.lockDescription}
+                    <span>{props.lockDescription}</span>
                 </span>
             </div>
         </div>

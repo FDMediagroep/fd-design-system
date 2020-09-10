@@ -85,7 +85,8 @@
     input {
         position: absolute;
         opacity: 0;
-        &:focus ~ .textContent label h2 {
+        &:focus ~ .textContent label h2,
+        &:active ~ .textContent label h2 {
             outline: 1px solid var(--dividers);
             // IE11
             @media screen and (-ms-high-contrast: active),
