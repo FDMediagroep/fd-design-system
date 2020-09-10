@@ -29,6 +29,10 @@
         width: 100%;
     }
 
+    > * {
+        display: flex;
+    }
+
     background-color: var(--button);
     &:hover {
         background-color: var(--button-hover);
