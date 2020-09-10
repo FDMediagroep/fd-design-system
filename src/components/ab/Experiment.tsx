@@ -173,6 +173,7 @@ export function Experiment(props: Experiment) {
                               position: 'sticky',
                               bottom: '0',
                               margin: '.5rem',
+                              zIndex: '9999',
                           }}
                           onClick={handleOpen}
                       >
@@ -184,21 +185,18 @@ export function Experiment(props: Experiment) {
                   )
                 : null}
 
-            {typeof document !== 'undefined' && debug
-                ? ReactDOM.createPortal(
-                      <Debug
-                          debugChange={debugChange}
-                          handleClose={handleClose}
-                          handleRemoveExperiment={removeExperiment}
-                          open={open}
-                          name={props.name}
-                          variant={variant}
-                      >
-                          {childrenWithProps}
-                      </Debug>,
-                      document.querySelector('body') as HTMLElement
-                  )
-                : null}
+            {typeof document !== 'undefined' && debug ? (
+                <Debug
+                    debugChange={debugChange}
+                    handleClose={handleClose}
+                    handleRemoveExperiment={removeExperiment}
+                    open={open}
+                    name={props.name}
+                    variant={variant}
+                >
+                    {childrenWithProps}
+                </Debug>
+            ) : null}
         </>
     );
 }

@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 import { Variant } from '../../../src/components/ab/ab';
 
-describe('AB Experiment', () => {
+describe('AB Variant', () => {
     test('should render correctly', async () => {
         const spy = jest.fn();
         const { getByText, container } = render(
