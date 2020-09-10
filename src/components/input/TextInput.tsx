@@ -203,7 +203,7 @@ function TextInput(props: Props) {
                     aria-label={props.label ?? props.title ?? 'Value'}
                 />
                 <div>
-                    <label htmlFor={props.id}>{props.label || 'Value'}</label>
+                    <label htmlFor={props.id}>{props.label ?? 'Value'}</label>
                     <span
                         className={styles.iconCheck}
                         dangerouslySetInnerHTML={{ __html: CheckIcon }}

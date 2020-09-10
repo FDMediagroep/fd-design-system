@@ -163,7 +163,7 @@ function TextArea(props: Props) {
                     {...props}
                     data-show-error={showMaxWordsError}
                     id={props.id}
-                    name={props.name ? props.name : props.id}
+                    name={props.name ?? props.id}
                     minLength={props.minLength}
                     maxLength={preventWordsOverflow ? 0 : props.maxLength}
                     onChange={checkValue}
@@ -171,15 +171,16 @@ function TextArea(props: Props) {
                     value={value}
                     required={props.required}
                     onInvalid={handleInvalid}
-                    title={props.title ? props.title : props.label || 'Value'}
+                    title={props.title ?? props.label ?? 'Value'}
                     rows={props.rows}
                     cols={props.cols}
                     onFocus={props.onFocus}
                     onBlur={props.onBlur}
                     placeholder={props.placeholder ? props.placeholder : ' '}
+                    aria-label={props.label ?? props.title ?? 'Value'}
                 />
                 <div>
-                    <label htmlFor={props.id}>{props.label || 'Value'}</label>
+                    <label htmlFor={props.id}>{props.label ?? 'Value'}</label>
                     <span
                         className={styles.iconCheck}
                         dangerouslySetInnerHTML={{ __html: CheckIcon }}
