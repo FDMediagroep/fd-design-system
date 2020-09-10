@@ -31,13 +31,9 @@ describe('Button', () => {
         const { container: container2 } = render(
             <Button size="m">Knopje</Button>
         );
-        const { container: container3 } = render(
-            <Button size="l">Knopje</Button>
-        );
 
         expect(container).toMatchSnapshot();
         expect(container2).toMatchSnapshot();
-        expect(container3).toMatchSnapshot();
     });
 
     test('should have correct class name', () => {
