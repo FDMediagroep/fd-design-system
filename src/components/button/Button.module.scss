@@ -1,21 +1,38 @@
 @import '../../utils/map-deep-get.scss';
 @import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
 @import '../../design-tokens/typography.scss';
 
 .fdButton {
+    user-select: none;
     position: relative;
+    overflow: hidden;
     min-height: 2rem;
-    display: inline-block;
+    display: flex;
     align-items: center;
+    justify-content: center;
     vertical-align: middle;
-    font-size: 1rem;
-    line-height: 1;
-    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    color: var(--button-text);
     text-decoration: none;
     cursor: pointer;
     padding: 0 1rem;
     border: none;
     text-align: center;
+    background-position: center;
+    transition: transform 0.05s ease-out, background-color 0.1s;
+    border-radius: 0;
+    font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
+    font-weight: normal;
+    letter-spacing: -0.2px;
+    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+        width: 100%;
+    }
+
+    > * {
+        display: flex;
+    }
 
     background-color: var(--button);
     &:hover {
@@ -23,26 +40,133 @@
     }
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
         background-color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
         &:hover {
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
         }
     }
 
-    box-shadow: rgba(0, 0, 0, 0.2) 0px -2px 0px 0px inset;
-    border-radius: 2px;
-    transition: background-color 0.1s;
-    font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
-    font-weight: normal;
     &.m {
-        min-height: 2.5rem;
+        font-size: 1rem;
+        min-height: 3rem;
     }
-    &.l {
-        font-size: 1.25rem;
-        padding: 0 1.5rem;
-        min-height: 3.5rem;
+
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        &:active {
+            transform: scale(0.95);
+        }
     }
+
+    &:hover,
+    &:active,
+    &:focus {
+        outline: 1px solid var(--button-outline);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
+        }
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        background-color: white;
+        width: 0;
+        height: 100%;
+    }
+
+    &:focus {
+        background-color: var(--button-focus);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+        }
+    }
+
+    /**
+     * Trick to play animation after click happened
+     */
+    &:not(:active):before {
+        content: '';
+        transform: skewX(15deg);
+        animation: ripple 0.5s;
+    }
+
     &:active {
-        box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2) inset;
+        background-color: var(--button-active);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+        }
+
+        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+            transform: scale(0.98);
+        }
+    }
+
+    &:hover {
+        background-color: var(--button-hover);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        }
+
+        &:active {
+            background-color: var(--button-active);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        0
+                    )};
+            }
+        }
+    }
+
+    &:disabled,
+    &:disabled:active {
+        outline: none;
+        background-color: var(--button-disabled);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+        }
+        transform: scale(1);
+    }
+
+    svg {
+        fill: #ffffff;
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            fill: #ffffff;
+        }
+
+        width: 1rem;
+        height: 1rem;
+        margin: 0 0.5rem;
+    }
+
+    @keyframes ripple {
+        0% {
+            width: 0%;
+            opacity: 0.2;
+        }
+        50% {
+            opacity: 0.2;
+        }
+        100% {
+            width: 130%;
+            opacity: 0;
+        }
     }
 }

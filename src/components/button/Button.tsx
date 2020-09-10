@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Button.module.scss';
 
-type Sizes = 's' | 'm' | 'l';
+type Sizes = 's' | 'm';
 
 interface Props {
     className?: string;
@@ -17,18 +17,7 @@ interface Props {
  * @param props
  */
 function Button(props: Props) {
-    let sizeClass = '';
-
-    switch (props.size) {
-        case 'm':
-            sizeClass = styles.m;
-            break;
-        case 'l':
-            sizeClass = styles.l;
-            break;
-        default:
-            sizeClass = '';
-    }
+    let sizeClass = props.size === 'm' ? styles.m : '';
 
     return (
         <button
