@@ -86,6 +86,9 @@
         }
     }
 
+    /**
+     * Trick to play animation after click happened
+     */
     &:not(:active):before {
         content: '';
         transform: skewX(15deg);
