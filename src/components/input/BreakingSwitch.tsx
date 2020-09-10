@@ -45,6 +45,11 @@ export default function BreakingSwitch(props: Props) {
                             className={styles.switchInput}
                             onChange={props.onChange}
                             checked={props.checked}
+                            aria-label={
+                                props.description
+                                    ? props.description
+                                    : 'Ontvang een e-mail alert bij belangrijk FD Nieuws'
+                            }
                         />
                         <span className={styles.switchLabel}>
                             <span
