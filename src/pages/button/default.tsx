@@ -54,7 +54,7 @@ function DefaultButton() {
                         <span>Icon (small)</span>
                     </Button>
 
-                    <Button id="demoButtonDisabled" disabled="disabled">
+                    <Button id="demoButtonSDisabled" disabled="disabled">
                         <span
                             dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
                         />
@@ -64,6 +64,7 @@ function DefaultButton() {
             </Explain>
 
             <Explain
+                previewClassName={styles.buttons}
                 anchor="m"
                 cssClassNames={getCssClassNames()}
                 legend="Button (M)"
@@ -81,9 +82,24 @@ function DefaultButton() {
                     </>
                 }
             >
-                <Button id="demoButtonM" size="m">
-                    Button (medium)
-                </Button>
+                <>
+                    <Button id="demoButtonM" size="m">
+                        Button (medium)
+                    </Button>
+                    <Button id="demoButtonMIcon">
+                        <span
+                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                        />
+                        <span>Icon (medium)</span>
+                    </Button>
+
+                    <Button id="demoButtonMDisabled" disabled="disabled">
+                        <span
+                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                        />
+                        <span>Disabled (medium)</span>
+                    </Button>
+                </>
             </Explain>
         </>
     );
