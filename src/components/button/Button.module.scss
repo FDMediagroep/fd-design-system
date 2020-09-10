@@ -69,6 +69,14 @@
         }
     }
 
+    &:before {
+        content: '';
+        position: absolute;
+        background-color: white;
+        width: 0;
+        height: 100%;
+    }
+
     &:focus {
         background-color: var(--button-focus);
         // IE11
@@ -76,6 +84,12 @@
             (-ms-high-contrast: none) {
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 0)};
         }
+    }
+
+    &:hover:not(:active):focus:before {
+        content: '';
+        transform: skewX(15deg);
+        animation: ripple 0.5s;
     }
 
     &:active {
@@ -137,5 +151,19 @@
         width: 1rem;
         height: 1rem;
         margin: 0 0.5rem;
+    }
+
+    @keyframes ripple {
+        0% {
+            width: 0%;
+            opacity: 0.2;
+        }
+        50% {
+            opacity: 0.2;
+        }
+        100% {
+            width: 130%;
+            opacity: 0;
+        }
     }
 }
