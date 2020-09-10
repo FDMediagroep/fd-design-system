@@ -19,7 +19,7 @@
     border: none;
     text-align: center;
     background-position: center;
-    transition: transform 0.15s ease-out, background-color 0.1s;
+    transition: transform 0.05s ease-out, background-color 0.1s;
     border-radius: 0;
     font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     font-weight: normal;
