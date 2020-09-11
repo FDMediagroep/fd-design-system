@@ -14,7 +14,7 @@
     vertical-align: middle;
     font-size: 0.875rem;
     line-height: 1.25;
-    color: var(--button-text);
+    color: var(--button-cta-text);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
@@ -68,7 +68,7 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            outline: 1px solid #{map-deep-get($colors, 'colors', 'primary', 75)};
         }
     }
 
@@ -163,11 +163,11 @@
     }
 
     svg {
-        fill: #ffffff;
+        fill: var(--button-cta-text);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            fill: #ffffff;
+            fill: #{map-deep-get($colors, 'colors', 'neutral', 100)};
         }
 
         width: 1rem;

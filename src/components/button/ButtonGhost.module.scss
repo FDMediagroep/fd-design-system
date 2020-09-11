@@ -1,0 +1,253 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.fdButtonGhost {
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    color: var(--button-ghost-text);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+    }
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 1rem;
+    border: none;
+    text-align: center;
+    background-position: center;
+    transition: transform 0.05s ease-out, background-color 0.1s;
+    border-radius: 0;
+    font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
+    font-weight: normal;
+    letter-spacing: -0.2px;
+    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+        width: 100%;
+    }
+
+    > * {
+        display: flex;
+    }
+
+    svg {
+        fill: var(--button-ghost-text);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            fill: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        }
+
+        width: 1rem;
+        height: 1rem;
+        margin: 0 0.5rem;
+    }
+
+    background-color: var(--button-ghost);
+    outline-style: solid;
+    outline-width: 1px;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        outline-width: 1.5px;
+    }
+    outline-color: var(--button-ghost-text);
+    &:hover {
+        color: var(--button-ghost-hover);
+        outline-color: var(--button-ghost-hover);
+        svg {
+            fill: var(--button-ghost-hover);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+        }
+    }
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        background-color: transparent;
+        outline-color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        &:hover {
+            outline-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+        }
+    }
+
+    &.m {
+        font-size: 1rem;
+        min-height: 3rem;
+    }
+
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        outline-color: var(--button-outline);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            outline-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+        }
+    }
+
+    &:before {
+        position: absolute;
+        transform: skewX(15deg);
+        background-color: #{map-deep-get($colors, 'colors', 'primary', 25)};
+        width: 0;
+        height: 100%;
+    }
+
+    &:focus {
+        color: var(--button-ghost-focus);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'primary', 100)};
+        }
+        svg {
+            fill: var(--button-ghost-focus);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                fill: #{map-deep-get($colors, 'colors', 'primary', 100)};
+            }
+        }
+    }
+
+    /**
+     * Trick to play animation after click happened
+     */
+    &:not(:active) {
+        &:before {
+            content: '';
+            animation: ripple 0.5s;
+        }
+    }
+
+    &:active {
+        &:before {
+            content: '';
+            animation: rippleReverse 0.2s;
+            animation-delay: 0.1s;
+        }
+
+        color: var(--button-ghost-active-text);
+        background-color: var(--button-ghost-active);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            background-color: #{map-deep-get($colors, 'colors', 'primary', 25)};
+        }
+
+        svg {
+            fill: var(--button-ghost-active-text);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+        }
+
+        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+            transform: scale(0.98);
+        }
+    }
+
+    &:hover {
+        color: var(--button-ghost-hover);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+        }
+
+        svg {
+            fill: var(--button-ghost-hover);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+        }
+
+        &:active {
+            color: var(--button-ghost-active-text);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+            svg {
+                fill: var(--button-ghost-active-text);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
+                }
+            }
+        }
+    }
+
+    &:disabled,
+    &:disabled:active {
+        outline-color: var(--button-ghost-disabled);
+        color: var(--button-ghost-disabled);
+        background-color: var(--button-ghost);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+            outline-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+            background-color: transparent;
+        }
+        transform: scale(1);
+
+        svg {
+            fill: var(--button-ghost-disabled);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                fill: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+            }
+        }
+    }
+
+    @keyframes ripple {
+        0% {
+            width: 0%;
+            opacity: 0.25;
+        }
+        50% {
+            opacity: 0.25;
+        }
+        100% {
+            width: 130%;
+            opacity: 0;
+        }
+    }
+
+    @keyframes rippleReverse {
+        0% {
+            width: 130%;
+            opacity: 0.25;
+        }
+        100% {
+            width: 0%;
+            opacity: 0.25;
+        }
+    }
+}

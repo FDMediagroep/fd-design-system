@@ -68,7 +68,7 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            outline: 1px solid #{map-deep-get($colors, 'colors', 'primary', 75)};
         }
     }
 
@@ -154,11 +154,11 @@
     }
 
     svg {
-        fill: #ffffff;
+        fill: var(--button-text);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            fill: #ffffff;
+            fill: #{map-deep-get($colors, 'colors', 'neutral', 100)};
         }
 
         width: 1rem;

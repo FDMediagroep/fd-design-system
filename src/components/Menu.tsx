@@ -108,6 +108,9 @@ function Menu(props: Props) {
                 <Link href="/button/follow">
                     <a>Button Follow</a>
                 </Link>
+                <Link href="/button/ghost">
+                    <a>Ghost Button</a>
+                </Link>
                 <Link href="/input/checkbox">
                     <a>Checkbox</a>
                 </Link>
