@@ -1,15 +1,18 @@
 import React from 'react';
 import { Explain } from '../../components/Explain';
-import { ButtonCta, getCssClassNames } from '../../components/button/ButtonCta';
+import {
+    ButtonGhost,
+    getCssClassNames,
+} from '../../components/button/ButtonGhost';
 import Head from 'next/head';
 import { EnvelopeIcon } from '../../design-tokens/icons';
 import styles from './buttons.module.scss';
 
-const metaTitle = 'Button call-to-action';
+const metaTitle = 'Ghost Button';
 const metaDescription =
-    'Button call-to-action, used for e-mails, registration, subscription or sign-up-flows, log-in, banners and other non-editorial elements';
+    'Ghost Button, used to interact with the content: comment, share and vote';
 
-function CTA() {
+function DefaultButton() {
     return (
         <>
             <Head>
@@ -30,38 +33,41 @@ function CTA() {
                 previewClassName={styles.buttons}
                 anchor="default"
                 cssClassNames={getCssClassNames()}
-                legend="Button CTA (default)"
-                reactComponentName="ButtonCta"
+                legend="Ghost Button (default)"
+                reactComponentName="ButtonGhost"
                 description={
                     <>
                         <p>
-                            Use for emails, registration, subscription or
-                            sign-up-flows, log-in, banners and all other
-                            FD-elements that are not editorial.
+                            Used to interact with the content: comment, share
+                            and vote.
                         </p>
                         <p>
-                            Call to action: Button is most import element on the
-                            page.
+                            Supportive: ghost button supports editorial content,
+                            but is not the most important item on the page.
                         </p>
                     </>
                 }
             >
                 <>
-                    <ButtonCta id="demoButtonCtaS">
-                        Button call-to-action (small)
-                    </ButtonCta>
-                    <ButtonCta id="demoButtonCtaSIcon">
+                    <ButtonGhost id="demoGhostButtonS">
+                        Button (small)
+                    </ButtonGhost>
+                    <ButtonGhost id="demoGhostButtonSIcon">
                         <span
                             dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
                         />
-                        <span>Icon call-to-action (small)</span>
-                    </ButtonCta>
-                    <ButtonCta id="demoButtonCtaSDisabled" disabled="disabled">
+                        <span>Icon (small)</span>
+                    </ButtonGhost>
+
+                    <ButtonGhost
+                        id="demoGhostButtonSDisabled"
+                        disabled="disabled"
+                    >
                         <span
                             dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
                         />
-                        <span>Disabled call-to-action (small)</span>
-                    </ButtonCta>
+                        <span>Disabled (small)</span>
+                    </ButtonGhost>
                 </>
             </Explain>
 
@@ -69,46 +75,46 @@ function CTA() {
                 previewClassName={styles.buttons}
                 anchor="m"
                 cssClassNames={getCssClassNames()}
-                legend="Button CTA (M)"
-                reactComponentName="ButtonCta"
+                legend="Ghost Button (M)"
+                reactComponentName="ButtonGhost"
                 description={
                     <>
                         <p>
-                            Use for emails, registration, subscription or
-                            sign-up-flows, log-in, banners and all other
-                            FD-elements that are not editorial.
+                            Used to interact with the content: comment, share
+                            and vote.
                         </p>
                         <p>
-                            Call to action: Button is most import element on the
-                            page.
+                            Supportive: ghost button supports editorial content,
+                            but is not the most important item on the page.
                         </p>
                     </>
                 }
             >
                 <>
-                    <ButtonCta id="demoButtonCtaM" size="m">
-                        Button call-to-action (medium)
-                    </ButtonCta>
-                    <ButtonCta id="demoButtonCtaMIcon" size="m">
+                    <ButtonGhost id="demoGhostButtonM" size="m">
+                        Button (medium)
+                    </ButtonGhost>
+                    <ButtonGhost id="demoGhostButtonMIcon" size="m">
                         <span
                             dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
                         />
-                        <span>Icon call-to-action (medium)</span>
-                    </ButtonCta>
-                    <ButtonCta
-                        id="demoButtonCtaMDisabled"
+                        <span>Icon (medium)</span>
+                    </ButtonGhost>
+
+                    <ButtonGhost
+                        id="demoGhostButtonMDisabled"
                         disabled="disabled"
                         size="m"
                     >
                         <span
                             dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
                         />
-                        <span>Disabled call-to-action (medium)</span>
-                    </ButtonCta>
+                        <span>Disabled (medium)</span>
+                    </ButtonGhost>
                 </>
             </Explain>
         </>
     );
 }
 
-export default CTA;
+export default DefaultButton;

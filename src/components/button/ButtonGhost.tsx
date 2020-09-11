@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ButtonCta.module.scss';
+import styles from './ButtonGhost.module.scss';
 
 type Sizes = 's' | 'm';
 
@@ -13,16 +13,16 @@ interface Props {
 }
 
 /**
- * Render a call-to-action button which is more prominent than the default button.
+ * Render a default button.
  * @param props
  */
-function ButtonCta(props: Props) {
-    let sizeClass = props.size ?? '';
+function ButtonGhost(props: Props) {
+    let sizeClass = props.size === 'm' ? styles.m : '';
 
     return (
         <button
             {...props}
-            className={`${styles.fdButtonCta} ${sizeClass}${
+            className={`${styles.fdButtonGhost} ${sizeClass}${
                 props.className ? ` ${props.className}` : ''
             }`}
         >
@@ -32,7 +32,7 @@ function ButtonCta(props: Props) {
 }
 
 function getCssClassNames() {
-    return [styles.fdButtonCta];
+    return [styles.fdButtonGhost];
 }
 
-export { ButtonCta, getCssClassNames };
+export { ButtonGhost, getCssClassNames };

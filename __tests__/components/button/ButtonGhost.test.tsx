@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-    ButtonCta,
+    ButtonGhost,
     getCssClassNames,
-} from '../../../src/components/button/ButtonCta';
+} from '../../../src/components/button/ButtonGhost';
 import { render, fireEvent } from '@testing-library/react';
 
-describe('ButtonCta', () => {
+describe('ButtonGhost', () => {
     test('should render correctly', () => {
-        const { getByText } = render(<ButtonCta>Knopje</ButtonCta>);
+        const { getByText } = render(<ButtonGhost>Knopje</ButtonGhost>);
 
         expect(getByText('Knopje')).toBeTruthy();
     });
@@ -15,7 +15,7 @@ describe('ButtonCta', () => {
     test('should handle clicks correctly', () => {
         const spy = jest.fn();
         const { getByText, container } = render(
-            <ButtonCta onClick={spy}>Knopje</ButtonCta>
+            <ButtonGhost onClick={spy}>Knopje</ButtonGhost>
         );
 
         expect(getByText('Knopje')).toBeTruthy();
@@ -27,9 +27,11 @@ describe('ButtonCta', () => {
     });
 
     test('should handle sizes correctly', () => {
-        const { container } = render(<ButtonCta size="s">Knopje</ButtonCta>);
+        const { container } = render(
+            <ButtonGhost size="s">Knopje</ButtonGhost>
+        );
         const { container: container2 } = render(
-            <ButtonCta size="m">Knopje</ButtonCta>
+            <ButtonGhost size="m">Knopje</ButtonGhost>
         );
 
         expect(container).toMatchSnapshot();
@@ -37,7 +39,7 @@ describe('ButtonCta', () => {
     });
 
     test('should have correct class name', () => {
-        const { container } = render(<ButtonCta>Knopje</ButtonCta>);
+        const { container } = render(<ButtonGhost>Knopje</ButtonGhost>);
 
         expect(
             container.firstElementChild.classList.contains(

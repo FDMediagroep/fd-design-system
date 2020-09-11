@@ -34,6 +34,7 @@ export { TextInput, Patterns } from './components/input/TextInput';
 export { Button } from './components/button/Button';
 export { ButtonCta } from './components/button/ButtonCta';
 export { ButtonFollow } from './components/button/ButtonFollow';
+export { ButtonGhost } from './components/button/ButtonGhost';
 
 // Cards
 export { HorizontalCard1 } from './components/card/HorizontalCard1';

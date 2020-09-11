@@ -15,6 +15,10 @@
     font-size: 0.875rem;
     line-height: 1.25;
     color: var(--button-text);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    }
     text-decoration: none;
     cursor: pointer;
     padding: 0 1rem;
@@ -40,7 +44,6 @@
     }
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
         background-color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
         &:hover {
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
@@ -65,13 +68,13 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            outline: 1px solid #{map-deep-get($colors, 'colors', 'primary', 75)};
         }
     }
 
     &:before {
-        content: '';
         position: absolute;
+        transform: skewX(15deg);
         background-color: white;
         width: 0;
         height: 100%;
@@ -89,13 +92,20 @@
     /**
      * Trick to play animation after click happened
      */
-    &:not(:active):before {
-        content: '';
-        transform: skewX(15deg);
-        animation: ripple 0.5s;
+    &:not(:active) {
+        &:before {
+            content: '';
+            animation: ripple 0.5s;
+        }
     }
 
     &:active {
+        &:before {
+            content: '';
+            animation: rippleReverse 0.2s;
+            animation-delay: 0.1s;
+        }
+
         background-color: var(--button-active);
         // IE11
         @media screen and (-ms-high-contrast: active),
@@ -144,11 +154,11 @@
     }
 
     svg {
-        fill: #ffffff;
+        fill: var(--button-text);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            fill: #ffffff;
+            fill: #{map-deep-get($colors, 'colors', 'neutral', 100)};
         }
 
         width: 1rem;
@@ -167,6 +177,17 @@
         100% {
             width: 130%;
             opacity: 0;
+        }
+    }
+
+    @keyframes rippleReverse {
+        0% {
+            width: 130%;
+            opacity: 0.2;
+        }
+        100% {
+            width: 0%;
+            opacity: 0.2;
         }
     }
 }
