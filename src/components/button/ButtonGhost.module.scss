@@ -217,6 +217,9 @@
             background-color: transparent;
         }
         transform: scale(1);
+        * {
+            pointer-events: none;
+        }
 
         svg {
             fill: var(--button-ghost-disabled);

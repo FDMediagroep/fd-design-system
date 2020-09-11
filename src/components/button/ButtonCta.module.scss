@@ -160,6 +160,9 @@
             background-color: #{map-deep-get($colors, 'colors', 'secondary', 25)};
         }
         transform: scale(1);
+        * {
+            pointer-events: none;
+        }
     }
 
     svg {
