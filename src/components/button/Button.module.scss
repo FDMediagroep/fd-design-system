@@ -100,6 +100,12 @@
     }
 
     &:active {
+        &:before {
+            content: '';
+            animation: rippleReverse 0.2s;
+            animation-delay: 0.1s;
+        }
+
         background-color: var(--button-active);
         // IE11
         @media screen and (-ms-high-contrast: active),
@@ -171,6 +177,20 @@
         100% {
             width: 130%;
             opacity: 0;
+        }
+    }
+
+    @keyframes rippleReverse {
+        0% {
+            width: 130%;
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.2;
+        }
+        100% {
+            width: 0%;
+            opacity: 0.2;
         }
     }
 }
