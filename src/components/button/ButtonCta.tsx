@@ -17,18 +17,7 @@ interface Props {
  * @param props
  */
 function ButtonCta(props: Props) {
-    let sizeClass = '';
-
-    switch (props.size) {
-        case 'm':
-            sizeClass = styles.m;
-            break;
-        case 'l':
-            sizeClass = styles.l;
-            break;
-        default:
-            sizeClass = '';
-    }
+    let sizeClass = props.size ?? '';
 
     return (
         <button

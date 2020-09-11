@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGhost should handle sizes correctly 1`] = `
+<div>
+  <button
+    class="fdButtonGhost "
+  >
+    Knopje
+  </button>
+</div>
+`;
+
+exports[`ButtonGhost should handle sizes correctly 2`] = `
+<div>
+  <button
+    class="fdButtonGhost m"
+  >
+    Knopje
+  </button>
+</div>
+`;
