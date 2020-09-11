@@ -734,7 +734,7 @@ import "@fdmg/design-system/components/button/ButtonCta.css";
 ```
 
 ```
-import { ButtonCta } from "@fdmg/design-system/components/button/ButtnCta";
+import { ButtonCta } from "@fdmg/design-system/components/button/ButtonCta";
 
 function Foo() {
     function handleClick() {
@@ -774,6 +774,34 @@ function Foo() {
 
     return (
         <ButtonFollow selected={follow} onClick={handleClick}>Click me!</ButtonFollow>
+    );
+}
+```
+
+</details>
+
+<details>
+<summary>Ghost Button</summary>
+
+[Demo](https://design-system.fd.nl/button/ghost)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/button/ButtonGhost.css";
+```
+
+```
+import { ButtonGhost } from "@fdmg/design-system/components/button/ButtonGhost";
+
+function Foo() {
+    function handleClick() {
+        console.log('clicked');
+    }
+
+    return (
+        <ButtonGhost onClick={handleClick}>Click me!</ButtonGhost>
     );
 }
 ```

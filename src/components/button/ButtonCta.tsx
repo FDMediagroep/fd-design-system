@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ButtonCta.module.scss';
 
-type Sizes = 's' | 'm' | 'l';
+type Sizes = 's' | 'm';
 
 interface Props {
     className?: string;

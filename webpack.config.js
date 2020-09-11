@@ -169,6 +169,9 @@ module.exports = {
         '/components/button/ButtonFollow': [
             './src/components/button/ButtonFollow.tsx',
         ],
+        '/components/button/ButtonGhost': [
+            './src/components/button/ButtonGhost.tsx',
+        ],
         '/components/input/Checkbox': ['./src/components/input/Checkbox.tsx'],
         '/components/input/Radio': ['./src/components/input/Radio.tsx'],
         '/components/input/Switch': ['./src/components/input/Switch.tsx'],
