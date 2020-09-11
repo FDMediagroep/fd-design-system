@@ -1,52 +1,186 @@
 @import '../../utils/map-deep-get.scss';
 @import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
 @import '../../design-tokens/typography.scss';
 
 .fdButtonCta {
+    user-select: none;
     position: relative;
+    overflow: hidden;
     min-height: 2rem;
-    display: inline-block;
+    display: flex;
     align-items: center;
+    justify-content: center;
     vertical-align: middle;
-    font-size: 1rem;
-    line-height: 1;
-    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    color: var(--button-text);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    }
     text-decoration: none;
     cursor: pointer;
     padding: 0 1rem;
     border: none;
     text-align: center;
+    background-position: center;
+    transition: transform 0.05s ease-out, background-color 0.1s;
+    border-radius: 0;
+    font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
+    font-weight: normal;
+    letter-spacing: -0.2px;
+    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+        width: 100%;
+    }
+
+    > * {
+        display: flex;
+    }
+
     background-color: var(--button-cta);
     &:hover {
         background-color: var(--button-cta-hover);
     }
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'persoonlijk', 100)};
+        background-color: #{map-deep-get($colors, 'colors', 'secondary', 75)};
         &:hover {
+            background-color: #{map-deep-get($colors, 'colors', 'secondary', 50)};
+        }
+    }
+
+    &.m {
+        font-size: 1rem;
+        min-height: 3rem;
+    }
+
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        outline: 1px solid var(--button-outline);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
+        }
+    }
+
+    &:before {
+        position: absolute;
+        transform: skewX(15deg);
+        background-color: white;
+        width: 0;
+        height: 100%;
+    }
+
+    &:focus {
+        background-color: var(--button-cta-focus);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
             background-color: #{map-deep-get(
                     $colors,
                     'colors',
-                    'persoonlijk',
-                    75
+                    'secondary',
+                    100
                 )};
         }
     }
 
-    box-shadow: rgba(0, 0, 0, 0.2) 0px -2px 0px 0px inset;
-    border-radius: 2px;
-    transition: background-color 0.1s;
-    font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
-    font-weight: normal;
-    &.m {
-        min-height: 2.5rem;
+    /**
+     * Trick to play animation after click happened
+     */
+    &:not(:active) {
+        &:before {
+            content: '';
+            animation: ripple 0.5s;
+        }
     }
-    &.l {
-        font-size: 1.25rem;
-        padding: 0 1.5rem;
-        min-height: 3.5rem;
-    }
+
     &:active {
-        box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2) inset;
+        background-color: var(--button-cta-active);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get(
+                    $colors,
+                    'colors',
+                    'secondary',
+                    100
+                )};
+        }
+
+        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+            transform: scale(0.98);
+        }
+    }
+
+    &:hover {
+        background-color: var(--button-cta-hover);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'secondary', 50)};
+        }
+
+        &:active {
+            background-color: var(--button-cta-active);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'secondary',
+                        100
+                    )};
+            }
+        }
+    }
+
+    &:disabled,
+    &:disabled:active {
+        outline: none;
+        background-color: var(--button-cta-disabled);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'secondary', 25)};
+        }
+        transform: scale(1);
+    }
+
+    svg {
+        fill: #ffffff;
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            fill: #ffffff;
+        }
+
+        width: 1rem;
+        height: 1rem;
+        margin: 0 0.5rem;
+    }
+
+    @keyframes ripple {
+        0% {
+            width: 0%;
+            opacity: 0.2;
+        }
+        50% {
+            opacity: 0.2;
+        }
+        100% {
+            width: 130%;
+            opacity: 0;
+        }
     }
 }

@@ -94,8 +94,11 @@
         --button-focus: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-active: #{map-deep-get($colors, 'colors', 'primary', 100)};
         --button-disabled: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-        --button-cta: #{map-deep-get($colors, 'colors', 'persoonlijk', 75)};
-        --button-cta-hover: #{map-deep-get($colors, 'colors', 'persoonlijk', 50)};
+        --button-cta: #{map-deep-get($colors, 'colors', 'secondary', 50)};
+        --button-cta-hover: #{map-deep-get($colors, 'colors', 'secondary', 75)};
+        --button-cta-focus: #{map-deep-get($colors, 'colors', 'secondary', 50)};
+        --button-cta-active: #{map-deep-get($colors, 'colors', 'secondary', 100)};
+        --button-cta-disabled: #{map-deep-get($colors, 'colors', 'neutral', 50)};
 
         --upsell-gradient: linear-gradient(
             to bottom,
@@ -192,8 +195,16 @@
         --button-focus: #{map-deep-get($colors, 'colors', 'neutral', 0)};
         --button-active: #{map-deep-get($colors, 'colors', 'neutral', 0)};
         --button-disabled: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-        --button-cta: #{map-deep-get($colors, 'colors', 'persoonlijk', 100)};
-        --button-cta-hover: #{map-deep-get($colors, 'colors', 'persoonlijk', 75)};
+        --button-cta: #{map-deep-get($colors, 'colors', 'secondary', 75)};
+        --button-cta-hover: #{map-deep-get($colors, 'colors', 'secondary', 50)};
+        --button-cta-focus: #{map-deep-get($colors, 'colors', 'secondary', 100)};
+        --button-cta-active: #{map-deep-get($colors, 'colors', 'secondary', 100)};
+        --button-cta-disabled: #{map-deep-get(
+                $colors,
+                'colors',
+                'secondary',
+                25
+            )};
 
         --upsell-gradient: linear-gradient(
             to bottom,
@@ -292,8 +303,11 @@
         --button-focus: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-active: #{map-deep-get($colors, 'colors', 'primary', 100)};
         --button-disabled: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-        --button-cta: #{map-deep-get($colors, 'colors', 'persoonlijk', 75)};
-        --button-cta-hover: #{map-deep-get($colors, 'colors', 'persoonlijk', 50)};
+        --button-cta: #{map-deep-get($colors, 'colors', 'secondary', 50)};
+        --button-cta-hover: #{map-deep-get($colors, 'colors', 'secondary', 75)};
+        --button-cta-focus: #{map-deep-get($colors, 'colors', 'secondary', 50)};
+        --button-cta-active: #{map-deep-get($colors, 'colors', 'secondary', 100)};
+        --button-cta-disabled: #{map-deep-get($colors, 'colors', 'neutral', 50)};
 
         --upsell-gradient: linear-gradient(
             to bottom,
@@ -388,8 +402,16 @@
         --button-focus: #{map-deep-get($colors, 'colors', 'neutral', 0)};
         --button-active: #{map-deep-get($colors, 'colors', 'neutral', 0)};
         --button-disabled: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-        --button-cta: #{map-deep-get($colors, 'colors', 'persoonlijk', 100)};
-        --button-cta-hover: #{map-deep-get($colors, 'colors', 'persoonlijk', 75)};
+        --button-cta: #{map-deep-get($colors, 'colors', 'secondary', 75)};
+        --button-cta-hover: #{map-deep-get($colors, 'colors', 'secondary', 50)};
+        --button-cta-focus: #{map-deep-get($colors, 'colors', 'secondary', 100)};
+        --button-cta-active: #{map-deep-get($colors, 'colors', 'secondary', 100)};
+        --button-cta-disabled: #{map-deep-get(
+                $colors,
+                'colors',
+                'secondary',
+                25
+            )};
 
         --upsell-gradient: linear-gradient(
             to bottom,

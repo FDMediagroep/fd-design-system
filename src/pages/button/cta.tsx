@@ -2,6 +2,8 @@ import React from 'react';
 import { Explain } from '../../components/Explain';
 import { ButtonCta, getCssClassNames } from '../../components/button/ButtonCta';
 import Head from 'next/head';
+import { EnvelopeIcon } from '../../design-tokens/icons';
+import styles from './buttons.module.scss';
 
 const metaTitle = 'Button call-to-action';
 const metaDescription =
@@ -25,6 +27,7 @@ function CTA() {
             </Head>
 
             <Explain
+                previewClassName={styles.buttons}
                 anchor="default"
                 cssClassNames={getCssClassNames()}
                 legend="Button CTA (default)"
@@ -43,12 +46,27 @@ function CTA() {
                     </>
                 }
             >
-                <ButtonCta id="demoButtonCtaS">
-                    Button call-to-action (small)
-                </ButtonCta>
+                <>
+                    <ButtonCta id="demoButtonCtaS">
+                        Button call-to-action (small)
+                    </ButtonCta>
+                    <ButtonCta id="demoButtonCtaSIcon">
+                        <span
+                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                        />
+                        <span>Icon call-to-action (small)</span>
+                    </ButtonCta>
+                    <ButtonCta id="demoButtonCtaSDisabled" disabled="disabled">
+                        <span
+                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                        />
+                        <span>Disabled call-to-action (small)</span>
+                    </ButtonCta>
+                </>
             </Explain>
 
             <Explain
+                previewClassName={styles.buttons}
                 anchor="m"
                 cssClassNames={getCssClassNames()}
                 legend="Button CTA (M)"
@@ -67,33 +85,27 @@ function CTA() {
                     </>
                 }
             >
-                <ButtonCta id="demoButtonCtaM" size="m">
-                    Button call-to-action (medium)
-                </ButtonCta>
-            </Explain>
-
-            <Explain
-                anchor="l"
-                cssClassNames={getCssClassNames()}
-                legend="Button CTA (L)"
-                reactComponentName="ButtonCta"
-                description={
-                    <>
-                        <p>
-                            Use for emails, registration, subscription or
-                            sign-up-flows, log-in, banners and all other
-                            FD-elements that are not editorial.
-                        </p>
-                        <p>
-                            Call to action: Button is most import element on the
-                            page.
-                        </p>
-                    </>
-                }
-            >
-                <ButtonCta id="demoButtonCtaL" size="l">
-                    Button call-to-action (large)
-                </ButtonCta>
+                <>
+                    <ButtonCta id="demoButtonCtaM" size="m">
+                        Button call-to-action (medium)
+                    </ButtonCta>
+                    <ButtonCta id="demoButtonCtaMIcon" size="m">
+                        <span
+                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                        />
+                        <span>Icon call-to-action (medium)</span>
+                    </ButtonCta>
+                    <ButtonCta
+                        id="demoButtonCtaMDisabled"
+                        disabled="disabled"
+                        size="m"
+                    >
+                        <span
+                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                        />
+                        <span>Disabled call-to-action (medium)</span>
+                    </ButtonCta>
+                </>
             </Explain>
         </>
     );

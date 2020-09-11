@@ -37,6 +37,12 @@ export function getStyle(...classNames: string[]) {
                     style.cssText
                 }`;
             }
+            // Add @keyframes styles as well for CSS Variables.
+            if (style.cssText?.indexOf('@keyframes') > -1) {
+                rootStyles = `${rootStyles ? `${rootStyles}\r\n` : ''}${
+                    style.cssText
+                }`;
+            }
             classNames.forEach((className) => {
                 if (style.cssText?.indexOf(`.${className}`) > -1) {
                     result = `${result ? `${result}\r\n` : ''}${style.cssText}`;

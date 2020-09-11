@@ -15,6 +15,10 @@
     font-size: 0.875rem;
     line-height: 1.25;
     color: var(--button-text);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    }
     text-decoration: none;
     cursor: pointer;
     padding: 0 1rem;
@@ -40,7 +44,6 @@
     }
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
         background-color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
         &:hover {
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
