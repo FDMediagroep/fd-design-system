@@ -54,8 +54,10 @@
     background-color: var(--button-ghost);
     outline-style: solid;
     outline-width: 1px;
+    outline-offset: -1px;
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         outline-width: 1.5px;
+        outline-offset: -1.5px;
     }
     outline-color: var(--button-ghost-text);
     &:hover {
@@ -215,6 +217,9 @@
             background-color: transparent;
         }
         transform: scale(1);
+        * {
+            pointer-events: none;
+        }
 
         svg {
             fill: var(--button-ghost-disabled);
