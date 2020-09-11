@@ -70,8 +70,8 @@
     }
 
     &:before {
-        content: '';
         position: absolute;
+        transform: skewX(15deg);
         background-color: white;
         width: 0;
         height: 100%;
@@ -89,10 +89,11 @@
     /**
      * Trick to play animation after click happened
      */
-    &:not(:active):before {
-        content: '';
-        transform: skewX(15deg);
-        animation: ripple 0.5s;
+    &:not(:active) {
+        &:before {
+            content: '';
+            animation: ripple 0.5s;
+        }
     }
 
     &:active {
