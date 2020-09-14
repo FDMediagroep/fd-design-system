@@ -189,6 +189,9 @@ module.exports = {
         '/components/cookieconsent/CookieConsent': [
             './src/components/cookieconsent/CookieConsent.tsx',
         ],
+        '/components/cookieconsent/ResponderApi': [
+            './src/components/cookieconsent/ResponderApi.ts',
+        ],
         '/components/modal/Modal': ['./src/components/modal/Modal.tsx'],
         '/components/stockticker/StockTicker': [
             './src/components/stockticker/StockTicker.tsx',
