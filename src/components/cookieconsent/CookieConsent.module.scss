@@ -23,7 +23,9 @@
         flex-wrap: wrap;
         .button {
             margin-bottom: 0.5rem;
-            margin-right: 0.5rem;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                margin-right: 0.5rem;
+            }
         }
     }
 }
