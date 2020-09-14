@@ -123,7 +123,7 @@ function CookieConsent(props: Props) {
     return (
         <Modal
             className={styles.fdCookieConsent}
-            contentBoxClassName={styles.contentBox}
+            contentBoxClassName={styles.contentBoxAdjust}
             disableBackgroundClose={true}
             hideCloseButton={true}
             hideCloseIcon={true}
