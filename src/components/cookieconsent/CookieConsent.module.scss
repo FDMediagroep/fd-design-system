@@ -6,7 +6,7 @@
 .fdCookieConsent {
     // Increase specificity
     &#{&} {
-        .contentBox {
+        .contentBoxAdjust {
             background-color: var(--product-background-2);
         }
     }
