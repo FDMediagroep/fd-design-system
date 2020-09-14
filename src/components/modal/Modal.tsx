@@ -108,9 +108,7 @@ export default function Modal(props: Props) {
                             onClick={handleModalClose}
                         />
                     )}
-                    <div className={styles.contentContent}>
-                        {props.children}
-                    </div>
+                    <div className={styles.content}>{props.children}</div>
                     {!props.hideCloseButton && (
                         <div className={styles.buttonContainer}>
                             <ButtonCta onClick={handleModalClose}>

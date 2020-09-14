@@ -99,7 +99,8 @@
         }
     }
 
-    .contentContent {
+    .content {
+        position: relative;
         flex: 1 1 auto;
         padding: 2rem;
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {

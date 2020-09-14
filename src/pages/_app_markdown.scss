@@ -2,15 +2,15 @@
 @import '../design-tokens/colors.scss';
 @import '../design-tokens/typography.scss';
 
-:root.dark {
+html.dark {
     .markdown {
         img[alt='FD Design System'] {
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
         }
     }
 }
-:root:not(.light),
-:root.system {
+html:not(.light),
+html.system {
     @media (prefers-color-scheme: dark) {
         .markdown {
             img[alt='FD Design System'] {
