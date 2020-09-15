@@ -63,11 +63,16 @@
 
     &:active,
     &:focus {
-        outline: 1px solid var(--button-outline);
+        outline: 1.5px solid var(--button-outline);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            outline: 1px solid #{map-deep-get($colors, 'colors', 'primary', 75)};
+            outline: 1.5px solid #{map-deep-get(
+                    $colors,
+                    'colors',
+                    'primary',
+                    75
+                )};
         }
     }
 
