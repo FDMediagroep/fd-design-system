@@ -4,6 +4,8 @@
 @import '../../design-tokens/typography.scss';
 
 .fdButtonCta {
+    opacity: 0;
+    animation: show 0.3s forwards;
     user-select: none;
     position: relative;
     overflow: hidden;
@@ -204,6 +206,18 @@
         100% {
             width: 0%;
             opacity: 0.2;
+        }
+    }
+
+    @keyframes show {
+        0% {
+            opacity: 0;
+        }
+        99% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
         }
     }
 }
