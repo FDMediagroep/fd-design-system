@@ -103,6 +103,7 @@
         --button-cta-disabled: #{map-deep-get($colors, 'colors', 'neutral', 50)};
         --button-ghost-text: #{map-deep-get($colors, 'colors', 'neutral', 80)};
         --button-ghost: transparent;
+        --button-ghost-outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-ghost-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-ghost-focus: #{map-deep-get($colors, 'colors', 'primary', 100)};
         --button-ghost-active-text: #{map-deep-get(
@@ -228,6 +229,7 @@
             )};
         --button-ghost-text: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         --button-ghost: transparent;
+        --button-ghost-outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-ghost-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-ghost-focus: #{map-deep-get($colors, 'colors', 'primary', 100)};
         --button-ghost-active-text: #{map-deep-get(
@@ -350,6 +352,7 @@
         --button-cta-disabled: #{map-deep-get($colors, 'colors', 'neutral', 50)};
         --button-ghost-text: #{map-deep-get($colors, 'colors', 'neutral', 80)};
         --button-ghost: transparent;
+        --button-ghost-outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-ghost-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-ghost-focus: #{map-deep-get($colors, 'colors', 'primary', 100)};
         --button-ghost-active-text: #{map-deep-get(
@@ -473,6 +476,7 @@
             )};
         --button-ghost-text: #{map-deep-get($colors, 'colors', 'neutral', 80)};
         --button-ghost: transparent;
+        --button-ghost-outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-ghost-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-ghost-focus: #{map-deep-get($colors, 'colors', 'primary', 100)};
         --button-ghost-active-text: #{map-deep-get(

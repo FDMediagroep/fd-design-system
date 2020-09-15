@@ -96,7 +96,7 @@
     &:hover,
     &:active,
     &:focus {
-        outline-color: var(--button-outline);
+        outline-color: var(--button-ghost-outline);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
