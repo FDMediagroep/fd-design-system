@@ -193,6 +193,11 @@
         }
         input:focus ~ div > label {
             color: var(--input-label-focus);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
         }
         .inputMessage {
             transition: all 0.3s ease-out;
