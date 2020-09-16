@@ -73,6 +73,9 @@
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         &:active {
             transform: scale(0.95);
+            &.m {
+                transform: scale(0.98);
+            }
         }
     }
 
