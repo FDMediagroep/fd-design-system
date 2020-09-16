@@ -1,5 +1,5 @@
-@import '../utils/map-deep-get.scss';
-@import './colors.scss';
+@import '../../utils/map-deep-get.scss';
+@import '../colors.scss';
 
 @mixin dark-tokens {
     --filter-invert: invert(1);
