@@ -16,6 +16,6 @@
         "isolatedModules": true,
         "jsx": "react"
     },
-    "exclude": ["node_modules"],
+    "exclude": ["./node_modules", "./dist", "./dist.d.ts"],
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

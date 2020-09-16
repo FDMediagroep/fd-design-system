@@ -26,8 +26,8 @@
         position: relative;
         width: 100%;
         height: 100%;
-        width: 2.5rem;
-        height: 1.5rem;
+        width: 34px;
+        height: 20px;
         display: inline-block;
         margin-right: 0.5rem;
         cursor: pointer;
@@ -36,31 +36,11 @@
             position: absolute;
             box-sizing: border-box;
             transition: border-color 0.3s;
-            background-color: #fff;
             transition: all 0.3s ease-out;
             width: 100%;
-            height: 1rem;
+            height: 14px;
             top: 0.25rem;
-            border-radius: 0.5rem;
-            background-color: #f3f3f3;
-        }
-        &:after {
-            content: '';
-            position: absolute;
-            transition: all 0.3s ease-out;
-            transform: rotate(-45deg);
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 50%;
-            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-            background-color: #999;
-            left: 0;
-            top: 0;
-        }
-    }
-
-    input:checked ~ .switch {
-        &:before {
+            border-radius: 7px;
             background-color: var(--switch-fill);
             // IE11
             @media screen and (-ms-high-contrast: active),
@@ -68,15 +48,51 @@
                 background-color: #{map-deep-get(
                         $colors,
                         'colors',
-                        'persoonlijk',
-                        100
+                        'neutral',
+                        60
                     )};
             }
-
-            border-radius: 0.5rem;
         }
         &:after {
-            left: calc(100% - 1.5rem);
+            content: '';
+            position: absolute;
+            transition: all 0.3s ease-out;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24),
+                0 0 1px 0 rgba(0, 0, 0, 0.12);
+            border-style: solid;
+            border-width: 0.5px;
+            border-image-source: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.12),
+                rgba(255, 255, 255, 0.06) 20%,
+                rgba(255, 255, 255, 0)
+            );
+            border-image-slice: 1;
+            background-color: #f1f1f1;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    input:checked ~ .switch {
+        &:before {
+            background-color: var(--switch-check-fill);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'secondary',
+                        25
+                    )};
+            }
+        }
+        &:after {
+            left: calc(100% - 20px);
             background-color: var(--switch-active);
             // IE11
             @media screen and (-ms-high-contrast: active),

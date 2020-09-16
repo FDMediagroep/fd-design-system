@@ -4,15 +4,6 @@
 
 .fdTextArea {
     display: inline-block;
-    p {
-        font-size: 0.75rem;
-        color: var(--writer);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-        }
-    }
     .textArea {
         position: relative;
         float: left;
@@ -26,11 +17,12 @@
             font-size: 1rem;
             vertical-align: bottom;
             border: none;
-            border-bottom: 0.125rem solid var(--input-underline);
+            border-radius: 0;
+            border-bottom: 2px solid var(--input-underline);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                border-bottom: 0.125rem solid #{map-deep-get(
+                border-bottom: 2px solid #{map-deep-get(
                         $colors,
                         'colors',
                         'neutral',
@@ -39,29 +31,28 @@
             }
 
             &:disabled {
-                background-color: var(--dividers);
+                border: none;
+                color: var(--input-disabled);
+                background-color: var(--input-fill);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
                     background-color: #{map-deep-get(
                             $colors,
                             'colors',
                             'neutral',
-                            50
+                            100
                         )};
                 }
 
-                & ~ div > label {
-                    background-color: var(--dividers) !important;
+                & ~ div > label,
+                & ~ .textareaMessage {
+                    color: var(--input-disabled);
                     // IE11
                     @media screen and (-ms-high-contrast: active),
                         (-ms-high-contrast: none) {
-                        background-color: #{map-deep-get(
-                                $colors,
-                                'colors',
-                                'neutral',
-                                50
-                            )};
+                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
                     }
                 }
             }
@@ -80,7 +71,7 @@
                 }
             }
             &:valid {
-                border-color: var(--primary);
+                border-color: var(--input-valid);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
@@ -94,11 +85,18 @@
             }
             &:focus {
                 border: none;
-                border-bottom: 0.125rem solid var(--primary);
+                caret-color: var(--input-caret);
+                border-bottom: 2px solid var(--input-underline-focus);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
-                    border-bottom: 0.125rem solid #{map-deep-get(
+                    caret-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'primary',
+                            75
+                        )};
+                    border-bottom: 2px solid #{map-deep-get(
                             $colors,
                             'colors',
                             'primary',
@@ -106,7 +104,6 @@
                         )};
                 }
             }
-            border-radius: 0.1875rem;
             box-sizing: border-box;
             width: 100%;
             height: unset;
@@ -129,11 +126,11 @@
             line-height: 1;
             padding: 0.5rem 1rem 0.5rem 1rem;
             transition: all 0.1s ease-out;
-            color: var(--writer);
+            color: var(--input-label);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
             }
             font-size: 1rem;
             user-select: none;
@@ -176,14 +173,22 @@
             background-color: white;
             right: 1rem;
         }
-        .textareaMessage {
-            transition: all 0.3s ease-out;
-            font-size: 0.75rem;
-            color: var(--writer);
+        textarea:focus ~ div > label {
+            color: var(--input-label-focus);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+        }
+        .textareaMessage {
+            transition: all 0.3s ease-out;
+            font-size: 0.75rem;
+            color: var(--input-helper-text);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
             }
             line-height: 1;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
@@ -262,7 +267,7 @@
         top: 0.5rem;
         right: 1rem;
         svg {
-            fill: var(--primary);
+            fill: var(--input-valid);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {

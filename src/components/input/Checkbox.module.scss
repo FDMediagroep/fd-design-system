@@ -8,15 +8,16 @@
         position: absolute;
         &:hover ~ .checkbox:before,
         &:focus ~ .checkbox:before {
-            outline: 1px solid var(--dividers);
+            outline: 1.5px solid var(--checkbox-outline);
+            outline-offset: -1.5px;
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                outline: 1px solid #{map-deep-get(
+                outline: 1.5px solid #{map-deep-get(
                         $colors,
                         'colors',
-                        'neutral',
-                        50
+                        'primary',
+                        75
                     )};
             }
         }
@@ -48,47 +49,73 @@
             top: 0.25rem;
             width: 1rem;
             height: 1rem;
-            border: 0.0625rem solid var(--dividers);
+            border: 1px solid var(--checkbox-border);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                border: 0.0625rem solid #{map-deep-get(
+                border: 1px solid #{map-deep-get(
                         $colors,
                         'colors',
-                        'neutral',
-                        50
+                        'secondary',
+                        75
                     )};
             }
 
-            border-radius: 0.125rem;
+            border-radius: 2px;
             transition: border-color 0.3s;
-            background-color: #fff;
-        }
-        &:after {
-            content: '';
-            position: absolute;
-            left: 0.1875rem;
-            top: 0.5rem;
-            width: 0.5rem;
-            height: 0.2rem;
-            border-left: 0.125rem solid #fff;
-            border-bottom: 0.125rem solid #fff;
-            opacity: 0;
-            transition: all 0.3s;
-            transform: rotate(-45deg);
-        }
-    }
-    input:checked ~ .checkbox {
-        &:before {
-            background-color: var(--input-fill);
+            background-color: var(--checkbox-fill);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
                 background-color: #{map-deep-get(
                         $colors,
                         'colors',
-                        'persoonlijk',
-                        50
+                        'neutral',
+                        100
+                    )};
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 9px;
+            width: 8px;
+            height: 3px;
+            border-left: 1.5px solid var(--checkbox-check);
+            border-bottom: 1.5px solid var(--checkbox-check);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border-left: 1.5px solid #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'primary',
+                        75
+                    )};
+                border-bottom: 1.5px solid #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'primary',
+                        75
+                    )};
+            }
+            opacity: 0;
+            transition: all 0.3s;
+            transform: rotate(-48deg);
+        }
+    }
+    input:checked ~ .checkbox {
+        &:before {
+            background-color: var(--checkbox-fill);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        100
                     )};
             }
         }
