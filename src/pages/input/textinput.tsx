@@ -185,6 +185,36 @@ function Page() {
                     required={true}
                 />
             </Explain>
+
+            <Explain
+                anchor="disabled"
+                cssClassNames={getCssClassNames()}
+                previewFlexDirection="row"
+                legend="Number (disabled)"
+                reactComponentName="TextInput"
+                description={
+                    <>
+                        <p>Can be used in forms.</p>
+                        <p>This is an example of a disabled field.</p>
+                        <p>
+                            Only the HTML and CSS are necessary to create the
+                            input field along with all the interactions. No
+                            JavaScript required.
+                        </p>
+                    </>
+                }
+            >
+                <TextInput
+                    disabled={true}
+                    id="demoTextInput6"
+                    label="Age"
+                    type="number"
+                    hideNumberSpinners={true}
+                    description="Optional field with placeholder"
+                    defaultValue={999}
+                    required={true}
+                />
+            </Explain>
         </>
     );
 }
