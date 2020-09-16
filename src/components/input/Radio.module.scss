@@ -107,11 +107,6 @@
             height: 10px;
             left: 3px;
             top: 7px;
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                top: 0.38rem;
-            }
         }
     }
 }
