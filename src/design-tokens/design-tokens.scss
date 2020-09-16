@@ -250,7 +250,7 @@
                 $colors,
                 'colors',
                 'primary',
-                100
+                75
             )};
         --button-ghost-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-ghost-focus: #{map-deep-get($colors, 'colors', 'primary', 100)};
@@ -519,7 +519,7 @@
                 $colors,
                 'colors',
                 'primary',
-                100
+                75
             )};
         --button-ghost-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
         --button-ghost-focus: #{map-deep-get($colors, 'colors', 'primary', 100)};
