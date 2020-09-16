@@ -21,6 +21,7 @@
     color: var(--button-cta-text);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        opacity: 1;
         color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     }
     text-decoration: none;
@@ -54,9 +55,20 @@
         }
     }
 
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        height: 100%;
+        min-height: 16px;
+        max-height: 32px;
+    }
     &.m {
         font-size: 1rem;
         min-height: 3rem;
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            height: 100%;
+            min-height: 16px;
+            max-height: 48px;
+        }
     }
 
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
@@ -67,7 +79,7 @@
 
     &:active,
     &:focus {
-        outline: 1.5px solid var(--button-outline);
+        outline: 1.5px solid var(--button-cta-outline);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
@@ -82,10 +94,16 @@
 
     &:before {
         position: absolute;
+        margin: 0 auto;
         transform: skewX(15deg);
         background-color: white;
         width: 0;
         height: 100%;
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            left: -30%;
+            top: 0;
+        }
     }
 
     &:focus {

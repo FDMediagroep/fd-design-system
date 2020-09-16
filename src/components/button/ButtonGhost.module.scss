@@ -21,6 +21,7 @@
     color: var(--button-ghost-text);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        opacity: 1;
         color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     }
     text-decoration: none;
@@ -86,9 +87,20 @@
         }
     }
 
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        height: 100%;
+        min-height: 16px;
+        max-height: 32px;
+    }
     &.m {
         font-size: 1rem;
         min-height: 3rem;
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            height: 100%;
+            min-height: 16px;
+            max-height: 48px;
+        }
     }
 
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
@@ -97,10 +109,17 @@
         }
     }
 
-    &:hover,
     &:active,
     &:focus {
         outline-color: var(--button-ghost-outline);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            outline-color: #{map-deep-get($colors, 'colors', 'primary', 100)};
+        }
+    }
+    &:hover {
+        outline-color: var(--button-ghost-hover-outline);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
@@ -114,6 +133,11 @@
         background-color: #{map-deep-get($colors, 'colors', 'primary', 25)};
         width: 0;
         height: 100%;
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            left: -30%;
+            top: 0;
+        }
     }
 
     &:focus {
