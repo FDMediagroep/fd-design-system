@@ -61,8 +61,10 @@
     --radio-check: #{map-deep-get($colors, 'colors', 'secondary', 75)};
     --radio-border: #{map-deep-get($colors, 'colors', 'secondary', 50)};
     --radio-fill: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-    --switch-fill: #{map-deep-get($colors, 'colors', 'persoonlijk', 100)};
-    --switch-active: #{map-deep-get($colors, 'colors', 'persoonlijk', 50)};
+    --switch-knob: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    --switch-fill: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+    --switch-check-fill: #{map-deep-get($colors, 'colors', 'secondary', 25)};
+    --switch-active: #{map-deep-get($colors, 'colors', 'secondary', 50)};
 
     /**
      * Links
