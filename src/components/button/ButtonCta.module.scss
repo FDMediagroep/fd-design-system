@@ -4,6 +4,10 @@
 @import '../../design-tokens/typography.scss';
 
 .fdButtonCta {
+    opacity: 0;
+    animation: show;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
     user-select: none;
     position: relative;
     overflow: hidden;
@@ -17,6 +21,7 @@
     color: var(--button-cta-text);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        opacity: 1; // Remove this line for fd.nl
         color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     }
     text-decoration: none;
@@ -50,9 +55,20 @@
         }
     }
 
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        height: 100%;
+        min-height: 32px;
+        max-height: 32px;
+    }
     &.m {
         font-size: 1rem;
         min-height: 3rem;
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            height: 100%;
+            min-height: 48px;
+            max-height: 48px;
+        }
     }
 
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
@@ -63,7 +79,7 @@
 
     &:active,
     &:focus {
-        outline: 1.5px solid var(--button-outline);
+        outline: 1.5px solid var(--button-cta-outline);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
@@ -78,10 +94,16 @@
 
     &:before {
         position: absolute;
+        margin: 0 auto;
         transform: skewX(15deg);
         background-color: white;
         width: 0;
         height: 100%;
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            left: -30%;
+            top: 0;
+        }
     }
 
     &:focus {
@@ -104,14 +126,16 @@
     &:not(:active) {
         &:before {
             content: '';
-            animation: ripple 0.5s;
+            animation: ripple;
+            animation-duration: 0.5s;
         }
     }
 
     &:active {
         &:before {
             content: '';
-            animation: rippleReverse 0.2s;
+            animation: rippleReverse;
+            animation-duration: 0.5s;
             animation-delay: 0.1s;
         }
         background-color: var(--button-cta-active);
@@ -204,6 +228,18 @@
         100% {
             width: 0%;
             opacity: 0.2;
+        }
+    }
+
+    @keyframes show {
+        0% {
+            opacity: 0;
+        }
+        99% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
         }
     }
 }

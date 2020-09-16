@@ -4,6 +4,10 @@
 @import '../../design-tokens/typography.scss';
 
 .fdButtonGhost {
+    opacity: 0;
+    animation: show;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
     user-select: none;
     position: relative;
     overflow: hidden;
@@ -17,6 +21,7 @@
     color: var(--button-ghost-text);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        opacity: 1; // Remove this line for fd.nl
         color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     }
     text-decoration: none;
@@ -82,9 +87,20 @@
         }
     }
 
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        height: 100%;
+        min-height: 32px;
+        max-height: 32px;
+    }
     &.m {
         font-size: 1rem;
         min-height: 3rem;
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            height: 100%;
+            min-height: 48px;
+            max-height: 48px;
+        }
     }
 
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
@@ -93,10 +109,17 @@
         }
     }
 
-    &:hover,
     &:active,
     &:focus {
         outline-color: var(--button-ghost-outline);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            outline-color: #{map-deep-get($colors, 'colors', 'primary', 100)};
+        }
+    }
+    &:hover {
+        outline-color: var(--button-ghost-hover-outline);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
@@ -110,6 +133,11 @@
         background-color: #{map-deep-get($colors, 'colors', 'primary', 25)};
         width: 0;
         height: 100%;
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            left: -30%;
+            top: 0;
+        }
     }
 
     &:focus {
@@ -135,14 +163,16 @@
     &:not(:active) {
         &:before {
             content: '';
-            animation: ripple 0.5s;
+            animation: ripple;
+            animation-duration: 0.5s;
         }
     }
 
     &:active {
         &:before {
             content: '';
-            animation: rippleReverse 0.2s;
+            animation: rippleReverse;
+            animation-duration: 0.2s;
             animation-delay: 0.1s;
         }
 
@@ -253,6 +283,18 @@
         100% {
             width: 0%;
             opacity: 0.25;
+        }
+    }
+
+    @keyframes show {
+        0% {
+            opacity: 0;
+        }
+        99% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
         }
     }
 }
