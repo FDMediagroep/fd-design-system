@@ -107,7 +107,7 @@
     --button-cta-focus: #{map-deep-get($colors, 'colors', 'secondary', 100)};
     --button-cta-active: #{map-deep-get($colors, 'colors', 'secondary', 100)};
     --button-cta-disabled: #{map-deep-get($colors, 'colors', 'secondary', 25)};
-    --button-ghost-text: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+    --button-ghost-text: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     --button-ghost: transparent;
     --button-ghost-outline: #{map-deep-get($colors, 'colors', 'primary', 100)};
     --button-ghost-hover-outline: #{map-deep-get(
