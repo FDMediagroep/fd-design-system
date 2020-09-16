@@ -89,7 +89,7 @@
 
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         height: 100%;
-        min-height: 16px;
+        min-height: 32px;
         max-height: 32px;
     }
     &.m {
@@ -98,7 +98,7 @@
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
             height: 100%;
-            min-height: 16px;
+            min-height: 48px;
             max-height: 48px;
         }
     }
