@@ -241,7 +241,7 @@ function Page() {
                         </p>
                         <p>
                             Only the HTML and CSS are necessary to create the
-                            text area along with all the interactions.
+                            text area along with all the interactions.{' '}
                             <b>
                                 JavaScript required for setting
                                 `data-show-error='true'` attribute.
@@ -255,6 +255,32 @@ function Page() {
                     label="Biography"
                     value="This is a biography which only allows a maximum of 10 words"
                     maxWords={10}
+                />
+            </Explain>
+
+            <Explain
+                anchor="disabled"
+                cssClassNames={getCssClassNames()}
+                previewFlexDirection="row"
+                legend="TextArea (disabled)"
+                reactComponentName="TextArea"
+                description={
+                    <>
+                        <p>Can be used in forms.</p>
+                        <p>This is an example of a disabled text area.</p>
+                        <p>
+                            Only the HTML and CSS are necessary to create the
+                            text area along with all the interactions.
+                        </p>
+                    </>
+                }
+            >
+                <TextArea
+                    disabled={true}
+                    id="demoTextArea8"
+                    label="Biography"
+                    value="This text area has been disabled"
+                    description="disabled text area"
                 />
             </Explain>
         </>

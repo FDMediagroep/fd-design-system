@@ -4,15 +4,6 @@
 
 .fdInput {
     display: inline-block;
-    p {
-        font-size: 0.75rem;
-        color: var(--writer);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-        }
-    }
     .input {
         position: relative;
         float: left;
@@ -33,11 +24,11 @@
                 -webkit-appearance: none;
                 min-width: 175px;
             }
-            border-bottom: 0.125rem solid var(--input-underline);
+            border-bottom: 2px solid var(--input-underline);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                border-bottom: 0.125rem solid #{map-deep-get(
+                border-bottom: 2px solid #{map-deep-get(
                         $colors,
                         'colors',
                         'neutral',
@@ -99,7 +90,7 @@
                 }
             }
             &:valid {
-                border-color: var(--primary);
+                border-color: var(--input-valid);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
@@ -287,7 +278,7 @@
         top: 0.5rem;
         right: 1rem;
         svg {
-            fill: var(--primary);
+            fill: var(--input-valid);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
