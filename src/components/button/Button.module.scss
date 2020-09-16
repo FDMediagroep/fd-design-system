@@ -5,7 +5,9 @@
 
 .fdButton {
     opacity: 0;
-    animation: show 0.3s forwards;
+    animation: show;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
     user-select: none;
     position: relative;
     overflow: hidden;
@@ -26,7 +28,6 @@
     padding: 0 1rem;
     border: none;
     text-align: center;
-    background-position: center;
     transition: transform 0.05s ease-out, background-color 0.1s;
     border-radius: 0;
     font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
@@ -101,14 +102,16 @@
     &:not(:active) {
         &:before {
             content: '';
-            animation: ripple 0.5s;
+            animation: ripple;
+            animation-duration: 0.5s;
         }
     }
 
     &:active {
         &:before {
             content: '';
-            animation: rippleReverse 0.2s;
+            animation: rippleReverse;
+            animation-duration: 0.5s;
             animation-delay: 0.1s;
         }
 
