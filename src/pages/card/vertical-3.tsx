@@ -61,6 +61,7 @@ const verticalCards1: any = [
         intro: `Nederlands bedrijf met aandelenportefeuille betaalt het gelag.`,
         readingTime: 2,
         isRead: true,
+        variant: 'variant-2',
     },
 ];
 
@@ -98,6 +99,9 @@ function Page() {
                             <li>variant-2</li>
                             <li>variant-3</li>
                             <li>visited</li>
+                            <li>variant-1 visited</li>
+                            <li>variant-2 visited</li>
+                            <li>variant-3 visited</li>
                         </ul>
                     </>
                 }
@@ -123,6 +127,21 @@ function Page() {
                         {...verticalCards1[1]}
                         label="Breaking"
                         variant="variant-3"
+                    />
+                    <VerticalCard3
+                        className={styles.verticalCard3}
+                        {...verticalCards1[2]}
+                    />
+                    <VerticalCard3
+                        className={styles.verticalCard3}
+                        {...verticalCards1[2]}
+                        variant="variant-1"
+                    />
+                    <VerticalCard3
+                        className={styles.verticalCard3}
+                        {...verticalCards1[2]}
+                        label="Update"
+                        variant="variant-2"
                     />
                     <VerticalCard3
                         className={styles.verticalCard3}

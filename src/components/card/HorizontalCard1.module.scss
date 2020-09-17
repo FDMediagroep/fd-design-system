@@ -296,6 +296,15 @@
             }
         }
 
+        .meta .update {
+            background-color: var(--card-text-visited);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+            }
+        }
+
         background-color: var(--card-visited);
         // IE11
         @media screen and (-ms-high-contrast: active),

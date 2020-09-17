@@ -255,6 +255,7 @@
             filter: grayscale(1) sepia(0.15);
         }
         &:not([data-variant]) .meta .prefix,
+        &[data-variant='variant-1'] .meta .prefix,
         .readingTime,
         .textContainer h1 {
             color: var(--card-text-visited);
@@ -262,6 +263,23 @@
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
                 color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+            }
+        }
+
+        &[data-variant='variant-2'],
+        &[data-variant='variant-3'] {
+            .meta .prefix {
+                background-color: var(--card-text-visited);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    background-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'neutral',
+                            30
+                        )};
+                }
             }
         }
 
