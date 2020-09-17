@@ -25,7 +25,7 @@
     --content-copy: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     --opaque-label-copy: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     --title-copy: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    --meta-copy: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --meta-copy: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --quote: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --numberframe: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --textframe: #{map-deep-get($colors, 'colors', 'neutral', 30)};
