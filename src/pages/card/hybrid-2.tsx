@@ -43,6 +43,7 @@ const hybridCards1: any = [
         url:
             'https://fd.nl/economie-politiek/1345444/grootste-toename-werkloosheid-sinds-2003',
         readingTime: 11,
+        isRead: true,
     },
 ];
 
@@ -116,7 +117,6 @@ function Page() {
                         {...hybridCards1[2]}
                     />
                     <HybridCard2
-                        isRead={true}
                         className={styles.hybridCard2}
                         onBookmark={toggleBookmark}
                         bookmarked={bookmarked}

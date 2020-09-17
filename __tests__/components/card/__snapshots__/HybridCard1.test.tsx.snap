@@ -3,7 +3,7 @@
 exports[`HybridCard1 should render is-read correctly 1`] = `
 <div>
   <article
-    class="hybridCard1"
+    class="hybridCard1 isRead"
     id="1"
   >
     <a

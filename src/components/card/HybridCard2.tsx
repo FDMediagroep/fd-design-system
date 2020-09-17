@@ -39,7 +39,7 @@ function HybridCard2(props: Props) {
             data-variant={props.variant}
             className={`${styles.hybridCard2}${
                 props.className ? ` ${props.className}` : ''
-            }`}
+            }${props.isRead ? ` ${styles.isRead}` : ''}`}
             id={props.id}
         >
             <a

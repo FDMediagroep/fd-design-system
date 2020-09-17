@@ -34,7 +34,7 @@
 .verticalCard2 {
     margin: 0 1rem 1rem 0;
 
-    @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         max-width: 300px;
     }
 }
