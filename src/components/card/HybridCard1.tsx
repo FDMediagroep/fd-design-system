@@ -99,7 +99,11 @@ function HybridCard1(props: Props) {
             }`}
             id={props.id}
         >
-            <a href={props.url}>
+            <a
+                href={props.url}
+                aria-label={props.title}
+                aria-description={props.intro}
+            >
                 {!theme && props.imageUrl && (
                     <figure>
                         <picture>
