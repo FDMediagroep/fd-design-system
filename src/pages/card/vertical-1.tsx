@@ -43,6 +43,25 @@ const verticalCards1: any = [
         intro: `Het Rijk sluit overheidsingrijpen niet uit om een akkoord tussen verhuurders en winkeliers af te dwingen, nu onderhandelingen moeizaam verlopen.`,
         readingTime: 5,
     },
+    {
+        id: '1357440',
+        label: 'Fiscaal',
+        title:
+            'Kabinet verwacht bijna €1 mrd aan dividendbelasting te moeten terugbetalen',
+        imageUrl:
+            'https://images.fd.nl/yDQG_K45XE2ZIJOmE57wc1FIbcM.jpg?fit=crop&crop=faces&auto=format,compress&q=45&w=599&h=399',
+        imageUrlS:
+            'https://images.fd.nl/yDQG_K45XE2ZIJOmE57wc1FIbcM.jpg?fit=crop&crop=faces&auto=format,compress&q=45&w=599&h=399',
+        imageUrlM:
+            'https://images.fd.nl/yDQG_K45XE2ZIJOmE57wc1FIbcM.jpg?fit=crop&crop=faces&auto=format,compress&q=45&w=351&h=234',
+        imageUrlL:
+            'https://images.fd.nl/yDQG_K45XE2ZIJOmE57wc1FIbcM.jpg?fit=crop&crop=faces&auto=format,compress&q=45&w=599&h=399',
+        url:
+            'https://fd.nl/economie-politiek/1357440/europees-arrest-dividendbelasting-kost-schatkist-910-mln',
+        intro: `Nederlands bedrijf met aandelenportefeuille betaalt het gelag.`,
+        readingTime: 2,
+        isRead: true,
+    },
 ];
 
 const metaTitle = 'Vertical Card 1';
@@ -82,6 +101,8 @@ function Page() {
                         <p>Used on homepage.</p>
                         <ul>
                             <li>default</li>
+                            <li>default</li>
+                            <li>visited</li>
                         </ul>
                     </>
                 }
@@ -98,6 +119,12 @@ function Page() {
                         onBookmark={toggleBookmark}
                         bookmarked={bookmarked}
                         {...verticalCards1[1]}
+                    />
+                    <VerticalCard1
+                        className={styles.verticalCard1}
+                        onBookmark={toggleBookmark}
+                        bookmarked={bookmarked}
+                        {...verticalCards1[2]}
                     />
                 </>
             </Explain>

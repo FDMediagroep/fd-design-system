@@ -33,7 +33,7 @@
     border-radius: 0;
     font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     font-weight: normal;
-    letter-spacing: -0.2px;
+    letter-spacing: -0.1px;
     @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
         width: 100%;
     }
@@ -79,9 +79,9 @@
         }
     }
 
-    &:active,
     &:focus {
         outline: 1.5px solid var(--button-outline);
+        outline-offset: -1.5px;
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
@@ -92,6 +92,9 @@
                     75
                 )};
         }
+    }
+    &:active {
+        outline: none;
     }
 
     &:before {

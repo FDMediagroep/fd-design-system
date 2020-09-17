@@ -43,6 +43,26 @@ const verticalCards1: any = [
         intro: `Het Rijk sluit overheidsingrijpen niet uit om een akkoord tussen verhuurders en winkeliers af te dwingen, nu onderhandelingen moeizaam verlopen.`,
         readingTime: 13,
     },
+    {
+        id: '1357440',
+        label: 'Fiscaal',
+        title:
+            'Kabinet verwacht bijna €1 mrd aan dividendbelasting te moeten terugbetalen',
+        imageUrl:
+            'https://images.fd.nl/yDQG_K45XE2ZIJOmE57wc1FIbcM.jpg?fit=crop&crop=faces&auto=format,compress&q=45&w=599&h=399',
+        imageUrlS:
+            'https://images.fd.nl/yDQG_K45XE2ZIJOmE57wc1FIbcM.jpg?fit=crop&crop=faces&auto=format,compress&q=45&w=599&h=399',
+        imageUrlM:
+            'https://images.fd.nl/yDQG_K45XE2ZIJOmE57wc1FIbcM.jpg?fit=crop&crop=faces&auto=format,compress&q=45&w=351&h=234',
+        imageUrlL:
+            'https://images.fd.nl/yDQG_K45XE2ZIJOmE57wc1FIbcM.jpg?fit=crop&crop=faces&auto=format,compress&q=45&w=599&h=399',
+        url:
+            'https://fd.nl/economie-politiek/1357440/europees-arrest-dividendbelasting-kost-schatkist-910-mln',
+        intro: `Nederlands bedrijf met aandelenportefeuille betaalt het gelag.`,
+        readingTime: 2,
+        isRead: true,
+        variant: 'variant-2',
+    },
 ];
 
 const metaTitle = 'Vertical Card 3';
@@ -77,6 +97,11 @@ function Page() {
                             <li>default</li>
                             <li>variant-1</li>
                             <li>variant-2</li>
+                            <li>variant-3</li>
+                            <li>visited</li>
+                            <li>variant-1 visited</li>
+                            <li>variant-2 visited</li>
+                            <li>variant-3 visited</li>
                         </ul>
                     </>
                 }
@@ -100,6 +125,27 @@ function Page() {
                     <VerticalCard3
                         className={styles.verticalCard3}
                         {...verticalCards1[1]}
+                        label="Breaking"
+                        variant="variant-3"
+                    />
+                    <VerticalCard3
+                        className={styles.verticalCard3}
+                        {...verticalCards1[2]}
+                    />
+                    <VerticalCard3
+                        className={styles.verticalCard3}
+                        {...verticalCards1[2]}
+                        variant="variant-1"
+                    />
+                    <VerticalCard3
+                        className={styles.verticalCard3}
+                        {...verticalCards1[2]}
+                        label="Update"
+                        variant="variant-2"
+                    />
+                    <VerticalCard3
+                        className={styles.verticalCard3}
+                        {...verticalCards1[2]}
                         label="Breaking"
                         variant="variant-3"
                     />

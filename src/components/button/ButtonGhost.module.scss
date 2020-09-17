@@ -34,7 +34,7 @@
     border-radius: 0;
     font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     font-weight: normal;
-    letter-spacing: -0.2px;
+    letter-spacing: -0.1px;
     @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
         width: 100%;
     }
@@ -121,6 +121,7 @@
             outline-color: #{map-deep-get($colors, 'colors', 'primary', 100)};
         }
     }
+
     &:hover {
         outline-color: var(--button-ghost-hover-outline);
         // IE11
@@ -175,7 +176,7 @@
         &:before {
             content: '';
             animation: rippleReverse;
-            animation-duration: 0.2s;
+            animation-duration: 0.5s;
             animation-delay: 0.1s;
         }
 

@@ -25,7 +25,7 @@
     --content-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --opaque-label-copy: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     --title-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-    --meta-copy: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+    --meta-copy: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --quote: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --numberframe: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --textframe: #{map-deep-get($colors, 'colors', 'neutral', 90)};
@@ -36,10 +36,11 @@
     --writer: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --time: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --card: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    --card-active: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    --card-visited: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    --card-text-visited: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-    --card-hover: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+    --card-active: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+    --card-box-shadow-active: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --card-visited: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+    --card-text-visited: #{map-deep-get($colors, 'colors', 'neutral', 70)};
+    --card-hover: #{map-deep-get($colors, 'colors', 'neutral', 20)};
     --card-2: #{map-deep-get($colors, 'colors', 'neutral', 20)};
     --primary: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --primary-active: #{map-deep-get($colors, 'colors', 'primary', 25)};

@@ -273,6 +273,7 @@
         z-index: 1;
     }
     &:active {
+        box-shadow: inset 0 0 0 2px var(--card-box-shadow-active);
         background-color: var(--card-active);
         // IE11
         @media screen and (-ms-high-contrast: active),
@@ -289,6 +290,15 @@
         .readingTime,
         .textContainer h1 {
             color: var(--card-text-visited);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+            }
+        }
+
+        .meta .update {
+            background-color: var(--card-text-visited);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {

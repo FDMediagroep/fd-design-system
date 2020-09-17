@@ -40,6 +40,7 @@ interface Props {
      */
     readingTime?: number;
     time?: string;
+    isRead?: boolean;
     title: string;
     intro: string;
     onBookmark?: (e: React.MouseEvent<HTMLElement>) => void;
@@ -96,7 +97,7 @@ function HybridCard1(props: Props) {
             data-variant={props.variant}
             className={`${styles.hybridCard1}${
                 props.className ? ` ${props.className}` : ''
-            }`}
+            }${props.isRead ? ` ${styles.isRead}` : ''}`}
             id={props.id}
         >
             <a

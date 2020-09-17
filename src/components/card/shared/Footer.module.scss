@@ -19,9 +19,16 @@
         display: flex;
         justify-content: space-between;
         align-items: baseline;
+
+        * {
+            white-space: nowrap;
+        }
     }
 
     a {
+        &:hover {
+            text-decoration: underline;
+        }
         margin-top: 0.5rem;
         display: none;
         @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {

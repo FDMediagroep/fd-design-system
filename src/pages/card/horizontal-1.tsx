@@ -43,6 +43,19 @@ const horizontalCards1: any = [
         readingTime: 7,
     },
     {
+        id: '1343728',
+        url:
+            'https://fd.nl/economie-politiek/1343620/leraren-hebben-straks-geen-klassen-van-32-leerlingen-meer',
+        imageUrl:
+            'https://images.fd.nl/-wbqLswT8IrCcrXMrWXEnzrd3lg.jpg?fit=crop&crop=faces&auto=format&q=45&w=300',
+        label: 'Coronakronieken',
+        time: '07:18',
+        title: "'Leraren hebben straks geen klassen van 32 leerlingen meer'",
+        updated: true,
+        isRead: true,
+        readingTime: 7,
+    },
+    {
         id: '1334870',
         url: 'http://local.fd.nl:8888/opinie/1334870/een-europese-rente',
         imageUrl:
@@ -94,7 +107,8 @@ function Page() {
                         <ul>
                             <li>default</li>
                             <li>updated</li>
-                            <li>is read</li>
+                            <li>visited</li>
+                            <li>updated visited</li>
                             <li>variant-1 themed</li>
                             <li>no image</li>
                         </ul>
@@ -107,6 +121,7 @@ function Page() {
                     <HorizontalCard1 {...horizontalCards1[2]} />
                     <HorizontalCard1 {...horizontalCards1[3]} />
                     <HorizontalCard1 {...horizontalCards1[4]} />
+                    <HorizontalCard1 {...horizontalCards1[5]} />
                 </>
             </Explain>
         </>

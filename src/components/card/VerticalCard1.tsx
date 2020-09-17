@@ -4,7 +4,6 @@ import {
     Footer,
     getCssClassNames as getFooterCssClassNames,
 } from './shared/Footer';
-import { ReadingTime } from './shared/ReadingTime';
 
 interface Props {
     id: string;
@@ -20,6 +19,7 @@ interface Props {
      * Reading time in minutes.
      */
     readingTime?: number;
+    isRead?: boolean;
     title: string;
     printTitle?: string;
     intro: string;
@@ -37,7 +37,7 @@ function VerticalCard1(props: Props) {
             style={props.style}
             className={`${styles.verticalCard1}${
                 props.className ? ` ${props.className}` : ''
-            }`}
+            }${props.isRead ? ` ${styles.isRead}` : ''}`}
             id={props.id}
         >
             <a
@@ -87,6 +87,7 @@ function VerticalCard1(props: Props) {
             </a>
 
             <Footer
+                className={styles.footer}
                 bookmarked={props.bookmarked}
                 onBookmark={props.onBookmark}
                 readingTime={props.readingTime}
