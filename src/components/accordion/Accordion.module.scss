@@ -155,4 +155,24 @@
             display: none;
         }
     }
+
+    input:hover,
+    input:active {
+        & ~ .icon svg {
+            fill: var(--primary-active) !important;
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                fill: #{map-deep-get($colors, 'colors', 'primary', 100)} !important;
+            }
+            * {
+                fill: var(--primary-active) !important;
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    fill: #{map-deep-get($colors, 'colors', 'primary', 100)} !important;
+                }
+            }
+        }
+    }
 }
