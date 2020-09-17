@@ -148,6 +148,14 @@
         box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
         z-index: 1;
     }
+    &:active {
+        background-color: var(--card-active);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+        }
+    }
 
     &.isRead {
         .meta .prefix,
