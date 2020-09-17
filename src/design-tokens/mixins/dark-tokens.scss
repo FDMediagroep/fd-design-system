@@ -36,6 +36,10 @@
     --writer: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --time: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --card: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+    --card-active: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+    --card-visited: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+    --card-text-visited: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --card-hover: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     --card-2: #{map-deep-get($colors, 'colors', 'neutral', 20)};
     --primary: #{map-deep-get($colors, 'colors', 'primary', 50)};
 

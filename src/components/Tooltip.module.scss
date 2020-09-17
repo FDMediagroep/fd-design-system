@@ -4,6 +4,7 @@
 
 .tooltip {
     display: none;
+    z-index: 999;
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         display: flex;
     }

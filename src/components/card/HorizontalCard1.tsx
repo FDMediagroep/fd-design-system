@@ -135,7 +135,10 @@ function HorizontalCard1(props: Props) {
                     </div>
 
                     {props.readingTime && (
-                        <ReadingTime readingTime={props.readingTime} />
+                        <ReadingTime
+                            className={styles.readingTime}
+                            readingTime={props.readingTime}
+                        />
                     )}
                 </div>
             </a>
