@@ -7,6 +7,8 @@ exports[`HorizontalCard2 should render is-read correctly 1`] = `
     id="1"
   >
     <a
+      aria-description="This is the intro of the card"
+      aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
       <div

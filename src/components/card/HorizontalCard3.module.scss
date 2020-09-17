@@ -12,7 +12,6 @@
         background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     }
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
 
     .theme {
         flex: 0 0 100px;
@@ -23,6 +22,7 @@
     }
 
     a {
+        padding: 1rem;
         text-decoration: none;
         color: var(--content-copy);
         // IE11
@@ -32,6 +32,7 @@
         }
         display: block;
         overflow: visible;
+        &:focus,
         &:hover {
             h1 {
                 text-decoration: underline;
@@ -135,17 +136,45 @@
         min-height: inherit;
     }
 
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: var(--card-hover);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+        }
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+        z-index: 1;
+    }
+    &:active {
+        background-color: var(--card-active);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+        }
+    }
+
     &.isRead {
-        .meta .prefix {
-            color: var(--meta-copy);
+        .meta .prefix,
+        .readingTime,
+        .printTitle,
+        .textContainer h1 {
+            color: var(--card-text-visited);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
             }
         }
-        .textContainer h1 {
-            opacity: 0.5;
+
+        background-color: var(--card-visited);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 70)};
         }
     }
 }

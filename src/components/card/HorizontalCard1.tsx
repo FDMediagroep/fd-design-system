@@ -87,7 +87,11 @@ function HorizontalCard1(props: Props) {
             }${props.variant === 'variant-1' ? ` ${styles.longread}` : ''}`}
             id={props.id}
         >
-            <a href={props.url}>
+            <a
+                href={props.url}
+                aria-label={props.title}
+                aria-description={props.intro}
+            >
                 {!theme && props.imageUrl && (
                     <figure>
                         <picture>
@@ -135,7 +139,10 @@ function HorizontalCard1(props: Props) {
                     </div>
 
                     {props.readingTime && (
-                        <ReadingTime readingTime={props.readingTime} />
+                        <ReadingTime
+                            className={styles.readingTime}
+                            readingTime={props.readingTime}
+                        />
                     )}
                 </div>
             </a>

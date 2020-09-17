@@ -30,7 +30,11 @@ function HorizontalCard2(props: Props) {
             }`}
             id={props.id}
         >
-            <a href={props.url}>
+            <a
+                href={props.url}
+                aria-label={props.title}
+                aria-description={props.intro}
+            >
                 <div className={styles.teaserText}>
                     <div className={styles.meta}>
                         <span className={styles.prefix}>{props.label}</span>
@@ -44,7 +48,10 @@ function HorizontalCard2(props: Props) {
                     </div>
 
                     {props.readingTime && (
-                        <ReadingTime readingTime={props.readingTime} />
+                        <ReadingTime
+                            className={styles.readingTime}
+                            readingTime={props.readingTime}
+                        />
                     )}
                 </div>
             </a>

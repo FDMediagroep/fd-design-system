@@ -39,7 +39,11 @@ function VerticalCard3(props: Props) {
             }`}
             id={props.id}
         >
-            <a href={props.url}>
+            <a
+                href={props.url}
+                aria-label={props.title}
+                aria-description={props.intro}
+            >
                 <div className={styles.cardContent}>
                     <div className={styles.textContent}>
                         <div className={styles.meta}>

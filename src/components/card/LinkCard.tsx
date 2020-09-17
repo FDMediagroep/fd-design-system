@@ -18,10 +18,13 @@ export default function LinkCard(props: Props) {
                 }`}
             >
                 <h3>{props.title ? props.title : 'Beheer'}</h3>
-                <a href={props.link}>
-                    {props.linkText
-                        ? props.linkText
-                        : 'Beheer uw nieuwsbriefinstellingen'}{' '}
+                <a
+                    href={props.link}
+                    aria-label={
+                        props.linkText ?? 'Beheer uw nieuwsbriefinstellingen'
+                    }
+                >
+                    {props.linkText ?? 'Beheer uw nieuwsbriefinstellingen'}{' '}
                     <span
                         className={styles.icon}
                         dangerouslySetInnerHTML={{ __html: ChevronRightIcon }}

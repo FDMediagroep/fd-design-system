@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from './Menu.module.scss';
 import { Themes } from './Themes';
+import { Button } from './button/Button';
 
 interface Props {
     onVisibilityChange?: (closed: boolean) => void;
@@ -18,9 +19,13 @@ function Menu(props: Props) {
 
     return (
         <nav className={`${styles.menu} ${closed && styles.menuClosed}`}>
-            <div className={styles.toggle} onClick={toggle}>
-                {closed ? '▶️' : '◀️'}
-            </div>
+            <Button
+                size="s"
+                className={`${styles.toggle} ${closed ? 'closed' : 'opened'}`}
+                onClick={toggle}
+            >
+                {closed ? 'Open menu' : 'Close menu'}
+            </Button>
             <Link href="/">
                 <a>Home</a>
             </Link>

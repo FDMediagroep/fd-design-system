@@ -34,7 +34,11 @@ function VerticalCard2(props: Props) {
             }`}
             id={props.id}
         >
-            <a href={props.url}>
+            <a
+                href={props.url}
+                aria-label={props.title}
+                aria-description={props.intro}
+            >
                 <figure>
                     <picture>
                         {props.imageUrlS && (
