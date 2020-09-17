@@ -84,8 +84,6 @@
     .toggle {
         position: sticky;
         top: 0;
-        cursor: pointer;
-        text-align: right;
         z-index: 1;
         margin: 0;
     }
@@ -101,7 +99,7 @@
 
     h3 {
         position: sticky;
-        top: 0;
+        top: 31px;
         margin: 0;
         background-color: var(--dividers);
         // IE11
@@ -123,17 +121,7 @@
     position: relative;
 
     .toggle {
-        box-sizing: content-box;
-        text-align: center;
         position: fixed;
-        padding: 0.5rem;
-        background-color: var(--dividers);
-        border-radius: 50%;
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-        }
     }
     a,
     .themeControls,
