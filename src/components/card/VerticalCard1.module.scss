@@ -167,10 +167,13 @@
         z-index: 1;
     }
     &:active {
+        outline: 2px solid var(--card-outline-active);
+        outline-offset: -2px;
         background-color: var(--card-active);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
+            border: none;
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
         }
     }

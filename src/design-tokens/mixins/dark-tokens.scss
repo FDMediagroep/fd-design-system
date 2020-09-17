@@ -37,6 +37,7 @@
     --time: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --card: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     --card-active: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+    --card-outline-active: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --card-visited: #{map-deep-get($colors, 'colors', 'neutral', 20)};
     --card-text-visited: #{map-deep-get($colors, 'colors', 'neutral', 70)};
     --card-hover: #{map-deep-get($colors, 'colors', 'neutral', 20)};
