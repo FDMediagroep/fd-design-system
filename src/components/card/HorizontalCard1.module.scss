@@ -4,7 +4,6 @@
 @import '../../design-tokens/typography.scss';
 
 .horizontalCard1 {
-    transition: transform 0.05s;
     margin-bottom: 1px;
     justify-content: space-between;
     padding: 0;
@@ -261,9 +260,6 @@
         min-height: inherit;
     }
 
-    &:active {
-        transform: scale(0.99);
-    }
     &:active,
     &:focus,
     &:hover {
