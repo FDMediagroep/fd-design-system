@@ -59,8 +59,17 @@ const hybridCards1: any = [
         id: '1345444',
         label: 'Arbeidsmarkt',
         title: 'Bulk van de werklozen komt in de komende maanden',
+        imageUrl:
+            'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=300',
+        imageUrlS:
+            'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=300',
+        imageUrlM:
+            'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=351&h=234',
+        imageUrlL:
+            'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url:
             'https://fd.nl/economie-politiek/1345444/grootste-toename-werkloosheid-sinds-2003',
+        readingTime: 7,
     },
 ];
 
@@ -109,6 +118,7 @@ function Page() {
                             <li>default</li>
                             <li>variant-1</li>
                             <li>themed</li>
+                            <li>visited</li>
                         </ul>
                     </>
                 }
@@ -131,6 +141,13 @@ function Page() {
                         onBookmark={toggleBookmark}
                         bookmarked={bookmarked}
                         {...hybridCards1[2]}
+                    />
+                    <HybridCard1
+                        isRead={true}
+                        className={styles.hybridCard1}
+                        onBookmark={toggleBookmark}
+                        bookmarked={bookmarked}
+                        {...hybridCards1[3]}
                     />
                 </>
             </Explain>

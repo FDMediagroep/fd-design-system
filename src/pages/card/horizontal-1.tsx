@@ -94,7 +94,7 @@ function Page() {
                         <ul>
                             <li>default</li>
                             <li>updated</li>
-                            <li>is read</li>
+                            <li>visited</li>
                             <li>variant-1 themed</li>
                             <li>no image</li>
                         </ul>

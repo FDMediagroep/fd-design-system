@@ -14,6 +14,7 @@ interface Props {
      * Reading time in minutes.
      */
     readingTime?: number;
+    isRead?: boolean;
     time: string;
     title: string;
     printTitle?: string;
@@ -31,7 +32,7 @@ function VerticalCard2(props: Props) {
             style={props.style}
             className={`${styles.verticalCard2}${
                 props.className ? ` ${props.className}` : ''
-            }`}
+            }${props.isRead ? ` ${styles.isRead}` : ''}`}
             id={props.id}
         >
             <a
@@ -76,7 +77,10 @@ function VerticalCard2(props: Props) {
                 </div>
 
                 {props.readingTime && (
-                    <ReadingTime readingTime={props.readingTime} />
+                    <ReadingTime
+                        className={styles.readingTime}
+                        readingTime={props.readingTime}
+                    />
                 )}
             </a>
         </article>

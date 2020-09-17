@@ -72,7 +72,7 @@ function Page() {
                         <p>Used on latest news, my news pages.</p>
                         <ul>
                             <li>default</li>
-                            <li>is read</li>
+                            <li>visited</li>
                             <li>default</li>
                         </ul>
                     </>

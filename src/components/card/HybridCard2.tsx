@@ -18,6 +18,7 @@ interface Props {
      */
     readingTime?: number;
     time?: string;
+    isRead?: boolean;
     title: string;
     intro: string;
     onBookmark?: (e: React.MouseEvent<HTMLElement>) => void;

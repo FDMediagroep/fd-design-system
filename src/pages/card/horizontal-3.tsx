@@ -78,7 +78,7 @@ function Page() {
                         <ul>
                             <li>default</li>
                             <li>with print title</li>
-                            <li>is read</li>
+                            <li>visited</li>
                         </ul>
                     </>
                 }
