@@ -7,6 +7,7 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
     id="1"
   >
     <a
+      aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
       <figure>
@@ -53,6 +54,7 @@ exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
     id="1"
   >
     <a
+      aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
       <figure>
