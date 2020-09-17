@@ -121,6 +121,7 @@
             outline-color: #{map-deep-get($colors, 'colors', 'primary', 100)};
         }
     }
+
     &:hover {
         outline-color: var(--button-ghost-hover-outline);
         // IE11

@@ -79,9 +79,9 @@
         }
     }
 
-    &:active,
     &:focus {
         outline: 1.5px solid var(--button-outline);
+        outline-offset: -1.5px;
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
@@ -92,6 +92,9 @@
                     75
                 )};
         }
+    }
+    &:active {
+        outline: none;
     }
 
     &:before {
