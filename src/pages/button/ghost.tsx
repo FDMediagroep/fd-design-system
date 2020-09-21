@@ -12,7 +12,7 @@ const metaTitle = 'Ghost Button';
 const metaDescription =
     'Ghost Button, used to interact with the content: comment, share and vote';
 
-function DefaultButton() {
+function Page() {
     return (
         <>
             <Head>
@@ -38,13 +38,25 @@ function DefaultButton() {
                 description={
                     <>
                         <p>
-                            Used to interact with the content: comment, share
-                            and vote.
+                            Tertiary call to actions. Used for optional actions.
                         </p>
-                        <p>
-                            Supportive: ghost button supports editorial content,
-                            but is not the most important item on the page.
-                        </p>
+                        <ul>
+                            <li>Can be used in multitude</li>
+                            <li>
+                                Can be applied in combination with main CTA
+                                button, to indicate an alternative action
+                            </li>
+                            <li>
+                                Example use
+                                <ul>
+                                    <li>Back or cancel actions</li>
+                                    <li>Contact customer support</li>
+                                    <li>Edit buttons</li>
+                                    <li>Cookie wall - manage settings</li>
+                                    <li>Filter search results</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </>
                 }
             >
@@ -80,13 +92,25 @@ function DefaultButton() {
                 description={
                     <>
                         <p>
-                            Used to interact with the content: comment, share
-                            and vote.
+                            Tertiary call to actions. Used for optional actions.
                         </p>
-                        <p>
-                            Supportive: ghost button supports editorial content,
-                            but is not the most important item on the page.
-                        </p>
+                        <ul>
+                            <li>Can be used in multitude</li>
+                            <li>
+                                Can be applied in combination with main CTA
+                                button, to indicate an alternative action
+                            </li>
+                            <li>
+                                Example use
+                                <ul>
+                                    <li>Back or cancel actions</li>
+                                    <li>Contact customer support</li>
+                                    <li>Edit buttons</li>
+                                    <li>Cookie wall - manage settings</li>
+                                    <li>Filter search results</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </>
                 }
             >
@@ -117,4 +141,4 @@ function DefaultButton() {
     );
 }
 
-export default DefaultButton;
+export default Page;
