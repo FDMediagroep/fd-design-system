@@ -75,10 +75,12 @@
     --radio-fill: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --radio-fill-checked: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --radio-hover: #{map-deep-get($colors, 'colors', 'primary', 25)};
-    --switch-knob: #{map-deep-get($colors, 'colors', 'neutral', 100)};
-    --switch-fill: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-    --switch-check-fill: #{map-deep-get($colors, 'colors', 'secondary', 25)};
-    --switch-active: #{map-deep-get($colors, 'colors', 'secondary', 50)};
+    --switch-knob: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+    --switch-fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --switch-check-fill: #{map-deep-get($colors, 'colors', 'primary', 25)};
+    --switch-active: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --switch-label-hover: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --switch-hover: #{map-deep-get($colors, 'colors', 'primary', 25)};
 
     /**
      * Links

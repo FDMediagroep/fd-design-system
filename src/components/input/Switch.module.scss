@@ -71,9 +71,48 @@
                 rgba(255, 255, 255, 0)
             );
             border-image-slice: 1;
-            background-color: #f1f1f1;
+            background-color: var(--switch-knob);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'primary',
+                        60
+                    )};
+            }
             left: 0;
             top: 0;
+        }
+    }
+
+    input:focus,
+    input:hover {
+        ~ .switchLabel {
+            color: var(--switch-label-hover);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+        }
+    }
+    input:hover {
+        ~ .switch {
+            &:before {
+                background-color: var(--switch-hover);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    background-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'primary',
+                            25
+                        )};
+                }
+            }
         }
     }
 
@@ -86,7 +125,7 @@
                 background-color: #{map-deep-get(
                         $colors,
                         'colors',
-                        'secondary',
+                        'primary',
                         25
                     )};
             }

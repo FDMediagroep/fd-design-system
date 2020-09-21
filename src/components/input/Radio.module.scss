@@ -49,7 +49,7 @@
                 border: 1px solid #{map-deep-get(
                         $colors,
                         'colors',
-                        'secondary',
+                        'primary',
                         75
                     )};
             }
@@ -135,7 +135,7 @@
                 background-color: #{map-deep-get(
                         $colors,
                         'colors',
-                        'secondary',
+                        'primary',
                         75
                     )};
             }
