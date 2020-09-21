@@ -140,12 +140,15 @@
         .meta .prefix,
         .readingTime,
         .printTitle,
-        .textContainer h1 {
-            color: var(--card-text-visited);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        .textContainer {
+            h1,
+            p {
+                color: var(--card-text-visited);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+                }
             }
         }
 
