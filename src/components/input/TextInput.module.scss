@@ -11,6 +11,7 @@
             sans-serif;
         width: 100%;
         input {
+            transition: border 0.15s linear;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
             padding: 1.4rem 1rem 0.6rem 1rem;
@@ -36,6 +37,15 @@
                     )};
             }
 
+            &::placeholder {
+                color: var(--input-placeholder);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+                }
+            }
+
             &[data-hide-number-spinners='true'] {
                 &::-webkit-outer-spin-button,
                 &::-webkit-inner-spin-button {
@@ -49,33 +59,6 @@
                 }
             }
 
-            &:disabled {
-                border: none;
-                color: var(--input-disabled);
-                background-color: var(--input-fill);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            100
-                        )};
-                }
-
-                & ~ div > label,
-                & ~ .inputMessage {
-                    color: var(--input-disabled);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-                    }
-                }
-            }
-
             &:hover {
                 border-color: var(--input-underline-hover);
                 // IE11
@@ -86,19 +69,6 @@
                             'colors',
                             'neutral',
                             40
-                        )};
-                }
-            }
-            &:valid {
-                border-color: var(--input-valid);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    border-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
                         )};
                 }
             }
@@ -123,6 +93,41 @@
                         )};
                 }
             }
+
+            &:disabled {
+                border-bottom-color: var(--input-underline-disabled);
+                color: var(--input-disabled);
+                background-color: var(--input-fill-disabled);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    background-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'neutral',
+                            90
+                        )};
+                }
+
+                & ~ div > label {
+                    color: var(--input-disabled);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    }
+                }
+                & ~ .inputMessage {
+                    color: var(--input-helper-text-disabled);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    }
+                }
+            }
+
             box-sizing: border-box;
             width: 100%;
             height: unset;
@@ -224,7 +229,7 @@
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'negative', 25)};
+                color: #{map-deep-get($colors, 'colors', 'negative', 75)};
             }
             max-height: 0;
             font-family: map-deep-get($typography, 'font-family', 'bold'),
@@ -255,11 +260,22 @@
         opacity: 1;
     }
     input:not([type='date']):not([type='month']):not([type='datetime']):required:not(:disabled):not(:valid):not(:placeholder-shown):not(:focus) {
-        border-color: var(--input-error);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border-color: #{map-deep-get($colors, 'colors', 'negative', 25)};
+        &:not(:hover) {
+            border-color: var(--input-error);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border-color: #{map-deep-get($colors, 'colors', 'negative', 75)};
+            }
+        }
+
+        ~ div > label {
+            color: var(--input-error);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'negative', 75)};
+            }
         }
     }
     input:required:not(:valid):not(:disabled):not(:placeholder-shown):not(:focus)

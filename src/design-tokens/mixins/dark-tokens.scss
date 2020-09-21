@@ -52,28 +52,44 @@
      * Inputs
      */
     --input-caret: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --input-placeholder: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --input-label: #{map-deep-get($colors, 'colors', 'neutral', 40)};
     --input-label-focus: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --input-color: #{map-deep-get($colors, 'colors', 'neutral', 20)};
     --input-underline: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-    --input-underline-hover: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --input-underline-disabled: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --input-underline-hover: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --input-underline-focus: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --input-valid: #{map-deep-get($colors, 'colors', 'primary', 50)};
-    --input-error: #{map-deep-get($colors, 'colors', 'negative', 25)};
+    --input-error: #{map-deep-get($colors, 'colors', 'negative', 50)};
     --input-fill: #{map-deep-get($colors, 'colors', 'neutral', 100)};
-    --input-helper-text: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-    --input-disabled: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-    --checkbox-fill: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-    --checkbox-check: #{map-deep-get($colors, 'colors', 'primary', 75)};
-    --checkbox-border: #{map-deep-get($colors, 'colors', 'secondary', 50)};
-    --checkbox-outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
-    --radio-check: #{map-deep-get($colors, 'colors', 'secondary', 75)};
-    --radio-border: #{map-deep-get($colors, 'colors', 'secondary', 50)};
-    --radio-fill: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-    --switch-knob: #{map-deep-get($colors, 'colors', 'neutral', 100)};
-    --switch-fill: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-    --switch-check-fill: #{map-deep-get($colors, 'colors', 'secondary', 25)};
-    --switch-active: #{map-deep-get($colors, 'colors', 'secondary', 50)};
+    --input-fill-disabled: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+    --input-helper-text: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+    --input-helper-text-disabled: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            40
+        )};
+    --input-disabled: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --checkbox-fill: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --checkbox-fill-checked: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --checkbox-check: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    --checkbox-border: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --checkbox-label-hover: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --checkbox-hover: #{map-deep-get($colors, 'colors', 'primary', 25)};
+    --radio-check: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    --radio-border: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --radio-label-hover: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --radio-fill: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --radio-fill-checked: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --radio-hover: #{map-deep-get($colors, 'colors', 'primary', 25)};
+    --switch-knob: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+    --switch-fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --switch-check-fill: #{map-deep-get($colors, 'colors', 'primary', 25)};
+    --switch-active: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --switch-label-hover: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --switch-hover: #{map-deep-get($colors, 'colors', 'primary', 25)};
 
     /**
      * Links
