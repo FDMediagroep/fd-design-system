@@ -115,7 +115,7 @@
         min-height: inherit;
     }
 
-    &.isRead {
+    &.isRead:not(:hover):not(:active) {
         .meta .prefix,
         .readingTime,
         .textContainer h1 {

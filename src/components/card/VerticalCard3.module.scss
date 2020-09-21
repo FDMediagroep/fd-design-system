@@ -145,11 +145,12 @@
     &[data-variant='variant-2'] {
         .prefix {
             padding: 1px 8px;
-            color: #ffeadb;
+            color: var(--card);
             background-color: var(--primary);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
                 background-color: #{map-deep-get(
                         $colors,
                         'colors',
@@ -171,11 +172,12 @@
         .prefix {
             font-size: 1rem;
             padding: 8px 16px;
-            color: #fff;
+            color: var(--card);
             background-color: var(--link-longread);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
                 background-color: #{map-deep-get(
                         $colors,
                         'colors',
@@ -229,7 +231,7 @@
         padding: 0 1rem 1rem 1rem;
     }
 
-    &.isRead {
+    &.isRead:not(:hover):not(:active):not(:focus) {
         figure img {
             filter: grayscale(1) sepia(0.15);
         }
@@ -248,15 +250,17 @@
         &[data-variant='variant-2'],
         &[data-variant='variant-3'] {
             .meta .prefix {
-                background-color: var(--card-text-visited);
+                color: var(--card-label-text-visited);
+                background-color: var(--card-label-visited);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
                     background-color: #{map-deep-get(
                             $colors,
                             'colors',
                             'neutral',
-                            30
+                            90
                         )};
                 }
             }

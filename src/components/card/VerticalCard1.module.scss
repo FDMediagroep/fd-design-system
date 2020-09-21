@@ -154,7 +154,7 @@
         padding: 0 1rem 1rem 1rem;
     }
 
-    &.isRead {
+    &.isRead:not(:hover):not(:active) {
         figure {
             filter: grayscale(1) sepia(0.15);
         }

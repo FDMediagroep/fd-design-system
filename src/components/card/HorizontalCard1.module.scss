@@ -266,7 +266,7 @@
         min-height: inherit;
     }
 
-    &.isRead {
+    &.isRead:not(:hover):not(:active) {
         figure {
             filter: grayscale(1) sepia(0.15);
         }
