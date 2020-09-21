@@ -4,6 +4,7 @@
 @import '../../design-tokens/typography.scss';
 
 .horizontalCard3 {
+    transition: box-shadow 0.15s linear;
     margin-bottom: 1px;
     justify-content: space-between;
     background-color: var(--card);
@@ -140,12 +141,15 @@
         .meta .prefix,
         .readingTime,
         .printTitle,
-        .textContainer h1 {
-            color: var(--card-text-visited);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+        .textContainer {
+            h1,
+            p {
+                color: var(--card-text-visited);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+                }
             }
         }
 

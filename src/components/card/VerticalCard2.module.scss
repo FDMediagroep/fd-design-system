@@ -4,6 +4,7 @@
 @import '../../design-tokens/typography.scss';
 
 .verticalCard2 {
+    transition: box-shadow 0.15s linear;
     box-sizing: border-box;
     flex-direction: column;
     display: flex;

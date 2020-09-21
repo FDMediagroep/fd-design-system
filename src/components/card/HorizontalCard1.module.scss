@@ -4,6 +4,7 @@
 @import '../../design-tokens/typography.scss';
 
 .horizontalCard1 {
+    transition: box-shadow 0.15s linear;
     margin-bottom: 1px;
     justify-content: space-between;
     padding: 0;
