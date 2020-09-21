@@ -113,7 +113,54 @@ function Page() {
                     label="E-mail"
                     errorMessage="Enter correct e-mail address"
                     pattern={Patterns.EMAIL}
-                    description="optional text area"
+                    description="mandatory text area"
+                    required={true}
+                />
+            </Explain>
+
+            <Explain
+                anchor="mandatory-description-error"
+                cssClassNames={getCssClassNames()}
+                previewFlexDirection="row"
+                legend="E-mail (mandatory, description, error)"
+                reactComponentName="TextInput"
+                description={
+                    <>
+                        <p>Can be used in forms.</p>
+                        <p>
+                            This is an example of a mandatory field with a
+                            description.
+                        </p>
+                        <p>
+                            When the value meets the requirement of the input
+                            field a green checkmark will be shown.
+                        </p>
+                        <p>
+                            When the entered value is not empty and invalid then
+                            an error message will be shown below the input.
+                            (Only supported browsers)
+                        </p>
+                        <p>
+                            For unsupported browsers the error message is shown
+                            upon pressing enter or when trying to submit the
+                            form.
+                        </p>
+                        <p>
+                            Only the HTML and CSS are necessary to create the
+                            input field along with all the interactions. No
+                            JavaScript required.
+                        </p>
+                    </>
+                }
+            >
+                <TextInput
+                    id="demoEmailInput3"
+                    type="email"
+                    label="E-mail"
+                    errorMessage="Enter correct e-mail address"
+                    pattern={Patterns.EMAIL}
+                    defaultValue="Wrong value"
+                    description="mandatory text area"
                     required={true}
                 />
             </Explain>

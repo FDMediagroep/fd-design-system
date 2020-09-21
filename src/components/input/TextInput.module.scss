@@ -36,6 +36,15 @@
                     )};
             }
 
+            &::placeholder {
+                color: var(--input-placeholder);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+                }
+            }
+
             &[data-hide-number-spinners='true'] {
                 &::-webkit-outer-spin-button,
                 &::-webkit-inner-spin-button {
@@ -46,33 +55,6 @@
                 /* Firefox */
                 &[type='number'] {
                     -moz-appearance: textfield;
-                }
-            }
-
-            &:disabled {
-                border: none;
-                color: var(--input-disabled);
-                background-color: var(--input-fill);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            100
-                        )};
-                }
-
-                & ~ div > label,
-                & ~ .inputMessage {
-                    color: var(--input-disabled);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-                    }
                 }
             }
 
@@ -123,6 +105,34 @@
                         )};
                 }
             }
+
+            &:disabled {
+                border-bottom-color: var(--input-underline-disabled);
+                color: var(--input-disabled);
+                background-color: var(--input-fill-disabled);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    background-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'neutral',
+                            90
+                        )};
+                }
+
+                & ~ div > label,
+                & ~ .inputMessage {
+                    color: var(--input-disabled);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    }
+                }
+            }
+
             box-sizing: border-box;
             width: 100%;
             height: unset;
@@ -224,7 +234,7 @@
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'negative', 25)};
+                color: #{map-deep-get($colors, 'colors', 'negative', 75)};
             }
             max-height: 0;
             font-family: map-deep-get($typography, 'font-family', 'bold'),
@@ -259,7 +269,16 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            border-color: #{map-deep-get($colors, 'colors', 'negative', 25)};
+            border-color: #{map-deep-get($colors, 'colors', 'negative', 75)};
+        }
+
+        ~ div > label {
+            color: var(--input-error);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'negative', 75)};
+            }
         }
     }
     input:required:not(:valid):not(:disabled):not(:placeholder-shown):not(:focus)

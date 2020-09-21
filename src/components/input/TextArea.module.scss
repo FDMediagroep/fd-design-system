@@ -10,112 +10,7 @@
         font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;
         width: 100%;
-        textarea {
-            font-family: map-deep-get($typography, 'font-family', 'regular'),
-                sans-serif;
-            padding: 1.4rem 1rem 0.6rem 1rem;
-            font-size: 1rem;
-            vertical-align: bottom;
-            border: none;
-            border-radius: 0;
-            border-bottom: 2px solid var(--input-underline);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-bottom: 2px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        50
-                    )};
-            }
 
-            &:disabled {
-                border: none;
-                color: var(--input-disabled);
-                background-color: var(--input-fill);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            100
-                        )};
-                }
-
-                & ~ div > label,
-                & ~ .textareaMessage {
-                    color: var(--input-disabled);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-                    }
-                }
-            }
-
-            &:hover {
-                border-color: var(--input-underline-hover);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    border-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            40
-                        )};
-                }
-            }
-            &:valid {
-                border-color: var(--input-valid);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    border-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
-                        )};
-                }
-            }
-            &:focus {
-                border: none;
-                caret-color: var(--input-caret);
-                border-bottom: 2px solid var(--input-underline-focus);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    caret-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
-                        )};
-                    border-bottom: 2px solid #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
-                        )};
-                }
-            }
-            box-sizing: border-box;
-            width: 100%;
-            height: unset;
-            outline: none;
-            margin: unset;
-            color: var(--input-color);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            }
-        }
         label {
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
@@ -181,6 +76,139 @@
                 color: #{map-deep-get($colors, 'colors', 'primary', 75)};
             }
         }
+
+        textarea {
+            font-family: map-deep-get($typography, 'font-family', 'regular'),
+                sans-serif;
+            padding: 1.4rem 1rem 0.6rem 1rem;
+            font-size: 1rem;
+            vertical-align: bottom;
+            border: none;
+            border-radius: 0;
+            border-bottom: 2px solid var(--input-underline);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border-bottom: 2px solid #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        50
+                    )};
+            }
+
+            &::placeholder {
+                color: var(--input-placeholder);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+                }
+            }
+
+            &:hover {
+                border-color: var(--input-underline-hover);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    border-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'neutral',
+                            40
+                        )};
+                }
+            }
+            &:valid {
+                border-color: var(--input-valid);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    border-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'primary',
+                            75
+                        )};
+                }
+            }
+            &:focus {
+                border: none;
+                caret-color: var(--input-caret);
+                border-bottom: 2px solid var(--input-underline-focus);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    caret-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'primary',
+                            75
+                        )};
+                    border-bottom: 2px solid #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'primary',
+                            75
+                        )};
+                }
+            }
+
+            &:disabled {
+                border-bottom-color: var(--input-underline-disabled);
+                color: var(--input-disabled);
+                background-color: var(--input-fill-disabled);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    background-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'neutral',
+                            90
+                        )};
+                }
+
+                & ~ div > label {
+                    background-color: var(--input-fill-disabled);
+                    color: var(--input-disabled);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                        background-color: #{map-deep-get(
+                                $colors,
+                                'colors',
+                                'neutral',
+                                90
+                            )};
+                    }
+                }
+
+                & ~ .textareaMessage {
+                    color: var(--input-disabled);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    }
+                }
+            }
+
+            box-sizing: border-box;
+            width: 100%;
+            height: unset;
+            outline: none;
+            margin: unset;
+            color: var(--input-color);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+            }
+        }
+
         .textareaMessage {
             transition: all 0.3s ease-out;
             font-size: 0.75rem;
@@ -242,7 +270,16 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'negative', 25)};
+            color: #{map-deep-get($colors, 'colors', 'negative', 75)};
+        }
+
+        ~ label {
+            color: var(--input-error);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'negative', 75)};
+            }
         }
     }
     textarea[data-show-error='true'] ~ .errorMessage:not(:empty),
@@ -251,6 +288,33 @@
         max-height: 5rem;
         opacity: 1;
         margin: 0.5rem 1rem;
+    }
+    &#{&} {
+        textarea[data-show-error='true']:not(:focus) {
+            border-bottom-color: var(--input-error);
+            ~ div label {
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    border-bottom-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'negative',
+                            75
+                        )};
+                }
+            }
+        }
+    }
+    textarea[data-show-error='true'] {
+        ~ div label {
+            color: var(--input-error);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'negative', 75)};
+            }
+        }
     }
     textarea:required:not(:valid):not(:disabled):not(:-ms-input-placeholder):not(:focus)
         ~ .errorMessage:not(:empty) {
