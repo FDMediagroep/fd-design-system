@@ -78,6 +78,7 @@
         }
 
         textarea {
+            transition: border 0.15s linear;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
             padding: 1.4rem 1rem 0.6rem 1rem;
@@ -116,19 +117,6 @@
                             'colors',
                             'neutral',
                             40
-                        )};
-                }
-            }
-            &:valid {
-                border-color: var(--input-valid);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    border-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
                         )};
                 }
             }
