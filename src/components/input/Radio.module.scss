@@ -77,9 +77,10 @@
             border-radius: 50%;
         }
     }
+    input:focus ~ .radio,
     input:hover ~ .radio {
         &:before {
-            border-color: var(--radio-border-hover);
+            border-color: var(--radio-border);
             background-color: var(--radio-hover);
             // IE11
             @media screen and (-ms-high-contrast: active),
@@ -93,10 +94,16 @@
                     )};
             }
         }
+        color: var(--radio-label-hover);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+        }
     }
     input:focus ~ .radio {
         &:before {
-            color: var(--radio-border-hover);
+            color: var(--radio-hover);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -105,20 +112,6 @@
         }
     }
 
-    &:hover,
-    &:focus,
-    input:focus,
-    input:hover {
-        .radio,
-        & ~ .radio {
-            color: var(--radio-label-hover);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
-        }
-    }
     input:checked ~ .radio {
         &:before {
             background-color: var(--radio-fill-checked);

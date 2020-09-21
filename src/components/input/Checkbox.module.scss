@@ -6,21 +6,6 @@
     input {
         opacity: 0;
         position: absolute;
-        &:hover ~ .checkbox:before,
-        &:focus ~ .checkbox:before {
-            outline: 1.5px solid var(--checkbox-outline);
-            outline-offset: -1.5px;
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                outline: 1.5px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'primary',
-                        75
-                    )};
-            }
-        }
     }
     .checkbox {
         user-select: none;
@@ -49,11 +34,11 @@
             top: 0.25rem;
             width: 1rem;
             height: 1rem;
-            border: 1px solid var(--checkbox-border);
+            border: 1.5px solid var(--checkbox-border);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                border: 1px solid #{map-deep-get(
+                border: 1.5px solid #{map-deep-get(
                         $colors,
                         'colors',
                         'secondary',
@@ -61,7 +46,6 @@
                     )};
             }
 
-            border-radius: 2px;
             transition: border-color 0.3s;
             background-color: var(--checkbox-fill);
             // IE11
@@ -90,14 +74,14 @@
                 border-left: 1.5px solid #{map-deep-get(
                         $colors,
                         'colors',
-                        'primary',
-                        75
+                        'neutral',
+                        100
                     )};
                 border-bottom: 1.5px solid #{map-deep-get(
                         $colors,
                         'colors',
-                        'primary',
-                        75
+                        'neutral',
+                        100
                     )};
             }
             opacity: 0;
@@ -105,17 +89,44 @@
             transform: rotate(-48deg);
         }
     }
+
+    input:hover,
+    input:focus {
+        ~ .checkbox {
+            &:before {
+                background-color: var(--checkbox-hover);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    background-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'primary',
+                            25
+                        )};
+                }
+            }
+
+            color: var(--checkbox-label-hover);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+        }
+    }
+
     input:checked ~ .checkbox {
         &:before {
-            background-color: var(--checkbox-fill);
+            background-color: var(--checkbox-fill-checked);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
                 background-color: #{map-deep-get(
                         $colors,
                         'colors',
-                        'neutral',
-                        100
+                        'primary',
+                        75
                     )};
             }
         }
