@@ -9,7 +9,7 @@ const metaTitle = 'Button call-to-action';
 const metaDescription =
     'Button call-to-action, used for e-mails, registration, subscription or sign-up-flows, log-in, banners and other non-editorial elements';
 
-function CTA() {
+function Page() {
     return (
         <>
             <Head>
@@ -35,14 +35,33 @@ function CTA() {
                 description={
                     <>
                         <p>
-                            Use for emails, registration, subscription or
-                            sign-up-flows, log-in, banners and all other
-                            FD-elements that are not editorial.
+                            Most important call to action within the user
+                            interface.
                         </p>
-                        <p>
-                            Call to action: Button is most import element on the
-                            page.
-                        </p>
+                        <ul>
+                            <li>
+                                Can be applied to indicate the only next step in
+                                a process
+                            </li>
+                            <li>
+                                Can be applied to persuade the user to buy
+                                something
+                            </li>
+                            <li>
+                                The use should be limited to only one instance
+                                of this button per viewport, or more in the case
+                                of similar actions
+                            </li>
+                            <li>
+                                Example uses
+                                <ul>
+                                    <li>Call to register</li>
+                                    <li>Login actions</li>
+                                    <li>Confirmation actions in flows</li>
+                                    <li>Cookiewall - accept cookies</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </>
                 }
             >
@@ -74,14 +93,33 @@ function CTA() {
                 description={
                     <>
                         <p>
-                            Use for emails, registration, subscription or
-                            sign-up-flows, log-in, banners and all other
-                            FD-elements that are not editorial.
+                            Most important call to action within the user
+                            interface.
                         </p>
-                        <p>
-                            Call to action: Button is most import element on the
-                            page.
-                        </p>
+                        <ul>
+                            <li>
+                                Can be applied to indicate the only next step in
+                                a process
+                            </li>
+                            <li>
+                                Can be applied to persuade the user to buy
+                                something
+                            </li>
+                            <li>
+                                The use should be limited to only one instance
+                                of this button per viewport, or more in the case
+                                of similar actions
+                            </li>
+                            <li>
+                                Example uses
+                                <ul>
+                                    <li>Call to register</li>
+                                    <li>Login actions</li>
+                                    <li>Confirmation actions in flows</li>
+                                    <li>Cookiewall - accept cookies</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </>
                 }
             >
@@ -111,4 +149,4 @@ function CTA() {
     );
 }
 
-export default CTA;
+export default Page;

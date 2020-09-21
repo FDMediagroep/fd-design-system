@@ -11,8 +11,6 @@ import {
     initializeDesignTokensTooltip,
     clearDesignTokensTooltips,
 } from '../utils/designTokensTooltip';
-import { Tooltip } from './Tooltip';
-import ReactDOM from 'react-dom';
 
 declare let window: Window | any;
 declare let cssbeautify: (css: string) => string;

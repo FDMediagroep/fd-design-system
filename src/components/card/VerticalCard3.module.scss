@@ -145,11 +145,12 @@
     &[data-variant='variant-2'] {
         .prefix {
             padding: 1px 8px;
-            color: #ffeadb;
+            color: var(--card);
             background-color: var(--primary);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
                 background-color: #{map-deep-get(
                         $colors,
                         'colors',
@@ -171,11 +172,12 @@
         .prefix {
             font-size: 1rem;
             padding: 8px 16px;
-            color: #fff;
+            color: var(--card);
             background-color: var(--link-longread);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
                 background-color: #{map-deep-get(
                         $colors,
                         'colors',
@@ -229,30 +231,8 @@
         padding: 0 1rem 1rem 1rem;
     }
 
-    &:active,
-    &:focus,
-    &:hover {
-        background-color: var(--card-hover);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-        }
-        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
-        z-index: 1;
-    }
-    &:active {
-        box-shadow: inset 0 0 0 2px var(--card-box-shadow-active);
-        background-color: var(--card-active);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-        }
-    }
-
-    &.isRead {
-        figure {
+    &.isRead:not(:hover):not(:active):not(:focus) {
+        figure img {
             filter: grayscale(1) sepia(0.15);
         }
         &:not([data-variant]) .meta .prefix,
@@ -270,15 +250,17 @@
         &[data-variant='variant-2'],
         &[data-variant='variant-3'] {
             .meta .prefix {
-                background-color: var(--card-text-visited);
+                color: var(--card-label-text-visited);
+                background-color: var(--card-label-visited);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
                     background-color: #{map-deep-get(
                             $colors,
                             'colors',
                             'neutral',
-                            30
+                            90
                         )};
                 }
             }
@@ -289,6 +271,29 @@
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 70)};
+        }
+    }
+
+    &:focus:not(:active),
+    &:hover:not(:active) {
+        box-shadow: var(--card-box-shadow);
+        background-color: var(--card-hover);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+        }
+        z-index: 1;
+    }
+    &:active {
+        z-index: 1;
+        outline: 2px solid var(--card-outline-active);
+        background-color: var(--card-active);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
         }
     }
 }

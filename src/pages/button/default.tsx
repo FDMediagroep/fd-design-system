@@ -5,11 +5,11 @@ import Head from 'next/head';
 import { EnvelopeIcon } from '../../design-tokens/icons';
 import styles from './buttons.module.scss';
 
-const metaTitle = 'Button';
+const metaTitle = 'Neutral Button';
 const metaDescription =
-    'Button, used to interact with the content: comment, share and vote';
+    'Neutral button, used to interact with the content: comment, share and vote';
 
-function DefaultButton() {
+function Page() {
     return (
         <>
             <Head>
@@ -30,18 +30,18 @@ function DefaultButton() {
                 previewClassName={styles.buttons}
                 anchor="default"
                 cssClassNames={getCssClassNames()}
-                legend="Button (default)"
+                legend="Button Neutral (default)"
                 reactComponentName="Button"
                 description={
                     <>
                         <p>
-                            Used to interact with the content: comment, share
-                            and vote.
+                            Used for secondary or regular non-mandatory actions.
                         </p>
-                        <p>
-                            Supportive: button supports editorial content, but
-                            is not the most important item on the page.
-                        </p>
+                        <p>Example use:</p>
+                        <ul>
+                            <li>Save actions on form edits</li>
+                            <li>Close modal window</li>
+                        </ul>
                     </>
                 }
             >
@@ -67,18 +67,18 @@ function DefaultButton() {
                 previewClassName={styles.buttons}
                 anchor="m"
                 cssClassNames={getCssClassNames()}
-                legend="Button (M)"
+                legend="Button Neutral (M)"
                 reactComponentName="Button"
                 description={
                     <>
                         <p>
-                            Used to interact with the content: comment, share
-                            and vote.
+                            Used for secondary or regular non-mandatory actions.
                         </p>
-                        <p>
-                            Supportive: button supports editorial content, but
-                            is not the most important item on the page.
-                        </p>
+                        <p>Example use:</p>
+                        <ul>
+                            <li>Save actions on form edits</li>
+                            <li>Close modal window</li>
+                        </ul>
                     </>
                 }
             >
@@ -109,4 +109,4 @@ function DefaultButton() {
     );
 }
 
-export default DefaultButton;
+export default Page;
