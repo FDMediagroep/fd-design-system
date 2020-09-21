@@ -55,7 +55,7 @@
             }
 
             transition: border-color 0.3s;
-            background-color: var(--checkbox-fill);
+            background-color: var(--radio-fill);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -77,9 +77,41 @@
             border-radius: 50%;
         }
     }
+    input:hover ~ .radio {
+        &:before {
+            border-color: var(--radio-border-hover);
+            background-color: var(--radio-hover);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'primary',
+                        25
+                    )};
+            }
+        }
+    }
     input:focus ~ .radio {
         &:before {
-            border-color: var(--primary);
+            color: var(--radio-border-hover);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+        }
+    }
+
+    &:hover,
+    &:focus,
+    input:focus,
+    input:hover {
+        .radio,
+        & ~ .radio {
+            color: var(--radio-label-hover);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -88,6 +120,19 @@
         }
     }
     input:checked ~ .radio {
+        &:before {
+            background-color: var(--radio-fill-checked);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'primary',
+                        75
+                    )};
+            }
+        }
         &:after {
             opacity: 1;
             background-color: var(--radio-check);
@@ -103,10 +148,10 @@
             }
 
             border: none;
-            width: 10px;
-            height: 10px;
-            left: 3px;
-            top: 7px;
+            width: 8px;
+            height: 8px;
+            left: 4px;
+            top: 8px;
         }
     }
 }

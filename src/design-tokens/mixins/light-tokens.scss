@@ -67,9 +67,13 @@
     --checkbox-check: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --checkbox-border: #{map-deep-get($colors, 'colors', 'secondary', 75)};
     --checkbox-outline: #{map-deep-get($colors, 'colors', 'primary', 75)};
-    --radio-check: #{map-deep-get($colors, 'colors', 'secondary', 75)};
-    --radio-border: #{map-deep-get($colors, 'colors', 'secondary', 75)};
+    --radio-check: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    --radio-border: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --radio-border-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --radio-label-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --radio-fill: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    --radio-fill-checked: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --radio-hover: #{map-deep-get($colors, 'colors', 'primary', 25)};
     --switch-knob: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     --switch-fill: #{map-deep-get($colors, 'colors', 'neutral', 60)};
     --switch-check-fill: #{map-deep-get($colors, 'colors', 'secondary', 25)};
