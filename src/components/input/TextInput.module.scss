@@ -122,9 +122,16 @@
                         )};
                 }
 
-                & ~ div > label,
-                & ~ .inputMessage {
+                & ~ div > label {
                     color: var(--input-disabled);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    }
+                }
+                & ~ .inputMessage {
+                    color: var(--input-helper-text-disabled);
                     // IE11
                     @media screen and (-ms-high-contrast: active),
                         (-ms-high-contrast: none) {

@@ -58,13 +58,19 @@
     --input-color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     --input-underline: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --input-underline-disabled: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-    --input-underline-hover: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --input-underline-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --input-underline-focus: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --input-valid: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --input-error: #{map-deep-get($colors, 'colors', 'negative', 75)};
     --input-fill: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     --input-fill-disabled: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --input-helper-text: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --input-helper-text-disabled: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            50
+        )};
     --input-disabled: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --checkbox-fill: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     --checkbox-fill-checked: #{map-deep-get($colors, 'colors', 'primary', 75)};

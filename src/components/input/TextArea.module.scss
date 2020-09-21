@@ -187,11 +187,11 @@
                 }
 
                 & ~ .textareaMessage {
-                    color: var(--input-disabled);
+                    color: var(--input-helper-text-disabled);
                     // IE11
                     @media screen and (-ms-high-contrast: active),
                         (-ms-high-contrast: none) {
-                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                        color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
                     }
                 }
             }
@@ -290,7 +290,7 @@
         margin: 0.5rem 1rem;
     }
     &#{&} {
-        textarea[data-show-error='true']:not(:focus) {
+        textarea[data-show-error='true']:not(:focus):not(:hover) {
             border-bottom-color: var(--input-error);
             ~ div label {
                 // IE11
