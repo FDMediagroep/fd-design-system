@@ -1,7 +1,15 @@
 const withOffline = require('next-offline');
 const rewriteConfig = require('./rewrites');
 
+const serverless = {};
+
+if (process.env.SERVERLESS) {
+    console.log('Serverless target');
+    serverless.target = 'serverless';
+}
+
 module.exports = withOffline({
+    ...serverless,
     generateInDevMode: false,
     workboxOpts: {
         cleanupOutdatedCaches: true,
