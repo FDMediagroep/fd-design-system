@@ -22,6 +22,7 @@
     color: var(--button-cta-text);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        display: inline-flex;
         opacity: 1; // Remove this line for fd.nl
         color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     }
