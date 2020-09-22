@@ -4,6 +4,7 @@
 .vscode
 analyzer
 dist*
+docs
 out/
 js-coverage
 node_modules

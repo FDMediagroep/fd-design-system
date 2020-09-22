@@ -22,6 +22,7 @@
         "json-to-scss": "json-to-scss public/assets/design-tokens/* src/design-tokens",
         "test": "jest --passWithNoTests",
         "test:updateSnapshots": "jest -u --passWithNoTests",
+        "typedoc": "npx typedoc",
         "webpack:prod": "npx cross-env NODE_ENV=production webpack --mode=production",
         "webpack-bundle-analyzer:npm": "npx cross-env WEBPACK_BUNDLE_ANALYZER=true npm run webpack:prod",
         "webpack-bundle-analyzer:next": "npx cross-env WEBPACK_BUNDLE_ANALYZER=true next build"
@@ -77,6 +78,7 @@
         "svgo-loader": "^2.2.1",
         "ts-jest": "^25.5.1",
         "ts-loader": "^8.0.4",
+        "typedoc": "^0.19.2",
         "typescript": "^3.9.7",
         "webpack": "^4.44.2",
         "webpack-bundle-analyzer": "^3.9.0",

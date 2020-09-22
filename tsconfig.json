@@ -15,6 +15,10 @@
         "isolatedModules": true,
         "jsx": "preserve"
     },
-    "exclude": ["./node_modules", "./dist.d.ts", "./dist"],
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+    "exclude": ["./node_modules", "./__tests__", "./dist.d.ts", "./dist"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "typedocOptions": {
+        "mode": "modules",
+        "out": "docs"
+    }
 }
