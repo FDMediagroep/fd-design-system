@@ -16,6 +16,7 @@
         "build": "npx next build",
         "build:ci": "npm run build && npm run build:npm",
         "build:npm": "npm run webpack:prod && npm run copy:dts",
+        "build:sls": "npx cross-env SERVERLESS=true next build",
         "copy:dts": "npx cpx -v \"./dist.d.ts/src/**/*.d.ts\" \"./dist\"",
         "dev": "next dev",
         "json-to-scss": "json-to-scss public/assets/design-tokens/* src/design-tokens",
@@ -23,7 +24,7 @@
         "test:updateSnapshots": "jest -u --passWithNoTests",
         "webpack:prod": "npx cross-env NODE_ENV=production webpack --mode=production",
         "webpack-bundle-analyzer:npm": "npx cross-env WEBPACK_BUNDLE_ANALYZER=true npm run webpack:prod",
-        "webpack-bundle-analyzer:next": "npx cross-env WEBPACK_BUNDLE_ANALYZER=true NOW_SERVERLESS=false next build"
+        "webpack-bundle-analyzer:next": "npx cross-env WEBPACK_BUNDLE_ANALYZER=true next build"
     },
     "author": "Willem Liu",
     "license": "ISC",
