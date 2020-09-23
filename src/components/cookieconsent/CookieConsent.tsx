@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styles from './CookieConsent.module.scss';
 import {
     Button,
@@ -17,10 +17,19 @@ import {
     LockedContent,
     getCssClassNames as getLockedContentCssClassNames,
 } from './LockedContent';
-import { Accordion } from '../accordion/Accordion';
-import Checkbox from '../input/Checkbox';
-
+import {
+    Accordion,
+    getCssClassNames as getAccordionCssClassNames,
+} from '../accordion/Accordion';
+import {
+    Checkbox,
+    getCssClassNames as getCheckboxCssClassNames,
+} from '../input/Checkbox';
 import { ResponderApi } from './ResponderApi';
+import {
+    ButtonGhost,
+    getCssClassNames as getButtonGhostCssClassNames,
+} from '../button/ButtonGhost';
 
 interface Props {
     acceptAllLabel?: string;
@@ -242,9 +251,9 @@ function CookieConsent(props: Props) {
                 <Button onClick={handleClose} className={styles.button}>
                     {props.closeLabel ?? 'Close'}
                 </Button>
-                <Button onClick={handleDenyAll} className={styles.button}>
+                <ButtonGhost onClick={handleDenyAll} className={styles.button}>
                     {props.denyAllLabel ?? 'Deny all'}
-                </Button>
+                </ButtonGhost>
                 <ButtonCta onClick={handleAcceptAll} className={styles.button}>
                     {props.acceptAllLabel ?? 'Accept all'}
                 </ButtonCta>
@@ -258,8 +267,11 @@ function getCssClassNames() {
         styles.fdCookieConsent,
         ...getLockedContentCssClassNames(),
         ...getModalCssClassNames(),
+        ...getAccordionCssClassNames(),
         ...getButtonCssClassNames(),
         ...getButtonCtaCssClassNames(),
+        ...getButtonGhostCssClassNames(),
+        ...getCheckboxCssClassNames(),
     ];
 }
 
