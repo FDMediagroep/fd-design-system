@@ -292,6 +292,7 @@
     }
 
     .iconCheck {
+        pointer-events: none;
         font-size: 0.75rem;
         transition: 0.1s all ease-out;
         opacity: 0;
