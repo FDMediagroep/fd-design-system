@@ -944,6 +944,43 @@ function Foo() {
 </details>
 
 <details>
+<summary>Select</summary>
+
+[Demo](https://design-system.fd.nl/input/select)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/input/Select.css";
+```
+
+```
+import { Select } from "@fdmg/design-system/components/input/Select";
+
+function Foo() {
+    return (
+        <Select
+            id="demoSelect"
+            label="Aanhef"
+            errorMessage="Kies uw aanhef"
+            required={true}
+            description="Disabled select field"
+        >
+            <option value="">-- aanhef --</option>
+            <option value="dhr">Dhr.</option>
+            <option value="mevr">Mevr.</option>
+            <option value="mw">Mw.</option>
+            <option value="drs">Drs.</option>
+            <option value="Prof">Prof.</option>
+        </Select>
+    );
+}
+```
+
+</details>
+
+<details>
 <summary>Switch</summary>
 
 [Demo](https://design-system.fd.nl/input/switch)

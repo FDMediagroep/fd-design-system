@@ -2,19 +2,23 @@
 @import '../../design-tokens/colors.scss';
 @import '../../design-tokens/typography.scss';
 
-.fdInput {
+.fdSelect {
     display: inline-block;
-    .input {
+    .select {
         position: relative;
         float: left;
         font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;
         width: 100%;
-        input {
+        select {
+            &::-ms-expand {
+                display: none;
+            }
+            appearance: none;
             transition: border 0.15s linear;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
-            padding: 1.4rem 1rem 0.6rem 1rem;
+            padding: 1.4rem 3rem 0.6rem 1rem;
             font-size: 1rem;
             vertical-align: bottom;
             border: none;
@@ -25,7 +29,7 @@
                 -webkit-appearance: none;
                 min-width: 175px;
             }
-            border-bottom: 2px solid var(--input-underline);
+            border-bottom: 2px solid var(--select-underline);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -38,7 +42,7 @@
             }
 
             &::placeholder {
-                color: var(--input-placeholder);
+                color: var(--select-placeholder);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
@@ -60,7 +64,7 @@
             }
 
             &:hover {
-                border-color: var(--input-underline-hover);
+                border-color: var(--select-underline-hover);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
@@ -74,17 +78,10 @@
             }
             &:focus {
                 border: none;
-                caret-color: var(--input-caret);
-                border-bottom: 2px solid var(--input-underline-focus);
+                border-bottom: 2px solid var(--select-underline-focus);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
-                    caret-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
-                        )};
                     border-bottom: 2px solid #{map-deep-get(
                             $colors,
                             'colors',
@@ -95,9 +92,10 @@
             }
 
             &:disabled {
-                border-bottom-color: var(--input-underline-disabled);
-                color: var(--input-disabled);
-                background-color: var(--input-fill-disabled);
+                opacity: 1;
+                border-bottom-color: var(--select-underline-disabled);
+                color: var(--select-disabled);
+                background-color: var(--select-fill-disabled);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
@@ -111,15 +109,16 @@
                 }
 
                 & ~ div > label {
-                    color: var(--input-disabled);
+                    color: var(--select-disabled);
                     // IE11
                     @media screen and (-ms-high-contrast: active),
                         (-ms-high-contrast: none) {
                         color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
                     }
                 }
-                & ~ .inputMessage {
-                    color: var(--input-helper-text-disabled);
+
+                & ~ .selectMessage {
+                    color: var(--select-helper-text-disabled);
                     // IE11
                     @media screen and (-ms-high-contrast: active),
                         (-ms-high-contrast: none) {
@@ -133,13 +132,14 @@
             height: unset;
             outline: none;
             margin: unset;
-            color: var(--input-color);
+            color: var(--select-color);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
                 color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
             }
         }
+
         label {
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
@@ -149,7 +149,8 @@
             line-height: 1;
             padding: 0;
             transition: all 0.1s ease-out;
-            color: var(--input-label);
+            pointer-events: none;
+            color: var(--select-label);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -165,49 +166,49 @@
             cursor: text;
         }
         @supports (-ms-ime-align: auto) {
-            input ~ label {
+            select ~ label {
                 font-size: 0.75rem;
                 top: 0.5rem;
             }
         }
-        input:not([type='month']):not([type='date']):not([type='datetime']):not([placeholder=' '])
+        select:not([type='month']):not([type='date']):not([type='datetime']):not([placeholder=' '])
             ~ div
             > label {
             font-size: 0.75rem;
             top: 0.5rem;
             right: 2rem;
         }
-        input:not(:placeholder-shown) ~ div > label {
+        select:not(:placeholder-shown) ~ div > label {
             font-size: 0.75rem;
             top: 0.5rem;
             right: 2rem;
         }
-        input:not(:-ms-input-placeholder) ~ div > label,
-        input:-ms-input-placeholder:not([placeholder=' ']) ~ div > label {
+        select:not(:-ms-input-placeholder) ~ div > label,
+        select:-ms-input-placeholder:not([placeholder=' ']) ~ div > label {
             font-size: 0.75rem;
             top: 0.5rem;
             right: 2rem;
         }
-        input[type='month'] ~ div > label,
-        input[type='date'] ~ div > label,
-        input[type='datetime'] ~ div > label,
-        input:focus ~ div > label {
+        select[type='month'] ~ div > label,
+        select[type='date'] ~ div > label,
+        select[type='datetime'] ~ div > label,
+        select:focus ~ div > label {
             font-size: 0.75rem;
             top: 0.5rem;
             right: 2rem;
         }
-        input:focus ~ div > label {
-            color: var(--input-label-focus);
+        select:focus ~ div > label {
+            color: var(--select-label-focus);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
                 color: #{map-deep-get($colors, 'colors', 'primary', 75)};
             }
         }
-        .inputMessage {
+        .selectMessage {
             transition: all 0.3s ease-out;
             font-size: 0.75rem;
-            color: var(--input-helper-text);
+            color: var(--select-helper-text);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -225,7 +226,7 @@
         }
         .errorMessage {
             opacity: 0;
-            color: var(--input-error);
+            color: var(--select-error);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -236,32 +237,67 @@
                 sans-serif;
         }
     }
+
+    &#{&} {
+        &#{&} {
+            .arrow {
+                position: absolute;
+                top: 25px;
+                left: auto;
+                right: 14px;
+                cursor: auto;
+                pointer-events: none;
+                svg {
+                    width: 1rem;
+                    height: 1rem;
+                    fill: var(--select-label);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+                    }
+                }
+            }
+
+            select:disabled {
+                & ~ div > .arrow svg {
+                    fill: var(--select-disabled);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        fill: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    }
+                }
+            }
+        }
+    }
+
     /**
      * input validation styles
      */
-    input:not(:required):focus ~ div > label ~ .iconCheck,
-    input:required:valid ~ div > label ~ .iconCheck,
-    input:not(:required):valid:not([placeholder=' '])
+    select:not(:required):focus ~ div > label ~ .iconCheck,
+    select:required:valid ~ div > label ~ .iconCheck,
+    select:not(:required):valid:not([placeholder=' '])
         ~ div
         > label
         ~ .iconCheck {
         opacity: 1;
     }
-    input:not(:required):not(:placeholder-shown):valid
+    select:not(:required):not(:placeholder-shown):valid
         ~ div
         > label
         ~ .iconCheck {
         opacity: 1;
     }
-    input:not(:required):not(:-ms-input-placeholder):valid
+    select:not(:required):not(:-ms-input-placeholder):valid
         ~ div
         > label
         ~ .iconCheck {
         opacity: 1;
     }
-    input:not([type='date']):not([type='month']):not([type='datetime']):required:not(:disabled):not(:valid):not(:placeholder-shown):not(:focus) {
+    select:not([type='date']):not([type='month']):not([type='datetime']):required:not(:disabled):not(:valid):not(:placeholder-shown):not(:focus) {
         &:not(:hover) {
-            border-color: var(--input-error);
+            border-color: var(--select-error);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -270,7 +306,7 @@
         }
 
         ~ div > label {
-            color: var(--input-error);
+            color: var(--select-error);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -278,13 +314,13 @@
             }
         }
     }
-    input:required:not(:valid):not(:disabled):not(:placeholder-shown):not(:focus)
+    select:required:not(:valid):not(:disabled):not(:placeholder-shown):not(:focus)
         ~ .errorMessage:not(:empty) {
         max-height: 5rem;
         opacity: 1;
         margin: 0.5rem 1rem;
     }
-    input:required:not(:valid):not(:disabled):not(:-ms-input-placeholder):not(:focus)
+    select:required:not(:valid):not(:disabled):not(:-ms-input-placeholder):not(:focus)
         ~ .errorMessage:not(:empty) {
         max-height: 5rem;
         opacity: 1;
@@ -300,7 +336,7 @@
         top: 0.5rem;
         right: 1rem;
         svg {
-            fill: var(--input-valid);
+            fill: var(--select-valid);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
