@@ -11,7 +11,7 @@
             sans-serif;
         width: 100%;
         select {
-            ::-ms-expand {
+            &::-ms-expand {
                 display: none;
             }
             appearance: none;
