@@ -174,6 +174,7 @@ module.exports = {
         ],
         '/components/input/Checkbox': ['./src/components/input/Checkbox.tsx'],
         '/components/input/Radio': ['./src/components/input/Radio.tsx'],
+        '/components/input/Select': ['./src/components/input/Select.tsx'],
         '/components/input/Switch': ['./src/components/input/Switch.tsx'],
         '/components/input/TextArea': ['./src/components/input/TextArea.tsx'],
         '/components/input/TextInput': ['./src/components/input/TextInput.tsx'],

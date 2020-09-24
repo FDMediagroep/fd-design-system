@@ -131,6 +131,9 @@ function Menu(props: Props) {
                 <Link href="/input/radio">
                     <a>Radio</a>
                 </Link>
+                <Link href="/input/select">
+                    <a>Select</a>
+                </Link>
                 <Link href="/input/switch">
                     <a>Switch</a>
                 </Link>
