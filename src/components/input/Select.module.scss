@@ -1,0 +1,305 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/typography.scss';
+
+.fdSelect {
+    display: inline-block;
+    .select {
+        position: relative;
+        float: left;
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
+        width: 100%;
+        select {
+            transition: border 0.15s linear;
+            font-family: map-deep-get($typography, 'font-family', 'regular'),
+                sans-serif;
+            padding: 1.4rem 1rem 0.6rem 1rem;
+            font-size: 1rem;
+            vertical-align: bottom;
+            border: none;
+            border-radius: 0;
+            &[type='date'],
+            &[type='month'],
+            &[type='datetime'] {
+                -webkit-appearance: none;
+                min-width: 175px;
+            }
+            border-bottom: 2px solid var(--select-underline);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border-bottom: 2px solid #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        50
+                    )};
+            }
+
+            &::placeholder {
+                color: var(--select-placeholder);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+                }
+            }
+
+            &[data-hide-number-spinners='true'] {
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+                /* Firefox */
+                &[type='number'] {
+                    -moz-appearance: textfield;
+                }
+            }
+
+            &:hover {
+                border-color: var(--select-underline-hover);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    border-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'neutral',
+                            40
+                        )};
+                }
+            }
+            &:focus {
+                border: none;
+                border-bottom: 2px solid var(--select-underline-focus);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    border-bottom: 2px solid #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'primary',
+                            75
+                        )};
+                }
+            }
+
+            &:disabled {
+                border-bottom-color: var(--select-underline-disabled);
+                color: var(--select-disabled);
+                background-color: var(--select-fill-disabled);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    background-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'neutral',
+                            90
+                        )};
+                }
+
+                & ~ div > label {
+                    color: var(--select-disabled);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    }
+                }
+                & ~ .selectMessage {
+                    color: var(--select-helper-text-disabled);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    }
+                }
+            }
+
+            box-sizing: border-box;
+            width: 100%;
+            height: unset;
+            outline: none;
+            margin: unset;
+            color: var(--select-color);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+            }
+        }
+        label {
+            font-family: map-deep-get($typography, 'font-family', 'regular'),
+                sans-serif;
+            position: absolute;
+            top: 1.2rem;
+            left: 1rem;
+            line-height: 1;
+            padding: 0;
+            transition: all 0.1s ease-out;
+            color: var(--select-label);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+            }
+
+            font-size: 1rem;
+            user-select: none;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            right: 1rem;
+            overflow: hidden;
+            cursor: text;
+        }
+        @supports (-ms-ime-align: auto) {
+            select ~ label {
+                font-size: 0.75rem;
+                top: 0.5rem;
+            }
+        }
+        select:not([type='month']):not([type='date']):not([type='datetime']):not([placeholder=' '])
+            ~ div
+            > label {
+            font-size: 0.75rem;
+            top: 0.5rem;
+            right: 2rem;
+        }
+        select:not(:placeholder-shown) ~ div > label {
+            font-size: 0.75rem;
+            top: 0.5rem;
+            right: 2rem;
+        }
+        select:not(:-ms-input-placeholder) ~ div > label,
+        select:-ms-input-placeholder:not([placeholder=' ']) ~ div > label {
+            font-size: 0.75rem;
+            top: 0.5rem;
+            right: 2rem;
+        }
+        select[type='month'] ~ div > label,
+        select[type='date'] ~ div > label,
+        select[type='datetime'] ~ div > label,
+        select:focus ~ div > label {
+            font-size: 0.75rem;
+            top: 0.5rem;
+            right: 2rem;
+        }
+        select:focus ~ div > label {
+            color: var(--select-label-focus);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+        }
+        .selectMessage {
+            transition: all 0.3s ease-out;
+            font-size: 0.75rem;
+            color: var(--select-helper-text);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+            }
+            line-height: 1;
+            font-family: map-deep-get($typography, 'font-family', 'regular'),
+                sans-serif;
+            font-weight: normal;
+            margin-left: 1rem;
+            &:not(.errorMessage):not(:empty) {
+                max-height: 5rem;
+                margin: 0.5rem 1rem;
+            }
+        }
+        .errorMessage {
+            opacity: 0;
+            color: var(--select-error);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'negative', 75)};
+            }
+            max-height: 0;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+        }
+    }
+    /**
+     * input validation styles
+     */
+    select:not(:required):focus ~ div > label ~ .iconCheck,
+    select:required:valid ~ div > label ~ .iconCheck,
+    select:not(:required):valid:not([placeholder=' '])
+        ~ div
+        > label
+        ~ .iconCheck {
+        opacity: 1;
+    }
+    select:not(:required):not(:placeholder-shown):valid
+        ~ div
+        > label
+        ~ .iconCheck {
+        opacity: 1;
+    }
+    select:not(:required):not(:-ms-input-placeholder):valid
+        ~ div
+        > label
+        ~ .iconCheck {
+        opacity: 1;
+    }
+    select:not([type='date']):not([type='month']):not([type='datetime']):required:not(:disabled):not(:valid):not(:placeholder-shown):not(:focus) {
+        &:not(:hover) {
+            border-color: var(--select-error);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border-color: #{map-deep-get($colors, 'colors', 'negative', 75)};
+            }
+        }
+
+        ~ div > label {
+            color: var(--select-error);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'negative', 75)};
+            }
+        }
+    }
+    select:required:not(:valid):not(:disabled):not(:placeholder-shown):not(:focus)
+        ~ .errorMessage:not(:empty) {
+        max-height: 5rem;
+        opacity: 1;
+        margin: 0.5rem 1rem;
+    }
+    select:required:not(:valid):not(:disabled):not(:-ms-input-placeholder):not(:focus)
+        ~ .errorMessage:not(:empty) {
+        max-height: 5rem;
+        opacity: 1;
+        margin: 0.5rem 1rem;
+    }
+
+    .iconCheck {
+        font-size: 0.75rem;
+        transition: 0.1s all ease-out;
+        opacity: 0;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        svg {
+            fill: var(--select-valid);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
+            }
+            width: 12px;
+            height: 12px;
+        }
+    }
+}

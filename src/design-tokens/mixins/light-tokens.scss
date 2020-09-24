@@ -76,6 +76,31 @@
             50
         )};
     --input-disabled: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+    --select-placeholder: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+    --select-label: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --select-label-focus: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --select-color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+    --select-underline: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+    --select-underline-disabled: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            50
+        )};
+    --select-underline-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --select-underline-focus: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --select-valid: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --select-error: #{map-deep-get($colors, 'colors', 'negative', 75)};
+    --select-fill: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    --select-fill-disabled: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --select-helper-text: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --select-helper-text-disabled: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            50
+        )};
+    --select-disabled: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --checkbox-fill: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     --checkbox-fill-checked: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --checkbox-check: #{map-deep-get($colors, 'colors', 'neutral', 100)};
