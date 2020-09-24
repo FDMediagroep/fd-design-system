@@ -31,9 +31,9 @@
             position: absolute;
             box-sizing: border-box;
             left: 0;
-            top: 0.25rem;
-            width: 1rem;
-            height: 1rem;
+            top: 2px;
+            width: 20px;
+            height: 20px;
             border: 1.5px solid var(--checkbox-border);
             // IE11
             @media screen and (-ms-high-contrast: active),
@@ -62,10 +62,10 @@
         &:after {
             content: '';
             position: absolute;
-            left: 3px;
-            top: 9px;
-            width: 8px;
-            height: 3px;
+            left: 4px;
+            top: 8px;
+            width: 10px;
+            height: 4px;
             border-left: 1.5px solid var(--checkbox-check);
             border-bottom: 1.5px solid var(--checkbox-check);
             // IE11
