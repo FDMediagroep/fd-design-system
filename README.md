@@ -49,11 +49,11 @@ Install `date-input-polyfill` for date-picker polyfill for older browsers.
 
 `npm i date-input-polyfill`
 
-#### Optional configuration
+### Optional configuration
 
 You can replace date-input-polyfill with an empty component.
 
-##### Webpack config
+#### Webpack config
 
 Install `null-loader` and add the following to your Webpack configuration rules.
 
