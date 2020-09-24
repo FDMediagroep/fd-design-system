@@ -184,6 +184,7 @@ function Explain(props: Props) {
                         className={styles.anchor}
                         onClick={copyAnchor.bind(null, props.anchor)}
                         title="Copy link"
+                        aria-label={`Copy link to ${props.legend}`}
                     >
                         🔗
                     </button>
