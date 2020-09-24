@@ -11,6 +11,9 @@
             sans-serif;
         width: 100%;
         select {
+            ::-ms-expand {
+                display: none;
+            }
             appearance: none;
             transition: border 0.15s linear;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
