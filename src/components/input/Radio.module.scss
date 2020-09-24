@@ -39,9 +39,9 @@
             position: absolute;
             box-sizing: border-box;
             left: 0;
-            top: 0.25rem;
-            width: 1rem;
-            height: 1rem;
+            top: 2px;
+            width: 20px;
+            height: 20px;
             border: 1px solid var(--radio-border);
             // IE11
             @media screen and (-ms-high-contrast: active),
@@ -143,7 +143,7 @@
             border: none;
             width: 8px;
             height: 8px;
-            left: 4px;
+            left: 6px;
             top: 8px;
         }
     }
