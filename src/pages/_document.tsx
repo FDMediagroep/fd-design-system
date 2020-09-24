@@ -4,7 +4,7 @@ import Document, { Html, Main, NextScript, Head } from 'next/document';
 export default class MyDocument extends Document<any> {
     render() {
         return (
-            <Html lang="nl">
+            <Html lang="en">
                 <Head>
                     <link href="/favicon.ico" rel="shortcut icon" />
                     <link

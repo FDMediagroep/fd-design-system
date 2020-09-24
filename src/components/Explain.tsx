@@ -11,6 +11,7 @@ import {
     initializeDesignTokensTooltip,
     clearDesignTokensTooltips,
 } from '../utils/designTokensTooltip';
+import { PaperclipIcon } from '../design-tokens/icons';
 
 declare let window: Window | any;
 declare let cssbeautify: (css: string) => string;
@@ -184,9 +185,9 @@ function Explain(props: Props) {
                         className={styles.anchor}
                         onClick={copyAnchor.bind(null, props.anchor)}
                         title="Copy link"
-                    >
-                        🔗
-                    </button>
+                        aria-label={`Copy link to ${props.legend}`}
+                        dangerouslySetInnerHTML={{ __html: PaperclipIcon }}
+                    />
                 ) : null}
             </h2>
             {props.description && (
