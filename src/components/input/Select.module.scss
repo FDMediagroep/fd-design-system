@@ -11,10 +11,11 @@
             sans-serif;
         width: 100%;
         select {
+            appearance: none;
             transition: border 0.15s linear;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
-            padding: 1.4rem 1rem 0.6rem 1rem;
+            padding: 1.4rem 3rem 0.6rem 1rem;
             font-size: 1rem;
             vertical-align: bottom;
             border: none;
@@ -112,6 +113,7 @@
                         color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
                     }
                 }
+
                 & ~ .selectMessage {
                     color: var(--select-helper-text-disabled);
                     // IE11
@@ -134,6 +136,7 @@
                 color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
             }
         }
+
         label {
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
@@ -143,6 +146,7 @@
             line-height: 1;
             padding: 0;
             transition: all 0.1s ease-out;
+            pointer-events: none;
             color: var(--select-label);
             // IE11
             @media screen and (-ms-high-contrast: active),
@@ -230,6 +234,41 @@
                 sans-serif;
         }
     }
+
+    &#{&} {
+        &#{&} {
+            .arrow {
+                position: absolute;
+                top: 25px;
+                left: auto;
+                right: 14px;
+                cursor: auto;
+                pointer-events: none;
+                svg {
+                    width: 1rem;
+                    height: 1rem;
+                    fill: var(--select-label);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+                    }
+                }
+            }
+
+            select:disabled {
+                & ~ div > .arrow svg {
+                    fill: var(--select-disabled);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        fill: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    }
+                }
+            }
+        }
+    }
+
     /**
      * input validation styles
      */

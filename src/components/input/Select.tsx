@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Select.module.scss';
-import { CheckIcon } from '../../design-tokens/icons';
+import { CheckIcon, DownThinIcon } from '../../design-tokens/icons';
 
 declare var localStorage: any;
 
@@ -64,11 +64,6 @@ export interface Props {
     onFocus?: (value: React.FocusEvent<HTMLSelectElement>) => void;
 
     onBlur?: (value: React.FocusEvent<HTMLSelectElement>) => void;
-
-    /**
-     * Optional placeholder text which is alway shown when the input value is empty. Default value is an empty space ' ' needed for specific styling hacks.
-     */
-    placeholder?: string;
 
     /**
      * Optional. Store the value to localStorage which will be used as default value upon subsequent visits of the page.
@@ -156,6 +151,11 @@ function Select(props: Props) {
                     <span
                         className={styles.iconCheck}
                         dangerouslySetInnerHTML={{ __html: CheckIcon }}
+                    />
+                    <label
+                        htmlFor={props.id}
+                        className={styles.arrow}
+                        dangerouslySetInnerHTML={{ __html: DownThinIcon }}
                     />
                 </div>
                 {props.type !== 'date' && props.type !== 'datetime' ? (

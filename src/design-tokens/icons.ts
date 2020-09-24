@@ -7,6 +7,7 @@ export { default as BulletRedIcon } from '../../public/assets/icons/bullet_longr
 export { default as CheckIcon } from '../../public/assets/icons/check.svg';
 export { default as ChevronRightIcon } from '../../public/assets/icons/chevron-right.svg';
 export { default as CloseIcon } from '../../public/assets/icons/close.svg';
+export { default as DownThinIcon } from '../../public/assets/icons/down-thin.svg';
 export { default as EnvelopeIcon } from '../../public/assets/icons/envelope.svg';
 export { default as ExpandIcon } from '../../public/assets/icons/expand.svg';
 export { default as FdmgIcon } from '../../public/assets/icons/logo-fdmg.svg';
