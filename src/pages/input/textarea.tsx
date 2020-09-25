@@ -283,6 +283,34 @@ function Page() {
                     description="disabled text area"
                 />
             </Explain>
+
+            <Explain
+                anchor="localStorage"
+                cssClassNames={getCssClassNames()}
+                previewFlexDirection="row"
+                legend="TextArea (localStorage)"
+                reactComponentName="TextArea"
+                description={
+                    <>
+                        <p>Can be used in forms.</p>
+                        <p>
+                            This is an example of a text area whose value is
+                            kept in localStorage for subsequent visits.
+                        </p>
+                        <p>
+                            Only the HTML and CSS are necessary to create the
+                            text area along with all the interactions.
+                        </p>
+                    </>
+                }
+            >
+                <TextArea
+                    id="demoTextArea9"
+                    localStorage={true}
+                    label="Biography"
+                    description="Entered value will remain upon revisits"
+                />
+            </Explain>
         </>
     );
 }

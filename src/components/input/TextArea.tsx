@@ -34,7 +34,7 @@ export interface Props {
     /**
      * Optional value of the input element.
      */
-    value?: string | number;
+    value?: string;
 
     /**
      * Optional. When true the default input validation kicks in. Tip: use in combination with pattern.
@@ -105,7 +105,7 @@ export interface Props {
 }
 
 function TextArea(props: Props) {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState(props.value ?? '');
     const errorMessage = props.errorMessage ?? 'Voer een geldige waarde in';
     const showMaxWordsError = props.maxWords
         ? wordCount(value) > props.maxWords
@@ -122,7 +122,7 @@ function TextArea(props: Props) {
         if (val) {
             setValue(val);
         }
-    }, []);
+    }, [props.value]);
 
     function store(value: string) {
         if (value) {
