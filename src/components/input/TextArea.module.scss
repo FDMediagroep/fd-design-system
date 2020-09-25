@@ -3,8 +3,9 @@
 @import '../../design-tokens/typography.scss';
 
 .fdTextArea {
-    display: inline-block;
+    display: inline-flex;
     .textArea {
+        flex: 1 1 auto;
         position: relative;
         float: left;
         font-family: map-deep-get($typography, 'font-family', 'regular'),
@@ -78,6 +79,7 @@
         }
 
         textarea {
+            height: 100%;
             transition: border 0.15s linear;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
@@ -186,7 +188,6 @@
 
             box-sizing: border-box;
             width: 100%;
-            height: unset;
             outline: none;
             margin: unset;
             color: var(--input-color);
