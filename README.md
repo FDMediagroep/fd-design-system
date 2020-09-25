@@ -66,7 +66,10 @@ module: {
             test: /date-input-polyfill.dist.js$/,
             use: 'null-loader',
         }
-    ]
+    ],
+    externals: {
+        'date-input-polyfill': 'date-input-polyfill',
+    }
 }
 ```
 
