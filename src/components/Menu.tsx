@@ -194,6 +194,9 @@ function Menu(props: Props) {
                 <Link href="/cookieconsent#locked-content">
                     <a>Locked content</a>
                 </Link>
+                <Link href="/menu">
+                    <a>Menu</a>
+                </Link>
                 <Link href="/modal">
                     <a>Modal</a>
                 </Link>

@@ -5,7 +5,9 @@ export { default as BookmarkOIcon } from '../../public/assets/icons/bookmark-o.s
 export { default as BulletIcon } from '../../public/assets/icons/bullet.svg';
 export { default as BulletRedIcon } from '../../public/assets/icons/bullet_longread.svg';
 export { default as CheckIcon } from '../../public/assets/icons/check.svg';
+export { default as ChevronDownThinIcon } from '../../public/assets/icons/chevron-down-thin.svg';
 export { default as ChevronRightIcon } from '../../public/assets/icons/chevron-right.svg';
+export { default as ChevronUpThinIcon } from '../../public/assets/icons/chevron-up-thin.svg';
 export { default as CloseIcon } from '../../public/assets/icons/close.svg';
 export { default as DownThinIcon } from '../../public/assets/icons/down-thin.svg';
 export { default as EnvelopeIcon } from '../../public/assets/icons/envelope.svg';
