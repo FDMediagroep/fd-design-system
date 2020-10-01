@@ -2,6 +2,7 @@ import React from 'react';
 import { Explain } from '../components/Explain';
 import { Menu, getCssClassNames } from '../components/menu/Menu';
 import Head from 'next/head';
+import styles from './menu.module.scss';
 
 const metaTitle = 'Menu';
 const metaDescription = 'Menu, used to display a navigational menu';
@@ -24,6 +25,7 @@ function Page() {
             </Head>
 
             <Explain
+                previewClassName={styles.menu}
                 cssClassNames={getCssClassNames()}
                 legend="Menu"
                 reactComponentName="Menu"

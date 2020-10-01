@@ -42,6 +42,7 @@ interface Props {
      * Menu items. Use a nested structure to create sub-menus.
      */
     menuItems?: MenuItem[];
+    [x: string]: any;
 }
 
 function Menu(props: Props) {
@@ -105,9 +106,9 @@ function Menu(props: Props) {
                             <li id={menuItem.id} key={menuItem.id}>
                                 <a
                                     href={menuItem.link}
+                                    title={menuItem.id}
                                     aria-expanded={menuItem.expanded}
                                     aria-haspopup={hasPopup}
-                                    title={menuItem.id}
                                 >
                                     {menuItem.label}
                                 </a>
@@ -124,6 +125,8 @@ function Menu(props: Props) {
                                                 ? 'close sub-menu'
                                                 : 'open sub-menu'
                                         }
+                                        aria-expanded={menuItem.expanded}
+                                        aria-haspopup={hasPopup}
                                     ></button>
                                 )}
                                 {menuItem.menuItems &&
@@ -142,7 +145,12 @@ function Menu(props: Props) {
     );
 
     return (
-        <nav className={styles.menu} aria-label={props.label}>
+        <nav
+            className={`${styles.menu}${
+                props.className ? ` ${props.className}` : ''
+            }`}
+            aria-label={props.label}
+        >
             {renderMenu(menuItems)}
         </nav>
     );

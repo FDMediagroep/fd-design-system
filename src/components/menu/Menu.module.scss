@@ -3,12 +3,15 @@
 @import '../../design-tokens/media.scss';
 
 .menu {
+    background-color: var(--navigation-background);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutral', 70)};
+    }
     position: relative;
+    box-sizing: border-box;
     display: inline-block;
     width: 100%;
-    > ul {
-        display: flex;
-    }
     ul {
         position: absolute;
         width: 300px;
@@ -37,6 +40,11 @@
             }
         }
     }
+    > ul {
+        position: relative;
+        display: inline-flex;
+        margin: 0;
+    }
 
     ul ul > li {
         box-sizing: border-box;
@@ -46,7 +54,8 @@
         border-bottom: 1px solid var(--dividers);
     }
 
-    a:not(:hover):not(:focus)
+    a:not(:hover)
+        ~ button:not(:hover)
         ~ :global(.visuallyhidden):not(:hover):not(:focus) {
         position: absolute;
         overflow: hidden;
@@ -59,6 +68,9 @@
     }
 
     a {
+        padding: 1rem;
+        display: inline-block;
+        flex: 1 1 auto;
         color: var(--link);
         &:hover {
             color: var(--link-hover);
