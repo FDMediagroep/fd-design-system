@@ -195,6 +195,7 @@ function Menu(props: Props) {
                     {menuItems.map((menuItem) => {
                         const hasPopup =
                             menuItem.menuItems && menuItem.menuItems.length > 0;
+
                         return (
                             <li
                                 id={menuItem.id}
@@ -214,7 +215,11 @@ function Menu(props: Props) {
                                 <a
                                     href={menuItem.link}
                                     title={menuItem.id}
-                                    aria-expanded={menuItem.expanded}
+                                    {...(hasPopup
+                                        ? {
+                                              'aria-expanded': !!menuItem.expanded,
+                                          }
+                                        : {})}
                                     aria-haspopup={hasPopup}
                                 >
                                     {menuItem.label}
