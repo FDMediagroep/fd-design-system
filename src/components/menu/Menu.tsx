@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
     ChevronDownThinIcon,
     ChevronUpThinIcon,
@@ -45,27 +45,36 @@ interface Props {
     [x: string]: any;
 }
 
+/**
+ * Generate ids for menu items.
+ * @param menuItems
+ * @param parent
+ */
+function generateIds(menuItems: MenuItem[], parent?: string) {
+    const menuItemsCopy = [...menuItems];
+    menuItemsCopy.forEach((menuItem, idx) => {
+        menuItem.id = `${
+            parent ? `${parent}-${idx + 1}` : `menu-item-${idx + 1}`
+        }`;
+        if (menuItem.menuItems && menuItem.menuItems.length) {
+            menuItem.menuItems = generateIds(menuItem.menuItems, menuItem.id);
+        }
+    });
+    return menuItemsCopy;
+}
+
+function overlap(rect1: DOMRect, rect2: DOMRect) {
+    return !(
+        rect1.right < rect2.left ||
+        rect1.left > rect2.right ||
+        rect1.bottom < rect2.top ||
+        rect1.top > rect2.bottom
+    );
+}
+
 function Menu(props: Props) {
-    /**
-     * Generate ids for menu items.
-     * @param menuItems
-     * @param parent
-     */
-    function generateIds(menuItems: MenuItem[], parent?: string) {
-        const menuItemsCopy = [...menuItems];
-        menuItemsCopy.forEach((menuItem, idx) => {
-            menuItem.id = `${
-                parent ? `${parent}-${idx + 1}` : `menu-item-${idx + 1}`
-            }`;
-            if (menuItem.menuItems && menuItem.menuItems.length) {
-                menuItem.menuItems = generateIds(
-                    menuItem.menuItems,
-                    menuItem.id
-                );
-            }
-        });
-        return menuItemsCopy;
-    }
+    const menuRef = useRef(null);
+    const customMenuRef = useRef(null);
 
     const [menuItems, setMenuItems] = useState<MenuItem[]>(
         generateIds(props.menuItems)
@@ -74,6 +83,36 @@ function Menu(props: Props) {
     useEffect(() => {
         setMenuItems(generateIds(props.menuItems));
     }, [props.menuItems]);
+
+    /**
+     * Determine which menu items don't fit anymore and hide them.
+     * If there is enough space to show them again they will be displayed again.
+     */
+    useEffect(() => {
+        if (menuRef.current && customMenuRef.current) {
+            [].slice
+                .call(menuRef.current.querySelectorAll('nav > ul > li'))
+                .forEach((li: HTMLElement) => {
+                    const check = () => {
+                        if (
+                            overlap(
+                                li.getBoundingClientRect(),
+                                customMenuRef.current.getBoundingClientRect()
+                            )
+                        ) {
+                            requestAnimationFrame(() => {
+                                li.classList.add('visuallyhidden');
+                            });
+                        } else {
+                            li.classList.remove('visuallyhidden');
+                        }
+                    };
+
+                    window.addEventListener('resize', check);
+                    check(); // Initial check
+                });
+        }
+    }, [menuRef.current, customMenuRef.current]);
 
     function toggle(id: string, subMenuItems?: MenuItem[]) {
         if (!menuItems.length) {
@@ -130,7 +169,6 @@ function Menu(props: Props) {
                         : [...menuItems];
                 menuItemsCopy.forEach((menuItem) => {
                     if (!id || id === menuItem.id) {
-                        console.log(`contract ${menuItem.id}`);
                         menuItem.expanded = false;
                         if (menuItem?.menuItems?.length) {
                             contract(null, menuItem.menuItems);
@@ -151,9 +189,9 @@ function Menu(props: Props) {
      * @param menuItems
      */
     const renderMenu = useCallback(
-        (menuItems: MenuItem[], hidden?: boolean, isRoot?: boolean) => {
-            return (
-                <ul className={hidden ? 'visuallyhidden' : ''}>
+        (menuItems: MenuItem[], hidden?: boolean, isRoot = true) => {
+            const menuComponent = (
+                <ul>
                     {menuItems.map((menuItem) => {
                         const hasPopup =
                             menuItem.menuItems && menuItem.menuItems.length > 0;
@@ -202,26 +240,43 @@ function Menu(props: Props) {
                                     menuItem.menuItems.length &&
                                     renderMenu(
                                         menuItem.menuItems,
-                                        !menuItem.expanded
+                                        !menuItem.expanded,
+                                        false
                                     )}
                             </li>
                         );
                     })}
                 </ul>
             );
+
+            return isRoot ? (
+                menuComponent
+            ) : (
+                <div className={hidden ? 'hidden' : ''}>{menuComponent}</div>
+            );
         },
         [props.menuItems]
     );
 
     return (
-        <nav
-            className={`${styles.menu}${
+        <header
+            className={`${styles.menuContainer}${
                 props.className ? ` ${props.className}` : ''
             }`}
             aria-label={props.label}
         >
-            {renderMenu(menuItems, false, true)}
-        </nav>
+            <div className={styles.menuCenter}>
+                <nav ref={menuRef} className={styles.menu}>
+                    {renderMenu(menuItems)}
+                </nav>
+                <span
+                    ref={customMenuRef}
+                    className={styles.customComponentsContainer}
+                >
+                    {props.children}
+                </span>
+            </div>
+        </header>
     );
 }
 

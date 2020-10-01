@@ -3,6 +3,7 @@ import { Explain } from '../components/Explain';
 import { Menu, getCssClassNames } from '../components/menu/Menu';
 import Head from 'next/head';
 import styles from './menu.module.scss';
+import { TextInput } from '../components/input/TextInput';
 
 const metaTitle = 'Menu';
 const metaDescription = 'Menu, used to display a navigational menu';
@@ -89,7 +90,11 @@ function Page() {
                             ],
                         },
                     ]}
-                />
+                >
+                    <form>
+                        <input name="search" placeholder="Zoeken..." />
+                    </form>
+                </Menu>
             </Explain>
         </>
     );

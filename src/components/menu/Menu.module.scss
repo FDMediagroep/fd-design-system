@@ -2,7 +2,209 @@
 @import '../../design-tokens/colors.scss';
 @import '../../design-tokens/media.scss';
 
-.menu {
+.menuContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--navigation-background);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutral', 70)};
+    }
+
+    .menuCenter {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 100%;
+        width: 1024px;
+        position: relative;
+    }
+
+    .menu {
+        height: 55px;
+        box-sizing: border-box;
+        display: inline-block;
+        flex: 1 1 auto;
+        white-space: nowrap;
+        overflow: hidden;
+
+        div {
+            position: absolute;
+            ul {
+                display: inline-flex;
+                top: 0;
+                flex-direction: column;
+            }
+        }
+
+        /**
+         * First sub-menu.
+         */
+        > ul > li > div > ul {
+            top: 55px;
+        }
+
+        ul {
+            position: absolute;
+            width: 300px;
+            list-style: none;
+            left: 0;
+            padding: 0;
+            li {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                background-color: var(--navigation-background);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    background-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'neutral',
+                            70
+                        )};
+                }
+                a {
+                    padding: 1rem;
+                    display: inline-block;
+                }
+            }
+        }
+        > ul {
+            display: flex;
+            margin: 0;
+            top: 0;
+            > li {
+                > ul {
+                    box-sizing: border-box;
+                    border: 1px solid var(--dividers);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        border: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+                    }
+
+                    overflow-y: auto;
+                    max-height: 60vh;
+
+                    ul {
+                        max-width: 100%;
+                        li:not(:first-child):last-child {
+                            border: none;
+                        }
+                    }
+                }
+                .hasItems {
+                    ul {
+                        position: relative;
+                    }
+                }
+            }
+        }
+
+        ul ul > li {
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            top: 0;
+        }
+
+        a:not([aria-expanded='true'])
+            ~ button:not([aria-expanded='true'])
+            ~ :global(.hidden):not(:hover):not(:focus) {
+            // position: absolute;
+            // overflow: hidden;
+            // clip: rect(0 0 0 0);
+            // height: 1px;
+            // width: 1px;
+            // margin: -1px;
+            // padding: 0;
+            // border: 0;
+            display: none;
+        }
+
+        ul ul [aria-expanded='true'] ~ div {
+            position: relative;
+        }
+
+        a {
+            padding: 1rem;
+            display: inline-block;
+            flex: 1 1 auto;
+            color: var(--link);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &:hover {
+                color: var(--link-hover);
+            }
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+                &:hover {
+                    color: #{map-deep-get($colors, 'colors', 'primary', 50)};
+                }
+            }
+        }
+
+        button {
+            border: none;
+            float: right;
+            background-color: var(--navigation-background);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        70
+                    )};
+            }
+            svg {
+                width: 1rem;
+                height: 1rem;
+                fill: var(--content-copy);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+                }
+            }
+        }
+
+        > ul > li > ul {
+            a,
+            button {
+                border-bottom: 1px solid var(--dividers);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    border-bottom: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'neutral',
+                            60
+                        )};
+                }
+            }
+        }
+    }
+
+    .customComponentsContainer {
+        display: inline-flex;
+        align-items: center;
+        flex: 0 1 auto;
+        padding: 0 1rem;
+        z-index: 1;
+    }
+
+    :global(.visuallyhidden) {
+        visibility: hidden;
+    }
+
     ::-webkit-scrollbar {
         width: 0.5rem;
         height: 0.5rem;
@@ -31,145 +233,5 @@
 
     ::-webkit-scrollbar-thumb:window-inactive {
         background: rgba(0, 0, 0, 0.1);
-    }
-
-    background-color: var(--navigation-background);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 70)};
-    }
-    position: relative;
-    box-sizing: border-box;
-    display: inline-block;
-    width: 100%;
-    ul {
-        position: absolute;
-        width: 300px;
-        list-style: none;
-        top: 100%;
-        left: 0;
-        padding: 0;
-        li {
-            white-space: nowrap;
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            background-color: var(--navigation-background);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        70
-                    )};
-            }
-            a {
-                padding: 1rem;
-                display: inline-block;
-            }
-        }
-    }
-    > ul {
-        position: relative;
-        display: inline-flex;
-        margin: 0;
-        > li {
-            > ul {
-                box-sizing: border-box;
-                border: 1px solid var(--dividers);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    border: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-                }
-
-                overflow-y: auto;
-                max-height: 80vh;
-
-                ul {
-                    max-width: 100%;
-                    li:not(:first-child):last-child {
-                        border: none;
-                    }
-                }
-            }
-            .hasItems {
-                ul {
-                    position: relative;
-                }
-            }
-        }
-    }
-
-    ul ul > li {
-        flex-wrap: wrap;
-        box-sizing: border-box;
-    }
-
-    a:not([aria-expanded='true'])
-        ~ button:not([aria-expanded='true'])
-        ~ :global(.visuallyhidden):not(:hover):not(:focus) {
-        // position: absolute;
-        // overflow: hidden;
-        // clip: rect(0 0 0 0);
-        // height: 1px;
-        // width: 1px;
-        // margin: -1px;
-        // padding: 0;
-        // border: 0;
-        display: none;
-    }
-
-    a {
-        padding: 1rem;
-        display: inline-block;
-        flex: 1 1 auto;
-        color: var(--link);
-        &:hover {
-            color: var(--link-hover);
-        }
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            &:hover {
-                color: #{map-deep-get($colors, 'colors', 'primary', 50)};
-            }
-        }
-    }
-
-    button {
-        border: none;
-        float: right;
-        background-color: var(--navigation-background);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 70)};
-        }
-        svg {
-            width: 1rem;
-            height: 1rem;
-            fill: var(--content-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            }
-        }
-    }
-
-    > ul > li > ul {
-        a,
-        button {
-            border-bottom: 1px solid var(--dividers);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-bottom: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-            }
-        }
     }
 }
