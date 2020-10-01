@@ -131,7 +131,7 @@ function Menu(props: Props) {
                 menuItemsCopy.forEach((menuItem) => {
                     if (!id || id === menuItem.id) {
                         console.log(`contract ${menuItem.id}`);
-                        // menuItem.expanded = false;
+                        menuItem.expanded = false;
                         if (menuItem?.menuItems?.length) {
                             contract(null, menuItem.menuItems);
                         }
