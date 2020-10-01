@@ -20,6 +20,7 @@
         left: 0;
         padding: 0;
         li {
+            white-space: nowrap;
             display: flex;
             justify-content: space-between;
             position: relative;
@@ -44,9 +45,15 @@
         position: relative;
         display: inline-flex;
         margin: 0;
+        > li .hasItems {
+            ul {
+                position: relative;
+            }
+        }
     }
 
     ul ul > li {
+        flex-wrap: wrap;
         box-sizing: border-box;
         &:first-child {
             border-top: 1px solid var(--dividers);
@@ -54,17 +61,18 @@
         border-bottom: 1px solid var(--dividers);
     }
 
-    a:not(:hover)
-        ~ button:not(:hover)
+    a:not([aria-expanded='true'])
+        ~ button:not([aria-expanded='true'])
         ~ :global(.visuallyhidden):not(:hover):not(:focus) {
-        position: absolute;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        width: 1px;
-        margin: -1px;
-        padding: 0;
-        border: 0;
+        // position: absolute;
+        // overflow: hidden;
+        // clip: rect(0 0 0 0);
+        // height: 1px;
+        // width: 1px;
+        // margin: -1px;
+        // padding: 0;
+        // border: 0;
+        display: none;
     }
 
     a {

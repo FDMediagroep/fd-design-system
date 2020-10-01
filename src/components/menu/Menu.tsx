@@ -71,8 +71,11 @@ function Menu(props: Props) {
         generateIds(props.menuItems)
     );
 
-    function toggle(id?: string, subMenuItems?: MenuItem[]) {
-        console.log('expand', id);
+    useEffect(() => {
+        setMenuItems(generateIds(props.menuItems));
+    }, [props.menuItems]);
+
+    function toggle(id: string, subMenuItems?: MenuItem[]) {
         if (!menuItems.length) {
             return;
         }
@@ -81,7 +84,7 @@ function Menu(props: Props) {
         menuItemsCopy.forEach((menuItem) => {
             if (id === menuItem.id) {
                 menuItem.expanded = !menuItem.expanded;
-            } else if (menuItem.menuItems && menuItem.menuItems.length) {
+            } else if (menuItem?.menuItems?.length) {
                 toggle(id, menuItem.menuItems);
             }
         });
@@ -91,19 +94,85 @@ function Menu(props: Props) {
         }
     }
 
+    const expand = useCallback(
+        (id: string, subMenuItems?: MenuItem[]) => {
+            if (!menuItems.length) {
+                return;
+            }
+            const menuItemsCopy =
+                subMenuItems && subMenuItems.length
+                    ? subMenuItems
+                    : [...menuItems];
+            menuItemsCopy.forEach((menuItem) => {
+                if (id === menuItem.id) {
+                    menuItem.expanded = true;
+                } else if (menuItem?.menuItems?.length) {
+                    expand(id, menuItem.menuItems);
+                }
+            });
+            if (!subMenuItems.length) {
+                // only call for the root
+                setMenuItems(menuItemsCopy);
+            }
+        },
+        [menuItems]
+    );
+
+    const contract = useCallback(
+        (id?: string, subMenuItems?: MenuItem[]) => {
+            if (!menuItems.length) {
+                return;
+            }
+            setTimeout(() => {
+                const menuItemsCopy =
+                    subMenuItems && subMenuItems.length
+                        ? subMenuItems
+                        : [...menuItems];
+                menuItemsCopy.forEach((menuItem) => {
+                    if (!id || id === menuItem.id) {
+                        console.log(`contract ${menuItem.id}`);
+                        menuItem.expanded = false;
+                        if (menuItem?.menuItems?.length) {
+                            contract(null, menuItem.menuItems);
+                        }
+                    }
+                });
+                if (!subMenuItems.length) {
+                    // only call for the root
+                    setMenuItems(menuItemsCopy);
+                }
+            }, 100);
+        },
+        [menuItems]
+    );
+
     /**
      * Render the menu items.
      * @param menuItems
      */
     const renderMenu = useCallback(
-        (menuItems: MenuItem[], hidden?: boolean) => {
+        (menuItems: MenuItem[], hidden?: boolean, isRoot?: boolean) => {
             return (
                 <ul className={hidden ? 'visuallyhidden' : ''}>
                     {menuItems.map((menuItem) => {
                         const hasPopup =
                             menuItem.menuItems && menuItem.menuItems.length > 0;
                         return (
-                            <li id={menuItem.id} key={menuItem.id}>
+                            <li
+                                id={menuItem.id}
+                                key={menuItem.id}
+                                className={styles.hasItems}
+                                onMouseEnter={
+                                    isRoot
+                                        ? expand.bind(null, menuItem.id)
+                                        : null
+                                }
+                                onMouseLeave={
+                                    isRoot
+                                        ? contract.bind(null, menuItem.id)
+                                        : null
+                                }
+                            >
                                 <a
                                     href={menuItem.link}
                                     title={menuItem.id}
@@ -127,7 +196,7 @@ function Menu(props: Props) {
                                         }
                                         aria-expanded={menuItem.expanded}
                                         aria-haspopup={hasPopup}
-                                    ></button>
+                                    />
                                 )}
                                 {menuItem.menuItems &&
                                     menuItem.menuItems.length &&
@@ -151,7 +220,7 @@ function Menu(props: Props) {
             }`}
             aria-label={props.label}
         >
-            {renderMenu(menuItems)}
+            {renderMenu(menuItems, false, true)}
         </nav>
     );
 }

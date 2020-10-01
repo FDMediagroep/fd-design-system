@@ -60,6 +60,30 @@ function Page() {
                                 },
                             ],
                         },
+                        {
+                            label: 'Menu 3',
+                            link: '#Menu-3',
+                            menuItems: [
+                                { label: 'Menu 3.1', link: '#Menu-3.1' },
+                                {
+                                    label: 'Menu 3.2',
+                                    link: '#Menu-3.2',
+                                    menuItems: [
+                                        {
+                                            label: 'Menu 3.2.1',
+                                            link: '#Menu-3.2.1',
+                                            menuItems: [
+                                                {
+                                                    label: 'Menu 3.2.1.1',
+                                                    link: '#Menu-3.2.1.1',
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                { label: 'Menu 3.3', link: '#Menu-3.3' },
+                            ],
+                        },
                     ]}
                 />
             </Explain>
