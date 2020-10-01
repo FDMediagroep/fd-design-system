@@ -3,6 +3,36 @@
 @import '../../design-tokens/media.scss';
 
 .menu {
+    ::-webkit-scrollbar {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-border-radius: 0.25rem;
+        border-radius: 0.25rem;
+        background: var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+        }
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 0.25rem;
+        border-radius: 0.25rem;
+        background: var(--meta-copy);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--functional-copy);
+    }
+
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
     background-color: var(--navigation-background);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -45,9 +75,30 @@
         position: relative;
         display: inline-flex;
         margin: 0;
-        > li .hasItems {
-            ul {
-                position: relative;
+        > li {
+            > ul {
+                box-sizing: border-box;
+                border: 1px solid var(--dividers);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    border: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+                }
+
+                overflow-y: auto;
+                max-height: 80vh;
+
+                ul {
+                    max-width: 100%;
+                    li:not(:first-child):last-child {
+                        border: none;
+                    }
+                }
+            }
+            .hasItems {
+                ul {
+                    position: relative;
+                }
             }
         }
     }
@@ -55,10 +106,6 @@
     ul ul > li {
         flex-wrap: wrap;
         box-sizing: border-box;
-        &:first-child {
-            border-top: 1px solid var(--dividers);
-        }
-        border-bottom: 1px solid var(--dividers);
     }
 
     a:not([aria-expanded='true'])
@@ -110,6 +157,18 @@
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
                 color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+            }
+        }
+    }
+
+    > ul > li > ul {
+        a,
+        button {
+            border-bottom: 1px solid var(--dividers);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border-bottom: #{map-deep-get($colors, 'colors', 'neutral', 60)};
             }
         }
     }
