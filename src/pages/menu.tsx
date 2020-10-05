@@ -116,6 +116,7 @@ function Page() {
                                 name="search"
                                 placeholder="Zoeken..."
                                 onBlur={handleSearchBlur}
+                                aria-label="Search text"
                             />
                             <button
                                 type="submit"
@@ -123,6 +124,7 @@ function Page() {
                                 dangerouslySetInnerHTML={{
                                     __html: SpyglassIcon,
                                 }}
+                                aria-label="Search submit"
                             />
                         </div>
                     </form>
