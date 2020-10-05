@@ -65,13 +65,15 @@ function generateIds(menuItems: MenuItem[], parent?: string) {
     return menuItemsCopy;
 }
 
+/**
+ * Given ltr order. rect1 should come before rect2.
+ * We simply check if rect2 is passed over rect1.
+ *
+ * @param rect1
+ * @param rect2
+ */
 function overlap(rect1: DOMRect, rect2: DOMRect) {
-    return !(
-        rect1.right < rect2.left ||
-        rect1.left > rect2.right ||
-        rect1.bottom < rect2.top ||
-        rect1.top > rect2.bottom
-    );
+    return rect1.right > rect2.left;
 }
 
 function Menu(props: Props) {
