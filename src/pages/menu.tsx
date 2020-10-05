@@ -3,12 +3,31 @@ import { Explain } from '../components/Explain';
 import { Menu, getCssClassNames } from '../components/menu/Menu';
 import Head from 'next/head';
 import styles from './menu.module.scss';
-import { TextInput } from '../components/input/TextInput';
+import { SpyglassIcon } from '../design-tokens/icons';
 
 const metaTitle = 'Menu';
 const metaDescription = 'Menu, used to display a navigational menu';
 
 function Page() {
+    const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        const formData = new FormData(e.currentTarget);
+        if (formData.get('search').toString().length === 0) {
+            const input: HTMLInputElement = e.currentTarget.querySelector(
+                '[name="search"]'
+            );
+            input.focus();
+        } else {
+            e.currentTarget.submit();
+        }
+    };
+
+    const handleSearchBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+        const target = e.currentTarget;
+        setTimeout(() => {
+            target.value = '';
+        }, 300);
+    };
+
     return (
         <>
             <Head>
@@ -91,8 +110,21 @@ function Page() {
                         },
                     ]}
                 >
-                    <form>
-                        <input name="search" placeholder="Zoeken..." />
+                    <form onSubmit={handleSearchSubmit}>
+                        <div className={styles.search}>
+                            <input
+                                name="search"
+                                placeholder="Zoeken..."
+                                onBlur={handleSearchBlur}
+                            />
+                            <button
+                                type="submit"
+                                name="search"
+                                dangerouslySetInnerHTML={{
+                                    __html: SpyglassIcon,
+                                }}
+                            />
+                        </div>
                     </form>
                 </Menu>
             </Explain>

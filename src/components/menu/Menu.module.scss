@@ -39,7 +39,7 @@
         }
 
         /**
-         * First sub-menu.
+         * First sub-menu level.
          */
         > ul > li > div > ul {
             top: 55px;
@@ -69,6 +69,7 @@
                 a {
                     padding: 1rem;
                     display: inline-block;
+                    flex-basis: calc(100% - 4rem);
                 }
             }
         }
@@ -85,16 +86,9 @@
                         (-ms-high-contrast: none) {
                         border: #{map-deep-get($colors, 'colors', 'neutral', 60)};
                     }
-
+                    background-color: red;
                     overflow-y: auto;
                     max-height: 60vh;
-
-                    ul {
-                        max-width: 100%;
-                        li:not(:first-child):last-child {
-                            border: none;
-                        }
-                    }
                 }
                 .hasItems {
                     ul {
@@ -150,6 +144,7 @@
         }
 
         button {
+            cursor: pointer;
             border: none;
             float: right;
             background-color: var(--navigation-background);
@@ -171,23 +166,6 @@
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
                     color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-                }
-            }
-        }
-
-        > ul > li > ul {
-            a,
-            button {
-                border-bottom: 1px solid var(--dividers);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    border-bottom: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            60
-                        )};
                 }
             }
         }

@@ -5,6 +5,8 @@ import {
 } from '../../design-tokens/icons';
 import styles from './Menu.module.scss';
 
+declare let ResizeObserver: any;
+
 interface MenuItem {
     /**
      * This ID is auto-generated. No need to pass this along.
@@ -111,6 +113,11 @@ function Menu(props: Props) {
                     window.addEventListener('resize', check);
                     check(); // Initial check
                 });
+
+            const observer = new ResizeObserver((mutations) => {
+                window.dispatchEvent(new CustomEvent('resize'));
+            });
+            observer.observe(customMenuRef.current);
         }
     }, [menuRef.current, customMenuRef.current]);
 
