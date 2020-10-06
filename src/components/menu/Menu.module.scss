@@ -185,6 +185,11 @@
         }
     }
 
+    #more-menu {
+        > ul {
+            left: -39px;
+        }
+    }
     #more-menu ~ li {
         visibility: hidden;
     }

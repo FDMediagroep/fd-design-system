@@ -3,7 +3,7 @@ import { Explain } from '../components/Explain';
 import { Menu, getCssClassNames } from '../components/menu/Menu';
 import Head from 'next/head';
 import styles from './menu.module.scss';
-import { SpyglassIcon } from '../design-tokens/icons';
+import { FdIcon, SpyglassIcon } from '../design-tokens/icons';
 
 const metaTitle = 'Menu';
 const metaDescription = 'Menu, used to display a navigational menu';
@@ -59,6 +59,16 @@ function Page() {
                 <Menu
                     label="Main menu"
                     menuItems={[
+                        {
+                            label: 'FD Design System',
+                            link: '/',
+                            component: (
+                                <span
+                                    className={styles.logo}
+                                    dangerouslySetInnerHTML={{ __html: FdIcon }}
+                                />
+                            ),
+                        },
                         {
                             label: 'Main',
                             link: '#',

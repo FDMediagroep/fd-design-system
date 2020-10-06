@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import cloneDeep from 'lodash/cloneDeep';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
     ChevronDownThinIcon,
@@ -23,9 +24,10 @@ interface MenuItem {
      */
     label: string;
     /**
-     * Image.
+     * Custom component as menu-item.
+     * Setting this will override the label.
      */
-    logo?: string;
+    component?: JSX.Element;
     /**
      * Link where the menu item should navigate to.
      */
@@ -50,6 +52,10 @@ interface Props {
      * Menu items. Use a nested structure to create sub-menus.
      */
     menuItems?: MenuItem[];
+    /**
+     * Menu items shown under the More sub-menu.
+     */
+    moreMenuItems?: MenuItem[];
     /**
      * Label of the `More` menu-item.
      * Default: Meer
@@ -79,34 +85,43 @@ function generateIds(menuItems: MenuItem[], parent?: string) {
     return menuItemsCopy;
 }
 
+/**
+ * Generate ids for more menu sub-items.
+ * @param menuItems
+ * @param parent
+ */
+function generateMoreIds(menuItems: MenuItem[], parent?: string) {
+    const menuItemsCopy = [...menuItems];
+    menuItemsCopy.forEach((menuItem, idx) => {
+        menuItem.id = `more-${
+            parent ? `${parent}-${idx + 1}` : `menu-item-${idx + 1}`
+        }`;
+        if (menuItem.menuItems && menuItem.menuItems.length) {
+            menuItem.menuItems = generateMoreIds(
+                [...menuItem.menuItems],
+                menuItem.id.replace('more-', '')
+            );
+        }
+    });
+    return menuItemsCopy;
+}
+
 const expandTimeouts = {};
 
 function Menu(props: Props) {
     const menuRef = useRef(null);
     const customMenuRef = useRef(null);
 
-    const [moreMenuItem, setMoreMenuItem] = useState<MenuItem>({
+    const [moreMenuItem] = useState<MenuItem>({
         id: styles['more-menu'],
         label: props.moreLabel ?? 'Meer',
         link: '',
-        menuItems: [{ id: 'test', label: 'test', link: '/test' }],
+        menuItems: props.moreMenuItems ?? [],
     });
-    const [menuItems, setMenuItems] = useState<MenuItem[]>(
-        generateIds(props.menuItems)
-    );
+    const [menuItems] = useState<MenuItem[]>(generateIds(props.menuItems));
     const [sortedMenuItems, setSortedMenuItems] = useState<MenuItem[]>(
         menuItems
     );
-
-    useEffect(() => {
-        const renderMenuItems = generateIds(
-            moreMenuItem.menuItems.length
-                ? [...props.menuItems, moreMenuItem]
-                : props.menuItems
-        );
-        setMenuItems(renderMenuItems);
-        setSortedMenuItems(renderMenuItems);
-    }, [props.menuItems, moreMenuItem]);
 
     /**
      * Check overlap and re-order menu-items.
@@ -116,24 +131,26 @@ function Menu(props: Props) {
             let newMenuItems: MenuItem[] = [];
             let overlappedItems: MenuItem[] = [];
             let overlappedMoreMenuItems: MenuItem[] = [];
-            let newMoreMenuItem = JSON.parse(JSON.stringify(moreMenuItem));
+            let newMoreMenuItem = { ...moreMenuItem };
             const availableWidth =
                 menuRef.current.getBoundingClientRect().width -
                 customMenuRef.current.getBoundingClientRect().width;
             const moreMenu = menuRef.current.querySelector(
                 `#${newMoreMenuItem.id}`
             );
-            let accumulativeWidth = moreMenu?.getBoundingClientRect()?.width;
+            let accumulatedWidth = moreMenu
+                ? moreMenu?.getBoundingClientRect()?.width
+                : 0;
 
             menuItems.forEach((menuItem) => {
                 if (menuItem.id !== styles['more-menu']) {
-                    const newMenuItem = JSON.parse(JSON.stringify(menuItem));
+                    const newMenuItem = { ...menuItem };
                     const cur = menuRef.current.querySelector(
                         `#${menuItem.id}`
                     );
                     if (
                         cur &&
-                        accumulativeWidth + cur?.getBoundingClientRect().width <
+                        accumulatedWidth + cur?.getBoundingClientRect().width <
                             availableWidth
                     ) {
                         newMenuItems.push(newMenuItem);
@@ -145,13 +162,16 @@ function Menu(props: Props) {
                                 (menuItem) => menuItem.id !== newMenuItem.id
                             ),
                         ];
-                        accumulativeWidth += cur?.getBoundingClientRect().width;
+                        accumulatedWidth += cur?.getBoundingClientRect().width;
                     } else {
-                        overlappedItems.push(newMenuItem);
-                        overlappedMoreMenuItems.push({
-                            ...JSON.parse(JSON.stringify(newMenuItem)),
-                            id: `more-${newMenuItem.id}`,
-                        });
+                        overlappedItems.push({ ...newMenuItem });
+
+                        overlappedMoreMenuItems.push(
+                            ...generateMoreIds(
+                                [cloneDeep(newMenuItem)],
+                                newMenuItem.id
+                            )
+                        );
                     }
                 }
             });
@@ -192,10 +212,9 @@ function Menu(props: Props) {
             clearTimeout(expandTimeouts[id]);
             delete expandTimeouts[id];
         }
-        const menuItemsCopy =
-            subMenuItems && subMenuItems.length
-                ? subMenuItems
-                : [...sortedMenuItems];
+        const menuItemsCopy = subMenuItems?.length
+            ? subMenuItems
+            : [...sortedMenuItems];
         menuItemsCopy.forEach((menuItem) => {
             if (id === menuItem.id) {
                 menuItem.expanded = !menuItem.expanded;
@@ -203,7 +222,7 @@ function Menu(props: Props) {
                 toggle(id, menuItem.menuItems);
             }
         });
-        if (!subMenuItems.length) {
+        if (!subMenuItems?.length) {
             // only call for the root
             setSortedMenuItems(menuItemsCopy);
         }
@@ -270,6 +289,14 @@ function Menu(props: Props) {
         isRoot = true
     ) => {
         const items = menuItems.map((menuItem) => {
+            if (
+                (!menuItem.label && !menuItem.component) ||
+                (menuItem.id === styles['more-menu'] &&
+                    !menuItem?.menuItems?.length)
+            ) {
+                return true;
+            }
+
             const hasPopup =
                 menuItem.menuItems && menuItem.menuItems.length > 0;
 
@@ -300,8 +327,9 @@ function Menu(props: Props) {
                             onMouseEnter={
                                 isRoot ? expand.bind(null, menuItem.id) : null
                             }
+                            aria-label={menuItem.label}
                         >
-                            {menuItem.label}
+                            {menuItem.component ?? menuItem.label}
                         </a>
                     </Link>
                     {hasPopup && (

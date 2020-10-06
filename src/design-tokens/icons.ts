@@ -12,6 +12,7 @@ export { default as CloseIcon } from '../../public/assets/icons/close.svg';
 export { default as DownThinIcon } from '../../public/assets/icons/down-thin.svg';
 export { default as EnvelopeIcon } from '../../public/assets/icons/envelope.svg';
 export { default as ExpandIcon } from '../../public/assets/icons/expand.svg';
+export { default as FdIcon } from '../../public/assets/icons/logo.svg';
 export { default as FdmgIcon } from '../../public/assets/icons/logo-fdmg.svg';
 export { default as LinkedInIcon } from '../../public/assets/icons/linkedin.svg';
 export { default as MinimiseIcon } from '../../public/assets/icons/minimise.svg';
