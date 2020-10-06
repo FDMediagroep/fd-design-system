@@ -130,17 +130,19 @@
             padding: 1rem;
             display: inline-block;
             flex: 1 1 auto;
-            color: var(--link);
+            color: var(--meta-copy);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            text-decoration: none;
             &:hover {
                 color: var(--link-hover);
+                text-decoration: underline;
             }
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
                 &:hover {
                     color: #{map-deep-get($colors, 'colors', 'primary', 50)};
                 }
@@ -160,6 +162,16 @@
                 @media screen and (-ms-high-contrast: active),
                     (-ms-high-contrast: none) {
                     color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+                }
+            }
+            &:hover {
+                svg {
+                    fill: var(--link-hover);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        color: #{map-deep-get($colors, 'colors', 'primary', 50)};
+                    }
                 }
             }
         }

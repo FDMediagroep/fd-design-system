@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
     ChevronDownThinIcon,
@@ -29,6 +30,10 @@ interface MenuItem {
      * Link where the menu item should navigate to.
      */
     link: string;
+    /**
+     * target window.
+     */
+    target?: string;
     /**
      * Sub-menu items.
      */
@@ -74,7 +79,7 @@ function generateIds(menuItems: MenuItem[], parent?: string) {
     return menuItemsCopy;
 }
 
-let expandTimeout;
+const expandTimeouts = {};
 
 function Menu(props: Props) {
     const menuRef = useRef(null);
@@ -183,8 +188,9 @@ function Menu(props: Props) {
         if (!sortedMenuItems.length) {
             return;
         }
-        if (expandTimeout) {
-            clearTimeout(expandTimeout);
+        if (expandTimeouts[id]) {
+            clearTimeout(expandTimeouts[id]);
+            delete expandTimeouts[id];
         }
         const menuItemsCopy =
             subMenuItems && subMenuItems.length
@@ -207,8 +213,9 @@ function Menu(props: Props) {
         if (!sortedMenuItems.length) {
             return;
         }
-        if (expandTimeout) {
-            clearTimeout(expandTimeout);
+        if (expandTimeouts[id]) {
+            clearTimeout(expandTimeouts[id]);
+            delete expandTimeouts[id];
         }
         const menuItemsCopy =
             subMenuItems && subMenuItems.length
@@ -231,7 +238,7 @@ function Menu(props: Props) {
         if (!sortedMenuItems.length) {
             return;
         }
-        expandTimeout = setTimeout(() => {
+        expandTimeouts[id] = setTimeout(() => {
             const menuItemsCopy =
                 subMenuItems && subMenuItems.length
                     ? subMenuItems
@@ -275,21 +282,28 @@ function Menu(props: Props) {
                         isRoot ? contract.bind(null, menuItem.id) : null
                     }
                 >
-                    <a
-                        href={menuItem.link}
-                        title={menuItem.id}
-                        {...(hasPopup
-                            ? {
-                                  'aria-expanded': !!menuItem.expanded,
-                              }
-                            : {})}
-                        aria-haspopup={hasPopup}
-                        onMouseEnter={
-                            isRoot ? expand.bind(null, menuItem.id) : null
-                        }
-                    >
-                        {menuItem.label}
-                    </a>
+                    <Link href={menuItem.link}>
+                        <a
+                            {...(menuItem.target
+                                ? {
+                                      target: menuItem.target,
+                                      rel: 'noopener noreferrer nofollow',
+                                  }
+                                : {})}
+                            title={menuItem.id}
+                            {...(hasPopup
+                                ? {
+                                      'aria-expanded': !!menuItem.expanded,
+                                  }
+                                : {})}
+                            aria-haspopup={hasPopup}
+                            onMouseEnter={
+                                isRoot ? expand.bind(null, menuItem.id) : null
+                            }
+                        >
+                            {menuItem.label}
+                        </a>
+                    </Link>
                     {hasPopup && (
                         <button
                             onClick={toggle.bind(null, menuItem.id)}

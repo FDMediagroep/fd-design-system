@@ -60,52 +60,214 @@ function Page() {
                     label="Main menu"
                     menuItems={[
                         {
-                            label: 'Menu 1',
-                            link: '#Menu-1',
+                            label: 'Main',
+                            link: '#',
+                            menuItems: [
+                                {
+                                    label: 'Home',
+                                    link: '/',
+                                },
+                                {
+                                    label: 'Brandbook 📤',
+                                    link: 'https://fd.nl/brandbook',
+                                    target: '_blank',
+                                },
+                                {
+                                    label: 'Colors 📤',
+                                    link:
+                                        'https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/771162327/Colors',
+                                    target: '_blank',
+                                },
+                                {
+                                    label: 'Design Tokens',
+                                    link: '/tokens',
+                                },
+                                {
+                                    label: 'Downloads 📤',
+                                    link:
+                                        'https://fdmediagroep.atlassian.net/wiki/spaces/SHAR/pages/729186428/Bestandslijsten',
+                                    target: '_blank',
+                                },
+                            ],
                         },
                         {
-                            label: 'Menu 2',
-                            link: '#Menu-2',
+                            label: 'Article',
+                            link: '#',
                             menuItems: [
-                                { label: 'Menu 2.1', link: '#Menu-2.1' },
                                 {
-                                    label: 'Menu 2.2',
-                                    link: '#Menu-2.2',
+                                    label: 'BulletPoint',
+                                    link: '/article-bullet-point',
+                                },
+                                {
+                                    label: 'Financial Agenda',
+                                    link: '/financial-agenda',
+                                },
+                                {
+                                    label: 'Image',
+                                    link: '/article-image',
+                                },
+                                {
+                                    label: 'Infographic',
+                                    link: '/article-infographic',
+                                },
+                                {
+                                    label: 'Latest News',
+                                    link: '/article-latest-news',
+                                },
+                                {
+                                    label: 'LinkBlock',
+                                    link: '/article-link-block',
+                                },
+                                {
+                                    label: 'LinkCard',
+                                    link: '/article-link-card',
+                                },
+                                {
+                                    label: 'NumberFrame',
+                                    link: '/numberframe',
+                                },
+                                {
+                                    label: 'Quote',
+                                    link: '/quote',
+                                },
+                                {
+                                    label: 'ReadMore',
+                                    link: '/readmore',
+                                },
+                                {
+                                    label: 'Summary',
+                                    link: '/article-summary',
+                                },
+                                {
+                                    label: 'Tags',
+                                    link: '/article-tags',
+                                },
+                                {
+                                    label: 'TextFrame',
+                                    link: '/textframe',
+                                },
+                                {
+                                    label: 'WordFrame',
+                                    link: '/wordframe',
+                                },
+                            ],
+                        },
+                        {
+                            label: 'Controls',
+                            link: '#',
+                            menuItems: [
+                                {
+                                    label: 'Breaking Switch',
+                                    link: '/input/breaking-switch',
+                                },
+                                {
+                                    label: 'Button',
+                                    link: '/button/default',
+                                },
+                                { label: 'Button CTA', link: '/button/cta' },
+                                {
+                                    label: 'Button Follow',
+                                    link: '/button/follow',
+                                },
+                                {
+                                    label: 'Ghost Button',
+                                    link: '/button/ghost',
+                                },
+                                { label: 'Checkbox', link: '/input/checkbox' },
+                                { label: 'Date', link: '/input/dateinput' },
+                                { label: 'E-mail', link: '/input/emailinput' },
+                                {
+                                    label: 'Mobile (tel)',
+                                    link: '/input/mobileinput',
+                                },
+                                { label: 'Radio', link: '/input/radio' },
+                                { label: 'Select', link: '/input/select' },
+                                { label: 'Switch', link: '/input/switch' },
+                                { label: 'TextArea', link: '/input/textarea' },
+                                { label: 'Text', link: '/input/textinput' },
+                            ],
+                        },
+                        {
+                            label: 'Cards',
+                            link: '#',
+                            menuItems: [
+                                {
+                                    label: 'Cards',
+                                    link: '/cards',
                                     menuItems: [
                                         {
-                                            label: 'Menu 2.2.1',
-                                            link: '#Menu-2.2.1',
+                                            label: 'Horizontal 1',
+                                            link: '/card/horizontal-1',
+                                        },
+                                        {
+                                            label: 'Horizontal 2',
+                                            link: '/card/horizontal-2',
+                                        },
+                                        {
+                                            label: 'Horizontal 3',
+                                            link: '/card/horizontal-3',
+                                        },
+                                        {
+                                            label: 'Hybrid 1',
+                                            link: '/card/hybrid-1',
+                                        },
+                                        {
+                                            label: 'Hybrid 2',
+                                            link: '/card/hybrod-2',
+                                        },
+                                        {
+                                            label: 'LinkCard',
+                                            link: '/card/link-card',
+                                        },
+                                        {
+                                            label: 'Vertical 1',
+                                            link: '/card/horizontal-1',
+                                        },
+                                        {
+                                            label: 'Vertical 2',
+                                            link: '/card/horizontal-2',
+                                        },
+                                        {
+                                            label: 'Vertical 3',
+                                            link: '/card/horizontal-3',
                                         },
                                     ],
                                 },
                             ],
                         },
                         {
-                            label: 'Menu 3',
-                            link: '#Menu-3',
+                            label: 'Misc.',
+                            link: '#',
                             menuItems: [
-                                { label: 'Menu 3.1', link: '#Menu-3.1' },
                                 {
-                                    label: 'Menu 3.2',
-                                    link: '#Menu-3.2',
+                                    label: 'A/B Testing component',
+                                    link: '/ab',
+                                },
+                                {
+                                    label: 'Accordion',
+                                    link: '/accordion',
+                                },
+                                { label: 'Author Info', link: '/author-info' },
+                                {
+                                    label: 'Cookie Consent',
+                                    link: '/cookieconsent#cookie-consent',
                                     menuItems: [
                                         {
-                                            label: 'Menu 3.2.1',
-                                            link: '#Menu-3.2.1',
-                                            menuItems: [
-                                                {
-                                                    label: 'Menu 3.2.1.1',
-                                                    link: '#Menu-3.2.1.1',
-                                                },
-                                                {
-                                                    label: 'Menu 3.2.1.2',
-                                                    link: '#Menu-3.2.1.2',
-                                                },
-                                            ],
+                                            label: 'Locked Content',
+                                            link:
+                                                '/cookieconsent#locked-content',
                                         },
                                     ],
                                 },
-                                { label: 'Menu 3.3', link: '#Menu-3.3' },
+                                {
+                                    label: 'Menu',
+                                    link: '/menu',
+                                },
+                                { label: 'Modal', link: '/modal' },
+                                {
+                                    label: 'Stock Ticker',
+                                    link: '/stock-ticker',
+                                },
                             ],
                         },
                     ]}
