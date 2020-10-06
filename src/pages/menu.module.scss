@@ -3,6 +3,7 @@
 @import '../design-tokens/media.scss';
 
 .menu {
+    min-width: 480px;
     display: inline-block;
 
     .search {

@@ -29,7 +29,7 @@
         white-space: nowrap;
         overflow: hidden;
 
-        div {
+        ul {
             position: absolute;
             ul {
                 display: inline-flex;
@@ -41,13 +41,12 @@
         /**
          * First sub-menu level.
          */
-        > ul > li > div > ul {
+        > ul > li > ul {
             top: 55px;
         }
 
         ul {
-            position: absolute;
-            width: 300px;
+            flex: 1 1 auto;
             list-style: none;
             left: 0;
             padding: 0;
@@ -79,16 +78,24 @@
             top: 0;
             > li {
                 > ul {
+                    position: absolute;
                     box-sizing: border-box;
-                    border: 1px solid var(--dividers);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        border: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-                    }
-                    background-color: red;
                     overflow-y: auto;
+                    min-width: 300px;
                     max-height: 60vh;
+                    li {
+                        background-color: var(--dividers);
+                        // IE11
+                        @media screen and (-ms-high-contrast: active),
+                            (-ms-high-contrast: none) {
+                            background-color: #{map-deep-get(
+                                    $colors,
+                                    'colors',
+                                    'neutral',
+                                    60
+                                )};
+                        }
+                    }
                 }
                 .hasItems {
                     ul {
@@ -118,10 +125,6 @@
             display: none;
         }
 
-        ul ul [aria-expanded='true'] ~ div {
-            position: relative;
-        }
-
         a {
             padding: 1rem;
             display: inline-block;
@@ -147,17 +150,7 @@
             cursor: pointer;
             border: none;
             float: right;
-            background-color: var(--navigation-background);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        70
-                    )};
-            }
+            background-color: transparent;
             svg {
                 width: 1rem;
                 height: 1rem;
@@ -169,6 +162,18 @@
                 }
             }
         }
+
+        a,
+        button {
+            &:active,
+            &:focus {
+                outline-offset: -1px;
+            }
+        }
+    }
+
+    #more-menu ~ li {
+        visibility: hidden;
     }
 
     .customComponentsContainer {
@@ -177,10 +182,6 @@
         flex: 0 1 auto;
         padding: 0 1rem;
         z-index: 1;
-    }
-
-    :global(.visuallyhidden) {
-        visibility: hidden;
     }
 
     ::-webkit-scrollbar {
