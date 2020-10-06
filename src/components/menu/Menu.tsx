@@ -131,7 +131,7 @@ function Menu(props: Props) {
             let newMenuItems: MenuItem[] = [];
             let overlappedItems: MenuItem[] = [];
             let overlappedMoreMenuItems: MenuItem[] = [];
-            let newMoreMenuItem = { ...moreMenuItem };
+            let newMoreMenuItem = cloneDeep(moreMenuItem);
             const availableWidth =
                 menuRef.current.getBoundingClientRect().width -
                 customMenuRef.current.getBoundingClientRect().width;
@@ -157,14 +157,12 @@ function Menu(props: Props) {
                         /**
                          * Filter the newMenuItem from the more menu sub-menu.
                          */
-                        newMoreMenuItem.menuItems = [
-                            ...newMoreMenuItem.menuItems.filter(
-                                (menuItem) => menuItem.id !== newMenuItem.id
-                            ),
-                        ];
+                        newMoreMenuItem.menuItems = newMoreMenuItem.menuItems.filter(
+                            (menuItem) => menuItem.id !== newMenuItem.id
+                        );
                         accumulatedWidth += cur?.getBoundingClientRect().width;
                     } else {
-                        overlappedItems.push({ ...newMenuItem });
+                        overlappedItems.push(newMenuItem);
 
                         overlappedMoreMenuItems.push(
                             ...generateMoreIds(
@@ -176,6 +174,11 @@ function Menu(props: Props) {
                 }
             });
 
+            overlappedMoreMenuItems.forEach((overlappedItem) => {
+                newMoreMenuItem.menuItems = newMoreMenuItem.menuItems.filter(
+                    (moreItem) => moreItem.id !== overlappedItem.id
+                );
+            });
             newMoreMenuItem.menuItems.unshift(...overlappedMoreMenuItems);
 
             setSortedMenuItems([
@@ -187,7 +190,7 @@ function Menu(props: Props) {
     }, [menuRef.current, customMenuRef.current, menuItems, moreMenuItem]);
 
     useEffect(() => {
-        window.addEventListener('resize', () => debounce(handleOverlap, 50));
+        window.addEventListener('resize', () => debounce(handleOverlap, 100));
         handleOverlap(); // Initial check
     }, [handleOverlap]);
 

@@ -31,6 +31,7 @@
         overflow: hidden;
 
         ul {
+            z-index: 9999;
             position: absolute;
             ul {
                 display: inline-flex;
@@ -82,7 +83,7 @@
                     position: absolute;
                     box-sizing: border-box;
                     overflow-y: auto;
-                    min-width: 300px;
+                    width: 300px;
                     max-height: 60vh;
                     li {
                         background-color: var(--dividers);
@@ -199,7 +200,7 @@
         align-items: center;
         flex: 0 1 auto;
         padding: 0 1rem;
-        z-index: 1;
+        z-index: 9999;
     }
 
     ::-webkit-scrollbar {
