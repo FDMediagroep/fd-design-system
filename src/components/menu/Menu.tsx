@@ -117,11 +117,12 @@ function generateMoreIds(menuItems: MenuItem[], parent?: string) {
  * Copy menu-items recursively.
  * @param menuItems
  */
-function copyMenuItem(menuItems: MenuItem[]) {
-    const cloned = [...menuItems];
-    cloned.forEach((clonedItem) => {
+function copyMenuItems(menuItems: MenuItem[]) {
+    const cloned = [];
+    menuItems.forEach((clonedItem) => {
+        cloned.push({ ...clonedItem });
         if (clonedItem?.menuItems?.length) {
-            clonedItem.menuItems = copyMenuItem(clonedItem.menuItems);
+            clonedItem.menuItems = copyMenuItems(clonedItem.menuItems);
         }
     });
     return cloned;
@@ -150,7 +151,7 @@ function Menu(props: Props) {
     const handleOverlap = useCallback(() => {
         if (menuRef.current && customMenuRef.current) {
             let newMenuItems: MenuItem[] = [];
-            let moreMenuItems: MenuItem[] = copyMenuItem(
+            let moreMenuItems: MenuItem[] = copyMenuItems(
                 moreMenuItem.menuItems
             );
             let overlappedItems: MenuItem[] = [];
@@ -184,7 +185,7 @@ function Menu(props: Props) {
                     } else {
                         overlappedItems.push(menuItem);
                         overlappedMoreMenuItems.push(
-                            ...copyMenuItem([menuItem])
+                            ...copyMenuItems([menuItem])
                         );
                         return false;
                     }
@@ -218,7 +219,7 @@ function Menu(props: Props) {
             id: styles['more-menu'],
             label: props.moreLabel ?? 'Meer',
             link: '',
-            menuItems: props.moreMenuItems ?? [],
+            menuItems: generateMoreIds(props.moreMenuItems) ?? [],
         });
     }, [props.menuItems, props.moreMenuItems, props.moreLabel]);
 
@@ -270,8 +271,8 @@ function Menu(props: Props) {
 
         // Shallow-copy menu items.
         const menuItemsCopy = subMenuItems?.length
-            ? [...subMenuItems]
-            : [...sortedMenuItems];
+            ? subMenuItems
+            : copyMenuItems(sortedMenuItems);
         menuItemsCopy.forEach((menuItem) => {
             if (id === menuItem.id) {
                 // Toggle the menu-item.
@@ -289,6 +290,7 @@ function Menu(props: Props) {
             }
         });
         if (!subMenuItems?.length) {
+            // only call for the root
             setSortedMenuItems(menuItemsCopy);
         }
     }
@@ -306,10 +308,9 @@ function Menu(props: Props) {
             clearTimeout(expandTimeouts[id]);
             delete expandTimeouts[id];
         }
-        const menuItemsCopy =
-            subMenuItems && subMenuItems.length
-                ? [...subMenuItems]
-                : [...sortedMenuItems];
+        const menuItemsCopy = subMenuItems?.length
+            ? subMenuItems
+            : copyMenuItems(sortedMenuItems);
         menuItemsCopy.forEach((menuItem) => {
             if (id === menuItem.id) {
                 menuItem.expanded = true;
@@ -317,7 +318,7 @@ function Menu(props: Props) {
                 expand(id, menuItem.menuItems);
             }
         });
-        if (!subMenuItems.length) {
+        if (!subMenuItems?.length) {
             // only call for the root
             setSortedMenuItems(menuItemsCopy);
         }
@@ -333,10 +334,9 @@ function Menu(props: Props) {
             return;
         }
         expandTimeouts[id] = setTimeout(() => {
-            const menuItemsCopy =
-                subMenuItems && subMenuItems.length
-                    ? [...subMenuItems]
-                    : [...sortedMenuItems];
+            const menuItemsCopy = subMenuItems?.length
+                ? subMenuItems
+                : copyMenuItems(sortedMenuItems);
             menuItemsCopy.forEach((menuItem) => {
                 if (!id || id === menuItem.id) {
                     menuItem.expanded = false;
@@ -345,7 +345,7 @@ function Menu(props: Props) {
                     }
                 }
             });
-            if (!subMenuItems.length) {
+            if (!subMenuItems?.length) {
                 // only call for the root
                 setSortedMenuItems(menuItemsCopy);
             }
