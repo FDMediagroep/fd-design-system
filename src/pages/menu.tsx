@@ -206,10 +206,10 @@ function Page() {
                         },
                         {
                             label: 'Cards',
-                            link: '#',
+                            link: '/cards',
                             menuItems: [
                                 {
-                                    label: 'Cards',
+                                    label: 'Horizontal',
                                     link: '/cards',
                                     menuItems: [
                                         {
@@ -224,6 +224,12 @@ function Page() {
                                             label: 'Horizontal 3',
                                             link: '/card/horizontal-3',
                                         },
+                                    ],
+                                },
+                                {
+                                    label: 'Hybrid',
+                                    link: '/cards',
+                                    menuItems: [
                                         {
                                             label: 'Hybrid 1',
                                             link: '/card/hybrid-1',
@@ -232,10 +238,22 @@ function Page() {
                                             label: 'Hybrid 2',
                                             link: '/card/hybrod-2',
                                         },
+                                    ],
+                                },
+                                {
+                                    label: 'LinkCard',
+                                    link: '/card/link-card',
+                                    menuItems: [
                                         {
                                             label: 'LinkCard',
                                             link: '/card/link-card',
                                         },
+                                    ],
+                                },
+                                {
+                                    label: 'Vertical',
+                                    link: '/cards',
+                                    menuItems: [
                                         {
                                             label: 'Vertical 1',
                                             link: '/card/horizontal-1',

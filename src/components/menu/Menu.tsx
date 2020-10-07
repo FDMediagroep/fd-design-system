@@ -106,6 +106,74 @@ function generateMoreIds(menuItems: MenuItem[], parent?: string) {
     return menuItemsCopy;
 }
 
+/**
+ * Check overlap and re-order menu-items.
+ */
+const handleOverlap = (
+    menuRef: any,
+    customMenuRef: any,
+    menuItems: any,
+    moreMenuItem: any
+) => {
+    let results = [];
+    if (menuRef.current && customMenuRef.current) {
+        let newMenuItems: MenuItem[] = [];
+        let overlappedItems: MenuItem[] = [];
+        let overlappedMoreMenuItems: MenuItem[] = [];
+        let newMoreMenuItem = cloneDeep(moreMenuItem);
+        const availableWidth =
+            menuRef.current.getBoundingClientRect().width -
+            customMenuRef.current.getBoundingClientRect().width;
+        const moreMenu = menuRef.current.querySelector(
+            `#${newMoreMenuItem.id}`
+        );
+        let accumulatedWidth = moreMenu
+            ? moreMenu?.getBoundingClientRect()?.width
+            : 0;
+
+        menuItems.forEach((menuItem) => {
+            if (menuItem.id !== styles['more-menu']) {
+                const newMenuItem = { ...menuItem };
+                const cur = menuRef.current.querySelector(`#${menuItem.id}`);
+                if (
+                    cur &&
+                    accumulatedWidth + cur?.getBoundingClientRect().width <
+                        availableWidth
+                ) {
+                    newMenuItems.push(newMenuItem);
+                    /**
+                     * Filter the newMenuItem from the more menu sub-menu.
+                     */
+                    newMoreMenuItem.menuItems = newMoreMenuItem.menuItems.filter(
+                        (menuItem) => menuItem.id !== newMenuItem.id
+                    );
+                    accumulatedWidth += cur?.getBoundingClientRect().width;
+                } else {
+                    overlappedItems.push(newMenuItem);
+
+                    overlappedMoreMenuItems.push(
+                        ...generateMoreIds(
+                            [cloneDeep(newMenuItem)],
+                            newMenuItem.id
+                        )
+                    );
+                }
+            }
+        });
+
+        overlappedMoreMenuItems.forEach((overlappedItem) => {
+            newMoreMenuItem.menuItems = newMoreMenuItem.menuItems.filter(
+                (moreItem) => moreItem.id !== overlappedItem.id
+            );
+        });
+        newMoreMenuItem.menuItems.unshift(...overlappedMoreMenuItems);
+
+        results = [...newMenuItems, newMoreMenuItem, ...overlappedItems];
+    }
+
+    return results;
+};
+
 const expandTimeouts = {};
 
 let previousHandleOverlap;
@@ -125,80 +193,26 @@ function Menu(props: Props) {
         menuItems
     );
 
-    /**
-     * Check overlap and re-order menu-items.
-     */
-    const handleOverlap = () => {
-        if (menuRef.current && customMenuRef.current) {
-            let newMenuItems: MenuItem[] = [];
-            let overlappedItems: MenuItem[] = [];
-            let overlappedMoreMenuItems: MenuItem[] = [];
-            let newMoreMenuItem = cloneDeep(moreMenuItem);
-            const availableWidth =
-                menuRef.current.getBoundingClientRect().width -
-                customMenuRef.current.getBoundingClientRect().width;
-            const moreMenu = menuRef.current.querySelector(
-                `#${newMoreMenuItem.id}`
-            );
-            let accumulatedWidth = moreMenu
-                ? moreMenu?.getBoundingClientRect()?.width
-                : 0;
-
-            menuItems.forEach((menuItem) => {
-                if (menuItem.id !== styles['more-menu']) {
-                    const newMenuItem = { ...menuItem };
-                    const cur = menuRef.current.querySelector(
-                        `#${menuItem.id}`
-                    );
-                    if (
-                        cur &&
-                        accumulatedWidth + cur?.getBoundingClientRect().width <
-                            availableWidth
-                    ) {
-                        newMenuItems.push(newMenuItem);
-                        /**
-                         * Filter the newMenuItem from the more menu sub-menu.
-                         */
-                        newMoreMenuItem.menuItems = newMoreMenuItem.menuItems.filter(
-                            (menuItem) => menuItem.id !== newMenuItem.id
-                        );
-                        accumulatedWidth += cur?.getBoundingClientRect().width;
-                    } else {
-                        overlappedItems.push(newMenuItem);
-
-                        overlappedMoreMenuItems.push(
-                            ...generateMoreIds(
-                                [cloneDeep(newMenuItem)],
-                                newMenuItem.id
-                            )
-                        );
-                    }
-                }
-            });
-
-            overlappedMoreMenuItems.forEach((overlappedItem) => {
-                newMoreMenuItem.menuItems = newMoreMenuItem.menuItems.filter(
-                    (moreItem) => moreItem.id !== overlappedItem.id
-                );
-            });
-            newMoreMenuItem.menuItems.unshift(...overlappedMoreMenuItems);
-
-            setSortedMenuItems([
-                ...newMenuItems,
-                newMoreMenuItem,
-                ...overlappedItems,
-            ]);
-        }
-    };
-
     useEffect(() => {
         if (previousHandleOverlap) {
             console.log(previousHandleOverlap);
             window.removeEventListener('resize', previousHandleOverlap);
         }
-        previousHandleOverlap = () => debounce(handleOverlap, 100);
+        previousHandleOverlap = () =>
+            debounce(() => {
+                setSortedMenuItems(
+                    handleOverlap(
+                        menuRef,
+                        customMenuRef,
+                        menuItems,
+                        moreMenuItem
+                    )
+                );
+            }, 100);
         window.addEventListener('resize', previousHandleOverlap);
-        handleOverlap(); // Initial check
+        setSortedMenuItems(
+            handleOverlap(menuRef, customMenuRef, menuItems, moreMenuItem)
+        ); // Initial check
     }, []);
 
     /**
@@ -299,6 +313,11 @@ function Menu(props: Props) {
         isRoot = true
     ) => {
         const items = menuItems.map((menuItem) => {
+            /**
+             * Cancel rendering if no label or component is found.
+             * Cancel rendering is menuItem is more-menu and it has not
+             * sub-menu items.
+             */
             if (
                 (!menuItem.label && !menuItem.component) ||
                 (menuItem.id === styles['more-menu'] &&
@@ -319,21 +338,47 @@ function Menu(props: Props) {
                         isRoot ? contract.bind(null, menuItem.id) : null
                     }
                 >
-                    <Link href={menuItem.link}>
-                        <a
-                            {...(menuItem.target
-                                ? {
-                                      target: menuItem.target,
-                                      rel: 'noopener noreferrer nofollow',
-                                  }
-                                : {})}
-                            title={menuItem.id}
+                    {menuItem.id !== styles['more-menu'] ? (
+                        <Link href={menuItem.link}>
+                            <a
+                                {...(menuItem.target
+                                    ? {
+                                          target: menuItem.target,
+                                          rel: 'noopener noreferrer nofollow',
+                                      }
+                                    : {})}
+                                title={menuItem.label}
+                                {...(hasPopup
+                                    ? {
+                                          'aria-expanded': !!menuItem.expanded,
+                                      }
+                                    : {})}
+                                aria-haspopup={hasPopup}
+                                onMouseEnter={
+                                    isRoot
+                                        ? expand.bind(null, menuItem.id)
+                                        : null
+                                }
+                                aria-label={menuItem.label}
+                                className={
+                                    menuItem.component
+                                        ? styles.customComponent
+                                        : null
+                                }
+                            >
+                                {menuItem.component ?? menuItem.label}
+                            </a>
+                        </Link>
+                    ) : (
+                        <button
+                            title={menuItem.label}
                             {...(hasPopup
                                 ? {
                                       'aria-expanded': !!menuItem.expanded,
                                   }
                                 : {})}
                             aria-haspopup={hasPopup}
+                            onClick={toggle.bind(null, menuItem.id)}
                             onMouseEnter={
                                 isRoot ? expand.bind(null, menuItem.id) : null
                             }
@@ -345,11 +390,14 @@ function Menu(props: Props) {
                             }
                         >
                             {menuItem.component ?? menuItem.label}
-                        </a>
-                    </Link>
+                        </button>
+                    )}
                     {hasPopup && (
                         <button
                             onClick={toggle.bind(null, menuItem.id)}
+                            onMouseEnter={
+                                isRoot ? expand.bind(null, menuItem.id) : null
+                            }
                             dangerouslySetInnerHTML={{
                                 __html: menuItem.expanded
                                     ? ChevronUpThinIcon
@@ -362,9 +410,6 @@ function Menu(props: Props) {
                             }
                             aria-expanded={menuItem.expanded}
                             aria-haspopup={hasPopup}
-                            onMouseLeave={
-                                isRoot ? contract.bind(null, menuItem.id) : null
-                            }
                         />
                     )}
                     {menuItem.menuItems &&
