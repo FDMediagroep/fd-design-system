@@ -208,7 +208,6 @@ function Menu(props: Props) {
     );
 
     useEffect(() => {
-        console.log('props change');
         setMenuItems(generateIds(props.menuItems));
         setMoreMenuItem({
             id: styles['more-menu'],
@@ -229,7 +228,6 @@ function Menu(props: Props) {
         }
         previousHandleOverlap = () =>
             debounce(() => {
-                console.log('handle overlap');
                 setSortedMenuItems(
                     handleOverlap(
                         menuRef,
