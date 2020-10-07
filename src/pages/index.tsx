@@ -65,7 +65,7 @@ function Page(props: Props) {
             </Head>
             <ReactMD
                 className="markdown"
-                renderers={{ code: CodeBlock }}
+                // renderers={{ code: CodeBlock }}
                 source={props.readme}
                 escapeHtml={false}
             />

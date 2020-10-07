@@ -56,6 +56,12 @@
             padding: 0;
             li {
                 display: flex;
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    display: inline-block;
+                    max-height: 55px;
+                }
                 justify-content: space-between;
                 position: relative;
                 background-color: var(--navigation-background);
@@ -92,6 +98,8 @@
                         // IE11
                         @media screen and (-ms-high-contrast: active),
                             (-ms-high-contrast: none) {
+                            display: block;
+                            min-width: 100%;
                             background-color: #{map-deep-get(
                                     $colors,
                                     'colors',
@@ -168,6 +176,11 @@
             border: none;
             float: right;
             background-color: transparent;
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                height: 100%;
+            }
             svg {
                 width: 1rem;
                 height: 1rem;
@@ -201,6 +214,7 @@
 
     #more-menu {
         > button:first-child {
+            float: none;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
             font-size: 1rem;

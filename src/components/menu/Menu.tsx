@@ -6,8 +6,7 @@ import {
 } from '../../design-tokens/icons';
 import { debounce } from '../../utils/debounce';
 import styles from './Menu.module.scss';
-
-declare let ResizeObserver: any;
+import ResizeObserver from 'resize-observer-polyfill';
 
 export interface MenuItem {
     /**
@@ -228,9 +227,6 @@ function Menu(props: Props) {
      * Overlapped items are then placed in the more-menu.
      */
     useEffect(() => {
-        if (!menuRef.current || !customMenuRef.current) {
-            return;
-        }
         if (previousOverlap) {
             window.removeEventListener('resize', previousOverlap);
         }
@@ -241,7 +237,7 @@ function Menu(props: Props) {
         };
         window.addEventListener('resize', previousOverlap);
         handleOverlap(); // Initial check
-    }, [menuRef, customMenuRef, menuItems, moreMenuItem]);
+    }, [handleOverlap]);
 
     /**
      * Observe if custom menu is being resized.
@@ -486,13 +482,12 @@ function Menu(props: Props) {
 
     return (
         <header
-            ref={menuRef}
             className={`${styles.menuContainer}${
                 props.className ? ` ${props.className}` : ''
             }`}
             aria-label={props.label}
         >
-            <div className={styles.menuCenter}>
+            <div className={styles.menuCenter} ref={menuRef}>
                 <nav className={styles.menu}>
                     {renderMenu(sortedMenuItems ?? menuItems)}
                 </nav>

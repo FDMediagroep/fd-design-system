@@ -20,6 +20,7 @@
         "copy:dts": "npx cpx -v \"./dist.d.ts/src/**/*.d.ts\" \"./dist\"",
         "dev": "next dev",
         "json-to-scss": "json-to-scss public/assets/design-tokens/* src/design-tokens",
+        "start": "npx next build && npx next start",
         "test": "jest --passWithNoTests",
         "test:updateSnapshots": "jest -u --passWithNoTests",
         "typedoc": "npx typedoc",
@@ -71,6 +72,7 @@
         "react-element-to-jsx-string": "^14.3.1",
         "react-lowlight": "^2.0.0",
         "react-markdown": "^4.3.1",
+        "resize-observer-polyfill": "^1.5.1",
         "sass": "^1.26.12",
         "sass-loader": "^10.0.2",
         "style-loader": "^1.3.0",
@@ -86,6 +88,7 @@
         "xmldom": "^0.3.0"
     },
     "dependencies": {
+        "@webcomponents/webcomponentsjs": "^2.4.4",
         "js-cookie": "^2.2.1"
     },
     "browserslist": {
