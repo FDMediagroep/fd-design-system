@@ -6,7 +6,6 @@ import {
 } from '../../design-tokens/icons';
 import { debounce } from '../../utils/debounce';
 import styles from './Menu.module.scss';
-import { cloneDeep } from 'lodash';
 
 declare let ResizeObserver: any;
 
