@@ -98,8 +98,6 @@
                         // IE11
                         @media screen and (-ms-high-contrast: active),
                             (-ms-high-contrast: none) {
-                            display: block;
-                            min-width: 100%;
                             background-color: #{map-deep-get(
                                     $colors,
                                     'colors',
@@ -126,6 +124,12 @@
                 .hasItems {
                     ul {
                         position: relative;
+                        // IE11
+                        @media screen and (-ms-high-contrast: active),
+                            (-ms-high-contrast: none) {
+                            display: block;
+                            min-width: 100%;
+                        }
                     }
                 }
             }
@@ -135,6 +139,12 @@
             flex-wrap: wrap;
             box-sizing: border-box;
             top: 0;
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                display: block;
+                min-width: 100%;
+            }
         }
 
         button:not([aria-expanded='true'])
