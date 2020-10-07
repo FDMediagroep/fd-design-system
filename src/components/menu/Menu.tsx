@@ -108,6 +108,8 @@ function generateMoreIds(menuItems: MenuItem[], parent?: string) {
 
 const expandTimeouts = {};
 
+let previousHandleOverlap;
+
 function Menu(props: Props) {
     const menuRef = useRef(null);
     const customMenuRef = useRef(null);
@@ -126,7 +128,7 @@ function Menu(props: Props) {
     /**
      * Check overlap and re-order menu-items.
      */
-    const handleOverlap = useCallback(() => {
+    const handleOverlap = () => {
         if (menuRef.current && customMenuRef.current) {
             let newMenuItems: MenuItem[] = [];
             let overlappedItems: MenuItem[] = [];
@@ -187,12 +189,17 @@ function Menu(props: Props) {
                 ...overlappedItems,
             ]);
         }
-    }, [menuRef.current, customMenuRef.current, menuItems, moreMenuItem]);
+    };
 
     useEffect(() => {
-        window.addEventListener('resize', () => debounce(handleOverlap, 100));
+        if (previousHandleOverlap) {
+            console.log(previousHandleOverlap);
+            window.removeEventListener('resize', previousHandleOverlap);
+        }
+        previousHandleOverlap = () => debounce(handleOverlap, 100);
+        window.addEventListener('resize', previousHandleOverlap);
         handleOverlap(); // Initial check
-    }, [handleOverlap]);
+    }, []);
 
     /**
      * Determine which menu items don't fit anymore and hide them.
@@ -331,6 +338,11 @@ function Menu(props: Props) {
                                 isRoot ? expand.bind(null, menuItem.id) : null
                             }
                             aria-label={menuItem.label}
+                            className={
+                                menuItem.component
+                                    ? styles.customComponent
+                                    : null
+                            }
                         >
                             {menuItem.component ?? menuItem.label}
                         </a>

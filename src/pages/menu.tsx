@@ -46,7 +46,14 @@ function Page() {
 
             <Explain
                 previewClassName={styles.menu}
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[
+                    ...getCssClassNames(),
+                    styles.search,
+                    styles.logo,
+                ]}
+                hideCSS={true}
+                hideHTML={true}
+                hideExternalCodeEditors={true}
                 legend="Menu"
                 reactComponentName="Menu"
                 description={
