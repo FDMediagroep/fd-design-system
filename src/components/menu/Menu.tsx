@@ -7,11 +7,10 @@ import {
 } from '../../design-tokens/icons';
 import { debounce } from '../../utils/debounce';
 import styles from './Menu.module.scss';
-import { getCircularReplacer } from '../../utils/stringify';
 
 declare let ResizeObserver: any;
 
-interface MenuItem {
+export interface MenuItem {
     /**
      * This ID is auto-generated. No need to pass this along.
      */
@@ -175,7 +174,7 @@ const handleOverlap = (
                 newMoreMenuItem.menuItems.unshift(overlappedItem);
             }
         }
-        generateMoreIds(newMoreMenuItem.menuItems);
+        newMoreMenuItem.menuItems;
 
         results = results.concat(
             newMenuItems,
@@ -202,23 +201,21 @@ function Menu(props: Props) {
         menuItems: generateMoreIds(props.moreMenuItems) ?? [],
     });
     const [menuItems, setMenuItems] = useState<MenuItem[]>(
-        generateIds(cloneDeep(props.menuItems))
+        generateIds(props.menuItems)
     );
     const [sortedMenuItems, setSortedMenuItems] = useState<MenuItem[]>(
         menuItems
     );
 
     useEffect(() => {
-        setMenuItems(props.menuItems);
+        console.log('props change');
+        setMenuItems(generateIds(props.menuItems));
         setMoreMenuItem({
             id: styles['more-menu'],
             label: props.moreLabel ?? 'Meer',
             link: '',
             menuItems: props.moreMenuItems ?? [],
         });
-        setSortedMenuItems(
-            handleOverlap(menuRef, customMenuRef, menuItems, moreMenuItem)
-        ); // Initial check
     }, [props.menuItems, props.moreMenuItems, props.moreLabel]);
 
     /**
@@ -232,6 +229,7 @@ function Menu(props: Props) {
         }
         previousHandleOverlap = () =>
             debounce(() => {
+                console.log('handle overlap');
                 setSortedMenuItems(
                     handleOverlap(
                         menuRef,
