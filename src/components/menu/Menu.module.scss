@@ -80,6 +80,7 @@
             margin: 0;
             top: 0;
             > li {
+                // First level sub-menu.
                 > ul {
                     position: absolute;
                     box-sizing: border-box;
@@ -97,6 +98,20 @@
                                     'neutral',
                                     60
                                 )};
+                        }
+
+                        li {
+                            background-color: var(--navigation-background);
+                            // IE11
+                            @media screen and (-ms-high-contrast: active),
+                                (-ms-high-contrast: none) {
+                                background-color: #{map-deep-get(
+                                        $colors,
+                                        'colors',
+                                        'neutral',
+                                        70
+                                    )};
+                            }
                         }
                     }
                 }
@@ -190,6 +205,19 @@
                 sans-serif;
             font-size: 1rem;
             padding: 1rem;
+            color: var(--meta-copy);
+            &:hover {
+                color: var(--link-hover);
+                text-decoration: underline;
+            }
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+                &:hover {
+                    color: #{map-deep-get($colors, 'colors', 'primary', 50)};
+                }
+            }
         }
         > ul {
             left: -39px;

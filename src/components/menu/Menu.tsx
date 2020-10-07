@@ -7,6 +7,7 @@ import {
 } from '../../design-tokens/icons';
 import { debounce } from '../../utils/debounce';
 import styles from './Menu.module.scss';
+import { getCircularReplacer } from '../../utils/stringify';
 
 declare let ResizeObserver: any;
 
@@ -31,7 +32,11 @@ interface MenuItem {
     /**
      * Link where the menu item should navigate to.
      */
-    link: string;
+    link?: string;
+    /**
+     * Link as shown in the browser. Can differ from link.
+     */
+    as?: string;
     /**
      * target window.
      */
@@ -66,12 +71,11 @@ interface Props {
 
 /**
  * Generate ids for menu items.
- * @param menuItems
+ * @param menuItems this will be modified as-is to increase performance
  * @param parent
  */
 function generateIds(menuItems: MenuItem[], parent?: string) {
-    const menuItemsCopy = [...menuItems];
-    menuItemsCopy.forEach((menuItem, idx) => {
+    menuItems.forEach((menuItem, idx) => {
         if (menuItem.id) {
             return true;
         }
@@ -82,28 +86,27 @@ function generateIds(menuItems: MenuItem[], parent?: string) {
             menuItem.menuItems = generateIds(menuItem.menuItems, menuItem.id);
         }
     });
-    return menuItemsCopy;
+    return menuItems;
 }
 
 /**
  * Generate ids for more menu sub-items.
- * @param menuItems
+ * @param menuItems this will be modified as-is to increase performance
  * @param parent
  */
 function generateMoreIds(menuItems: MenuItem[], parent?: string) {
-    const menuItemsCopy = [...menuItems];
-    menuItemsCopy.forEach((menuItem, idx) => {
+    menuItems.forEach((menuItem, idx) => {
         menuItem.id = `more-${
             parent ? `${parent}-${idx + 1}` : `menu-item-${idx + 1}`
         }`;
         if (menuItem.menuItems && menuItem.menuItems.length) {
             menuItem.menuItems = generateMoreIds(
-                [...menuItem.menuItems],
+                menuItem.menuItems,
                 menuItem.id.replace('more-', '')
             );
         }
     });
-    return menuItemsCopy;
+    return menuItems;
 }
 
 /**
@@ -120,7 +123,7 @@ const handleOverlap = (
         let newMenuItems: MenuItem[] = [];
         let overlappedItems: MenuItem[] = [];
         let overlappedMoreMenuItems: MenuItem[] = [];
-        let newMoreMenuItem = cloneDeep(moreMenuItem);
+        let newMoreMenuItem: MenuItem = cloneDeep(moreMenuItem);
         const availableWidth =
             menuRef.current.getBoundingClientRect().width -
             customMenuRef.current.getBoundingClientRect().width;
@@ -133,7 +136,7 @@ const handleOverlap = (
 
         menuItems.forEach((menuItem) => {
             if (menuItem.id !== styles['more-menu']) {
-                const newMenuItem = { ...menuItem };
+                const newMenuItem = menuItem;
                 const cur = menuRef.current.querySelector(`#${menuItem.id}`);
                 if (
                     cur &&
@@ -145,30 +148,36 @@ const handleOverlap = (
                      * Filter the newMenuItem from the more menu sub-menu.
                      */
                     newMoreMenuItem.menuItems = newMoreMenuItem.menuItems.filter(
-                        (menuItem) => menuItem.id !== newMenuItem.id
+                        (moreMenuItem) => moreMenuItem.id !== newMenuItem.id
                     );
                     accumulatedWidth += cur?.getBoundingClientRect().width;
                 } else {
                     overlappedItems.push(newMenuItem);
-
-                    overlappedMoreMenuItems.push(
-                        ...generateMoreIds(
-                            [cloneDeep(newMenuItem)],
-                            newMenuItem.id
-                        )
-                    );
+                    const clone = cloneDeep(newMenuItem);
+                    generateMoreIds([clone], newMenuItem.id);
+                    overlappedMoreMenuItems.push(clone);
                 }
             }
         });
 
-        overlappedMoreMenuItems.forEach((overlappedItem) => {
-            newMoreMenuItem.menuItems = newMoreMenuItem.menuItems.filter(
-                (moreItem) => moreItem.id !== overlappedItem.id
+        /**
+         * Reversed unshift of overlapping items into the more-menu.
+         */
+        for (let i = overlappedMoreMenuItems.length - 1; i > 0; --i) {
+            const overlappedItem = overlappedMoreMenuItems[i];
+            const found = newMoreMenuItem.menuItems.find(
+                (moreItem) => moreItem.id === overlappedItem.id
             );
-        });
-        newMoreMenuItem.menuItems.unshift(...overlappedMoreMenuItems);
+            if (!found) {
+                newMoreMenuItem.menuItems.unshift(overlappedItem);
+            }
+        }
 
-        results = [...newMenuItems, newMoreMenuItem, ...overlappedItems];
+        results = results.concat(
+            newMenuItems,
+            newMoreMenuItem,
+            overlappedItems
+        );
     }
 
     return results;
@@ -188,11 +197,24 @@ function Menu(props: Props) {
         link: '',
         menuItems: props.moreMenuItems ?? [],
     });
-    const [menuItems] = useState<MenuItem[]>(generateIds(props.menuItems));
+    const [menuItems, setMenuItems] = useState<MenuItem[]>(
+        generateIds(cloneDeep(props.menuItems))
+    );
     const [sortedMenuItems, setSortedMenuItems] = useState<MenuItem[]>(
         menuItems
     );
 
+    useEffect(() => {
+        setMenuItems(props.menuItems);
+        setSortedMenuItems(
+            handleOverlap(menuRef, customMenuRef, menuItems, moreMenuItem)
+        ); // Initial check
+    }, [props.menuItems]);
+
+    /**
+     * Check if menu items are being overlapped by the custom menu.
+     * Overlapped items are then placed in the more-menu.
+     */
     useEffect(() => {
         if (previousHandleOverlap) {
             console.log(previousHandleOverlap);
@@ -216,8 +238,7 @@ function Menu(props: Props) {
     }, []);
 
     /**
-     * Determine which menu items don't fit anymore and hide them.
-     * If there is enough space to show them again they will be displayed again.
+     * Observe if custom menu is being resized.
      */
     useEffect(() => {
         if (customMenuRef.current) {
@@ -228,31 +249,54 @@ function Menu(props: Props) {
         }
     }, [customMenuRef.current]);
 
-    function toggle(id: string, subMenuItems?: MenuItem[]) {
+    /**
+     * Toggle sub-menu visibility.
+     * @param id
+     * @param isRoot
+     * @param subMenuItems
+     */
+    function toggle(id: string, isRoot?: boolean, subMenuItems?: MenuItem[]) {
         if (!sortedMenuItems.length) {
+            // No need to work if we don't have any menu items.
             return;
         }
+        // Check if there are outstanding timeouts for the expansion of this menu-item.
         if (expandTimeouts[id]) {
             clearTimeout(expandTimeouts[id]);
             delete expandTimeouts[id];
         }
+
+        // Shallow-copy menu items.
         const menuItemsCopy = subMenuItems?.length
-            ? subMenuItems
+            ? [...subMenuItems]
             : [...sortedMenuItems];
         menuItemsCopy.forEach((menuItem) => {
             if (id === menuItem.id) {
+                // Toggle the menu-item.
                 menuItem.expanded = !menuItem.expanded;
             } else if (menuItem?.menuItems?.length) {
-                toggle(id, menuItem.menuItems);
+                if (isRoot) {
+                    /**
+                     * In case we are toggeling a root menu item we want to close eventual
+                     * other opened root menu-item(s)
+                     */
+                    menuItem.expanded = false;
+                }
+                // Recursively search for the menu-item matching id.
+                toggle(id, false, menuItem.menuItems);
             }
         });
         if (!subMenuItems?.length) {
-            // only call for the root
             setSortedMenuItems(menuItemsCopy);
         }
     }
 
-    const expand = (id: string, subMenuItems?: MenuItem[]) => {
+    /**
+     * Expand sub-menu.
+     * @param id
+     * @param subMenuItems
+     */
+    function expand(id: string, subMenuItems?: MenuItem[]) {
         if (!sortedMenuItems.length) {
             return;
         }
@@ -262,7 +306,7 @@ function Menu(props: Props) {
         }
         const menuItemsCopy =
             subMenuItems && subMenuItems.length
-                ? subMenuItems
+                ? [...subMenuItems]
                 : [...sortedMenuItems];
         menuItemsCopy.forEach((menuItem) => {
             if (id === menuItem.id) {
@@ -275,16 +319,21 @@ function Menu(props: Props) {
             // only call for the root
             setSortedMenuItems(menuItemsCopy);
         }
-    };
+    }
 
-    const contract = (id?: string, subMenuItems?: MenuItem[]) => {
+    /**
+     * Contract sub-menu.
+     * @param id
+     * @param subMenuItems
+     */
+    function contract(id?: string, subMenuItems?: MenuItem[]) {
         if (!sortedMenuItems.length) {
             return;
         }
         expandTimeouts[id] = setTimeout(() => {
             const menuItemsCopy =
                 subMenuItems && subMenuItems.length
-                    ? subMenuItems
+                    ? [...subMenuItems]
                     : [...sortedMenuItems];
             menuItemsCopy.forEach((menuItem) => {
                 if (!id || id === menuItem.id) {
@@ -299,7 +348,7 @@ function Menu(props: Props) {
                 setSortedMenuItems(menuItemsCopy);
             }
         }, 100);
-    };
+    }
 
     /**
      * Render all the menu-items.
@@ -307,11 +356,7 @@ function Menu(props: Props) {
      * @param hidden
      * @param isRoot true when the item is the root menu-item
      */
-    const renderMenu = (
-        menuItems: MenuItem[],
-        hidden = false,
-        isRoot = true
-    ) => {
+    function renderMenu(menuItems: MenuItem[], hidden = false, isRoot = true) {
         const items = menuItems.map((menuItem) => {
             /**
              * Cancel rendering if no label or component is found.
@@ -339,36 +384,41 @@ function Menu(props: Props) {
                     }
                 >
                     {menuItem.id !== styles['more-menu'] ? (
-                        <Link href={menuItem.link}>
-                            <a
-                                {...(menuItem.target
-                                    ? {
-                                          target: menuItem.target,
-                                          rel: 'noopener noreferrer nofollow',
-                                      }
-                                    : {})}
-                                title={menuItem.label}
-                                {...(hasPopup
-                                    ? {
-                                          'aria-expanded': !!menuItem.expanded,
-                                      }
-                                    : {})}
-                                aria-haspopup={hasPopup}
-                                onMouseEnter={
-                                    isRoot
-                                        ? expand.bind(null, menuItem.id)
-                                        : null
-                                }
-                                aria-label={menuItem.label}
-                                className={
-                                    menuItem.component
-                                        ? styles.customComponent
-                                        : null
-                                }
-                            >
-                                {menuItem.component ?? menuItem.label}
-                            </a>
-                        </Link>
+                        menuItem.link ? (
+                            <Link href={menuItem.link} as={menuItem.as}>
+                                <a
+                                    {...(menuItem.target
+                                        ? {
+                                              target: menuItem.target,
+                                              rel:
+                                                  'noopener noreferrer nofollow',
+                                          }
+                                        : {})}
+                                    title={menuItem.label}
+                                    {...(hasPopup
+                                        ? {
+                                              'aria-expanded': !!menuItem.expanded,
+                                          }
+                                        : {})}
+                                    aria-haspopup={hasPopup}
+                                    onMouseEnter={
+                                        isRoot
+                                            ? expand.bind(null, menuItem.id)
+                                            : null
+                                    }
+                                    aria-label={menuItem.label}
+                                    className={
+                                        menuItem.component
+                                            ? styles.customComponent
+                                            : null
+                                    }
+                                >
+                                    {menuItem.component ?? menuItem.label}
+                                </a>
+                            </Link>
+                        ) : (
+                            menuItem.component ?? <a>{menuItem.label}</a>
+                        )
                     ) : (
                         <button
                             title={menuItem.label}
@@ -378,7 +428,7 @@ function Menu(props: Props) {
                                   }
                                 : {})}
                             aria-haspopup={hasPopup}
-                            onClick={toggle.bind(null, menuItem.id)}
+                            onClick={toggle.bind(null, menuItem.id, isRoot)}
                             onMouseEnter={
                                 isRoot ? expand.bind(null, menuItem.id) : null
                             }
@@ -394,7 +444,7 @@ function Menu(props: Props) {
                     )}
                     {hasPopup && (
                         <button
-                            onClick={toggle.bind(null, menuItem.id)}
+                            onClick={toggle.bind(null, menuItem.id, isRoot)}
                             onMouseEnter={
                                 isRoot ? expand.bind(null, menuItem.id) : null
                             }
@@ -424,7 +474,7 @@ function Menu(props: Props) {
         });
 
         return <ul className={hidden ? 'hidden' : ''}>{items}</ul>;
-    };
+    }
 
     return (
         <header

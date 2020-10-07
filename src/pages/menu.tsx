@@ -3,7 +3,10 @@ import { Explain } from '../components/Explain';
 import { Menu, getCssClassNames } from '../components/menu/Menu';
 import Head from 'next/head';
 import styles from './menu.module.scss';
-import { FdIcon, SpyglassIcon } from '../design-tokens/icons';
+import { FdIcon, ProfileIcon, SpyglassIcon } from '../design-tokens/icons';
+import { Themes } from '../components/Themes';
+import { ButtonCta } from '../components/button/ButtonCta';
+import { ButtonGhost } from '../components/button/ButtonGhost';
 
 const metaTitle = 'Menu';
 const metaDescription = 'Menu, used to display a navigational menu';
@@ -46,11 +49,7 @@ function Page() {
 
             <Explain
                 previewClassName={styles.menu}
-                cssClassNames={[
-                    ...getCssClassNames(),
-                    styles.search,
-                    styles.logo,
-                ]}
+                cssClassNames={getCssClassNames()}
                 hideCSS={true}
                 hideHTML={true}
                 hideExternalCodeEditors={true}
@@ -306,25 +305,89 @@ function Page() {
                             ],
                         },
                     ]}
+                    moreMenuItems={[
+                        {
+                            label: 'About',
+                            link: '#',
+                            menuItems: [
+                                {
+                                    label: 'GitHub',
+                                    link:
+                                        'https://github.com/FDMediagroep/fd-design-system',
+                                    target: '_blank',
+                                    component: (
+                                        <figure
+                                            className={`${styles.invertable} ${styles.github}`}
+                                        >
+                                            <picture>
+                                                <source
+                                                    media="(max-width: 640px)"
+                                                    srcSet={`/assets/github/GitHub-Mark-32px.png, /assets/github/GitHub-Mark-64px.png 2x`}
+                                                />
+                                                <source
+                                                    media="(min-width:641px)"
+                                                    srcSet={`/assets/github/GitHub-Mark-32px.png, /assets/github/GitHub-Mark-64px.png 2x, /assets/github/GitHub-Mark-120px-plus.png 3x`}
+                                                />
+                                                <img
+                                                    alt="GitHub"
+                                                    src={`/assets/github/GitHub-Mark-32px.png`}
+                                                />
+                                            </picture>
+                                            <figcaption>GitHub</figcaption>
+                                        </figure>
+                                    ),
+                                },
+                                {
+                                    label: 'Themes',
+                                    component: (
+                                        <Themes groupName="sub-menu-themes" />
+                                    ),
+                                },
+                                {
+                                    label: 'Test article',
+                                    link: '/[section]/[id]/[title]',
+                                    as:
+                                        '/achtergrond/1324449/alle-verrijking-op-een-rijtje',
+                                },
+                                {
+                                    label: 'Test page',
+                                    link: '/fd-web',
+                                },
+                            ],
+                        },
+                    ]}
                 >
-                    <form onSubmit={handleSearchSubmit}>
-                        <div className={styles.search}>
-                            <input
-                                name="search"
-                                placeholder="Zoeken..."
-                                onBlur={handleSearchBlur}
-                                aria-label="Search text"
-                            />
-                            <button
-                                type="submit"
-                                name="search"
+                    <>
+                        <form onSubmit={handleSearchSubmit}>
+                            <div className={styles.search}>
+                                <input
+                                    name="search"
+                                    placeholder="Zoeken..."
+                                    onBlur={handleSearchBlur}
+                                    aria-label="Search text"
+                                />
+                                <button
+                                    type="submit"
+                                    name="search"
+                                    dangerouslySetInnerHTML={{
+                                        __html: SpyglassIcon,
+                                    }}
+                                    aria-label="Search submit"
+                                />
+                            </div>
+                        </form>
+                        <ButtonCta className={styles.customButton}>
+                            Abonneren
+                        </ButtonCta>
+                        <ButtonGhost className={styles.customButton}>
+                            <span
                                 dangerouslySetInnerHTML={{
-                                    __html: SpyglassIcon,
+                                    __html: ProfileIcon,
                                 }}
-                                aria-label="Search submit"
-                            />
-                        </div>
-                    </form>
+                            />{' '}
+                            Inloggen
+                        </ButtonGhost>
+                    </>
                 </Menu>
             </Explain>
         </>

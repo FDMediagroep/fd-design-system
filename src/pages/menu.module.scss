@@ -57,3 +57,18 @@
         height: 32px;
     }
 }
+
+.invertable {
+    filter: var(--filter-invert);
+}
+
+.github {
+    text-align: center;
+    img {
+        width: 1rem;
+    }
+}
+
+.customButton {
+    margin-left: 0.5rem;
+}
