@@ -150,47 +150,44 @@ function Menu(props: Props) {
 
     const handleOverlap = useCallback(() => {
         if (menuRef.current && customMenuRef.current) {
-            let results: MenuItem[] = [];
             let newMenuItems: MenuItem[] = [];
+            let moreMenuItems: MenuItem[] = copyMenuItem(
+                moreMenuItem.menuItems
+            );
             let overlappedItems: MenuItem[] = [];
             let overlappedMoreMenuItems: MenuItem[] = [];
             const availableWidth =
                 menuRef.current.getBoundingClientRect().width -
                 customMenuRef.current.getBoundingClientRect().width;
-            const moreMenu = menuRef.current.querySelector(
-                `#${moreMenuItem.id}`
-            );
-            let accumulatedWidth = moreMenu
-                ? moreMenu?.getBoundingClientRect()?.width
-                : 0;
+            let moreMenuWidth =
+                menuRef.current
+                    .querySelector(`#${moreMenuItem.id}`)
+                    ?.getBoundingClientRect()?.width ?? 0;
 
             menuItems?.forEach((menuItem) => {
                 if (menuItem.id !== styles['more-menu']) {
                     const cur = menuRef.current.querySelector(
                         `#${menuItem.id}`
                     );
-                    if (
-                        Math.max(cur?.getBoundingClientRect().width, 80) <
-                        availableWidth - accumulatedWidth
-                    ) {
+                    const itemWidth = Math.max(
+                        cur?.getBoundingClientRect().width,
+                        100
+                    );
+                    if (itemWidth < availableWidth - moreMenuWidth) {
                         newMenuItems.push(menuItem);
                         /**
                          * Remove the newMenuItem from the more menu sub-menu.
                          */
-                        moreMenuItem.menuItems = moreMenuItem.menuItems.filter(
+                        moreMenuItems = moreMenuItems.filter(
                             (moreMenuItem) => moreMenuItem.id !== menuItem.id
                         );
-                        accumulatedWidth += Math.max(
-                            document
-                                .querySelector(`#${menuItem.id}`)
-                                ?.getBoundingClientRect().width,
-                            100
-                        );
+                        moreMenuWidth += itemWidth;
                     } else {
                         overlappedItems.push(menuItem);
                         overlappedMoreMenuItems.push(
                             ...copyMenuItem([menuItem])
                         );
+                        return false;
                     }
                 }
             });
@@ -200,20 +197,19 @@ function Menu(props: Props) {
              */
             for (let i = overlappedMoreMenuItems.length - 1; i >= 0; --i) {
                 const overlappedItem = overlappedMoreMenuItems[i];
-                const found = moreMenuItem.menuItems.find(
+                const found = moreMenuItems.find(
                     (moreItem) => moreItem.id === overlappedItem.id
                 );
                 if (!found) {
-                    moreMenuItem.menuItems.unshift(overlappedItem);
+                    moreMenuItems.unshift(overlappedItem);
                 }
             }
 
-            results = results.concat(
-                newMenuItems,
-                moreMenuItem,
-                overlappedItems
-            );
-            setSortedMenuItems(results);
+            setSortedMenuItems([
+                ...newMenuItems,
+                { ...moreMenuItem, menuItems: moreMenuItems },
+                ...overlappedItems,
+            ]);
         }
     }, [menuRef, customMenuRef, menuItems, moreMenuItem]);
 
@@ -225,7 +221,6 @@ function Menu(props: Props) {
             link: '',
             menuItems: props.moreMenuItems ?? [],
         });
-        handleOverlap();
     }, [props.menuItems, props.moreMenuItems, props.moreLabel]);
 
     /**
@@ -242,7 +237,7 @@ function Menu(props: Props) {
         previousOverlap = () => {
             debounce(() => {
                 handleOverlap();
-            }, 100);
+            }, 50);
         };
         window.addEventListener('resize', previousOverlap);
         handleOverlap(); // Initial check
