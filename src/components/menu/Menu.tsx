@@ -48,6 +48,8 @@ export interface MenuItem {
      * Sub-menu items.
      */
     menuItems?: MenuItem[];
+
+    [x: string]: any;
 }
 
 interface Props {
@@ -163,29 +165,31 @@ function Menu(props: Props) {
                 : 0;
 
             menuItems?.forEach((menuItem) => {
-                const menuItemCopy = menuItem;
-                if (menuItemCopy.id !== styles['more-menu']) {
+                if (menuItem.id !== styles['more-menu']) {
                     const cur = menuRef.current.querySelector(
-                        `#${menuItemCopy.id}`
+                        `#${menuItem.id}`
                     );
                     if (
-                        cur?.getBoundingClientRect().width &&
-                        accumulatedWidth + cur?.getBoundingClientRect().width <
-                            availableWidth
+                        Math.max(cur?.getBoundingClientRect().width, 80) <
+                        availableWidth - accumulatedWidth
                     ) {
-                        newMenuItems.push(menuItemCopy);
+                        newMenuItems.push(menuItem);
                         /**
                          * Remove the newMenuItem from the more menu sub-menu.
                          */
                         moreMenuItem.menuItems = moreMenuItem.menuItems.filter(
-                            (moreMenuItem) =>
-                                moreMenuItem.id !== menuItemCopy.id
+                            (moreMenuItem) => moreMenuItem.id !== menuItem.id
                         );
-                        accumulatedWidth += cur?.getBoundingClientRect().width;
+                        accumulatedWidth += Math.max(
+                            document
+                                .querySelector(`#${menuItem.id}`)
+                                ?.getBoundingClientRect().width,
+                            100
+                        );
                     } else {
-                        overlappedItems.push(menuItemCopy);
+                        overlappedItems.push(menuItem);
                         overlappedMoreMenuItems.push(
-                            ...copyMenuItem([menuItemCopy])
+                            ...copyMenuItem([menuItem])
                         );
                     }
                 }
