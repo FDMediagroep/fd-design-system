@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import cloneDeep from 'lodash/cloneDeep';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
     ChevronDownThinIcon,
     ChevronUpThinIcon,
 } from '../../design-tokens/icons';
 import { debounce } from '../../utils/debounce';
 import styles from './Menu.module.scss';
+import { cloneDeep } from 'lodash';
 
 declare let ResizeObserver: any;
 
@@ -114,50 +114,77 @@ function generateMoreIds(menuItems: MenuItem[], parent?: string) {
 }
 
 /**
+ * Copy menu-items recursively.
+ * @param menuItems
+ */
+function copyMenuItem(menuItems: MenuItem[]) {
+    const cloned = [...menuItems];
+    cloned.forEach((clonedItem) => {
+        if (clonedItem?.menuItems?.length) {
+            clonedItem.menuItems = copyMenuItem(clonedItem.menuItems);
+        }
+    });
+    return cloned;
+}
+
+/**
  * Check overlap and re-order menu-items.
  */
-const handleOverlap = (
+const handleOverlapBackup = (
     menuRef: any,
     customMenuRef: any,
-    menuItems: any,
-    moreMenuItem: any
+    menuItems: MenuItem[],
+    moreMenuItem: MenuItem
 ) => {
-    let results = [];
+    let results: MenuItem[] = [];
     if (menuRef.current && customMenuRef.current) {
         let newMenuItems: MenuItem[] = [];
         let overlappedItems: MenuItem[] = [];
         let overlappedMoreMenuItems: MenuItem[] = [];
-        let newMoreMenuItem: MenuItem = cloneDeep(moreMenuItem);
         const availableWidth =
             menuRef.current.getBoundingClientRect().width -
             customMenuRef.current.getBoundingClientRect().width;
-        const moreMenu = menuRef.current.querySelector(
-            `#${newMoreMenuItem.id}`
-        );
+        const moreMenu = menuRef.current.querySelector(`#${moreMenuItem.id}`);
         let accumulatedWidth = moreMenu
             ? moreMenu?.getBoundingClientRect()?.width
             : 0;
 
         menuItems?.forEach((menuItem) => {
-            if (menuItem.id !== styles['more-menu']) {
-                const newMenuItem = menuItem;
-                const cur = menuRef.current.querySelector(`#${menuItem.id}`);
+            const menuItemCopy = menuItem;
+            if (menuItemCopy.id !== styles['more-menu']) {
+                const cur = menuRef.current.querySelector(
+                    `#${menuItemCopy.id}`
+                );
+
+                console.log(
+                    menuItemCopy.id,
+                    window.getComputedStyle(cur).visibility,
+                    cur,
+                    accumulatedWidth,
+                    cur?.getBoundingClientRect().width,
+                    availableWidth,
+                    accumulatedWidth + cur?.getBoundingClientRect().width <
+                        availableWidth
+                );
+
                 if (
-                    cur &&
+                    cur?.getBoundingClientRect().width === 0 ||
                     accumulatedWidth + cur?.getBoundingClientRect().width <
                         availableWidth
                 ) {
-                    newMenuItems.push(newMenuItem);
+                    newMenuItems.push(menuItemCopy);
                     /**
                      * Remove the newMenuItem from the more menu sub-menu.
                      */
-                    newMoreMenuItem.menuItems = newMoreMenuItem.menuItems.filter(
-                        (moreMenuItem) => moreMenuItem.id !== newMenuItem.id
+                    moreMenuItem.menuItems = moreMenuItem.menuItems.filter(
+                        (moreMenuItem) => moreMenuItem.id !== menuItemCopy.id
                     );
                     accumulatedWidth += cur?.getBoundingClientRect().width;
                 } else {
-                    overlappedItems.push(newMenuItem);
-                    overlappedMoreMenuItems.push(cloneDeep(newMenuItem));
+                    overlappedItems.push(menuItemCopy);
+                    overlappedMoreMenuItems.push(
+                        ...copyMenuItem([menuItemCopy])
+                    );
                 }
             }
         });
@@ -167,28 +194,22 @@ const handleOverlap = (
          */
         for (let i = overlappedMoreMenuItems.length - 1; i >= 0; --i) {
             const overlappedItem = overlappedMoreMenuItems[i];
-            const found = newMoreMenuItem.menuItems.find(
+            const found = moreMenuItem.menuItems.find(
                 (moreItem) => moreItem.id === overlappedItem.id
             );
             if (!found) {
-                newMoreMenuItem.menuItems.unshift(overlappedItem);
+                moreMenuItem.menuItems.unshift(overlappedItem);
             }
         }
-        newMoreMenuItem.menuItems;
 
-        results = results.concat(
-            newMenuItems,
-            newMoreMenuItem,
-            overlappedItems
-        );
+        results = results.concat(newMenuItems, moreMenuItem, overlappedItems);
     }
 
     return results;
 };
 
 const expandTimeouts = {};
-
-let previousHandleOverlap;
+let previousOverlap;
 
 function Menu(props: Props) {
     const menuRef = useRef(null);
@@ -207,6 +228,73 @@ function Menu(props: Props) {
         menuItems
     );
 
+    const handleOverlap = useCallback(() => {
+        if (menuRef.current && customMenuRef.current) {
+            let results: MenuItem[] = [];
+            let newMenuItems: MenuItem[] = [];
+            let overlappedItems: MenuItem[] = [];
+            let overlappedMoreMenuItems: MenuItem[] = [];
+            const availableWidth =
+                menuRef.current.getBoundingClientRect().width -
+                customMenuRef.current.getBoundingClientRect().width;
+            const moreMenu = menuRef.current.querySelector(
+                `#${moreMenuItem.id}`
+            );
+            let accumulatedWidth = moreMenu
+                ? moreMenu?.getBoundingClientRect()?.width
+                : 0;
+
+            menuItems?.forEach((menuItem) => {
+                const menuItemCopy = menuItem;
+                if (menuItemCopy.id !== styles['more-menu']) {
+                    const cur = menuRef.current.querySelector(
+                        `#${menuItemCopy.id}`
+                    );
+                    if (
+                        cur?.getBoundingClientRect().width &&
+                        accumulatedWidth + cur?.getBoundingClientRect().width <
+                            availableWidth
+                    ) {
+                        newMenuItems.push(menuItemCopy);
+                        /**
+                         * Remove the newMenuItem from the more menu sub-menu.
+                         */
+                        moreMenuItem.menuItems = moreMenuItem.menuItems.filter(
+                            (moreMenuItem) =>
+                                moreMenuItem.id !== menuItemCopy.id
+                        );
+                        accumulatedWidth += cur?.getBoundingClientRect().width;
+                    } else {
+                        overlappedItems.push(menuItemCopy);
+                        overlappedMoreMenuItems.push(
+                            ...copyMenuItem([menuItemCopy])
+                        );
+                    }
+                }
+            });
+
+            /**
+             * Reversed unshift of overlapping items into the more-menu.
+             */
+            for (let i = overlappedMoreMenuItems.length - 1; i >= 0; --i) {
+                const overlappedItem = overlappedMoreMenuItems[i];
+                const found = moreMenuItem.menuItems.find(
+                    (moreItem) => moreItem.id === overlappedItem.id
+                );
+                if (!found) {
+                    moreMenuItem.menuItems.unshift(overlappedItem);
+                }
+            }
+
+            results = results.concat(
+                newMenuItems,
+                moreMenuItem,
+                overlappedItems
+            );
+            setSortedMenuItems(results);
+        }
+    }, [menuRef, customMenuRef, menuItems, moreMenuItem]);
+
     useEffect(() => {
         setMenuItems(generateIds(props.menuItems));
         setMoreMenuItem({
@@ -215,6 +303,7 @@ function Menu(props: Props) {
             link: '',
             menuItems: props.moreMenuItems ?? [],
         });
+        handleOverlap();
     }, [props.menuItems, props.moreMenuItems, props.moreLabel]);
 
     /**
@@ -222,26 +311,20 @@ function Menu(props: Props) {
      * Overlapped items are then placed in the more-menu.
      */
     useEffect(() => {
-        if (previousHandleOverlap) {
-            console.log(previousHandleOverlap);
-            window.removeEventListener('resize', previousHandleOverlap);
+        if (!menuRef.current || !customMenuRef.current) {
+            return;
         }
-        previousHandleOverlap = () =>
+        if (previousOverlap) {
+            window.removeEventListener('resize', previousOverlap);
+        }
+        previousOverlap = () => {
             debounce(() => {
-                setSortedMenuItems(
-                    handleOverlap(
-                        menuRef,
-                        customMenuRef,
-                        menuItems,
-                        moreMenuItem
-                    )
-                );
+                handleOverlap();
             }, 100);
-        window.addEventListener('resize', previousHandleOverlap);
-        setSortedMenuItems(
-            handleOverlap(menuRef, customMenuRef, menuItems, moreMenuItem)
-        ); // Initial check
-    }, []);
+        };
+        window.addEventListener('resize', previousOverlap);
+        handleOverlap(); // Initial check
+    }, [menuRef, customMenuRef, menuItems, moreMenuItem]);
 
     /**
      * Observe if custom menu is being resized.

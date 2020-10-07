@@ -49,6 +49,7 @@ function App({ Component, pageProps }) {
     }, [pageType]);
 
     const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         const formData = new FormData(e.currentTarget);
         if (formData.get('search').toString().length === 0) {
             const input: HTMLInputElement = e.currentTarget.querySelector(
