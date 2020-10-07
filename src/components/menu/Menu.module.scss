@@ -36,12 +36,9 @@
             z-index: 9999;
             position: absolute;
             ul {
-                display: flex;
+                display: inline-flex;
                 top: 0;
                 flex-direction: column;
-                li {
-                    height: 55px;
-                }
             }
         }
 
