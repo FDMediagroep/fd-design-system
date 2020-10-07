@@ -346,12 +346,14 @@ function Page() {
                                 {
                                     label: 'Test article',
                                     link: '/[section]/[id]/[title]',
+                                    rel: 'nofollow',
                                     as:
                                         '/achtergrond/1324449/alle-verrijking-op-een-rijtje',
                                 },
                                 {
                                     label: 'Test page',
                                     link: '/fd-web',
+                                    rel: 'nofollow',
                                 },
                             ],
                         },

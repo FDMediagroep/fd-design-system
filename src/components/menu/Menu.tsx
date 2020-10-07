@@ -28,7 +28,7 @@ interface MenuItem {
      * Custom component as menu-item.
      * Setting this will override the label.
      */
-    component?: JSX.Element;
+    component?: JSX.Element | JSX.Element[];
     /**
      * Link where the menu item should navigate to.
      */
@@ -37,6 +37,11 @@ interface MenuItem {
      * Link as shown in the browser. Can differ from link.
      */
     as?: string;
+    /**
+     * Link relationship.
+     * e.g.: noopener noreferrer nofollow
+     */
+    rel?: string;
     /**
      * target window.
      */
@@ -75,7 +80,7 @@ interface Props {
  * @param parent
  */
 function generateIds(menuItems: MenuItem[], parent?: string) {
-    menuItems.forEach((menuItem, idx) => {
+    menuItems?.forEach((menuItem, idx) => {
         if (menuItem.id) {
             return true;
         }
@@ -95,7 +100,7 @@ function generateIds(menuItems: MenuItem[], parent?: string) {
  * @param parent
  */
 function generateMoreIds(menuItems: MenuItem[], parent?: string) {
-    menuItems.forEach((menuItem, idx) => {
+    menuItems?.forEach((menuItem, idx) => {
         menuItem.id = `more-${
             parent ? `${parent}-${idx + 1}` : `menu-item-${idx + 1}`
         }`;
@@ -134,7 +139,7 @@ const handleOverlap = (
             ? moreMenu?.getBoundingClientRect()?.width
             : 0;
 
-        menuItems.forEach((menuItem) => {
+        menuItems?.forEach((menuItem) => {
             if (menuItem.id !== styles['more-menu']) {
                 const newMenuItem = menuItem;
                 const cur = menuRef.current.querySelector(`#${menuItem.id}`);
@@ -145,7 +150,7 @@ const handleOverlap = (
                 ) {
                     newMenuItems.push(newMenuItem);
                     /**
-                     * Filter the newMenuItem from the more menu sub-menu.
+                     * Remove the newMenuItem from the more menu sub-menu.
                      */
                     newMoreMenuItem.menuItems = newMoreMenuItem.menuItems.filter(
                         (moreMenuItem) => moreMenuItem.id !== newMenuItem.id
@@ -153,9 +158,7 @@ const handleOverlap = (
                     accumulatedWidth += cur?.getBoundingClientRect().width;
                 } else {
                     overlappedItems.push(newMenuItem);
-                    const clone = cloneDeep(newMenuItem);
-                    generateMoreIds([clone], newMenuItem.id);
-                    overlappedMoreMenuItems.push(clone);
+                    overlappedMoreMenuItems.push(cloneDeep(newMenuItem));
                 }
             }
         });
@@ -163,7 +166,7 @@ const handleOverlap = (
         /**
          * Reversed unshift of overlapping items into the more-menu.
          */
-        for (let i = overlappedMoreMenuItems.length - 1; i > 0; --i) {
+        for (let i = overlappedMoreMenuItems.length - 1; i >= 0; --i) {
             const overlappedItem = overlappedMoreMenuItems[i];
             const found = newMoreMenuItem.menuItems.find(
                 (moreItem) => moreItem.id === overlappedItem.id
@@ -172,6 +175,7 @@ const handleOverlap = (
                 newMoreMenuItem.menuItems.unshift(overlappedItem);
             }
         }
+        generateMoreIds(newMoreMenuItem.menuItems);
 
         results = results.concat(
             newMenuItems,
@@ -191,11 +195,11 @@ function Menu(props: Props) {
     const menuRef = useRef(null);
     const customMenuRef = useRef(null);
 
-    const [moreMenuItem] = useState<MenuItem>({
+    const [moreMenuItem, setMoreMenuItem] = useState<MenuItem>({
         id: styles['more-menu'],
         label: props.moreLabel ?? 'Meer',
         link: '',
-        menuItems: props.moreMenuItems ?? [],
+        menuItems: generateMoreIds(props.moreMenuItems) ?? [],
     });
     const [menuItems, setMenuItems] = useState<MenuItem[]>(
         generateIds(cloneDeep(props.menuItems))
@@ -206,10 +210,16 @@ function Menu(props: Props) {
 
     useEffect(() => {
         setMenuItems(props.menuItems);
+        setMoreMenuItem({
+            id: styles['more-menu'],
+            label: props.moreLabel ?? 'Meer',
+            link: '',
+            menuItems: props.moreMenuItems ?? [],
+        });
         setSortedMenuItems(
             handleOverlap(menuRef, customMenuRef, menuItems, moreMenuItem)
         ); // Initial check
-    }, [props.menuItems]);
+    }, [props.menuItems, props.moreMenuItems, props.moreLabel]);
 
     /**
      * Check if menu items are being overlapped by the custom menu.
@@ -357,7 +367,7 @@ function Menu(props: Props) {
      * @param isRoot true when the item is the root menu-item
      */
     function renderMenu(menuItems: MenuItem[], hidden = false, isRoot = true) {
-        const items = menuItems.map((menuItem) => {
+        const items = menuItems?.map((menuItem) => {
             /**
              * Cancel rendering if no label or component is found.
              * Cancel rendering is menuItem is more-menu and it has not
@@ -371,13 +381,13 @@ function Menu(props: Props) {
                 return true;
             }
 
-            const hasPopup =
-                menuItem.menuItems && menuItem.menuItems.length > 0;
+            const hasPopup = menuItem?.menuItems?.length > 0;
 
             return (
                 <li
+                    data-key={menuItem.id ?? menuItem.label}
+                    key={menuItem.id ?? menuItem.label}
                     id={menuItem.id}
-                    key={menuItem.id}
                     className={styles.hasItems}
                     onMouseLeave={
                         isRoot ? contract.bind(null, menuItem.id) : null
@@ -387,10 +397,13 @@ function Menu(props: Props) {
                         menuItem.link ? (
                             <Link href={menuItem.link} as={menuItem.as}>
                                 <a
+                                    key={menuItem.id ?? menuItem.label}
+                                    rel={menuItem.rel}
                                     {...(menuItem.target
                                         ? {
                                               target: menuItem.target,
                                               rel:
+                                                  menuItem.rel ??
                                                   'noopener noreferrer nofollow',
                                           }
                                         : {})}
@@ -462,8 +475,7 @@ function Menu(props: Props) {
                             aria-haspopup={hasPopup}
                         />
                     )}
-                    {menuItem.menuItems &&
-                        menuItem.menuItems.length > 0 &&
+                    {hasPopup &&
                         renderMenu(
                             menuItem.menuItems,
                             !menuItem.expanded,
