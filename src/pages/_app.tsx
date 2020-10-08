@@ -382,7 +382,7 @@ function App({ Component, pageProps }) {
                         <div className={styles.search}>
                             <input
                                 name="search"
-                                placeholder="Zoeken..."
+                                placeholder="Dummy zoekbalk..."
                                 onBlur={handleSearchBlur}
                                 aria-label="Search text"
                             />
@@ -396,10 +396,18 @@ function App({ Component, pageProps }) {
                             />
                         </div>
                     </form>
-                    <ButtonCta className={styles.customButton}>
+                    <ButtonCta
+                        className={styles.customButton}
+                        aria-label="Dummy button"
+                        title="Dummy button"
+                    >
                         Abonneren
                     </ButtonCta>
-                    <ButtonGhost className={styles.customButton}>
+                    <ButtonGhost
+                        className={styles.customButton}
+                        aria-label="Dummy button"
+                        title="Dummy button"
+                    >
                         <span
                             dangerouslySetInnerHTML={{
                                 __html: ProfileIcon,
