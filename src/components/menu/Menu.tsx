@@ -257,35 +257,39 @@ function Menu(props: Props) {
      * @param isRoot
      * @param subMenuItems
      */
-    function toggle(id: string, isRoot?: boolean, subMenuItems?: MenuItem[]) {
+    function toggle(id: string, isRoot?: boolean) {
         if (!sortedMenuItems.length) {
-            // No need to work if we don't have any menu items.
             return;
         }
-        // Shallow-copy menu items.
-        const menuItemsCopy = subMenuItems?.length
-            ? subMenuItems
-            : copyMenuItems(sortedMenuItems);
-        menuItemsCopy.forEach((menuItem) => {
-            if (id === menuItem.id) {
-                // Toggle the menu-item.
-                menuItem.expanded = !menuItem.expanded;
-            } else if (menuItem?.menuItems?.length) {
-                if (isRoot) {
-                    /**
-                     * In case we are toggeling a root menu item we want to close eventual
-                     * other opened root menu-item(s)
-                     */
-                    menuItem.expanded = false;
-                }
-                // Recursively search for the menu-item matching id.
-                toggle(id, false, menuItem.menuItems);
-            }
+        setSortedMenuItems((prevState) => {
+            const subToggle = (
+                id?: string,
+                isRoot?: boolean,
+                subMenuItems?: MenuItem[]
+            ) => {
+                const menuItemsCopy = subMenuItems?.length
+                    ? subMenuItems
+                    : copyMenuItems(prevState);
+                menuItemsCopy.forEach((menuItem) => {
+                    if (id === menuItem.id) {
+                        // Toggle the menu-item.
+                        menuItem.expanded = !menuItem.expanded;
+                    } else if (menuItem?.menuItems?.length) {
+                        if (isRoot) {
+                            /**
+                             * In case we are toggeling a root menu item we want to close eventual
+                             * other opened root menu-item(s)
+                             */
+                            menuItem.expanded = false;
+                        }
+                        // Recursively search for the menu-item matching id.
+                        subToggle(id, false, menuItem.menuItems);
+                    }
+                });
+                return menuItemsCopy;
+            };
+            return subToggle(id, isRoot);
         });
-        if (!subMenuItems?.length) {
-            // only call for the root
-            setSortedMenuItems(menuItemsCopy);
-        }
     }
 
     /**
@@ -293,24 +297,19 @@ function Menu(props: Props) {
      * @param id
      * @param subMenuItems
      */
-    function expand(id: string, subMenuItems?: MenuItem[]) {
+    function expand(id: string) {
         if (!sortedMenuItems.length) {
             return;
         }
-        const menuItemsCopy = subMenuItems?.length
-            ? subMenuItems
-            : copyMenuItems(sortedMenuItems);
-        menuItemsCopy.forEach((menuItem) => {
-            if (id === menuItem.id) {
-                menuItem.expanded = true;
-            } else if (menuItem?.menuItems?.length) {
-                expand(id, menuItem.menuItems);
-            }
+        setSortedMenuItems((prevState) => {
+            const menuItemsCopy = copyMenuItems(prevState);
+            menuItemsCopy.forEach((menuItem) => {
+                if (id === menuItem.id) {
+                    menuItem.expanded = true;
+                }
+            });
+            return menuItemsCopy;
         });
-        if (!subMenuItems?.length) {
-            // only call for the root
-            setSortedMenuItems(menuItemsCopy);
-        }
     }
 
     /**
@@ -318,25 +317,27 @@ function Menu(props: Props) {
      * @param id
      * @param subMenuItems
      */
-    function contract(id?: string, subMenuItems?: MenuItem[]) {
+    function contract(id?: string) {
         if (!sortedMenuItems.length) {
             return;
         }
-        const menuItemsCopy = subMenuItems?.length
-            ? subMenuItems
-            : copyMenuItems(sortedMenuItems);
-        menuItemsCopy.forEach((menuItem) => {
-            if (!id || id === menuItem.id) {
-                menuItem.expanded = false;
-                if (menuItem?.menuItems?.length) {
-                    contract(null, menuItem.menuItems);
-                }
-            }
+        setSortedMenuItems((prevState) => {
+            const subContract = (id?: string, subMenuItems?: MenuItem[]) => {
+                const menuItemsCopy = subMenuItems?.length
+                    ? subMenuItems
+                    : copyMenuItems(prevState);
+                menuItemsCopy.forEach((menuItem) => {
+                    if (!id || id === menuItem.id) {
+                        menuItem.expanded = false;
+                        if (menuItem?.menuItems?.length) {
+                            subContract(null, menuItem.menuItems);
+                        }
+                    }
+                });
+                return menuItemsCopy;
+            };
+            return subContract(id);
         });
-        if (!subMenuItems?.length) {
-            // only call for the root
-            setSortedMenuItems(menuItemsCopy);
-        }
     }
 
     /**
