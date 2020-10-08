@@ -128,7 +128,6 @@ function copyMenuItems(menuItems: MenuItem[]) {
     return cloned;
 }
 
-const expandTimeouts = {};
 let previousOverlap;
 
 function Menu(props: Props) {
@@ -263,12 +262,6 @@ function Menu(props: Props) {
             // No need to work if we don't have any menu items.
             return;
         }
-        // Check if there are outstanding timeouts for the expansion of this menu-item.
-        if (expandTimeouts[id]) {
-            clearTimeout(expandTimeouts[id]);
-            delete expandTimeouts[id];
-        }
-
         // Shallow-copy menu items.
         const menuItemsCopy = subMenuItems?.length
             ? subMenuItems
@@ -304,10 +297,6 @@ function Menu(props: Props) {
         if (!sortedMenuItems.length) {
             return;
         }
-        if (expandTimeouts[id]) {
-            clearTimeout(expandTimeouts[id]);
-            delete expandTimeouts[id];
-        }
         const menuItemsCopy = subMenuItems?.length
             ? subMenuItems
             : copyMenuItems(sortedMenuItems);
@@ -333,23 +322,23 @@ function Menu(props: Props) {
         if (!sortedMenuItems.length) {
             return;
         }
-        expandTimeouts[id] = setTimeout(() => {
-            const menuItemsCopy = subMenuItems?.length
-                ? subMenuItems
-                : copyMenuItems(sortedMenuItems);
-            menuItemsCopy.forEach((menuItem) => {
-                if (!id || id === menuItem.id) {
-                    menuItem.expanded = false;
-                    if (menuItem?.menuItems?.length) {
-                        contract(null, menuItem.menuItems);
-                    }
+        // expandTimeouts[id] = setTimeout(() => {
+        const menuItemsCopy = subMenuItems?.length
+            ? subMenuItems
+            : copyMenuItems(sortedMenuItems);
+        menuItemsCopy.forEach((menuItem) => {
+            if (!id || id === menuItem.id) {
+                menuItem.expanded = false;
+                if (menuItem?.menuItems?.length) {
+                    contract(null, menuItem.menuItems);
                 }
-            });
-            if (!subMenuItems?.length) {
-                // only call for the root
-                setSortedMenuItems(menuItemsCopy);
             }
-        }, 100);
+        });
+        if (!subMenuItems?.length) {
+            // only call for the root
+            setSortedMenuItems(menuItemsCopy);
+        }
+        // }, 100);
     }
 
     /**

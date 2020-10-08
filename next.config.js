@@ -124,6 +124,18 @@ module.exports = withOffline({
         };
 
         /**
+         * This config replaces React with PreactX (3KB gzipped).
+         * PreactX should be a 100% drop-in replacement for React.
+         * If PreactX is causing problems we can just turn this config off.
+         */
+        // config.resolve.alias = Object.assign({}, config.resolve.alias, {
+        //     react: 'preact/compat',
+        //     react$: 'preact/compat',
+        //     'react-dom': 'preact/compat',
+        //     'react-dom$': 'preact/compat',
+        // });
+
+        /**
          * Generate webpack bundle report.
          */
         if (process.env.WEBPACK_BUNDLE_ANALYZER == 'true') {
