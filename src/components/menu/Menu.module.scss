@@ -8,7 +8,7 @@
     z-index: 9999;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: var(--navigation-background);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -117,18 +117,39 @@
             float: left;
         }
         > ul > li > ul {
+            left: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            max-height: calc(100vh - 55px);
             top: 55px;
-            width: 300px;
-            max-height: 60vh;
+            background-color: var(--navigation-background);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        70
+                    )};
+            }
+            @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+                width: 300px;
+                max-height: 60vh;
+                height: auto;
+                position: absolute;
+            }
+
             overflow-y: auto;
         }
 
         button:not([aria-expanded='true'])
             ~ button:not([aria-expanded='true'])
-            ~ :global(.hidden):not(:hover):not(:focus),
+            ~ :global(.hidden):not(:focus),
         a:not([aria-expanded='true'])
             ~ button:not([aria-expanded='true'])
-            ~ :global(.hidden):not(:hover):not(:focus) {
+            ~ :global(.hidden):not(:focus) {
             display: none;
         }
 
@@ -157,7 +178,7 @@
             }
         }
 
-        button {
+        .subMenuToggleButton {
             cursor: pointer;
             border: none;
             float: right;
@@ -186,7 +207,8 @@
         }
 
         a,
-        button {
+        .subMenuToggleButton,
+        .moreMenuToggleButton {
             &:active,
             &:focus {
                 outline-offset: -1px;
@@ -194,33 +216,38 @@
         }
     }
 
-    #more-menu {
-        > button:first-child {
-            float: none;
-            font-family: map-deep-get($typography, 'font-family', 'regular'),
-                sans-serif;
-            font-size: 1rem;
-            padding: 1rem;
-            color: var(--meta-copy);
-            &:hover {
-                color: var(--link-hover);
-                text-decoration: underline;
-            }
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-                &:hover {
-                    color: #{map-deep-get($colors, 'colors', 'primary', 50)};
-                }
-            }
+    .moreMenuToggleButton {
+        background-color: transparent;
+        border: none;
+        height: 55px;
+        float: none;
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
+        font-size: 1rem;
+        padding: 1rem;
+        color: var(--meta-copy);
+        &:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
         }
-        > ul {
-            left: -39px;
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+            &:hover {
+                color: #{map-deep-get($colors, 'colors', 'primary', 50)};
+            }
         }
     }
-    #more-menu ~ li {
-        visibility: hidden;
+    #more-menu {
+        > ul {
+            @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+                left: -39px;
+            }
+        }
+        ~ li {
+            visibility: hidden;
+        }
     }
 
     .customComponentsContainer {

@@ -315,6 +315,27 @@ function Menu(props: Props) {
         });
     }
 
+    function contractAll() {
+        setSortedMenuItems((prevState) => {
+            const subContract = (subMenuItems?: MenuItem[]) => {
+                const menuItemsCopy = subMenuItems?.length
+                    ? subMenuItems
+                    : copyMenuItems(prevState);
+                menuItemsCopy.forEach((menuItem) => {
+                    if (menuItem.expanded) {
+                        console.log(menuItem.id);
+                    }
+                    menuItem.expanded = false;
+                    if (menuItem?.menuItems?.length) {
+                        subContract(menuItem.menuItems);
+                    }
+                });
+                return menuItemsCopy;
+            };
+            return subContract();
+        });
+    }
+
     /**
      * Contract sub-menu.
      * @param id
@@ -371,7 +392,7 @@ function Menu(props: Props) {
                     data-key={menuItem.id ?? menuItem.linkText}
                     key={menuItem.id ?? menuItem.linkText}
                     id={menuItem.id}
-                    className={styles.hasItems}
+                    className={menuItem.className}
                     onMouseLeave={
                         isRoot ? contract.bind(null, menuItem.id) : null
                     }
@@ -397,6 +418,7 @@ function Menu(props: Props) {
                                           }
                                         : {})}
                                     aria-haspopup={hasPopup}
+                                    onClick={contractAll}
                                     onMouseEnter={
                                         isRoot
                                             ? expand.bind(null, menuItem.id)
@@ -408,7 +430,7 @@ function Menu(props: Props) {
                                     className={
                                         menuItem.component
                                             ? styles.customComponent
-                                            : null
+                                            : ''
                                     }
                                 >
                                     {menuItem.component ?? menuItem.linkText}
@@ -431,17 +453,18 @@ function Menu(props: Props) {
                                 isRoot ? expand.bind(null, menuItem.id) : null
                             }
                             aria-label={menuItem.ariaLabel ?? menuItem.linkText}
-                            className={
+                            className={`${styles.moreMenuToggleButton}${
                                 menuItem.component
-                                    ? styles.customComponent
-                                    : null
-                            }
+                                    ? ` ${styles.customComponent}`
+                                    : ''
+                            }`}
                         >
                             {menuItem.component ?? menuItem.linkText}
                         </button>
                     )}
                     {hasPopup && (
                         <button
+                            className={styles.subMenuToggleButton}
                             onClick={toggle.bind(null, menuItem.id, isRoot)}
                             onMouseEnter={
                                 isRoot ? expand.bind(null, menuItem.id) : null

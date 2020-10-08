@@ -23,7 +23,7 @@
 
         flex-direction: column;
         min-height: 100vh;
-        padding: 0 0.5rem;
+        padding: 0;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             padding: 0 1rem;
         }
@@ -109,5 +109,15 @@
 
     .customButton {
         margin-left: 0.5rem;
+        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+            display: none;
+        }
+    }
+    &#{&} {
+        .showForMobile {
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                display: none;
+            }
+        }
     }
 }
