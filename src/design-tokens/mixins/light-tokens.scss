@@ -182,4 +182,10 @@
         rgba(255, 234, 219, 0.75) 50%,
         rgba(255, 234, 219, 1) 90%
     );
+
+    /**
+     * Article progress bar
+     */
+    --progress-bar: #{map-deep-get($colors, 'colors', 'primary', 25)};
+    --progression-bar: #{map-deep-get($colors, 'colors', 'primary', 75)};
 }
