@@ -322,7 +322,6 @@ function Menu(props: Props) {
         if (!sortedMenuItems.length) {
             return;
         }
-        // expandTimeouts[id] = setTimeout(() => {
         const menuItemsCopy = subMenuItems?.length
             ? subMenuItems
             : copyMenuItems(sortedMenuItems);
@@ -338,7 +337,6 @@ function Menu(props: Props) {
             // only call for the root
             setSortedMenuItems(menuItemsCopy);
         }
-        // }, 100);
     }
 
     /**
