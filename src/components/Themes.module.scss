@@ -12,9 +12,9 @@
         display: none;
     }
 
-    flex-wrap: wrap;
     flex-direction: column;
     label {
         cursor: pointer;
+        user-select: none;
     }
 }

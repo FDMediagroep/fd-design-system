@@ -193,6 +193,7 @@ module.exports = {
         '/components/cookieconsent/ResponderApi': [
             './src/components/cookieconsent/ResponderApi.ts',
         ],
+        '/components/menu/Menu': ['./src/components/menu/Menu.tsx'],
         '/components/modal/Modal': ['./src/components/modal/Modal.tsx'],
         '/components/stockticker/StockTicker': [
             './src/components/stockticker/StockTicker.tsx',

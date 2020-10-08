@@ -37,3 +37,77 @@
         background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     }
 }
+
+.menu {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    min-width: 320px;
+    display: inline-block;
+
+    .search {
+        display: flex;
+        input {
+            height: 32px;
+            box-sizing: border-box;
+            transition: all 0.15s linear;
+
+            @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+                &:not(:focus) {
+                    width: 0;
+                    padding: 0;
+                    margin: 0;
+                    border: 0;
+                }
+            }
+
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                width: 100px;
+            }
+
+            &:focus {
+                width: 200px;
+            }
+        }
+        button {
+            box-sizing: border-box;
+            height: 32px;
+            background-color: transparent;
+            border: none;
+        }
+        svg {
+            width: 1rem;
+            height: 1rem;
+            fill: var(--content-copy);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+            }
+        }
+    }
+
+    .logo {
+        padding: 0.5rem 1rem;
+        display: flex;
+        svg {
+            width: 59px;
+            height: 39px;
+        }
+    }
+
+    .invertable {
+        filter: var(--filter-invert);
+    }
+
+    .github {
+        text-align: center;
+        img {
+            width: 1rem;
+        }
+    }
+
+    .customButton {
+        margin-left: 0.5rem;
+    }
+}

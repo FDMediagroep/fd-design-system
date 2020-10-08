@@ -34,33 +34,32 @@ module.exports = withOffline({
         importScripts: [],
     },
     experimental: {
-        modern: true,
-        polyfillsOptimization: true,
-        async rewrites() {
-            return [
-                ...rewriteConfig,
-                {
-                    source: '/colors',
-                    destination:
-                        'https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/771162327/Colors',
-                },
-                {
-                    source: '/downloads',
-                    destination:
-                        'https://fdmediagroep.atlassian.net/l/c/0gaajnrZ',
-                },
-            ];
-        },
-        async redirects() {
-            return [
-                {
-                    source: '/(verrijking|verijking)',
-                    destination:
-                        '/achtergrond/1324449/alle-verrijking-op-een-rijtje',
-                    permanent: false,
-                },
-            ];
-        },
+        // modern: true,
+        // polyfillsOptimization: true,
+    },
+    async rewrites() {
+        return [
+            ...rewriteConfig,
+            {
+                source: '/colors',
+                destination:
+                    'https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/771162327/Colors',
+            },
+            {
+                source: '/downloads',
+                destination: 'https://fdmediagroep.atlassian.net/l/c/0gaajnrZ',
+            },
+        ];
+    },
+    async redirects() {
+        return [
+            {
+                source: '/(verrijking|verijking)',
+                destination:
+                    '/achtergrond/1324449/alle-verrijking-op-een-rijtje',
+                permanent: false,
+            },
+        ];
     },
     webpack: (config, options) => {
         config.node = {
@@ -123,6 +122,18 @@ module.exports = withOffline({
 
             return entries;
         };
+
+        /**
+         * This config replaces React with PreactX (3KB gzipped).
+         * PreactX should be a 100% drop-in replacement for React.
+         * If PreactX is causing problems we can just turn this config off.
+         */
+        // config.resolve.alias = Object.assign({}, config.resolve.alias, {
+        //     react: 'preact/compat',
+        //     react$: 'preact/compat',
+        //     'react-dom': 'preact/compat',
+        //     'react-dom$': 'preact/compat',
+        // });
 
         /**
          * Generate webpack bundle report.

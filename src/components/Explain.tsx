@@ -35,6 +35,14 @@ interface Props {
     cssClassNames: string[];
 
     /**
+     * Hide CSS code panel.
+     */
+    hideCSS?: boolean;
+    /**
+     * Hide HTML code panel.
+     */
+    hideHTML?: boolean;
+    /**
      * Hide the preview pane.
      */
     hidePreview?: boolean;
@@ -42,6 +50,10 @@ interface Props {
      * Hide buttons to external code editors like: CodePen and JSFiddle.
      */
     hideExternalCodeEditors?: boolean;
+    /**
+     * Hide React code panel.
+     */
+    hideReact?: boolean;
 
     /**
      * Default: column
@@ -292,66 +304,72 @@ function Explain(props: Props) {
                     showCode ? '' : ` ${styles.hideCode}`
                 }`}
             >
-                <section>
+                {!props.hideCSS && (
                     <section>
-                        <a
-                            className={styles.copyIcon}
-                            onClick={copyCss}
-                            title="Copy CSS to clipboard"
-                        >
-                            📋
-                        </a>
-                        <a
-                            className={styles.copyIconLabel}
-                            href={`data:text/plain;charset=utf-16le;base64,${cssBase64}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            download="component.css"
-                            title="Download CSS"
-                        >
-                            CSS
-                        </a>
+                        <section>
+                            <a
+                                className={styles.copyIcon}
+                                onClick={copyCss}
+                                title="Copy CSS to clipboard"
+                            >
+                                📋
+                            </a>
+                            <a
+                                className={styles.copyIconLabel}
+                                href={`data:text/plain;charset=utf-16le;base64,${cssBase64}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                download="component.css"
+                                title="Download CSS"
+                            >
+                                CSS
+                            </a>
+                        </section>
+                        <textarea
+                            className={styles.textArea}
+                            value={css}
+                            readOnly={true}
+                        />
                     </section>
-                    <textarea
-                        className={styles.textArea}
-                        value={css}
-                        readOnly={true}
-                    />
-                </section>
-                <section>
+                )}
+                {!props.hideHTML && (
                     <section>
-                        <a
-                            className={styles.copyIcon}
-                            onClick={copyHtml}
-                            title="Copy HTML to clipboard"
-                        >
-                            📋
-                        </a>
-                        HTML
+                        <section>
+                            <a
+                                className={styles.copyIcon}
+                                onClick={copyHtml}
+                                title="Copy HTML to clipboard"
+                            >
+                                📋
+                            </a>
+                            HTML
+                        </section>
+                        <textarea
+                            className={styles.textArea}
+                            value={html}
+                            readOnly={true}
+                        />
                     </section>
-                    <textarea
-                        className={styles.textArea}
-                        value={html}
-                        readOnly={true}
-                    />
-                </section>
-                <section>
+                )}
+                {!props.hideReact && (
                     <section>
-                        <a
-                            className={styles.copyIcon}
-                            onClick={copyReact}
-                            title="Copy React code to clipboard"
-                        >
-                            📋
-                        </a>
-                        React
+                        <section>
+                            <a
+                                className={styles.copyIcon}
+                                onClick={copyReact}
+                                title="Copy React code to clipboard"
+                            >
+                                📋
+                            </a>
+                            React
+                        </section>
+                        <textarea
+                            className={styles.textArea}
+                            value={react}
+                            readOnly={true}
+                        />
                     </section>
-                    <textarea
-                        className={styles.textArea}
-                        value={react}
-                        readOnly={true}
-                    />
-                </section>
+                )}
             </section>
 
             <section className={styles.tags}>
