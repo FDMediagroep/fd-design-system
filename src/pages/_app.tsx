@@ -27,7 +27,7 @@ function App({ Component, pageProps }) {
     }
 
     useEffect(() => {
-        // require('@webcomponents/webcomponentsjs');
+        require('@webcomponents/webcomponentsjs');
 
         const subscriptionId = PageStore.subscribe(() => {
             setPageType(PageStore.getPageType());
