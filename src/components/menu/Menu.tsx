@@ -18,9 +18,13 @@ export interface MenuItem {
      */
     expanded?: boolean;
     /**
-     * (aria-)label of the menu item.
+     * ARIA-label of the menu item.
      */
-    label: string;
+    ariaLabel?: string;
+    /**
+     * Link text of the menu item.
+     */
+    linkText: string;
     /**
      * Custom component as menu-item.
      * Setting this will override the label.
@@ -29,7 +33,7 @@ export interface MenuItem {
     /**
      * Link where the menu item should navigate to.
      */
-    link?: string;
+    href?: string;
     /**
      * Link as shown in the browser. Can differ from link.
      */
@@ -53,10 +57,9 @@ export interface MenuItem {
 
 interface Props {
     /**
-     * Label of the menu which will be pronounced by text-to-voice
-     * browsers.
+     * ARIA-label of the menu.
      */
-    label: string;
+    ariaLabel: string;
     /**
      * Menu items. Use a nested structure to create sub-menus.
      */
@@ -136,8 +139,8 @@ function Menu(props: Props) {
 
     const [moreMenuItem, setMoreMenuItem] = useState<MenuItem>({
         id: styles['more-menu'],
-        label: props.moreLabel ?? 'Meer',
-        link: '',
+        linkText: props.moreLabel ?? 'Meer',
+        href: '',
         menuItems: generateMoreIds(props.moreMenuItems) ?? [],
     });
     const [menuItems, setMenuItems] = useState<MenuItem[]>(
@@ -216,8 +219,8 @@ function Menu(props: Props) {
         setMenuItems(generateIds(props.menuItems));
         setMoreMenuItem({
             id: styles['more-menu'],
-            label: props.moreLabel ?? 'Meer',
-            link: '',
+            linkText: props.moreLabel ?? 'Meer',
+            href: '',
             menuItems: generateMoreIds(props.moreMenuItems) ?? [],
         });
     }, [props.menuItems, props.moreMenuItems, props.moreLabel]);
@@ -354,7 +357,7 @@ function Menu(props: Props) {
              * sub-menu items.
              */
             if (
-                (!menuItem.label && !menuItem.component) ||
+                (!menuItem.linkText && !menuItem.component) ||
                 (menuItem.id === styles['more-menu'] &&
                     !menuItem?.menuItems?.length)
             ) {
@@ -365,8 +368,8 @@ function Menu(props: Props) {
 
             return (
                 <li
-                    data-key={menuItem.id ?? menuItem.label}
-                    key={menuItem.id ?? menuItem.label}
+                    data-key={menuItem.id ?? menuItem.linkText}
+                    key={menuItem.id ?? menuItem.linkText}
                     id={menuItem.id}
                     className={styles.hasItems}
                     onMouseLeave={
@@ -374,10 +377,10 @@ function Menu(props: Props) {
                     }
                 >
                     {menuItem.id !== styles['more-menu'] ? (
-                        menuItem.link ? (
-                            <Link href={menuItem.link} as={menuItem.as}>
+                        menuItem.href ? (
+                            <Link href={menuItem.href} as={menuItem.as}>
                                 <a
-                                    key={menuItem.id ?? menuItem.label}
+                                    key={menuItem.id ?? menuItem.linkText}
                                     rel={menuItem.rel}
                                     {...(menuItem.target
                                         ? {
@@ -387,7 +390,7 @@ function Menu(props: Props) {
                                                   'noopener noreferrer nofollow',
                                           }
                                         : {})}
-                                    title={menuItem.label}
+                                    title={menuItem.linkText}
                                     {...(hasPopup
                                         ? {
                                               'aria-expanded': !!menuItem.expanded,
@@ -399,22 +402,24 @@ function Menu(props: Props) {
                                             ? expand.bind(null, menuItem.id)
                                             : null
                                     }
-                                    aria-label={menuItem.label}
+                                    aria-label={
+                                        menuItem.ariaLabel ?? menuItem.linkText
+                                    }
                                     className={
                                         menuItem.component
                                             ? styles.customComponent
                                             : null
                                     }
                                 >
-                                    {menuItem.component ?? menuItem.label}
+                                    {menuItem.component ?? menuItem.linkText}
                                 </a>
                             </Link>
                         ) : (
-                            menuItem.component ?? <a>{menuItem.label}</a>
+                            menuItem.component ?? <a>{menuItem.linkText}</a>
                         )
                     ) : (
                         <button
-                            title={menuItem.label}
+                            title={menuItem.linkText}
                             {...(hasPopup
                                 ? {
                                       'aria-expanded': !!menuItem.expanded,
@@ -425,14 +430,14 @@ function Menu(props: Props) {
                             onMouseEnter={
                                 isRoot ? expand.bind(null, menuItem.id) : null
                             }
-                            aria-label={menuItem.label}
+                            aria-label={menuItem.ariaLabel ?? menuItem.linkText}
                             className={
                                 menuItem.component
                                     ? styles.customComponent
                                     : null
                             }
                         >
-                            {menuItem.component ?? menuItem.label}
+                            {menuItem.component ?? menuItem.linkText}
                         </button>
                     )}
                     {hasPopup && (
@@ -473,7 +478,7 @@ function Menu(props: Props) {
             className={`${styles.menuContainer}${
                 props.className ? ` ${props.className}` : ''
             }`}
-            aria-label={props.label}
+            aria-label={props.ariaLabel}
         >
             <div className={styles.menuCenter} ref={menuRef}>
                 <nav className={styles.menu}>

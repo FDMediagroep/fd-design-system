@@ -81,255 +81,256 @@ function App({ Component, pageProps }) {
 
             <Menu
                 className={styles.menu}
-                label="Main menu"
+                ariaLabel="Main menu"
                 menuItems={[
                     {
-                        label: 'FD Design System',
-                        link: '/',
+                        linkText: 'FD Design System',
+                        href: '/',
                         component: (
                             <span
                                 className={styles.logo}
                                 dangerouslySetInnerHTML={{ __html: FdIcon }}
+                                aria-label="FD Design System"
                             />
                         ),
                     },
                     {
-                        label: 'Main',
-                        link: '#',
+                        linkText: 'Main',
+                        href: '#',
                         menuItems: [
                             {
-                                label: 'Home',
-                                link: '/',
+                                linkText: 'Home',
+                                href: '/',
                             },
                             {
-                                label: 'Brandbook 📤',
-                                link: 'https://fd.nl/brandbook',
+                                linkText: 'Brandbook 📤',
+                                href: 'https://fd.nl/brandbook',
                                 target: '_blank',
                             },
                             {
-                                label: 'Colors 📤',
-                                link:
+                                linkText: 'Colors 📤',
+                                href:
                                     'https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/771162327/Colors',
                                 target: '_blank',
                             },
                             {
-                                label: 'Design Tokens',
-                                link: '/tokens',
+                                linkText: 'Design Tokens',
+                                href: '/tokens',
                             },
                             {
-                                label: 'Downloads 📤',
-                                link:
+                                linkText: 'Downloads 📤',
+                                href:
                                     'https://fdmediagroep.atlassian.net/wiki/spaces/SHAR/pages/729186428/Bestandslijsten',
                                 target: '_blank',
                             },
                         ],
                     },
                     {
-                        label: 'Article',
-                        link: '#',
+                        linkText: 'Article',
+                        href: '#',
                         menuItems: [
                             {
-                                label: 'BulletPoint',
-                                link: '/article-bullet-point',
+                                linkText: 'BulletPoint',
+                                href: '/article-bullet-point',
                             },
                             {
-                                label: 'Financial Agenda',
-                                link: '/financial-agenda',
+                                linkText: 'Financial Agenda',
+                                href: '/financial-agenda',
                             },
                             {
-                                label: 'Image',
-                                link: '/article-image',
+                                linkText: 'Image',
+                                href: '/article-image',
                             },
                             {
-                                label: 'Infographic',
-                                link: '/article-infographic',
+                                linkText: 'Infographic',
+                                href: '/article-infographic',
                             },
                             {
-                                label: 'Latest News',
-                                link: '/article-latest-news',
+                                linkText: 'Latest News',
+                                href: '/article-latest-news',
                             },
                             {
-                                label: 'LinkBlock',
-                                link: '/article-link-block',
+                                linkText: 'LinkBlock',
+                                href: '/article-link-block',
                             },
                             {
-                                label: 'LinkCard',
-                                link: '/article-link-card',
+                                linkText: 'LinkCard',
+                                href: '/article-link-card',
                             },
                             {
-                                label: 'NumberFrame',
-                                link: '/numberframe',
+                                linkText: 'NumberFrame',
+                                href: '/numberframe',
                             },
                             {
-                                label: 'Quote',
-                                link: '/quote',
+                                linkText: 'Quote',
+                                href: '/quote',
                             },
                             {
-                                label: 'ReadMore',
-                                link: '/readmore',
+                                linkText: 'ReadMore',
+                                href: '/readmore',
                             },
                             {
-                                label: 'Summary',
-                                link: '/article-summary',
+                                linkText: 'Summary',
+                                href: '/article-summary',
                             },
                             {
-                                label: 'Tags',
-                                link: '/article-tags',
+                                linkText: 'Tags',
+                                href: '/article-tags',
                             },
                             {
-                                label: 'TextFrame',
-                                link: '/textframe',
+                                linkText: 'TextFrame',
+                                href: '/textframe',
                             },
                             {
-                                label: 'WordFrame',
-                                link: '/wordframe',
+                                linkText: 'WordFrame',
+                                href: '/wordframe',
                             },
                         ],
                     },
                     {
-                        label: 'Controls',
-                        link: '#',
+                        linkText: 'Controls',
+                        href: '#',
                         menuItems: [
                             {
-                                label: 'Breaking Switch',
-                                link: '/input/breaking-switch',
+                                linkText: 'Breaking Switch',
+                                href: '/input/breaking-switch',
                             },
                             {
-                                label: 'Button',
-                                link: '/button/default',
+                                linkText: 'Button',
+                                href: '/button/default',
                             },
-                            { label: 'Button CTA', link: '/button/cta' },
+                            { linkText: 'Button CTA', href: '/button/cta' },
                             {
-                                label: 'Button Follow',
-                                link: '/button/follow',
+                                linkText: 'Button Follow',
+                                href: '/button/follow',
                             },
                             {
-                                label: 'Ghost Button',
-                                link: '/button/ghost',
+                                linkText: 'Ghost Button',
+                                href: '/button/ghost',
                             },
-                            { label: 'Checkbox', link: '/input/checkbox' },
-                            { label: 'Date', link: '/input/dateinput' },
-                            { label: 'E-mail', link: '/input/emailinput' },
+                            { linkText: 'Checkbox', href: '/input/checkbox' },
+                            { linkText: 'Date', href: '/input/dateinput' },
+                            { linkText: 'E-mail', href: '/input/emailinput' },
                             {
-                                label: 'Mobile (tel)',
-                                link: '/input/mobileinput',
+                                linkText: 'Mobile (tel)',
+                                href: '/input/mobileinput',
                             },
-                            { label: 'Radio', link: '/input/radio' },
-                            { label: 'Select', link: '/input/select' },
-                            { label: 'Switch', link: '/input/switch' },
-                            { label: 'TextArea', link: '/input/textarea' },
-                            { label: 'Text', link: '/input/textinput' },
+                            { linkText: 'Radio', href: '/input/radio' },
+                            { linkText: 'Select', href: '/input/select' },
+                            { linkText: 'Switch', href: '/input/switch' },
+                            { linkText: 'TextArea', href: '/input/textarea' },
+                            { linkText: 'Text', href: '/input/textinput' },
                         ],
                     },
                     {
-                        label: 'Cards',
-                        link: '/cards',
+                        linkText: 'Cards',
+                        href: '/cards',
                         menuItems: [
                             {
-                                label: 'Horizontal',
-                                link: '/cards',
+                                linkText: 'Horizontal',
+                                href: '/cards',
                                 menuItems: [
                                     {
-                                        label: 'Horizontal 1',
-                                        link: '/card/horizontal-1',
+                                        linkText: 'Horizontal 1',
+                                        href: '/card/horizontal-1',
                                     },
                                     {
-                                        label: 'Horizontal 2',
-                                        link: '/card/horizontal-2',
+                                        linkText: 'Horizontal 2',
+                                        href: '/card/horizontal-2',
                                     },
                                     {
-                                        label: 'Horizontal 3',
-                                        link: '/card/horizontal-3',
+                                        linkText: 'Horizontal 3',
+                                        href: '/card/horizontal-3',
                                     },
                                 ],
                             },
                             {
-                                label: 'Hybrid',
-                                link: '/cards',
+                                linkText: 'Hybrid',
+                                href: '/cards',
                                 menuItems: [
                                     {
-                                        label: 'Hybrid 1',
-                                        link: '/card/hybrid-1',
+                                        linkText: 'Hybrid 1',
+                                        href: '/card/hybrid-1',
                                     },
                                     {
-                                        label: 'Hybrid 2',
-                                        link: '/card/hybrod-2',
+                                        linkText: 'Hybrid 2',
+                                        href: '/card/hybrod-2',
                                     },
                                 ],
                             },
                             {
-                                label: 'LinkCard',
-                                link: '/card/link-card',
+                                linkText: 'LinkCard',
+                                href: '/card/link-card',
                                 menuItems: [
                                     {
-                                        label: 'LinkCard',
-                                        link: '/card/link-card',
+                                        linkText: 'LinkCard',
+                                        href: '/card/link-card',
                                     },
                                 ],
                             },
                             {
-                                label: 'Vertical',
-                                link: '/cards',
+                                linkText: 'Vertical',
+                                href: '/cards',
                                 menuItems: [
                                     {
-                                        label: 'Vertical 1',
-                                        link: '/card/horizontal-1',
+                                        linkText: 'Vertical 1',
+                                        href: '/card/horizontal-1',
                                     },
                                     {
-                                        label: 'Vertical 2',
-                                        link: '/card/horizontal-2',
+                                        linkText: 'Vertical 2',
+                                        href: '/card/horizontal-2',
                                     },
                                     {
-                                        label: 'Vertical 3',
-                                        link: '/card/horizontal-3',
+                                        linkText: 'Vertical 3',
+                                        href: '/card/horizontal-3',
                                     },
                                 ],
                             },
                         ],
                     },
                     {
-                        label: 'Misc.',
-                        link: '#',
+                        linkText: 'Misc.',
+                        href: '#',
                         menuItems: [
                             {
-                                label: 'A/B Testing component',
-                                link: '/ab',
+                                linkText: 'A/B Testing component',
+                                href: '/ab',
                             },
                             {
-                                label: 'Accordion',
-                                link: '/accordion',
+                                linkText: 'Accordion',
+                                href: '/accordion',
                             },
-                            { label: 'Author Info', link: '/author-info' },
+                            { linkText: 'Author Info', href: '/author-info' },
                             {
-                                label: 'Cookie Consent',
-                                link: '/cookieconsent#cookie-consent',
+                                linkText: 'Cookie Consent',
+                                href: '/cookieconsent#cookie-consent',
                                 menuItems: [
                                     {
-                                        label: 'Locked Content',
-                                        link: '/cookieconsent#locked-content',
+                                        linkText: 'Locked Content',
+                                        href: '/cookieconsent#locked-content',
                                     },
                                 ],
                             },
                             {
-                                label: 'Menu',
-                                link: '/menu',
+                                linkText: 'Menu',
+                                href: '/menu',
                             },
-                            { label: 'Modal', link: '/modal' },
+                            { linkText: 'Modal', href: '/modal' },
                             {
-                                label: 'Stock Ticker',
-                                link: '/stock-ticker',
+                                linkText: 'Stock Ticker',
+                                href: '/stock-ticker',
                             },
                         ],
                     },
                 ]}
                 moreMenuItems={[
                     {
-                        label: 'About',
-                        link: '#',
+                        linkText: 'About',
+                        href: '#',
                         menuItems: [
                             {
-                                label: 'GitHub',
-                                link:
+                                linkText: 'GitHub',
+                                href:
                                     'https://github.com/FDMediagroep/fd-design-system',
                                 target: '_blank',
                                 component: (
@@ -355,21 +356,21 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                label: 'Themes',
+                                linkText: 'Themes',
                                 component: (
                                     <Themes groupName="sub-menu-themes" />
                                 ),
                             },
                             {
-                                label: 'Test article',
-                                link: '/[section]/[id]/[title]',
+                                linkText: 'Test article',
+                                href: '/[section]/[id]/[title]',
                                 rel: 'nofollow',
                                 as:
                                     '/achtergrond/1324449/alle-verrijking-op-een-rijtje',
                             },
                             {
-                                label: 'Test page',
-                                link: '/fd-web',
+                                linkText: 'Test page',
+                                href: '/fd-web',
                                 rel: 'nofollow',
                             },
                         ],
