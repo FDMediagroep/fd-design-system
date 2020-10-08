@@ -375,6 +375,35 @@ function App({ Component, pageProps }) {
                             },
                         ],
                     },
+                    {
+                        linkText: '',
+                        className: styles.showForMobile,
+                        component: (
+                            <ButtonCta
+                                aria-label="Dummy button"
+                                title="Dummy button"
+                            >
+                                Abonneren
+                            </ButtonCta>
+                        ),
+                    },
+                    {
+                        linkText: '',
+                        className: styles.showForMobile,
+                        component: (
+                            <ButtonGhost
+                                aria-label="Dummy button"
+                                title="Dummy button"
+                            >
+                                <span
+                                    dangerouslySetInnerHTML={{
+                                        __html: ProfileIcon,
+                                    }}
+                                />{' '}
+                                Inloggen
+                            </ButtonGhost>
+                        ),
+                    },
                 ]}
             >
                 <>
