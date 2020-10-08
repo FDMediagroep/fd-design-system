@@ -33,66 +33,40 @@
         overflow: hidden;
 
         ul {
-            z-index: 9999;
-            position: absolute;
-            ul {
-                display: inline-flex;
-                top: 0;
-                flex-direction: column;
-            }
-        }
-
-        /**
-         * First sub-menu level.
-         */
-        > ul > li > ul {
-            top: 55px;
-        }
-
-        ul {
+            margin: 0;
             flex: 1 1 auto;
             list-style: none;
             left: 0;
             padding: 0;
-            li {
-                display: flex;
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
+            z-index: 9999;
+            position: absolute;
+            ul {
+                display: inline-block;
+                width: 100%;
+                top: 0;
+
+                ul {
+                    float: left;
+                    position: relative;
+                    height: 100%;
+                }
+
+                li {
                     display: inline-block;
-                    height: 55px;
-                }
-                justify-content: space-between;
-                position: relative;
-                background-color: var(--navigation-background);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            70
-                        )};
-                }
-                a {
-                    display: inline-block;
-                    flex-basis: calc(100% - 4rem);
-                }
-            }
-        }
-        > ul {
-            display: flex;
-            margin: 0;
-            top: 0;
-            > li {
-                // First level sub-menu.
-                > ul {
-                    position: absolute;
-                    box-sizing: border-box;
-                    overflow-y: auto;
-                    width: 240px;
-                    max-height: 60vh;
+                    width: 100%;
+                    background-color: var(--navigation-background);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        background-color: #{map-deep-get(
+                                $colors,
+                                'colors',
+                                'neutral',
+                                70
+                            )};
+                    }
+
+                    // sub sub-menus.
                     li {
                         background-color: var(--dividers);
                         // IE11
@@ -106,6 +80,7 @@
                                 )};
                         }
 
+                        // sub sub sub-menus
                         li {
                             background-color: var(--navigation-background);
                             // IE11
@@ -121,32 +96,31 @@
                         }
                     }
                 }
-                .hasItems {
-                    ul {
-                        position: relative;
-                        // IE11
-                        @media screen and (-ms-high-contrast: active),
-                            (-ms-high-contrast: none) {
-                            display: flex;
-                            min-width: 100%;
-                        }
-                    }
-                }
+            }
+
+            li {
+                float: left;
+                min-height: 55px;
             }
         }
 
-        ul ul > li {
-            flex-wrap: wrap;
-            box-sizing: border-box;
-            top: 0;
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                min-width: 100%;
-            }
+        /**
+         * First sub-menu level.
+         */
+        > ul {
+            height: 55px;
+        }
+        > ul > li {
+            position: relative;
+            display: block;
+            width: auto;
+            float: left;
+        }
+        > ul > li > ul {
+            top: 55px;
+            width: 300px;
+            max-height: 60vh;
+            overflow-y: auto;
         }
 
         button:not([aria-expanded='true'])
@@ -159,10 +133,10 @@
         }
 
         a {
+            float: left;
             &:not(.customComponent) {
                 padding: 1rem;
             }
-            display: inline-block;
             flex: 1 1 auto;
             color: var(--meta-copy);
             white-space: nowrap;
@@ -188,11 +162,7 @@
             border: none;
             float: right;
             background-color: transparent;
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                height: 55px;
-            }
+            height: 55px;
             svg {
                 width: 1rem;
                 height: 1rem;
