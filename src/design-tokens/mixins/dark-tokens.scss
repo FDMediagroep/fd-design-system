@@ -186,7 +186,7 @@
     /**
      * Article progress bar
      */
-    --progress-bar: #{map-deep-get($colors, 'colors', 'primary', 25)};
+    --progress-bar: #{map-deep-get($colors, 'colors', 'primary', 100)};
     --progression-bar: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --progress-bar-longread: #{map-deep-get($colors, 'colors', 'longread', 100)};
     --progression-bar-longread: #{map-deep-get(
