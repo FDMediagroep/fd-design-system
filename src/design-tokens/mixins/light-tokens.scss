@@ -188,4 +188,11 @@
      */
     --progress-bar: #{map-deep-get($colors, 'colors', 'primary', 25)};
     --progression-bar: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --progress-bar-longread: #{map-deep-get($colors, 'colors', 'longread', 25)};
+    --progression-bar-longread: #{map-deep-get(
+            $colors,
+            'colors',
+            'longread',
+            75
+        )};
 }

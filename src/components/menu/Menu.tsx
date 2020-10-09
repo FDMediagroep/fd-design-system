@@ -440,6 +440,9 @@ function Menu(props: Props) {
                             menuItem.component ?? <a>{menuItem.linkText}</a>
                         )
                     ) : (
+                        /**
+                         * More button
+                         */
                         <button
                             title={menuItem.linkText}
                             {...(hasPopup
@@ -463,12 +466,12 @@ function Menu(props: Props) {
                         </button>
                     )}
                     {hasPopup && (
+                        /**
+                         * Toggle button
+                         */
                         <button
                             className={styles.subMenuToggleButton}
                             onClick={toggle.bind(null, menuItem.id, isRoot)}
-                            onMouseEnter={
-                                isRoot ? expand.bind(null, menuItem.id) : null
-                            }
                             dangerouslySetInnerHTML={{
                                 __html: menuItem.expanded
                                     ? ChevronUpThinIcon
@@ -484,6 +487,9 @@ function Menu(props: Props) {
                         />
                     )}
                     {hasPopup &&
+                        /**
+                         * Sub-menu
+                         */
                         renderMenu(
                             menuItem.menuItems,
                             !menuItem.expanded,
