@@ -104,10 +104,18 @@
     .github {
         box-sizing: border-box;
         width: 100%;
+        text-align: center;
         figure {
             margin: 0;
         }
-        text-align: center;
+        figcaption {
+            fill: var(--content-copy);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+            }
+        }
         img {
             width: 1rem;
         }
