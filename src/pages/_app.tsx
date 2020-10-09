@@ -254,7 +254,7 @@ function App({ Component, pageProps }) {
                                     },
                                     {
                                         linkText: 'Hybrid 2',
-                                        href: '/card/hybrod-2',
+                                        href: '/card/hybrid-2',
                                     },
                                 ],
                             },

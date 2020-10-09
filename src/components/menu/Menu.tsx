@@ -8,6 +8,7 @@ import { debounce } from '../../utils/debounce';
 import styles from './Menu.module.scss';
 import ResizeObserver from 'resize-observer-polyfill';
 import { MoreButton } from './MoreButton';
+import { ToggleButton } from './ToggleButton';
 
 export interface MenuItem {
     /**
@@ -463,21 +464,10 @@ function Menu(props: Props) {
                         /**
                          * Toggle button
                          */
-                        <button
+                        <ToggleButton
+                            menuItem={menuItem}
                             className={styles.subMenuToggleButton}
                             onClick={toggle.bind(null, menuItem.id, isRoot)}
-                            dangerouslySetInnerHTML={{
-                                __html: menuItem.expanded
-                                    ? ChevronUpThinIcon
-                                    : ChevronDownThinIcon,
-                            }}
-                            aria-label={
-                                menuItem.expanded
-                                    ? 'close sub-menu'
-                                    : 'open sub-menu'
-                            }
-                            aria-expanded={menuItem.expanded}
-                            aria-haspopup={hasPopup}
                         />
                     )}
                     {hasPopup &&
