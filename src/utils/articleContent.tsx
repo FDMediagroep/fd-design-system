@@ -47,6 +47,12 @@ export function mergeInlineContent(doc: any) {
     [].slice
         .call(doc?.documentElement.childNodes)
         .forEach((childNode: HTMLElement, idx: number) => {
+            let responsiveUrl = '';
+            let desktopUrl = '';
+            let xlUrl = '';
+            let fileName: string;
+            const fNode = childNode.getElementsByTagName('fdmg-filename');
+
             switch (childNode.nodeName) {
                 case 'fdmg-bulletpoint':
                     jsx.push(
@@ -84,9 +90,6 @@ export function mergeInlineContent(doc: any) {
                     );
                     break;
                 case 'fdmg-infographic-extended':
-                    let responsiveUrl = '';
-                    let desktopUrl = '';
-                    let xlUrl = '';
                     [].slice
                         .call(childNode.getElementsByTagName('graphic'))
                         .forEach((graphic) => {
@@ -212,10 +215,6 @@ export function mergeInlineContent(doc: any) {
                     );
                     break;
                 case 'fdmg-text-frame':
-                    let fileName: string;
-                    const fNode = childNode.getElementsByTagName(
-                        'fdmg-filename'
-                    );
                     if (fNode.length) {
                         fileName = innerHTML(childNode, 'fdmg-filename');
                     }

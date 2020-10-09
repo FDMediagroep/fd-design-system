@@ -115,7 +115,7 @@ function LockedContent(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.fdLockedContent];
 }
 

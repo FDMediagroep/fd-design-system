@@ -18,7 +18,7 @@ function RelatedPdf(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return '';
 }
 

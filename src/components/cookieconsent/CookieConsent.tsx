@@ -36,12 +36,12 @@ interface Props {
     closeLabel?: string;
     domain?: string;
     denyAllLabel?: string;
-    description?: JSX.Element | String;
+    description?: JSX.Element | string;
     onAcceptAll?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     onClose?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     onDenyAll?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     opened?: boolean;
-    title?: JSX.Element | String;
+    title?: JSX.Element | string;
 }
 
 const responderApi = new ResponderApi();
@@ -262,7 +262,7 @@ function CookieConsent(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [
         styles.fdCookieConsent,
         ...getLockedContentCssClassNames(),

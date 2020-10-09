@@ -179,7 +179,7 @@ function HybridCard1(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.hybridCard1, ...getFooterCssClassNames()];
 }
 

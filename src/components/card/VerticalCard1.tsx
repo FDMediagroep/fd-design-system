@@ -96,7 +96,7 @@ function VerticalCard1(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.verticalCard1, ...getFooterCssClassNames()];
 }
 

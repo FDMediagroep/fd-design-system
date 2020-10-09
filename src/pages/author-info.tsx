@@ -57,10 +57,10 @@ function Page() {
                     imageUrl="https://images.fd.nl/ffa583e0c7fbc666934ecc326a88defc2773f4e9.jpeg?fit=crop&amp;crop=faces&amp;auto=format&amp;q=45&amp;cs=tinysrgb&amp;w=640&amp;h=640&amp;fm=jpg"
                     title="Nelleke Trappenburg"
                     followed={followState}
-                    onEmailClick={() => {}}
+                    onEmailClick={console.log}
                     onFollowAuthorClick={handleFollow}
-                    onLinkedInClick={() => {}}
-                    onTwitterClick={() => {}}
+                    onLinkedInClick={console.log}
+                    onTwitterClick={console.log}
                 />
             </Explain>
         </>

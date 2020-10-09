@@ -7,6 +7,7 @@ import {
 import { debounce } from '../../utils/debounce';
 import styles from './Menu.module.scss';
 import ResizeObserver from 'resize-observer-polyfill';
+import { MoreButton } from './MoreButton';
 
 export interface MenuItem {
     /**
@@ -27,7 +28,7 @@ export interface MenuItem {
     linkText: string;
     /**
      * Custom component as menu-item.
-     * Setting this will override the label.
+     * Setting this will override the linkText.
      */
     component?: JSX.Element | JSX.Element[];
     /**
@@ -152,12 +153,12 @@ function Menu(props: Props) {
 
     const handleOverlap = useCallback(() => {
         if (menuRef.current && customMenuRef.current) {
-            let newMenuItems: MenuItem[] = [];
+            const newMenuItems: MenuItem[] = [];
             let moreMenuItems: MenuItem[] = copyMenuItems(
                 moreMenuItem.menuItems
             );
-            let overlappedItems: MenuItem[] = [];
-            let overlappedMoreMenuItems: MenuItem[] = [];
+            const overlappedItems: MenuItem[] = [];
+            const overlappedMoreMenuItems: MenuItem[] = [];
             const availableWidth =
                 menuRef.current.getBoundingClientRect().width -
                 customMenuRef.current.getBoundingClientRect().width;
@@ -411,7 +412,9 @@ function Menu(props: Props) {
                                                   'noopener noreferrer nofollow',
                                           }
                                         : {})}
-                                    title={menuItem.linkText}
+                                    title={
+                                        menuItem.linkText ?? menuItem.ariaLabel
+                                    }
                                     {...(hasPopup
                                         ? {
                                               'aria-expanded': !!menuItem.expanded,
@@ -443,27 +446,18 @@ function Menu(props: Props) {
                         /**
                          * More button
                          */
-                        <button
-                            title={menuItem.linkText}
-                            {...(hasPopup
-                                ? {
-                                      'aria-expanded': !!menuItem.expanded,
-                                  }
-                                : {})}
-                            aria-haspopup={hasPopup}
-                            onClick={toggle.bind(null, menuItem.id, isRoot)}
-                            onMouseEnter={
-                                isRoot ? expand.bind(null, menuItem.id) : null
-                            }
-                            aria-label={menuItem.ariaLabel ?? menuItem.linkText}
+                        <MoreButton
+                            menuItem={menuItem}
                             className={`${styles.moreMenuToggleButton}${
                                 menuItem.component
                                     ? ` ${styles.customComponent}`
                                     : ''
                             }`}
-                        >
-                            {menuItem.component ?? menuItem.linkText}
-                        </button>
+                            onClick={toggle.bind(null, menuItem.id, isRoot)}
+                            onMouseEnter={
+                                isRoot ? expand.bind(null, menuItem.id) : null
+                            }
+                        />
                     )}
                     {hasPopup && (
                         /**
@@ -524,7 +518,7 @@ function Menu(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.menu];
 }
 

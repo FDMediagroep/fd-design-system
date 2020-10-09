@@ -122,7 +122,7 @@ export default function Modal(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.modal, ...getButtonCtaCssClassNames()];
 }
 

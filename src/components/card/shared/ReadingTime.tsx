@@ -23,7 +23,7 @@ function ReadingTime(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.readingTime];
 }
 

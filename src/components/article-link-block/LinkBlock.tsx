@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './LinkBlock.module.scss';
 import { ChevronRightIcon } from '../../design-tokens/icons';
+
 interface Props {
     title: string;
     description: string;
@@ -17,6 +18,7 @@ function LinkBlock(props: Props) {
     return (
         <a
             target="_blank"
+            rel="noopener noreferrer"
             className={`${styles.fdLinkBlock} ${
                 props.position === 'right' ? styles.right : ''
             }`}
@@ -32,7 +34,7 @@ function LinkBlock(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.fdLinkBlock];
 }
 

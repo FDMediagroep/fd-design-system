@@ -1,8 +1,8 @@
 declare let document: any;
 
 export function getStyle(...classNames: string[]) {
-    let result: string = '';
-    let rootStyles: string = '';
+    let result = '';
+    let rootStyles = '';
     if (typeof document.styleSheets === 'undefined') {
         return result;
     }

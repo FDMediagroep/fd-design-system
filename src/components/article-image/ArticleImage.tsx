@@ -62,7 +62,7 @@ function ArticleImage(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.articleImage];
 }
 

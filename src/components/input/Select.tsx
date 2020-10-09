@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Select.module.scss';
 import { CheckIcon, DownThinIcon } from '../../design-tokens/icons';
 
-declare var localStorage: any;
+declare let localStorage: any;
 
 export interface Props {
     /**
@@ -171,7 +171,7 @@ function Select(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.fdSelect];
 }
 

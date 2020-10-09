@@ -150,7 +150,7 @@ function HorizontalCard1(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.horizontalCard1, ...getReadingTimeCssClassNames()];
 }
 

@@ -142,7 +142,7 @@ function ArticleTags(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.fdArticleTags, ...getButtonFollowCssClassNames()];
 }
 

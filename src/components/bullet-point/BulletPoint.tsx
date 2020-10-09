@@ -42,7 +42,7 @@ function BulletPoint(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.bulletPoint];
 }
 

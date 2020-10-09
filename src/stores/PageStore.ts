@@ -1,9 +1,9 @@
-import { ReSubstitute } from "../utils/ReSubstitute";
+import { ReSubstitute } from '../utils/ReSubstitute';
 
-export type Page = "overview" | "article";
+export type Page = 'overview' | 'article';
 
 class PageStore extends ReSubstitute {
-    private _pageType: Page = "overview";
+    private _pageType: Page = 'overview';
 
     setPageType(pageType: Page) {
         this._pageType = pageType;

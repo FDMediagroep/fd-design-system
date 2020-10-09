@@ -35,7 +35,7 @@ export default function LinkCard(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.linkCard];
 }
 

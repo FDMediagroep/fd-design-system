@@ -58,7 +58,7 @@ function Footer(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.footer, ...getReadingTimeCssClassNames()];
 }
 

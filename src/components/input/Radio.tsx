@@ -49,25 +49,23 @@ function Radio(props: Props) {
 
     return (
         <label
-            className={`${styles.fdRadio}${
-                props.className ? ` ${props.className}` : ''
-            }`}
+            className={`${styles.fdRadio}${className ? ` ${className}` : ''}`}
         >
             <input
                 {...rest}
-                id={props.id}
+                id={id}
                 type="radio"
-                name={props.name ? props.name : props.id}
-                value={props.value}
-                defaultChecked={props.defaultChecked}
-                aria-label={props.label}
+                name={name ? name : id}
+                value={value}
+                defaultChecked={defaultChecked}
+                aria-label={label}
             />
-            <span className={styles.radio}>{props.label}</span>
+            <span className={styles.radio}>{label}</span>
         </label>
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.fdRadio];
 }
 

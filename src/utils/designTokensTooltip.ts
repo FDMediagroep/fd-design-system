@@ -4,10 +4,10 @@ import TooltipStore from '../stores/TooltipStore';
 
 function hexToRgb(hex: string) {
     hex = hex.replace('#', '');
-    var bigint = parseInt(hex, 16);
-    var r = (bigint >> 16) & 255;
-    var g = (bigint >> 8) & 255;
-    var b = bigint & 255;
+    const bigint = parseInt(hex, 16);
+    const r = (bigint >> 16) & 255;
+    const g = (bigint >> 8) & 255;
+    const b = bigint & 255;
 
     return r + ',' + g + ',' + b;
 }
@@ -37,7 +37,7 @@ function getTokenName(hex: string) {
 }
 
 function getColorRecursively(el: HTMLElement, styleProp: string) {
-    let color = getComputedStyle(el)?.getPropertyValue(styleProp);
+    const color = getComputedStyle(el)?.getPropertyValue(styleProp);
     if (styleProp === 'background-color' && color === 'rgba(0, 0, 0, 0)') {
         return getColorRecursively(el.parentElement, styleProp);
     } else if (color) {
@@ -52,9 +52,9 @@ function getColorRecursively(el: HTMLElement, styleProp: string) {
 }
 
 function tooltipHandler(e: MouseEvent) {
-    let summary: Summary = {};
+    const summary: Summary = {};
     styleProps.forEach((styleProp) => {
-        let color = getColorRecursively(e.target as HTMLElement, styleProp);
+        const color = getColorRecursively(e.target as HTMLElement, styleProp);
         if (color) {
             const matches = color.match(/\d+/g);
             if (matches && matches.length === 3) {

@@ -339,7 +339,7 @@ function Page(props: Props) {
 }
 
 export async function getStaticProps({ params }) {
-    let data = await getPayload(params);
+    const data = await getPayload(params);
 
     return {
         props: {

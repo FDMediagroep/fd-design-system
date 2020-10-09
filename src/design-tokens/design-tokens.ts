@@ -1,3 +1,3 @@
-import "./design-tokens.scss";
+import './design-tokens.scss';
 
 export default {};

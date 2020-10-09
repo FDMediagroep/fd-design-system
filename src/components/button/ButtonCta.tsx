@@ -17,7 +17,7 @@ interface Props {
  * @param props
  */
 function ButtonCta(props: Props) {
-    let sizeClass = props.size ? styles.m : '';
+    const sizeClass = props.size ? styles.m : '';
 
     return (
         <button
@@ -31,7 +31,7 @@ function ButtonCta(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.fdButtonCta];
 }
 
