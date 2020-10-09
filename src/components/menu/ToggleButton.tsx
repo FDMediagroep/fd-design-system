@@ -1,8 +1,4 @@
 import React from 'react';
-import {
-    ChevronDownThinIcon,
-    ChevronUpThinIcon,
-} from '../../design-tokens/icons';
 import { MenuItem } from './Menu';
 
 interface Props {
@@ -10,23 +6,25 @@ interface Props {
     [x: string]: any;
 }
 
-function ToggleIconButton(props: Props) {
+function ToggleButton(props: Props) {
     const hasPopup = props.menuItem?.menuItems?.length > 0;
     const { menuItem, ...rest } = props;
 
     return (
         <button
             {...rest}
-            className={props.className}
-            dangerouslySetInnerHTML={{
-                __html: menuItem.expanded
-                    ? ChevronUpThinIcon
-                    : ChevronDownThinIcon,
-            }}
-            aria-label={menuItem.expanded ? 'close sub-menu' : 'open sub-menu'}
-            aria-expanded={menuItem.expanded}
+            title={menuItem.text ?? menuItem.ariaLabel}
+            {...(hasPopup
+                ? {
+                      'aria-expanded': !!menuItem.expanded,
+                  }
+                : {})}
             aria-haspopup={hasPopup}
-        />
+            aria-label={menuItem.ariaLabel ?? menuItem.text}
+            className={props.className}
+        >
+            {menuItem.component ?? menuItem.text}
+        </button>
     );
 }
 
@@ -34,4 +32,4 @@ function getCssClassNames(): string[] {
     return [];
 }
 
-export { ToggleIconButton, getCssClassNames };
+export { ToggleButton, getCssClassNames };
