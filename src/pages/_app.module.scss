@@ -97,7 +97,16 @@
         filter: var(--filter-invert);
     }
 
+    .themes {
+        padding: 0 1rem;
+    }
+
     .github {
+        box-sizing: border-box;
+        width: 100%;
+        figure {
+            margin: 0;
+        }
         text-align: center;
         img {
             width: 1rem;
