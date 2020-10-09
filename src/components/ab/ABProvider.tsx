@@ -8,7 +8,7 @@ type Cookies = {
 
 export const ABContext = createContext<[Cookies, (cookies: Cookies) => void]>([
     {},
-    () => {},
+    console.log,
 ]);
 
 interface Props {

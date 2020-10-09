@@ -96,7 +96,7 @@ function AuthorInfo(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [
         styles.fdAuthorInfo,
         ...getFollowButtonCssClassNames(),

@@ -58,7 +58,7 @@ function ArticleLatestNews(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.fdLatestNews];
 }
 

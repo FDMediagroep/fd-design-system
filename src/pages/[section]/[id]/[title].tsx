@@ -82,7 +82,7 @@ function Article(props: Props) {
 }
 
 export async function getServerSideProps({ params }) {
-    let data = await getPayload(params);
+    const data = await getPayload(params);
     let article: any;
     let authors: any[] = [];
     let formattedPublicationDate: string;

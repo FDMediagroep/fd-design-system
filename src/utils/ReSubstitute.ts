@@ -29,7 +29,7 @@ export class ReSubstitute {
     private bypassTriggerBlocks = false;
     private static triggerBlockCount = 0;
 
-    constructor(throttleMs: number = 0, bypassTriggerBlocks = false) {
+    constructor(throttleMs = 0, bypassTriggerBlocks = false) {
         this.throttleMs = throttleMs;
         this.bypassTriggerBlocks = bypassTriggerBlocks;
     }
@@ -94,7 +94,7 @@ export class ReSubstitute {
      * @param keyOrKeys trigger callback if subscription matches given key or keys.
      */
     trigger(keyOrKeys?: KeyOrKeys) {
-        if (typeof keyOrKeys === "string") {
+        if (typeof keyOrKeys === 'string') {
             this.subscriptions.forEach((subscription) => {
                 if (subscription.key === keyOrKeys) {
                     ReSubstitute.pendingCallbacks.set(subscription.callback, {

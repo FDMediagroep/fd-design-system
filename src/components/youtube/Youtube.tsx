@@ -16,7 +16,7 @@ function Youtube(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.youtube];
 }
 

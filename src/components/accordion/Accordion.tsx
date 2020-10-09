@@ -56,7 +56,7 @@ function Accordion(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.fdAccordion];
 }
 

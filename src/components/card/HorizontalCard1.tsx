@@ -87,11 +87,7 @@ function HorizontalCard1(props: Props) {
             }${props.variant === 'variant-1' ? ` ${styles.longread}` : ''}`}
             id={props.id}
         >
-            <a
-                href={props.url}
-                aria-label={props.title}
-                aria-description={props.intro}
-            >
+            <a href={props.url} aria-label={props.title}>
                 {!theme && props.imageUrl && (
                     <figure>
                         <picture>
@@ -150,7 +146,7 @@ function HorizontalCard1(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.horizontalCard1, ...getReadingTimeCssClassNames()];
 }
 

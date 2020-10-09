@@ -16,6 +16,7 @@ function Page(props: Props) {
     const breakingTeaser = props?.data?.highlightedCardsModel?.breakingTeaser;
     const singleOpeningTeaser =
         props?.data?.highlightedCardsModel?.singleOpeningTeaser;
+
     try {
         return (
             <section className={styles.page}>
@@ -191,139 +192,62 @@ function Page(props: Props) {
                     </aside>
                 </section>
 
-                <h1>Nieuws</h1>
-                <section className={styles.category}>
-                    {props?.data?.categoryCardsModel?.newsTeasers?.map(
-                        (teaser) => (
-                            <HybridCard2
-                                key={`nieuws-${teaser.id}`}
-                                id={teaser.id}
-                                className={styles.newsContainer}
-                                caption={teaser?.title}
-                                intro={teaser?.intro}
-                                label={teaser?.topicPrefixOrCategory}
-                                title={teaser?.title}
-                                url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                            />
-                        )
-                    )}
-                </section>
-
-                <h1>Achtergrond</h1>
-                <section className={styles.category}>
-                    {props?.data?.categoryCardsModel?.longReadTeasers?.map(
-                        (teaser) => (
-                            <HybridCard1
-                                className={styles.newsContainer}
-                                key={`achtergrond-${teaser.id}`}
-                                variant="variant-1"
-                                id={teaser.id}
-                                caption={teaser?.image?.caption}
-                                intro={teaser?.intro}
-                                label={teaser?.topicPrefixOrCategory}
-                                title={teaser?.title}
-                                theme={teaser?.image?.backgroundColor}
-                                url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
-                                imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
-                            />
-                        )
-                    )}
-                </section>
-
-                <h1>Beurs</h1>
-                <section className={styles.category}>
-                    {props?.data?.categoryCardsModel?.beursTeasers?.map(
-                        (teaser) => (
-                            <HybridCard1
-                                key={`beurs-${teaser.id}`}
-                                id={teaser.id}
-                                className={styles.newsContainer}
-                                caption={teaser?.image?.caption}
-                                intro={teaser?.intro}
-                                label={teaser?.topicPrefixOrCategory}
-                                title={teaser?.title}
-                                theme={teaser?.image?.backgroundColor}
-                                url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
-                                imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
-                            />
-                        )
-                    )}
-                </section>
-
-                <h1>Columns &amp; Opinie</h1>
-                <section className={styles.category}>
-                    {props?.data?.categoryCardsModel?.opinionTeasers?.map(
-                        (teaser) => (
-                            <HybridCard1
-                                key={`opinion-${teaser.id}`}
-                                id={teaser.id}
-                                className={styles.newsContainer}
-                                caption={teaser?.image?.caption}
-                                intro={teaser?.intro}
-                                label={teaser?.topicPrefixOrCategory}
-                                title={teaser?.title}
-                                theme={teaser?.image?.backgroundColor}
-                                url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
-                                imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
-                            />
-                        )
-                    )}
-                </section>
-
-                <h1>Tech &amp; Innovatie</h1>
-                <section className={styles.category}>
-                    {props?.data?.categoryCardsModel?.futuresTeasers?.map(
-                        (teaser) => (
-                            <HybridCard1
-                                key={`futures-${teaser.id}`}
-                                id={teaser.id}
-                                className={styles.newsContainer}
-                                caption={teaser?.image?.caption}
-                                intro={teaser?.intro}
-                                label={teaser?.topicPrefixOrCategory}
-                                title={teaser?.title}
-                                theme={teaser?.image?.backgroundColor}
-                                url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
-                                imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
-                            />
-                        )
-                    )}
-                </section>
-
-                <h1>Persoonlijk</h1>
-                <section className={styles.category}>
-                    {props?.data?.categoryCardsModel?.persoonlijkTeasers?.map(
-                        (teaser) => (
-                            <HybridCard1
-                                key={`persoonlijk-${teaser.id}`}
-                                id={teaser.id}
-                                className={styles.newsContainer}
-                                caption={teaser?.image?.caption}
-                                intro={teaser?.intro}
-                                label={teaser?.topicPrefixOrCategory}
-                                title={teaser?.title}
-                                theme={teaser?.image?.backgroundColor}
-                                url={`https://dev.fd.nl${teaser?.publicationUrl}`}
-                                imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
-                                imageUrlL={`${teaser?.image?.wideUrl}&q=45&w=599&h=399`}
-                            />
-                        )
-                    )}
-                </section>
+                {props?.data?.categoryCardsModel?.sectionModels?.map(
+                    (sectionModel) => {
+                        return (
+                            <>
+                                <h1>
+                                    {sectionModel?.defaultCategoryModel?.title}
+                                </h1>
+                                <section className={styles.category}>
+                                    {sectionModel?.defaultCategoryModel?.cards?.map(
+                                        (card) => {
+                                            if (
+                                                sectionModel
+                                                    .defaultCategoryModel.id ===
+                                                'section-news'
+                                            ) {
+                                                return (
+                                                    <HybridCard1
+                                                        key={`${sectionModel.defaultCategoryModel.title}-${card.id}`}
+                                                        id={card.id}
+                                                        className={
+                                                            styles.newsContainer
+                                                        }
+                                                        caption={card?.title}
+                                                        intro={card?.intro}
+                                                        label={
+                                                            card?.topicPrefixOrCategory
+                                                        }
+                                                        title={card?.title}
+                                                        url={`https://dev.fd.nl${card?.publicationUrl}`}
+                                                    />
+                                                );
+                                            } else {
+                                                return (
+                                                    <HybridCard2
+                                                        key={`${sectionModel.defaultCategoryModel.title}-${card.id}`}
+                                                        id={card.id}
+                                                        className={
+                                                            styles.newsContainer
+                                                        }
+                                                        caption={card?.title}
+                                                        intro={card?.intro}
+                                                        label={
+                                                            card?.topicPrefixOrCategory
+                                                        }
+                                                        title={card?.title}
+                                                        url={`https://dev.fd.nl${card?.publicationUrl}`}
+                                                    />
+                                                );
+                                            }
+                                        }
+                                    )}
+                                </section>
+                            </>
+                        );
+                    }
+                )}
             </section>
         );
     } catch (e) {
@@ -339,7 +263,7 @@ function Page(props: Props) {
 }
 
 export async function getStaticProps({ params }) {
-    let data = await getPayload(params);
+    const data = await getPayload(params);
 
     return {
         props: {

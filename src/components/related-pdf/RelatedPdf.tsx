@@ -18,8 +18,8 @@ function RelatedPdf(props: Props) {
     );
 }
 
-function getCssClassNames() {
-    return '';
+function getCssClassNames(): string[] {
+    return [styles.pdf];
 }
 
 export { RelatedPdf, getCssClassNames };

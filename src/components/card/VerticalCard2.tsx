@@ -35,11 +35,7 @@ function VerticalCard2(props: Props) {
             }${props.isRead ? ` ${styles.isRead}` : ''}`}
             id={props.id}
         >
-            <a
-                href={props.url}
-                aria-label={props.title}
-                aria-description={props.intro}
-            >
+            <a href={props.url} aria-label={props.title}>
                 <figure>
                     <picture>
                         {props.imageUrlS && (
@@ -87,7 +83,7 @@ function VerticalCard2(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.verticalCard2];
 }
 

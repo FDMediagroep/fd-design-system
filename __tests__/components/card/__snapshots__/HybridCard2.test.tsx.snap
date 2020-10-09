@@ -7,7 +7,6 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
     id="1"
   >
     <a
-      aria-description="This is the intro"
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
@@ -65,7 +64,6 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
     id="1"
   >
     <a
-      aria-description="This is the intro"
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >

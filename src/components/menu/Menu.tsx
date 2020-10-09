@@ -1,12 +1,10 @@
-import Link from 'next/link';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import {
-    ChevronDownThinIcon,
-    ChevronUpThinIcon,
-} from '../../design-tokens/icons';
 import { debounce } from '../../utils/debounce';
 import styles from './Menu.module.scss';
 import ResizeObserver from 'resize-observer-polyfill';
+import { ToggleButton } from './MoreButton';
+import { ToggleIconButton } from './ToggleButton';
+import { MenuLink } from './MenuLink';
 
 export interface MenuItem {
     /**
@@ -22,14 +20,19 @@ export interface MenuItem {
      */
     ariaLabel?: string;
     /**
-     * Link text of the menu item.
+     * Visible text of the menu item.
      */
-    linkText: string;
+    text: string;
     /**
      * Custom component as menu-item.
-     * Setting this will override the label.
+     * Setting this will override the linkText.
      */
     component?: JSX.Element | JSX.Element[];
+    /**
+     * Is a toggle only. Setting this to true will render this menu
+     * item as a button whose function is to toggle the sub-menu.
+     */
+    isToggle?: boolean;
     /**
      * Link where the menu item should navigate to.
      */
@@ -139,7 +142,8 @@ function Menu(props: Props) {
 
     const [moreMenuItem, setMoreMenuItem] = useState<MenuItem>({
         id: styles['more-menu'],
-        linkText: props.moreLabel ?? 'Meer',
+        isToggle: true,
+        text: props.moreLabel ?? 'Meer',
         href: '',
         menuItems: generateMoreIds(props.moreMenuItems) ?? [],
     });
@@ -152,12 +156,12 @@ function Menu(props: Props) {
 
     const handleOverlap = useCallback(() => {
         if (menuRef.current && customMenuRef.current) {
-            let newMenuItems: MenuItem[] = [];
+            const newMenuItems: MenuItem[] = [];
             let moreMenuItems: MenuItem[] = copyMenuItems(
                 moreMenuItem.menuItems
             );
-            let overlappedItems: MenuItem[] = [];
-            let overlappedMoreMenuItems: MenuItem[] = [];
+            const overlappedItems: MenuItem[] = [];
+            const overlappedMoreMenuItems: MenuItem[] = [];
             const availableWidth =
                 menuRef.current.getBoundingClientRect().width -
                 customMenuRef.current.getBoundingClientRect().width;
@@ -219,7 +223,8 @@ function Menu(props: Props) {
         setMenuItems(generateIds(props.menuItems));
         setMoreMenuItem({
             id: styles['more-menu'],
-            linkText: props.moreLabel ?? 'Meer',
+            isToggle: true,
+            text: props.moreLabel ?? 'Meer',
             href: '',
             menuItems: generateMoreIds(props.moreMenuItems) ?? [],
         });
@@ -378,7 +383,7 @@ function Menu(props: Props) {
              * sub-menu items.
              */
             if (
-                (!menuItem.linkText && !menuItem.component) ||
+                (!menuItem.text && !menuItem.component) ||
                 (menuItem.id === styles['more-menu'] &&
                     !menuItem?.menuItems?.length)
             ) {
@@ -389,101 +394,53 @@ function Menu(props: Props) {
 
             return (
                 <li
-                    data-key={menuItem.id ?? menuItem.linkText}
-                    key={menuItem.id ?? menuItem.linkText}
+                    data-key={menuItem.id ?? menuItem.text}
+                    key={menuItem.id ?? menuItem.text}
                     id={menuItem.id}
                     className={menuItem.className}
                     onMouseLeave={
                         isRoot ? contract.bind(null, menuItem.id) : null
                     }
                 >
-                    {menuItem.id !== styles['more-menu'] ? (
+                    {!menuItem.isToggle ? (
                         menuItem.href ? (
-                            <Link href={menuItem.href} as={menuItem.as}>
-                                <a
-                                    key={menuItem.id ?? menuItem.linkText}
-                                    rel={menuItem.rel}
-                                    {...(menuItem.target
-                                        ? {
-                                              target: menuItem.target,
-                                              rel:
-                                                  menuItem.rel ??
-                                                  'noopener noreferrer nofollow',
-                                          }
-                                        : {})}
-                                    title={menuItem.linkText}
-                                    {...(hasPopup
-                                        ? {
-                                              'aria-expanded': !!menuItem.expanded,
-                                          }
-                                        : {})}
-                                    aria-haspopup={hasPopup}
-                                    onClick={contractAll}
-                                    onMouseEnter={
-                                        isRoot
-                                            ? expand.bind(null, menuItem.id)
-                                            : null
-                                    }
-                                    aria-label={
-                                        menuItem.ariaLabel ?? menuItem.linkText
-                                    }
-                                    className={
-                                        menuItem.component
-                                            ? styles.customComponent
-                                            : ''
-                                    }
-                                >
-                                    {menuItem.component ?? menuItem.linkText}
-                                </a>
-                            </Link>
+                            <MenuLink
+                                menuItem={menuItem}
+                                key={menuItem.id ?? menuItem.text}
+                                onMouseEnter={
+                                    isRoot
+                                        ? expand.bind(null, menuItem.id)
+                                        : null
+                                }
+                                onClick={contractAll}
+                                className={
+                                    menuItem.component
+                                        ? styles.customComponent
+                                        : ''
+                                }
+                            />
                         ) : (
-                            menuItem.component ?? <a>{menuItem.linkText}</a>
+                            menuItem.component ?? <a>{menuItem.text}</a>
                         )
                     ) : (
-                        /**
-                         * More button
-                         */
-                        <button
-                            title={menuItem.linkText}
-                            {...(hasPopup
-                                ? {
-                                      'aria-expanded': !!menuItem.expanded,
-                                  }
-                                : {})}
-                            aria-haspopup={hasPopup}
-                            onClick={toggle.bind(null, menuItem.id, isRoot)}
-                            onMouseEnter={
-                                isRoot ? expand.bind(null, menuItem.id) : null
-                            }
-                            aria-label={menuItem.ariaLabel ?? menuItem.linkText}
+                        <ToggleButton
+                            menuItem={menuItem}
                             className={`${styles.moreMenuToggleButton}${
                                 menuItem.component
                                     ? ` ${styles.customComponent}`
                                     : ''
                             }`}
-                        >
-                            {menuItem.component ?? menuItem.linkText}
-                        </button>
+                            onClick={toggle.bind(null, menuItem.id, isRoot)}
+                            onMouseEnter={
+                                isRoot ? expand.bind(null, menuItem.id) : null
+                            }
+                        />
                     )}
                     {hasPopup && (
-                        /**
-                         * Toggle button
-                         */
-                        <button
+                        <ToggleIconButton
+                            menuItem={menuItem}
                             className={styles.subMenuToggleButton}
                             onClick={toggle.bind(null, menuItem.id, isRoot)}
-                            dangerouslySetInnerHTML={{
-                                __html: menuItem.expanded
-                                    ? ChevronUpThinIcon
-                                    : ChevronDownThinIcon,
-                            }}
-                            aria-label={
-                                menuItem.expanded
-                                    ? 'close sub-menu'
-                                    : 'open sub-menu'
-                            }
-                            aria-expanded={menuItem.expanded}
-                            aria-haspopup={hasPopup}
                         />
                     )}
                     {hasPopup &&
@@ -524,7 +481,7 @@ function Menu(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.menu];
 }
 

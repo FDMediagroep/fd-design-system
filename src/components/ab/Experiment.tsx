@@ -7,7 +7,7 @@ import { Debug } from './Debug';
 import { Props as Variant } from './Variant';
 import { Button } from '../button/Button';
 
-interface Experiment {
+interface ExperimentProps {
     debug?: boolean;
     debugRoot?: HTMLElement;
     debugUriParam?: string;
@@ -43,7 +43,7 @@ function pickVariant(variants: React.ReactElement<Variant, any>[]) {
 
 const MAX_AGE = 30; // 30 days
 
-export function Experiment(props: Experiment) {
+export function Experiment(props: ExperimentProps) {
     const [debug, setDebug] = useState(props.debug ?? false);
     const [cookies, setCookies] = useContext(ABContext);
     const [variant, setVariant] = useState(

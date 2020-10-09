@@ -17,7 +17,7 @@ interface Props {
  * @param props
  */
 function ButtonGhost(props: Props) {
-    let sizeClass = props.size === 'm' ? styles.m : '';
+    const sizeClass = props.size === 'm' ? styles.m : '';
 
     return (
         <button
@@ -31,7 +31,7 @@ function ButtonGhost(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.fdButtonGhost];
 }
 

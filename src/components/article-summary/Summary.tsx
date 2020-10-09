@@ -24,7 +24,7 @@ function Summary(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.summary];
 }
 

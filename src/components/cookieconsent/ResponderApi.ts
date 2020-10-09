@@ -58,7 +58,7 @@ class ResponderApi {
      */
     init(options?: Options): Promise<any> {
         this.hostname = options?.hostname ?? window.location.hostname;
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             if (ResponderApi.iFrame) {
                 resolve();
                 return;
@@ -94,7 +94,7 @@ class ResponderApi {
             console.error(new Error('Responder API iFrame not loaded'));
         }
         console.info(`Responder API POST: ${this.hostname}`, consents);
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             const cb = (event: MessageEvent) => {
                 if (event?.data?.hostname) {
                     window.removeEventListener('message', cb);
@@ -125,21 +125,9 @@ class ResponderApi {
             `Responder API GET: ${this.hostname}`,
             ResponderApi.iFrame
         );
-        return new Promise((resolve, reject) => {
-            let interval;
+        return new Promise((resolve) => {
             let retryCount = 0;
-            const cb = (event: MessageEvent) => {
-                if (event?.data?.hostname) {
-                    console.info('Responder API clear timeout', interval);
-                    clearInterval(interval);
-                    window.removeEventListener('message', cb);
-                    resolve(event);
-                } else {
-                    console.info('Responder API event unknown');
-                }
-            };
-            window.addEventListener('message', cb, false);
-            interval = setInterval(() => {
+            const interval = setInterval(() => {
                 if (retryCount > 30) {
                     console.error(
                         'Responder API timed out',
@@ -157,6 +145,18 @@ class ResponderApi {
                 );
                 retryCount++;
             }, 100);
+            const cb = (event: MessageEvent) => {
+                if (event?.data?.hostname) {
+                    console.info('Responder API clear timeout', interval);
+                    clearInterval(interval);
+                    window.removeEventListener('message', cb);
+                    resolve(event);
+                } else {
+                    console.info('Responder API event unknown');
+                }
+            };
+            window.addEventListener('message', cb, false);
+
             console.info(
                 'Responder API new timeout',
                 interval,
@@ -181,7 +181,7 @@ class ResponderApi {
             console.error(new Error('Responder API iFrame not loaded'));
         }
         console.info(`Responder API DELETE: ${this.hostname}`);
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             const cb = (event: MessageEvent) => {
                 if (event?.data?.hostname) {
                     window.removeEventListener('message', cb);

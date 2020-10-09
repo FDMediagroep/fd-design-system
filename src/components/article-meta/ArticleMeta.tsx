@@ -47,7 +47,7 @@ function ArticleMeta(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.meta];
 }
 

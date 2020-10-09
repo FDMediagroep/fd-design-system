@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './TextInput.module.scss';
 import { CheckIcon } from '../../design-tokens/icons';
 
-declare var localStorage: any;
+declare let localStorage: any;
 
 export interface Props {
     /**
@@ -222,7 +222,7 @@ function TextInput(props: Props) {
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.fdInput];
 }
 

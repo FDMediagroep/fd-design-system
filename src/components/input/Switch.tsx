@@ -49,27 +49,27 @@ function Switch(props: Props) {
     return (
         <div
             className={`${styles.fdInputSwitch}${
-                props.className ? ` ${props.className}` : ''
+                className ? ` ${className}` : ''
             }`}
         >
             <label>
                 <input
                     {...rest}
-                    id={props.id}
+                    id={id}
                     type="checkbox"
-                    name={props.name ? props.name : props.id}
-                    value={props.value ? props.value : '1'}
-                    defaultChecked={props.defaultChecked}
-                    aria-label={props.label}
+                    name={name ? name : id}
+                    value={value ? value : '1'}
+                    defaultChecked={defaultChecked}
+                    aria-label={label}
                 />
                 <span className={styles.switch}></span>
-                <span className={styles.switchLabel}>{props.label}</span>
+                <span className={styles.switchLabel}>{label}</span>
             </label>
         </div>
     );
 }
 
-function getCssClassNames() {
+function getCssClassNames(): string[] {
     return [styles.fdInputSwitch];
 }
 

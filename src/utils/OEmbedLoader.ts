@@ -1,6 +1,6 @@
-import fetchJsonp from "fetch-jsonp";
+import fetchJsonp from 'fetch-jsonp';
 
-type RequestType = "json" | "jsonp";
+type RequestType = 'json' | 'jsonp';
 /**
  * For filling placeholder elements with oEmbed content.
  */
@@ -10,13 +10,13 @@ export class OEmbedLoader {
             [].slice
                 .apply(document.querySelectorAll(cssSelector))
                 .forEach(async (element) => {
-                    const url = baseUrl + element.getAttribute("data-url");
+                    const url = baseUrl + element.getAttribute('data-url');
                     switch (requestType) {
-                        case "json":
+                        case 'json':
                             element.innerHTML = await this.getHtml(url);
                             this.runScripts(element);
                             break;
-                        case "jsonp":
+                        case 'jsonp':
                             element.innerHTML = await this.getHtmlFromJsonp(
                                 url
                             );
@@ -35,11 +35,11 @@ export class OEmbedLoader {
      */
     runScripts(element) {
         [].slice
-            .apply(element.querySelectorAll("script"))
+            .apply(element.querySelectorAll('script'))
             .forEach((script: HTMLScriptElement) => {
-                const scriptEl = document.createElement("script");
-                scriptEl.addEventListener("load", () => {
-                    console.log("Run external script", script.src);
+                const scriptEl = document.createElement('script');
+                scriptEl.addEventListener('load', () => {
+                    console.log('Run external script', script.src);
                 });
                 scriptEl.async = true;
                 scriptEl.src = script.src;
@@ -50,14 +50,14 @@ export class OEmbedLoader {
     async getHtml(url) {
         try {
             return await fetch(url, {
-                cache: "no-cache",
-                credentials: "include",
+                cache: 'no-cache',
+                credentials: 'include',
             })
                 .then((r) => r.json())
                 .then((json) => json.html);
         } catch (e) {
             console.error(e);
-            return "";
+            return '';
         }
     }
 
