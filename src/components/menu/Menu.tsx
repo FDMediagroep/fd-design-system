@@ -135,6 +135,18 @@ function copyMenuItems(menuItems: MenuItem[]) {
 }
 
 let previousOverlap;
+let touchSupport = false;
+function detector(event) {
+    touchSupport = 'touchstart' == event.type;
+    if (touchSupport) {
+        /**
+         * We keep this listener until touch support has been confirmed.
+         * In case the user started by using a mouse and later uses touch again.
+         */
+        document.removeEventListener('touchstart', detector);
+    }
+    document.removeEventListener('mousemove', detector);
+}
 
 function Menu(props: Props) {
     const menuRef = useRef(null);
@@ -153,6 +165,19 @@ function Menu(props: Props) {
     const [sortedMenuItems, setSortedMenuItems] = useState<MenuItem[]>(
         menuItems
     );
+
+    /**
+     * Touch detection.
+     */
+    useEffect(() => {
+        touchSupport =
+            'ontouchstart' in window ||
+            navigator['MaxTouchPoints'] > 0 ||
+            navigator.msMaxTouchPoints > 0;
+
+        document.addEventListener('touchstart', detector);
+        document.addEventListener('mousemove', detector);
+    }, []);
 
     const handleOverlap = useCallback(() => {
         if (menuRef.current && customMenuRef.current) {
@@ -408,7 +433,7 @@ function Menu(props: Props) {
                                 menuItem={menuItem}
                                 key={menuItem.id ?? menuItem.text}
                                 onMouseEnter={
-                                    isRoot
+                                    isRoot && !touchSupport
                                         ? expand.bind(null, menuItem.id)
                                         : null
                                 }
@@ -432,7 +457,9 @@ function Menu(props: Props) {
                             }`}
                             onClick={toggle.bind(null, menuItem.id, isRoot)}
                             onMouseEnter={
-                                isRoot ? expand.bind(null, menuItem.id) : null
+                                isRoot && !touchSupport
+                                    ? expand.bind(null, menuItem.id)
+                                    : null
                             }
                         />
                     )}
