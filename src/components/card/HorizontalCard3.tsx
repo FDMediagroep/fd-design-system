@@ -31,11 +31,7 @@ function HorizontalCard3(props: Props) {
             }`}
             id={props.id}
         >
-            <a
-                href={props.url}
-                aria-label={props.title}
-                ={props.intro}
-            >
+            <a href={props.url} aria-label={props.title}>
                 <div className={styles.teaserText}>
                     <div className={styles.meta}>
                         <span className={styles.prefix}>{props.label}</span>
