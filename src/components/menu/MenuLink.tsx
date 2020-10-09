@@ -22,17 +22,17 @@ function MenuLink(props: Props) {
                           rel: menuItem.rel ?? 'noopener noreferrer nofollow',
                       }
                     : {})}
-                title={menuItem.linkText ?? menuItem.ariaLabel}
+                title={menuItem.text ?? menuItem.ariaLabel}
                 {...(hasPopup
                     ? {
                           'aria-expanded': !!menuItem.expanded,
                       }
                     : {})}
                 aria-haspopup={hasPopup}
-                aria-label={menuItem.ariaLabel ?? menuItem.linkText}
+                aria-label={menuItem.ariaLabel ?? menuItem.text}
                 className={props.className}
             >
-                {menuItem.component ?? menuItem.linkText}
+                {menuItem.component ?? menuItem.text}
             </a>
         </Link>
     );

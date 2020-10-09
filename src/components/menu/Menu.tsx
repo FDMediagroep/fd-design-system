@@ -2,8 +2,8 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { debounce } from '../../utils/debounce';
 import styles from './Menu.module.scss';
 import ResizeObserver from 'resize-observer-polyfill';
-import { MoreButton } from './MoreButton';
-import { ToggleButton } from './ToggleButton';
+import { ToggleButton } from './MoreButton';
+import { ToggleIconButton } from './ToggleButton';
 import { MenuLink } from './MenuLink';
 
 export interface MenuItem {
@@ -20,14 +20,19 @@ export interface MenuItem {
      */
     ariaLabel?: string;
     /**
-     * Link text of the menu item.
+     * Visible text of the menu item.
      */
-    linkText: string;
+    text: string;
     /**
      * Custom component as menu-item.
      * Setting this will override the linkText.
      */
     component?: JSX.Element | JSX.Element[];
+    /**
+     * Is a toggle only. Setting this to true will render this menu
+     * item as a button whose function is to toggle the sub-menu.
+     */
+    isToggle?: boolean;
     /**
      * Link where the menu item should navigate to.
      */
@@ -137,7 +142,8 @@ function Menu(props: Props) {
 
     const [moreMenuItem, setMoreMenuItem] = useState<MenuItem>({
         id: styles['more-menu'],
-        linkText: props.moreLabel ?? 'Meer',
+        isToggle: true,
+        text: props.moreLabel ?? 'Meer',
         href: '',
         menuItems: generateMoreIds(props.moreMenuItems) ?? [],
     });
@@ -217,7 +223,8 @@ function Menu(props: Props) {
         setMenuItems(generateIds(props.menuItems));
         setMoreMenuItem({
             id: styles['more-menu'],
-            linkText: props.moreLabel ?? 'Meer',
+            isToggle: true,
+            text: props.moreLabel ?? 'Meer',
             href: '',
             menuItems: generateMoreIds(props.moreMenuItems) ?? [],
         });
@@ -376,7 +383,7 @@ function Menu(props: Props) {
              * sub-menu items.
              */
             if (
-                (!menuItem.linkText && !menuItem.component) ||
+                (!menuItem.text && !menuItem.component) ||
                 (menuItem.id === styles['more-menu'] &&
                     !menuItem?.menuItems?.length)
             ) {
@@ -387,19 +394,19 @@ function Menu(props: Props) {
 
             return (
                 <li
-                    data-key={menuItem.id ?? menuItem.linkText}
-                    key={menuItem.id ?? menuItem.linkText}
+                    data-key={menuItem.id ?? menuItem.text}
+                    key={menuItem.id ?? menuItem.text}
                     id={menuItem.id}
                     className={menuItem.className}
                     onMouseLeave={
                         isRoot ? contract.bind(null, menuItem.id) : null
                     }
                 >
-                    {menuItem.id !== styles['more-menu'] ? (
+                    {!menuItem.isToggle ? (
                         menuItem.href ? (
                             <MenuLink
                                 menuItem={menuItem}
-                                key={menuItem.id ?? menuItem.linkText}
+                                key={menuItem.id ?? menuItem.text}
                                 onMouseEnter={
                                     isRoot
                                         ? expand.bind(null, menuItem.id)
@@ -413,10 +420,10 @@ function Menu(props: Props) {
                                 }
                             />
                         ) : (
-                            menuItem.component ?? <a>{menuItem.linkText}</a>
+                            menuItem.component ?? <a>{menuItem.text}</a>
                         )
                     ) : (
-                        <MoreButton
+                        <ToggleButton
                             menuItem={menuItem}
                             className={`${styles.moreMenuToggleButton}${
                                 menuItem.component
@@ -430,7 +437,7 @@ function Menu(props: Props) {
                         />
                     )}
                     {hasPopup && (
-                        <ToggleButton
+                        <ToggleIconButton
                             menuItem={menuItem}
                             className={styles.subMenuToggleButton}
                             onClick={toggle.bind(null, menuItem.id, isRoot)}

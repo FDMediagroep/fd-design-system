@@ -84,7 +84,7 @@ function App({ Component, pageProps }) {
                 ariaLabel="Main menu"
                 menuItems={[
                     {
-                        linkText: 'FD Design System',
+                        text: 'FD Design System',
                         href: '/',
                         component: (
                             <span
@@ -95,30 +95,30 @@ function App({ Component, pageProps }) {
                         ),
                     },
                     {
-                        linkText: 'Main',
-                        href: '#',
+                        text: 'Main',
+                        isToggle: true,
                         menuItems: [
                             {
-                                linkText: 'Home',
+                                text: 'Home',
                                 href: '/',
                             },
                             {
-                                linkText: 'Brandbook 📤',
+                                text: 'Brandbook 📤',
                                 href: 'https://fd.nl/brandbook',
                                 target: '_blank',
                             },
                             {
-                                linkText: 'Colors 📤',
+                                text: 'Colors 📤',
                                 href:
                                     'https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/771162327/Colors',
                                 target: '_blank',
                             },
                             {
-                                linkText: 'Design Tokens',
+                                text: 'Design Tokens',
                                 href: '/tokens',
                             },
                             {
-                                linkText: 'Downloads 📤',
+                                text: 'Downloads 📤',
                                 href:
                                     'https://fdmediagroep.atlassian.net/wiki/spaces/SHAR/pages/729186428/Bestandslijsten',
                                 target: '_blank',
@@ -126,162 +126,162 @@ function App({ Component, pageProps }) {
                         ],
                     },
                     {
-                        linkText: 'Article',
-                        href: '#',
+                        text: 'Article',
+                        isToggle: true,
                         menuItems: [
                             {
-                                linkText: 'BulletPoint',
+                                text: 'BulletPoint',
                                 href: '/article-bullet-point',
                             },
                             {
-                                linkText: 'Financial Agenda',
+                                text: 'Financial Agenda',
                                 href: '/financial-agenda',
                             },
                             {
-                                linkText: 'Image',
+                                text: 'Image',
                                 href: '/article-image',
                             },
                             {
-                                linkText: 'Infographic',
+                                text: 'Infographic',
                                 href: '/article-infographic',
                             },
                             {
-                                linkText: 'Latest News',
+                                text: 'Latest News',
                                 href: '/article-latest-news',
                             },
                             {
-                                linkText: 'LinkBlock',
+                                text: 'LinkBlock',
                                 href: '/article-link-block',
                             },
                             {
-                                linkText: 'LinkCard',
+                                text: 'LinkCard',
                                 href: '/article-link-card',
                             },
                             {
-                                linkText: 'NumberFrame',
+                                text: 'NumberFrame',
                                 href: '/numberframe',
                             },
                             {
-                                linkText: 'Quote',
+                                text: 'Quote',
                                 href: '/quote',
                             },
                             {
-                                linkText: 'ReadMore',
+                                text: 'ReadMore',
                                 href: '/readmore',
                             },
                             {
-                                linkText: 'Summary',
+                                text: 'Summary',
                                 href: '/article-summary',
                             },
                             {
-                                linkText: 'Tags',
+                                text: 'Tags',
                                 href: '/article-tags',
                             },
                             {
-                                linkText: 'TextFrame',
+                                text: 'TextFrame',
                                 href: '/textframe',
                             },
                             {
-                                linkText: 'WordFrame',
+                                text: 'WordFrame',
                                 href: '/wordframe',
                             },
                         ],
                     },
                     {
-                        linkText: 'Controls',
-                        href: '#',
+                        text: 'Controls',
+                        isToggle: true,
                         menuItems: [
                             {
-                                linkText: 'Breaking Switch',
+                                text: 'Breaking Switch',
                                 href: '/input/breaking-switch',
                             },
                             {
-                                linkText: 'Button',
+                                text: 'Button',
                                 href: '/button/default',
                             },
-                            { linkText: 'Button CTA', href: '/button/cta' },
+                            { text: 'Button CTA', href: '/button/cta' },
                             {
-                                linkText: 'Button Follow',
+                                text: 'Button Follow',
                                 href: '/button/follow',
                             },
                             {
-                                linkText: 'Ghost Button',
+                                text: 'Ghost Button',
                                 href: '/button/ghost',
                             },
-                            { linkText: 'Checkbox', href: '/input/checkbox' },
-                            { linkText: 'Date', href: '/input/dateinput' },
-                            { linkText: 'E-mail', href: '/input/emailinput' },
+                            { text: 'Checkbox', href: '/input/checkbox' },
+                            { text: 'Date', href: '/input/dateinput' },
+                            { text: 'E-mail', href: '/input/emailinput' },
                             {
-                                linkText: 'Mobile (tel)',
+                                text: 'Mobile (tel)',
                                 href: '/input/mobileinput',
                             },
-                            { linkText: 'Radio', href: '/input/radio' },
-                            { linkText: 'Select', href: '/input/select' },
-                            { linkText: 'Switch', href: '/input/switch' },
-                            { linkText: 'TextArea', href: '/input/textarea' },
-                            { linkText: 'Text', href: '/input/textinput' },
+                            { text: 'Radio', href: '/input/radio' },
+                            { text: 'Select', href: '/input/select' },
+                            { text: 'Switch', href: '/input/switch' },
+                            { text: 'TextArea', href: '/input/textarea' },
+                            { text: 'Text', href: '/input/textinput' },
                         ],
                     },
                     {
-                        linkText: 'Cards',
+                        text: 'Cards',
                         href: '/cards',
                         menuItems: [
                             {
-                                linkText: 'Horizontal',
-                                href: '/cards',
+                                text: 'Horizontal',
+                                isToggle: true,
                                 menuItems: [
                                     {
-                                        linkText: 'Horizontal 1',
+                                        text: 'Horizontal 1',
                                         href: '/card/horizontal-1',
                                     },
                                     {
-                                        linkText: 'Horizontal 2',
+                                        text: 'Horizontal 2',
                                         href: '/card/horizontal-2',
                                     },
                                     {
-                                        linkText: 'Horizontal 3',
+                                        text: 'Horizontal 3',
                                         href: '/card/horizontal-3',
                                     },
                                 ],
                             },
                             {
-                                linkText: 'Hybrid',
-                                href: '/cards',
+                                text: 'Hybrid',
+                                isToggle: true,
                                 menuItems: [
                                     {
-                                        linkText: 'Hybrid 1',
+                                        text: 'Hybrid 1',
                                         href: '/card/hybrid-1',
                                     },
                                     {
-                                        linkText: 'Hybrid 2',
+                                        text: 'Hybrid 2',
                                         href: '/card/hybrid-2',
                                     },
                                 ],
                             },
                             {
-                                linkText: 'LinkCard',
+                                text: 'LinkCard',
                                 href: '/card/link-card',
                                 menuItems: [
                                     {
-                                        linkText: 'LinkCard',
+                                        text: 'LinkCard',
                                         href: '/card/link-card',
                                     },
                                 ],
                             },
                             {
-                                linkText: 'Vertical',
-                                href: '/cards',
+                                text: 'Vertical',
+                                isToggle: true,
                                 menuItems: [
                                     {
-                                        linkText: 'Vertical 1',
+                                        text: 'Vertical 1',
                                         href: '/card/horizontal-1',
                                     },
                                     {
-                                        linkText: 'Vertical 2',
+                                        text: 'Vertical 2',
                                         href: '/card/horizontal-2',
                                     },
                                     {
-                                        linkText: 'Vertical 3',
+                                        text: 'Vertical 3',
                                         href: '/card/horizontal-3',
                                     },
                                 ],
@@ -289,35 +289,35 @@ function App({ Component, pageProps }) {
                         ],
                     },
                     {
-                        linkText: 'Misc.',
-                        href: '#',
+                        text: 'Misc.',
+                        isToggle: true,
                         menuItems: [
                             {
-                                linkText: 'A/B Testing component',
+                                text: 'A/B Testing component',
                                 href: '/ab',
                             },
                             {
-                                linkText: 'Accordion',
+                                text: 'Accordion',
                                 href: '/accordion',
                             },
-                            { linkText: 'Author Info', href: '/author-info' },
+                            { text: 'Author Info', href: '/author-info' },
                             {
-                                linkText: 'Cookie Consent',
+                                text: 'Cookie Consent',
                                 href: '/cookieconsent#cookie-consent',
                                 menuItems: [
                                     {
-                                        linkText: 'Locked Content',
+                                        text: 'Locked Content',
                                         href: '/cookieconsent#locked-content',
                                     },
                                 ],
                             },
                             {
-                                linkText: 'Menu',
+                                text: 'Menu',
                                 href: '/menu',
                             },
-                            { linkText: 'Modal', href: '/modal' },
+                            { text: 'Modal', href: '/modal' },
                             {
-                                linkText: 'Stock Ticker',
+                                text: 'Stock Ticker',
                                 href: '/stock-ticker',
                             },
                         ],
@@ -325,11 +325,11 @@ function App({ Component, pageProps }) {
                 ]}
                 moreMenuItems={[
                     {
-                        linkText: 'About',
-                        href: '#',
+                        text: 'About',
+                        isToggle: true,
                         menuItems: [
                             {
-                                linkText: 'GitHub',
+                                text: 'GitHub',
                                 href:
                                     'https://github.com/FDMediagroep/fd-design-system',
                                 target: '_blank',
@@ -356,27 +356,27 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                linkText: 'Themes',
+                                text: 'Themes',
                                 component: (
                                     <Themes groupName="sub-menu-themes" />
                                 ),
                             },
                             {
-                                linkText: 'Test article',
+                                text: 'Test article',
                                 href: '/[section]/[id]/[title]',
                                 rel: 'nofollow',
                                 as:
                                     '/achtergrond/1324449/alle-verrijking-op-een-rijtje',
                             },
                             {
-                                linkText: 'Test page',
+                                text: 'Test page',
                                 href: '/fd-web',
                                 rel: 'nofollow',
                             },
                         ],
                     },
                     {
-                        linkText: '',
+                        text: '',
                         className: styles.showForMobile,
                         component: (
                             <ButtonCta
@@ -388,7 +388,7 @@ function App({ Component, pageProps }) {
                         ),
                     },
                     {
-                        linkText: '',
+                        text: '',
                         className: styles.showForMobile,
                         component: (
                             <ButtonGhost

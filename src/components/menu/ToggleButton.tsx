@@ -10,7 +10,7 @@ interface Props {
     [x: string]: any;
 }
 
-function ToggleButton(props: Props) {
+function ToggleIconButton(props: Props) {
     const hasPopup = props.menuItem?.menuItems?.length > 0;
     const { menuItem, ...rest } = props;
 
@@ -34,4 +34,4 @@ function getCssClassNames(): string[] {
     return [];
 }
 
-export { ToggleButton, getCssClassNames };
+export { ToggleIconButton, getCssClassNames };

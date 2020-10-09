@@ -6,24 +6,24 @@ interface Props {
     [x: string]: any;
 }
 
-function MoreButton(props: Props) {
+function ToggleButton(props: Props) {
     const hasPopup = props.menuItem?.menuItems?.length > 0;
     const { menuItem, ...rest } = props;
 
     return (
         <button
             {...rest}
-            title={menuItem.linkText ?? menuItem.ariaLabel}
+            title={menuItem.text ?? menuItem.ariaLabel}
             {...(hasPopup
                 ? {
                       'aria-expanded': !!menuItem.expanded,
                   }
                 : {})}
             aria-haspopup={hasPopup}
-            aria-label={menuItem.ariaLabel ?? menuItem.linkText}
+            aria-label={menuItem.ariaLabel ?? menuItem.text}
             className={props.className}
         >
-            {menuItem.component ?? menuItem.linkText}
+            {menuItem.component ?? menuItem.text}
         </button>
     );
 }
@@ -32,4 +32,4 @@ function getCssClassNames(): string[] {
     return [];
 }
 
-export { MoreButton, getCssClassNames };
+export { ToggleButton, getCssClassNames };
