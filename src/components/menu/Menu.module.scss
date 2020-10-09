@@ -217,6 +217,7 @@
     }
 
     .moreMenuToggleButton {
+        cursor: pointer;
         background-color: transparent;
         border: none;
         height: 55px;
@@ -228,7 +229,6 @@
         color: var(--meta-copy);
         &:hover {
             color: var(--link-hover);
-            text-decoration: underline;
         }
         // IE11
         @media screen and (-ms-high-contrast: active),
