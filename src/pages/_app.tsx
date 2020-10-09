@@ -305,10 +305,6 @@ function App({ Component, pageProps }) {
                                     },
                                 ],
                             },
-                            {
-                                text: 'Menu',
-                                href: '/menu',
-                            },
                             { text: 'Modal', href: '/modal' },
                             {
                                 text: 'Stock Ticker',
