@@ -19,7 +19,7 @@ function RelatedPdf(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return '';
+    return [styles.pdf];
 }
 
 export { RelatedPdf, getCssClassNames };
