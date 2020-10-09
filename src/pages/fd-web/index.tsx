@@ -202,22 +202,45 @@ function Page(props: Props) {
                                 <section className={styles.category}>
                                     {sectionModel?.defaultCategoryModel?.cards?.map(
                                         (card) => {
-                                            return (
-                                                <HybridCard2
-                                                    key={`${sectionModel.defaultCategoryModel.title}-${card.id}`}
-                                                    id={card.id}
-                                                    className={
-                                                        styles.newsContainer
-                                                    }
-                                                    caption={card?.title}
-                                                    intro={card?.intro}
-                                                    label={
-                                                        card?.topicPrefixOrCategory
-                                                    }
-                                                    title={card?.title}
-                                                    url={`https://dev.fd.nl${card?.publicationUrl}`}
-                                                />
-                                            );
+                                            if (
+                                                sectionModel
+                                                    .defaultCategoryModel.id ===
+                                                'section-news'
+                                            ) {
+                                                return (
+                                                    <HybridCard1
+                                                        key={`${sectionModel.defaultCategoryModel.title}-${card.id}`}
+                                                        id={card.id}
+                                                        className={
+                                                            styles.newsContainer
+                                                        }
+                                                        caption={card?.title}
+                                                        intro={card?.intro}
+                                                        label={
+                                                            card?.topicPrefixOrCategory
+                                                        }
+                                                        title={card?.title}
+                                                        url={`https://dev.fd.nl${card?.publicationUrl}`}
+                                                    />
+                                                );
+                                            } else {
+                                                return (
+                                                    <HybridCard2
+                                                        key={`${sectionModel.defaultCategoryModel.title}-${card.id}`}
+                                                        id={card.id}
+                                                        className={
+                                                            styles.newsContainer
+                                                        }
+                                                        caption={card?.title}
+                                                        intro={card?.intro}
+                                                        label={
+                                                            card?.topicPrefixOrCategory
+                                                        }
+                                                        title={card?.title}
+                                                        url={`https://dev.fd.nl${card?.publicationUrl}`}
+                                                    />
+                                                );
+                                            }
                                         }
                                     )}
                                 </section>

@@ -100,11 +100,7 @@ function HybridCard1(props: Props) {
             }${props.isRead ? ` ${styles.isRead}` : ''}`}
             id={props.id}
         >
-            <a
-                href={props.url}
-                aria-label={props.title}
-                aria-description={props.intro}
-            >
+            <a href={props.url} aria-label={props.title}>
                 {!theme && props.imageUrl && (
                     <figure>
                         <picture>

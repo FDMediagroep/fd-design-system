@@ -40,11 +40,7 @@ function VerticalCard3(props: Props) {
             }${props.isRead ? ` ${styles.isRead}` : ''}`}
             id={props.id}
         >
-            <a
-                href={props.url}
-                aria-label={props.title}
-                aria-description={props.intro}
-            >
+            <a href={props.url} aria-label={props.title}>
                 <div className={styles.cardContent}>
                     <div className={styles.textContent}>
                         <div className={styles.meta}>
