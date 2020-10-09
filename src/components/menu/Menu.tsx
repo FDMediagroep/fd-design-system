@@ -421,9 +421,6 @@ function Menu(props: Props) {
                             menuItem.component ?? <a>{menuItem.linkText}</a>
                         )
                     ) : (
-                        /**
-                         * More button
-                         */
                         <MoreButton
                             menuItem={menuItem}
                             className={`${styles.moreMenuToggleButton}${
@@ -438,9 +435,6 @@ function Menu(props: Props) {
                         />
                     )}
                     {hasPopup && (
-                        /**
-                         * Toggle button
-                         */
                         <ToggleButton
                             menuItem={menuItem}
                             className={styles.subMenuToggleButton}
