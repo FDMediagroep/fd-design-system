@@ -7,7 +7,6 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
     id="1"
   >
     <a
-      aria-description="This is the intro"
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
@@ -75,7 +74,6 @@ exports[`HybridCard1 should render themes correctly 1`] = `
     id="1"
   >
     <a
-      aria-description="This is the intro"
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
@@ -145,7 +143,6 @@ exports[`HybridCard1 should render themes correctly 2`] = `
     id="1"
   >
     <a
-      aria-description="This is the intro"
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
@@ -215,7 +212,6 @@ exports[`HybridCard1 should render themes correctly 3`] = `
     id="1"
   >
     <a
-      aria-description="This is the intro"
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
@@ -285,7 +281,6 @@ exports[`HybridCard1 should render themes correctly 4`] = `
     id="1"
   >
     <a
-      aria-description="This is the intro"
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
@@ -355,7 +350,6 @@ exports[`HybridCard1 should render themes correctly 5`] = `
     id="1"
   >
     <a
-      aria-description="This is the intro"
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
@@ -425,7 +419,6 @@ exports[`HybridCard1 should render themes correctly 6`] = `
     id="1"
   >
     <a
-      aria-description="This is the intro"
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
@@ -495,7 +488,6 @@ exports[`HybridCard1 should render themes correctly 7`] = `
     id="1"
   >
     <a
-      aria-description="This is the intro"
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
@@ -565,7 +557,6 @@ exports[`HybridCard1 should render themes correctly 8`] = `
     id="1"
   >
     <a
-      aria-description="This is the intro"
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
@@ -636,7 +627,6 @@ exports[`HybridCard1 should render variant-1 correctly 1`] = `
     id="1"
   >
     <a
-      aria-description="This is the intro"
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >

@@ -9,6 +9,7 @@ import styles from './Menu.module.scss';
 import ResizeObserver from 'resize-observer-polyfill';
 import { MoreButton } from './MoreButton';
 import { ToggleButton } from './ToggleButton';
+import { MenuLink } from './MenuLink';
 
 export interface MenuItem {
     /**
@@ -401,45 +402,21 @@ function Menu(props: Props) {
                 >
                     {menuItem.id !== styles['more-menu'] ? (
                         menuItem.href ? (
-                            <Link href={menuItem.href} as={menuItem.as}>
-                                <a
-                                    key={menuItem.id ?? menuItem.linkText}
-                                    rel={menuItem.rel}
-                                    {...(menuItem.target
-                                        ? {
-                                              target: menuItem.target,
-                                              rel:
-                                                  menuItem.rel ??
-                                                  'noopener noreferrer nofollow',
-                                          }
-                                        : {})}
-                                    title={
-                                        menuItem.linkText ?? menuItem.ariaLabel
-                                    }
-                                    {...(hasPopup
-                                        ? {
-                                              'aria-expanded': !!menuItem.expanded,
-                                          }
-                                        : {})}
-                                    aria-haspopup={hasPopup}
-                                    onClick={contractAll}
-                                    onMouseEnter={
-                                        isRoot
-                                            ? expand.bind(null, menuItem.id)
-                                            : null
-                                    }
-                                    aria-label={
-                                        menuItem.ariaLabel ?? menuItem.linkText
-                                    }
-                                    className={
-                                        menuItem.component
-                                            ? styles.customComponent
-                                            : ''
-                                    }
-                                >
-                                    {menuItem.component ?? menuItem.linkText}
-                                </a>
-                            </Link>
+                            <MenuLink
+                                menuItem={menuItem}
+                                key={menuItem.id ?? menuItem.linkText}
+                                onMouseEnter={
+                                    isRoot
+                                        ? expand.bind(null, menuItem.id)
+                                        : null
+                                }
+                                onClick={contractAll}
+                                className={
+                                    menuItem.component
+                                        ? styles.customComponent
+                                        : ''
+                                }
+                            />
                         ) : (
                             menuItem.component ?? <a>{menuItem.linkText}</a>
                         )
