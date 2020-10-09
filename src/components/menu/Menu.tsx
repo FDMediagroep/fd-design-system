@@ -1,9 +1,4 @@
-import Link from 'next/link';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import {
-    ChevronDownThinIcon,
-    ChevronUpThinIcon,
-} from '../../design-tokens/icons';
 import { debounce } from '../../utils/debounce';
 import styles from './Menu.module.scss';
 import ResizeObserver from 'resize-observer-polyfill';
