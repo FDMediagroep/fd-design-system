@@ -261,12 +261,6 @@ function App({ Component, pageProps }) {
                             {
                                 text: 'LinkCard',
                                 href: '/card/link-card',
-                                menuItems: [
-                                    {
-                                        text: 'LinkCard',
-                                        href: '/card/link-card',
-                                    },
-                                ],
                             },
                             {
                                 text: 'Vertical',
@@ -311,10 +305,6 @@ function App({ Component, pageProps }) {
                                     },
                                 ],
                             },
-                            {
-                                text: 'Menu',
-                                href: '/menu',
-                            },
                             { text: 'Modal', href: '/modal' },
                             {
                                 text: 'Stock Ticker',
@@ -330,35 +320,40 @@ function App({ Component, pageProps }) {
                         menuItems: [
                             {
                                 text: 'GitHub',
-                                href:
-                                    'https://github.com/FDMediagroep/fd-design-system',
-                                target: '_blank',
                                 component: (
-                                    <figure
+                                    <a
+                                        href="https://github.com/FDMediagroep/fd-design-system"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className={`${styles.invertable} ${styles.github}`}
                                     >
-                                        <picture>
-                                            <source
-                                                media="(max-width: 640px)"
-                                                srcSet={`/assets/github/GitHub-Mark-32px.png, /assets/github/GitHub-Mark-64px.png 2x`}
-                                            />
-                                            <source
-                                                media="(min-width:641px)"
-                                                srcSet={`/assets/github/GitHub-Mark-32px.png, /assets/github/GitHub-Mark-64px.png 2x, /assets/github/GitHub-Mark-120px-plus.png 3x`}
-                                            />
-                                            <img
-                                                alt="GitHub"
-                                                src={`/assets/github/GitHub-Mark-32px.png`}
-                                            />
-                                        </picture>
-                                        <figcaption>GitHub</figcaption>
-                                    </figure>
+                                        <figure>
+                                            <picture>
+                                                <source
+                                                    media="(max-width: 640px)"
+                                                    srcSet={`/assets/github/GitHub-Mark-32px.png, /assets/github/GitHub-Mark-64px.png 2x`}
+                                                />
+                                                <source
+                                                    media="(min-width:641px)"
+                                                    srcSet={`/assets/github/GitHub-Mark-32px.png, /assets/github/GitHub-Mark-64px.png 2x, /assets/github/GitHub-Mark-120px-plus.png 3x`}
+                                                />
+                                                <img
+                                                    alt="GitHub"
+                                                    src={`/assets/github/GitHub-Mark-32px.png`}
+                                                />
+                                            </picture>
+                                            <figcaption>GitHub</figcaption>
+                                        </figure>
+                                    </a>
                                 ),
                             },
                             {
                                 text: 'Themes',
                                 component: (
-                                    <Themes groupName="sub-menu-themes" />
+                                    <Themes
+                                        className={styles.themes}
+                                        groupName="sub-menu-themes"
+                                    />
                                 ),
                             },
                             {
