@@ -261,12 +261,6 @@ function App({ Component, pageProps }) {
                             {
                                 text: 'LinkCard',
                                 href: '/card/link-card',
-                                menuItems: [
-                                    {
-                                        text: 'LinkCard',
-                                        href: '/card/link-card',
-                                    },
-                                ],
                             },
                             {
                                 text: 'Vertical',
