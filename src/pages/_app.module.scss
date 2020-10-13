@@ -94,7 +94,9 @@
     }
 
     .invertable {
-        filter: var(--filter-invert);
+        img {
+            filter: var(--filter-invert);
+        }
     }
 
     .themes {
@@ -109,7 +111,7 @@
             margin: 0;
         }
         figcaption {
-            fill: var(--content-copy);
+            color: var(--content-copy);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {

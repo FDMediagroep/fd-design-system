@@ -195,4 +195,14 @@
             'longread',
             50
         )};
+
+    /**
+     * Article toolbar
+     */
+    --toolbar: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+    --toolbar-hover-color: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --toolbar-icon: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --toolbar-mobile: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+    --toolbar-mobile-icon: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --toolbar-mobile-hover: #{map-deep-get($colors, 'colors', 'neutral', 40)};
 }
