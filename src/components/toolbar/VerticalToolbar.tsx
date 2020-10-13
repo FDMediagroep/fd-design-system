@@ -117,7 +117,7 @@ function VerticalToolbar(props: Props) {
                     className={`${styles.icon} ${styles.bookmarkClear}`}
                     dangerouslySetInnerHTML={{ __html: BookmarkOIcon }}
                 />
-                <span className={styles.ariaLabel}>Bookmark</span>
+                <span className={styles.ariaLabel}>Bewaren</span>
             </Button>
             <Button
                 title="Download"
