@@ -12,7 +12,11 @@ function MenuLink(props: Props) {
     const { menuItem, ...rest } = props;
 
     return (
-        <Link href={menuItem.href} as={menuItem.as}>
+        <Link
+            href={menuItem.href}
+            as={menuItem.as}
+            prefetch={menuItem.prefetch === true}
+        >
             <a
                 {...rest}
                 rel={menuItem.rel}
