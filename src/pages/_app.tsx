@@ -315,8 +315,12 @@ function App({ Component, pageProps }) {
                                 isToggle: true,
                                 menuItems: [
                                     {
-                                        text: 'Hyrbrid',
-                                        href: '/toolbar/hybrid',
+                                        text: 'Horizontal',
+                                        href: '/toolbar/horizontal',
+                                    },
+                                    {
+                                        text: 'Vertical',
+                                        href: '/toolbar/vertical',
                                     },
                                 ],
                             },

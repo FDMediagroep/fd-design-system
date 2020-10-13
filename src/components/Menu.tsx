@@ -203,8 +203,11 @@ function Menu(props: Props) {
                 <Link href="/stock-ticker">
                     <a>Stock Ticker</a>
                 </Link>
-                <Link href="/toolbar/hybrid">
-                    <a>Hybrid Toolbar</a>
+                <Link href="/toolbar/horizontal">
+                    <a>Toolbar horizontal</a>
+                </Link>
+                <Link href="/toolbar/vertical">
+                    <a>Toolbar vertical</a>
                 </Link>
             </section>
             <a
