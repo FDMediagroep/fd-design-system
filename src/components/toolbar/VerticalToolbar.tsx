@@ -48,7 +48,7 @@ function VerticalToolbar(props: Props) {
     return (
         <section className={styles.verticalToolbar}>
             <Button
-                title="WhatsApp"
+                title="Deel via WhatsApp"
                 size="s"
                 onClick={props.onClick.bind(null, EventType.WHATSAPP, props)}
             >
@@ -56,10 +56,10 @@ function VerticalToolbar(props: Props) {
                     className={styles.icon}
                     dangerouslySetInnerHTML={{ __html: WhatsAppIcon }}
                 />
-                <span className={styles.ariaLabel}>WhatsApp</span>
+                <span className={styles.ariaLabel}>Deel via WhatsApp</span>
             </Button>
             <Button
-                title="Twitter"
+                title="Deel via Twitter"
                 size="s"
                 onClick={props.onClick.bind(null, EventType.WHATSAPP, props)}
             >
@@ -67,10 +67,10 @@ function VerticalToolbar(props: Props) {
                     className={styles.icon}
                     dangerouslySetInnerHTML={{ __html: TwitterIcon }}
                 />
-                <span className={styles.ariaLabel}>Twitter</span>
+                <span className={styles.ariaLabel}>Deel via Twitter</span>
             </Button>
             <Button
-                title="LinkedIn"
+                title="Deel via LinkedIn"
                 size="s"
                 onClick={props.onClick.bind(null, EventType.WHATSAPP, props)}
             >
@@ -78,10 +78,10 @@ function VerticalToolbar(props: Props) {
                     className={styles.icon}
                     dangerouslySetInnerHTML={{ __html: LinkedInIcon }}
                 />
-                <span className={styles.ariaLabel}>LinkedIn</span>
+                <span className={styles.ariaLabel}>Deel via LinkedIn</span>
             </Button>
             <Button
-                title="Facebook"
+                title="Deel via Facebook"
                 size="s"
                 onClick={props.onClick.bind(null, EventType.WHATSAPP, props)}
             >
@@ -89,10 +89,10 @@ function VerticalToolbar(props: Props) {
                     className={styles.icon}
                     dangerouslySetInnerHTML={{ __html: FacebookIcon }}
                 />
-                <span className={styles.ariaLabel}>Facebook</span>
+                <span className={styles.ariaLabel}>Deel via Facebook</span>
             </Button>
             <Button
-                title="E-Mail"
+                title="Deel via E-Mail"
                 size="s"
                 onClick={props.onClick.bind(null, EventType.WHATSAPP, props)}
             >
@@ -100,7 +100,7 @@ function VerticalToolbar(props: Props) {
                     className={styles.icon}
                     dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
                 />
-                <span className={styles.ariaLabel}>E-mail</span>
+                <span className={styles.ariaLabel}>Deel via E-mail</span>
             </Button>
             <hr />
             <Button
@@ -120,7 +120,7 @@ function VerticalToolbar(props: Props) {
                 <span className={styles.ariaLabel}>Bewaren</span>
             </Button>
             <Button
-                title="Download"
+                title="Download PDF"
                 size="s"
                 onClick={props.onClick.bind(null, EventType.DOWNLOAD, props)}
             >
@@ -131,7 +131,7 @@ function VerticalToolbar(props: Props) {
                 <span className={styles.ariaLabel}>Download PDF</span>
             </Button>
             <Button
-                title="Krant"
+                title="Krant weergave"
                 size="s"
                 onClick={props.onClick.bind(null, EventType.NEWSPAPER, props)}
             >
