@@ -95,6 +95,12 @@ function Menu(props: Props) {
                 <Link href="/textframe">
                     <a>TextFrame</a>
                 </Link>
+                <Link href="/toolbar/horizontal">
+                    <a>Toolbar horizontal</a>
+                </Link>
+                <Link href="/toolbar/vertical">
+                    <a>Toolbar vertical</a>
+                </Link>
                 <Link href="/wordframe">
                     <a>WordFrame</a>
                 </Link>
@@ -202,12 +208,6 @@ function Menu(props: Props) {
                 </Link>
                 <Link href="/stock-ticker">
                     <a>Stock Ticker</a>
-                </Link>
-                <Link href="/toolbar/horizontal">
-                    <a>Toolbar horizontal</a>
-                </Link>
-                <Link href="/toolbar/vertical">
-                    <a>Toolbar vertical</a>
                 </Link>
             </section>
             <a

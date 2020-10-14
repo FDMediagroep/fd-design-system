@@ -20,6 +20,8 @@ export { Quote } from './components/quote/Quote';
 export { ReadMore } from './components/readmore/ReadMore';
 export { Summary } from './components/article-summary/Summary';
 export { TextFrame } from './components/textframe/TextFrame';
+export { HorizontalToolbar } from './components/toolbar/HorizontalToolbar';
+export { VerticalToolbar } from './components/toolbar/VerticalToolbar';
 export { Vimeo } from './components/vimeo/Vimeo';
 export { WordFrame } from './components/wordframe/WordFrame';
 export { Youtube } from './components/youtube/Youtube';

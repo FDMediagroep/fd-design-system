@@ -119,6 +119,12 @@ module.exports = {
         '/components/textframe/TextFrame': [
             './src/components/textframe/TextFrame.tsx',
         ],
+        '/components/toolbar/HorizontalToolbar': [
+            './src/components/toolbar/HorizontalToolbar.tsx',
+        ],
+        '/components/toolbar/VerticalToolbar': [
+            './src/components/toolbar/VerticalToolbar.tsx',
+        ],
         '/components/vimeo/Vimeo': ['./src/components/vimeo/Vimeo.tsx'],
         '/components/wordframe/WordFrame': [
             './src/components/wordframe/WordFrame.tsx',
