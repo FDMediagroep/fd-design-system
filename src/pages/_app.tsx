@@ -182,6 +182,20 @@ function App({ Component, pageProps }) {
                                 href: '/textframe',
                             },
                             {
+                                text: 'Toolbar',
+                                isToggle: true,
+                                menuItems: [
+                                    {
+                                        text: 'Horizontal',
+                                        href: '/toolbar/horizontal',
+                                    },
+                                    {
+                                        text: 'Vertical',
+                                        href: '/toolbar/vertical',
+                                    },
+                                ],
+                            },
+                            {
                                 text: 'WordFrame',
                                 href: '/wordframe',
                             },
@@ -309,20 +323,6 @@ function App({ Component, pageProps }) {
                             {
                                 text: 'Stock Ticker',
                                 href: '/stock-ticker',
-                            },
-                            {
-                                text: 'Toolbar',
-                                isToggle: true,
-                                menuItems: [
-                                    {
-                                        text: 'Horizontal',
-                                        href: '/toolbar/horizontal',
-                                    },
-                                    {
-                                        text: 'Vertical',
-                                        href: '/toolbar/vertical',
-                                    },
-                                ],
                             },
                         ],
                     },
