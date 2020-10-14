@@ -1,0 +1,115 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+
+.horizontalToolbar {
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    flex-direction: row;
+    .ariaLabel {
+        opacity: 0;
+        position: absolute;
+    }
+    background-color: var(--toolbar-horizontal);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+    }
+
+    &#{&} {
+        button {
+            display: flex;
+            min-height: 100%; // IE11 needs min-height
+            flex: 1 1 auto;
+            align-items: center;
+            outline: none;
+            padding: 0.75rem;
+            background-color: var(--toolbar-horizontal);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        0
+                    )};
+            }
+
+            &:focus {
+                background-color: var(--toolbar-horizontal);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    background-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'neutral',
+                            0
+                        )};
+                }
+            }
+
+            .icon {
+                display: flex;
+                svg {
+                    margin: 0;
+                    width: 1rem;
+                    height: 1rem;
+                    fill: var(--toolbar-horizontal-icon);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        fill: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+                    }
+                }
+
+                &.bookmarkFill {
+                    display: none;
+                }
+                &.bookmarkClear {
+                    display: flex;
+                }
+            }
+
+            &:global(.active) .icon {
+                &.bookmarkFill {
+                    display: flex;
+                }
+                &.bookmarkClear {
+                    display: none;
+                }
+            }
+
+            &:hover,
+            &:active {
+                background-color: var(--toolbar-horizontal);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    background-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'neutral',
+                            0
+                        )};
+                }
+
+                svg {
+                    fill: var(--toolbar-horizontal-hover-color);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        fill: #{map-deep-get($colors, 'colors', 'primary', 50)};
+                    }
+                }
+            }
+        }
+    }
+
+    hr {
+        border: none;
+        margin: 0 0 0.5rem 0;
+    }
+}

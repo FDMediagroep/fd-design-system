@@ -310,6 +310,20 @@ function App({ Component, pageProps }) {
                                 text: 'Stock Ticker',
                                 href: '/stock-ticker',
                             },
+                            {
+                                text: 'Toolbar',
+                                isToggle: true,
+                                menuItems: [
+                                    {
+                                        text: 'Horizontal',
+                                        href: '/toolbar/horizontal',
+                                    },
+                                    {
+                                        text: 'Vertical',
+                                        href: '/toolbar/vertical',
+                                    },
+                                ],
+                            },
                         ],
                     },
                 ]}
@@ -326,6 +340,7 @@ function App({ Component, pageProps }) {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`${styles.invertable} ${styles.github}`}
+                                        title="Open GitHub"
                                     >
                                         <figure>
                                             <picture>
