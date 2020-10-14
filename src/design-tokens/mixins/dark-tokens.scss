@@ -45,10 +45,10 @@
     --card-active: #{map-deep-get($colors, 'colors', 'neutral', 0)};
     --card-outline-active: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --card-box-shadow: none;
-    --card-visited: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-    --card-text-visited: #{map-deep-get($colors, 'colors', 'neutral', 70)};
-    --card-label-text-visited: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-    --card-label-visited: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --card-visited: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+    --card-text-visited: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+    --card-label-text-visited: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+    --card-label-visited: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --card-hover: #{map-deep-get($colors, 'colors', 'neutral', 20)};
     --card-2: #{map-deep-get($colors, 'colors', 'neutral', 20)};
 

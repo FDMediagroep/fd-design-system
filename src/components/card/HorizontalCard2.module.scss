@@ -118,13 +118,33 @@
 
     &.isRead:not(:hover):not(:active) {
         .meta .prefix,
-        .readingTime,
+        .meta time,
         .textContainer h1 {
             color: var(--card-text-visited);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+            }
+        }
+
+        .readingTime {
+            span {
+                color: var(--card-text-visited);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+                }
+                svg,
+                svg path[fill='#917F78'] {
+                    fill: var(--card-text-visited);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+                    }
+                }
             }
         }
 
@@ -132,7 +152,7 @@
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 70)};
+            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
         }
     }
 
