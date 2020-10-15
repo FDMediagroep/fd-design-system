@@ -584,6 +584,62 @@ magnis dis parturient montes, nascetur ridiculus mus.`
 </details>
 
 <details>
+<summary>Toolbar horizontal</summary>
+
+[Demo](https://design-system.fd.nl/toolbar/horizontal)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/toolbar/HorizontalToolbar.css";
+```
+
+```
+import { HorizontalToolbar } from "@fdmg/design-system/components/toolbar/HorizontalToolbar";
+
+function Foo() {
+    return (
+        <HorizontalToolbar
+            id="12345"
+            bookmarked={bookmarked}
+            onClick={handleClick}
+        />
+    );
+}
+```
+
+</details>
+
+<details>
+<summary>Toolbar vertical</summary>
+
+[Demo](https://design-system.fd.nl/toolbar/vertical)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/toolbar/VerticalToolbar.css";
+```
+
+```
+import { VerticalToolbar } from "@fdmg/design-system/components/toolbar/VerticalToolbar";
+
+function Foo() {
+    return (
+        <VerticalToolbar
+            id="12345"
+            bookmarked={bookmarked}
+            onClick={handleClick}
+        />
+    );
+}
+```
+
+</details>
+
+<details>
 <summary>Vimeo</summary>
 
 Component CSS:
