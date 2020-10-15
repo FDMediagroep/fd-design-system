@@ -15,10 +15,6 @@ interface Props {
     imageUrlL?: string;
     caption?: string;
     label: string;
-    /**
-     * Reading time in minutes.
-     */
-    readingTime?: number;
     isRead?: boolean;
     title: string;
     printTitle?: string;
@@ -87,7 +83,6 @@ function VerticalCard1(props: Props) {
                 className={styles.footer}
                 bookmarked={props.bookmarked}
                 onBookmark={props.onBookmark}
-                readingTime={props.readingTime}
             />
         </article>
     );

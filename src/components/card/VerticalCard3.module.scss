@@ -249,26 +249,6 @@
             }
         }
 
-        .readingTime {
-            span {
-                color: var(--card-text-visited);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-                }
-                svg,
-                svg path[fill='#917F78'] {
-                    fill: var(--card-text-visited);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-                    }
-                }
-            }
-        }
-
         &[data-variant='variant-2'],
         &[data-variant='variant-3'] {
             .meta .prefix,
