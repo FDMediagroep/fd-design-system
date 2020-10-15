@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './VerticalCard2.module.scss';
-import { ReadingTime } from './shared/ReadingTime';
 
 interface Props {
     id: string;
@@ -10,10 +9,6 @@ interface Props {
     imageUrlM?: string;
     imageUrlL?: string;
     caption?: string;
-    /**
-     * Reading time in minutes.
-     */
-    readingTime?: number;
     isRead?: boolean;
     time: string;
     title: string;
@@ -71,13 +66,6 @@ function VerticalCard2(props: Props) {
                         <p className={styles.intro}>{props.intro}</p>
                     </div>
                 </div>
-
-                {props.readingTime && (
-                    <ReadingTime
-                        className={styles.readingTime}
-                        readingTime={props.readingTime}
-                    />
-                )}
             </a>
         </article>
     );

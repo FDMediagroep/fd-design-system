@@ -2,11 +2,9 @@ import React from 'react';
 import {
     BookmarkIcon,
     BookmarkOIcon,
-    DownloadIcon,
     EnvelopeIcon,
     FacebookIcon,
     LinkedInIcon,
-    NewspaperIcon,
     TwitterIcon,
     WhatsAppIcon,
 } from '../../design-tokens/icons';
@@ -61,7 +59,7 @@ function HorizontalToolbar(props: Props) {
             <Button
                 title="Deel via Twitter"
                 size="s"
-                onClick={props.onClick.bind(null, EventType.WHATSAPP, props)}
+                onClick={props.onClick.bind(null, EventType.TWITTER, props)}
             >
                 <span
                     className={styles.icon}
@@ -72,7 +70,7 @@ function HorizontalToolbar(props: Props) {
             <Button
                 title="Deel via LinkedIn"
                 size="s"
-                onClick={props.onClick.bind(null, EventType.WHATSAPP, props)}
+                onClick={props.onClick.bind(null, EventType.LINKED_IN, props)}
             >
                 <span
                     className={styles.icon}
@@ -83,7 +81,7 @@ function HorizontalToolbar(props: Props) {
             <Button
                 title="Deel via Facebook"
                 size="s"
-                onClick={props.onClick.bind(null, EventType.WHATSAPP, props)}
+                onClick={props.onClick.bind(null, EventType.FACEBOOK, props)}
             >
                 <span
                     className={styles.icon}
@@ -92,9 +90,9 @@ function HorizontalToolbar(props: Props) {
                 <span className={styles.ariaLabel}>Deel via Facebook</span>
             </Button>
             <Button
-                title="Deel via E-Mail"
+                title="Deel via E-mail"
                 size="s"
-                onClick={props.onClick.bind(null, EventType.WHATSAPP, props)}
+                onClick={props.onClick.bind(null, EventType.EMAIL, props)}
             >
                 <span
                     className={styles.icon}

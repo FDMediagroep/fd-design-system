@@ -1,18 +1,12 @@
 import React from 'react';
 import { BookmarkIcon, BookmarkOIcon } from '../../../design-tokens/icons';
 import styles from './Footer.module.scss';
-import { ReadingTime } from './ReadingTime';
-import { getCssClassNames as getReadingTimeCssClassNames } from './ReadingTime';
 
 interface Props {
     className?: string;
     iconSpanClassName?: string;
     bookmarked?: boolean;
     onBookmark?: (e: React.MouseEvent<HTMLElement>) => void;
-    /**
-     * Reading time in minutes.
-     */
-    readingTime?: number;
 }
 
 function Footer(props: Props) {
@@ -23,10 +17,6 @@ function Footer(props: Props) {
             }`}
         >
             <menu>
-                {props.readingTime && (
-                    <ReadingTime readingTime={props.readingTime} />
-                )}
-
                 <a onClick={props.onBookmark}>
                     {props.bookmarked ? (
                         <span
@@ -59,7 +49,7 @@ function Footer(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.footer, ...getReadingTimeCssClassNames()];
+    return [styles.footer];
 }
 
 export { Footer, getCssClassNames };
