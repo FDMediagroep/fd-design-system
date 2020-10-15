@@ -58,7 +58,8 @@
 
             .icon {
                 display: flex;
-                svg {
+                svg,
+                svg [fill='#917F78'] {
                     margin: 0;
                     width: 20px;
                     height: 20px;
