@@ -21,7 +21,6 @@ export { default as MinimiseIcon } from '../../public/assets/icons/minimise.svg'
 export { default as NewspaperIcon } from '../../public/assets/icons/newspaper.svg';
 export { default as PaperclipIcon } from '../../public/assets/icons/paperclip.svg';
 export { default as ProfileIcon } from '../../public/assets/icons/profile.svg';
-export { default as ReadingTimeIcon } from '../../public/assets/icons/reading-time.svg';
 export { default as SpyglassIcon } from '../../public/assets/icons/spyglass.svg';
 export { default as TwitterIcon } from '../../public/assets/icons/twitter.svg';
 export { default as WhatsAppIcon } from '../../public/assets/icons/whatsapp.svg';
