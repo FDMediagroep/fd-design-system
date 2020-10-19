@@ -26,7 +26,7 @@ function Page() {
             <Explain
                 anchor="mandatory"
                 cssClassNames={getCssClassNames()}
-                previewFlexDirection="row"
+                previewFlexDirection="column"
                 legend="TextArea (mandatory)"
                 reactComponentName="TextArea"
                 description={
@@ -55,7 +55,7 @@ function Page() {
             <Explain
                 anchor="description"
                 cssClassNames={getCssClassNames()}
-                previewFlexDirection="row"
+                previewFlexDirection="column"
                 legend="TextArea (description)"
                 reactComponentName="TextArea"
                 description={
@@ -87,7 +87,7 @@ function Page() {
             <Explain
                 anchor="mandatory-placeholder"
                 cssClassNames={getCssClassNames()}
-                previewFlexDirection="row"
+                previewFlexDirection="column"
                 legend="TextArea (mandatory, placeholder)"
                 reactComponentName="TextArea"
                 description={
@@ -123,7 +123,7 @@ function Page() {
             <Explain
                 anchor="description-placeholder"
                 cssClassNames={getCssClassNames()}
-                previewFlexDirection="row"
+                previewFlexDirection="column"
                 legend="TextArea (description, placeholder)"
                 reactComponentName="TextArea"
                 description={
@@ -156,7 +156,7 @@ function Page() {
             <Explain
                 anchor="mandatory-default-value"
                 cssClassNames={getCssClassNames()}
-                previewFlexDirection="row"
+                previewFlexDirection="column"
                 legend="TextArea (mandatory, default value)"
                 reactComponentName="TextArea"
                 description={
@@ -192,7 +192,7 @@ function Page() {
             <Explain
                 anchor="default-value"
                 cssClassNames={getCssClassNames()}
-                previewFlexDirection="row"
+                previewFlexDirection="column"
                 legend="TextArea (default value)"
                 reactComponentName="TextArea"
                 description={
@@ -225,7 +225,7 @@ function Page() {
             <Explain
                 anchor="max-words"
                 cssClassNames={getCssClassNames()}
-                previewFlexDirection="row"
+                previewFlexDirection="column"
                 legend="TextArea (max words)"
                 reactComponentName="TextArea"
                 description={
@@ -261,7 +261,7 @@ function Page() {
             <Explain
                 anchor="disabled"
                 cssClassNames={getCssClassNames()}
-                previewFlexDirection="row"
+                previewFlexDirection="column"
                 legend="TextArea (disabled)"
                 reactComponentName="TextArea"
                 description={
@@ -287,7 +287,7 @@ function Page() {
             <Explain
                 anchor="localStorage"
                 cssClassNames={getCssClassNames()}
-                previewFlexDirection="row"
+                previewFlexDirection="column"
                 legend="TextArea (localStorage)"
                 reactComponentName="TextArea"
                 description={
