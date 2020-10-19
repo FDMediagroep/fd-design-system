@@ -90,7 +90,8 @@
 
             &:hover,
             &:active {
-                svg {
+                svg,
+                svg [fill='#917F78'] {
                     fill: var(--toolbar-hover-color);
                     // IE11
                     @media screen and (-ms-high-contrast: active),
