@@ -531,33 +531,9 @@ function Foo() {
 </details>
 
 <details>
-<summary>TextArea</summary>
-
-[Demo](https://design-system.fd.nl/input/textarea)
-
-Component CSS:
-
-```
-import "@fdmg/design-system/components/design-tokens/design-tokens.css";
-import "@fdmg/design-system/components/input/TextArea.css";
-```
-
-```
-import { TextArea } from "@fdmg/design-system/components/input/TextArea";
-
-function Foo() {
-    return (
-        <TextArea id="demoTextArea" label="Biography" required={true} />
-    );
-}
-```
-
-</details>
-
-<details>
 <summary>TextFrame</summary>
 
-[Demo](https://design-system.fd.nl/input/textframe)
+[Demo](https://design-system.fd.nl/textframe)
 
 Component CSS:
 
@@ -911,7 +887,7 @@ import { TextInput } from "@fdmg/design-system/components/input/TextInput";
 
 function Foo() {
     return (
-        <TextInput id="demoTextArea" type="date" label="Birthday" />
+        <TextInput id="demoDateInput" type="date" label="Birthday" />
     );
 }
 ```
@@ -935,7 +911,7 @@ import { TextInput, Patterns } from "@fdmg/design-system/components/input/TextIn
 
 function Foo() {
     return (
-        <TextInput id="demoTextArea" type="email" label="E-mail" pattern={Patterns.EMAIL} required={true} />
+        <TextInput id="demoEmailInput" type="email" label="E-mail" pattern={Patterns.EMAIL} required={true} />
     );
 }
 ```
@@ -959,7 +935,7 @@ import { TextInput, Patterns } from "@fdmg/design-system/components/input/TextIn
 
 function Foo() {
     return (
-        <TextInput id="demoTextArea" type="tel" label="E-mail" pattern={Patterns.MOBILE} required={true} />
+        <TextInput id="demoMobileInput" type="tel" label="E-mail" pattern={Patterns.MOBILE} required={true} />
     );
 }
 ```
@@ -1067,6 +1043,30 @@ function Foo() {
 </details>
 
 <details>
+<summary>TextArea</summary>
+
+[Demo](https://design-system.fd.nl/input/textarea)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/input/TextArea.css";
+```
+
+```
+import { TextArea } from "@fdmg/design-system/components/input/TextArea";
+
+function Foo() {
+    return (
+        <TextArea id="demoTextArea" label="Biography" required={true} />
+    );
+}
+```
+
+</details>
+
+<details>
 <summary>Text input</summary>
 
 [Demo](https://design-system.fd.nl/input/textinput)
@@ -1083,7 +1083,7 @@ import { TextInput } from "@fdmg/design-system/components/input/TextInput";
 
 function Foo() {
     return (
-        <TextInput id="demoTextArea" label="Name" placeholder="Willem Liu" />
+        <TextInput id="demoTextInput" label="Name" placeholder="Willem Liu" />
     );
 }
 ```
