@@ -112,9 +112,10 @@
         }
         > ul > li {
             position: relative;
-            display: block;
+            display: flex;
             width: auto;
             float: left;
+            align-items: center;
         }
         > ul > li > ul {
             left: 0;

@@ -46,7 +46,9 @@ export interface Props {
 
 function VerticalToolbar(props: Props) {
     return (
-        <section className={styles.verticalToolbar}>
+        <section
+            className={`${props.className ?? ''} ${styles.verticalToolbar}`}
+        >
             <Button
                 title="Deel via WhatsApp"
                 size="s"
