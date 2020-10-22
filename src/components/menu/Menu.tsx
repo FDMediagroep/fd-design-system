@@ -38,10 +38,6 @@ export interface MenuItem {
      */
     href?: string;
     /**
-     * Prefetch link content for faster SPA experience. Only for Next.js apps.
-     */
-    prefetch?: boolean;
-    /**
      * Link relationship.
      * e.g.: noopener noreferrer nofollow
      */
