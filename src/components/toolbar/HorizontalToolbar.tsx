@@ -44,7 +44,9 @@ export interface Props {
 
 function HorizontalToolbar(props: Props) {
     return (
-        <section className={styles.horizontalToolbar}>
+        <section
+            className={`${props.className ?? ''} ${styles.horizontalToolbar}`}
+        >
             <Button
                 title="Deel via WhatsApp"
                 size="s"
