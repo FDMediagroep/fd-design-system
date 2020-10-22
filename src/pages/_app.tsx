@@ -12,6 +12,7 @@ import { ButtonGhost } from '../components/button/ButtonGhost';
 import { FdIcon, ProfileIcon, SpyglassIcon } from '../design-tokens/icons';
 import { ButtonCta } from '../components/button/ButtonCta';
 import { Themes } from '../components/Themes';
+import Link from 'next/link';
 
 function App({ Component, pageProps }) {
     const [pageType, setPageType] = useState<Page>(PageStore.getPageType());
@@ -85,13 +86,18 @@ function App({ Component, pageProps }) {
                 menuItems={[
                     {
                         text: 'FD Design System',
-                        href: '/',
                         component: (
-                            <span
-                                className={styles.logo}
-                                dangerouslySetInnerHTML={{ __html: FdIcon }}
-                                aria-label="FD Design System"
-                            />
+                            <Link href="/">
+                                <a style={{ padding: '0' }}>
+                                    <span
+                                        className={styles.logo}
+                                        dangerouslySetInnerHTML={{
+                                            __html: FdIcon,
+                                        }}
+                                        aria-label="FD Design System"
+                                    />
+                                </a>
+                            </Link>
                         ),
                     },
                     {
@@ -100,7 +106,11 @@ function App({ Component, pageProps }) {
                         menuItems: [
                             {
                                 text: 'Home',
-                                href: '/',
+                                component: (
+                                    <Link href="/">
+                                        <a>Home</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Brandbook 📤',
@@ -115,7 +125,11 @@ function App({ Component, pageProps }) {
                             },
                             {
                                 text: 'Design Tokens',
-                                href: '/tokens',
+                                component: (
+                                    <Link href="/tokens">
+                                        <a>Design Tokens</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Downloads 📤',
@@ -131,55 +145,107 @@ function App({ Component, pageProps }) {
                         menuItems: [
                             {
                                 text: 'BulletPoint',
-                                href: '/article-bullet-point',
+                                component: (
+                                    <Link href="/article-bullet-point">
+                                        <a>BulletPoint</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Financial Agenda',
-                                href: '/financial-agenda',
+                                component: (
+                                    <Link href="/financial-agenda">
+                                        <a>Financial Agenda</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Image',
-                                href: '/article-image',
+                                component: (
+                                    <Link href="/article-image">
+                                        <a>Image</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Infographic',
-                                href: '/article-infographic',
+                                component: (
+                                    <Link href="/article-infographic">
+                                        <a>Infographic</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Latest News',
-                                href: '/article-latest-news',
+                                component: (
+                                    <Link href="/article-latest-news">
+                                        <a>Latest News</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'LinkBlock',
-                                href: '/article-link-block',
+                                component: (
+                                    <Link href="/article-link-block">
+                                        <a>LinkBlock</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'LinkCard',
-                                href: '/article-link-card',
+                                component: (
+                                    <Link href="/article-link-card">
+                                        <a>LinkCard</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'NumberFrame',
-                                href: '/numberframe',
+                                component: (
+                                    <Link href="/numberframe">
+                                        <a>NumberFrame</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Quote',
-                                href: '/quote',
+                                component: (
+                                    <Link href="/quote">
+                                        <a>Quote</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'ReadMore',
-                                href: '/readmore',
+                                component: (
+                                    <Link href="/readmore">
+                                        <a>ReadMore</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Summary',
-                                href: '/article-summary',
+                                component: (
+                                    <Link href="/article-summary">
+                                        <a>Summary</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Tags',
-                                href: '/article-tags',
+                                component: (
+                                    <Link href="/article-tags">
+                                        <a>Tags</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'TextFrame',
-                                href: '/textframe',
+                                component: (
+                                    <Link href="/textframe">
+                                        <a>TextFrame</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Toolbar',
@@ -187,17 +253,29 @@ function App({ Component, pageProps }) {
                                 menuItems: [
                                     {
                                         text: 'Horizontal',
-                                        href: '/toolbar/horizontal',
+                                        component: (
+                                            <Link href="/toolbar/horizontal">
+                                                <a>Horizontal</a>
+                                            </Link>
+                                        ),
                                     },
                                     {
                                         text: 'Vertical',
-                                        href: '/toolbar/vertical',
+                                        component: (
+                                            <Link href="/toolbar/vertical">
+                                                <a>Vertical</a>
+                                            </Link>
+                                        ),
                                     },
                                 ],
                             },
                             {
                                 text: 'WordFrame',
-                                href: '/wordframe',
+                                component: (
+                                    <Link href="/wordframe">
+                                        <a>WordFrame</a>
+                                    </Link>
+                                ),
                             },
                         ],
                     },
@@ -207,38 +285,125 @@ function App({ Component, pageProps }) {
                         menuItems: [
                             {
                                 text: 'Breaking Switch',
-                                href: '/input/breaking-switch',
+                                component: (
+                                    <Link href="/input/breaking-switch">
+                                        <a>Breaking Switch</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Button',
-                                href: '/button/default',
+                                component: (
+                                    <Link href="/button/default">
+                                        <a>Button</a>
+                                    </Link>
+                                ),
                             },
-                            { text: 'Button CTA', href: '/button/cta' },
+                            {
+                                text: 'Button CTA',
+                                component: (
+                                    <Link href="/button/cta">
+                                        <a>Button CTA</a>
+                                    </Link>
+                                ),
+                            },
                             {
                                 text: 'Button Follow',
-                                href: '/button/follow',
+                                component: (
+                                    <Link href="/button/follow">
+                                        <a>Button Follow</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Ghost Button',
-                                href: '/button/ghost',
+                                component: (
+                                    <Link href="/button/ghost">
+                                        <a>Ghost Button</a>
+                                    </Link>
+                                ),
                             },
-                            { text: 'Checkbox', href: '/input/checkbox' },
-                            { text: 'Date', href: '/input/dateinput' },
-                            { text: 'E-mail', href: '/input/emailinput' },
+                            {
+                                text: 'Checkbox',
+                                component: (
+                                    <Link href="/input/checkbox">
+                                        <a>Checkbox</a>
+                                    </Link>
+                                ),
+                            },
+                            {
+                                text: 'Date',
+                                component: (
+                                    <Link href="/input/dateinput">
+                                        <a>Date</a>
+                                    </Link>
+                                ),
+                            },
+                            {
+                                text: 'E-mail',
+                                component: (
+                                    <Link href="/input/emailinput">
+                                        <a>E-mail</a>
+                                    </Link>
+                                ),
+                            },
                             {
                                 text: 'Mobile (tel)',
-                                href: '/input/mobileinput',
+                                component: (
+                                    <Link href="/input/mobileinput">
+                                        <a>Mobile (tel)</a>
+                                    </Link>
+                                ),
                             },
-                            { text: 'Radio', href: '/input/radio' },
-                            { text: 'Select', href: '/input/select' },
-                            { text: 'Switch', href: '/input/switch' },
-                            { text: 'TextArea', href: '/input/textarea' },
-                            { text: 'Text', href: '/input/textinput' },
+                            {
+                                text: 'Radio',
+                                component: (
+                                    <Link href="/input/radio">
+                                        <a>Radio</a>
+                                    </Link>
+                                ),
+                            },
+                            {
+                                text: 'Select',
+                                component: (
+                                    <Link href="/input/select">
+                                        <a>Select</a>
+                                    </Link>
+                                ),
+                            },
+                            {
+                                text: 'Switch',
+                                component: (
+                                    <Link href="/input/switch">
+                                        <a>Switch</a>
+                                    </Link>
+                                ),
+                            },
+                            {
+                                text: 'TextArea',
+                                component: (
+                                    <Link href="/input/textarea">
+                                        <a>TextArea</a>
+                                    </Link>
+                                ),
+                            },
+                            {
+                                text: 'Text',
+                                component: (
+                                    <Link href="/input/textinput">
+                                        <a>Text</a>
+                                    </Link>
+                                ),
+                            },
                         ],
                     },
                     {
                         text: 'Cards',
-                        href: '/cards',
+                        component: (
+                            <Link href="/cards">
+                                <a>Cards</a>
+                            </Link>
+                        ),
                         menuItems: [
                             {
                                 text: 'Horizontal',
@@ -246,15 +411,27 @@ function App({ Component, pageProps }) {
                                 menuItems: [
                                     {
                                         text: 'Horizontal 1',
-                                        href: '/card/horizontal-1',
+                                        component: (
+                                            <Link href="/card/horizontal-1">
+                                                <a>Horizontal 1</a>
+                                            </Link>
+                                        ),
                                     },
                                     {
                                         text: 'Horizontal 2',
-                                        href: '/card/horizontal-2',
+                                        component: (
+                                            <Link href="/card/horizontal-2">
+                                                <a>Horizontal 2</a>
+                                            </Link>
+                                        ),
                                     },
                                     {
                                         text: 'Horizontal 3',
-                                        href: '/card/horizontal-3',
+                                        component: (
+                                            <Link href="/card/horizontal-3">
+                                                <a>Horizontal 3</a>
+                                            </Link>
+                                        ),
                                     },
                                 ],
                             },
@@ -264,17 +441,29 @@ function App({ Component, pageProps }) {
                                 menuItems: [
                                     {
                                         text: 'Hybrid 1',
-                                        href: '/card/hybrid-1',
+                                        component: (
+                                            <Link href="/card/hybrid-1">
+                                                <a>Hybrid 1</a>
+                                            </Link>
+                                        ),
                                     },
                                     {
                                         text: 'Hybrid 2',
-                                        href: '/card/hybrid-2',
+                                        component: (
+                                            <Link href="/card/hybrid-2">
+                                                <a>Hybrid 2</a>
+                                            </Link>
+                                        ),
                                     },
                                 ],
                             },
                             {
                                 text: 'LinkCard',
-                                href: '/card/link-card',
+                                component: (
+                                    <Link href="/card/link-card">
+                                        <a>LinkCard</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Vertical',
@@ -282,15 +471,27 @@ function App({ Component, pageProps }) {
                                 menuItems: [
                                     {
                                         text: 'Vertical 1',
-                                        href: '/card/horizontal-1',
+                                        component: (
+                                            <Link href="/card/vertical-1">
+                                                <a>Vertical 1</a>
+                                            </Link>
+                                        ),
                                     },
                                     {
                                         text: 'Vertical 2',
-                                        href: '/card/horizontal-2',
+                                        component: (
+                                            <Link href="/card/vertical-2">
+                                                <a>Vertical 2</a>
+                                            </Link>
+                                        ),
                                     },
                                     {
                                         text: 'Vertical 3',
-                                        href: '/card/horizontal-3',
+                                        component: (
+                                            <Link href="/card/vertical-3">
+                                                <a>Vertical 3</a>
+                                            </Link>
+                                        ),
                                     },
                                 ],
                             },
@@ -302,27 +503,61 @@ function App({ Component, pageProps }) {
                         menuItems: [
                             {
                                 text: 'A/B Testing component',
-                                href: '/ab',
+                                component: (
+                                    <Link href="/ab">
+                                        <a>A/B Testing component</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Accordion',
-                                href: '/accordion',
+                                component: (
+                                    <Link href="/accordion">
+                                        <a>Accordion</a>
+                                    </Link>
+                                ),
                             },
-                            { text: 'Author Info', href: '/author-info' },
+                            {
+                                text: 'Author Info',
+                                component: (
+                                    <Link href="/author-info">
+                                        <a>Author Info</a>
+                                    </Link>
+                                ),
+                            },
                             {
                                 text: 'Cookie Consent',
-                                href: '/cookieconsent#cookie-consent',
+                                component: (
+                                    <Link href="/cookieconsent#cookie-consent">
+                                        <a>Cookie Consent</a>
+                                    </Link>
+                                ),
                                 menuItems: [
                                     {
                                         text: 'Locked Content',
-                                        href: '/cookieconsent#locked-content',
+                                        component: (
+                                            <Link href="/cookieconsent#locked-content">
+                                                <a>Locked Content</a>
+                                            </Link>
+                                        ),
                                     },
                                 ],
                             },
-                            { text: 'Modal', href: '/modal' },
+                            {
+                                text: 'Modal',
+                                component: (
+                                    <Link href="/modal">
+                                        <a>Modal</a>
+                                    </Link>
+                                ),
+                            },
                             {
                                 text: 'Stock Ticker',
-                                href: '/stock-ticker',
+                                component: (
+                                    <Link href="/stock-ticker">
+                                        <a>Stock Ticker</a>
+                                    </Link>
+                                ),
                             },
                         ],
                     },
@@ -373,15 +608,22 @@ function App({ Component, pageProps }) {
                             },
                             {
                                 text: 'Test article',
-                                href: '/[section]/[id]/[title]',
-                                rel: 'nofollow',
-                                as:
-                                    '/achtergrond/1324449/alle-verrijking-op-een-rijtje',
+                                component: (
+                                    <Link
+                                        href="/[section]/[id]/[title]"
+                                        as="/achtergrond/1324449/alle-verrijking-op-een-rijtje"
+                                    >
+                                        <a rel="nofollow">Test article</a>
+                                    </Link>
+                                ),
                             },
                             {
                                 text: 'Test page',
-                                href: '/fd-web',
-                                rel: 'nofollow',
+                                component: (
+                                    <Link href="/fd-web">
+                                        <a rel="nofollow">Test page</a>
+                                    </Link>
+                                ),
                             },
                         ],
                     },

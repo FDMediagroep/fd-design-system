@@ -38,10 +38,6 @@ export interface MenuItem {
      */
     href?: string;
     /**
-     * Link as shown in the browser. Can differ from link.
-     */
-    as?: string;
-    /**
      * Prefetch link content for faster SPA experience. Only for Next.js apps.
      */
     prefetch?: boolean;

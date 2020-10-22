@@ -8,11 +8,12 @@ interface Props {
 
 function ToggleButton(props: Props) {
     const hasPopup = props.menuItem?.menuItems?.length > 0;
-    const { menuItem, ...rest } = props;
+    const { menuItem, onClick, onMouseEnter } = props;
 
     return (
         <button
-            {...rest}
+            onClick={onClick}
+            onMouseEnter={onMouseEnter}
             title={menuItem.text ?? menuItem.ariaLabel}
             {...(hasPopup
                 ? {

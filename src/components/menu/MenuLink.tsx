@@ -9,36 +9,32 @@ interface Props {
 
 function MenuLink(props: Props) {
     const hasPopup = props.menuItem?.menuItems?.length > 0;
-    const { menuItem, ...rest } = props;
+    const { menuItem, onClick, onMouseEnter } = props;
 
     return (
-        <Link
+        <a
+            onClick={onClick}
+            onMouseEnter={onMouseEnter}
             href={menuItem.href}
-            as={menuItem.as}
-            prefetch={menuItem.prefetch === true}
+            rel={menuItem.rel}
+            {...(menuItem.target
+                ? {
+                      target: menuItem.target,
+                      rel: menuItem.rel ?? 'noopener noreferrer nofollow',
+                  }
+                : {})}
+            title={menuItem.text ?? menuItem.ariaLabel}
+            {...(hasPopup
+                ? {
+                      'aria-expanded': !!menuItem.expanded,
+                  }
+                : {})}
+            aria-haspopup={hasPopup}
+            aria-label={menuItem.ariaLabel ?? menuItem.text}
+            className={props.className}
         >
-            <a
-                {...rest}
-                rel={menuItem.rel}
-                {...(menuItem.target
-                    ? {
-                          target: menuItem.target,
-                          rel: menuItem.rel ?? 'noopener noreferrer nofollow',
-                      }
-                    : {})}
-                title={menuItem.text ?? menuItem.ariaLabel}
-                {...(hasPopup
-                    ? {
-                          'aria-expanded': !!menuItem.expanded,
-                      }
-                    : {})}
-                aria-haspopup={hasPopup}
-                aria-label={menuItem.ariaLabel ?? menuItem.text}
-                className={props.className}
-            >
-                {menuItem.component ?? menuItem.text}
-            </a>
-        </Link>
+            {menuItem.component ?? menuItem.text}
+        </a>
     );
 }
 
