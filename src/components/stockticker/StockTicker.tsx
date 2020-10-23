@@ -15,6 +15,7 @@ export type Stock = {
 
 export interface Props {
     stocks: Stock[];
+    [x: string]: any;
 }
 
 function StockTicker(props: Props) {
@@ -49,7 +50,11 @@ function StockTicker(props: Props) {
     }
 
     return (
-        <section className={styles.stockTicker}>
+        <section
+            className={`${props.className ? ` ${props.className}` : ''} ${
+                styles.stockTicker
+            }`}
+        >
             {current.map((stock) => {
                 return (
                     <a
