@@ -22,7 +22,7 @@ export interface MenuItem {
     /**
      * Visible text of the menu item.
      */
-    text: string;
+    text?: string;
     /**
      * Custom component as menu-item.
      * Setting this will override the linkText.
