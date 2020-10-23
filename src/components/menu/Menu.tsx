@@ -408,7 +408,7 @@ function Menu(props: Props) {
                 (menuItem.id === styles['more-menu'] &&
                     !menuItem?.menuItems?.length)
             ) {
-                return true;
+                return 'no text, component or child menu items found';
             }
 
             const hasPopup = menuItem?.menuItems?.length > 0;
