@@ -60,6 +60,10 @@ interface Props {
      */
     ariaLabel: string;
     /**
+     * Class name for the centered part of the menu items container.
+     */
+    contentClassName?: string;
+    /**
      * Menu items. Use a nested structure to create sub-menus.
      */
     menuItems?: MenuItem[];
@@ -489,7 +493,12 @@ function Menu(props: Props) {
             }`}
             aria-label={props.ariaLabel}
         >
-            <div className={styles.menuCenter} ref={menuRef}>
+            <div
+                className={`${styles.menuCenter}${
+                    props.contentClassName ? ` ${props.contentClassName}` : ''
+                }`}
+                ref={menuRef}
+            >
                 <nav className={styles.menu}>
                     {renderMenu(sortedMenuItems ?? menuItems)}
                 </nav>
