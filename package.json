@@ -97,7 +97,7 @@
         "xmldom": "^0.3.0"
     },
     "dependencies": {
-        "@webcomponents/webcomponentsjs": "^2.4.4",
+        "@webcomponents/webcomponentsjs": "^2.5.0",
         "js-cookie": "^2.2.1"
     },
     "browserslist": {
