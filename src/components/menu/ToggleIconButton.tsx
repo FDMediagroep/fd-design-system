@@ -12,11 +12,11 @@ interface Props {
 
 function ToggleIconButton(props: Props) {
     const hasPopup = props.menuItem?.menuItems?.length > 0;
-    const { menuItem, ...rest } = props;
+    const { menuItem, onClick } = props;
 
     return (
         <button
-            {...rest}
+            onClick={onClick}
             className={props.className}
             dangerouslySetInnerHTML={{
                 __html: menuItem.expanded
