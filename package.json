@@ -65,7 +65,7 @@
         "jest-css-modules": "^2.1.0",
         "json-to-scss": "^1.6.2",
         "micro-cors": "^0.1.1",
-        "mini-css-extract-plugin": "^1.1.2",
+        "mini-css-extract-plugin": "^1.2.0",
         "next": "^9.5.5",
         "next-offline": "^5.0.2",
         "nookies": "^2.4.1",
