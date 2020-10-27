@@ -22,7 +22,7 @@ export interface MenuItem {
     /**
      * Visible text of the menu item.
      */
-    text: string;
+    text?: string;
     /**
      * Custom component as menu-item.
      * Setting this will override the linkText.
@@ -59,6 +59,10 @@ interface Props {
      * ARIA-label of the menu.
      */
     ariaLabel: string;
+    /**
+     * Class name for the centered part of the menu items container.
+     */
+    contentClassName?: string;
     /**
      * Menu items. Use a nested structure to create sub-menus.
      */
@@ -408,7 +412,7 @@ function Menu(props: Props) {
                 (menuItem.id === styles['more-menu'] &&
                     !menuItem?.menuItems?.length)
             ) {
-                return true;
+                return 'no text, component or child menu items found';
             }
 
             const hasPopup = menuItem?.menuItems?.length > 0;
@@ -489,7 +493,12 @@ function Menu(props: Props) {
             }`}
             aria-label={props.ariaLabel}
         >
-            <div className={styles.menuCenter} ref={menuRef}>
+            <div
+                className={`${styles.menuCenter}${
+                    props.contentClassName ? ` ${props.contentClassName}` : ''
+                }`}
+                ref={menuRef}
+            >
                 <nav className={styles.menu}>
                     {renderMenu(sortedMenuItems ?? menuItems)}
                 </nav>

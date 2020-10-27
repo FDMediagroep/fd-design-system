@@ -51,7 +51,7 @@ function StockTicker(props: Props) {
 
     return (
         <section
-            className={`${props.className ? ` ${props.className}` : ''} ${
+            className={`${props.className ? `${props.className} ` : ''}${
                 styles.stockTicker
             }`}
         >

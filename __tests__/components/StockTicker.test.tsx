@@ -44,6 +44,7 @@ describe('StockTicker', () => {
     test('should have correct class name', () => {
         const { container } = render(
             <StockTicker
+                className="test-class"
                 stocks={[
                     {
                         name: 'stock1',
@@ -67,6 +68,9 @@ describe('StockTicker', () => {
             container.firstElementChild.classList.contains(
                 getCssClassNames()[0]
             )
+        ).toBeTruthy();
+        expect(
+            container.firstElementChild.classList.contains('test-class')
         ).toBeTruthy();
     });
 });
