@@ -167,16 +167,7 @@ function Page() {
                             />
                         }
                     />
-                    <HorizontalCard1
-                        {...horizontalCards1[5]}
-                        imageComponent={
-                            <Image
-                                src={horizontalCards1[5].imageUrl}
-                                alt={horizontalCards1[5].title}
-                                unsized={true}
-                            />
-                        }
-                    />
+                    <HorizontalCard1 {...horizontalCards1[5]} />
                 </>
             </Explain>
         </>
