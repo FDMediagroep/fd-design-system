@@ -223,18 +223,6 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-                __NEXT_IMAGE_OPTS: JSON.stringify({
-                    deviceSizes: [320, 420, 768, 1024, 1200],
-                    imageSizes: [],
-                    domains: [
-                        'images.example.com',
-                        'fd-external-development.imgix.net',
-                        'fd.nl',
-                        'static.fd.nl',
-                    ],
-                    path: '/_next/image',
-                    loader: 'default',
-                }),
             },
         }),
         new MiniCssExtractPlugin(),
