@@ -86,7 +86,7 @@ function HorizontalCard1(props: Props) {
             id={props.id}
         >
             <a href={props.url} aria-label={props.title}>
-                {!theme && props.imageUrl && (
+                {!theme && (props.imageUrl || props.imageComponent) && (
                     <figure>
                         <picture>
                             {props.imageComponent ?? (
@@ -100,7 +100,7 @@ function HorizontalCard1(props: Props) {
                     </figure>
                 )}
 
-                {theme && (
+                {theme && (props.imageUrl || props.imageComponent) && (
                     <figure className={`${styles.themed} ${theme}`}>
                         <picture>
                             {props.imageComponent ?? (
