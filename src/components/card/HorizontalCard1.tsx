@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './HorizontalCard1.module.scss';
+import Image from 'next/image';
 
 export type Themes =
     | 'theme1'
@@ -85,8 +86,9 @@ function HorizontalCard1(props: Props) {
                 {!theme && props.imageUrl && (
                     <figure>
                         <picture>
-                            <img
+                            <Image
                                 src={`${props.imageUrl}`}
+                                unsized={true}
                                 alt={props.caption ?? props.title}
                             />
                         </picture>
@@ -97,9 +99,10 @@ function HorizontalCard1(props: Props) {
                 {theme && (
                     <figure className={`${styles.themed} ${theme}`}>
                         <picture>
-                            <img
+                            <Image
                                 src={`${props.imageUrl}`}
-                                alt={props.caption}
+                                unsized={true}
+                                alt={props.caption ?? props.title}
                             />
                         </picture>
                         <figcaption>{props.caption}</figcaption>
