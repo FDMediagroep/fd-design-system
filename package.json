@@ -90,6 +90,7 @@
         "svgo-loader": "^2.2.1",
         "ts-jest": "^25.5.1",
         "ts-loader": "^8.0.7",
+        "ts-node": "^9.0.0",
         "typedoc": "^0.19.2",
         "typescript": "^3.9.7",
         "webpack-bundle-analyzer": "^3.9.0",
@@ -114,29 +115,5 @@
             "last 1 edge version",
             "ie 11"
         ]
-    },
-    "jest": {
-        "preset": "ts-jest",
-        "collectCoverage": true,
-        "coverageDirectory": "js-coverage",
-        "coverageReporters": [
-            "lcov",
-            "text"
-        ],
-        "globals": {
-            "ts-jest": {
-                "tsConfig": "tsconfig.test.json"
-            }
-        },
-        "testPathIgnorePatterns": [
-            "/cypress/",
-            "__tests__/mockdata/"
-        ],
-        "moduleNameMapper": {
-            "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules"
-        },
-        "transform": {
-            "\\.svg$": "./jest/transformers/raw-loader.js"
-        }
     }
 }

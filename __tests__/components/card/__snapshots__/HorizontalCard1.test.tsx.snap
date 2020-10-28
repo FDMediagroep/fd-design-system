@@ -12,10 +12,17 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
     >
       <figure>
         <picture>
-          <img
-            alt="This is the title"
-            src="https://images.example.com/image.png"
-          />
+          <div>
+            <div>
+              
+              <img
+                alt="This is the title"
+                class="__lazy"
+                data-src="/_next/image?url=https%3A%2F%2Fimages.example.com%2Fimage.png&w=1200&q=75"
+                data-srcset="/_next/image?url=https%3A%2F%2Fimages.example.com%2Fimage.png&w=320&q=75 320w, /_next/image?url=https%3A%2F%2Fimages.example.com%2Fimage.png&w=420&q=75 420w, /_next/image?url=https%3A%2F%2Fimages.example.com%2Fimage.png&w=768&q=75 768w, /_next/image?url=https%3A%2F%2Fimages.example.com%2Fimage.png&w=1024&q=75 1024w, /_next/image?url=https%3A%2F%2Fimages.example.com%2Fimage.png&w=1200&q=75 1200w"
+              />
+            </div>
+          </div>
         </picture>
         <figcaption />
       </figure>
@@ -59,10 +66,17 @@ exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
     >
       <figure>
         <picture>
-          <img
-            alt="This is the title"
-            src="https://images.example.com/image.png"
-          />
+          <div>
+            <div>
+              
+              <img
+                alt="This is the title"
+                class="__lazy"
+                data-src="/_next/image?url=https%3A%2F%2Fimages.example.com%2Fimage.png&w=1200&q=75"
+                data-srcset="/_next/image?url=https%3A%2F%2Fimages.example.com%2Fimage.png&w=320&q=75 320w, /_next/image?url=https%3A%2F%2Fimages.example.com%2Fimage.png&w=420&q=75 420w, /_next/image?url=https%3A%2F%2Fimages.example.com%2Fimage.png&w=768&q=75 768w, /_next/image?url=https%3A%2F%2Fimages.example.com%2Fimage.png&w=1024&q=75 1024w, /_next/image?url=https%3A%2F%2Fimages.example.com%2Fimage.png&w=1200&q=75 1200w"
+              />
+            </div>
+          </div>
         </picture>
         <figcaption />
       </figure>

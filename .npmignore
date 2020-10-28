@@ -9,9 +9,10 @@ __tests__
 analyzer
 Explain.d.ts
 js-coverage
+jest.config.js
 Menu.d.ts
 next-env.d.ts
-next.config.json
+next.config.js
 now.json
 package-lock.json
 public
