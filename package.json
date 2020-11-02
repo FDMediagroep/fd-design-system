@@ -79,7 +79,7 @@
         "raw-loader": "^4.0.2",
         "react": "^16.14.0",
         "react-dom": "^16.14.0",
-        "react-element-to-jsx-string": "^14.3.1",
+        "react-element-to-jsx-string": "^14.3.2",
         "react-lowlight": "^2.0.0",
         "react-markdown": "^5.0.2",
         "resize-observer-polyfill": "^1.5.1",
