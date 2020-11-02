@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './index.module.scss';
-import '@fdmg/css-grid/css/flex.css';
 import '@fdmg/css-grid/css/grid.css';
+import '@fdmg/css-grid/css/flex.css';
 import { VerticalCard1 } from '../../components/card/VerticalCard1';
 import { getPayload } from '../api/fd-web';
 import { HybridCard1 } from '../../components/card/HybridCard1';
@@ -36,7 +36,7 @@ function Page(props: Props) {
                         <GridContainer attributes={['xs-12', 'grid']}>
                             {breakingTeaser && (
                                 <GridContainer
-                                    className={styles.ie11FullHeight}
+                                    className={`ie-full-height ${styles.ie11FullHeight}`}
                                     attributes={[
                                         'xs-12',
                                         'm-6',
@@ -57,7 +57,7 @@ function Page(props: Props) {
                                                 ?.backgroundColor
                                         }
                                         title={breakingTeaser?.title}
-                                        url={`https://dev.fd.nl${breakingTeaser?.publicationUrl}`}
+                                        url={`${breakingTeaser?.publicationUrl}`}
                                         imageUrl={`${breakingTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                         imageUrlS={`${breakingTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                         imageUrlM={`${breakingTeaser?.image?.normalUrl}&q=45&w=351&h=234`}
@@ -68,7 +68,7 @@ function Page(props: Props) {
 
                             {singleOpeningTeaser && (
                                 <GridContainer
-                                    className={styles.ie11FullHeight}
+                                    className={`ie-full-height ${styles.ie11FullHeight}`}
                                     attributes={[
                                         'xs-12',
                                         'm-6',
@@ -89,7 +89,7 @@ function Page(props: Props) {
                                                 ?.backgroundColor
                                         }
                                         title={singleOpeningTeaser?.title}
-                                        url={`https://dev.fd.nl${singleOpeningTeaser?.publicationUrl}`}
+                                        url={`${singleOpeningTeaser?.publicationUrl}`}
                                         imageUrl={`${singleOpeningTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                         imageUrlS={`${singleOpeningTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                         imageUrlM={`${singleOpeningTeaser?.image?.normalUrl}&q=45&w=351&h=234`}
@@ -102,7 +102,7 @@ function Page(props: Props) {
                                 (teaser) => (
                                     <GridContainer
                                         key={`primary-${teaser.id}`}
-                                        className={styles.ie11FullHeight}
+                                        className={`ie-full-height ${styles.ie11FullHeight}`}
                                         attributes={[
                                             'xs-12',
                                             'm-4',
@@ -122,7 +122,7 @@ function Page(props: Props) {
                                                 teaser?.image?.backgroundColor
                                             }
                                             title={teaser?.title}
-                                            url={`https://dev.fd.nl${teaser?.publicationUrl}`}
+                                            url={`${teaser?.publicationUrl}`}
                                             imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                             imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                             imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
@@ -135,7 +135,7 @@ function Page(props: Props) {
                                 (teaser) => (
                                     <GridContainer
                                         key={`primary-${teaser.id}`}
-                                        className={styles.ie11FullHeight}
+                                        className={`ie-full-height ${styles.ie11FullHeight}`}
                                         attributes={[
                                             'xs-12',
                                             'm-4',
@@ -155,7 +155,7 @@ function Page(props: Props) {
                                                 teaser?.image?.backgroundColor
                                             }
                                             title={teaser?.title}
-                                            url={`https://dev.fd.nl${teaser?.publicationUrl}`}
+                                            url={`${teaser?.publicationUrl}`}
                                             imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                             imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                             imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
@@ -168,7 +168,7 @@ function Page(props: Props) {
                                 (teaser) => (
                                     <GridContainer
                                         key={`primary-${teaser.id}`}
-                                        className={styles.ie11FullHeight}
+                                        className={`ie-full-height ${styles.ie11FullHeight}`}
                                         attributes={[
                                             'xs-12',
                                             'm-4',
@@ -188,7 +188,7 @@ function Page(props: Props) {
                                                 teaser?.image?.backgroundColor
                                             }
                                             title={teaser?.title}
-                                            url={`https://dev.fd.nl${teaser?.publicationUrl}`}
+                                            url={`${teaser?.publicationUrl}`}
                                             imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                             imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                             imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
@@ -201,7 +201,7 @@ function Page(props: Props) {
                                 (teaser) => (
                                     <GridContainer
                                         key={`primary-${teaser.id}`}
-                                        className={styles.ie11FullHeight}
+                                        className={`ie-full-height ${styles.ie11FullHeight}`}
                                         attributes={[
                                             'xs-12',
                                             'm-4',
@@ -221,7 +221,7 @@ function Page(props: Props) {
                                                 teaser?.image?.backgroundColor
                                             }
                                             title={teaser?.title}
-                                            url={`https://dev.fd.nl${teaser?.publicationUrl}`}
+                                            url={`${teaser?.publicationUrl}`}
                                             imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                             imageUrlS={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                             imageUrlM={`${teaser?.image?.normalUrl}&q=45&w=351&h=234`}
@@ -233,15 +233,15 @@ function Page(props: Props) {
                         </GridContainer>
                     </GridContainer>
                     <GridContainer
-                        className={`${styles.sideContent} full-height`}
+                        className={`${styles.fullHeight}`}
                         attributes={['xs-12', 'l-3', 'gap-1', 'gap-bottom']}
                     >
-                        <div
-                            className={`dummy-card full-width ${styles.content}`}
-                        >
+                        <div className={`dummy-card full-width`}>
                             latest news
                         </div>
-                        <span className="hide-lt-xl">AD</span>
+                        <span className={`${styles.sticky} hide-lt-xl`}>
+                            AD
+                        </span>
                     </GridContainer>
 
                     {props?.data?.categoryCardsModel?.sectionModels?.map(
@@ -282,9 +282,7 @@ function Page(props: Props) {
                                                     ) {
                                                         return (
                                                             <GridContainer
-                                                                className={
-                                                                    styles.ie11FullHeight
-                                                                }
+                                                                className={`ie-full-height ${styles.ie11FullHeight}`}
                                                                 attributes={[
                                                                     'xs-12',
                                                                     's-6',
@@ -310,16 +308,14 @@ function Page(props: Props) {
                                                                     title={
                                                                         card?.title
                                                                     }
-                                                                    url={`https://dev.fd.nl${card?.publicationUrl}`}
+                                                                    url={`${card?.publicationUrl}`}
                                                                 />
                                                             </GridContainer>
                                                         );
                                                     } else {
                                                         return (
                                                             <GridContainer
-                                                                className={
-                                                                    styles.ie11FullHeight
-                                                                }
+                                                                className={`ie-full-height ${styles.ie11FullHeight}`}
                                                                 attributes={[
                                                                     'xs-12',
                                                                     's-6',
@@ -345,7 +341,7 @@ function Page(props: Props) {
                                                                     title={
                                                                         card?.title
                                                                     }
-                                                                    url={`https://dev.fd.nl${card?.publicationUrl}`}
+                                                                    url={`${card?.publicationUrl}`}
                                                                 />
                                                             </GridContainer>
                                                         );

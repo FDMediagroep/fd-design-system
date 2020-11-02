@@ -13,6 +13,53 @@ import { FdIcon, ProfileIcon, SpyglassIcon } from '../design-tokens/icons';
 import { ButtonCta } from '../components/button/ButtonCta';
 import { Themes } from '../components/Themes';
 import Link from 'next/link';
+import { debounce } from '../utils/debounce';
+
+/**
+ * Make sibling elements same height as its tallest sibling with the given CSS Class Name.
+ */
+
+function resizeSiblings(cssClassName: string) {
+    console.debug('resizeSiblings');
+    [].slice
+        .call(document.querySelectorAll(`.${cssClassName}`))
+        .forEach((el: HTMLElement) => {
+            let siblingHeight = 0;
+            const siblings: HTMLElement[] = [];
+            [].slice.call(el.parentElement.childNodes).forEach((child) => {
+                if (child.classList.contains(cssClassName)) {
+                    siblingHeight = Math.max(
+                        siblingHeight,
+                        child.getBoundingClientRect().height
+                    );
+                    siblings.push(child);
+                }
+            });
+            siblings.forEach((child) => {
+                if (child.classList.contains(cssClassName)) {
+                    child.style.height = `${siblingHeight}px`;
+                }
+            });
+        });
+}
+
+function handleIE11FullHeight(cssClassName: string) {
+    console.debug('handleIE11FullHeight');
+    [].slice
+        .call(document.querySelectorAll(`.${cssClassName}`))
+        .forEach((el: HTMLElement) => {
+            el.style.height = 'auto';
+        });
+    debounce(resizeSiblings.bind(null, cssClassName), 300);
+}
+
+function isIE() {
+    const ua = window.navigator.userAgent; //Check the userAgent property of the window.navigator object
+    const msie = ua.indexOf('MSIE '); // IE 10 or older
+    const trident = ua.indexOf('Trident/'); //IE 11
+
+    return msie > 0 || trident > 0;
+}
 
 function App({ Component, pageProps }) {
     const [pageType, setPageType] = useState<Page>(PageStore.getPageType());
@@ -28,7 +75,19 @@ function App({ Component, pageProps }) {
     }
 
     useEffect(() => {
-        require('@webcomponents/webcomponentsjs');
+        if (isIE()) {
+            require('@webcomponents/webcomponentsjs');
+
+            window.addEventListener(
+                'resize',
+                debounce.bind(
+                    null,
+                    () => handleIE11FullHeight('ie-full-height'),
+                    300
+                )
+            );
+            handleIE11FullHeight('ie-full-height');
+        }
 
         const subscriptionId = PageStore.subscribe(() => {
             setPageType(PageStore.getPageType());
