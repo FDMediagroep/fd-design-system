@@ -4,15 +4,14 @@
 @import '../../../design-tokens/typography.scss';
 
 .article {
+    max-width: 1248px;
     margin: 0 0.5rem;
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         margin: 0 1rem;
     }
-    max-width: 719px;
     color: var(--content-copy);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
         color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     }
     align-self: center;
@@ -112,5 +111,21 @@
                 color: #{map-deep-get($colors, 'colors', 'primary', 75)};
             }
         }
+    }
+
+    .sticky {
+        position: sticky;
+        top: 80px;
+    }
+
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
+    }
+
+    .fullHeight {
+        height: 100%;
     }
 }

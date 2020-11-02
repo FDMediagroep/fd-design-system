@@ -4,7 +4,6 @@ import {
     getCssClassNames,
 } from '../../../src/components/card/HorizontalCard1';
 import { render } from '@testing-library/react';
-
 describe('HorizontalCard1', () => {
     test('should render correctly', () => {
         const { container, getByText } = render(

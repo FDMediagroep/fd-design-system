@@ -10,6 +10,9 @@ if (process.env.SERVERLESS) {
 
 module.exports = withOffline({
     ...serverless,
+    images: {
+        domains: ['images.fd.nl', 'fd-external-development.imgix.net'],
+    },
     generateInDevMode: false,
     workboxOpts: {
         cleanupOutdatedCaches: true,

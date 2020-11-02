@@ -23,6 +23,10 @@ interface Props {
     id: string;
     url: string;
     imageUrl?: string;
+    /**
+     * Custom image component. When set this will replace the default img-element.
+     */
+    imageComponent?: JSX.Element;
     label: string;
     time: string;
     title: string;
@@ -82,31 +86,35 @@ function HorizontalCard1(props: Props) {
             id={props.id}
         >
             <a href={props.url} aria-label={props.title}>
-                {!theme && props.imageUrl && (
+                {!theme && (props.imageUrl || props.imageComponent) && (
                     <figure>
                         <picture>
-                            <img
-                                src={`${props.imageUrl}`}
-                                alt={props.caption ?? props.title}
-                            />
+                            {props.imageComponent ?? (
+                                <img
+                                    src={`${props.imageUrl}`}
+                                    alt={props.caption ?? props.title}
+                                />
+                            )}
                         </picture>
                         <figcaption>{props.caption}</figcaption>
                     </figure>
                 )}
 
-                {theme && (
+                {theme && (props.imageUrl || props.imageComponent) && (
                     <figure className={`${styles.themed} ${theme}`}>
                         <picture>
-                            <img
-                                src={`${props.imageUrl}`}
-                                alt={props.caption}
-                            />
+                            {props.imageComponent ?? (
+                                <img
+                                    src={`${props.imageUrl}`}
+                                    alt={props.caption}
+                                />
+                            )}
                         </picture>
                         <figcaption>{props.caption}</figcaption>
                     </figure>
                 )}
 
-                {!props.imageUrl && (
+                {!props.imageUrl && !props.imageComponent && (
                     <div className={`${styles.figure} ${styles.empty}`}>
                         <img src="/assets/images/fd-logo.svg" />
                     </div>

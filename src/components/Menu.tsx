@@ -197,6 +197,9 @@ function Menu(props: Props) {
                 <Link href="/cookieconsent#cookie-consent">
                     <a>Cookie Consent</a>
                 </Link>
+                <Link href="/grid">
+                    <a>Grid</a>
+                </Link>
                 <Link href="/cookieconsent#locked-content">
                     <a>Locked content</a>
                 </Link>

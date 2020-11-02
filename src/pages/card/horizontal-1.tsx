@@ -5,6 +5,7 @@ import {
     getCssClassNames,
 } from '../../components/card/HorizontalCard1';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const horizontalCards1: any = [
     {
@@ -116,11 +117,56 @@ function Page() {
                 }
             >
                 <>
-                    <HorizontalCard1 {...horizontalCards1[0]} />
-                    <HorizontalCard1 {...horizontalCards1[1]} />
-                    <HorizontalCard1 {...horizontalCards1[2]} />
-                    <HorizontalCard1 {...horizontalCards1[3]} />
-                    <HorizontalCard1 {...horizontalCards1[4]} />
+                    <HorizontalCard1
+                        {...horizontalCards1[0]}
+                        imageComponent={
+                            <Image
+                                src={horizontalCards1[0].imageUrl}
+                                alt={horizontalCards1[0].title}
+                                unsized={true}
+                            />
+                        }
+                    />
+                    <HorizontalCard1
+                        {...horizontalCards1[1]}
+                        imageComponent={
+                            <Image
+                                src={horizontalCards1[1].imageUrl}
+                                alt={horizontalCards1[1].title}
+                                unsized={true}
+                            />
+                        }
+                    />
+                    <HorizontalCard1
+                        {...horizontalCards1[2]}
+                        imageComponent={
+                            <Image
+                                src={horizontalCards1[2].imageUrl}
+                                alt={horizontalCards1[2].title}
+                                unsized={true}
+                            />
+                        }
+                    />
+                    <HorizontalCard1
+                        {...horizontalCards1[3]}
+                        imageComponent={
+                            <Image
+                                src={horizontalCards1[3].imageUrl}
+                                alt={horizontalCards1[3].title}
+                                unsized={true}
+                            />
+                        }
+                    />
+                    <HorizontalCard1
+                        {...horizontalCards1[4]}
+                        imageComponent={
+                            <Image
+                                src={horizontalCards1[4].imageUrl}
+                                alt={horizontalCards1[4].title}
+                                unsized={true}
+                            />
+                        }
+                    />
                     <HorizontalCard1 {...horizontalCards1[5]} />
                 </>
             </Explain>
