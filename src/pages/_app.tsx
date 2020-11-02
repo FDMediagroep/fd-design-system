@@ -544,6 +544,26 @@ function App({ Component, pageProps }) {
                                 ],
                             },
                             {
+                                text: 'Grid',
+                                component: (
+                                    <Link href="/grid">
+                                        <a>Grid</a>
+                                    </Link>
+                                ),
+                                menuItems: [
+                                    {
+                                        text: 'Test article',
+                                        component: (
+                                            <Link href="/achtergrond/1324449/alle-verrijking-op-een-rijtje">
+                                                <a rel="nofollow">
+                                                    Test article
+                                                </a>
+                                            </Link>
+                                        ),
+                                    },
+                                ],
+                            },
+                            {
                                 text: 'Modal',
                                 component: (
                                     <Link href="/modal">
@@ -604,17 +624,6 @@ function App({ Component, pageProps }) {
                                         className={styles.themes}
                                         groupName="sub-menu-themes"
                                     />
-                                ),
-                            },
-                            {
-                                text: 'Test article',
-                                component: (
-                                    <Link
-                                        href="/[section]/[id]/[title]"
-                                        as="/achtergrond/1324449/alle-verrijking-op-een-rijtje"
-                                    >
-                                        <a rel="nofollow">Test article</a>
-                                    </Link>
                                 ),
                             },
                             {

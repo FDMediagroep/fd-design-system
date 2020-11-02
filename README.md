@@ -1613,6 +1613,15 @@ function Foo() {
 </details>
 
 <details>
+<summary>Grid</summary>
+
+The CSS Grid is an external component and can be found here:
+
+[Source](https://github.com/FDMediagroep/fdmg-css-grid)
+
+</details>
+
+<details>
 <summary>Modal</summary>
 
 [Demo](https://design-system.fd.nl/modal)

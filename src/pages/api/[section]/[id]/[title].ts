@@ -196,21 +196,21 @@ const data = {
 export async function getPayload(params: any) {
     let payload: any = data;
     try {
-        payload = await timeout(
-            5000,
-            fetch(
-                `https://dev.fd.nl/${params.section}/${params.id}/${params.title}${process.env.URL_PARAMS}`,
-                {
-                    headers: {
-                        Authorization: process.env.DEV_AUTHORIZATION,
-                        'User-Agent': process.env.USER_AGENT,
-                        'X-FDMG-Json': process.env.X_FDMG_JSON,
-                        'X-Forwarded-For': process.env.X_FORWARDED_FOR,
-                    },
-                    referrerPolicy: 'no-referrer',
-                }
-            )
-        ).then((res) => res.json());
+        // payload = await timeout(
+        //     5000,
+        //     fetch(
+        //         `https://dev.fd.nl/${params.section}/${params.id}/${params.title}${process.env.URL_PARAMS}`,
+        //         {
+        //             headers: {
+        //                 Authorization: process.env.DEV_AUTHORIZATION,
+        //                 'User-Agent': process.env.USER_AGENT,
+        //                 'X-FDMG-Json': process.env.X_FDMG_JSON,
+        //                 'X-Forwarded-For': process.env.X_FORWARDED_FOR,
+        //             },
+        //             referrerPolicy: 'no-referrer',
+        //         }
+        //     )
+        // ).then((res) => res.json());
     } catch (e) {
         console.error(e);
     }
