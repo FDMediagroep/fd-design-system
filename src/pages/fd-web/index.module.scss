@@ -59,4 +59,14 @@
         margin: 0 1rem 1rem 0;
         overflow: hidden;
     }
+
+    .ie11FullHeight,
+    .fullHeight {
+        height: 100%;
+    }
+
+    .sticky {
+        position: sticky;
+        top: 80px;
+    }
 }

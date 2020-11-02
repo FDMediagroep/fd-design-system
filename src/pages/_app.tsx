@@ -561,6 +561,14 @@ function App({ Component, pageProps }) {
                                             </Link>
                                         ),
                                     },
+                                    {
+                                        text: 'Test page',
+                                        component: (
+                                            <Link href="/fd-web">
+                                                <a rel="nofollow">Test page</a>
+                                            </Link>
+                                        ),
+                                    },
                                 ],
                             },
                             {
@@ -624,14 +632,6 @@ function App({ Component, pageProps }) {
                                         className={styles.themes}
                                         groupName="sub-menu-themes"
                                     />
-                                ),
-                            },
-                            {
-                                text: 'Test page',
-                                component: (
-                                    <Link href="/fd-web">
-                                        <a rel="nofollow">Test page</a>
-                                    </Link>
                                 ),
                             },
                         ],
