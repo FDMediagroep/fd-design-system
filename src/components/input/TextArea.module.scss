@@ -38,33 +38,33 @@
         }
         @supports (-ms-ime-align: auto) {
             textarea ~ label {
-                font-size: 0.75rem;
+                font-size: 0.875rem;
                 top: 0;
                 background-color: white;
                 right: 1rem;
             }
         }
         textarea:not([placeholder=' ']) ~ div > label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             top: 0;
             background-color: white;
             right: 1rem;
         }
         textarea:not(:placeholder-shown) ~ div > label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             top: 0;
             background-color: white;
             right: 1rem;
         }
         textarea:not(:-ms-input-placeholder) ~ div > label,
         textarea:-ms-input-placeholder:not([placeholder=' ']) ~ div > label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             top: 0;
             background-color: white;
             right: 1rem;
         }
         textarea:focus ~ div > label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             top: 0;
             background-color: white;
             right: 1rem;
@@ -200,7 +200,7 @@
 
         .textareaMessage {
             transition: all 0.3s ease-out;
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             color: var(--input-helper-text);
             // IE11
             @media screen and (-ms-high-contrast: active),

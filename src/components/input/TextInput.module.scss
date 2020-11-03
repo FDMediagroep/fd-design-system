@@ -166,25 +166,25 @@
         }
         @supports (-ms-ime-align: auto) {
             input ~ label {
-                font-size: 0.75rem;
+                font-size: 0.875rem;
                 top: 0.5rem;
             }
         }
         input:not([type='month']):not([type='date']):not([type='datetime']):not([placeholder=' '])
             ~ div
             > label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             top: 0.5rem;
             right: 2rem;
         }
         input:not(:placeholder-shown) ~ div > label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             top: 0.5rem;
             right: 2rem;
         }
         input:not(:-ms-input-placeholder) ~ div > label,
         input:-ms-input-placeholder:not([placeholder=' ']) ~ div > label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             top: 0.5rem;
             right: 2rem;
         }
@@ -192,7 +192,7 @@
         input[type='date'] ~ div > label,
         input[type='datetime'] ~ div > label,
         input:focus ~ div > label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             top: 0.5rem;
             right: 2rem;
         }
@@ -206,7 +206,7 @@
         }
         .inputMessage {
             transition: all 0.3s ease-out;
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             color: var(--input-helper-text);
             // IE11
             @media screen and (-ms-high-contrast: active),
