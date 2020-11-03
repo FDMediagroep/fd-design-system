@@ -39,7 +39,6 @@ function Page(props: Props) {
                                     className={`ie-full-height ${styles.ie11FullHeight}`}
                                     attributes={[
                                         'xs-12',
-                                        'm-6',
                                         'gap-1',
                                         'gap-bottom',
                                     ]}
@@ -71,7 +70,6 @@ function Page(props: Props) {
                                     className={`ie-full-height ${styles.ie11FullHeight}`}
                                     attributes={[
                                         'xs-12',
-                                        'm-6',
                                         'gap-1',
                                         'gap-bottom',
                                     ]}

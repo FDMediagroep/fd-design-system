@@ -167,25 +167,25 @@
         }
         @supports (-ms-ime-align: auto) {
             select ~ label {
-                font-size: 0.75rem;
+                font-size: 0.875rem;
                 top: 0.5rem;
             }
         }
         select:not([type='month']):not([type='date']):not([type='datetime']):not([placeholder=' '])
             ~ div
             > label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             top: 0.5rem;
             right: 2rem;
         }
         select:not(:placeholder-shown) ~ div > label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             top: 0.5rem;
             right: 2rem;
         }
         select:not(:-ms-input-placeholder) ~ div > label,
         select:-ms-input-placeholder:not([placeholder=' ']) ~ div > label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             top: 0.5rem;
             right: 2rem;
         }
@@ -193,7 +193,7 @@
         select[type='date'] ~ div > label,
         select[type='datetime'] ~ div > label,
         select:focus ~ div > label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             top: 0.5rem;
             right: 2rem;
         }
@@ -207,7 +207,7 @@
         }
         .selectMessage {
             transition: all 0.3s ease-out;
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             color: var(--select-helper-text);
             // IE11
             @media screen and (-ms-high-contrast: active),
