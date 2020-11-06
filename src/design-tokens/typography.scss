@@ -4,5 +4,163 @@ $typography: (
     bold-serif: ArnhemProBold,
     regular: ProximaNovaRegular,
     regular-serif: ArnhemProBlond
+  ),
+  heading: (
+    line-height: 1.2,
+    sans-serif: (
+      xs: (
+        font-size: 1,
+        s: (
+          font-size: 1.125
+        )
+      ),
+      s: (
+        font-size: 1.2,
+        s: (
+          font-size: 1.35
+        )
+      ),
+      m: (
+        font-size: 1.44,
+        s: (
+          font-size: 1.62
+        )
+      ),
+      l: (
+        font-size: 1.728,
+        s: (
+          font-size: 1.944
+        )
+      ),
+      xl: (
+        font-size: 2.0736,
+        s: (
+          font-size: 2.3328
+        )
+      ),
+      xxl: (
+        font-size: 2.48832,
+        s: (
+          font-size: 2.79936
+        )
+      )
+    ),
+    serif: (
+      xs: (
+        font-size: 1.0625,
+        s: (
+          font-size: 1.3125
+        )
+      ),
+      s: (
+        font-size: 1.275,
+        s: (
+          font-size: 1.575
+        )
+      ),
+      m: (
+        font-size: 1.53,
+        s: (
+          font-size: 1.89
+        )
+      ),
+      l: (
+        font-size: 1.836,
+        s: (
+          font-size: 2.268
+        )
+      ),
+      xl: (
+        font-size: 2.2032,
+        s: (
+          font-size: 2.7216
+        )
+      ),
+      xxl: (
+        font-size: 2.64384,
+        s: (
+          font-size: 3.26592
+        )
+      )
+    )
+  ),
+  body: (
+    line-height: 1.5,
+    sans-serif: (
+      xs: (
+        font-size: 0.875,
+        s: (
+          font-size: 0.9375
+        )
+      ),
+      s: (
+        font-size: 1,
+        s: (
+          font-size: 1.125
+        )
+      ),
+      m: (
+        font-size: 1.2,
+        s: (
+          font-size: 1.35
+        )
+      ),
+      l: (
+        font-size: 1.2,
+        s: (
+          font-size: 1.35
+        )
+      ),
+      xl: (
+        font-size: 1.2,
+        s: (
+          font-size: 1.35
+        )
+      ),
+      xxl: (
+        font-size: 1.2,
+        s: (
+          font-size: 1.35
+        )
+      )
+    ),
+    serif: (
+      xs: (
+        font-size: 1.0625,
+        s: (
+          font-size: 1.3125
+        )
+      ),
+      s: (
+        font-size: 1.275,
+        s: (
+          font-size: 1.575
+        )
+      ),
+      m: (
+        font-size: 1.275,
+        s: (
+          font-size: 1.575
+        )
+      ),
+      l: (
+        font-size: 1.275,
+        s: (
+          font-size: 1.575
+        )
+      ),
+      xl: (
+        font-size: 1.275,
+        s: (
+          font-size: 1.575
+        )
+      ),
+      xxl: (
+        font-size: 1.275,
+        s: (
+          font-size: 1.575
+        )
+      )
+    )
   )
 );
