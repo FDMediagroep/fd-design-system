@@ -1693,3 +1693,51 @@ function Foo() {
 ```
 
 </details>
+
+<details>
+<summary>Typography</summary>
+
+[Demo](https://design-system.fd.nl/typography)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+```
+
+```
+function Foo() {
+    return (
+        <h1 className="heading serif xs">Heading xs</h1>
+        <h1 className="heading serif s">Heading s</h1>
+        <h1 className="heading serif m">Heading m</h1>
+        <h1 className="heading serif l">Heading l</h1>
+        <h1 className="heading serif xl">Heading xl</h1>
+        <h1 className="heading serif xxl">Heading xxl</h1>
+
+        <h1 className="heading sans xs">Heading xs</h1>
+        <h1 className="heading sans s">Heading s</h1>
+        <h1 className="heading sans m">Heading m</h1>
+        <h1 className="heading sans l">Heading l</h1>
+        <h1 className="heading sans xl">Heading xl</h1>
+        <h1 className="heading sans xxl">Heading xxl</h1>
+
+        <h1 className="body-text serif xs">Body xs</h1>
+        <h1 className="body-text serif s">Body s</h1>
+        <h1 className="body-text serif m">Body m</h1>
+        <h1 className="body-text serif l">Reserved</h1>
+        <h1 className="body-text serif xl">Reserved</h1>
+        <h1 className="body-text serif xxl">Reserved</h1>
+
+        <h1 className="body-text sans xs">Body xs</h1>
+        <h1 className="body-text sans s">Body s</h1>
+        <h1 className="body-text sans m">Body m</h1>
+        <h1 className="body-text sans l">Reserved</h1>
+        <h1 className="body-text sans xl">Reserved</h1>
+        <h1 className="body-text sans xxl">Reserved</h1>
+
+    );
+}
+```
+
+</details>

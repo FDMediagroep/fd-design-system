@@ -77,9 +77,9 @@ function Page() {
                     <h1 className="body-text serif xs">Body xs</h1>
                     <h1 className="body-text serif s">Body s</h1>
                     <h1 className="body-text serif m">Body m</h1>
-                    <h1 className="body-text serif l">Body l</h1>
-                    <h1 className="body-text serif xl">Body xl</h1>
-                    <h1 className="body-text serif xxl">Body xxl</h1>
+                    <h1 className="body-text serif l">Reserved</h1>
+                    <h1 className="body-text serif xl">Reserved</h1>
+                    <h1 className="body-text serif xxl">Reserved</h1>
                 </>
             </Explain>
 
@@ -97,9 +97,9 @@ function Page() {
                     <h1 className="body-text sans xs">Body xs</h1>
                     <h1 className="body-text sans s">Body s</h1>
                     <h1 className="body-text sans m">Body m</h1>
-                    <h1 className="body-text sans l">Body l</h1>
-                    <h1 className="body-text sans xl">Body xl</h1>
-                    <h1 className="body-text sans xxl">Body xxl</h1>
+                    <h1 className="body-text sans l">Reserved</h1>
+                    <h1 className="body-text sans xl">Reserved</h1>
+                    <h1 className="body-text sans xxl">Reserved</h1>
                 </>
             </Explain>
         </>

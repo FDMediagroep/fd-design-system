@@ -646,6 +646,14 @@ function App({ Component, pageProps }) {
                                     </Link>
                                 ),
                             },
+                            {
+                                text: 'Typography',
+                                component: (
+                                    <Link href="/typography">
+                                        <a>Typography</a>
+                                    </Link>
+                                ),
+                            },
                         ],
                     },
                 ]}

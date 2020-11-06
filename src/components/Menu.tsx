@@ -212,6 +212,9 @@ function Menu(props: Props) {
                 <Link href="/stock-ticker">
                     <a>Stock Ticker</a>
                 </Link>
+                <Link href="/typography">
+                    <a>Typography</a>
+                </Link>
             </section>
             <a
                 className={styles.image}
