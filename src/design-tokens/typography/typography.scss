@@ -15,7 +15,7 @@
                     'xs',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'heading',
@@ -34,7 +34,7 @@
                     's',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'heading',
@@ -53,7 +53,7 @@
                     'm',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'heading',
@@ -72,7 +72,7 @@
                     'l',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'heading',
@@ -91,7 +91,7 @@
                     'xl',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'heading',
@@ -110,7 +110,7 @@
                     'xxl',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'heading',
@@ -133,7 +133,7 @@
                     'xs',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'heading',
@@ -152,7 +152,7 @@
                     's',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'heading',
@@ -171,7 +171,7 @@
                     'm',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'heading',
@@ -190,7 +190,7 @@
                     'l',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'heading',
@@ -209,7 +209,7 @@
                     'xl',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'heading',
@@ -228,7 +228,7 @@
                     'xxl',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'heading',
@@ -254,7 +254,7 @@
                     'xs',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'body',
@@ -273,7 +273,7 @@
                     's',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'body',
@@ -292,7 +292,7 @@
                     'm',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'body',
@@ -311,7 +311,7 @@
                     'l',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'body',
@@ -330,7 +330,7 @@
                     'xl',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'body',
@@ -349,7 +349,7 @@
                     'xxl',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'body',
@@ -371,7 +371,7 @@
                     'xs',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'body',
@@ -390,7 +390,7 @@
                     's',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'body',
@@ -409,7 +409,7 @@
                     'm',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'body',
@@ -428,7 +428,7 @@
                     'l',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'body',
@@ -447,7 +447,7 @@
                     'xl',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'body',
@@ -466,7 +466,7 @@
                     'xxl',
                     'font-size'
                 )}rem;
-            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
                 font-size: #{map-deep-get(
                         $typography,
                         'body',
