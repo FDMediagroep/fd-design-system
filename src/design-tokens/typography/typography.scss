@@ -1,0 +1,481 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.heading {
+    font-weight: bold;
+    line-height: map-deep-get($typography, 'heading', 'line-height');
+    &.sans {
+        font-family: map-deep-get($typography, 'font-family', 'bold');
+        &.xs {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'sans-serif',
+                    'xs',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'sans-serif',
+                        'xs',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.s {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'sans-serif',
+                    's',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'sans-serif',
+                        's',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.m {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'sans-serif',
+                    'm',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'sans-serif',
+                        'm',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.l {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'sans-serif',
+                    'l',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'sans-serif',
+                        'l',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.xl {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'sans-serif',
+                    'xl',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'sans-serif',
+                        'xl',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.xxl {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'sans-serif',
+                    'xxl',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'sans-serif',
+                        'xxl',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+    }
+
+    &.serif {
+        font-family: map-deep-get($typography, 'font-family', 'bold-serif');
+        &.xs {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'serif',
+                    'xs',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'serif',
+                        'xs',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.s {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'serif',
+                    's',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'serif',
+                        's',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.m {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'serif',
+                    'm',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'serif',
+                        'm',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.l {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'serif',
+                    'l',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'serif',
+                        'l',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.xl {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'serif',
+                    'xl',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'serif',
+                        'xl',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.xxl {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'serif',
+                    'xxl',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'serif',
+                        'xxl',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+    }
+}
+
+.body-text {
+    line-height: map-deep-get($typography, 'body', 'line-height');
+    &.sans {
+        font-family: map-deep-get($typography, 'font-family', 'regular');
+        &.xs {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'sans-serif',
+                    'xs',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'sans-serif',
+                        'xs',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.s {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'sans-serif',
+                    's',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'sans-serif',
+                        's',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.m {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'sans-serif',
+                    'm',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'sans-serif',
+                        'm',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.l {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'sans-serif',
+                    'l',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'sans-serif',
+                        'l',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.xl {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'sans-serif',
+                    'xl',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'sans-serif',
+                        'xl',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.xxl {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'sans-serif',
+                    'xxl',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'sans-serif',
+                        'xxl',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+    }
+    &.serif {
+        font-family: map-deep-get($typography, 'font-family', 'regular-serif');
+        &.xs {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'serif',
+                    'xs',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'serif',
+                        'xs',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.s {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'serif',
+                    's',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'serif',
+                        's',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.m {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'serif',
+                    'm',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'serif',
+                        'm',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.l {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'serif',
+                    'l',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'serif',
+                        'l',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.xl {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'serif',
+                    'xl',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'serif',
+                        'xl',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+        &.xxl {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'serif',
+                    'xxl',
+                    'font-size'
+                )}rem;
+            @media only screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'serif',
+                        'xxl',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
+    }
+}
