@@ -648,11 +648,28 @@ function App({ Component, pageProps }) {
                             },
                             {
                                 text: 'Typography',
-                                component: (
-                                    <Link href="/typography">
-                                        <a>Typography</a>
-                                    </Link>
-                                ),
+                                isToggle: true,
+                                menuItems: [
+                                    {
+                                        component: (
+                                            <Link href="/typography">
+                                                <a>Demo</a>
+                                            </Link>
+                                        ),
+                                    },
+                                    {
+                                        component: (
+                                            <Link href="https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/1406861318/Typography">
+                                                <a
+                                                    target="_blank"
+                                                    rel="noopener noreferrer nofollow"
+                                                >
+                                                    Docs
+                                                </a>
+                                            </Link>
+                                        ),
+                                    },
+                                ],
                             },
                         ],
                     },
