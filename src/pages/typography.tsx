@@ -74,12 +74,12 @@ function Page() {
                 }
             >
                 <>
-                    <h1 className="body-text serif xs">Body xs</h1>
-                    <h1 className="body-text serif s">Body s</h1>
-                    <h1 className="body-text serif m">Body m</h1>
-                    <h1 className="body-text serif l">Reserved</h1>
-                    <h1 className="body-text serif xl">Reserved</h1>
-                    <h1 className="body-text serif xxl">Reserved</h1>
+                    <p className="body-text serif xs">Body xs</p>
+                    <p className="body-text serif s">Body s</p>
+                    <p className="body-text serif m">Body m</p>
+                    <p className="body-text serif l">Reserved</p>
+                    <p className="body-text serif xl">Reserved</p>
+                    <p className="body-text serif xxl">Reserved</p>
                 </>
             </Explain>
 
@@ -94,12 +94,12 @@ function Page() {
                 }
             >
                 <>
-                    <h1 className="body-text sans xs">Body xs</h1>
-                    <h1 className="body-text sans s">Body s</h1>
-                    <h1 className="body-text sans m">Body m</h1>
-                    <h1 className="body-text sans l">Reserved</h1>
-                    <h1 className="body-text sans xl">Reserved</h1>
-                    <h1 className="body-text sans xxl">Reserved</h1>
+                    <p className="body-text sans xs">Body xs</p>
+                    <p className="body-text sans s">Body s</p>
+                    <p className="body-text sans m">Body m</p>
+                    <p className="body-text sans l">Reserved</p>
+                    <p className="body-text sans xl">Reserved</p>
+                    <p className="body-text sans xxl">Reserved</p>
                 </>
             </Explain>
         </>

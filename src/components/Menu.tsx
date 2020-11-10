@@ -53,6 +53,13 @@ function Menu(props: Props) {
             >
                 Downloads 📤
             </a>
+            <a
+                href="https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/1406861318/Typography"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+            >
+                Typography 📤
+            </a>
 
             <section>
                 <h3>Article</h3>
