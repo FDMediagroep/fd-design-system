@@ -74,12 +74,38 @@ function Page() {
                 }
             >
                 <>
-                    <p className="body-text serif xs">Body xs</p>
-                    <p className="body-text serif s">Body s</p>
-                    <p className="body-text serif m">Body m</p>
+                    <p className="body-text serif xs">body-text serif xs</p>
+                    <p className="body-text serif s">body-text serif s</p>
+                    <p className="body-text serif m">body-text serif m</p>
                     <p className="body-text serif l">Reserved</p>
                     <p className="body-text serif xl">Reserved</p>
                     <p className="body-text serif xxl">Reserved</p>
+                </>
+            </Explain>
+
+            <Explain
+                cssClassNames={['body-text']}
+                legend="Body text serif bold"
+                hideReact={true}
+                description={
+                    <>
+                        <p>Example of serif bold body text.</p>
+                    </>
+                }
+            >
+                <>
+                    <p className="body-text serif xs bold">
+                        body-text serif xs bold
+                    </p>
+                    <p className="body-text serif s bold">
+                        body-text serif s bold
+                    </p>
+                    <p className="body-text serif m bold">
+                        body-text serif m bold
+                    </p>
+                    <p className="body-text serif l bold">Reserved</p>
+                    <p className="body-text serif xl bold">Reserved</p>
+                    <p className="body-text serif xxl bold">Reserved</p>
                 </>
             </Explain>
 
@@ -94,12 +120,38 @@ function Page() {
                 }
             >
                 <>
-                    <p className="body-text sans xs">Body xs</p>
-                    <p className="body-text sans s">Body s</p>
-                    <p className="body-text sans m">Body m</p>
+                    <p className="body-text sans xs">body-text sans xs</p>
+                    <p className="body-text sans s">body-text sans s</p>
+                    <p className="body-text sans m">body-text sans m</p>
                     <p className="body-text sans l">Reserved</p>
                     <p className="body-text sans xl">Reserved</p>
                     <p className="body-text sans xxl">Reserved</p>
+                </>
+            </Explain>
+
+            <Explain
+                cssClassNames={['body-text']}
+                legend="Body text sans-serif bold"
+                hideReact={true}
+                description={
+                    <>
+                        <p>Example of sans-serif bold body text.</p>
+                    </>
+                }
+            >
+                <>
+                    <p className="body-text sans xs bold">
+                        body-text sans xs bold
+                    </p>
+                    <p className="body-text sans s bold">
+                        body-text sans s bold
+                    </p>
+                    <p className="body-text sans m bold">
+                        body-text sans m bold
+                    </p>
+                    <p className="body-text sans l bold">Reserved</p>
+                    <p className="body-text sans xl bold">Reserved</p>
+                    <p className="body-text sans xxl bold">Reserved</p>
                 </>
             </Explain>
         </>

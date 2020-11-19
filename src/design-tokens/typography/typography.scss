@@ -246,6 +246,9 @@
     line-height: map-deep-get($typography, 'body', 'line-height');
     &.sans {
         font-family: map-deep-get($typography, 'font-family', 'regular');
+        &.bold {
+            font-family: map-deep-get($typography, 'font-family', 'bold');
+        }
         &.xs {
             font-size: #{map-deep-get(
                     $typography,
@@ -363,6 +366,9 @@
     }
     &.serif {
         font-family: map-deep-get($typography, 'font-family', 'regular-serif');
+        &.bold {
+            font-family: map-deep-get($typography, 'font-family', 'bold-serif');
+        }
         &.xs {
             font-size: #{map-deep-get(
                     $typography,
