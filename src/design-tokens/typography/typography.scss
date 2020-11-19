@@ -3,7 +3,6 @@
 @import '../../design-tokens/typography.scss';
 
 .heading {
-    font-weight: bold;
     line-height: map-deep-get($typography, 'heading', 'line-height');
     &.sans {
         font-family: map-deep-get($typography, 'font-family', 'bold');
