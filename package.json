@@ -35,7 +35,7 @@
     "devDependencies": {
         "@fdmg/css-grid": "^2.0.6",
         "@testing-library/jest-dom": "^5.11.6",
-        "@testing-library/react": "^11.1.2",
+        "@testing-library/react": "^11.2.0",
         "@testing-library/user-event": "^12.2.2",
         "@types/fetch-jsonp": "^1.0.0",
         "@types/highlight.js": "^10.1.0",
