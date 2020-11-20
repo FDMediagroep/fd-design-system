@@ -82,7 +82,7 @@
         "react-dom": "^16.14.0",
         "react-element-to-jsx-string": "^14.3.2",
         "react-lowlight": "^2.0.0",
-        "react-markdown": "^5.0.2",
+        "react-markdown": "^5.0.3",
         "resize-observer-polyfill": "^1.5.1",
         "sass": "^1.29.0",
         "sass-loader": "^10.1.0",
