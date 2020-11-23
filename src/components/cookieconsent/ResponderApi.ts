@@ -56,7 +56,7 @@ class ResponderApi {
      *
      * @param id
      */
-    init(options?: Options): Promise<any> {
+    init(options?: Options): Promise<void> {
         this.hostname = options?.hostname ?? window.location.hostname;
         return new Promise((resolve) => {
             if (ResponderApi.iFrame) {
