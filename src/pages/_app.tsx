@@ -144,7 +144,6 @@ function App({ Component, pageProps }) {
                 ariaLabel="Main menu"
                 menuItems={[
                     {
-                        text: 'FD Design System',
                         component: (
                             <Link href="/">
                                 <a style={{ padding: '0' }}>
@@ -164,7 +163,6 @@ function App({ Component, pageProps }) {
                         isToggle: true,
                         menuItems: [
                             {
-                                text: 'Home',
                                 component: (
                                     <Link href="/">
                                         <a>Home</a>
@@ -183,7 +181,6 @@ function App({ Component, pageProps }) {
                                 target: '_blank',
                             },
                             {
-                                text: 'Design Tokens',
                                 component: (
                                     <Link href="/tokens">
                                         <a>Design Tokens</a>
@@ -203,7 +200,6 @@ function App({ Component, pageProps }) {
                         isToggle: true,
                         menuItems: [
                             {
-                                text: 'BulletPoint',
                                 component: (
                                     <Link href="/article-bullet-point">
                                         <a>BulletPoint</a>
@@ -211,7 +207,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Financial Agenda',
                                 component: (
                                     <Link href="/financial-agenda">
                                         <a>Financial Agenda</a>
@@ -219,7 +214,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Image',
                                 component: (
                                     <Link href="/article-image">
                                         <a>Image</a>
@@ -227,7 +221,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Infographic',
                                 component: (
                                     <Link href="/article-infographic">
                                         <a>Infographic</a>
@@ -235,7 +228,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Latest News',
                                 component: (
                                     <Link href="/article-latest-news">
                                         <a>Latest News</a>
@@ -243,7 +235,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'LinkBlock',
                                 component: (
                                     <Link href="/article-link-block">
                                         <a>LinkBlock</a>
@@ -251,7 +242,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'LinkCard',
                                 component: (
                                     <Link href="/article-link-card">
                                         <a>LinkCard</a>
@@ -259,7 +249,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'NumberFrame',
                                 component: (
                                     <Link href="/numberframe">
                                         <a>NumberFrame</a>
@@ -267,7 +256,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Quote',
                                 component: (
                                     <Link href="/quote">
                                         <a>Quote</a>
@@ -275,7 +263,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'ReadMore',
                                 component: (
                                     <Link href="/readmore">
                                         <a>ReadMore</a>
@@ -283,7 +270,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Summary',
                                 component: (
                                     <Link href="/article-summary">
                                         <a>Summary</a>
@@ -291,7 +277,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Tags',
                                 component: (
                                     <Link href="/article-tags">
                                         <a>Tags</a>
@@ -299,7 +284,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'TextFrame',
                                 component: (
                                     <Link href="/textframe">
                                         <a>TextFrame</a>
@@ -311,7 +295,6 @@ function App({ Component, pageProps }) {
                                 isToggle: true,
                                 menuItems: [
                                     {
-                                        text: 'Horizontal',
                                         component: (
                                             <Link href="/toolbar/horizontal">
                                                 <a>Horizontal</a>
@@ -319,7 +302,6 @@ function App({ Component, pageProps }) {
                                         ),
                                     },
                                     {
-                                        text: 'Vertical',
                                         component: (
                                             <Link href="/toolbar/vertical">
                                                 <a>Vertical</a>
@@ -329,7 +311,6 @@ function App({ Component, pageProps }) {
                                 ],
                             },
                             {
-                                text: 'WordFrame',
                                 component: (
                                     <Link href="/wordframe">
                                         <a>WordFrame</a>
@@ -343,7 +324,6 @@ function App({ Component, pageProps }) {
                         isToggle: true,
                         menuItems: [
                             {
-                                text: 'Breaking Switch',
                                 component: (
                                     <Link href="/input/breaking-switch">
                                         <a>Breaking Switch</a>
@@ -351,7 +331,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Button',
                                 component: (
                                     <Link href="/button/default">
                                         <a>Button</a>
@@ -359,7 +338,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Button CTA',
                                 component: (
                                     <Link href="/button/cta">
                                         <a>Button CTA</a>
@@ -367,7 +345,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Button Follow',
                                 component: (
                                     <Link href="/button/follow">
                                         <a>Button Follow</a>
@@ -375,7 +352,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Ghost Button',
                                 component: (
                                     <Link href="/button/ghost">
                                         <a>Ghost Button</a>
@@ -383,7 +359,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Checkbox',
                                 component: (
                                     <Link href="/input/checkbox">
                                         <a>Checkbox</a>
@@ -391,7 +366,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Date',
                                 component: (
                                     <Link href="/input/dateinput">
                                         <a>Date</a>
@@ -399,7 +373,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'E-mail',
                                 component: (
                                     <Link href="/input/emailinput">
                                         <a>E-mail</a>
@@ -407,7 +380,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Mobile (tel)',
                                 component: (
                                     <Link href="/input/mobileinput">
                                         <a>Mobile (tel)</a>
@@ -415,7 +387,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Radio',
                                 component: (
                                     <Link href="/input/radio">
                                         <a>Radio</a>
@@ -423,7 +394,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Select',
                                 component: (
                                     <Link href="/input/select">
                                         <a>Select</a>
@@ -431,7 +401,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Switch',
                                 component: (
                                     <Link href="/input/switch">
                                         <a>Switch</a>
@@ -439,7 +408,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'TextArea',
                                 component: (
                                     <Link href="/input/textarea">
                                         <a>TextArea</a>
@@ -447,7 +415,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Text',
                                 component: (
                                     <Link href="/input/textinput">
                                         <a>Text</a>
@@ -458,18 +425,20 @@ function App({ Component, pageProps }) {
                     },
                     {
                         text: 'Cards',
-                        component: (
-                            <Link href="/cards">
-                                <a>Cards</a>
-                            </Link>
-                        ),
+                        isToggle: true,
                         menuItems: [
+                            {
+                                component: (
+                                    <Link href="/cards">
+                                        <a>Overview</a>
+                                    </Link>
+                                ),
+                            },
                             {
                                 text: 'Horizontal',
                                 isToggle: true,
                                 menuItems: [
                                     {
-                                        text: 'Horizontal 1',
                                         component: (
                                             <Link href="/card/horizontal-1">
                                                 <a>Horizontal 1</a>
@@ -477,7 +446,6 @@ function App({ Component, pageProps }) {
                                         ),
                                     },
                                     {
-                                        text: 'Horizontal 2',
                                         component: (
                                             <Link href="/card/horizontal-2">
                                                 <a>Horizontal 2</a>
@@ -485,7 +453,6 @@ function App({ Component, pageProps }) {
                                         ),
                                     },
                                     {
-                                        text: 'Horizontal 3',
                                         component: (
                                             <Link href="/card/horizontal-3">
                                                 <a>Horizontal 3</a>
@@ -499,7 +466,6 @@ function App({ Component, pageProps }) {
                                 isToggle: true,
                                 menuItems: [
                                     {
-                                        text: 'Hybrid 1',
                                         component: (
                                             <Link href="/card/hybrid-1">
                                                 <a>Hybrid 1</a>
@@ -507,7 +473,6 @@ function App({ Component, pageProps }) {
                                         ),
                                     },
                                     {
-                                        text: 'Hybrid 2',
                                         component: (
                                             <Link href="/card/hybrid-2">
                                                 <a>Hybrid 2</a>
@@ -517,7 +482,6 @@ function App({ Component, pageProps }) {
                                 ],
                             },
                             {
-                                text: 'LinkCard',
                                 component: (
                                     <Link href="/card/link-card">
                                         <a>LinkCard</a>
@@ -529,7 +493,6 @@ function App({ Component, pageProps }) {
                                 isToggle: true,
                                 menuItems: [
                                     {
-                                        text: 'Vertical 1',
                                         component: (
                                             <Link href="/card/vertical-1">
                                                 <a>Vertical 1</a>
@@ -537,7 +500,6 @@ function App({ Component, pageProps }) {
                                         ),
                                     },
                                     {
-                                        text: 'Vertical 2',
                                         component: (
                                             <Link href="/card/vertical-2">
                                                 <a>Vertical 2</a>
@@ -545,7 +507,6 @@ function App({ Component, pageProps }) {
                                         ),
                                     },
                                     {
-                                        text: 'Vertical 3',
                                         component: (
                                             <Link href="/card/vertical-3">
                                                 <a>Vertical 3</a>
@@ -561,7 +522,6 @@ function App({ Component, pageProps }) {
                         isToggle: true,
                         menuItems: [
                             {
-                                text: 'A/B Testing component',
                                 component: (
                                     <Link href="/ab">
                                         <a>A/B Testing component</a>
@@ -569,7 +529,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Accordion',
                                 component: (
                                     <Link href="/accordion">
                                         <a>Accordion</a>
@@ -577,7 +536,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Author Info',
                                 component: (
                                     <Link href="/author-info">
                                         <a>Author Info</a>
@@ -586,12 +544,15 @@ function App({ Component, pageProps }) {
                             },
                             {
                                 text: 'Cookie Consent',
-                                component: (
-                                    <Link href="/cookieconsent#cookie-consent">
-                                        <a>Cookie Consent</a>
-                                    </Link>
-                                ),
+                                isToggle: true,
                                 menuItems: [
+                                    {
+                                        component: (
+                                            <Link href="/cookieconsent#cookie-consent">
+                                                <a>Cookie Consent</a>
+                                            </Link>
+                                        ),
+                                    },
                                     {
                                         text: 'Locked Content',
                                         component: (
@@ -604,14 +565,16 @@ function App({ Component, pageProps }) {
                             },
                             {
                                 text: 'Grid',
-                                component: (
-                                    <Link href="/grid">
-                                        <a>Grid</a>
-                                    </Link>
-                                ),
+                                isToggle: true,
                                 menuItems: [
                                     {
-                                        text: 'Test article',
+                                        component: (
+                                            <Link href="/grid">
+                                                <a>Test page</a>
+                                            </Link>
+                                        ),
+                                    },
+                                    {
                                         component: (
                                             <Link href="/achtergrond/1324449/alle-verrijking-op-een-rijtje">
                                                 <a rel="nofollow">
@@ -621,7 +584,6 @@ function App({ Component, pageProps }) {
                                         ),
                                     },
                                     {
-                                        text: 'Test page',
                                         component: (
                                             <Link href="/fd-web">
                                                 <a rel="nofollow">Test page</a>
@@ -631,7 +593,6 @@ function App({ Component, pageProps }) {
                                 ],
                             },
                             {
-                                text: 'Modal',
                                 component: (
                                     <Link href="/modal">
                                         <a>Modal</a>
@@ -639,7 +600,6 @@ function App({ Component, pageProps }) {
                                 ),
                             },
                             {
-                                text: 'Stock Ticker',
                                 component: (
                                     <Link href="/stock-ticker">
                                         <a>Stock Ticker</a>
