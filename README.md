@@ -1724,7 +1724,7 @@ function Foo() {
 
         <p className="body-text serif xs">body-text serif xs</p>
         <p className="body-text serif s">body-text serif s</p>
-        <p className="body-text serif m">body-text serif m</p>
+        <p className="body-text serif m">Reserved</p>
         <p className="body-text serif l">Reserved</p>
         <p className="body-text serif xl">Reserved</p>
         <p className="body-text serif xxl">Reserved</p>
@@ -1735,9 +1735,7 @@ function Foo() {
         <p className="body-text serif s bold">
             body-text serif s bold
         </p>
-        <p className="body-text serif m bold">
-            body-text serif m bold
-        </p>
+        <p className="body-text serif m bold">Reserved</p>
         <p className="body-text serif l bold">Reserved</p>
         <p className="body-text serif xl bold">Reserved</p>
         <p className="body-text serif xxl bold">Reserved</p>
