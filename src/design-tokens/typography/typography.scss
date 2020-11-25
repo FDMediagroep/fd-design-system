@@ -3,6 +3,7 @@
 @import '../../design-tokens/typography.scss';
 
 .heading {
+    -webkit-font-smoothing: antialiased;
     line-height: map-deep-get($typography, 'heading', 'line-height');
     &.sans {
         font-family: map-deep-get($typography, 'font-family', 'bold');
