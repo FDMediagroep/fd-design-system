@@ -1,7 +1,6 @@
 @import '../../utils/map-deep-get.scss';
 @import '../../design-tokens/colors.scss';
 @import '../../design-tokens/media.scss';
-@import '../../design-tokens/typography.scss';
 
 .fdLatestNews {
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
@@ -12,18 +11,6 @@
     }
 
     h3 {
-        font-size: 1.125rem;
-        line-height: 1.222;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            font-size: 1.1875rem;
-            line-height: 1.316;
-        }
-        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
-            font-size: 1.3125rem;
-            line-height: 1.333;
-        }
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
         margin: 0;
         color: var(--content-copy);
         // IE11
@@ -48,9 +35,6 @@
     nav > a {
         position: relative;
         display: block;
-        line-height: 1.2em;
-        font-family: map-deep-get($typography, 'font-family', 'regular'),
-            sans-serif;
         border-top: 1px solid var(--dividers);
         color: var(--content-copy);
         // IE11
@@ -68,6 +52,9 @@
             opacity: 0.6;
         }
         &:hover {
+            .is-read {
+                text-decoration: underline;
+            }
             color: var(--primary);
             // IE11
             @media screen and (-ms-high-contrast: active),
@@ -84,10 +71,6 @@
             }
         }
         text-decoration: none;
-        font-size: 1rem;
-        @media only screen and (min-width: 641px) {
-            font-size: 1.0625rem;
-        }
     }
     .icon {
         position: absolute;

@@ -26,8 +26,10 @@ export interface Props {
 function ArticleLatestNews(props: Props) {
     return (
         <div className={styles.fdLatestNews}>
-            <h3>{props.title ?? 'Laatste nieuws'}</h3>
-            <nav>
+            <h3 className="heading sans xs">
+                {props.title ?? 'Laatste nieuws'}
+            </h3>
+            <nav className="body-text sans s">
                 {props.news.map((newsItem) => {
                     return (
                         <a
@@ -47,7 +49,10 @@ function ArticleLatestNews(props: Props) {
                     );
                 })}
             </nav>
-            <a href={props.link ?? '/laatste-nieuws'}>
+            <a
+                href={props.link ?? '/laatste-nieuws'}
+                className="body-text sans s"
+            >
                 {props.linkText ?? 'Lees al het laatste nieuws'}
                 <span
                     className={styles.icon}
@@ -59,7 +64,7 @@ function ArticleLatestNews(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdLatestNews];
+    return [styles.fdLatestNews, 'heading', 'body-text'];
 }
 
 export { ArticleLatestNews, getCssClassNames };
