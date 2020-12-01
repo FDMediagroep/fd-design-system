@@ -129,14 +129,6 @@
 
     &.serif {
         font-family: map-deep-get($typography, 'font-family', 'bold-serif');
-        &.regular {
-            font-family: map-deep-get(
-                $typography,
-                'font-family',
-                'regular-serif'
-            );
-            font-weight: normal;
-        }
         &.xs {
             font-size: #{map-deep-get(
                     $typography,
