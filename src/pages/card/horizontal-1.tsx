@@ -122,7 +122,6 @@ function Page() {
                             <li>updated visited</li>
                             <li>variant-1 themed</li>
                             <li>no image</li>
-                            <li>breaking</li>
                         </ul>
                     </>
                 }
@@ -184,18 +183,6 @@ function Page() {
                         }
                     />
                     <HorizontalCard1 {...horizontalCards1[5]} />
-                    <HorizontalCard1
-                        {...horizontalCards1[6]}
-                        variant="variant-2"
-                        imageComponent={
-                            <Image
-                                src={horizontalCards1[6].imageUrl}
-                                alt={horizontalCards1[6].title}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        }
-                    />
                 </>
             </Explain>
         </>

@@ -1184,6 +1184,36 @@ function Foo() {
 }
 ```
 
+<details>
+<summary>Horizontal Card 4</summary>
+
+[Demo](https://design-system.fd.nl/card/horizontal-4)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/card/HorizontalCard4.css";
+```
+
+```
+import { HorizontalCard4 } from "@fdmg/design-system/components/card/HorizontalCard4";
+
+function Foo() {
+    return (
+        <HorizontalCard4
+            id="1343811"
+            url="https://fd.nl/ondernemen/1343811/omzet-alfen-in-eerste-coronakwartaal-58"
+            imageUrl="https://images.fd.nl/C_yJRp_QqzybEdlK4D6SibEUxiA.jpg?rect=.0,.0,.73375,.9999999999999999&fit=crop&crop=faces&auto=format&q=45&w=300"
+            label="Energie"
+            title="Omzet Alfen stijgt in eerste coronakwartaal met 58%"
+        />
+    );
+}
+```
+
+</details>
+
 </details>
 
 <details>

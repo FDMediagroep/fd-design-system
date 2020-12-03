@@ -32,7 +32,7 @@ interface Props {
     title: string;
     isRead?: boolean;
     updated?: boolean;
-    variant?: 'variant-1' | 'variant-2';
+    variant?: 'variant-1';
     theme?: Themes;
     [x: string]: any;
 }
@@ -83,7 +83,7 @@ function HorizontalCard1(props: Props) {
             className={`${styles.horizontalCard1}${
                 props.isRead ? ` ${styles.isRead}` : ''
             }${props.variant === 'variant-1' ? ` ${styles.longread}` : ''}
-            ${props.variant === 'variant-2' ? ` ${styles.breaking}` : ''}`}
+            `}
             id={props.id}
         >
             <a href={props.url} aria-label={props.title}>
@@ -127,11 +127,7 @@ function HorizontalCard1(props: Props) {
                             <span className={styles.update}>Update</span>
                         )}
                         {!props.updated && (
-                            <span className={styles.prefix}>
-                                {props.variant === 'variant-2'
-                                    ? 'breaking'
-                                    : props.label}
-                            </span>
+                            <span className={styles.prefix}>{props.label}</span>
                         )}
 
                         <time>{props.time}</time>

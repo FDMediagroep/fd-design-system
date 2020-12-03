@@ -459,6 +459,13 @@ function App({ Component, pageProps }) {
                                             </Link>
                                         ),
                                     },
+                                    {
+                                        component: (
+                                            <Link href="/card/horizontal-4">
+                                                <a>Horizontal 4</a>
+                                            </Link>
+                                        ),
+                                    },
                                 ],
                             },
                             {
