@@ -9,8 +9,7 @@ interface Props {
      * Custom image component. When set this will replace the default img-element.
      */
     imageComponent?: JSX.Element;
-    label: string;
-    time: string;
+    time?: string;
     title: string;
     isRead?: boolean;
     [x: string]: any;

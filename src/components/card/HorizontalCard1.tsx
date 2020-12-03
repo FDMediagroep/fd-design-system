@@ -82,8 +82,7 @@ function HorizontalCard1(props: Props) {
             style={props.style}
             className={`${styles.horizontalCard1}${
                 props.isRead ? ` ${styles.isRead}` : ''
-            }${props.variant === 'variant-1' ? ` ${styles.longread}` : ''}
-            `}
+            }${props.variant === 'variant-1' ? ` ${styles.longread}` : ''}`}
             id={props.id}
         >
             <a href={props.url} aria-label={props.title}>
