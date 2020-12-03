@@ -68,11 +68,7 @@ function Page(props: Props) {
                             {singleOpeningTeaser && (
                                 <GridContainer
                                     className={`ie-full-height ${styles.ie11FullHeight}`}
-                                    attributes={[
-                                        'xs-12',
-                                        'gap-1',
-                                        'gap-bottom',
-                                    ]}
+                                    attributes={['xs-12', 'gap-bottom']}
                                 >
                                     <VerticalCard3
                                         id={singleOpeningTeaser.id}
@@ -103,7 +99,9 @@ function Page(props: Props) {
                                         className={`ie-full-height ${styles.ie11FullHeight}`}
                                         attributes={[
                                             'xs-12',
-                                            'm-4',
+                                            's-6',
+                                            'l-4',
+                                            'gap-1',
                                             'gap-2',
                                             'gap-bottom',
                                         ]}
@@ -136,7 +134,9 @@ function Page(props: Props) {
                                         className={`ie-full-height ${styles.ie11FullHeight}`}
                                         attributes={[
                                             'xs-12',
-                                            'm-4',
+                                            's-6',
+                                            'l-4',
+                                            'gap-1',
                                             'gap-2',
                                             'gap-bottom',
                                         ]}
@@ -169,7 +169,9 @@ function Page(props: Props) {
                                         className={`ie-full-height ${styles.ie11FullHeight}`}
                                         attributes={[
                                             'xs-12',
-                                            'm-4',
+                                            's-6',
+                                            'l-4',
+                                            'gap-1',
                                             'gap-2',
                                             'gap-bottom',
                                         ]}
@@ -202,7 +204,9 @@ function Page(props: Props) {
                                         className={`ie-full-height ${styles.ie11FullHeight}`}
                                         attributes={[
                                             'xs-12',
-                                            'm-4',
+                                            's-6',
+                                            'l-4',
+                                            'gap-1',
                                             'gap-2',
                                             'gap-bottom',
                                         ]}
