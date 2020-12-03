@@ -65,15 +65,14 @@
             position: relative;
             width: 100px;
             overflow: hidden;
-        }
-
-        img {
-            display: block;
-            position: absolute;
-            height: 100%;
-            left: 50%;
-            transform: translate(-50%, 0);
-            width: auto;
+            > img {
+                display: block;
+                position: absolute;
+                height: 100%;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: auto;
+            }
         }
 
         figcaption {
@@ -248,6 +247,26 @@
             (-ms-high-contrast: none) {
             color: #{map-deep-get($colors, 'colors', 'longread', 50)};
         }
+    }
+
+    &.breaking .teaserText .prefix {
+        font-size: 0.8125rem;
+        @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+            font-size: 0.875rem;
+        }
+        padding: 2px 8px;
+        color: var(--card);
+        background-color: var(--link-longread);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+            background-color: #{map-deep-get($colors, 'colors', 'longread', 75)};
+        }
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
     }
 
     footer menu {

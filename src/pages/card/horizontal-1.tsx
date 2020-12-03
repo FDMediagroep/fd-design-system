@@ -75,6 +75,16 @@ const horizontalCards1: any = [
         time: '6 aug',
         title: 'Huiseigenaren minder bezorgd over kanteling op woningmarkt',
     },
+    {
+        id: '1343811',
+        url:
+            'https://fd.nl/ondernemen/1343811/omzet-alfen-in-eerste-coronakwartaal-58',
+        imageUrl:
+            'https://images.fd.nl/C_yJRp_QqzybEdlK4D6SibEUxiA.jpg?rect=.0,.0,.73375,.9999999999999999&fit=crop&crop=faces&auto=format&q=45&w=300',
+        label: 'Energie',
+        title: 'Omzet Alfen stijgt in eerste coronakwartaal met 58%',
+        readingTime: 3,
+    },
 ];
 
 const metaTitle = 'Horizontal Card 1';
@@ -112,6 +122,7 @@ function Page() {
                             <li>updated visited</li>
                             <li>variant-1 themed</li>
                             <li>no image</li>
+                            <li>breaking</li>
                         </ul>
                     </>
                 }
@@ -123,7 +134,8 @@ function Page() {
                             <Image
                                 src={horizontalCards1[0].imageUrl}
                                 alt={horizontalCards1[0].title}
-                                unsized={true}
+                                layout="fill"
+                                objectFit="cover"
                             />
                         }
                     />
@@ -133,7 +145,8 @@ function Page() {
                             <Image
                                 src={horizontalCards1[1].imageUrl}
                                 alt={horizontalCards1[1].title}
-                                unsized={true}
+                                layout="fill"
+                                objectFit="cover"
                             />
                         }
                     />
@@ -143,7 +156,8 @@ function Page() {
                             <Image
                                 src={horizontalCards1[2].imageUrl}
                                 alt={horizontalCards1[2].title}
-                                unsized={true}
+                                layout="fill"
+                                objectFit="cover"
                             />
                         }
                     />
@@ -153,7 +167,8 @@ function Page() {
                             <Image
                                 src={horizontalCards1[3].imageUrl}
                                 alt={horizontalCards1[3].title}
-                                unsized={true}
+                                layout="fill"
+                                objectFit="cover"
                             />
                         }
                     />
@@ -163,11 +178,24 @@ function Page() {
                             <Image
                                 src={horizontalCards1[4].imageUrl}
                                 alt={horizontalCards1[4].title}
-                                unsized={true}
+                                layout="fill"
+                                objectFit="cover"
                             />
                         }
                     />
                     <HorizontalCard1 {...horizontalCards1[5]} />
+                    <HorizontalCard1
+                        {...horizontalCards1[6]}
+                        variant="variant-2"
+                        imageComponent={
+                            <Image
+                                src={horizontalCards1[6].imageUrl}
+                                alt={horizontalCards1[6].title}
+                                layout="fill"
+                                objectFit="cover"
+                            />
+                        }
+                    />
                 </>
             </Explain>
         </>
