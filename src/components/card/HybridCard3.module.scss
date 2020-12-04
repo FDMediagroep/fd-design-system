@@ -69,15 +69,14 @@
         margin: 0;
         flex: 0 0 auto;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            // margin: -1rem -1rem 12px -1rem;
-            flex: 0 0 100px;
+            flex: 0 0 116px;
         }
 
         picture {
             position: relative;
             width: 100%;
             @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-                width: 100px;
+                width: 116px;
                 overflow: hidden;
             }
         }
@@ -172,24 +171,6 @@
             }
             white-space: nowrap;
         }
-    }
-
-    footer menu {
-        float: none;
-    }
-
-    .favorite .ico {
-        margin: inherit;
-        top: inherit;
-    }
-
-    footer menu > * {
-        min-height: inherit;
-        line-height: 22px;
-    }
-
-    footer {
-        min-height: inherit;
     }
 
     &.isRead:not(:hover):not(:active) {
