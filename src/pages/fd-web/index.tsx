@@ -46,8 +46,8 @@ function Page(props: Props) {
                                 url={`${breakingTeaser?.publicationUrl}`}
                                 imageUrl={`${breakingTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
                                 imageUrlS={`${breakingTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlM={`${breakingTeaser?.image?.normalUrl}&q=45&w=351&h=234`}
-                                imageUrlL={`${breakingTeaser?.image?.wideUrl}&q=45&w=599&h=399`}
+                                imageUrlM={`${breakingTeaser?.image?.normalUrl}&rect=.17625%2c.0%2c.61875%2c.9999999999999999&q=45&w=320`}
+                                imageUrlL={`${breakingTeaser?.image?.wideUrl}&rect=.17625%2c.0%2c.61875%2c.9999999999999999&q=45&w=320`}
                             />
                         </GridContainer>
                     )}
