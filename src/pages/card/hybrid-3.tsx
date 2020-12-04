@@ -87,17 +87,45 @@ function Page() {
                         <p>Used for breaking news.</p>
                         <ul>
                             <li>default</li>
+                        </ul>
+                    </>
+                }
+            >
+                <HybridCard3 {...hybridCards3[0]} />
+            </Explain>
+
+            <Explain
+                anchor="hybrid3time"
+                cssClassNames={getCssClassNames()}
+                legend="Hybrid Card 3"
+                reactComponentName="HybridCard3"
+                description={
+                    <>
+                        <p>Used for breaking news.</p>
+                        <ul>
                             <li>time</li>
+                        </ul>
+                    </>
+                }
+            >
+                <HybridCard3 {...hybridCards3[1]} />
+            </Explain>
+
+            <Explain
+                anchor="hybrid3nointro"
+                cssClassNames={getCssClassNames()}
+                legend="Hybrid Card 3"
+                reactComponentName="HybridCard3"
+                description={
+                    <>
+                        <p>Used for breaking news.</p>
+                        <ul>
                             <li>no intro</li>
                         </ul>
                     </>
                 }
             >
-                <>
-                    <HybridCard3 {...hybridCards3[0]} />
-                    <HybridCard3 {...hybridCards3[1]} />
-                    <HybridCard3 {...hybridCards3[2]} />
-                </>
+                <HybridCard3 {...hybridCards3[2]} />
             </Explain>
         </>
     );
