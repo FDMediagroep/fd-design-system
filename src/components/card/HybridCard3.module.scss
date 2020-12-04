@@ -26,10 +26,27 @@
         margin: 0;
     }
 
+    .intro {
+        margin: 0;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        }
+        display: block;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            display: none;
+        }
+    }
+
     a {
         text-decoration: none;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            flex-direction: row;
+        }
         &:focus,
         &:hover {
             h1 {
@@ -50,14 +67,29 @@
         position: relative;
         display: flex;
         margin: 0;
-        flex: 0 0 100px;
+        flex: 0 0 auto;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            // margin: -1rem -1rem 12px -1rem;
+            flex: 0 0 100px;
+        }
 
         picture {
             position: relative;
-            width: 100px;
-            overflow: hidden;
-            > img {
-                display: block;
+            width: 100%;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                width: 100px;
+                overflow: hidden;
+            }
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            left: 0;
+            position: relative;
+            transform: none;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
                 position: absolute;
                 height: 100%;
                 left: 50%;
@@ -68,23 +100,7 @@
 
         figcaption {
             display: none;
-            font-family: map-deep-get($typography, 'font-family', 'bold'),
-                sans-serif;
         }
-    }
-
-    .figure.empty img {
-        width: 64px;
-        margin: auto;
-    }
-
-    .figure,
-    figure {
-        background-size: cover;
-        background-position: center;
-        background-color: #e6d3c6;
-        flex: 0 0 100px;
-        min-height: 100px;
     }
 
     .teaserText {
@@ -145,6 +161,16 @@
             letter-spacing: 1px;
             font-family: map-deep-get($typography, 'font-family', 'bold'),
                 sans-serif;
+        }
+
+        time {
+            color: var(--meta-copy);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+            }
+            white-space: nowrap;
         }
     }
 

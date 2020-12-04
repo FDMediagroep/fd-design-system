@@ -459,13 +459,6 @@ function App({ Component, pageProps }) {
                                             </Link>
                                         ),
                                     },
-                                    {
-                                        component: (
-                                            <Link href="/card/horizontal-4">
-                                                <a>Horizontal 4</a>
-                                            </Link>
-                                        ),
-                                    },
                                 ],
                             },
                             {
@@ -483,6 +476,13 @@ function App({ Component, pageProps }) {
                                         component: (
                                             <Link href="/card/hybrid-2">
                                                 <a>Hybrid 2</a>
+                                            </Link>
+                                        ),
+                                    },
+                                    {
+                                        component: (
+                                            <Link href="/card/hybrid-3">
+                                                <a>Hybrid 3</a>
                                             </Link>
                                         ),
                                     },

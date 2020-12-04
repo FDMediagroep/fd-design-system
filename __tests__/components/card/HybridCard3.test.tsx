@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-    HorizontalCard4,
+    HybridCard3,
     getCssClassNames,
-} from '../../../src/components/card/HorizontalCard4';
+} from '../../../src/components/card/HybridCard3';
 import { render } from '@testing-library/react';
-describe('HorizontalCard1', () => {
+describe('HybridCard3', () => {
     test('should render correctly', () => {
         const { container, getByText } = render(
-            <HorizontalCard4
+            <HybridCard3
                 id="1"
                 imageUrl="https://images.example.com/image.png"
                 title="This is the title"
@@ -24,7 +24,7 @@ describe('HorizontalCard1', () => {
 
     test('should have correct class name', () => {
         const { container } = render(
-            <HorizontalCard4
+            <HybridCard3
                 id="1"
                 imageUrl="https://images.example.com/image.png"
                 title="This is the title"
