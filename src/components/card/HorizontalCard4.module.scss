@@ -90,9 +90,9 @@
     .teaserText {
         position: relative;
         flex: 1;
-        padding: 12px;
+        padding: 1rem;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            padding: 16px;
+            padding: 1.5rem;
         }
 
         > a {
