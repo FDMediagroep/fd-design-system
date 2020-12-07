@@ -631,7 +631,7 @@ function App({ Component, pageProps }) {
                                                     target="_blank"
                                                     rel="noopener noreferrer nofollow"
                                                 >
-                                                    Docs
+                                                    Docs 📤
                                                 </a>
                                             </Link>
                                         ),
