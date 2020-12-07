@@ -9,6 +9,7 @@ import { VerticalCard3 } from '../../components/card/VerticalCard3';
 import { HybridCard2 } from '../../components/card/HybridCard2';
 import Head from 'next/head';
 import { GridContainer } from '@fdmg/css-grid/GridContainer';
+import { HybridCard3 } from '../../components/card/HybridCard3';
 
 interface Props {
     data: any;
@@ -29,50 +30,37 @@ function Page(props: Props) {
                 <p>Last update: {new Date(props.timestamp).toLocaleString()}</p>
 
                 <GridContainer className="top-content" attributes={['grid']}>
+                    {breakingTeaser && (
+                        <GridContainer
+                            className={`ie-full-height ${styles.ie11FullHeight}`}
+                            attributes={['xs-12', 'gap-1', 'gap-bottom']}
+                        >
+                            <HybridCard3
+                                id={breakingTeaser.id}
+                                className={`${styles.newsContainer} ${styles.fullHeight}`}
+                                caption={breakingTeaser?.title}
+                                intro={breakingTeaser?.intro}
+                                label={breakingTeaser?.topicPrefixOrCategory}
+                                theme={breakingTeaser?.image?.backgroundColor}
+                                title={breakingTeaser?.title}
+                                url={`${breakingTeaser?.publicationUrl}`}
+                                imageUrl={`${breakingTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                imageUrlS={`${breakingTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
+                                imageUrlM={`${breakingTeaser?.image?.normalUrl}&rect=.17625%2c.0%2c.61875%2c.9999999999999999&q=45&w=320`}
+                                imageUrlL={`${breakingTeaser?.image?.wideUrl}&rect=.17625%2c.0%2c.61875%2c.9999999999999999&q=45&w=320`}
+                            />
+                        </GridContainer>
+                    )}
+
                     <GridContainer
                         className="editorial-content"
                         attributes={['xs-12', 'l-9', 'gap-1', 'gap-bottom']}
                     >
                         <GridContainer attributes={['xs-12', 'grid']}>
-                            {breakingTeaser && (
-                                <GridContainer
-                                    className={`ie-full-height ${styles.ie11FullHeight}`}
-                                    attributes={[
-                                        'xs-12',
-                                        'gap-1',
-                                        'gap-bottom',
-                                    ]}
-                                >
-                                    <VerticalCard3
-                                        id={breakingTeaser.id}
-                                        className={`${styles.newsContainer} ${styles.fullHeight}`}
-                                        caption={breakingTeaser?.title}
-                                        intro={breakingTeaser?.intro}
-                                        label={
-                                            breakingTeaser?.topicPrefixOrCategory
-                                        }
-                                        theme={
-                                            breakingTeaser?.image
-                                                ?.backgroundColor
-                                        }
-                                        title={breakingTeaser?.title}
-                                        url={`${breakingTeaser?.publicationUrl}`}
-                                        imageUrl={`${breakingTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                        imageUrlS={`${breakingTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                        imageUrlM={`${breakingTeaser?.image?.normalUrl}&q=45&w=351&h=234`}
-                                        imageUrlL={`${breakingTeaser?.image?.wideUrl}&q=45&w=599&h=399`}
-                                    />
-                                </GridContainer>
-                            )}
-
                             {singleOpeningTeaser && (
                                 <GridContainer
                                     className={`ie-full-height ${styles.ie11FullHeight}`}
-                                    attributes={[
-                                        'xs-12',
-                                        'gap-1',
-                                        'gap-bottom',
-                                    ]}
+                                    attributes={['xs-12', 'gap-bottom']}
                                 >
                                     <VerticalCard3
                                         id={singleOpeningTeaser.id}
@@ -103,7 +91,9 @@ function Page(props: Props) {
                                         className={`ie-full-height ${styles.ie11FullHeight}`}
                                         attributes={[
                                             'xs-12',
-                                            'm-4',
+                                            's-6',
+                                            'l-4',
+                                            'gap-1',
                                             'gap-2',
                                             'gap-bottom',
                                         ]}
@@ -136,7 +126,9 @@ function Page(props: Props) {
                                         className={`ie-full-height ${styles.ie11FullHeight}`}
                                         attributes={[
                                             'xs-12',
-                                            'm-4',
+                                            's-6',
+                                            'l-4',
+                                            'gap-1',
                                             'gap-2',
                                             'gap-bottom',
                                         ]}
@@ -169,7 +161,9 @@ function Page(props: Props) {
                                         className={`ie-full-height ${styles.ie11FullHeight}`}
                                         attributes={[
                                             'xs-12',
-                                            'm-4',
+                                            's-6',
+                                            'l-4',
+                                            'gap-1',
                                             'gap-2',
                                             'gap-bottom',
                                         ]}
@@ -202,7 +196,9 @@ function Page(props: Props) {
                                         className={`ie-full-height ${styles.ie11FullHeight}`}
                                         attributes={[
                                             'xs-12',
-                                            'm-4',
+                                            's-6',
+                                            'l-4',
+                                            'gap-1',
                                             'gap-2',
                                             'gap-bottom',
                                         ]}

@@ -479,6 +479,13 @@ function App({ Component, pageProps }) {
                                             </Link>
                                         ),
                                     },
+                                    {
+                                        component: (
+                                            <Link href="/card/hybrid-3">
+                                                <a>Hybrid 3</a>
+                                            </Link>
+                                        ),
+                                    },
                                 ],
                             },
                             {

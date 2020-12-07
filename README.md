@@ -1267,6 +1267,47 @@ function Foo() {
 </details>
 
 <details>
+<summary>Hybrid Card 3</summary>
+
+[Demo](https://design-system.fd.nl/card/hybrid-3)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/card/HybridCard3.css";
+```
+
+```
+import { HybridCard3 } from "@fdmg/design-system/components/card/HybridCard3";
+
+function Foo() {
+
+    function handleBookmark(e) {
+        console.log(e);
+    }
+
+    return (
+        <HybridCard3
+            id="1343052"
+            url="https://fd.nl/futures/1343052/levensgevaarlijk-libanon"
+            imageUrl="https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=300"
+            imageUrlS="https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=300"
+            imageUrlM="https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=351&h=234"
+            imageUrlL="https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=599&h=399"
+            label="Levensgevaarlijk Libanon"
+            title="Omgekeerde kruistocht"
+            intro="Ondanks een op het eerste gezicht veel gevaarlijker levensstijl, verschilt de levensverwachting van Libanezen nog maar drie jaar met die van ons."
+            bookmarked={false}
+            onBookmark={handleBookmark}
+        />
+    );
+}
+```
+
+</details>
+
+<details>
 <summary>LinkCard</summary>
 
 [Demo](https://design-system.fd.nl/card/link-card)

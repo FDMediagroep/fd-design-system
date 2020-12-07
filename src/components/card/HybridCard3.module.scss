@@ -3,7 +3,7 @@
 @import '../../design-tokens/media.scss';
 @import '../../design-tokens/typography.scss';
 
-.horizontalCard1 {
+.hybridCard3 {
     transition: box-shadow 0.15s linear;
     margin-bottom: 1px;
     justify-content: space-between;
@@ -17,15 +17,6 @@
     position: relative;
 
     h1 {
-        font-family: map-deep-get($typography, 'font-family', 'bold-serif'),
-            serif;
-        font-size: 1rem;
-        line-height: 19px;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            font-size: 1.5625rem;
-            line-height: 30px;
-        }
-
         color: var(--content-copy);
         // IE11
         @media screen and (-ms-high-contrast: active),
@@ -35,10 +26,27 @@
         margin: 0;
     }
 
+    .intro {
+        margin: 0;
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        }
+        display: block;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            display: none;
+        }
+    }
+
     a {
         text-decoration: none;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            flex-direction: row;
+        }
         &:focus,
         &:hover {
             h1 {
@@ -59,14 +67,28 @@
         position: relative;
         display: flex;
         margin: 0;
-        flex: 0 0 100px;
+        flex: 0 0 auto;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            flex: 0 0 116px;
+        }
 
         picture {
             position: relative;
-            width: 100px;
-            overflow: hidden;
-            > img {
-                display: block;
+            width: 100%;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                width: 116px;
+                overflow: hidden;
+            }
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            left: 0;
+            position: relative;
+            transform: none;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
                 position: absolute;
                 height: 100%;
                 left: 50%;
@@ -77,94 +99,15 @@
 
         figcaption {
             display: none;
-            font-family: map-deep-get($typography, 'font-family', 'bold'),
-                sans-serif;
         }
-
-        &.themed {
-            justify-content: center;
-            align-items: center;
-            &:before {
-                content: '';
-                display: block;
-                width: 100%;
-                padding-top: 66.5%;
-            }
-            picture {
-                top: 0;
-                left: -50%;
-                margin: 0 -50%;
-                border-radius: 50%;
-                flex: 0 0 80px;
-                height: 80px;
-            }
-            &:after {
-                content: none;
-            }
-
-            &.theme1 {
-                background-color: #677381;
-            }
-            &.theme2 {
-                background-color: #f05031;
-            }
-            &.theme3 {
-                background-color: #ddac68;
-            }
-            &.theme4 {
-                background-color: #f3736b;
-            }
-            &.theme5 {
-                background-color: #917caa;
-            }
-            &.theme6 {
-                background-color: #4393ab;
-            }
-            &.theme7 {
-                background-color: #49a4a2;
-            }
-            &.theme8 {
-                background-color: #c5324b;
-            }
-        }
-    }
-
-    .figure.empty img {
-        width: 64px;
-        margin: auto;
-    }
-
-    .theme {
-        flex: 0 0 100px;
-        min-height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .figure {
-            border-radius: 50%;
-            flex: 0 0 80px;
-            min-height: 80px;
-        }
-    }
-
-    .figure,
-    figure {
-        background-size: cover;
-        background-position: center;
-        background-color: #e6d3c6;
-        flex: 0 0 100px;
-        min-height: 100px;
     }
 
     .teaserText {
         position: relative;
         flex: 1;
-        p {
-            margin-bottom: 0;
-        }
-        padding: 12px;
+        padding: 1rem;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            padding: 16px;
+            padding: 1rem 1.5rem;
         }
 
         > a {
@@ -194,10 +137,14 @@
             font-size: 0.9375rem;
         }
 
-        .update {
-            padding: 1px 8px;
+        .breaking {
+            font-size: 0.8125rem;
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: 0.875rem;
+            }
+            padding: 2px 8px;
             color: var(--card);
-            background-color: var(--primary);
+            background-color: var(--link-longread);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -205,28 +152,14 @@
                 background-color: #{map-deep-get(
                         $colors,
                         'colors',
-                        'primary',
+                        'longread',
                         75
                     )};
             }
-            line-height: 2em;
-            font-size: 0.625rem;
-            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             font-family: map-deep-get($typography, 'font-family', 'bold'),
                 sans-serif;
-            text-transform: uppercase;
-        }
-
-        .prefix {
-            text-transform: uppercase;
-            color: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
-
-            letter-spacing: 1px;
         }
 
         time {
@@ -238,33 +171,6 @@
             }
             white-space: nowrap;
         }
-    }
-
-    &.longread .teaserText .prefix {
-        color: var(--link-longread);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'longread', 50)};
-        }
-    }
-
-    footer menu {
-        float: none;
-    }
-
-    .favorite .ico {
-        margin: inherit;
-        top: inherit;
-    }
-
-    footer menu > * {
-        min-height: inherit;
-        line-height: 22px;
-    }
-
-    footer {
-        min-height: inherit;
     }
 
     &.isRead:not(:hover):not(:active) {
@@ -282,7 +188,7 @@
             }
         }
 
-        .meta .update {
+        .meta breaking {
             color: var(--card-label-text-visited);
             background-color: var(--card-label-visited);
             // IE11

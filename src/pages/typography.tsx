@@ -45,38 +45,6 @@ function Page() {
 
             <Explain
                 cssClassNames={['heading']}
-                legend="Heading regular serif"
-                hideReact={true}
-                description={
-                    <>
-                        <p>Example of regular serif headings.</p>
-                    </>
-                }
-            >
-                <>
-                    <h1 className="heading serif regular xs">
-                        Heading serif regular xs
-                    </h1>
-                    <h1 className="heading serif regular s">
-                        Heading serif regular s
-                    </h1>
-                    <h1 className="heading serif regular m">
-                        Heading serif regular m
-                    </h1>
-                    <h1 className="heading serif regular l">
-                        Heading serif regular l
-                    </h1>
-                    <h1 className="heading serif regular xl">
-                        Heading serif regular xl
-                    </h1>
-                    <h1 className="heading serif regular xxl">
-                        Heading serif regular xxl
-                    </h1>
-                </>
-            </Explain>
-
-            <Explain
-                cssClassNames={['heading']}
                 legend="Heading sans-serif"
                 hideReact={true}
                 description={

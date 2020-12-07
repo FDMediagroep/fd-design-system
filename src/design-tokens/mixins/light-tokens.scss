@@ -201,6 +201,12 @@
      */
     --toolbar: #{map-deep-get($colors, 'colors', 'neutral', 80)};
     --toolbar-hover-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --toolbar-longread-hover-color: #{map-deep-get(
+            $colors,
+            'colors',
+            'longread',
+            75
+        )};
     --toolbar-icon: #{map-deep-get($colors, 'colors', 'neutral', 40)};
     --toolbar-horizontal: #{map-deep-get($colors, 'colors', 'neutral', 0)};
     --toolbar-horizontal-icon: #{map-deep-get($colors, 'colors', 'neutral', 50)};

@@ -177,6 +177,9 @@ function Menu(props: Props) {
                 <Link href="/card/hybrid-2">
                     <a>Hybrid 2</a>
                 </Link>
+                <Link href="/card/hybrid-3">
+                    <a>Hybrid 3</a>
+                </Link>
                 <Link href="/card/link-card">
                     <a>LinkCard</a>
                 </Link>

@@ -99,6 +99,18 @@ function Page() {
                     </tr>
                     <tr>
                         <td>
+                            <Link href="/card/hybrid-3">
+                                <a>Hybrid Card 3</a>
+                            </Link>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Breaking</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <Link href="/card/vertical-1">
                                 <a>Vertical Card 1</a>
                             </Link>
