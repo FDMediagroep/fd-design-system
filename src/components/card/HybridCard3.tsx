@@ -24,7 +24,7 @@ function HybridCard3(props: Props) {
     return (
         <article
             style={props.style}
-            className={`${styles.horizontalCard4}${
+            className={`${styles.hybridCard3}${
                 props.isRead ? ` ${styles.isRead}` : ''
             }`}
             id={props.id}
@@ -83,7 +83,7 @@ function HybridCard3(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.horizontalCard4];
+    return [styles.hybridCard3];
 }
 
 export { HybridCard3, getCssClassNames };

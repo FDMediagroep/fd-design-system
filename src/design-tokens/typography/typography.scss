@@ -6,9 +6,11 @@
     -webkit-font-smoothing: antialiased;
     line-height: map-deep-get($typography, 'heading', 'line-height');
     &.sans {
-        font-family: map-deep-get($typography, 'font-family', 'bold');
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
         &.regular {
-            font-family: map-deep-get($typography, 'font-family', 'regular');
+            font-family: map-deep-get($typography, 'font-family', 'regular'),
+                sans-serif;
             font-weight: normal;
         }
         &.xs {
@@ -249,9 +251,11 @@
 .body-text {
     line-height: map-deep-get($typography, 'body', 'line-height');
     &.sans {
-        font-family: map-deep-get($typography, 'font-family', 'regular');
+        font-family: map-deep-get($typography, 'font-family', 'regular'),
+            sans-serif;
         &.bold {
-            font-family: map-deep-get($typography, 'font-family', 'bold');
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
         }
         &.xs {
             font-size: #{map-deep-get(
