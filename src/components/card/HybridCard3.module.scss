@@ -13,7 +13,7 @@
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     }
-    box-shadow: inset 0 -2px 0.2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
     position: relative;
 
     h1 {
