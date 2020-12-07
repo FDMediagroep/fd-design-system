@@ -144,7 +144,7 @@
             }
             padding: 2px 8px;
             color: var(--card);
-            background-color: var(--link-longread);
+            background-color: var(--breaking);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -152,7 +152,7 @@
                 background-color: #{map-deep-get(
                         $colors,
                         'colors',
-                        'longread',
+                        'negative',
                         75
                     )};
             }

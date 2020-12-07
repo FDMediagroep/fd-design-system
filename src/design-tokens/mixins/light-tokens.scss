@@ -37,6 +37,8 @@
     --time: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --primary: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --primary-active: #{map-deep-get($colors, 'colors', 'primary', 100)};
+    --breaking: #{map-deep-get($colors, 'colors', 'negative', 75)};
+    --breaking-hover: #{map-deep-get($colors, 'colors', 'negative', 100)};
 
     /**
      * Card
