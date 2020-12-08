@@ -91,7 +91,7 @@
         "svgo-loader": "^2.2.1",
         "ts-jest": "^25.5.1",
         "ts-loader": "^8.0.11",
-        "ts-node": "^9.1.0",
+        "ts-node": "^9.1.1",
         "typedoc": "^0.19.2",
         "typescript": "^3.9.7",
         "webpack-bundle-analyzer": "^4.2.0",
