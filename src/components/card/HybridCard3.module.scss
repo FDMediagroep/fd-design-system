@@ -58,12 +58,8 @@
     .textContainer {
         margin-bottom: 0;
     }
-
-    .figure.empty img {
-        max-width: 100%;
-    }
-    figure,
-    .figure.empty {
+    figure {
+        overflow: hidden;
         position: relative;
         display: flex;
         margin: 0;
