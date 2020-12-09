@@ -58,18 +58,15 @@
     .textContainer {
         margin-bottom: 0;
     }
-
-    .figure.empty img {
-        max-width: 100%;
-    }
-    figure,
-    .figure.empty {
+    figure {
+        overflow: hidden;
         position: relative;
         display: flex;
         margin: 0;
         flex: 0 0 auto;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             flex: 0 0 116px;
+            min-height: 116px;
         }
 
         picture {
@@ -188,7 +185,7 @@
             }
         }
 
-        .meta breaking {
+        .meta .breaking {
             color: var(--card-label-text-visited);
             background-color: var(--card-label-visited);
             // IE11
