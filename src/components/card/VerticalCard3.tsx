@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './VerticalCard3.module.scss';
 
-export type Variants = 'default' | 'variant-1' | 'variant-2' | 'variant-3';
+export type Variants = 'default' | 'variant-1' | 'variant-2';
 
 interface Props {
     id: string;

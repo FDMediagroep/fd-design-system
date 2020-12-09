@@ -169,31 +169,6 @@
         }
     }
 
-    &[data-variant='variant-3'] {
-        .prefix {
-            font-size: 1rem;
-            padding: 8px 16px;
-            color: var(--card);
-            background-color: var(--breaking);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'negative',
-                        75
-                    )};
-            }
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-family: map-deep-get($typography, 'font-family', 'bold'),
-                sans-serif;
-        }
-    }
-
     h1 {
         font-size: 1.4375rem;
         line-height: 27px;
@@ -249,8 +224,7 @@
             }
         }
 
-        &[data-variant='variant-2'],
-        &[data-variant='variant-3'] {
+        &[data-variant='variant-2'] {
             .meta .prefix,
             .meta time {
                 color: var(--card-label-text-visited);
