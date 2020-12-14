@@ -11,6 +11,9 @@
     <span>
         <img src="https://github.com/FDMediagroep/fd-design-system/workflows/Publish/badge.svg" alt="Publish"/>
     </span>
+    <span>
+        <img src="https://github.com/FDMediagroep/fd-design-system/workflows/CodeQL/badge.svg" alt="Code Quality"/>
+    </span>
     <a href="https://coveralls.io/github/FDMediagroep/fd-design-system?branch=master" target="_blank">
         <img src="https://coveralls.io/repos/github/FDMediagroep/fd-design-system/badge.svg?branch=master" alt="Test coverage"/>
     </a>
