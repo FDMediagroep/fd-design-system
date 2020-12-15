@@ -130,6 +130,7 @@
     }
 
     &.serif {
+        letter-spacing: -0.03rem;
         font-family: map-deep-get($typography, 'font-family', 'bold-serif');
         &.xs {
             font-size: #{map-deep-get(
@@ -373,6 +374,7 @@
         }
     }
     &.serif {
+        letter-spacing: -0.03rem;
         font-family: map-deep-get($typography, 'font-family', 'regular-serif');
         &.bold {
             font-family: map-deep-get($typography, 'font-family', 'bold-serif');
