@@ -14,14 +14,6 @@
     }
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
 
-    .theme {
-        flex: 0 0 100px;
-        min-height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     a {
         padding: 1rem;
         text-decoration: none;
@@ -84,16 +76,10 @@
         }
 
         h1 {
-            font-family: map-deep-get($typography, 'font-family', 'bold-serif'),
-                serif;
-            font-size: 1.4375rem;
-            line-height: 27px;
             margin: 0;
         }
 
         p {
-            font-family: map-deep-get($typography, 'font-family', 'regular'),
-                sans-serif;
             margin: 4px 0 0 0;
         }
     }

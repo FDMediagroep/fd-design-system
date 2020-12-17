@@ -65,7 +65,6 @@ const horizontalCards1: any = [
         time: '1 aug',
         title: 'Eén Europese rente',
         variant: 'variant-1',
-        theme: 'theme-7',
     },
     {
         id: '1353344',
@@ -120,7 +119,7 @@ function Page() {
                             <li>updated</li>
                             <li>visited</li>
                             <li>updated visited</li>
-                            <li>variant-1 themed</li>
+                            <li>variant-1</li>
                             <li>no image</li>
                         </ul>
                     </>

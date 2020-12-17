@@ -37,7 +37,9 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
         </div>
@@ -84,7 +86,9 @@ exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
         </div>

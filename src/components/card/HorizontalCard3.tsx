@@ -35,9 +35,11 @@ function HorizontalCard3(props: Props) {
                     </div>
 
                     <div className={styles.textContainer}>
-                        <h1>{props.title}</h1>
+                        <h1 className="heading serif s">{props.title}</h1>
                         {props.printTitle && (
-                            <p className={styles.printTitle}>
+                            <p
+                                className={`${styles.printTitle} body-text sans xs`}
+                            >
                                 <span>Krantentitel: </span>
                                 <span className={styles.printTitleText}>
                                     ‘{props.printTitle}’
@@ -45,7 +47,9 @@ function HorizontalCard3(props: Props) {
                             </p>
                         )}
 
-                        <p className={styles.intro}>{props.intro}</p>
+                        <p className={`${styles.intro} body-text sans xs`}>
+                            {props.intro}
+                        </p>
                     </div>
                 </div>
             </a>

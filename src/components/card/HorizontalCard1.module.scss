@@ -17,15 +17,6 @@
     position: relative;
 
     h1 {
-        font-family: map-deep-get($typography, 'font-family', 'bold-serif'),
-            serif;
-        font-size: 1rem;
-        line-height: 19px;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            font-size: 1.5625rem;
-            line-height: 30px;
-        }
-
         color: var(--content-copy);
         // IE11
         @media screen and (-ms-high-contrast: active),
@@ -80,71 +71,11 @@
             font-family: map-deep-get($typography, 'font-family', 'bold'),
                 sans-serif;
         }
-
-        &.themed {
-            justify-content: center;
-            align-items: center;
-            &:before {
-                content: '';
-                display: block;
-                width: 100%;
-                padding-top: 66.5%;
-            }
-            picture {
-                top: 0;
-                left: -50%;
-                margin: 0 -50%;
-                border-radius: 50%;
-                flex: 0 0 80px;
-                height: 80px;
-            }
-            &:after {
-                content: none;
-            }
-
-            &.theme1 {
-                background-color: #677381;
-            }
-            &.theme2 {
-                background-color: #f05031;
-            }
-            &.theme3 {
-                background-color: #ddac68;
-            }
-            &.theme4 {
-                background-color: #f3736b;
-            }
-            &.theme5 {
-                background-color: #917caa;
-            }
-            &.theme6 {
-                background-color: #4393ab;
-            }
-            &.theme7 {
-                background-color: #49a4a2;
-            }
-            &.theme8 {
-                background-color: #c5324b;
-            }
-        }
     }
 
     .figure.empty img {
         width: 64px;
         margin: auto;
-    }
-
-    .theme {
-        flex: 0 0 100px;
-        min-height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .figure {
-            border-radius: 50%;
-            flex: 0 0 80px;
-            min-height: 80px;
-        }
     }
 
     .figure,

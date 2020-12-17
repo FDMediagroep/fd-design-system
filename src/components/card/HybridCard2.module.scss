@@ -17,9 +17,6 @@
         background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     }
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
-    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
-    line-height: 1.2em;
-    font-size: 1.0625rem;
 
     > a {
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
@@ -86,13 +83,6 @@
     }
 
     h1 {
-        font-size: 1rem;
-        line-height: 20px;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            font-size: 1.4375rem;
-            line-height: 27px;
-        }
-
         margin: 0;
         color: var(--content-copy);
         // IE11
@@ -100,9 +90,6 @@
             (-ms-high-contrast: none) {
             color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
-        -webkit-font-smoothing: antialiased;
-        font-family: map-deep-get($typography, 'font-family', 'bold-serif'),
-            serif;
     }
 
     .intro {
@@ -113,10 +100,6 @@
             (-ms-high-contrast: none) {
             color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
-        line-height: 1.5em;
-        font-size: 1.0625rem;
-        font-family: map-deep-get($typography, 'font-family', 'regular'),
-            sans-serif;
         display: none;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             display: block;

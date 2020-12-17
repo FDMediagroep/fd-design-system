@@ -34,8 +34,10 @@ function HorizontalCard2(props: Props) {
                     </div>
 
                     <div className={styles.textContainer}>
-                        <h1>{props.title}</h1>
-                        <p className={styles.intro}>{props.intro}</p>
+                        <h1 className="heading serif s">{props.title}</h1>
+                        <p className={`${styles.intro} body-text sans xs`}>
+                            {props.intro}
+                        </p>
                     </div>
                 </div>
             </a>

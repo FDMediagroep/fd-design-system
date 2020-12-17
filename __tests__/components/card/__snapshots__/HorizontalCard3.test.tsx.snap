@@ -28,11 +28,13 @@ exports[`HorizontalCard3 should render is-read correctly 1`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans xs"
           >
             This is the intro of the card
           </p>

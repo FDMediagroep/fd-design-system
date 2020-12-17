@@ -36,11 +36,13 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans xs"
           >
             This is the intro
           </p>
@@ -77,9 +79,7 @@ exports[`HybridCard1 should render themes correctly 1`] = `
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
-      <figure
-        class="themed theme1"
-      >
+      <figure>
         <picture>
           <img
             alt="This is the caption"
@@ -105,11 +105,13 @@ exports[`HybridCard1 should render themes correctly 1`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans xs"
           >
             This is the intro
           </p>
@@ -146,9 +148,7 @@ exports[`HybridCard1 should render themes correctly 2`] = `
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
-      <figure
-        class="themed theme2"
-      >
+      <figure>
         <picture>
           <img
             alt="This is the caption"
@@ -174,11 +174,13 @@ exports[`HybridCard1 should render themes correctly 2`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans xs"
           >
             This is the intro
           </p>
@@ -215,9 +217,7 @@ exports[`HybridCard1 should render themes correctly 3`] = `
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
-      <figure
-        class="themed theme3"
-      >
+      <figure>
         <picture>
           <img
             alt="This is the caption"
@@ -243,11 +243,13 @@ exports[`HybridCard1 should render themes correctly 3`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans xs"
           >
             This is the intro
           </p>
@@ -284,9 +286,7 @@ exports[`HybridCard1 should render themes correctly 4`] = `
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
-      <figure
-        class="themed theme4"
-      >
+      <figure>
         <picture>
           <img
             alt="This is the caption"
@@ -312,11 +312,13 @@ exports[`HybridCard1 should render themes correctly 4`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans xs"
           >
             This is the intro
           </p>
@@ -353,9 +355,7 @@ exports[`HybridCard1 should render themes correctly 5`] = `
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
-      <figure
-        class="themed theme5"
-      >
+      <figure>
         <picture>
           <img
             alt="This is the caption"
@@ -381,11 +381,13 @@ exports[`HybridCard1 should render themes correctly 5`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans xs"
           >
             This is the intro
           </p>
@@ -422,9 +424,7 @@ exports[`HybridCard1 should render themes correctly 6`] = `
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
-      <figure
-        class="themed theme6"
-      >
+      <figure>
         <picture>
           <img
             alt="This is the caption"
@@ -450,11 +450,13 @@ exports[`HybridCard1 should render themes correctly 6`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans xs"
           >
             This is the intro
           </p>
@@ -491,9 +493,7 @@ exports[`HybridCard1 should render themes correctly 7`] = `
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
-      <figure
-        class="themed theme7"
-      >
+      <figure>
         <picture>
           <img
             alt="This is the caption"
@@ -519,11 +519,13 @@ exports[`HybridCard1 should render themes correctly 7`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans xs"
           >
             This is the intro
           </p>
@@ -560,9 +562,7 @@ exports[`HybridCard1 should render themes correctly 8`] = `
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
-      <figure
-        class="themed theme8"
-      >
+      <figure>
         <picture>
           <img
             alt="This is the caption"
@@ -588,11 +588,13 @@ exports[`HybridCard1 should render themes correctly 8`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans xs"
           >
             This is the intro
           </p>
@@ -656,11 +658,13 @@ exports[`HybridCard1 should render variant-1 correctly 1`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans xs"
           >
             This is the intro
           </p>
