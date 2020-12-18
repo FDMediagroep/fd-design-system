@@ -45,6 +45,7 @@ export { HorizontalCard2 } from './components/card/HorizontalCard2';
 export { HorizontalCard3 } from './components/card/HorizontalCard3';
 export { HybridCard1 } from './components/card/HybridCard1';
 export { HybridCard2 } from './components/card/HybridCard2';
+export { HybridCard3 } from './components/card/HybridCard3';
 export { LinkCard } from './components/card/LinkCard';
 export { VerticalCard1 } from './components/card/VerticalCard1';
 export { VerticalCard2 } from './components/card/VerticalCard2';
