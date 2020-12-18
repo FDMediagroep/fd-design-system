@@ -131,9 +131,6 @@
             (-ms-high-contrast: none) {
             color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            margin-bottom: 6px;
-        }
     }
 
     .intro {
