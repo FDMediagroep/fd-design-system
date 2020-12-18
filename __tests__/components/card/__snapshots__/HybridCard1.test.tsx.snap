@@ -42,7 +42,7 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
             This is the title
           </h1>
           <p
-            class="intro body-text sans xs"
+            class="intro body-text sans s"
           >
             This is the intro
           </p>
@@ -111,7 +111,7 @@ exports[`HybridCard1 should render themes correctly 1`] = `
             This is the title
           </h1>
           <p
-            class="intro body-text sans xs"
+            class="intro body-text sans s"
           >
             This is the intro
           </p>
@@ -180,7 +180,7 @@ exports[`HybridCard1 should render themes correctly 2`] = `
             This is the title
           </h1>
           <p
-            class="intro body-text sans xs"
+            class="intro body-text sans s"
           >
             This is the intro
           </p>
@@ -249,7 +249,7 @@ exports[`HybridCard1 should render themes correctly 3`] = `
             This is the title
           </h1>
           <p
-            class="intro body-text sans xs"
+            class="intro body-text sans s"
           >
             This is the intro
           </p>
@@ -318,7 +318,7 @@ exports[`HybridCard1 should render themes correctly 4`] = `
             This is the title
           </h1>
           <p
-            class="intro body-text sans xs"
+            class="intro body-text sans s"
           >
             This is the intro
           </p>
@@ -387,7 +387,7 @@ exports[`HybridCard1 should render themes correctly 5`] = `
             This is the title
           </h1>
           <p
-            class="intro body-text sans xs"
+            class="intro body-text sans s"
           >
             This is the intro
           </p>
@@ -456,7 +456,7 @@ exports[`HybridCard1 should render themes correctly 6`] = `
             This is the title
           </h1>
           <p
-            class="intro body-text sans xs"
+            class="intro body-text sans s"
           >
             This is the intro
           </p>
@@ -525,7 +525,7 @@ exports[`HybridCard1 should render themes correctly 7`] = `
             This is the title
           </h1>
           <p
-            class="intro body-text sans xs"
+            class="intro body-text sans s"
           >
             This is the intro
           </p>
@@ -594,7 +594,7 @@ exports[`HybridCard1 should render themes correctly 8`] = `
             This is the title
           </h1>
           <p
-            class="intro body-text sans xs"
+            class="intro body-text sans s"
           >
             This is the intro
           </p>
@@ -664,7 +664,7 @@ exports[`HybridCard1 should render variant-1 correctly 1`] = `
             This is the title
           </h1>
           <p
-            class="intro body-text sans xs"
+            class="intro body-text sans s"
           >
             This is the intro
           </p>
