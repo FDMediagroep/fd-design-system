@@ -17,9 +17,6 @@
         background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     }
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
-    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
-    line-height: 1.2em;
-    font-size: 1.0625rem;
 
     .cardContent {
         flex: 1 1 auto;
@@ -50,49 +47,6 @@
         img {
             width: 100%;
             display: block;
-        }
-
-        &.themed {
-            justify-content: center;
-            align-items: center;
-            &:before {
-                content: '';
-                display: block;
-                width: 100%;
-                padding-top: 66.5%;
-            }
-            picture {
-                position: absolute;
-                width: 33%;
-                top: 16%;
-                left: 50%;
-                margin: 0 -16.5%;
-                height: auto;
-                flex: 0 0 auto;
-            }
-            &:after {
-                content: none;
-            }
-
-            figcaption {
-                display: block;
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 12%;
-                font-size: 1.1875rem;
-                color: var(--content-copy);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-                }
-                padding: 0 10px;
-                text-align: center;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
         }
     }
 
@@ -170,37 +124,23 @@
     }
 
     h1 {
-        font-size: 1.4375rem;
-        line-height: 27px;
         margin: 0;
         color: var(--content-copy);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
             color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
-        -webkit-font-smoothing: antialiased;
-        font-family: map-deep-get($typography, 'font-family', 'bold-serif'),
-            serif;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            font-size: 2.375rem;
-            line-height: 40px;
-            margin-bottom: 6px;
         }
     }
 
     .intro {
-        margin: 0;
+        margin: 0.5rem 0 0 0;
         color: var(--content-copy);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
             color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
-        line-height: 1.5em;
-        font-size: 1.0625rem;
-        font-family: map-deep-get($typography, 'font-family', 'regular'),
-            sans-serif;
     }
 
     .footer {

@@ -25,11 +25,13 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans s"
           >
             This is the intro
           </p>
@@ -82,11 +84,13 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
         <div
           class="textContainer"
         >
-          <h1>
+          <h1
+            class="heading serif s"
+          >
             This is the title
           </h1>
           <p
-            class="intro"
+            class="intro body-text sans s"
           >
             This is the intro
           </p>

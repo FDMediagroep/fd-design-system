@@ -27,7 +27,7 @@
     }
 
     .intro {
-        margin: 0;
+        margin: 0.5rem 0 0 0;
         color: var(--content-copy);
         // IE11
         @media screen and (-ms-high-contrast: active),
@@ -140,7 +140,7 @@
                 font-size: 0.875rem;
             }
             padding: 2px 8px;
-            color: var(--card);
+            color: var(--breaking-label-copy);
             background-color: var(--breaking);
             // IE11
             @media screen and (-ms-high-contrast: active),

@@ -27,16 +27,6 @@ const hybridCards1: any = [
         variant: 'variant-1',
     },
     {
-        id: '1345406',
-        caption: 'Ed Groot',
-        label: 'Kleintje Groot',
-        title: 'Hoogovens of KLM?',
-        url: 'https://fd.nl/opinie/1345406/hoogovens-of-klm',
-        intro: `De staalindustrie is misschien wel belangrijker voor de bv Nederland dan de KLM.`,
-        theme: 'theme-7',
-        readingTime: 7,
-    },
-    {
         id: '1345444',
         label: 'Arbeidsmarkt',
         title: 'Bulk van de werklozen komt in de komende maanden',
@@ -91,7 +81,6 @@ function Page() {
                         <ul>
                             <li>default</li>
                             <li>variant-1</li>
-                            <li>themed</li>
                             <li>visited</li>
                         </ul>
                     </>
@@ -115,12 +104,6 @@ function Page() {
                         onBookmark={toggleBookmark}
                         bookmarked={bookmarked}
                         {...hybridCards1[2]}
-                    />
-                    <HybridCard2
-                        className={styles.hybridCard2}
-                        onBookmark={toggleBookmark}
-                        bookmarked={bookmarked}
-                        {...hybridCards1[3]}
                     />
                 </>
             </Explain>

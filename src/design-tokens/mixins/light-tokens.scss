@@ -38,6 +38,7 @@
     --primary: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --primary-active: #{map-deep-get($colors, 'colors', 'primary', 100)};
     --breaking: #{map-deep-get($colors, 'colors', 'negative', 75)};
+    --breaking-label-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --breaking-hover: #{map-deep-get($colors, 'colors', 'negative', 100)};
 
     /**
