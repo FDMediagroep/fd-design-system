@@ -9,8 +9,8 @@ interface Props {
     cookies: { [cookieName: string]: string };
 }
 
-const metaTitle = 'A/B';
-const metaDescription = 'A/B, used to do multi-variate testing';
+export const metaTitle = 'A/B';
+export const metaDescription = 'A/B, used to do multi-variate testing';
 
 function Demo(props: Props) {
     const [cssVariant, setCssVariant] = useState(null);

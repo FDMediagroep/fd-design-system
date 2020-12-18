@@ -153,8 +153,8 @@ const items = [
     },
 ];
 
-const metaTitle = 'Accordion';
-const metaDescription =
+export const metaTitle = 'Accordion';
+export const metaDescription =
     "Accordion, used to display an accordion for use in e.g. FAQ's";
 
 function Page() {

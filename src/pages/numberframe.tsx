@@ -12,8 +12,8 @@ const initialProps = {
     description: `Nama betaalde €31,8 mrd voor bankleningen en onderpand met een boekwaarde van €74 mrd, een korting van 57%`,
 };
 
-const metaTitle = 'Number frame';
-const metaDescription =
+export Title = 'Number frame';
+export const metaDescription =
     'Number frame, used to display an inline number frame in articles';
 
 function Page() {

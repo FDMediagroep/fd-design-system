@@ -3,8 +3,8 @@ import { Explain } from '../../components/Explain';
 import { TextInput, getCssClassNames } from '../../components/input/TextInput';
 import Head from 'next/head';
 
-const metaTitle = 'Date input';
-const metaDescription = 'Date input, used in forms';
+export const metaTitle = 'Date input';
+export const metaDescription = 'Date input, used in forms';
 
 function Page() {
     return (

@@ -64,8 +64,9 @@ const verticalCards1: any = [
     },
 ];
 
-const metaTitle = 'Vertical Card 2';
-const metaDescription = 'Vertical Card 2, used on the dossier overview page';
+export const metaTitle = 'Vertical Card 2';
+export const metaDescription =
+    'Vertical Card 2, used on the dossier overview page';
 
 function Page() {
     return (

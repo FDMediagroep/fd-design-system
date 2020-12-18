@@ -7,8 +7,8 @@ import '@fdmg/css-grid/GridContainer.css';
 import styles from './grid.module.scss';
 import { getCssClassNames, GridContainer } from '@fdmg/css-grid/GridContainer';
 
-const metaTitle = 'Grid';
-const metaDescription = 'Grid, used to layout a page';
+export const metaTitle = 'Grid';
+export const metaDescription = 'Grid, used to layout a page';
 
 function Page() {
     return (

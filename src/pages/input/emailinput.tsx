@@ -7,8 +7,8 @@ import {
 } from '../../components/input/TextInput';
 import Head from 'next/head';
 
-const metaTitle = 'E-mail input';
-const metaDescription = 'E-mail input, used in forms';
+export const metaTitle = 'E-mail input';
+export const metaDescription = 'E-mail input, used in forms';
 
 function Page() {
     return (

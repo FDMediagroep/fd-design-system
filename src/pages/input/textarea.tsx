@@ -3,8 +3,8 @@ import { Explain } from '../../components/Explain';
 import { TextArea, getCssClassNames } from '../../components/input/TextArea';
 import Head from 'next/head';
 
-const metaTitle = 'Text area';
-const metaDescription = 'Text area, used in forms';
+export const metaTitle = 'Text area';
+export const metaDescription = 'Text area, used in forms';
 
 function Page() {
     return (

@@ -37,8 +37,8 @@ const initialProps = {
     ],
 };
 
-const metaTitle = 'Latest news';
-const metaDescription =
+export const metaTitle = 'Latest news';
+export const metaDescription =
     'Latest news, used to display the latest news in articles';
 
 function Page() {

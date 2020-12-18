@@ -16,8 +16,8 @@ const initialProps = {
     ],
 };
 
-const metaTitle = 'Summary';
-const metaDescription = 'Summary, used to display a summary in articles';
+export const metaTitle = 'Summary';
+export const metaDescription = 'Summary, used to display a summary in articles';
 
 function Page() {
     /**

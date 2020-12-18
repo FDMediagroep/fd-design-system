@@ -2,8 +2,8 @@ import React from 'react';
 import { Explain } from '../components/Explain';
 import Head from 'next/head';
 
-const metaTitle = 'Typograhpy';
-const metaDescription =
+export const metaTitle = 'Typograhpy';
+export const metaDescription =
     'Typograhpy, examples of all supported types of typography';
 
 function Page() {

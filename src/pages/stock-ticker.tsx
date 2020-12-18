@@ -101,8 +101,8 @@ const props2: Props = {
     ],
 };
 
-const metaTitle = 'Stock ticker';
-const metaDescription =
+export const metaTitle = 'Stock ticker';
+export const metaDescription =
     'Stock ticker, used to display a stock ticker on the homepage';
 
 function Page() {

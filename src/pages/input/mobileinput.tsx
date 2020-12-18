@@ -7,8 +7,8 @@ import {
 } from '../../components/input/TextInput';
 import Head from 'next/head';
 
-const metaTitle = 'Mobile number input';
-const metaDescription = 'Mobile number input, used in forms';
+export const metaTitle = 'Mobile number input';
+export const metaDescription = 'Mobile number input, used in forms';
 
 function Page() {
     return (

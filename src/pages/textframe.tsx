@@ -12,8 +12,8 @@ const initialProps = {
     ],
 };
 
-const metaTitle = 'Text frame';
-const metaDescription =
+export const metaTitle = 'Text frame';
+export const metaDescription =
     'Text frame, used to display an inline text frame in articles';
 function Page() {
     /**

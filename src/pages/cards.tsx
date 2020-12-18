@@ -3,8 +3,8 @@ import styles from './cards.module.scss';
 import Link from 'next/link';
 import Head from 'next/head';
 
-const metaTitle = 'Cards';
-const metaDescription = 'Collection of all cards';
+export const metaTitle = 'Cards';
+export const metaDescription = 'Collection of all cards';
 
 function Page() {
     return (

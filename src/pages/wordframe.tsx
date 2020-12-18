@@ -11,8 +11,8 @@ mi porta gravida at eget metus. Cum sociis natoque penatibus et
 magnis dis parturient montes, nascetur ridiculus mus.`,
 };
 
-const metaTitle = 'Word frame';
-const metaDescription =
+export const metaTitle = 'Word frame';
+export const metaDescription =
     'Word frame, used to display an inline word frame in articles';
 
 function Index() {

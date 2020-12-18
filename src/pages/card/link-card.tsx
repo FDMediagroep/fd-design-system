@@ -3,8 +3,8 @@ import { Explain } from '../../components/Explain';
 import { LinkCard, getCssClassNames } from '../../components/card/LinkCard';
 import Head from 'next/head';
 
-const metaTitle = 'Link Card';
-const metaDescription = 'Link Card, used on the My News page';
+export const metaTitle = 'Link Card';
+export const metaDescription = 'Link Card, used on the My News page';
 
 function Page() {
     return (

@@ -17,8 +17,8 @@ const initialProps = {
     ],
 };
 
-const metaTitle = 'Bullet point';
-const metaDescription = 'Bullet point, used in articles';
+export Title = 'Bullet point';
+export const metaDescription = 'Bullet point, used in articles';
 
 function Page() {
     /**

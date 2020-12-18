@@ -6,8 +6,10 @@ import {
 } from '../../components/button/ButtonFollow';
 import { useState } from 'react';
 import Head from 'next/head';
-const metaTitle = 'Follow button';
-const metaDescription = 'Follow Button, used to follow content';
+
+export const metaTitle = 'Follow button';
+export const metaDescription = 'Follow Button, used to follow content';
+
 function Follow() {
     const [followState, setFollowState] = useState(false);
     const [followState2, setFollowState2] = useState(true);

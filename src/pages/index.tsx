@@ -4,8 +4,9 @@ import ReactMD from 'react-markdown/with-html';
 import { useRouter } from 'next/router';
 // import CodeBlock from '../utils/CodeBlock';
 
-const metaTitle = 'FD Design System';
-const metaDescription = 'Collection of all the styled components for FD.nl';
+export const metaTitle = 'FD Design System';
+export const metaDescription =
+    'Collection of all the styled components for FD.nl';
 
 interface Props {
     readme: string;

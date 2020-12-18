@@ -43,8 +43,8 @@ const horizontalCards3: any = [
     },
 ];
 
-const metaTitle = 'Horizontal Card 3';
-const metaDescription = 'Horizontal Card 3, used in the search results';
+export const metaTitle = 'Horizontal Card 3';
+export const metaDescription = 'Horizontal Card 3, used in the search results';
 
 function Page() {
     return (
