@@ -110,19 +110,6 @@ function App({ Component, pageProps }) {
         }
     }, [pageType]);
 
-    const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        if (formData.get('search').toString().length === 0) {
-            const input: HTMLInputElement = e.currentTarget.querySelector(
-                '[name="search"]'
-            );
-            input.focus();
-        } else {
-            e.currentTarget.submit();
-        }
-    };
-
     const handleSearchBlur = (e: React.FocusEvent<HTMLInputElement>) => {
         const target = e.currentTarget;
         setTimeout(() => {
@@ -719,11 +706,11 @@ function App({ Component, pageProps }) {
                 ]}
             >
                 <>
-                    <form onSubmit={handleSearchSubmit}>
+                    <form method="GET" action="/search">
                         <div className={styles.search}>
                             <input
-                                name="search"
-                                placeholder="Dummy zoekbalk..."
+                                name="q"
+                                placeholder="Search..."
                                 onBlur={handleSearchBlur}
                                 aria-label="Search text"
                             />

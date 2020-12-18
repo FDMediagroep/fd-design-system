@@ -7,8 +7,9 @@ import {
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
 
-const metaTitle = 'Link card';
-const metaDescription = 'Link card, used to display a link card in articles';
+export const metaTitle = 'Link card';
+export const metaDescription =
+    'Link card, used to display a link card in articles';
 
 function Page() {
     /**

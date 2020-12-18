@@ -37,8 +37,8 @@ const hybridCards1: any = [
     },
 ];
 
-const metaTitle = 'Hybrid Card 2';
-const metaDescription =
+export const metaTitle = 'Hybrid Card 2';
+export const metaDescription =
     'Hybrid Card 2, without image, on small screens its similar to Horizontal Card 1 and wider screens similar to Vertical Card 1';
 
 function Page() {

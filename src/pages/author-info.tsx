@@ -7,8 +7,8 @@ import {
 import styles from './article-link-block.module.scss';
 import Head from 'next/head';
 
-const metaTitle = 'Author info';
-const metaDescription =
+export const metaTitle = 'Author info';
+export const metaDescription =
     'Author info, used to display the author info in articles';
 function Page() {
     const [followState, setFollowState] = useState(false);

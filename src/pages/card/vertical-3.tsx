@@ -65,9 +65,10 @@ const verticalCards1: any = [
     },
 ];
 
-const metaTitle = 'Vertical Card 3';
-const metaDescription =
+export const metaTitle = 'Vertical Card 3';
+export const metaDescription =
     'Vertical Card 3, used as opening/breaking on the homepage';
+
 function Page() {
     return (
         <>

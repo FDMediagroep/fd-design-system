@@ -64,8 +64,8 @@ const verticalCards1: any = [
     },
 ];
 
-const metaTitle = 'Vertical Card 1';
-const metaDescription = 'Vertical Card 1, used on the homepage';
+export const metaTitle = 'Vertical Card 1';
+export const metaDescription = 'Vertical Card 1, used on the homepage';
 
 function Page() {
     const [bookmarked, setBookmarked] = useState(false);

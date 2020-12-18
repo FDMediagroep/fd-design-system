@@ -1,0 +1,11 @@
+.search {
+    .searchContent {
+        max-width: 1024px;
+        margin: 1rem auto;
+    }
+
+    .searchResults {
+        display: flex;
+        flex-direction: column;
+    }
+}

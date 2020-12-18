@@ -12,8 +12,8 @@ const initialProps = {
     ],
 };
 
-const metaTitle = 'Read more';
-const metaDescription =
+export const metaTitle = 'Read more';
+export const metaDescription =
     'Read more, used to display links related to the article';
 function Page() {
     /**

@@ -5,8 +5,8 @@ import Head from 'next/head';
 import { EnvelopeIcon } from '../../design-tokens/icons';
 import styles from './buttons.module.scss';
 
-const metaTitle = 'Button call-to-action';
-const metaDescription =
+export const metaTitle = 'Button call-to-action';
+export const metaDescription =
     'Button call-to-action, used for e-mails, registration, subscription or sign-up-flows, log-in, banners and other non-editorial elements';
 
 function Page() {

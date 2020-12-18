@@ -8,8 +8,9 @@ import PageStore from '../stores/PageStore';
 import styles from './article-link-block.module.scss';
 import Head from 'next/head';
 
-const metaTitle = 'Link block';
-const metaDescription = 'Link block, used to display a link block in articles';
+export const metaTitle = 'Link block';
+export const metaDescription =
+    'Link block, used to display a link block in articles';
 
 function Page() {
     /**

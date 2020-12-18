@@ -15,8 +15,8 @@ import PageStore from '../stores/PageStore';
 import ReactMD from 'react-markdown/with-html';
 import CodeBlock from '../utils/CodeBlock';
 
-const metaTitle = 'CookieConsent';
-const metaDescription =
+export const metaTitle = 'CookieConsent';
+export const metaDescription =
     'CookieConsent, used to display a cookie consent overlay';
 
 const cookieConsentApi = new CookieConsentApi();

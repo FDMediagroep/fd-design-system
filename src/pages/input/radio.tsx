@@ -3,8 +3,8 @@ import { Explain } from '../../components/Explain';
 import { Radio, getCssClassNames } from '../../components/input/Radio';
 import Head from 'next/head';
 
-const metaTitle = 'Radio input';
-const metaDescription = 'Radio input, used in forms';
+export const metaTitle = 'Radio input';
+export const metaDescription = 'Radio input, used in forms';
 
 function Page() {
     return (

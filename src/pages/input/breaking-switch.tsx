@@ -6,8 +6,8 @@ import {
 } from '../../components/input/BreakingSwitch';
 import Head from 'next/head';
 
-const metaTitle = 'Breaking Switch';
-const metaDescription =
+export const metaTitle = 'Breaking Switch';
+export const metaDescription =
     'Breaking Switch, used on the My News page to turn breaking alerts on/off';
 
 function Page() {

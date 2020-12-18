@@ -3,8 +3,9 @@ import { Explain } from '../../components/Explain';
 import { TextInput, getCssClassNames } from '../../components/input/TextInput';
 import Head from 'next/head';
 
-const metaTitle = 'Text input';
-const metaDescription = 'Text input, used in forms';
+export const metaTitle = 'Text input';
+export const metaDescription = 'Text input, used in forms';
+
 function Page() {
     return (
         <>

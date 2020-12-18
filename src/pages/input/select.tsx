@@ -3,8 +3,8 @@ import { Explain } from '../../components/Explain';
 import Head from 'next/head';
 import { Select, getCssClassNames } from '../../components/input/Select';
 
-const metaTitle = 'Select drop-down';
-const metaDescription = 'Select drop-down, used in forms';
+export const metaTitle = 'Select drop-down';
+export const metaDescription = 'Select drop-down, used in forms';
 
 function Page() {
     return (

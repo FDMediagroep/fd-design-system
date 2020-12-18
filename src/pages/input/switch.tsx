@@ -3,8 +3,8 @@ import { Explain } from '../../components/Explain';
 import { Switch, getCssClassNames } from '../../components/input/Switch';
 import Head from 'next/head';
 
-const metaTitle = 'Switch';
-const metaDescription =
+export const metaTitle = 'Switch';
+export const metaDescription =
     'Switch, used in forms. Functions like a checkbox but differs visually';
 
 function Page() {

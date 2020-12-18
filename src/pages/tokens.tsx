@@ -12,8 +12,8 @@ interface Props {
     [x: string]: any;
 }
 
-const metaTitle = 'Design tokens';
-const metaDescription =
+export const metaTitle = 'Design tokens';
+export const metaDescription =
     'Design tokens, collection of design tokens used by the components in this Design System';
 
 function Tokens(props: Props) {

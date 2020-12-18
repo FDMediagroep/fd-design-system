@@ -86,8 +86,9 @@ const horizontalCards1: any = [
     },
 ];
 
-const metaTitle = 'Horizontal Card 1';
-const metaDescription = 'Horizontal Card 1, used on category, dossier pages';
+export const metaTitle = 'Horizontal Card 1';
+export const metaDescription =
+    'Horizontal Card 1, used on category, dossier pages';
 
 function Page() {
     return (

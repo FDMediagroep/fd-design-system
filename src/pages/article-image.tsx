@@ -13,8 +13,8 @@ const initialProps = {
     fileName: '8de629dcb6211812af36b6824df2058f83deba9c.jpg',
 };
 
-const metaTitle = 'Article image';
-const metaDescription =
+export const metaTitle = 'Article image';
+export const metaDescription =
     'Article image, used to display an inline image/photo in articles';
 
 function Page() {

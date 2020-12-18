@@ -160,8 +160,8 @@ const data = [
     },
 ];
 
-const metaTitle = 'Financial agenda';
-const metaDescription =
+export const metaTitle = 'Financial agenda';
+export const metaDescription =
     'Financial agenda, used to display the financial agenda in a table in articles';
 
 function Page() {

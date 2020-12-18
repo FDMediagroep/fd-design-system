@@ -9,8 +9,8 @@ import {
 import PageStore from '../../stores/PageStore';
 import Head from 'next/head';
 
-const metaTitle = 'Horizontal toolbar';
-const metaDescription =
+export const metaTitle = 'Horizontal toolbar';
+export const metaDescription =
     'Horizontal toolbar, used to display a vertical toolbar on article pages on small devices';
 
 function Page() {

@@ -8,8 +8,8 @@ import Head from 'next/head';
 import { EnvelopeIcon } from '../../design-tokens/icons';
 import styles from './buttons.module.scss';
 
-const metaTitle = 'Ghost Button';
-const metaDescription =
+export const metaTitle = 'Ghost Button';
+export const metaDescription =
     'Ghost Button, used to interact with the content: comment, share and vote';
 
 function Page() {

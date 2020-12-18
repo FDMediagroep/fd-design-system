@@ -11,8 +11,9 @@ de andere partij niet. Hoe werkt dat in een echtscheidingszaak?`,
     figcaption: `Bregje Dijksterhuis, rechtssocioloog VU`,
 };
 
-const metaTitle = 'Quote';
-const metaDescription = 'Quote, used to display an inline quote in articles';
+export const metaTitle = 'Quote';
+export const metaDescription =
+    'Quote, used to display an inline quote in articles';
 
 function Page() {
     /**

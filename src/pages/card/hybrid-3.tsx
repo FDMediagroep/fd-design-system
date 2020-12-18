@@ -57,8 +57,8 @@ const hybridCards3: any = [
     },
 ];
 
-const metaTitle = 'Hybrid Card 3';
-const metaDescription = 'Hybrid Card 3, used for breaking news';
+export const metaTitle = 'Hybrid Card 3';
+export const metaDescription = 'Hybrid Card 3, used for breaking news';
 
 function Page() {
     return (
