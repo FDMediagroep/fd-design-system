@@ -253,6 +253,7 @@ export default function page() {
                 attributes={['grid']}
             >
                 <GridContainer attributes={['xs-12']}>
+                    <h2>Search</h2>
                     <div className={styles.searchResults}>
                         {results.map((result, idx) => {
                             const path = `${result[0]}`;
