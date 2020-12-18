@@ -73,7 +73,7 @@ interface Props {
     moreMenuItems?: MenuItem[];
     /**
      * Label of the `More` menu-item.
-     * Default: Meer
+     * Default: More
      */
     moreLabel?: string;
     [x: string]: any;
@@ -155,7 +155,7 @@ function Menu(props: Props) {
     const [moreMenuItem, setMoreMenuItem] = useState<MenuItem>({
         id: styles['more-menu'],
         isToggle: true,
-        text: props.moreLabel ?? 'Meer',
+        text: props.moreLabel ?? 'More',
         href: '',
         menuItems: generateMoreIds(props.moreMenuItems) ?? [],
     });
@@ -249,7 +249,7 @@ function Menu(props: Props) {
         setMoreMenuItem({
             id: styles['more-menu'],
             isToggle: true,
-            text: props.moreLabel ?? 'Meer',
+            text: props.moreLabel ?? 'More',
             href: '',
             menuItems: generateMoreIds(props.moreMenuItems) ?? [],
         });

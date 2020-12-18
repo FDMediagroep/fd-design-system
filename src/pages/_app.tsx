@@ -710,7 +710,7 @@ function App({ Component, pageProps }) {
                         <div className={styles.search}>
                             <input
                                 name="q"
-                                placeholder="Zoeken..."
+                                placeholder="Search..."
                                 onBlur={handleSearchBlur}
                                 aria-label="Search text"
                             />

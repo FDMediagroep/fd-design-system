@@ -228,7 +228,7 @@ export default function page() {
     return (
         <section className={styles.search}>
             <Head>
-                <title>Zoeken - Design System - Het Financieele Dagblad</title>
+                <title>Search - Design System - Het Financieele Dagblad</title>
                 <meta
                     name="description"
                     content="Search components in the FD Design System"
@@ -253,7 +253,7 @@ export default function page() {
                 attributes={['grid']}
             >
                 <GridContainer attributes={['xs-12']}>
-                    <h2>Search</h2>
+                    <h2>Results</h2>
                     <div className={styles.searchResults}>
                         {results.map((result, idx) => {
                             const path = `${result[0]}`;
