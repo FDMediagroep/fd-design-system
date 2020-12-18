@@ -43,7 +43,7 @@ function VerticalCard3(props: Props) {
                         </div>
 
                         <div className={styles.teaserText}>
-                            <h1 className="heading serif l">{props.title}</h1>
+                            <h1 className="heading serif s">{props.title}</h1>
 
                             <p className={`${styles.intro} body-text sans s`}>
                                 {props.intro}

@@ -35,7 +35,7 @@ function HorizontalCard2(props: Props) {
 
                     <div className={styles.textContainer}>
                         <h1 className="heading serif s">{props.title}</h1>
-                        <p className={`${styles.intro} body-text sans xs`}>
+                        <p className={`${styles.intro} body-text sans s`}>
                             {props.intro}
                         </p>
                     </div>

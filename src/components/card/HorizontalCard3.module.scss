@@ -79,8 +79,8 @@
             margin: 0;
         }
 
-        p {
-            margin: 4px 0 0 0;
+        .intro {
+            margin: 0.5rem 0 0 0;
         }
     }
 
@@ -95,7 +95,7 @@
             (-ms-high-contrast: none) {
             color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
         }
-        margin: 0.5rem 0;
+        margin: 0.25rem 0 0 0;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;

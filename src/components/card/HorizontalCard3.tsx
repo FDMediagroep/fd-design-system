@@ -47,7 +47,7 @@ function HorizontalCard3(props: Props) {
                             </p>
                         )}
 
-                        <p className={`${styles.intro} body-text sans xs`}>
+                        <p className={`${styles.intro} body-text sans s`}>
                             {props.intro}
                         </p>
                     </div>
