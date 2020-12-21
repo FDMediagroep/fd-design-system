@@ -97,6 +97,7 @@ import {
     metaTitle as textinputTitle,
     metaDescription as textinputDescription,
 } from './input/textinput';
+import { TextInput } from '../components/input/TextInput';
 
 type SearchIndex = {
     [x: string]: {
@@ -213,10 +214,13 @@ export default function page() {
         if (searchIndex) {
             Object.entries(searchIndex).forEach((entry) => {
                 if (
-                    searchString === '*' ||
-                    entry[1].title.toLowerCase().indexOf(searchString) > -1 ||
-                    entry[1].description.toLowerCase().indexOf(searchString) >
-                        -1
+                    searchString?.length &&
+                    (searchString === '*' ||
+                        entry[1].title.toLowerCase().indexOf(searchString) >
+                            -1 ||
+                        entry[1].description
+                            .toLowerCase()
+                            .indexOf(searchString) > -1)
                 ) {
                     res.push(entry);
                 }
@@ -253,7 +257,31 @@ export default function page() {
                 attributes={['grid']}
             >
                 <GridContainer attributes={['xs-12']}>
-                    <h2>Results</h2>
+                    <form method="GET" action="/search">
+                        <div className={styles.searchForm}>
+                            {searchString ? (
+                                <TextInput
+                                    key="searchString"
+                                    id="searchString"
+                                    className={styles.searchTextInput}
+                                    label="Search"
+                                    name="q"
+                                    aria-label="Search text"
+                                    defaultValue={searchString}
+                                />
+                            ) : (
+                                <TextInput
+                                    key="noSearchString"
+                                    id="searchString"
+                                    className={styles.searchTextInput}
+                                    label="Search"
+                                    name="q"
+                                    aria-label="Search text"
+                                />
+                            )}
+                        </div>
+                    </form>
+                    {results?.length ? <h2>{results.length} Results</h2> : null}
                     <div className={styles.searchResults}>
                         {results.map((result, idx) => {
                             const path = `${result[0]}`;
