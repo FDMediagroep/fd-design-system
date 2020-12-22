@@ -196,6 +196,7 @@ import {
     metaDescription as wordframeDescription,
 } from './wordframe';
 import { TextInput } from '../components/input/TextInput';
+import { handleSearchSubmit } from '../utils/search';
 
 type SearchIndex = {
     [x: string]: {
@@ -451,7 +452,11 @@ export default function page() {
                 attributes={['grid']}
             >
                 <GridContainer attributes={['xs-12']}>
-                    <form method="GET" action="/search">
+                    <form
+                        method="GET"
+                        action="/search"
+                        onSubmit={handleSearchSubmit}
+                    >
                         <div className={styles.searchForm}>
                             {searchString ? (
                                 <TextInput

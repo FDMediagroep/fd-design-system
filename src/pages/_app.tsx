@@ -14,6 +14,7 @@ import { ButtonCta } from '../components/button/ButtonCta';
 import { Themes } from '../components/Themes';
 import Link from 'next/link';
 import { debounce } from '../utils/debounce';
+import { handleSearchSubmit } from '../utils/search';
 
 /**
  * Make sibling elements same height as its tallest sibling with the given CSS Class Name.
@@ -706,7 +707,11 @@ function App({ Component, pageProps }) {
                 ]}
             >
                 <>
-                    <form method="GET" action="/search">
+                    <form
+                        method="GET"
+                        action="/search"
+                        onSubmit={handleSearchSubmit}
+                    >
                         <div className={styles.search}>
                             <input
                                 name="q"
