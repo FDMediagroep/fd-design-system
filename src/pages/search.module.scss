@@ -13,25 +13,6 @@
         .searchTextInput {
             width: 100%;
         }
-        button {
-            z-index: 1;
-            margin-top: 16px;
-            margin-left: -35px;
-            box-sizing: border-box;
-            height: 32px;
-            background-color: transparent;
-            border: none;
-        }
-        svg {
-            width: 1rem;
-            height: 1rem;
-            fill: var(--content-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            }
-        }
     }
 
     .searchResults {

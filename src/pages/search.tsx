@@ -1,3 +1,8 @@
+/**
+ * Static search page.
+ * The search index is hard-coded. For now it's easier than setting up a
+ * search engine.
+ */
 import { GridContainer } from '@fdmg/css-grid/GridContainer';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -5,6 +10,43 @@ import React, { useEffect, useState } from 'react';
 import { HorizontalCard3 } from '../components/card/HorizontalCard3';
 import styles from './search.module.scss';
 
+import { metaTitle as abTitle, metaDescription as abDescription } from './ab';
+import {
+    metaTitle as accordionTitle,
+    metaDescription as accordionDescription,
+} from './accordion';
+import {
+    metaTitle as articleBulletPointTitle,
+    metaDescription as articleBulletPointDescription,
+} from './article-bullet-point';
+import {
+    metaTitle as articleImagePointTitle,
+    metaDescription as articleImagePointDescription,
+} from './article-image';
+import {
+    metaTitle as articleInfographicPointTitle,
+    metaDescription as articleInfographicPointDescription,
+} from './article-infographic';
+import {
+    metaTitle as articleLatestNewsPointTitle,
+    metaDescription as articleLatestNewsPointDescription,
+} from './article-latest-news';
+import {
+    metaTitle as articleLinkBlockPointTitle,
+    metaDescription as articleLinkBlockPointDescription,
+} from './article-link-block';
+import {
+    metaTitle as articleLinkCardPointTitle,
+    metaDescription as articleLinkCardPointDescription,
+} from './article-link-card';
+import {
+    metaTitle as articleSummaryPointTitle,
+    metaDescription as articleSummaryPointDescription,
+} from './article-summary';
+import {
+    metaTitle as articleTagsPointTitle,
+    metaDescription as articleTagsPointDescription,
+} from './article-tags';
 import {
     metaTitle as buttonCtaTitle,
     metaDescription as buttonCtaDescription,
@@ -58,6 +100,18 @@ import {
     metaDescription as verticalCard3Description,
 } from './card/vertical-3';
 import {
+    metaTitle as cookieconsentTitle,
+    metaDescription as cookieconsentDescription,
+} from './cookieconsent';
+import {
+    metaTitle as financialAgendaTitle,
+    metaDescription as financialAgendaDescription,
+} from './financial-agenda';
+import {
+    metaTitle as gridTitle,
+    metaDescription as gridDescription,
+} from './grid';
+import {
     metaTitle as breakingSwitchTitle,
     metaDescription as breakingSwitchDescription,
 } from './input/breaking-switch';
@@ -97,6 +151,50 @@ import {
     metaTitle as textinputTitle,
     metaDescription as textinputDescription,
 } from './input/textinput';
+import {
+    metaTitle as modalTitle,
+    metaDescription as modalDescription,
+} from './modal';
+import {
+    metaTitle as numberframeTitle,
+    metaDescription as numberframeDescription,
+} from './numberframe';
+import {
+    metaTitle as quoteTitle,
+    metaDescription as quoteDescription,
+} from './quote';
+import {
+    metaTitle as readmoreTitle,
+    metaDescription as readmoreDescription,
+} from './readmore';
+import {
+    metaTitle as stockTickerTitle,
+    metaDescription as stockTickerDescription,
+} from './stock-ticker';
+import {
+    metaTitle as textframeTitle,
+    metaDescription as textframeDescription,
+} from './textframe';
+import {
+    metaTitle as tokensTitle,
+    metaDescription as tokensDescription,
+} from './tokens';
+import {
+    metaTitle as toolbarHorizontalTitle,
+    metaDescription as toolbarHorizontalDescription,
+} from './toolbar/horizontal';
+import {
+    metaTitle as toolbarVerticalTitle,
+    metaDescription as toolbarVerticalDescription,
+} from './toolbar/vertical';
+import {
+    metaTitle as typographyTitle,
+    metaDescription as typographyDescription,
+} from './typography';
+import {
+    metaTitle as wordframeTitle,
+    metaDescription as wordframeDescription,
+} from './wordframe';
 import { TextInput } from '../components/input/TextInput';
 
 type SearchIndex = {
@@ -107,6 +205,46 @@ type SearchIndex = {
 };
 
 const searchIndex: SearchIndex = {
+    '/ab': {
+        title: abTitle,
+        description: abDescription,
+    },
+    '/accordion': {
+        title: accordionTitle,
+        description: accordionDescription,
+    },
+    '/article-bullet-point': {
+        title: articleBulletPointTitle,
+        description: articleBulletPointDescription,
+    },
+    '/article-image': {
+        title: articleImagePointTitle,
+        description: articleImagePointDescription,
+    },
+    '/article-infographic': {
+        title: articleInfographicPointTitle,
+        description: articleInfographicPointDescription,
+    },
+    '/article-latest-news': {
+        title: articleLatestNewsPointTitle,
+        description: articleLatestNewsPointDescription,
+    },
+    '/article-link-block': {
+        title: articleLinkBlockPointTitle,
+        description: articleLinkBlockPointDescription,
+    },
+    '/article-link-card': {
+        title: articleLinkCardPointTitle,
+        description: articleLinkCardPointDescription,
+    },
+    '/article-summary': {
+        title: articleSummaryPointTitle,
+        description: articleSummaryPointDescription,
+    },
+    '/article-tags': {
+        title: articleTagsPointTitle,
+        description: articleTagsPointDescription,
+    },
     '/button/cta': {
         title: buttonCtaTitle,
         description: buttonCtaDescription,
@@ -159,6 +297,18 @@ const searchIndex: SearchIndex = {
         title: verticalCard3Title,
         description: verticalCard3Description,
     },
+    '/cookieconsent': {
+        title: cookieconsentTitle,
+        description: cookieconsentDescription,
+    },
+    '/financial-agenda': {
+        title: financialAgendaTitle,
+        description: financialAgendaDescription,
+    },
+    '/grid': {
+        title: gridTitle,
+        description: gridDescription,
+    },
     '/input/breaking-switch': {
         title: breakingSwitchTitle,
         description: breakingSwitchDescription,
@@ -198,6 +348,50 @@ const searchIndex: SearchIndex = {
     '/input/textinput': {
         title: textinputTitle,
         description: textinputDescription,
+    },
+    '/modal': {
+        title: modalTitle,
+        description: modalDescription,
+    },
+    '/numberframe': {
+        title: numberframeTitle,
+        description: numberframeDescription,
+    },
+    '/quote': {
+        title: quoteTitle,
+        description: quoteDescription,
+    },
+    '/readmore': {
+        title: readmoreTitle,
+        description: readmoreDescription,
+    },
+    '/stock-ticker': {
+        title: stockTickerTitle,
+        description: stockTickerDescription,
+    },
+    '/textframe': {
+        title: textframeTitle,
+        description: textframeDescription,
+    },
+    '/tokens': {
+        title: tokensTitle,
+        description: tokensDescription,
+    },
+    '/toolbar/horizontal': {
+        title: toolbarHorizontalTitle,
+        description: toolbarHorizontalDescription,
+    },
+    '/toolbar/vertical': {
+        title: toolbarVerticalTitle,
+        description: toolbarVerticalDescription,
+    },
+    '/typography': {
+        title: typographyTitle,
+        description: typographyDescription,
+    },
+    '/wordframe': {
+        title: wordframeTitle,
+        description: wordframeDescription,
     },
 };
 
