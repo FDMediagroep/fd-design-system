@@ -196,7 +196,7 @@ import {
     metaDescription as wordframeDescription,
 } from './wordframe';
 import { TextInput } from '../components/input/TextInput';
-import { handleSearchSubmit } from '../utils/search';
+import { handleSearchSubmit, interceptLinks } from '../utils/search';
 
 type SearchIndex = {
     [x: string]: {
@@ -403,6 +403,22 @@ export default function page() {
             ? router.query.q.toLowerCase()
             : router.query.q?.[0].toLowerCase();
     const [results, setResults] = useState<SearchIndex[]>([]);
+
+    useEffect(() => {
+        const observer = new MutationObserver(() => {
+            interceptLinks(
+                document.querySelectorAll(`.${styles.searchResults} a[href]`)
+            );
+        });
+        observer.observe(document.querySelector(`.${styles.searchResults}`), {
+            attributes: true,
+            childList: true,
+            subtree: true,
+        });
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
 
     useEffect(() => {
         const res = [];

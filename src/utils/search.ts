@@ -11,3 +11,16 @@ export function handleSearchSubmit(e: React.FormEvent<HTMLFormElement>) {
     }
     Router.push(`/search?${s}`);
 }
+
+function anchorClickHandler(e) {
+    e.preventDefault();
+    Router.push(e.currentTarget.getAttribute('href'));
+}
+
+export function interceptLinks(anchors: NodeList) {
+    if (!anchors) return;
+    [].slice.call(anchors).forEach((anchor) => {
+        anchor.removeEventListener('click', anchorClickHandler);
+        anchor.addEventListener('click', anchorClickHandler);
+    });
+}
