@@ -9,6 +9,7 @@ By following these tips and guidelines you'll find that you can contribute more 
 
 1. Add your component under `/src/components/<your component>/<component>.tsx`.
 1. Add your component page `/src/pages/<page name>.tsx`.
+    - Add your page to the static search index in `/src/pages/search.tsx`.
 1. Add a link to your component page in the Menu component `/src/components/Menu.tsx`.
    E.g.: `<Link href="/input/radio"><a>Input Radio</a></Link>`
 1. Import and export your component in `/src/components/main.tsx`.
