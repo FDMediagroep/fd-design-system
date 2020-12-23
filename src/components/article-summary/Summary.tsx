@@ -16,10 +16,12 @@ interface Props {
 function Summary(props: Props) {
     return (
         <div data-variant={props.variant} className={styles.summary}>
-            <h3>{props.title ?? 'In het kort'}</h3>
-            {props.summaries.map((summary) => {
-                return <p key={summary}>{summary}</p>;
-            })}
+            <h3 className="heading sans s">{props.title ?? 'In het kort'}</h3>
+            <ul className="body-text sans s">
+                {props.summaries.map((summary) => (
+                    <li key={summary}>{summary}</li>
+                ))}
+            </ul>
         </div>
     );
 }
