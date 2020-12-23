@@ -70,71 +70,51 @@
         margin-top: initial;
     }
 
-    p {
-        font-family: map-deep-get($typography, 'font-family', 'regular'),
-            sans-serif;
-        font-size: 1.0625rem;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-        color: var(--content-copy);
+    ul {
+        list-style: none;
+        list-style-position: outside;
+        padding-left: 1rem;
+    }
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    li:before {
+        content: '\2022';
+        color: var(--primary);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
         }
-
-        &:before {
-            content: '';
-            width: 0.5rem;
-            height: 0.5rem;
-            border-radius: 50%;
-            float: left;
-            margin: 0.5rem 0.5rem 0 0;
-            background-color: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'primary',
-                        75
-                    )};
-            }
-        }
+        font-weight: bold;
+        display: inline-block;
+        font-size: 2rem;
+        line-height: 0;
+        width: 1rem;
+        margin-left: -1rem;
+        position: relative;
+        top: 2px;
     }
 
     &[data-variant='variant-1'] {
-        p {
-            &:before {
-                background-color: var(--link-longread);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'longread',
-                            50
-                        )};
-                }
+        li:before {
+            color: var(--link-longread);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'longread', 50)};
             }
         }
     }
     &[data-variant='variant-2'] {
-        p {
-            &:before {
-                background-color: var(--link-persoonlijk);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'persoonlijk',
-                            75
-                        )};
-                }
+        li:before {
+            color: var(--link-persoonlijk);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'persoonlijk', 75)};
             }
         }
     }
