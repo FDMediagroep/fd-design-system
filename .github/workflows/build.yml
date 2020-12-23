@@ -5,10 +5,15 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
     strategy:
       fail-fast: false
       matrix:
         node-version: [12.x, 14.x, 15.x]
+        experimental: [false]
+        include:
+        - node: 13
+          experimental: true
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js (NPMJS) ${{ matrix.node-version }}
