@@ -17,10 +17,6 @@
     }
 
     h3 {
-        font-size: 1.25rem;
-        line-height: 1;
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
         color: var(--content-copy);
         // IE11
         @media screen and (-ms-high-contrast: active),
