@@ -17,7 +17,7 @@
         "build:ci": "npm run build && npm run build:npm",
         "build:npm": "npm run webpack:prod && npm run copy:dts",
         "build:sls": "npx cross-env SERVERLESS=true next build",
-        "copy:dts": "npx cpx -v \"./dist.d.ts/src/**/*.d.ts\" \"./dist\"",
+        "copy:dts": "npx cpx \"./dist.d.ts/src/**/*.d.ts\" \"./dist\" -v",
         "dev": "npx next dev",
         "lint": "eslint \"src/**\"",
         "json-to-scss": "json-to-scss public/assets/design-tokens/* src/design-tokens",
