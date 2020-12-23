@@ -476,7 +476,7 @@ export default function page() {
                         <div className={styles.searchForm}>
                             {searchString ? (
                                 <TextInput
-                                    key="searchString"
+                                    key={searchString}
                                     id="searchString"
                                     className={styles.searchTextInput}
                                     label="Search"
