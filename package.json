@@ -52,7 +52,7 @@
         "autoprefixer": "^10.1.0",
         "copy-webpack-plugin": "^6.4.0",
         "copyfiles": "^2.4.1",
-        "core-js": "^3.8.1",
+        "core-js": "^3.8.2",
         "cross-env": "^7.0.3",
         "css-loader": "^5.0.1",
         "date-input-polyfill": "^2.14.0",
