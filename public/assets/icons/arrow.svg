@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>Icon/Forward</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon/Forward" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M12,2 C6.48,2 2,6.48 2,12 C2,17.52 6.48,22 12,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 12,2 Z" id="back" fill="#F05031"></path>
+        <polygon id="front" fill="#FFFFFF" points="12 6 10.94 7.06 15.13 11.25 6 11.25 6 12.75 15.13 12.75 10.94 16.94 12 18 18 12"></polygon>
+    </g>
+</svg>

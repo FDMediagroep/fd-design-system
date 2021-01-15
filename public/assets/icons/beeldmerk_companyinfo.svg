@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="79px" height="80px" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>beeldmerk_companyinfo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.822 78.245 0.822 78.245 79.068 0 79.068"></polygon>
+    </defs>
+    <g id="beeldmerk_companyinfo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M28.736,39.945 C28.737,34.161 33.462,29.481 39.264,29.559 C44.78,29.632 49.427,34.274 49.508,39.789 C49.592,45.596 44.91,50.332 39.122,50.332 C33.385,50.332 28.736,45.68 28.736,39.945" id="Fill-13" fill="#008089"></path>
+        <g id="Group-17">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Clip-15"></g>
+            <path d="M53.176,31.203 C54.759,33.744 55.688,36.732 55.688,39.944 C55.688,43.158 54.758,46.148 53.176,48.688 L76.051,52.864 C77.466,48.817 78.245,44.473 78.245,39.945 C78.245,35.417 77.466,31.074 76.051,27.029 L53.176,31.203" id="Fill-14" fill="#008089" mask="url(#mask-2)"></path>
+            <path d="M49.555,52.806 C46.171,55.556 41.688,56.999 36.864,56.361 C29.45,55.378 23.503,49.3 22.666,41.868 C21.539,31.858 29.34,23.379 39.123,23.379 C43.08,23.379 46.708,24.77 49.556,27.084 L73.286,20.885 C66.337,8.457 52.812,0.203 37.416,0.858 C17.62,1.701 1.309,17.666 0.078,37.442 C-1.338,60.18 16.687,79.067 39.122,79.068 C53.806,79.068 66.594,70.973 73.285,59.006 L49.555,52.806" id="Fill-16" fill="#000000" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>
