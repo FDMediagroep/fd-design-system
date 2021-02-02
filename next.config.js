@@ -66,10 +66,6 @@ module.exports = withOffline({
         ];
     },
     webpack: (config, options) => {
-        config.node = {
-            fs: 'empty',
-        };
-
         // Markdown
         config.module.rules.push({
             test: /\.md$/,

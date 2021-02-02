@@ -1,4 +1,4 @@
-import * as colors from '../../public/assets/design-tokens/colors.json';
+import colors from '../../public/assets/design-tokens/colors.json';
 import { Summary, styleProps } from '../components/Tooltip';
 import TooltipStore from '../stores/TooltipStore';
 
