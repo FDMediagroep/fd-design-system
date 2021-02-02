@@ -10,6 +10,7 @@ if (process.env.SERVERLESS) {
 
 module.exports = withOffline({
     ...serverless,
+    future: { webpack5: true },
     images: {
         domains: ['images.fd.nl', 'fd-external-development.imgix.net'],
     },
