@@ -10,6 +10,7 @@ if (process.env.SERVERLESS) {
 
 module.exports = withOffline({
     ...serverless,
+    future: { webpack5: true },
     images: {
         domains: ['images.fd.nl', 'fd-external-development.imgix.net'],
     },
@@ -65,10 +66,6 @@ module.exports = withOffline({
         ];
     },
     webpack: (config, options) => {
-        config.node = {
-            fs: 'empty',
-        };
-
         // Markdown
         config.module.rules.push({
             test: /\.md$/,
