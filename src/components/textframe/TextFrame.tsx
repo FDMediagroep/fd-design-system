@@ -15,7 +15,7 @@ function TextFrame(props: Props) {
                 props.alignment === 'right' ? styles.right : ''
             }`}
         >
-            <h3>{props.title}</h3>
+            <h3 className="heading sans s">{props.title}</h3>
 
             {props.image && (
                 <figure className="fd-teaser-figure">
