@@ -19,7 +19,7 @@
             top: 0.7rem;
             left: 0;
             right: 20px;
-            line-height: 1;
+            line-height: 1.2;
             padding: 0.5rem 1rem 0.5rem 1rem;
             transition: all 0.1s ease-out;
             color: var(--input-label);
@@ -83,7 +83,7 @@
             transition: border 0.15s linear;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
-            padding: 1.4rem 1rem 0.6rem 1rem;
+            padding: 2rem 1rem 0.6rem 1rem;
             font-size: 1rem;
             vertical-align: bottom;
             border: none;
