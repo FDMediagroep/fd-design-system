@@ -14,7 +14,7 @@
             transition: border 0.15s linear;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
-            padding: 1.4rem 1rem 0.6rem 1rem;
+            padding: 1.7rem 1rem 0.6rem 1rem;
             font-size: 1rem;
             vertical-align: bottom;
             border: none;
@@ -146,7 +146,7 @@
             position: absolute;
             top: 1.2rem;
             left: 1rem;
-            line-height: 1;
+            line-height: 1.2;
             padding: 0;
             transition: all 0.1s ease-out;
             color: var(--input-label);
