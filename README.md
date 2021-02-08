@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://design-system.fd.nl" target="_BLANK">
+    <a href="https://design-system.fd.nl" target="_BLANK" rel="noopener noreferrer">
         <img width="160" src="https://github.com/FDMediagroep/fd-design-system/raw/master/public/assets/icons/logo.svg?sanitize=true" alt="FD Design System">
     </a>
 </p>
@@ -14,13 +14,13 @@
     <span>
         <img src="https://github.com/FDMediagroep/fd-design-system/workflows/CodeQL/badge.svg" alt="Code Quality"/>
     </span>
-    <a href="https://coveralls.io/github/FDMediagroep/fd-design-system?branch=master" target="_blank">
+    <a href="https://coveralls.io/github/FDMediagroep/fd-design-system?branch=master" target="_blank" rel="noopener noreferrer">
         <img src="https://coveralls.io/repos/github/FDMediagroep/fd-design-system/badge.svg?branch=master" alt="Test coverage"/>
     </a>
-    <a href="https://npmjs.com/package/@fdmg%2Fdesign-system" target="_blank">
+    <a href="https://npmjs.com/package/@fdmg%2Fdesign-system" target="_blank" rel="noopener noreferrer">
         <img src="https://img.shields.io/npm/v/@fdmg/design-system?color=blue" alt="NPM version"/>
     </a>
-    <a href="https://bundlephobia.com/result?p=@fdmg/design-system" target="_blank">
+    <a href="https://bundlephobia.com/result?p=@fdmg/design-system" target="_blank" rel="noopener noreferrer">
         <img src="https://img.shields.io/bundlephobia/minzip/@fdmg/design-system" alt="Bundle-size minified+gzip"/>
     </a>
 </p>
