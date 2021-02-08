@@ -228,7 +228,6 @@ function Explain(props: Props) {
                 <footer className={styles.footer}>
                     <form
                         target="_blank"
-                        rel="noopener noreferrer"
                         action="https://codepen.io/pen/define/"
                         method="post"
                     >
@@ -259,7 +258,6 @@ function Explain(props: Props) {
                         action="https://jsfiddle.net/api/post/library/pure"
                         method="post"
                         target="_blank"
-                        rel="noopener noreferrer"
                     >
                         <input
                             type="image"
