@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import styles from './cookieconsent.module.scss';
 import { Explain } from '../components/Explain';
 import Head from 'next/head';
@@ -13,7 +13,6 @@ import {
 import { FdmgIcon } from '../design-tokens/icons';
 import PageStore from '../stores/PageStore';
 import ReactMD from 'react-markdown/with-html';
-import CodeBlock from '../utils/CodeBlock';
 
 export const metaTitle = 'CookieConsent';
 export const metaDescription =
@@ -401,7 +400,6 @@ function Page() {
                         </p>
                         <ReactMD
                             className="markdown"
-                            renderers={{ code: CodeBlock }}
                             source={`
 \`\`\`typescript
 import { 
