@@ -37,7 +37,7 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif s"
+            class="heading serif xs"
           >
             This is the title
           </h1>
@@ -205,7 +205,7 @@ exports[`HybridCard1 should render themes correctly 1`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif s"
+            class="heading serif xs"
           >
             This is the title
           </h1>
@@ -373,7 +373,7 @@ exports[`HybridCard1 should render themes correctly 2`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif s"
+            class="heading serif xs"
           >
             This is the title
           </h1>
@@ -541,7 +541,7 @@ exports[`HybridCard1 should render themes correctly 3`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif s"
+            class="heading serif xs"
           >
             This is the title
           </h1>
@@ -709,7 +709,7 @@ exports[`HybridCard1 should render themes correctly 4`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif s"
+            class="heading serif xs"
           >
             This is the title
           </h1>
@@ -877,7 +877,7 @@ exports[`HybridCard1 should render themes correctly 5`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif s"
+            class="heading serif xs"
           >
             This is the title
           </h1>
@@ -1045,7 +1045,7 @@ exports[`HybridCard1 should render themes correctly 6`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif s"
+            class="heading serif xs"
           >
             This is the title
           </h1>
@@ -1213,7 +1213,7 @@ exports[`HybridCard1 should render themes correctly 7`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif s"
+            class="heading serif xs"
           >
             This is the title
           </h1>
@@ -1381,7 +1381,7 @@ exports[`HybridCard1 should render themes correctly 8`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif s"
+            class="heading serif xs"
           >
             This is the title
           </h1>
@@ -1550,7 +1550,7 @@ exports[`HybridCard1 should render variant-1 correctly 1`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif s"
+            class="heading serif xs"
           >
             This is the title
           </h1>
