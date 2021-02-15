@@ -252,6 +252,12 @@
 .body-text {
     line-height: map-deep-get($typography, 'body', 'line-height');
     &.sans {
+        line-height: map-deep-get(
+            $typography,
+            'body',
+            'sans-serif',
+            'line-height'
+        );
         font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;
         &.bold {

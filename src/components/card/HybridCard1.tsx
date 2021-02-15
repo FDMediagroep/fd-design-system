@@ -79,7 +79,7 @@ function HybridCard1(props: Props) {
                     </div>
 
                     <div className={styles.textContainer}>
-                        <h1 className="heading serif s">{props.title}</h1>
+                        <h1 className="heading serif xs">{props.title}</h1>
 
                         {props.intro && (
                             <p className={`${styles.intro} body-text sans s`}>
