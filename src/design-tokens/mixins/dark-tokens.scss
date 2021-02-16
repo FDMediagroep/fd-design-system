@@ -3,6 +3,7 @@
 
 @mixin dark-tokens {
     --filter-invert: invert(1);
+    --webkit-font-smoothing: none;
 
     --product-background: #{map-deep-get($colors, 'colors', 'neutral', 0)};
     --product-background-2: #{map-deep-get($colors, 'colors', 'neutral', 10)};
