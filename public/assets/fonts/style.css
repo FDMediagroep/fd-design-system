@@ -6,7 +6,7 @@ Using WOFF files for plain texts, the font switch is not so noticable.
 @font-face {
     font-family: ArnhemProBold;
     src: url(./arnhempro-bold.woff2) format('woff2'),
-    url(./arnhempro-bold.woff) format('woff');
+        url(./arnhempro-bold.woff) format('woff');
     font-style: normal;
     font-weight: normal;
 }
@@ -14,31 +14,7 @@ Using WOFF files for plain texts, the font switch is not so noticable.
 @font-face {
     font-family: ArnhemProBlond;
     src: url(./arnhempro-blond.woff2) format('woff2'),
-    url(./arnhempro-blond.woff) format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: ConsortWebRegular;
-    src: url(./consort-web-regular.woff2) format('woff2'),
-    url(./consort-web-regular.woff) format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: ConsortWebThin;
-    src: url(./consort-thin.woff2) format('woff2'),
-    url(./consort-thin.woff) format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: ConsortWebBold;
-    src: url(./consort-bold.woff2) format('woff2'),
-    url(./consort-bold.woff) format('woff');
+        url(./arnhempro-blond.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -46,7 +22,7 @@ Using WOFF files for plain texts, the font switch is not so noticable.
 @font-face {
     font-family: ProximaNovaRegular;
     src: url(./proxima-nova-regular.woff2) format('woff2'),
-    url(./proxima-nova-regular.woff) format('woff');
+        url(./proxima-nova-regular.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -54,7 +30,7 @@ Using WOFF files for plain texts, the font switch is not so noticable.
 @font-face {
     font-family: ProximaNovaThin;
     src: url(./proxima-nova-thin.woff2) format('woff2'),
-    url(./proxima-nova-thin.woff) format('woff');
+        url(./proxima-nova-thin.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -62,7 +38,7 @@ Using WOFF files for plain texts, the font switch is not so noticable.
 @font-face {
     font-family: ProximaNovaBold;
     src: url(./proxima-nova-bold.woff2) format('woff2'),
-    url(./proxima-nova-bold.woff) format('woff');
+        url(./proxima-nova-bold.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
