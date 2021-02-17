@@ -60,6 +60,7 @@
     /**
      * Inputs
      */
+    --search-bar: #{map-deep-get($colors, 'colors', 'neutral', 20)};
     --input-caret: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --input-placeholder: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --input-label: #{map-deep-get($colors, 'colors', 'neutral', 40)};
