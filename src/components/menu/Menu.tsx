@@ -406,7 +406,7 @@ function Menu(props: Props) {
              * Cancel rendering if no label or component is found.
              */
             if (!menuItem.text && !menuItem.component) {
-                return 'no text, component or child menu items found';
+                return null;
             }
 
             const hasPopup = menuItem?.menuItems?.length > 0;
