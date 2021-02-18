@@ -226,4 +226,8 @@
      * Beurs
      */
     --radar-stock: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+    --stock-ticker-stock: #666;
+    --stock-ticker-description: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --stock-ticker-negative: #{map-deep-get($colors, 'colors', 'negative', 50)};
+    --stock-ticker-price: #{map-deep-get($colors, 'colors', 'neutral', 70)};
 }
