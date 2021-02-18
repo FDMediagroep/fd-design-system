@@ -3,7 +3,7 @@
 
 @mixin light-tokens {
     --filter-invert: invert(0);
-    --webkit-font-smoothing: antialiased;
+    // --logo: url(../img/fd/static/logo.svg);
 
     --product-background: #{map-deep-get($colors, 'colors', 'neutral', 80)};
     --product-background-2: #{map-deep-get($colors, 'colors', 'neutral', 90)};
@@ -59,6 +59,7 @@
     /**
      * Inputs
      */
+    --search-bar: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     --input-caret: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --input-placeholder: #{map-deep-get($colors, 'colors', 'neutral', 60)};
     --input-label: #{map-deep-get($colors, 'colors', 'neutral', 40)};
@@ -220,4 +221,14 @@
             'primary',
             50
         )};
+
+    /**
+     * Beurs
+     */
+    --radar-stock: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+    --stock-ticker-stock: #666;
+    --stock-ticker-description: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --stock-ticker-negative: #c60f0f;
+    --stock-ticker-price: #333;
+    --fondsnieuws-logo-color: #000;
 }

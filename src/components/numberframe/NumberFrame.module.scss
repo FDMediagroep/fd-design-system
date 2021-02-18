@@ -19,7 +19,6 @@
         color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     }
     h2 {
-        -webkit-font-smoothing: antialiased;
         line-height: 1;
         margin: 0;
         padding: 0;

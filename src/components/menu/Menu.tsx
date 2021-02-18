@@ -404,15 +404,9 @@ function Menu(props: Props) {
         const items = menuItems?.map((menuItem) => {
             /**
              * Cancel rendering if no label or component is found.
-             * Cancel rendering is menuItem is more-menu and it has not
-             * sub-menu items.
              */
-            if (
-                (!menuItem.text && !menuItem.component) ||
-                (menuItem.id === styles['more-menu'] &&
-                    !menuItem?.menuItems?.length)
-            ) {
-                return 'no text, component or child menu items found';
+            if (!menuItem.text && !menuItem.component) {
+                return null;
             }
 
             const hasPopup = menuItem?.menuItems?.length > 0;
