@@ -3,7 +3,6 @@
 @import '../../design-tokens/typography.scss';
 
 .heading {
-    -webkit-font-smoothing: var(--webkit-font-smoothing);
     line-height: map-deep-get($typography, 'heading', 'line-height');
     &.sans {
         font-family: map-deep-get($typography, 'font-family', 'bold'),
@@ -250,7 +249,6 @@
 }
 
 .body-text {
-    -webkit-font-smoothing: var(--webkit-font-smoothing);
     line-height: map-deep-get($typography, 'body', 'line-height');
     &.sans {
         line-height: map-deep-get(
