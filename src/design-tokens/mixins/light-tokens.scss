@@ -221,4 +221,9 @@
             'primary',
             50
         )};
+
+    /**
+     * Beurs
+     */
+    --radar-stock: #{map-deep-get($colors, 'colors', 'neutral', 20)};
 }
