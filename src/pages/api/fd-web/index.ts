@@ -2581,7 +2581,7 @@ export const data = {
 };
 
 export async function getPayload(params: any) {
-    let payload: any = data;
+    const payload: any = data;
     // try {
     //     payload = await timeout(
     //         5000,
