@@ -9,6 +9,7 @@
     --product-background-2: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --content-background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --navigation-background: #{map-deep-get($colors, 'colors', 'neutral', 70)};
+    --navigation-item: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --opaque-label-background: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --opaque-label-longread-background: #{map-deep-get(
             $colors,
