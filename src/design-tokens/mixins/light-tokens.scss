@@ -131,6 +131,7 @@
      */
     --link: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --link-hover: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --link-active: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --link-persoonlijk: #{map-deep-get($colors, 'colors', 'persoonlijk', 75)};
     --link-persoonlijk-hover: #{map-deep-get(
             $colors,
