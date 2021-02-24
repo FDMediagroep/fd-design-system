@@ -10,6 +10,7 @@
     --content-background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --navigation-background: #{map-deep-get($colors, 'colors', 'neutral', 70)};
     --navigation-item: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --navigation-item-active: #{map-deep-get($colors, 'colors', 'neutral', 60)};
     --opaque-label-background: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --opaque-label-longread-background: #{map-deep-get(
             $colors,
@@ -222,6 +223,20 @@
             'colors',
             'primary',
             50
+        )};
+
+    /**
+     * Profile
+     */
+    --profile-background: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --profile-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --profile-link: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --profile-link-hover: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --profile-extra-navigation-item: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            30
         )};
 
     /**
