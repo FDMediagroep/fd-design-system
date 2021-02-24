@@ -4,6 +4,7 @@
 @mixin light-tokens {
     --filter-invert: invert(0);
     // --logo: url(../img/fd/static/logo.svg);
+    --persoonlijk-logo-filter: none;
 
     --product-background: #{map-deep-get($colors, 'colors', 'neutral', 80)};
     --product-background-2: #{map-deep-get($colors, 'colors', 'neutral', 90)};
