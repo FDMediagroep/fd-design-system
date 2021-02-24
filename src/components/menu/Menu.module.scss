@@ -194,7 +194,7 @@
                 padding: 1rem;
             }
             flex: 1 1 auto;
-            color: var(--meta-copy);
+            color: var(--navigation-item);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -261,7 +261,7 @@
             sans-serif;
         font-size: 1rem;
         padding: 1rem;
-        color: var(--meta-copy);
+        color: var(--navigation-item);
         &:hover {
             color: var(--link-hover);
         }
