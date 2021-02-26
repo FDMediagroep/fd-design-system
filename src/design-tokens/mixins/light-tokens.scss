@@ -63,6 +63,10 @@
      * Inputs
      */
     --search-bar: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    --input-background: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    // https://tests.christianoliff.com/hex-to-css-filter-generator/
+    --input-date-picker-calendar-fill: invert(41%) sepia(19%) saturate(293%)
+        hue-rotate(333deg) brightness(93%) contrast(87%);
     --input-caret: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --input-placeholder: #{map-deep-get($colors, 'colors', 'neutral', 60)};
     --input-label: #{map-deep-get($colors, 'colors', 'neutral', 40)};

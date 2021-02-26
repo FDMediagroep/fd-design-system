@@ -40,33 +40,88 @@
             textarea ~ label {
                 font-size: 0.875rem;
                 top: 0;
-                background-color: white;
+                background-color: var(--input-background);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    background-color: #{map-deep-get(
+                            $colors,
+                            'colors',
+                            'neutral',
+                            100
+                        )};
+                }
+
                 right: 1rem;
             }
         }
         textarea:not([placeholder=' ']) ~ div > label {
             font-size: 0.875rem;
             top: 0;
-            background-color: white;
+            background-color: var(--input-background);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        100
+                    )};
+            }
+
             right: 1rem;
         }
         textarea:not(:placeholder-shown) ~ div > label {
             font-size: 0.875rem;
             top: 0;
-            background-color: white;
+            background-color: var(--input-background);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        100
+                    )};
+            }
+
             right: 1rem;
         }
         textarea:not(:-ms-input-placeholder) ~ div > label,
         textarea:-ms-input-placeholder:not([placeholder=' ']) ~ div > label {
             font-size: 0.875rem;
             top: 0;
-            background-color: white;
+            background-color: var(--input-background);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        100
+                    )};
+            }
+
             right: 1rem;
         }
         textarea:focus ~ div > label {
             font-size: 0.875rem;
             top: 0;
-            background-color: white;
+            background-color: var(--input-background);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        100
+                    )};
+            }
+
             right: 1rem;
         }
         textarea:focus ~ div > label {
@@ -89,6 +144,8 @@
             border: none;
             border-radius: 0;
             border-bottom: 2px solid var(--input-underline);
+            color: var(--input-color);
+            background-color: var(--input-background);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
@@ -97,6 +154,13 @@
                         'colors',
                         'neutral',
                         50
+                    )};
+                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        100
                     )};
             }
 
@@ -190,12 +254,6 @@
             width: 100%;
             outline: none;
             margin: unset;
-            color: var(--input-color);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            }
         }
 
         .textareaMessage {
