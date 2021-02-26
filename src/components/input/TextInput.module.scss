@@ -11,6 +11,22 @@
             sans-serif;
         width: 100%;
         input {
+            color: var(--input-color);
+            background-color: var(--input-background);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        100
+                    )};
+            }
+            &::-webkit-calendar-picker-indicator {
+                filter: var(--input-date-picker-calendar-fill);
+            }
             transition: border 0.15s linear;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
@@ -133,12 +149,6 @@
             height: unset;
             outline: none;
             margin: unset;
-            color: var(--input-color);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            }
         }
         label {
             font-family: map-deep-get($typography, 'font-family', 'regular'),

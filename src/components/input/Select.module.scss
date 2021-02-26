@@ -11,6 +11,19 @@
             sans-serif;
         width: 100%;
         select {
+            color: var(--select-color);
+            background-color: var(--input-background);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+                background-color: #{map-deep-get(
+                        $colors,
+                        'colors',
+                        'neutral',
+                        100
+                    )};
+            }
             &::-ms-expand {
                 display: none;
             }
@@ -132,12 +145,6 @@
             height: unset;
             outline: none;
             margin: unset;
-            color: var(--select-color);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            }
         }
 
         label {

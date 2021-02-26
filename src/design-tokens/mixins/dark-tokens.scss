@@ -4,6 +4,7 @@
 @mixin dark-tokens {
     --filter-invert: invert(1);
     // --logo: url(../img/fd/static/logo-dark.svg);
+    // https://tests.christianoliff.com/hex-to-css-filter-generator/
     --persoonlijk-logo-filter: brightness(1) sepia(0.1) hue-rotate(175deg)
         saturate(1) invert(1);
 
@@ -64,11 +65,15 @@
      * Inputs
      */
     --search-bar: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+    --input-background: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+    // https://tests.christianoliff.com/hex-to-css-filter-generator/
+    --input-date-picker-calendar-fill: invert(86%) sepia(4%) saturate(747%)
+        hue-rotate(341deg) brightness(90%) contrast(90%);
     --input-caret: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --input-placeholder: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-    --input-label: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --input-label: #{map-deep-get($colors, 'colors', 'neutral', 60)};
     --input-label-focus: #{map-deep-get($colors, 'colors', 'primary', 50)};
-    --input-color: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+    --input-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --input-underline: #{map-deep-get($colors, 'colors', 'neutral', 60)};
     --input-underline-disabled: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --input-underline-hover: #{map-deep-get($colors, 'colors', 'primary', 50)};
@@ -84,11 +89,11 @@
             'neutral',
             40
         )};
-    --input-disabled: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --input-disabled: #{map-deep-get($colors, 'colors', 'neutral', 40)};
     --select-placeholder: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-    --select-label: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --select-label: #{map-deep-get($colors, 'colors', 'neutral', 60)};
     --select-label-focus: #{map-deep-get($colors, 'colors', 'primary', 50)};
-    --select-color: #{map-deep-get($colors, 'colors', 'neutral', 20)};
+    --select-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --select-underline: #{map-deep-get($colors, 'colors', 'neutral', 60)};
     --select-underline-disabled: #{map-deep-get(
             $colors,
@@ -109,7 +114,7 @@
             'neutral',
             40
         )};
-    --select-disabled: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --select-disabled: #{map-deep-get($colors, 'colors', 'neutral', 40)};
     --checkbox-fill: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --checkbox-fill-checked: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --checkbox-check: #{map-deep-get($colors, 'colors', 'neutral', 100)};
