@@ -205,8 +205,6 @@
             font-size: 0.875rem;
             top: 0.5rem;
             right: 2rem;
-        }
-        input:focus ~ div > label {
             color: var(--input-label-focus);
             // IE11
             @media screen and (-ms-high-contrast: active),

@@ -255,4 +255,9 @@
     --stock-ticker-negative: #{map-deep-get($colors, 'colors', 'negative', 50)};
     --stock-ticker-price: #{map-deep-get($colors, 'colors', 'neutral', 70)};
     --fondsnieuws-logo-color: white;
+
+    /**
+     * BNR Launcher
+     */
+    --bnr-launcher-background: #{map-deep-get($colors, 'colors', 'neutral', 30)};
 }

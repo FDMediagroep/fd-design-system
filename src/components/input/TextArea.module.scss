@@ -110,10 +110,12 @@
         textarea:focus ~ div > label {
             font-size: 0.875rem;
             top: 0;
+            color: var(--input-label-focus);
             background-color: var(--input-background);
             // IE11
             @media screen and (-ms-high-contrast: active),
                 (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
                 background-color: #{map-deep-get(
                         $colors,
                         'colors',
@@ -123,14 +125,6 @@
             }
 
             right: 1rem;
-        }
-        textarea:focus ~ div > label {
-            color: var(--input-label-focus);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
         }
 
         textarea {

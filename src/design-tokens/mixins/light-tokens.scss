@@ -253,4 +253,9 @@
     --stock-ticker-negative: #c60f0f;
     --stock-ticker-price: #333;
     --fondsnieuws-logo-color: #000;
+
+    /**
+     * BNR Launcher
+     */
+    --bnr-launcher-background: #{map-deep-get($colors, 'colors', 'neutral', 0)};
 }

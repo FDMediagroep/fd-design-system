@@ -203,8 +203,6 @@
             font-size: 0.875rem;
             top: 0.5rem;
             right: 2rem;
-        }
-        select:focus ~ div > label {
             color: var(--select-label-focus);
             // IE11
             @media screen and (-ms-high-contrast: active),
