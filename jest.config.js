@@ -8,7 +8,7 @@ module.exports = {
     coverageReporters: ['lcov', 'text'],
     globals: {
         'ts-jest': {
-            tsConfig: 'tsconfig.test.json',
+            tsconfig: 'tsconfig.test.json',
         },
     },
     testPathIgnorePatterns: ['/cypress/', '__tests__/mockdata/'],
