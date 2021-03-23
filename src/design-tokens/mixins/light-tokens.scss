@@ -258,4 +258,10 @@
      * BNR Launcher
      */
     --bnr-launcher-background: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+
+    /**
+     * Ads
+     */
+    --ad-label: #{map-deep-get($colors, 'colors', 'neutral', 70)};
+    --ad-label-2: #{map-deep-get($colors, 'colors', 'neutral', 70)};
 }
