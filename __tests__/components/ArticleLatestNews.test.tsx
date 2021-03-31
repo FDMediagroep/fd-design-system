@@ -1,12 +1,9 @@
 import React from 'react';
-import {
-    ArticleLatestNews,
-    getCssClassNames,
-} from '../../src/components/article-latest-news/ArticleLatestNews';
+import { ArticleLatestNews } from '../../src/components/article-latest-news/ArticleLatestNews';
 import { render } from '@testing-library/react';
 
 describe('ArticleLatestNews', () => {
-    test('should render correctly', () => {
+    test('should render correctly', async () => {
         const { getByText } = render(
             <ArticleLatestNews
                 news={[
@@ -49,7 +46,7 @@ describe('ArticleLatestNews', () => {
         expect(getByText('Lees al het laatste nieuws')).toBeTruthy();
     });
 
-    test('should render custom text correctly', () => {
+    test('should render custom text correctly', async () => {
         const { getByText, container } = render(
             <ArticleLatestNews
                 title="Newest news"
