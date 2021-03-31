@@ -5,6 +5,8 @@ import {
 } from '../../src/components/stockticker/StockTicker';
 import { render } from '@testing-library/react';
 
+jest.useFakeTimers();
+
 describe('StockTicker', () => {
     test('should render correctly', () => {
         const { getAllByText, getByText } = render(
