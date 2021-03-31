@@ -39,7 +39,7 @@
         "@testing-library/react": "^11.2.5",
         "@testing-library/user-event": "^13.0.10",
         "@types/fetch-jsonp": "^1.0.0",
-        "@types/jest": "^26.0.21",
+        "@types/jest": "^26.0.22",
         "@types/js-cookie": "^2.2.6",
         "@types/micro-cors": "^0.1.1",
         "@types/node": "^14.14.35",
