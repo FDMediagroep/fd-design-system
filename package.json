@@ -23,7 +23,7 @@
         "json-to-scss": "json-to-scss public/assets/design-tokens/* src/design-tokens",
         "prettier": "prettier -c **/*.ts?",
         "start": "npx next build && npx next start",
-        "test": "jest --passWithNoTests --runInBand",
+        "test": "jest --passWithNoTests",
         "test:updateSnapshots": "jest -u --passWithNoTests",
         "typedoc": "npx typedoc",
         "vc:rm": "vc rm fd-design-system --safe --yes",
