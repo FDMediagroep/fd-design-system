@@ -42,7 +42,7 @@
         "@types/jest": "^26.0.22",
         "@types/js-cookie": "^2.2.6",
         "@types/micro-cors": "^0.1.1",
-        "@types/node": "^14.14.35",
+        "@types/node": "^14.14.37",
         "@types/react": "^17.0.3",
         "@types/react-dom": "^17.0.3",
         "@types/xmldom": "^0.1.30",
