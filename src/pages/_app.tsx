@@ -77,8 +77,6 @@ function App({ Component, pageProps }) {
 
     useEffect(() => {
         if (isIE()) {
-            require('@webcomponents/webcomponentsjs');
-
             window.addEventListener(
                 'resize',
                 debounce.bind(
