@@ -1,6 +1,6 @@
 {
     "name": "@fdmg/design-system",
-    "version": "0.4.41",
+    "version": "0.4.42",
     "description": "FD Design System",
     "types": "main.d.ts",
     "main": "main.js",
@@ -98,7 +98,6 @@
         "xmldom": "^0.5.0"
     },
     "dependencies": {
-        "@webcomponents/webcomponentsjs": "^2.5.0",
         "js-cookie": "^2.2.1"
     },
     "browserslist": {
