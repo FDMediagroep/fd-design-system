@@ -287,7 +287,6 @@ module.exports = {
         }),
     ],
     externals: {
-        'date-input-polyfill': 'date-input-polyfill',
         react: 'react',
         'react-dom': 'react-dom',
         sass: 'sass',

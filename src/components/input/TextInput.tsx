@@ -128,7 +128,6 @@ function TextInput(props: Props) {
     const errorMessage = props.errorMessage ?? 'Voer een geldige waarde in';
 
     useEffect(() => {
-        require('date-input-polyfill');
         const val = props.localStorage
             ? localStorage.getItem(`fd-input-${props.id}`)
             : props.value || '';
