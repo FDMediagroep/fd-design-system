@@ -48,34 +48,6 @@ or
 
 -   GitHub Packages: `https://github.com/FDMediagroep/fd-design-system/packages`
 
-Install `date-input-polyfill` for date-picker polyfill for older browsers.
-
-`npm i date-input-polyfill`
-
-### Optional configuration
-
-You can replace date-input-polyfill with an empty component.
-
-#### Webpack config
-
-Install `null-loader` and add the following to your Webpack configuration rules.
-
-```
-module: {
-    rules: [
-        {
-            // Test for a polyfill (or any file) and it won't be included in your
-            // bundle
-            test: /date-input-polyfill.dist.js$/,
-            use: 'null-loader',
-        }
-    ],
-    externals: {
-        'date-input-polyfill': 'date-input-polyfill',
-    }
-}
-```
-
 ## TypeScript support
 
 TypeDefinitions are available and included.

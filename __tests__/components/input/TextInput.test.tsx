@@ -3,7 +3,7 @@ import {
     TextInput,
     getCssClassNames,
 } from '../../../src/components/input/TextInput';
-import { render, act, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 describe('TextInput', () => {
     test('should render correctly', () => {
