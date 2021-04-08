@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { debounce } from '../../utils/debounce';
 import styles from './Menu.module.scss';
-import ResizeObserver from 'resize-observer-polyfill';
 import { ToggleButton } from './ToggleButton';
 import { ToggleIconButton } from './ToggleIconButton';
 import { MenuLink } from './MenuLink';
