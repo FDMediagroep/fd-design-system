@@ -1,0 +1,17 @@
+__tests__
+.git
+.github
+.results
+.vercel
+jest
+js-coverage
+*Dockerfile*
+node_modules
+.eslintignore
+.eslintrc.json
+.gitignore
+.prettierignore
+.prettierrc.json
+jest.config.js
+SECURITY.md
+tsconfig.test.json
