@@ -59,7 +59,7 @@
         "autoprefixer": "^10.2.5",
         "copy-webpack-plugin": "^8.1.1",
         "copyfiles": "^2.4.1",
-        "core-js": "^3.10.1",
+        "core-js": "^3.11.0",
         "cross-env": "^7.0.3",
         "css-loader": "^5.2.1",
         "eslint": "^7.24.0",
@@ -98,10 +98,10 @@
         "ts-node": "^9.1.1",
         "typedoc": "^0.20.35",
         "typescript": "^4.2.4",
-        "webpack": "^5.32.0",
+        "webpack": "^5.36.0",
         "webpack-bundle-analyzer": "^4.4.1",
         "webpack-cli": "^4.6.0",
-        "xmldom": "^0.5.0"
+        "xmldom": "^0.6.0"
     },
     "dependencies": {
         "js-cookie": "^2.2.1"
