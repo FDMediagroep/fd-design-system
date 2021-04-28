@@ -42,7 +42,7 @@
     "license": "ISC",
     "devDependencies": {
         "@fdmg/css-grid": "^2.0.7",
-        "@testing-library/jest-dom": "^5.11.10",
+        "@testing-library/jest-dom": "^5.12.0",
         "@testing-library/react": "^11.2.5",
         "@testing-library/user-event": "^13.1.2",
         "@types/fetch-jsonp": "^1.0.0",
@@ -71,7 +71,7 @@
         "jest-css-modules": "^2.1.0",
         "json-to-scss": "^1.6.2",
         "micro-cors": "^0.1.1",
-        "mini-css-extract-plugin": "^1.4.1",
+        "mini-css-extract-plugin": "^1.5.0",
         "next": "^10.1.3",
         "next-offline": "^5.0.5",
         "nookies": "^2.5.2",
@@ -93,7 +93,7 @@
         "style-loader": "^2.0.0",
         "svgo": "^1.3.2",
         "svgo-loader": "^2.2.2",
-        "ts-jest": "^26.5.4",
+        "ts-jest": "^26.5.5",
         "ts-loader": "^9.1.1",
         "ts-node": "^9.1.1",
         "typedoc": "^0.20.35",
@@ -101,7 +101,7 @@
         "webpack": "^5.36.0",
         "webpack-bundle-analyzer": "^4.4.1",
         "webpack-cli": "^4.6.0",
-        "xmldom": "^0.5.0"
+        "xmldom": "^0.6.0"
     },
     "dependencies": {
         "js-cookie": "^2.2.1"
