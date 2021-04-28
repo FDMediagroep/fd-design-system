@@ -12,7 +12,9 @@ import {
 } from '../components/cookieconsent/CookieConsent';
 import { FdmgIcon } from '../design-tokens/icons';
 import PageStore from '../stores/PageStore';
-import ReactMD from 'react-markdown/with-html';
+import ReactMD from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
 
 export const metaTitle = 'CookieConsent';
 export const metaDescription =
@@ -400,7 +402,9 @@ function Page() {
                         </p>
                         <ReactMD
                             className="markdown"
-                            source={`
+                            rehypePlugins={[rehypeRaw, rehypeSanitize]}
+                        >
+                            {`
 \`\`\`typescript
 import { 
     CookieConsentApi
@@ -439,8 +443,7 @@ async function checkCookieconsent() {
 }
 \`\`\`
 `}
-                            escapeHtml={false}
-                        />
+                        </ReactMD>
                     </>
                 }
             >

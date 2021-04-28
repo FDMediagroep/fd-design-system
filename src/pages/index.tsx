@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
-import ReactMD from 'react-markdown/with-html';
+import ReactMD from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
 import { useRouter } from 'next/router';
 // import CodeBlock from '../utils/CodeBlock';
 
@@ -66,10 +68,10 @@ function Page(props: Props) {
             </Head>
             <ReactMD
                 className="markdown"
-                // renderers={{ code: CodeBlock }} // IE11 doesn't work
-                source={props.readme}
-                escapeHtml={false}
-            />
+                rehypePlugins={[rehypeRaw, rehypeSanitize]}
+            >
+                {props.readme}
+            </ReactMD>
             <a
                 className="github"
                 href="https://github.com/FDMediagroep/fd-design-system"
