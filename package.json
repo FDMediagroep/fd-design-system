@@ -50,7 +50,7 @@
         "@types/js-cookie": "^2.2.6",
         "@types/micro-cors": "^0.1.1",
         "@types/node": "^15.0.2",
-        "@types/react": "^17.0.4",
+        "@types/react": "^17.0.5",
         "@types/react-dom": "^17.0.3",
         "@types/xmldom": "^0.1.30",
         "@typescript-eslint/eslint-plugin": "^4.22.1",
