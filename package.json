@@ -54,7 +54,7 @@
         "@types/react-dom": "^17.0.3",
         "@types/xmldom": "^0.1.30",
         "@typescript-eslint/eslint-plugin": "^4.22.0",
-        "@typescript-eslint/parser": "^4.22.0",
+        "@typescript-eslint/parser": "^4.22.1",
         "@typescript-eslint/typescript-estree": "^4.22.0",
         "autoprefixer": "^10.2.5",
         "copy-webpack-plugin": "^8.1.1",
