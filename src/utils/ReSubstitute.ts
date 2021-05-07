@@ -27,6 +27,7 @@ export class ReSubstitute {
     > = new Map();
     private throttleMs = 0;
     private bypassTriggerBlocks = false;
+    static Key_All = 'SUBSCRIBE_TO_ALL';
     private static triggerBlockCount = 0;
 
     constructor(throttleMs = 0, bypassTriggerBlocks = false) {
@@ -58,8 +59,8 @@ export class ReSubstitute {
      * @param callback
      * @param key limit only to events for this key
      */
-    subscribe(callback: Callback, key?: string): number {
-        const id = +new Date();
+    subscribe(callback: Callback, key: string = ReSubstitute.Key_All): number {
+        const id = +new Date() + Math.round(Math.random() * 1000);
         this.subscriptions.push({ id, callback, key });
         return id;
     }
@@ -93,13 +94,13 @@ export class ReSubstitute {
      * Trigger callbacks of subscriptions.
      * @param keyOrKeys trigger callback if subscription matches given key or keys.
      */
-    trigger(keyOrKeys?: KeyOrKeys) {
+    trigger(keyOrKeys: KeyOrKeys = ReSubstitute.Key_All) {
         if (typeof keyOrKeys === 'string') {
             this.subscriptions.forEach((subscription) => {
                 if (subscription.key === keyOrKeys) {
                     ReSubstitute.pendingCallbacks.set(subscription.callback, {
                         bypassBlock: this.bypassTriggerBlocks,
-                        keys: [keyOrKeys],
+                        keys: [ReSubstitute.Key_All, keyOrKeys],
                         throttledUntil: +new Date() + this.throttleMs,
                     });
                 }
@@ -109,7 +110,7 @@ export class ReSubstitute {
                 if (keyOrKeys.indexOf(subscription.key) !== -1) {
                     ReSubstitute.pendingCallbacks.set(subscription.callback, {
                         bypassBlock: this.bypassTriggerBlocks,
-                        keys: keyOrKeys,
+                        keys: [ReSubstitute.Key_All, ...keyOrKeys],
                         throttledUntil: +new Date() + this.throttleMs,
                     });
                 }
