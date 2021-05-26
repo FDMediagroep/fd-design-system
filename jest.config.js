@@ -17,6 +17,7 @@ module.exports = {
             '<rootDir>/node_modules/jest-css-modules',
     },
     setupFiles: ['<rootDir>/jest/setupTest.js'],
+    testEnvironment: 'jsdom',
     transform: {
         '\\.svg$': './jest/transformers/raw-loader.js',
     },
