@@ -10,8 +10,7 @@ import Image from 'next/image';
 const horizontalCards1: any = [
     {
         id: '1343811',
-        url:
-            'https://fd.nl/ondernemen/1343811/omzet-alfen-in-eerste-coronakwartaal-58',
+        url: 'https://fd.nl/ondernemen/1343811/omzet-alfen-in-eerste-coronakwartaal-58',
         imageUrl:
             'https://images.fd.nl/C_yJRp_QqzybEdlK4D6SibEUxiA.jpg?rect=.0,.0,.73375,.9999999999999999&fit=crop&crop=faces&auto=format&q=45&w=300',
         label: 'Energie',
@@ -21,38 +20,12 @@ const horizontalCards1: any = [
     },
     {
         id: '1343728',
-        url:
-            'https://fd.nl/ondernemen/1343728/staalfabrikant-aperam-verwacht-forse-daling-verkopen',
-        imageUrl:
-            'https://images.fd.nl/e1WriKURP_DsmApltLu08mPgcQ0.jpg?rect=.2175,.0,.665,.9999999999999999&fit=crop&crop=faces&auto=format&q=45&w=300',
-        label: 'Industrie',
-        time: '07:49',
-        title: 'Staalfabrikant Aperam verwacht forse daling verkopen',
-        updated: true,
-        readingTime: 5,
-    },
-    {
-        id: '1343728',
-        url:
-            'https://fd.nl/economie-politiek/1343620/leraren-hebben-straks-geen-klassen-van-32-leerlingen-meer',
+        url: 'https://fd.nl/economie-politiek/1343620/leraren-hebben-straks-geen-klassen-van-32-leerlingen-meer',
         imageUrl:
             'https://images.fd.nl/-wbqLswT8IrCcrXMrWXEnzrd3lg.jpg?fit=crop&crop=faces&auto=format&q=45&w=300',
         label: 'Coronakronieken',
         time: '07:18',
         title: "'Leraren hebben straks geen klassen van 32 leerlingen meer'",
-        isRead: true,
-        readingTime: 7,
-    },
-    {
-        id: '1343728',
-        url:
-            'https://fd.nl/economie-politiek/1343620/leraren-hebben-straks-geen-klassen-van-32-leerlingen-meer',
-        imageUrl:
-            'https://images.fd.nl/-wbqLswT8IrCcrXMrWXEnzrd3lg.jpg?fit=crop&crop=faces&auto=format&q=45&w=300',
-        label: 'Coronakronieken',
-        time: '07:18',
-        title: "'Leraren hebben straks geen klassen van 32 leerlingen meer'",
-        updated: true,
         isRead: true,
         readingTime: 7,
     },
@@ -68,16 +41,14 @@ const horizontalCards1: any = [
     },
     {
         id: '1353344',
-        url:
-            'https://fd.nl/economie-politiek/1353344/huiseigenaren-minder-bezorgd-over-kanteling-op-woningmarkt',
+        url: 'https://fd.nl/economie-politiek/1353344/huiseigenaren-minder-bezorgd-over-kanteling-op-woningmarkt',
         label: 'Woningmarkt',
         time: '6 aug',
         title: 'Huiseigenaren minder bezorgd over kanteling op woningmarkt',
     },
     {
         id: '1343811',
-        url:
-            'https://fd.nl/ondernemen/1343811/omzet-alfen-in-eerste-coronakwartaal-58',
+        url: 'https://fd.nl/ondernemen/1343811/omzet-alfen-in-eerste-coronakwartaal-58',
         imageUrl:
             'https://images.fd.nl/C_yJRp_QqzybEdlK4D6SibEUxiA.jpg?rect=.0,.0,.73375,.9999999999999999&fit=crop&crop=faces&auto=format&q=45&w=300',
         label: 'Energie',
@@ -117,9 +88,7 @@ function Page() {
                         <p>Used on category, dossier pages.</p>
                         <ul>
                             <li>default</li>
-                            <li>updated</li>
                             <li>visited</li>
-                            <li>updated visited</li>
                             <li>variant-1</li>
                             <li>no image</li>
                         </ul>
@@ -160,29 +129,7 @@ function Page() {
                             />
                         }
                     />
-                    <HorizontalCard1
-                        {...horizontalCards1[3]}
-                        imageComponent={
-                            <Image
-                                src={horizontalCards1[3].imageUrl}
-                                alt={horizontalCards1[3].title}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        }
-                    />
-                    <HorizontalCard1
-                        {...horizontalCards1[4]}
-                        imageComponent={
-                            <Image
-                                src={horizontalCards1[4].imageUrl}
-                                alt={horizontalCards1[4].title}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        }
-                    />
-                    <HorizontalCard1 {...horizontalCards1[5]} />
+                    <HorizontalCard1 {...horizontalCards1[3]} />
                 </>
             </Explain>
         </>

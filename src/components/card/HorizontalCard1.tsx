@@ -13,7 +13,6 @@ interface Props {
     time: string;
     title: string;
     isRead?: boolean;
-    updated?: boolean;
     variant?: 'variant-1';
     [x: string]: any;
 }
@@ -54,13 +53,7 @@ function HorizontalCard1(props: Props) {
 
                 <div className={styles.teaserText}>
                     <div className={styles.meta}>
-                        {props.updated && (
-                            <span className={styles.update}>Update</span>
-                        )}
-                        {!props.updated && (
-                            <span className={styles.prefix}>{props.label}</span>
-                        )}
-
+                        <span className={styles.prefix}>{props.label}</span>
                         <time>{props.time}</time>
                     </div>
 
