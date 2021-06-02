@@ -239,12 +239,6 @@
     --profile-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --profile-link: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --profile-link-hover: #{map-deep-get($colors, 'colors', 'primary', 25)};
-    --profile-extra-navigation-item: #{map-deep-get(
-            $colors,
-            'colors',
-            'primary',
-            50
-        )};
 
     /**
      * Beurs
