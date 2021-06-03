@@ -239,7 +239,6 @@
     /**
      * Profile
      */
-    --profile-background: #{map-deep-get($colors, 'colors', 'neutral', 80)};
     --profile-outline: #{map-deep-get($colors, 'colors', 'neutral', 40)};
     --profile-outline-active: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --profile-progress-block: #{map-deep-get($colors, 'colors', 'neutral', 50)};
