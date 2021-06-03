@@ -236,7 +236,8 @@
     /**
      * Profile
      */
-    --profile-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --profile-outline: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+    --profile-progress-block: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --profile-link: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --profile-link-hover: #{map-deep-get($colors, 'colors', 'primary', 25)};
 
