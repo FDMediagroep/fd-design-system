@@ -111,7 +111,7 @@ function ArticleTags(props: Props) {
                                         className={styles.defaultIcon}
                                         data-tag={tag.tag}
                                         dangerouslySetInnerHTML={{
-                                            __html: BellOIcon,
+                                            __html: BellOIcon as any,
                                         }}
                                         onClick={onEnableAlertClick}
                                     />
@@ -119,7 +119,7 @@ function ArticleTags(props: Props) {
                                         className={styles.activeIcon}
                                         data-tag={tag.tag}
                                         dangerouslySetInnerHTML={{
-                                            __html: BellIcon,
+                                            __html: BellIcon as any,
                                         }}
                                         onClick={onDisableAlertClick}
                                     />

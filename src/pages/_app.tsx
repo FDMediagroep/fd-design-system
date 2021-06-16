@@ -136,7 +136,7 @@ function App({ Component, pageProps }) {
                                     <span
                                         className={styles.logo}
                                         dangerouslySetInnerHTML={{
-                                            __html: FdIcon,
+                                            __html: FdIcon as any,
                                         }}
                                         aria-label="FD Design System"
                                     />
@@ -162,8 +162,7 @@ function App({ Component, pageProps }) {
                             },
                             {
                                 text: 'Colors 📤',
-                                href:
-                                    'https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/771162327/Colors',
+                                href: 'https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/771162327/Colors',
                                 target: '_blank',
                             },
                             {
@@ -175,8 +174,7 @@ function App({ Component, pageProps }) {
                             },
                             {
                                 text: 'Downloads 📤',
-                                href:
-                                    'https://fdmediagroep.atlassian.net/wiki/spaces/SHAR/pages/729186428/Bestandslijsten',
+                                href: 'https://fdmediagroep.atlassian.net/wiki/spaces/SHAR/pages/729186428/Bestandslijsten',
                                 target: '_blank',
                             },
                         ],
@@ -695,7 +693,7 @@ function App({ Component, pageProps }) {
                             >
                                 <span
                                     dangerouslySetInnerHTML={{
-                                        __html: ProfileIcon,
+                                        __html: ProfileIcon as any,
                                     }}
                                 />{' '}
                                 Inloggen
@@ -721,7 +719,7 @@ function App({ Component, pageProps }) {
                                 type="submit"
                                 name="search"
                                 dangerouslySetInnerHTML={{
-                                    __html: SpyglassIcon,
+                                    __html: SpyglassIcon as any,
                                 }}
                                 aria-label="Search submit"
                             />
@@ -741,7 +739,7 @@ function App({ Component, pageProps }) {
                     >
                         <span
                             dangerouslySetInnerHTML={{
-                                __html: ProfileIcon,
+                                __html: ProfileIcon as any,
                             }}
                         />{' '}
                         Inloggen
