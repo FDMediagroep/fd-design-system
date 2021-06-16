@@ -14,6 +14,7 @@
     --navigation-background: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     --sub-navigation-background: #{map-deep-get($colors, 'colors', 'neutral', 0)};
     --navigation-item: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+    --navigation-item-hover: #{map-deep-get($colors, 'colors', 'primary', 25)};
     --navigation-item-active: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     --opaque-label-background: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --opaque-label-longread-background: #{map-deep-get(

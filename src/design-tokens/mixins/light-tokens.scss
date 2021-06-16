@@ -17,6 +17,7 @@
             80
         )};
     --navigation-item: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --navigation-item-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --navigation-item-active: #{map-deep-get($colors, 'colors', 'neutral', 70)};
     --opaque-label-background: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --opaque-label-longread-background: #{map-deep-get(
@@ -240,7 +241,7 @@
      * Profile
      */
     --profile-outline: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-    --profile-outline-hover: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --profile-outline-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --profile-outline-active: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --profile-progress-block: #{map-deep-get($colors, 'colors', 'neutral', 50)};
 
