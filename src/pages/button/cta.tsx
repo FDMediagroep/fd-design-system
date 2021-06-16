@@ -71,13 +71,17 @@ function Page() {
                     </ButtonCta>
                     <ButtonCta id="demoButtonCtaSIcon">
                         <span
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span>Icon call-to-action (small)</span>
                     </ButtonCta>
                     <ButtonCta id="demoButtonCtaSDisabled" disabled="disabled">
                         <span
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span>Disabled call-to-action (small)</span>
                     </ButtonCta>
@@ -129,7 +133,9 @@ function Page() {
                     </ButtonCta>
                     <ButtonCta id="demoButtonCtaMIcon" size="m">
                         <span
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span>Icon call-to-action (medium)</span>
                     </ButtonCta>
@@ -139,7 +145,9 @@ function Page() {
                         size="m"
                     >
                         <span
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span>Disabled call-to-action (medium)</span>
                     </ButtonCta>

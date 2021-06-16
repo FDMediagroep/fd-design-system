@@ -106,7 +106,9 @@ function LockedContent(props: Props) {
                 <span className={styles.lockText}>
                     <span
                         className={styles.lock}
-                        dangerouslySetInnerHTML={{ __html: SpyglassIcon }}
+                        dangerouslySetInnerHTML={{
+                            __html: SpyglassIcon as any,
+                        }}
                     />{' '}
                     <span>{props.lockDescription}</span>
                 </span>

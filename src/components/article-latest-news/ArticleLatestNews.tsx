@@ -56,7 +56,9 @@ function ArticleLatestNews(props: Props) {
                 {props.linkText ?? 'Lees al het laatste nieuws'}
                 <span
                     className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: ChevronRightIcon }}
+                    dangerouslySetInnerHTML={{
+                        __html: ChevronRightIcon as any,
+                    }}
                 />
             </a>
         </div>

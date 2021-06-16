@@ -37,12 +37,14 @@ function Accordion(props: Props) {
                     <label
                         htmlFor={item.anchor ?? `q-${idx}`}
                         className={`${styles.icon} ${styles.minimise}`}
-                        dangerouslySetInnerHTML={{ __html: MinimiseIcon }}
+                        dangerouslySetInnerHTML={{
+                            __html: MinimiseIcon as any,
+                        }}
                     />
                     <label
                         htmlFor={item.anchor ?? `q-${idx}`}
                         className={`${styles.icon} ${styles.expand}`}
-                        dangerouslySetInnerHTML={{ __html: ExpandIcon }}
+                        dangerouslySetInnerHTML={{ __html: ExpandIcon as any }}
                     />
                     <div className={styles.textContent}>
                         <label htmlFor={item.anchor ?? `q-${idx}`}>

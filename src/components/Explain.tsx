@@ -198,7 +198,9 @@ function Explain(props: Props) {
                         onClick={copyAnchor.bind(null, props.anchor)}
                         title="Copy link"
                         aria-label={`Copy link to ${props.legend}`}
-                        dangerouslySetInnerHTML={{ __html: PaperclipIcon }}
+                        dangerouslySetInnerHTML={{
+                            __html: PaperclipIcon as any,
+                        }}
                     />
                 ) : null}
             </h2>

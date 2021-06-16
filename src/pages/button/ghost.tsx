@@ -66,7 +66,9 @@ function Page() {
                     </ButtonGhost>
                     <ButtonGhost id="demoGhostButtonSIcon">
                         <span
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span>Icon (small)</span>
                     </ButtonGhost>
@@ -76,7 +78,9 @@ function Page() {
                         disabled="disabled"
                     >
                         <span
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span>Disabled (small)</span>
                     </ButtonGhost>
@@ -120,7 +124,9 @@ function Page() {
                     </ButtonGhost>
                     <ButtonGhost id="demoGhostButtonMIcon" size="m">
                         <span
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span>Icon (medium)</span>
                     </ButtonGhost>
@@ -131,7 +137,9 @@ function Page() {
                         size="m"
                     >
                         <span
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span>Disabled (medium)</span>
                     </ButtonGhost>
