@@ -102,10 +102,8 @@ export function Experiment(props: ExperimentProps) {
         if (cookies) {
             newCookies = { ...cookies };
         }
-        const {
-            [encodeURIComponent(experimentName)]: _,
-            ...trimmedCookies
-        } = newCookies;
+        const { [encodeURIComponent(experimentName)]: _, ...trimmedCookies } =
+            newCookies;
         Cookies.remove(experimentName);
         setCookies(trimmedCookies);
     }

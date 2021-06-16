@@ -37,15 +37,8 @@ export interface Props {
 }
 
 function Radio(props: Props) {
-    const {
-        className,
-        defaultChecked,
-        id,
-        label,
-        name,
-        value,
-        ...rest
-    } = props;
+    const { className, defaultChecked, id, label, name, value, ...rest } =
+        props;
 
     return (
         <label

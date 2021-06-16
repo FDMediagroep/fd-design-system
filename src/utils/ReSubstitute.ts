@@ -21,10 +21,8 @@ interface SubscriptionOptions {
  */
 export class ReSubstitute {
     private subscriptions: Subscription[] = [];
-    private static pendingCallbacks: Map<
-        Callback,
-        SubscriptionOptions
-    > = new Map();
+    private static pendingCallbacks: Map<Callback, SubscriptionOptions> =
+        new Map();
     private throttleMs = 0;
     private bypassTriggerBlocks = false;
     static Key_All = 'SUBSCRIBE_TO_ALL';

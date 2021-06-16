@@ -5,8 +5,7 @@ import PageStore from '../stores/PageStore';
 import Head from 'next/head';
 
 const initialProps = {
-    title:
-        'Integer posuere erat a ante venenatis dapibus posuere velit aliquet',
+    title: 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet',
     descriptions: [
         `Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sed diam eget risus varius blandit sit amet non magna.`,
     ],

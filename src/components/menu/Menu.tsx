@@ -161,9 +161,8 @@ function Menu(props: Props) {
     const [menuItems, setMenuItems] = useState<MenuItem[]>(
         generateIds(props.menuItems)
     );
-    const [sortedMenuItems, setSortedMenuItems] = useState<MenuItem[]>(
-        menuItems
-    );
+    const [sortedMenuItems, setSortedMenuItems] =
+        useState<MenuItem[]>(menuItems);
 
     /**
      * Touch detection.
