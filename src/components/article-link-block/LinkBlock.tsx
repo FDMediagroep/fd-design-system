@@ -28,7 +28,7 @@ function LinkBlock(props: Props) {
             <h2>{props.description}</h2>
             <span
                 className={styles.icon}
-                dangerouslySetInnerHTML={{ __html: ChevronRightIcon }}
+                dangerouslySetInnerHTML={{ __html: ChevronRightIcon as any }}
             />
         </a>
     );

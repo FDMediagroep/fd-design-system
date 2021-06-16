@@ -104,7 +104,9 @@ export default function Modal(props: Props) {
                     {!props.hideCloseIcon && (
                         <span
                             className={styles.closeIcon}
-                            dangerouslySetInnerHTML={{ __html: CloseIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: CloseIcon as any,
+                            }}
                             onClick={handleModalClose}
                         />
                     )}

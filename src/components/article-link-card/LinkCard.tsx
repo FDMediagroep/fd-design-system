@@ -24,7 +24,9 @@ export default function LinkCard(props: Props) {
                         : 'Beheer uw nieuwsbriefinstellingen'}{' '}
                     <span
                         className={styles.icon}
-                        dangerouslySetInnerHTML={{ __html: ChevronRightIcon }}
+                        dangerouslySetInnerHTML={{
+                            __html: ChevronRightIcon as any,
+                        }}
                     />
                 </a>
             </div>

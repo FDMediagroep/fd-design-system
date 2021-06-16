@@ -41,9 +41,9 @@ function Page(props: Props) {
             .forEach((link: HTMLAnchorElement) => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const url = (e.currentTarget as HTMLAnchorElement).getAttribute(
-                        'href'
-                    );
+                    const url = (
+                        e.currentTarget as HTMLAnchorElement
+                    ).getAttribute('href');
                     const route = url.replace(baseUrl, '');
                     route &&
                         router.push(route).then(() => window.scrollTo(0, 0));

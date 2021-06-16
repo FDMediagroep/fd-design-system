@@ -10,9 +10,9 @@ if (process.env.SERVERLESS) {
 
 module.exports = withOffline({
     ...serverless,
-    future: { webpack5: true },
     images: {
         domains: ['images.fd.nl', 'fd-external-development.imgix.net'],
+        disableStaticImages: true,
     },
     generateInDevMode: false,
     workboxOpts: {
@@ -36,10 +36,6 @@ module.exports = withOffline({
             // },
         ],
         importScripts: [],
-    },
-    experimental: {
-        // modern: true,
-        // polyfillsOptimization: true,
     },
     async rewrites() {
         return [

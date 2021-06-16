@@ -26,8 +26,7 @@ const data = {
                             fullName: 'Tom van Zummeren',
                         },
                     ],
-                    intro:
-                        'Dit artikel is bedoeld om in één oogopslag te zien of alle ondersteunde artikel-elementen goed werken naar behoren. Zo kan eenvoudig de nieuwe dark mode getest worden voor iOS (en later ook Android) maar ook alle toekomstige design changes aan deze elementen. Dit stuk tekst is overigens het artikel-intro element.',
+                    intro: 'Dit artikel is bedoeld om in één oogopslag te zien of alle ondersteunde artikel-elementen goed werken naar behoren. Zo kan eenvoudig de nieuwe dark mode getest worden voor iOS (en later ook Android) maar ook alle toekomstige design changes aan deze elementen. Dit stuk tekst is overigens het artikel-intro element.',
                     teasers: {
                         FDMG_WEB_PAGES: {
                             content:
@@ -125,8 +124,7 @@ const data = {
         shareTwitterImageUrl:
             'https://fd-external-development.imgix.net/-KquD1lyzmOxcdHfMDc6ckwuB-k.jpg?fit=crop&crop=faces&auto=format&q=45&w=640&h=640&fm=jpg&cs=tinysrgb',
         category: 'Tech en media',
-        intro:
-            'Dit artikel is bedoeld om in één oogopslag te zien of alle ondersteunde artikel-elementen goed werken naar behoren. Zo kan eenvoudig de nieuwe dark mode getest worden voor iOS (en later ook Android) maar ook alle toekomstige design changes aan deze elementen. Dit stuk tekst is overigens het artikel-intro element.',
+        intro: 'Dit artikel is bedoeld om in één oogopslag te zien of alle ondersteunde artikel-elementen goed werken naar behoren. Zo kan eenvoudig de nieuwe dark mode getest worden voor iOS (en later ook Android) maar ook alle toekomstige design changes aan deze elementen. Dit stuk tekst is overigens het artikel-intro element.',
         absolutePublicationUrl:
             'https://dev.fd.nl/achtergrond/1324449/alle-verrijking-op-een-rijtje',
         publicationUrl: '/achtergrond/1324449/alle-verrijking-op-een-rijtje',

@@ -26,8 +26,7 @@ export const data = {
             },
             {
                 id: 1329296,
-                title:
-                    'Moederbedrijf Zara boekt eerste kwartaalverlies in twee decennia',
+                title: 'Moederbedrijf Zara boekt eerste kwartaalverlies in twee decennia',
                 publicationTime: '10 juni',
                 publicationUrl:
                     '/ondernemen/1329296/moederbedrijf-zara-boekt-eerste-kwartaalverlies-in-twee-decennia',
@@ -92,8 +91,7 @@ export const data = {
                         {
                             id: 1341180,
                             title: 'Corona-app zaterdag landelijk ingevoerd',
-                            intro:
-                                'De app kan een belangrijk hulpmiddel zijn bij het opsporen van mensen die mogelijk besmet zijn met het virus.',
+                            intro: 'De app kan een belangrijk hulpmiddel zijn bij het opsporen van mensen die mogelijk besmet zijn met het virus.',
                             topicPrefixOrCategory: 'Coronavirus',
                             publicationUrl:
                                 '/economie-politiek/1341180/corona-app-zaterdag-landelijk-ingevoerd',
@@ -116,10 +114,8 @@ export const data = {
                         },
                         {
                             id: 1341168,
-                            title:
-                                'Mondkapjesbeleid verpleeghuizen was vooral ingegeven door schaarste ',
-                            intro:
-                                'Al in januari was het voor ambtelijke top duidelijk dat schaarste aan beschermingsmiddelen een probleem zou worden, blijkt uit vrijgegeven stukken. ',
+                            title: 'Mondkapjesbeleid verpleeghuizen was vooral ingegeven door schaarste ',
+                            intro: 'Al in januari was het voor ambtelijke top duidelijk dat schaarste aan beschermingsmiddelen een probleem zou worden, blijkt uit vrijgegeven stukken. ',
                             topicPrefixOrCategory: 'Coronavirus',
                             publicationUrl:
                                 '/economie-politiek/1341168/mondkapjesbeleid-verpleeghuizen-was-vooral-ingegeven-door-schaarste',
@@ -142,10 +138,8 @@ export const data = {
                         },
                         {
                             id: 1341177,
-                            title:
-                                'Vraag naar luxevoedsel maakt visboer coronaproof',
-                            intro:
-                                'De economische crisis gaat aan de meeste visverkopers voorbij. Zij spelen in op de behoefte aan luxe kook-ingrediënten nu consumenten minder vaak buiten de deur eten.',
+                            title: 'Vraag naar luxevoedsel maakt visboer coronaproof',
+                            intro: 'De economische crisis gaat aan de meeste visverkopers voorbij. Zij spelen in op de behoefte aan luxe kook-ingrediënten nu consumenten minder vaak buiten de deur eten.',
                             topicPrefixOrCategory: 'Detailhandel',
                             publicationUrl:
                                 '/ondernemen/1341177/vraag-naar-luxevoedsel-maakt-visboer-coronaproof',
@@ -168,10 +162,8 @@ export const data = {
                         },
                         {
                             id: 1341062,
-                            title:
-                                'Coronawet maakt geen einde aan verwarring over coronaregels ',
-                            intro:
-                                'De vele (regionale) uitzonderingsbepalingen in de wet ondergraven een eenduidige crisisaanpak door het kabinet. Kijk naar Staphorst, waar dit weekend grote maatschappelijke ophef ontstond over drie druk bezochte kerkdiensten.',
+                            title: 'Coronawet maakt geen einde aan verwarring over coronaregels ',
+                            intro: 'De vele (regionale) uitzonderingsbepalingen in de wet ondergraven een eenduidige crisisaanpak door het kabinet. Kijk naar Staphorst, waar dit weekend grote maatschappelijke ophef ontstond over drie druk bezochte kerkdiensten.',
                             topicPrefixOrCategory: 'Den Haag deze week',
                             publicationUrl:
                                 '/economie-politiek/1341062/coronawet-maakt-geen-einde-aan-verwarring-over-coronaregels',
@@ -219,10 +211,8 @@ export const data = {
                     cards: [
                         {
                             id: 1341444,
-                            title:
-                                'Oud-ceo zuivelexporteur Fonterra gaat bedrijven adviseren bij verduurzaming',
-                            intro:
-                                'The Purpose Factory richt zich in eerste instantie op familiebedrijven in voedingsmiddelen, maar ook op fabrikanten van veel verkochte consumentenartikelen of modebedrijven.',
+                            title: 'Oud-ceo zuivelexporteur Fonterra gaat bedrijven adviseren bij verduurzaming',
+                            intro: 'The Purpose Factory richt zich in eerste instantie op familiebedrijven in voedingsmiddelen, maar ook op fabrikanten van veel verkochte consumentenartikelen of modebedrijven.',
                             topicPrefixOrCategory: 'Diensten',
                             publicationUrl:
                                 '/ondernemen/1341444/oud-ceo-zuivelexporteur-fonterra-gaat-bedrijven-adviseren-bij-verduurzaming',
@@ -235,10 +225,8 @@ export const data = {
                         },
                         {
                             id: 1341446,
-                            title:
-                                'Eén muisklik en alle cookies staan voor altijd uit ',
-                            intro:
-                                'Amerikaans collectief lanceert software die het weigeren van allerlei soorten cookies automatiseert',
+                            title: 'Eén muisklik en alle cookies staan voor altijd uit ',
+                            intro: 'Amerikaans collectief lanceert software die het weigeren van allerlei soorten cookies automatiseert',
                             topicPrefixOrCategory: 'Tech en media',
                             publicationUrl:
                                 '/ondernemen/1341446/een-muisklik-en-alle-cookies-staan-voor-altijd-uit',
@@ -251,10 +239,8 @@ export const data = {
                         },
                         {
                             id: 1341447,
-                            title:
-                                'Prijzen nieuwbouw blijven stijgen, maar iets minder hard',
-                            intro:
-                                "In het tweede kwartaal was de gemiddelde nieuwbouwwoning met €410.000 zo'n 4% duurder dan een jaar eerder. Dat is de kleinste prijsstijging in bijna vier jaar, meldt het CBS.",
+                            title: 'Prijzen nieuwbouw blijven stijgen, maar iets minder hard',
+                            intro: "In het tweede kwartaal was de gemiddelde nieuwbouwwoning met €410.000 zo'n 4% duurder dan een jaar eerder. Dat is de kleinste prijsstijging in bijna vier jaar, meldt het CBS.",
                             topicPrefixOrCategory: 'Woningmarkt',
                             publicationUrl:
                                 '/economie-politiek/1341447/prijzen-nieuwbouw-blijven-stijgen-maar-iets-minder-hard',
@@ -267,10 +253,8 @@ export const data = {
                         },
                         {
                             id: 1341448,
-                            title:
-                                'Maxime Verhagen twee jaar langer voorzitter Bouwend Nederland',
-                            intro:
-                                "'De uitdagingen die de sector heeft als gevolg van onder meer corona en de nog steeds niet opgeloste stikstofproblematiek waren voor het Dagelijks Bestuur reden Verhagen voor een extra twee jaar voor te dragen als voorzitter.'",
+                            title: 'Maxime Verhagen twee jaar langer voorzitter Bouwend Nederland',
+                            intro: "'De uitdagingen die de sector heeft als gevolg van onder meer corona en de nog steeds niet opgeloste stikstofproblematiek waren voor het Dagelijks Bestuur reden Verhagen voor een extra twee jaar voor te dragen als voorzitter.'",
                             topicPrefixOrCategory: 'Bouw',
                             publicationUrl:
                                 '/economie-politiek/1341448/maxime-verhagen-twee-jaar-langer-voorzitter-bouwend-nederland',
@@ -283,10 +267,8 @@ export const data = {
                         },
                         {
                             id: 1341449,
-                            title:
-                                'IMF: rondwarend virus bedreigt herstel van de economie',
-                            intro:
-                                'Regeringen moeten alles op alles zetten om het coronavirus echt onder controle krijgen. Doen ze dat niet, dan zullen economieën niet goed herstellen, waarschuwt het Internationaal Monetair Fonds.',
+                            title: 'IMF: rondwarend virus bedreigt herstel van de economie',
+                            intro: 'Regeringen moeten alles op alles zetten om het coronavirus echt onder controle krijgen. Doen ze dat niet, dan zullen economieën niet goed herstellen, waarschuwt het Internationaal Monetair Fonds.',
                             topicPrefixOrCategory: 'Macro-economie',
                             publicationUrl:
                                 '/economie-politiek/1341449/imf-rondwarend-virus-bedreigt-herstel-van-de-economie',
@@ -299,10 +281,8 @@ export const data = {
                         },
                         {
                             id: 1341451,
-                            title:
-                                'Recordaantal besmettingen, De Jonge sluit nieuwe maatregelen niet uit ',
-                            intro:
-                                'Kabinet praat vrijdag over nieuwe maatregelen die kunnen ingaan als de cijfers komend weekend blijven stijgen. Mogelijk moet de horeca nog eerder dicht.',
+                            title: 'Recordaantal besmettingen, De Jonge sluit nieuwe maatregelen niet uit ',
+                            intro: 'Kabinet praat vrijdag over nieuwe maatregelen die kunnen ingaan als de cijfers komend weekend blijven stijgen. Mogelijk moet de horeca nog eerder dicht.',
                             topicPrefixOrCategory: 'Coronavirus',
                             publicationUrl:
                                 '/economie-politiek/1341451/recordaantal-besmettingen-de-jonge-sluit-nieuwe-maatregelen-niet-uit',
@@ -315,10 +295,8 @@ export const data = {
                         },
                         {
                             id: 1341452,
-                            title:
-                                'Naming and shaming: minister noemt namen van webhosters die kinderporno niet verwijderen ',
-                            intro:
-                                'Minister Grapperhaus (Justitie en Veiligheid) heeft besloten de slechtst presterende bedrijven met naam en toenaam te noemen.',
+                            title: 'Naming and shaming: minister noemt namen van webhosters die kinderporno niet verwijderen ',
+                            intro: 'Minister Grapperhaus (Justitie en Veiligheid) heeft besloten de slechtst presterende bedrijven met naam en toenaam te noemen.',
                             topicPrefixOrCategory: 'ICT-diensten',
                             publicationUrl:
                                 '/economie-politiek/1341452/naming-and-shaming-minister-noemt-namen-van-webhosters-die-kinderporno-niet-verwijderen',
@@ -331,10 +309,8 @@ export const data = {
                         },
                         {
                             id: 1341456,
-                            title:
-                                'Betaalbedrijf Square koopt voor $50 mln aan bitcoins',
-                            intro:
-                                'De investering vertegenwoordigt ongeveer 1% van de totale activa van Square aan het einde van het tweede kwartaal van 2020.',
+                            title: 'Betaalbedrijf Square koopt voor $50 mln aan bitcoins',
+                            intro: 'De investering vertegenwoordigt ongeveer 1% van de totale activa van Square aan het einde van het tweede kwartaal van 2020.',
                             topicPrefixOrCategory: 'Banken',
                             publicationUrl:
                                 '/ondernemen/1341456/betaalbedrijf-square-koopt-voor-50-mln-aan-bitcoins',
@@ -349,10 +325,8 @@ export const data = {
                     secondRowCards: [
                         {
                             id: 1341449,
-                            title:
-                                'IMF: rondwarend virus bedreigt herstel van de economie',
-                            intro:
-                                'Regeringen moeten alles op alles zetten om het coronavirus echt onder controle krijgen. Doen ze dat niet, dan zullen economieën niet goed herstellen, waarschuwt het Internationaal Monetair Fonds.',
+                            title: 'IMF: rondwarend virus bedreigt herstel van de economie',
+                            intro: 'Regeringen moeten alles op alles zetten om het coronavirus echt onder controle krijgen. Doen ze dat niet, dan zullen economieën niet goed herstellen, waarschuwt het Internationaal Monetair Fonds.',
                             topicPrefixOrCategory: 'Macro-economie',
                             publicationUrl:
                                 '/economie-politiek/1341449/imf-rondwarend-virus-bedreigt-herstel-van-de-economie',
@@ -365,10 +339,8 @@ export const data = {
                         },
                         {
                             id: 1341451,
-                            title:
-                                'Recordaantal besmettingen, De Jonge sluit nieuwe maatregelen niet uit ',
-                            intro:
-                                'Kabinet praat vrijdag over nieuwe maatregelen die kunnen ingaan als de cijfers komend weekend blijven stijgen. Mogelijk moet de horeca nog eerder dicht.',
+                            title: 'Recordaantal besmettingen, De Jonge sluit nieuwe maatregelen niet uit ',
+                            intro: 'Kabinet praat vrijdag over nieuwe maatregelen die kunnen ingaan als de cijfers komend weekend blijven stijgen. Mogelijk moet de horeca nog eerder dicht.',
                             topicPrefixOrCategory: 'Coronavirus',
                             publicationUrl:
                                 '/economie-politiek/1341451/recordaantal-besmettingen-de-jonge-sluit-nieuwe-maatregelen-niet-uit',
@@ -381,10 +353,8 @@ export const data = {
                         },
                         {
                             id: 1341452,
-                            title:
-                                'Naming and shaming: minister noemt namen van webhosters die kinderporno niet verwijderen ',
-                            intro:
-                                'Minister Grapperhaus (Justitie en Veiligheid) heeft besloten de slechtst presterende bedrijven met naam en toenaam te noemen.',
+                            title: 'Naming and shaming: minister noemt namen van webhosters die kinderporno niet verwijderen ',
+                            intro: 'Minister Grapperhaus (Justitie en Veiligheid) heeft besloten de slechtst presterende bedrijven met naam en toenaam te noemen.',
                             topicPrefixOrCategory: 'ICT-diensten',
                             publicationUrl:
                                 '/economie-politiek/1341452/naming-and-shaming-minister-noemt-namen-van-webhosters-die-kinderporno-niet-verwijderen',
@@ -397,10 +367,8 @@ export const data = {
                         },
                         {
                             id: 1341456,
-                            title:
-                                'Betaalbedrijf Square koopt voor $50 mln aan bitcoins',
-                            intro:
-                                'De investering vertegenwoordigt ongeveer 1% van de totale activa van Square aan het einde van het tweede kwartaal van 2020.',
+                            title: 'Betaalbedrijf Square koopt voor $50 mln aan bitcoins',
+                            intro: 'De investering vertegenwoordigt ongeveer 1% van de totale activa van Square aan het einde van het tweede kwartaal van 2020.',
                             topicPrefixOrCategory: 'Banken',
                             publicationUrl:
                                 '/ondernemen/1341456/betaalbedrijf-square-koopt-voor-50-mln-aan-bitcoins',
@@ -416,10 +384,8 @@ export const data = {
                     firstRowCards: [
                         {
                             id: 1341444,
-                            title:
-                                'Oud-ceo zuivelexporteur Fonterra gaat bedrijven adviseren bij verduurzaming',
-                            intro:
-                                'The Purpose Factory richt zich in eerste instantie op familiebedrijven in voedingsmiddelen, maar ook op fabrikanten van veel verkochte consumentenartikelen of modebedrijven.',
+                            title: 'Oud-ceo zuivelexporteur Fonterra gaat bedrijven adviseren bij verduurzaming',
+                            intro: 'The Purpose Factory richt zich in eerste instantie op familiebedrijven in voedingsmiddelen, maar ook op fabrikanten van veel verkochte consumentenartikelen of modebedrijven.',
                             topicPrefixOrCategory: 'Diensten',
                             publicationUrl:
                                 '/ondernemen/1341444/oud-ceo-zuivelexporteur-fonterra-gaat-bedrijven-adviseren-bij-verduurzaming',
@@ -432,10 +398,8 @@ export const data = {
                         },
                         {
                             id: 1341446,
-                            title:
-                                'Eén muisklik en alle cookies staan voor altijd uit ',
-                            intro:
-                                'Amerikaans collectief lanceert software die het weigeren van allerlei soorten cookies automatiseert',
+                            title: 'Eén muisklik en alle cookies staan voor altijd uit ',
+                            intro: 'Amerikaans collectief lanceert software die het weigeren van allerlei soorten cookies automatiseert',
                             topicPrefixOrCategory: 'Tech en media',
                             publicationUrl:
                                 '/ondernemen/1341446/een-muisklik-en-alle-cookies-staan-voor-altijd-uit',
@@ -448,10 +412,8 @@ export const data = {
                         },
                         {
                             id: 1341447,
-                            title:
-                                'Prijzen nieuwbouw blijven stijgen, maar iets minder hard',
-                            intro:
-                                "In het tweede kwartaal was de gemiddelde nieuwbouwwoning met €410.000 zo'n 4% duurder dan een jaar eerder. Dat is de kleinste prijsstijging in bijna vier jaar, meldt het CBS.",
+                            title: 'Prijzen nieuwbouw blijven stijgen, maar iets minder hard',
+                            intro: "In het tweede kwartaal was de gemiddelde nieuwbouwwoning met €410.000 zo'n 4% duurder dan een jaar eerder. Dat is de kleinste prijsstijging in bijna vier jaar, meldt het CBS.",
                             topicPrefixOrCategory: 'Woningmarkt',
                             publicationUrl:
                                 '/economie-politiek/1341447/prijzen-nieuwbouw-blijven-stijgen-maar-iets-minder-hard',
@@ -464,10 +426,8 @@ export const data = {
                         },
                         {
                             id: 1341448,
-                            title:
-                                'Maxime Verhagen twee jaar langer voorzitter Bouwend Nederland',
-                            intro:
-                                "'De uitdagingen die de sector heeft als gevolg van onder meer corona en de nog steeds niet opgeloste stikstofproblematiek waren voor het Dagelijks Bestuur reden Verhagen voor een extra twee jaar voor te dragen als voorzitter.'",
+                            title: 'Maxime Verhagen twee jaar langer voorzitter Bouwend Nederland',
+                            intro: "'De uitdagingen die de sector heeft als gevolg van onder meer corona en de nog steeds niet opgeloste stikstofproblematiek waren voor het Dagelijks Bestuur reden Verhagen voor een extra twee jaar voor te dragen als voorzitter.'",
                             topicPrefixOrCategory: 'Bouw',
                             publicationUrl:
                                 '/economie-politiek/1341448/maxime-verhagen-twee-jaar-langer-voorzitter-bouwend-nederland',
@@ -502,10 +462,8 @@ export const data = {
                     cards: [
                         {
                             id: 1341169,
-                            title:
-                                'In South Carolina wordt de toekomst van het Trumpisme bepaald',
-                            intro:
-                                'Dankzij de Democraat Jaime Harrison, jong en Afro-Amerikaan, is de staat in het zuiden ineens model komen te staan voor de vraag: zijn de dagen van Trump geteld of zit er nog vier jaar in het vat?',
+                            title: 'In South Carolina wordt de toekomst van het Trumpisme bepaald',
+                            intro: 'Dankzij de Democraat Jaime Harrison, jong en Afro-Amerikaan, is de staat in het zuiden ineens model komen te staan voor de vraag: zijn de dagen van Trump geteld of zit er nog vier jaar in het vat?',
                             topicPrefixOrCategory: 'Buitenland',
                             publicationUrl:
                                 '/achtergrond/1341169/in-south-carolina-wordt-de-toekomst-van-het-trumpisme-bepaald',
@@ -566,8 +524,7 @@ export const data = {
                         {
                             id: 1340168,
                             title: 'Wat levert een WeTransfer-linkje op?',
-                            intro:
-                                'WeTransfer is een groot Nederlands techsucces. Maar wat verdient het bedrijf eigenlijk per downloadlink?',
+                            intro: 'WeTransfer is een groot Nederlands techsucces. Maar wat verdient het bedrijf eigenlijk per downloadlink?',
                             topicPrefixOrCategory: 'Bartjens',
                             publicationUrl:
                                 '/beurs/1340168/wat-levert-een-wetransfer-linkje-op',
@@ -590,10 +547,8 @@ export const data = {
                         },
                         {
                             id: 1340077,
-                            title:
-                                'Trumps streng katholieke rechter verdeelt de geesten',
-                            intro:
-                                'Democraten vrezen conservatief Hooggerechtshof na voordracht Amy Coney Barrett',
+                            title: 'Trumps streng katholieke rechter verdeelt de geesten',
+                            intro: 'Democraten vrezen conservatief Hooggerechtshof na voordracht Amy Coney Barrett',
                             topicPrefixOrCategory: 'Buitenland',
                             publicationUrl:
                                 '/economie-politiek/1340077/trumps-streng-katholieke-rechter-verdeelt-de-geesten',
@@ -616,10 +571,8 @@ export const data = {
                         },
                         {
                             id: 1339953,
-                            title:
-                                'Strijd Amazon, Google en Microsoft om onlinegaming brandt los',
-                            intro:
-                                'Amazon lanceerde donderdag een online platform voor games, genaamd Luna. Met deze - al langer verwachte stap- gaat het bedrijf de strijd aan met rivalen Google en Microsoft.',
+                            title: 'Strijd Amazon, Google en Microsoft om onlinegaming brandt los',
+                            intro: 'Amazon lanceerde donderdag een online platform voor games, genaamd Luna. Met deze - al langer verwachte stap- gaat het bedrijf de strijd aan met rivalen Google en Microsoft.',
                             topicPrefixOrCategory: 'Tech en media',
                             publicationUrl:
                                 '/ondernemen/1339953/strijd-amazon-google-en-microsoft-om-onlinegaming-brandt-los',
@@ -642,10 +595,8 @@ export const data = {
                         },
                         {
                             id: 1339867,
-                            title:
-                                'Eindhovens hightechbedrijf profiteert van wegvallen Turkse onderdelenproductie voor JSF',
-                            intro:
-                                'KMWE hoopt dat eenmalige proefopdracht van Pratt &amp; Whitney leidt tot langetermijncontract.',
+                            title: 'Eindhovens hightechbedrijf profiteert van wegvallen Turkse onderdelenproductie voor JSF',
+                            intro: 'KMWE hoopt dat eenmalige proefopdracht van Pratt &amp; Whitney leidt tot langetermijncontract.',
                             topicPrefixOrCategory: 'Industrie',
                             publicationUrl:
                                 '/ondernemen/1339867/eindhovens-hightechbedrijf-profiteert-van-wegvallen-turkse-onderdelenproductie-voor-jsf',
@@ -708,8 +659,7 @@ export const data = {
                         {
                             id: 1341484,
                             title: "Tweedehandsauto's als indicator",
-                            intro:
-                                "De prijzen van tweedehandsauto's stijgen sterk in zowel de VS als Turkije. Wat zegt dit over de inflatie in die landen?",
+                            intro: "De prijzen van tweedehandsauto's stijgen sterk in zowel de VS als Turkije. Wat zegt dit over de inflatie in die landen?",
                             topicPrefixOrCategory: 'Column',
                             publicationUrl:
                                 '/beurs/1341484/tweedehandsauto-s-als-indicator',
@@ -757,8 +707,7 @@ export const data = {
                         {
                             id: 1341443,
                             title: 'Hup Wiebes ',
-                            intro:
-                                'Als we dan toch windmolens willen, bouw die dan in de Randstad! Brede lanen zoals de Apollolaan in Amsterdam zijn uitstekend geschikt.',
+                            intro: 'Als we dan toch windmolens willen, bouw die dan in de Randstad! Brede lanen zoals de Apollolaan in Amsterdam zijn uitstekend geschikt.',
                             topicPrefixOrCategory: 'Kleintje Groot',
                             publicationUrl: '/opinie/1341443/hup-wiebes',
                             image: {
@@ -781,8 +730,7 @@ export const data = {
                         {
                             id: 1341453,
                             title: 'Pas op voor wensdenken bij waterstof',
-                            intro:
-                                'Als argument voor een financieel zetje in de rug voor waterstof, trekken bedrijven een parallel met wind op zee. Maar die vergelijking gaat mank. ',
+                            intro: 'Als argument voor een financieel zetje in de rug voor waterstof, trekken bedrijven een parallel met wind op zee. Maar die vergelijking gaat mank. ',
                             topicPrefixOrCategory: 'Commentaar',
                             publicationUrl:
                                 '/opinie/1341453/pas-op-voor-wensdenken-bij-waterstof',
@@ -806,8 +754,7 @@ export const data = {
                         {
                             id: 1341488,
                             title: 'Wie stopt purpose?',
-                            intro:
-                                'Je komt ze steeds meer tegen: vage, zweverige Engelse termen. Maar wat er dan precies met het woord bedoeld wordt, is onduidelijk.',
+                            intro: 'Je komt ze steeds meer tegen: vage, zweverige Engelse termen. Maar wat er dan precies met het woord bedoeld wordt, is onduidelijk.',
                             topicPrefixOrCategory: 'Column',
                             publicationUrl: '/opinie/1341488/wie-stopt-purpose',
                             image: null,
@@ -821,8 +768,7 @@ export const data = {
                         {
                             id: 1341344,
                             title: 'Investeringskorting',
-                            intro:
-                                'Wie wil weten welke lobby’s in ons land het meest invloedrijk zijn, kijkt naar de fiscale aftrekposten. ',
+                            intro: 'Wie wil weten welke lobby’s in ons land het meest invloedrijk zijn, kijkt naar de fiscale aftrekposten. ',
                             topicPrefixOrCategory: 'Kleintje Groot',
                             publicationUrl:
                                 '/opinie/1341344/investeringskorting',
@@ -861,10 +807,8 @@ export const data = {
                     cards: [
                         {
                             id: 1341387,
-                            title:
-                                'Hoe jouw kleine bijdrage kan leiden tot een grote sprong voorwaarts',
-                            intro:
-                                'Vele kleine stapjes kunnen leiden tot klimaatverandering, of een nieuwe corona-uitbraak. Maar net zo goed tot een positieve uitkomst. Waarom horen we daar dan zo weinig over, vraagt Roland van der Vorst zich af.',
+                            title: 'Hoe jouw kleine bijdrage kan leiden tot een grote sprong voorwaarts',
+                            intro: 'Vele kleine stapjes kunnen leiden tot klimaatverandering, of een nieuwe corona-uitbraak. Maar net zo goed tot een positieve uitkomst. Waarom horen we daar dan zo weinig over, vraagt Roland van der Vorst zich af.',
                             topicPrefixOrCategory: 'Column',
                             publicationUrl:
                                 '/futures/1341387/hoe-jouw-kleine-bijdrage-kan-leiden-tot-een-grote-sprong-voorwaarts',
@@ -887,10 +831,8 @@ export const data = {
                         },
                         {
                             id: 1341172,
-                            title:
-                                'Apple verkoopt alleen nog eigen luidsprekers',
-                            intro:
-                                'De Amerikaanse hardwaregigant Apple biedt niet langer luidsprekers of koptelefoons van andere merken te koop aan in zijn onlinewinkel. ',
+                            title: 'Apple verkoopt alleen nog eigen luidsprekers',
+                            intro: 'De Amerikaanse hardwaregigant Apple biedt niet langer luidsprekers of koptelefoons van andere merken te koop aan in zijn onlinewinkel. ',
                             topicPrefixOrCategory: 'Tech en media',
                             publicationUrl:
                                 '/futures/1341172/apple-verkoopt-alleen-nog-eigen-luidsprekers',
@@ -913,10 +855,8 @@ export const data = {
                         },
                         {
                             id: 1341070,
-                            title:
-                                'Tweede Kamer twijfelt of politie ongehinderd beveiligingslekken moet kunnen kopen ',
-                            intro:
-                                "Dankzij 'onbekende beveiligingslekken' kunnen opsporingsdiensten binnendringen op de computer van criminelen. Maar diezelfde lekken kunnen zelf ook voor grote schade zorgen. De Tweede Kamer stemt dinsdag over de vraag of extra regels nodig zijn. ",
+                            title: 'Tweede Kamer twijfelt of politie ongehinderd beveiligingslekken moet kunnen kopen ',
+                            intro: "Dankzij 'onbekende beveiligingslekken' kunnen opsporingsdiensten binnendringen op de computer van criminelen. Maar diezelfde lekken kunnen zelf ook voor grote schade zorgen. De Tweede Kamer stemt dinsdag over de vraag of extra regels nodig zijn. ",
                             topicPrefixOrCategory: 'ICT-diensten',
                             publicationUrl:
                                 '/futures/1341070/tweede-kamer-twijfelt-of-politie-ongehinderd-beveiligingslekken-moet-kunnen-kopen',
@@ -956,8 +896,7 @@ export const data = {
                         {
                             id: 1341474,
                             title: 'In het revalidatiecentrum',
-                            intro:
-                                'FD-Persoonlijk columnist Brenda van Osch raakt ontroerd door een documentaire over revalidatie.',
+                            intro: 'FD-Persoonlijk columnist Brenda van Osch raakt ontroerd door een documentaire over revalidatie.',
                             topicPrefixOrCategory: 'Column',
                             publicationUrl:
                                 '/persoonlijk/1341474/in-het-revalidatiecentrum',
@@ -980,10 +919,8 @@ export const data = {
                         },
                         {
                             id: 1341142,
-                            title:
-                                'Wanneer ben je te oud om directeur te zijn? ',
-                            intro:
-                                'Word je een minder goede leider na je 55ste? In sommige bedrijven moet een managing partner of directeur bij 55 of 57 jaar verplicht het veld ruimen. ‘Het voelt ook wel als een opluchting.’',
+                            title: 'Wanneer ben je te oud om directeur te zijn? ',
+                            intro: 'Word je een minder goede leider na je 55ste? In sommige bedrijven moet een managing partner of directeur bij 55 of 57 jaar verplicht het veld ruimen. ‘Het voelt ook wel als een opluchting.’',
                             topicPrefixOrCategory: 'Werk & geld',
                             publicationUrl:
                                 '/persoonlijk/1341142/55-zeg-maar-dag-tegen-de-directie',
@@ -1054,8 +991,7 @@ export const data = {
     highlightedCardsModel: {
         breakingTeaser: {
             id: 1329318,
-            title:
-                "Het Israëlische ministerie van financiën overweegt een beursgang van defensiebedrijf Israel Aerospace Industries, een van 's werelds grootste leveranciers van defensiesystemen",
+            title: "Het Israëlische ministerie van financiën overweegt een beursgang van defensiebedrijf Israel Aerospace Industries, een van 's werelds grootste leveranciers van defensiesystemen",
             intro: 'Privatisering Israel Aerospace Industries mogelijk nabij.',
             topicPrefixOrCategory: 'Markten',
             publicationUrl:
@@ -1076,10 +1012,8 @@ export const data = {
         secondaryCards: [
             {
                 id: 1329322,
-                title:
-                    'Nieuwe Volkswagen-baas, Ralf Brandstätter, moet racistische uitglijder doen vergeten',
-                intro:
-                    'Ralf Brandstätter moet een eind maken aan de problemen bij het bedrijf, hoewel hij er zelf medeverantwoordelijk voor was. Hij is populair onder medewerkers, maar moet nu fors in de organisatie snijden.',
+                title: 'Nieuwe Volkswagen-baas, Ralf Brandstätter, moet racistische uitglijder doen vergeten',
+                intro: 'Ralf Brandstätter moet een eind maken aan de problemen bij het bedrijf, hoewel hij er zelf medeverantwoordelijk voor was. Hij is populair onder medewerkers, maar moet nu fors in de organisatie snijden.',
                 topicPrefixOrCategory: 'Profiel',
                 publicationUrl:
                     '/profiel/1329322/nieuwe-volkswagen-baas-moet-racistische-uitglijder-doen-vergeten',
@@ -1096,10 +1030,8 @@ export const data = {
             },
             {
                 id: 1328642,
-                title:
-                    '‘Hij heeft een klein hartje, maar laat niet graag zijn kwetsbaarheid zien’',
-                intro:
-                    'Nina Poot, mede-eigenaar van het sieradenmerk Anna + Nina, is de dochter van Peter Poot, ceo van gebiedsontwikkelaar Chipshol.',
+                title: '‘Hij heeft een klein hartje, maar laat niet graag zijn kwetsbaarheid zien’',
+                intro: 'Nina Poot, mede-eigenaar van het sieradenmerk Anna + Nina, is de dochter van Peter Poot, ceo van gebiedsontwikkelaar Chipshol.',
                 topicPrefixOrCategory: 'Onder ons',
                 publicationUrl:
                     '/persoonlijk/1328642/hij-heeft-een-klein-hartje-maar-laat-niet-graag-zijn-kwetsbaarheid-zien',
@@ -1117,8 +1049,7 @@ export const data = {
             {
                 id: 1324449,
                 title: 'Alle verrijking op een rijtje',
-                intro:
-                    'Altijd al alle artikel elementen onder elkaar willen zien staan? Dit is je kans om eens een keer goed alles onder de loep te nemen!',
+                intro: 'Altijd al alle artikel elementen onder elkaar willen zien staan? Dit is je kans om eens een keer goed alles onder de loep te nemen!',
                 topicPrefixOrCategory: 'Tech en media',
                 publicationUrl:
                     '/achtergrond/1324449/alle-verrijking-op-een-rijtje',
@@ -1138,8 +1069,7 @@ export const data = {
             {
                 id: 1328654,
                 title: 'Trump kiest voor escalatie bij protesten',
-                intro:
-                    "Amerikaanse president zegt tegen gouverneurs dat ze 'zwak' zijn als ze niet meer arrestaties verrichten de komende dagen",
+                intro: "Amerikaanse president zegt tegen gouverneurs dat ze 'zwak' zijn als ze niet meer arrestaties verrichten de komende dagen",
                 topicPrefixOrCategory: 'Buitenland',
                 publicationUrl:
                     '/economie-politiek/1328654/trump-kiest-voor-escalatie-bij-protesten',
@@ -1156,10 +1086,8 @@ export const data = {
             },
             {
                 id: 1328664,
-                title:
-                    'Onderwijs kan belofte van grote gelijkmaker steeds minder waarmaken',
-                intro:
-                    'Het kwaliteitsverschil tussen scholen in Nederland groeit en de coronacrisis doet daar een schep bovenop, schrijft Edith Hooge.',
+                title: 'Onderwijs kan belofte van grote gelijkmaker steeds minder waarmaken',
+                intro: 'Het kwaliteitsverschil tussen scholen in Nederland groeit en de coronacrisis doet daar een schep bovenop, schrijft Edith Hooge.',
                 topicPrefixOrCategory: 'Opinie',
                 publicationUrl:
                     '/opinie/1328664/nederlands-onderwijs-kan-belofte-van-grote-gelijkmaker-steeds-minder-waarmaken',
@@ -1177,8 +1105,7 @@ export const data = {
             {
                 id: 1328676,
                 title: 'Oranje hesjes protesteren in Italië ',
-                intro:
-                    'In deze editie van de Europa-nieuwsbrief van het FD: Italië heeft ook Hesjes! En de verbouwing van de Poolse rechtsstaat vordert gestaag.',
+                intro: 'In deze editie van de Europa-nieuwsbrief van het FD: Italië heeft ook Hesjes! En de verbouwing van de Poolse rechtsstaat vordert gestaag.',
                 topicPrefixOrCategory: 'Het FD',
                 publicationUrl:
                     '/economie-politiek/1328676/oranje-hesjes-protesteren-in-italie',
@@ -1201,8 +1128,7 @@ export const data = {
                 version: 6,
                 title: "'Israël overweegt beursgang defensiebedrijf'",
                 state: 'PUBLISHED',
-                url:
-                    '/beurs/1329318/israel-overweegt-beursgang-defensiebedrijf',
+                url: '/beurs/1329318/israel-overweegt-beursgang-defensiebedrijf',
                 publicationDate: 1591720532000,
                 lastModificationDate: 1591781101000,
                 genre: 'Markten',
@@ -1214,15 +1140,13 @@ export const data = {
                 ],
                 teasers: {
                     FDMG_WEB_PAGES: {
-                        title:
-                            "Het Israëlische ministerie van financiën overweegt een beursgang van defensiebedrijf Israel Aerospace Industries, een van 's werelds grootste leveranciers van defensiesystemen",
+                        title: "Het Israëlische ministerie van financiën overweegt een beursgang van defensiebedrijf Israel Aerospace Industries, een van 's werelds grootste leveranciers van defensiesystemen",
                         content:
                             'Privatisering Israel Aerospace Industries mogelijk nabij.',
                         type: 'FDMG_WEB_PAGES',
                         image: {
                             pictureId: 252263,
-                            path:
-                                '4ac1ce5c2f1ead43bc8bcfbfaa280837519fd480.jpg',
+                            path: '4ac1ce5c2f1ead43bc8bcfbfaa280837519fd480.jpg',
                             width: 5472,
                             height: 3648,
                         },
@@ -1305,8 +1229,7 @@ export const data = {
                 columnistArticle: false,
                 hasAudio: false,
                 teaser: {
-                    title:
-                        "Het Israëlische ministerie van financiën overweegt een beursgang van defensiebedrijf Israel Aerospace Industries, een van 's werelds grootste leveranciers van defensiesystemen",
+                    title: "Het Israëlische ministerie van financiën overweegt een beursgang van defensiebedrijf Israel Aerospace Industries, een van 's werelds grootste leveranciers van defensiesystemen",
                     content:
                         'Privatisering Israel Aerospace Industries mogelijk nabij.',
                     type: 'FDMG_WEB_PAGES',
@@ -1329,8 +1252,7 @@ export const data = {
                 version: 6,
                 title: 'Oeso voorspelt diepste recessie in meer dan een eeuw',
                 state: 'PUBLISHED',
-                url:
-                    '/economie-politiek/1329298/oeso-voorspelt-diepste-recessie-in-meer-dan-een-eeuw',
+                url: '/economie-politiek/1329298/oeso-voorspelt-diepste-recessie-in-meer-dan-een-eeuw',
                 publicationDate: 1591776000000,
                 lastModificationDate: 1591859063000,
                 genre: 'Macro-economie',
@@ -1347,8 +1269,7 @@ export const data = {
                         type: 'FDMG_WEB_PAGES',
                         image: {
                             pictureId: 252210,
-                            path:
-                                'ee4c130137cec416a897309e85975720eb501688.jpg',
+                            path: 'ee4c130137cec416a897309e85975720eb501688.jpg',
                             width: 5917,
                             height: 3945,
                             crops: [
@@ -1513,11 +1434,9 @@ export const data = {
             {
                 id: 1329310,
                 version: 2,
-                title:
-                    'Luchtvaart stevent op monsterverlies af van $100 mrd in twee jaar tijd ',
+                title: 'Luchtvaart stevent op monsterverlies af van $100 mrd in twee jaar tijd ',
                 state: 'PUBLISHED',
-                url:
-                    '/economie-politiek/1329310/luchtvaart-stevent-op-monsterverlies-af-van-100-mrd-in-twee-jaar-tijd',
+                url: '/economie-politiek/1329310/luchtvaart-stevent-op-monsterverlies-af-van-100-mrd-in-twee-jaar-tijd',
                 publicationDate: 1591731027000,
                 lastModificationDate: 1591778455000,
                 genre: 'Vervoer',
@@ -1534,8 +1453,7 @@ export const data = {
                         type: 'FDMG_WEB_PAGES',
                         image: {
                             pictureId: 252243,
-                            path:
-                                '54ef1d705f5037f6078873219d324547f97666e4.jpg',
+                            path: '54ef1d705f5037f6078873219d324547f97666e4.jpg',
                             width: 6665,
                             height: 4462,
                             crops: [
@@ -1673,11 +1591,9 @@ export const data = {
             {
                 id: 1329322,
                 version: 4,
-                title:
-                    'Nieuwe Volkswagen-baas, Ralf Brandstätter, moet racistische uitglijder doen vergeten',
+                title: 'Nieuwe Volkswagen-baas, Ralf Brandstätter, moet racistische uitglijder doen vergeten',
                 state: 'PUBLISHED',
-                url:
-                    '/profiel/1329322/nieuwe-volkswagen-baas-moet-racistische-uitglijder-doen-vergeten',
+                url: '/profiel/1329322/nieuwe-volkswagen-baas-moet-racistische-uitglijder-doen-vergeten',
                 publicationDate: 1591718646000,
                 lastModificationDate: 1591780230000,
                 genre: 'Auto',
@@ -1687,8 +1603,7 @@ export const data = {
                         fullName: 'Gerben van der Marel',
                     },
                 ],
-                intro:
-                    'De 51-jarige Ralf Brandstätter moet een eind maken aan de problemen bij het bedrijf, hoewel hij er zelf medeverantwoordelijk voor was. Hij is populair onder medewerkers, maar moet nu fors in de organisatie snijden. Er wacht hem herculeswerk. ',
+                intro: 'De 51-jarige Ralf Brandstätter moet een eind maken aan de problemen bij het bedrijf, hoewel hij er zelf medeverantwoordelijk voor was. Hij is populair onder medewerkers, maar moet nu fors in de organisatie snijden. Er wacht hem herculeswerk. ',
                 teasers: {
                     FDMG_WEB_PAGES: {
                         content:
@@ -1696,8 +1611,7 @@ export const data = {
                         type: 'FDMG_WEB_PAGES',
                         image: {
                             pictureId: 252275,
-                            path:
-                                '28073cba3e3dd07419053640a6cc8899d6b2a257.jpg',
+                            path: '28073cba3e3dd07419053640a6cc8899d6b2a257.jpg',
                             width: 2000,
                             height: 1333,
                             crops: [
@@ -1851,11 +1765,9 @@ export const data = {
             {
                 id: 1328642,
                 version: 3,
-                title:
-                    '‘Hij heeft een klein hartje, maar laat niet graag zijn kwetsbaarheid zien’',
+                title: '‘Hij heeft een klein hartje, maar laat niet graag zijn kwetsbaarheid zien’',
                 state: 'PUBLISHED',
-                url:
-                    '/persoonlijk/1328642/hij-heeft-een-klein-hartje-maar-laat-niet-graag-zijn-kwetsbaarheid-zien',
+                url: '/persoonlijk/1328642/hij-heeft-een-klein-hartje-maar-laat-niet-graag-zijn-kwetsbaarheid-zien',
                 publicationDate: 1591072020000,
                 lastModificationDate: 1591338983000,
                 genre: 'Persoonlijk',
@@ -1865,8 +1777,7 @@ export const data = {
                         fullName: 'Astrid Theunissen',
                     },
                 ],
-                intro:
-                    'Nina Poot (34), mede-eigenaar van het sieradenmerk Anna + Nina, is de dochter van Peter Poot (65), ceo van gebiedsontwikkelaar Chipshol.',
+                intro: 'Nina Poot (34), mede-eigenaar van het sieradenmerk Anna + Nina, is de dochter van Peter Poot (65), ceo van gebiedsontwikkelaar Chipshol.',
                 teasers: {
                     FDMG_WEB_PAGES: {
                         content:
@@ -1874,8 +1785,7 @@ export const data = {
                         type: 'FDMG_WEB_PAGES',
                         image: {
                             pictureId: 251814,
-                            path:
-                                '04b312fbb662672b3b62a3ba82b58031a0355b6a.jpg',
+                            path: '04b312fbb662672b3b62a3ba82b58031a0355b6a.jpg',
                             width: 2000,
                             height: 1237,
                             crops: [
@@ -2015,8 +1925,7 @@ export const data = {
                         fullName: 'Tom van Zummeren',
                     },
                 ],
-                intro:
-                    'Dit artikel is bedoeld om in één oogopslag te zien of alle ondersteunde artikel-elementen goed werken naar behoren. Zo kan eenvoudig de nieuwe dark mode getest worden voor iOS (en later ook Android) maar ook alle toekomstige design changes aan deze elementen. Dit stuk tekst is overigens het artikel-intro element.',
+                intro: 'Dit artikel is bedoeld om in één oogopslag te zien of alle ondersteunde artikel-elementen goed werken naar behoren. Zo kan eenvoudig de nieuwe dark mode getest worden voor iOS (en later ook Android) maar ook alle toekomstige design changes aan deze elementen. Dit stuk tekst is overigens het artikel-intro element.',
                 teasers: {
                     FDMG_WEB_PAGES: {
                         content:
@@ -2098,8 +2007,7 @@ export const data = {
                 version: 4,
                 title: 'Trump kiest voor escalatie bij protesten',
                 state: 'PUBLISHED',
-                url:
-                    '/economie-politiek/1328654/trump-kiest-voor-escalatie-bij-protesten',
+                url: '/economie-politiek/1328654/trump-kiest-voor-escalatie-bij-protesten',
                 publicationDate: 1591037865000,
                 lastModificationDate: 1591081489000,
                 genre: 'Buitenland',
@@ -2116,8 +2024,7 @@ export const data = {
                         type: 'FDMG_WEB_PAGES',
                         image: {
                             pictureId: 251850,
-                            path:
-                                '83bb1a13ad36192e99d02a43d0789f87874cc83c.jpg',
+                            path: '83bb1a13ad36192e99d02a43d0789f87874cc83c.jpg',
                             width: 2210,
                             height: 1473,
                         },
@@ -2217,11 +2124,9 @@ export const data = {
             {
                 id: 1328664,
                 version: 4,
-                title:
-                    'Nederlands onderwijs kan belofte van grote gelijkmaker steeds minder waarmaken',
+                title: 'Nederlands onderwijs kan belofte van grote gelijkmaker steeds minder waarmaken',
                 state: 'PUBLISHED',
-                url:
-                    '/opinie/1328664/nederlands-onderwijs-kan-belofte-van-grote-gelijkmaker-steeds-minder-waarmaken',
+                url: '/opinie/1328664/nederlands-onderwijs-kan-belofte-van-grote-gelijkmaker-steeds-minder-waarmaken',
                 publicationDate: 1591023296000,
                 lastModificationDate: 1591081408000,
                 genre: 'Onderwijs',
@@ -2231,19 +2136,16 @@ export const data = {
                         fullName: 'Edith Hooge',
                     },
                 ],
-                intro:
-                    'Edith Hooge is voorzitter van de Onderwijsraad en hoogleraar onderwijsbestuur',
+                intro: 'Edith Hooge is voorzitter van de Onderwijsraad en hoogleraar onderwijsbestuur',
                 teasers: {
                     FDMG_WEB_PAGES: {
-                        title:
-                            'Onderwijs kan belofte van grote gelijkmaker steeds minder waarmaken',
+                        title: 'Onderwijs kan belofte van grote gelijkmaker steeds minder waarmaken',
                         content:
                             'Het kwaliteitsverschil tussen scholen in Nederland groeit en de coronacrisis doet daar een schep bovenop, schrijft Edith Hooge.',
                         type: 'FDMG_WEB_PAGES',
                         image: {
                             pictureId: 251872,
-                            path:
-                                '11e598f999368e2a9c9bacfe35f9b2d491126723.jpg',
+                            path: '11e598f999368e2a9c9bacfe35f9b2d491126723.jpg',
                             width: 6595,
                             height: 4397,
                         },
@@ -2347,8 +2249,7 @@ export const data = {
                 columnistArticle: false,
                 hasAudio: false,
                 teaser: {
-                    title:
-                        'Onderwijs kan belofte van grote gelijkmaker steeds minder waarmaken',
+                    title: 'Onderwijs kan belofte van grote gelijkmaker steeds minder waarmaken',
                     content:
                         'Het kwaliteitsverschil tussen scholen in Nederland groeit en de coronacrisis doet daar een schep bovenop, schrijft Edith Hooge.',
                     type: 'FDMG_WEB_PAGES',
@@ -2371,8 +2272,7 @@ export const data = {
                 version: 1,
                 title: 'Oranje hesjes protesteren in Italië',
                 state: 'PUBLISHED',
-                url:
-                    '/economie-politiek/1328676/oranje-hesjes-protesteren-in-italie',
+                url: '/economie-politiek/1328676/oranje-hesjes-protesteren-in-italie',
                 publicationDate: 1591002000000,
                 lastModificationDate: 1591077173000,
                 genre: 'Het FD',
@@ -2390,8 +2290,7 @@ export const data = {
                         type: 'FDMG_WEB_PAGES',
                         image: {
                             pictureId: 251912,
-                            path:
-                                'dd95412eb619bf6a9b9d817ed970a3b1b226ce56.jpg',
+                            path: 'dd95412eb619bf6a9b9d817ed970a3b1b226ce56.jpg',
                             width: 5016,
                             height: 3150,
                         },
@@ -2488,13 +2387,7 @@ export const data = {
             },
         ],
         allArticleIds: [
-            1329318,
-            1329322,
-            1328642,
-            1324449,
-            1328654,
-            1328664,
-            1328676,
+            1329318, 1329322, 1328642, 1324449, 1328654, 1328664, 1328676,
         ],
         tertiaryCardsEmpty: false,
         quaternaryCardsEmpty: true,
@@ -2503,24 +2396,21 @@ export const data = {
         longReadTeasers: [],
         newsTeasers: [
             {
-                title:
-                    "'Als Uefa het EK-logo had aangepast, hadden we een probleem gehad'",
+                title: "'Als Uefa het EK-logo had aangepast, hadden we een probleem gehad'",
                 publicationTime: '06:00',
                 publicationUrl:
                     '/ondernemen/1329547/als-uefa-het-ek-logo-had-aangepast-hadden-we-een-probleem-gehad',
                 markedAsRead: false,
             },
             {
-                title:
-                    'Vegaburger-fabrikant Beyond Meat opent Europees bruggenhoofd in Nederland',
+                title: 'Vegaburger-fabrikant Beyond Meat opent Europees bruggenhoofd in Nederland',
                 publicationTime: '06:00',
                 publicationUrl:
                     '/economie-politiek/1329546/vegaburger-fabrikant-beyond-meat-opent-europees-bruggenhoofd-in-nederland',
                 markedAsRead: false,
             },
             {
-                title:
-                    "'Coronacrisis versnelt omslag op Europese arbeidsmarkt'",
+                title: "'Coronacrisis versnelt omslag op Europese arbeidsmarkt'",
                 publicationTime: '06:00',
                 publicationUrl:
                     '/economie-politiek/1329545/coronacrisis-versnelt-omslag-op-europese-arbeidsmarkt',

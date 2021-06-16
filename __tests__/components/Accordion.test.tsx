@@ -53,8 +53,7 @@ const items = [
     },
     {
         anchor: 'vraag-2',
-        title:
-            'Mag ik (delen van) de content van FD Mediagroep kopiëren of samenvatten?',
+        title: 'Mag ik (delen van) de content van FD Mediagroep kopiëren of samenvatten?',
         content: (
             <>
                 <p>

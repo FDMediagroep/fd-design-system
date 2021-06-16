@@ -49,14 +49,18 @@ function Page() {
                     <Button id="demoButtonS">Button (small)</Button>
                     <Button id="demoButtonSIcon">
                         <span
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span>Icon (small)</span>
                     </Button>
 
                     <Button id="demoButtonSDisabled" disabled="disabled">
                         <span
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span>Disabled (small)</span>
                     </Button>
@@ -88,7 +92,9 @@ function Page() {
                     </Button>
                     <Button id="demoButtonMIcon" size="m">
                         <span
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span>Icon (medium)</span>
                     </Button>
@@ -99,7 +105,9 @@ function Page() {
                         size="m"
                     >
                         <span
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span>Disabled (medium)</span>
                     </Button>

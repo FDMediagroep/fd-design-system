@@ -62,7 +62,9 @@ function AuthorInfo(props: Props) {
                     >
                         <span
                             className={styles.icon}
-                            dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: EnvelopeIcon as any,
+                            }}
                         />
                         <span className={styles.buttonText}>E-mail</span>
                     </Button>
@@ -74,7 +76,9 @@ function AuthorInfo(props: Props) {
                     >
                         <span
                             className={styles.icon}
-                            dangerouslySetInnerHTML={{ __html: TwitterIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: TwitterIcon as any,
+                            }}
                         />
                         <span className={styles.buttonText}>Twitter</span>
                     </Button>
@@ -86,7 +90,9 @@ function AuthorInfo(props: Props) {
                     >
                         <span
                             className={styles.icon}
-                            dangerouslySetInnerHTML={{ __html: LinkedInIcon }}
+                            dangerouslySetInnerHTML={{
+                                __html: LinkedInIcon as any,
+                            }}
                         />
                         <span className={styles.buttonText}>LinkedIn</span>
                     </Button>

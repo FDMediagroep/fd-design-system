@@ -54,7 +54,7 @@ function HorizontalToolbar(props: Props) {
             >
                 <span
                     className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: WhatsAppIcon }}
+                    dangerouslySetInnerHTML={{ __html: WhatsAppIcon as any }}
                 />
                 <span className={styles.ariaLabel}>Deel via WhatsApp</span>
             </Button>
@@ -65,7 +65,7 @@ function HorizontalToolbar(props: Props) {
             >
                 <span
                     className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: TwitterIcon }}
+                    dangerouslySetInnerHTML={{ __html: TwitterIcon as any }}
                 />
                 <span className={styles.ariaLabel}>Deel via Twitter</span>
             </Button>
@@ -76,7 +76,7 @@ function HorizontalToolbar(props: Props) {
             >
                 <span
                     className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: LinkedInIcon }}
+                    dangerouslySetInnerHTML={{ __html: LinkedInIcon as any }}
                 />
                 <span className={styles.ariaLabel}>Deel via LinkedIn</span>
             </Button>
@@ -87,7 +87,7 @@ function HorizontalToolbar(props: Props) {
             >
                 <span
                     className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: FacebookIcon }}
+                    dangerouslySetInnerHTML={{ __html: FacebookIcon as any }}
                 />
                 <span className={styles.ariaLabel}>Deel via Facebook</span>
             </Button>
@@ -98,7 +98,7 @@ function HorizontalToolbar(props: Props) {
             >
                 <span
                     className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: EnvelopeIcon }}
+                    dangerouslySetInnerHTML={{ __html: EnvelopeIcon as any }}
                 />
                 <span className={styles.ariaLabel}>Deel via E-mail</span>
             </Button>
@@ -111,11 +111,11 @@ function HorizontalToolbar(props: Props) {
             >
                 <span
                     className={`${styles.icon} ${styles.bookmarkFill}`}
-                    dangerouslySetInnerHTML={{ __html: BookmarkIcon }}
+                    dangerouslySetInnerHTML={{ __html: BookmarkIcon as any }}
                 />
                 <span
                     className={`${styles.icon} ${styles.bookmarkClear}`}
-                    dangerouslySetInnerHTML={{ __html: BookmarkOIcon }}
+                    dangerouslySetInnerHTML={{ __html: BookmarkOIcon as any }}
                 />
                 <span className={styles.ariaLabel}>Bewaren</span>
             </Button>

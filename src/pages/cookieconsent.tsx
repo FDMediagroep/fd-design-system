@@ -479,7 +479,7 @@ async function checkCookieconsent() {
                             <span
                                 className={styles.icon}
                                 dangerouslySetInnerHTML={{
-                                    __html: FdmgIcon,
+                                    __html: FdmgIcon as any,
                                 }}
                             />
                         </header>

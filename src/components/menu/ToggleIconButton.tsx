@@ -20,8 +20,8 @@ function ToggleIconButton(props: Props) {
             className={props.className}
             dangerouslySetInnerHTML={{
                 __html: menuItem.expanded
-                    ? ChevronUpThinIcon
-                    : ChevronDownThinIcon,
+                    ? (ChevronUpThinIcon as any)
+                    : (ChevronDownThinIcon as any),
             }}
             aria-label={menuItem.expanded ? 'close sub-menu' : 'open sub-menu'}
             aria-expanded={menuItem.expanded}

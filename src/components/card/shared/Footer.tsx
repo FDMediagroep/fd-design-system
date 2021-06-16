@@ -26,7 +26,7 @@ function Footer(props: Props) {
                                     : ''
                             }`}
                             dangerouslySetInnerHTML={{
-                                __html: BookmarkIcon,
+                                __html: BookmarkIcon as any,
                             }}
                         />
                     ) : (
@@ -37,7 +37,7 @@ function Footer(props: Props) {
                                     : ''
                             }`}
                             dangerouslySetInnerHTML={{
-                                __html: BookmarkOIcon,
+                                __html: BookmarkOIcon as any,
                             }}
                         />
                     )}

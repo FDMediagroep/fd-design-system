@@ -71,14 +71,14 @@ function StockTicker(props: Props) {
                                 <span
                                     className={styles.icon}
                                     dangerouslySetInnerHTML={{
-                                        __html: ValueUpIcon,
+                                        __html: ValueUpIcon as any,
                                     }}
                                 />
                             ) : (
                                 <span
                                     className={styles.icon}
                                     dangerouslySetInnerHTML={{
-                                        __html: ValueDownIcon,
+                                        __html: ValueDownIcon as any,
                                     }}
                                 />
                             )}
