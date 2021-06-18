@@ -12,7 +12,12 @@
     --product-background-2: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     --content-background: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     --navigation-background: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    --sub-navigation-background: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+    --sub-navigation-background: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            20
+        )};
     --navigation-item: #{map-deep-get($colors, 'colors', 'neutral', 60)};
     --navigation-item-hover: #{map-deep-get($colors, 'colors', 'primary', 25)};
     --navigation-item-active: #{map-deep-get($colors, 'colors', 'neutral', 10)};

@@ -160,6 +160,9 @@ module.exports = {
         '/components/card/VerticalCard3': [
             './src/components/card/VerticalCard3.tsx',
         ],
+        '/components/card/VerticalCard4': [
+            './src/components/card/VerticalCard4.tsx',
+        ],
 
         // Design Tokens
         '/components/design-tokens/icons': ['./src/design-tokens/icons.ts'],
