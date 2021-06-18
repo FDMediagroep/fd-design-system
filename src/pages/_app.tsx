@@ -504,6 +504,13 @@ function App({ Component, pageProps }) {
                                             </Link>
                                         ),
                                     },
+                                    {
+                                        component: (
+                                            <Link href="/card/vertical-4">
+                                                <a>Vertical 4</a>
+                                            </Link>
+                                        ),
+                                    },
                                 ],
                             },
                         ],

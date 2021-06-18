@@ -50,6 +50,7 @@ export { LinkCard } from './components/card/LinkCard';
 export { VerticalCard1 } from './components/card/VerticalCard1';
 export { VerticalCard2 } from './components/card/VerticalCard2';
 export { VerticalCard3 } from './components/card/VerticalCard3';
+export { VerticalCard4 } from './components/card/VerticalCard4';
 
 // Misc.
 export * from './components/ab/ab';
