@@ -21,10 +21,7 @@
     .cardContent {
         flex: 1 1 auto;
         display: flex;
-        flex-direction: column-reverse;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            flex-direction: column;
-        }
+        flex-direction: column;
     }
 
     a {
