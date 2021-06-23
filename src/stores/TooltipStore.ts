@@ -1,4 +1,4 @@
-import { ReSubstitute } from '../utils/ReSubstitute';
+import { ReSubstitute } from '@fdmg/resubstitute';
 import { Summary } from '../components/Tooltip';
 
 class TooltipStore extends ReSubstitute {
