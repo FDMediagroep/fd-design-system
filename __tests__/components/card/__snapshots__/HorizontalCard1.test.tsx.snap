@@ -3,14 +3,16 @@
 exports[`HorizontalCard1 should render is-read correctly 1`] = `
 <div>
   <article
-    class="horizontalCard1 isRead"
+    class="horizontalCard1 isRead xs__p-0"
     id="1"
   >
     <a
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
-      <figure>
+      <figure
+        class="xs__m-0"
+      >
         <picture>
           <img
             alt="This is the title"
@@ -20,10 +22,10 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
         <figcaption />
       </figure>
       <div
-        class="teaserText"
+        class="teaserText xs__p+3 s__p+4"
       >
         <div
-          class="meta"
+          class="meta xs__m-0 xs__mb+2"
         >
           <span
             class="prefix"
@@ -38,7 +40,7 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif s"
+            class="heading serif s xs__m-0"
           >
             This is the title
           </h1>
@@ -52,14 +54,16 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
 exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
 <div>
   <article
-    class="horizontalCard1 longread"
+    class="horizontalCard1 longread xs__p-0"
     id="1"
   >
     <a
       aria-label="This is the title"
       href="https://example.com/1/This is the title"
     >
-      <figure>
+      <figure
+        class="xs__m-0"
+      >
         <picture>
           <img
             alt="This is the title"
@@ -69,10 +73,10 @@ exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
         <figcaption />
       </figure>
       <div
-        class="teaserText"
+        class="teaserText xs__p+3 s__p+4"
       >
         <div
-          class="meta"
+          class="meta xs__m-0 xs__mb+2"
         >
           <span
             class="prefix"
@@ -87,7 +91,7 @@ exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif s"
+            class="heading serif s xs__m-0"
           >
             This is the title
           </h1>

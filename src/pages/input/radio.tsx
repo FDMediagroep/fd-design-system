@@ -2,6 +2,7 @@ import React from 'react';
 import { Explain } from '../../components/Explain';
 import { Radio, getCssClassNames } from '../../components/input/Radio';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Radio input';
 export const metaDescription = 'Radio input, used in forms';
@@ -25,7 +26,7 @@ function Page() {
 
             <Explain
                 anchor="default"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Radio"
                 reactComponentName="Radio"
@@ -53,7 +54,7 @@ function Page() {
 
             <Explain
                 anchor="checked"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Radio (default: checked)"
                 reactComponentName="Radio"

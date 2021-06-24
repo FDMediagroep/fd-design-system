@@ -8,6 +8,7 @@ import {
 } from '../../components/toolbar/HorizontalToolbar';
 import PageStore from '../../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Horizontal toolbar';
 export const metaDescription =
@@ -53,7 +54,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Horizontal toolbar"
                 reactComponentName="HorizontalToolbar"
                 description={

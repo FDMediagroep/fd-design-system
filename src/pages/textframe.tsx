@@ -3,6 +3,7 @@ import { Explain } from '../components/Explain';
 import { TextFrame, getCssClassNames } from '../components/textframe/TextFrame';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 const initialProps = {
     title: 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet',
@@ -43,7 +44,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="TextFrame"
                 reactComponentName="TextFrame"
                 description={

@@ -4,6 +4,7 @@ import { Modal, getCssClassNames } from '../components/modal/Modal';
 import Head from 'next/head';
 import { Switch } from '../components/input/Switch';
 import styles from './modal.module.scss';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 export const metaTitle = 'Modal';
 export const metaDescription = 'Modal, used to display a modal overlay';
@@ -36,7 +37,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 hideExternalCodeEditors={true}
                 hidePreview={!opened}
                 legend="Modal"

@@ -37,17 +37,27 @@ function HybridCard2(props: Props) {
             }${props.isRead ? ` ${styles.isRead}` : ''}`}
             id={props.id}
         >
-            <a href={props.url} aria-label={props.title}>
-                <div className={styles.teaserText}>
-                    <div className={styles.meta}>
+            <a
+                className="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+                href={props.url}
+                aria-label={props.title}
+            >
+                <div
+                    className={`${styles.teaserText} xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0`}
+                >
+                    <div className={`${styles.meta} xs__mb+2`}>
                         <span className={styles.prefix}>{props.label}</span>
                     </div>
 
                     <div className={styles.textContainer}>
-                        <h1 className="heading serif xs">{props.title}</h1>
+                        <h1 className="heading serif xs xs__m-0">
+                            {props.title}
+                        </h1>
 
                         {props.intro && (
-                            <p className={`${styles.intro} body-text sans s`}>
+                            <p
+                                className={`${styles.intro} body-text sans s xs__m-0 xs__mt+2`}
+                            >
                                 {props.intro}
                             </p>
                         )}

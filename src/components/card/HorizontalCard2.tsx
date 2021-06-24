@@ -21,21 +21,25 @@ function HorizontalCard2(props: Props) {
         <article
             style={props.style}
             className={`${styles.horizontalCard2}${
-                props.isRead ? ` ${styles.isRead}` : ''
-            }`}
+                props.className ? ` ${props.className}` : ''
+            }${props.isRead ? ` ${styles.isRead}` : ''}`}
             id={props.id}
         >
-            <a href={props.url} aria-label={props.title}>
+            <a className="xs__p+4" href={props.url} aria-label={props.title}>
                 <div className={styles.teaserText}>
-                    <div className={styles.meta}>
+                    <div className={`${styles.meta} xs__m-0 xs__mb+2`}>
                         <span className={styles.prefix}>{props.label}</span>
 
                         <time>{props.time}</time>
                     </div>
 
                     <div className={styles.textContainer}>
-                        <h1 className="heading serif s">{props.title}</h1>
-                        <p className={`${styles.intro} body-text sans s`}>
+                        <h1 className="heading serif s xs__m-0">
+                            {props.title}
+                        </h1>
+                        <p
+                            className={`${styles.intro} body-text sans s xs__m-0 xs__mt+1`}
+                        >
                             {props.intro}
                         </p>
                     </div>

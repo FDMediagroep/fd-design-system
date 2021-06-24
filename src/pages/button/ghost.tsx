@@ -7,6 +7,7 @@ import {
 import Head from 'next/head';
 import { EnvelopeIcon } from '../../design-tokens/icons';
 import styles from './buttons.module.scss';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Ghost Button';
 export const metaDescription =
@@ -32,7 +33,7 @@ function Page() {
             <Explain
                 previewClassName={styles.buttons}
                 anchor="default"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Ghost Button (default)"
                 reactComponentName="ButtonGhost"
                 description={
@@ -90,7 +91,7 @@ function Page() {
             <Explain
                 previewClassName={styles.buttons}
                 anchor="m"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Ghost Button (M)"
                 reactComponentName="ButtonGhost"
                 description={

@@ -8,6 +8,7 @@ import {
 } from '../../components/toolbar/VerticalToolbar';
 import PageStore from '../../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Vertical toolbar';
 export const metaDescription =
@@ -53,7 +54,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Vertical toolbar"
                 previewFlexDirection="row"
                 reactComponentName="VerticalToolbar"

@@ -4,6 +4,7 @@ import { Button, getCssClassNames } from '../../components/button/Button';
 import Head from 'next/head';
 import { EnvelopeIcon } from '../../design-tokens/icons';
 import styles from './buttons.module.scss';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Neutral Button';
 export const metaDescription =
@@ -29,7 +30,7 @@ function Page() {
             <Explain
                 previewClassName={styles.buttons}
                 anchor="default"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Button Neutral (default)"
                 reactComponentName="Button"
                 description={
@@ -70,7 +71,7 @@ function Page() {
             <Explain
                 previewClassName={styles.buttons}
                 anchor="m"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Button Neutral (M)"
                 reactComponentName="Button"
                 description={

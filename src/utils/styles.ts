@@ -44,7 +44,12 @@ export function getStyle(...classNames: string[]) {
                 }`;
             }
             classNames.forEach((className) => {
-                if (style.cssText?.indexOf(`.${className}`) > -1) {
+                // Support special character `+` in class name
+                if (
+                    style.cssText?.indexOf(
+                        `.${className.replace('+', '\\+')}`
+                    ) > -1
+                ) {
                     result = `${result ? `${result}\r\n` : ''}${style.cssText}`;
                 }
             });

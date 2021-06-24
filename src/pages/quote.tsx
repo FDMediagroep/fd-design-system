@@ -3,6 +3,7 @@ import { Explain } from '../components/Explain';
 import { Quote, getCssClassNames } from '../components/quote/Quote';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 const initialProps = {
     blockquote: `Je moet je afvragen wat er gebeurt als je één partij hebt – in
@@ -44,7 +45,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Inline Quote"
                 reactComponentName="Quote"
                 description={

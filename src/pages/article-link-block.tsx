@@ -7,6 +7,7 @@ import {
 import PageStore from '../stores/PageStore';
 import styles from './article-link-block.module.scss';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 export const metaTitle = 'Link block';
 export const metaDescription =
@@ -42,7 +43,7 @@ function Page() {
 
             <Explain
                 anchor="default"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewClassName={styles.preview}
                 legend="Link Block"
                 reactComponentName="LinkBlock"
@@ -62,7 +63,7 @@ function Page() {
 
             <Explain
                 anchor="align-right"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewClassName={styles.preview}
                 legend="Link Block (align: right)"
                 reactComponentName="LinkBlock"

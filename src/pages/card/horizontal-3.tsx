@@ -5,6 +5,8 @@ import {
     getCssClassNames,
 } from '../../components/card/HorizontalCard3';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
+import styles from './cards.module.scss';
 
 const horizontalCards3: any = [
     {
@@ -58,8 +60,9 @@ function Page() {
             </Head>
 
             <Explain
+                previewClassName={`${styles.horizontalGrid} grid`}
                 anchor="horizontal3"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Horizontal Card 3"
                 reactComponentName="HorizontalCard3"
                 description={
@@ -78,9 +81,18 @@ function Page() {
                 }
             >
                 <>
-                    <HorizontalCard3 {...horizontalCards3[0]} />
-                    <HorizontalCard3 {...horizontalCards3[1]} />
-                    <HorizontalCard3 {...horizontalCards3[2]} />
+                    <HorizontalCard3
+                        className="xs-12"
+                        {...horizontalCards3[0]}
+                    />
+                    <HorizontalCard3
+                        className="xs-12"
+                        {...horizontalCards3[1]}
+                    />
+                    <HorizontalCard3
+                        className="xs-12"
+                        {...horizontalCards3[2]}
+                    />
                 </>
             </Explain>
         </>

@@ -6,6 +6,7 @@ import {
     getCssClassNames,
 } from '../../components/card/VerticalCard2';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 const verticalCards1: any = [
     {
@@ -81,9 +82,9 @@ function Page() {
             </Head>
 
             <Explain
-                previewClassName={styles.horizontalFlexPreview}
+                previewClassName="grid"
                 anchor="vertical2"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Vertical Card 2"
                 reactComponentName="VerticalCard2"
                 description={
@@ -99,15 +100,15 @@ function Page() {
             >
                 <>
                     <VerticalCard2
-                        className={styles.verticalCard2}
+                        className="xs-12 s-6 m-4 l-3"
                         {...verticalCards1[0]}
                     />
                     <VerticalCard2
-                        className={styles.verticalCard2}
+                        className="xs-12 s-6 m-4 l-3"
                         {...verticalCards1[1]}
                     />
                     <VerticalCard2
-                        className={styles.verticalCard2}
+                        className="xs-12 s-6 m-4 l-3"
                         {...verticalCards1[2]}
                     />
                 </>

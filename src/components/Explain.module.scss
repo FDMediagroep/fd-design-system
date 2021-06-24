@@ -28,8 +28,6 @@
 }
 
 .previewContainer {
-    display: flex;
-    flex-direction: column;
     border: 5px solid var(--dividers);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {

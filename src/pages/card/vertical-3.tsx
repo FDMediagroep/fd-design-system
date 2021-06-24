@@ -6,6 +6,7 @@ import {
     getCssClassNames,
 } from '../../components/card/VerticalCard3';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 const verticalCards1: any = [
     {
@@ -82,8 +83,9 @@ function Page() {
             </Head>
 
             <Explain
+                previewClassName="grid"
                 anchor="vertical3"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Vertical Card 3"
                 reactComponentName="VerticalCard3"
                 description={
@@ -101,32 +103,26 @@ function Page() {
                 }
             >
                 <>
+                    <VerticalCard3 className="xs-12" {...verticalCards1[0]} />
                     <VerticalCard3
-                        className={styles.verticalCard3}
-                        {...verticalCards1[0]}
-                    />
-                    <VerticalCard3
-                        className={styles.verticalCard3}
+                        className="xs-12"
                         {...verticalCards1[1]}
                         variant="variant-1"
                     />
                     <VerticalCard3
-                        className={styles.verticalCard3}
+                        className="xs-12"
                         {...verticalCards1[1]}
                         label="Update"
                         variant="variant-2"
                     />
+                    <VerticalCard3 className="xs-12" {...verticalCards1[2]} />
                     <VerticalCard3
-                        className={styles.verticalCard3}
-                        {...verticalCards1[2]}
-                    />
-                    <VerticalCard3
-                        className={styles.verticalCard3}
+                        className="xs-12"
                         {...verticalCards1[2]}
                         variant="variant-1"
                     />
                     <VerticalCard3
-                        className={styles.verticalCard3}
+                        className="xs-12"
                         {...verticalCards1[2]}
                         label="Update"
                         variant="variant-2"

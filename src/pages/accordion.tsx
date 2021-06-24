@@ -3,6 +3,7 @@ import { Explain } from '../components/Explain';
 import { Accordion, getCssClassNames } from '../components/accordion/Accordion';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 const items = [
     {
@@ -185,7 +186,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Accordion"
                 reactComponentName="Accordion"
                 description={

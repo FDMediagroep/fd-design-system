@@ -15,7 +15,6 @@
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
 
     a {
-        padding: 1rem;
         text-decoration: none;
         color: var(--content-copy);
         // IE11
@@ -44,7 +43,6 @@
             top: auto;
             left: auto;
             right: auto;
-            margin: 0 0 8px 0;
             font-family: map-deep-get($typography, 'font-family', 'bold'),
                 sans-serif;
             font-size: 0.8125rem;
@@ -74,14 +72,6 @@
                 white-space: nowrap;
             }
         }
-
-        h1 {
-            margin: 0;
-        }
-
-        .intro {
-            margin: 0.25rem 0 0 0;
-        }
     }
 
     .textContainer {
@@ -95,7 +85,6 @@
             (-ms-high-contrast: none) {
             color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
         }
-        margin: 0;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;

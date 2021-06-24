@@ -25,13 +25,13 @@ function HybridCard3(props: Props) {
         <article
             style={props.style}
             className={`${styles.hybridCard3}${
-                props.isRead ? ` ${styles.isRead}` : ''
-            }`}
+                props.className ? ` ${props.className}` : ''
+            }${props.isRead ? ` ${styles.isRead}` : ''} xs__p-0`}
             id={props.id}
         >
             <a href={props.url} aria-label={props.title}>
                 {props.imageUrl && (
-                    <figure>
+                    <figure className="xs__m-0">
                         <picture>
                             {props.imageUrlS && (
                                 <source
@@ -60,18 +60,22 @@ function HybridCard3(props: Props) {
                     </figure>
                 )}
 
-                <div className={styles.teaserText}>
-                    <div className={styles.meta}>
+                <div className={`${styles.teaserText} xs__p+4 s__pr+6 s__pl+6`}>
+                    <div className={`${styles.meta} xs__m-0 xs__mb+2`}>
                         <span className={styles.breaking}>Breaking</span>
 
                         {props.time && <time>{props.time}</time>}
                     </div>
 
                     <div className={styles.textContainer}>
-                        <h1 className="heading serif m">{props.title}</h1>
+                        <h1 className="heading serif m xs__m-0">
+                            {props.title}
+                        </h1>
 
                         {props.intro && (
-                            <p className={`${styles.intro} body-text sans s`}>
+                            <p
+                                className={`${styles.intro} body-text sans s xs__m-0 xs__mt+2`}
+                            >
                                 {props.intro}
                             </p>
                         )}

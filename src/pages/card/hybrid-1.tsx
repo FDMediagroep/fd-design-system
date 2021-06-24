@@ -6,6 +6,7 @@ import {
     getCssClassNames,
 } from '../../components/card/HybridCard1';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 const hybridCards1: any = [
     {
@@ -86,9 +87,9 @@ function Page() {
             </Head>
 
             <Explain
-                previewClassName={styles.horizontalFlexPreview}
+                previewClassName={`${styles.hybrid1Grid} grid`}
                 anchor="hybrid1"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Hybrid Card 1"
                 reactComponentName="HybridCard1"
                 description={
@@ -109,20 +110,20 @@ function Page() {
             >
                 <>
                     <HybridCard1
-                        className={styles.hybridCard1}
+                        className="xs-12 s-6 m-4 l-3"
                         onBookmark={toggleBookmark}
                         bookmarked={bookmarked}
                         {...hybridCards1[0]}
                     />
                     <HybridCard1
-                        className={styles.hybridCard1}
+                        className="xs-12 s-6 m-4 l-3"
                         onBookmark={toggleBookmark}
                         bookmarked={bookmarked}
                         {...hybridCards1[1]}
                     />
                     <HybridCard1
                         isRead={true}
-                        className={styles.hybridCard1}
+                        className="xs-12 s-6 m-4 l-3"
                         onBookmark={toggleBookmark}
                         bookmarked={bookmarked}
                         {...hybridCards1[2]}

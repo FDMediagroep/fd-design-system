@@ -6,6 +6,7 @@ import {
 } from '../components/article-image/ArticleImage';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 const initialProps = {
     caption: `What a photo`,
@@ -46,7 +47,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Image"
                 reactComponentName="ArticleImage"
                 description={

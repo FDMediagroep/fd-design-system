@@ -3,6 +3,7 @@ import { Explain } from '../components/Explain';
 import { WordFrame, getCssClassNames } from '../components/wordframe/WordFrame';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 const initialProps = {
     title: `WordFrame test`,
@@ -44,7 +45,7 @@ function Index() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="WordFrame"
                 reactComponentName="WordFrame"
                 description={

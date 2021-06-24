@@ -4,6 +4,7 @@ import { ButtonCta, getCssClassNames } from '../../components/button/ButtonCta';
 import Head from 'next/head';
 import { EnvelopeIcon } from '../../design-tokens/icons';
 import styles from './buttons.module.scss';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Button call-to-action';
 export const metaDescription =
@@ -29,7 +30,7 @@ function Page() {
             <Explain
                 previewClassName={styles.buttons}
                 anchor="default"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Button CTA (default)"
                 reactComponentName="ButtonCta"
                 description={
@@ -91,7 +92,7 @@ function Page() {
             <Explain
                 previewClassName={styles.buttons}
                 anchor="m"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Button CTA (M)"
                 reactComponentName="ButtonCta"
                 description={

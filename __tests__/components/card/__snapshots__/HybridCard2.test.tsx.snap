@@ -8,13 +8,14 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
   >
     <a
       aria-label="This is the title"
+      class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
       href="https://example.com/1/This is the title"
     >
       <div
-        class="teaserText"
+        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
       >
         <div
-          class="meta"
+          class="meta xs__mb+2"
         >
           <span
             class="prefix"
@@ -26,12 +27,12 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif xs"
+            class="heading serif xs xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="intro body-text sans s"
+            class="intro body-text sans s xs__m-0 xs__mt+2"
           >
             This is the intro
           </p>
@@ -39,10 +40,14 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
       </div>
     </a>
     <footer
-      class="footer footer"
+      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
     >
-      <menu>
-        <a>
+      <menu
+        class="xs__m-0"
+      >
+        <a
+          class="xs__mt+2"
+        >
           <span
             class="icon"
           >
@@ -166,13 +171,14 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
   >
     <a
       aria-label="This is the title"
+      class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
       href="https://example.com/1/This is the title"
     >
       <div
-        class="teaserText"
+        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
       >
         <div
-          class="meta"
+          class="meta xs__mb+2"
         >
           <span
             class="prefix"
@@ -184,12 +190,12 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
           class="textContainer"
         >
           <h1
-            class="heading serif xs"
+            class="heading serif xs xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="intro body-text sans s"
+            class="intro body-text sans s xs__m-0 xs__mt+2"
           >
             This is the intro
           </p>
@@ -197,10 +203,14 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
       </div>
     </a>
     <footer
-      class="footer footer"
+      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
     >
-      <menu>
-        <a>
+      <menu
+        class="xs__m-0"
+      >
+        <a
+          class="xs__mt+2"
+        >
           <span
             class="icon"
           >

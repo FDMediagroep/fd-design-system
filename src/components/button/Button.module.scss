@@ -36,8 +36,9 @@
     font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     font-weight: normal;
     letter-spacing: -0.1px;
-    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-        width: 100%;
+    width: 100%;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        width: auto;
     }
 
     > * {
@@ -69,15 +70,6 @@
             height: 100%;
             min-height: 48px;
             max-height: 48px;
-        }
-    }
-
-    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-        &:active {
-            transform: scale(0.95);
-            &.m {
-                transform: scale(0.98);
-            }
         }
     }
 
@@ -139,16 +131,19 @@
             animation-duration: 0.5s;
             animation-delay: 0.1s;
         }
+        transform: scale(0.98);
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            transform: scale(0.95);
+            &.m {
+                transform: scale(0.98);
+            }
+        }
 
         background-color: var(--button-active);
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
             background-color: #{map-deep-get($colors, 'colors', 'neutral', 0)};
-        }
-
-        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-            transform: scale(0.98);
         }
     }
 
