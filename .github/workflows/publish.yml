@@ -21,7 +21,7 @@ jobs:
         echo $RELEASE_VERSION
         echo ${{ env.RELEASE_VERSION }}
     - name: Use Node.js (NPMJS) ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         always-auth: true
@@ -59,7 +59,7 @@ jobs:
         NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
       continue-on-error: true
     - name: Use Node.js (GitHub) ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         always-auth: true
         registry-url: 'https://npm.pkg.github.com'
