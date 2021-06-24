@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import styles from './cards.module.scss';
 import { Explain } from '../../components/Explain';
 import {
     VerticalCard1,
     getCssClassNames,
 } from '../../components/card/VerticalCard1';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 const verticalCards1: any = [
     {
@@ -86,9 +86,9 @@ function Page() {
             </Head>
 
             <Explain
-                previewClassName={styles.horizontalFlexPreview}
+                previewClassName="grid"
                 anchor="vertical1"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Vertical Card 1"
                 reactComponentName="VerticalCard1"
                 description={
@@ -104,19 +104,19 @@ function Page() {
             >
                 <>
                     <VerticalCard1
-                        className={styles.verticalCard1}
+                        className="xs-12 s-6 m-4 l-3"
                         onBookmark={toggleBookmark}
                         bookmarked={bookmarked}
                         {...verticalCards1[0]}
                     />
                     <VerticalCard1
-                        className={styles.verticalCard1}
+                        className="xs-12 s-6 m-4 l-3"
                         onBookmark={toggleBookmark}
                         bookmarked={bookmarked}
                         {...verticalCards1[1]}
                     />
                     <VerticalCard1
-                        className={styles.verticalCard1}
+                        className="xs-12 s-6 m-4 l-3"
                         onBookmark={toggleBookmark}
                         bookmarked={bookmarked}
                         {...verticalCards1[2]}

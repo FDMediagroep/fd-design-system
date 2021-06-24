@@ -2,6 +2,7 @@ import React from 'react';
 import { Explain } from '../../components/Explain';
 import { Switch, getCssClassNames } from '../../components/input/Switch';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Switch';
 export const metaDescription =
@@ -26,7 +27,7 @@ function Page() {
 
             <Explain
                 anchor="default"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Switch"
                 reactComponentName="Switch"
                 description={
@@ -53,7 +54,7 @@ function Page() {
 
             <Explain
                 anchor="switch-default-checked"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Switch (default: checked)"
                 reactComponentName="Switch"
                 description={

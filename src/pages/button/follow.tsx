@@ -6,6 +6,7 @@ import {
 } from '../../components/button/ButtonFollow';
 import { useState } from 'react';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Follow button';
 export const metaDescription = 'Follow Button, used to follow content';
@@ -40,7 +41,7 @@ function Follow() {
 
             <Explain
                 anchor="default"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Follow button (default)"
                 reactComponentName="ButtonFollow"
                 description={
@@ -61,7 +62,7 @@ function Follow() {
 
             <Explain
                 anchor="following"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Follow button (following)"
                 reactComponentName="ButtonFollow"
                 description={

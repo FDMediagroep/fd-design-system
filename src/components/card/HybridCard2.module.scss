@@ -10,6 +10,9 @@
     display: flex;
     position: relative;
     width: 100%;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        height: 100%;
+    }
 
     background-color: var(--card);
     // IE11
@@ -19,9 +22,6 @@
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
 
     > a {
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            padding: 1rem 1rem 0 1rem;
-        }
         display: flex;
         flex: 1 1 auto;
         min-height: 100px;
@@ -37,25 +37,23 @@
 
     .teaserText {
         flex: 1 1 auto;
-        padding: 12px 8px 8px 12px;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            padding: 0;
-        }
         .textContainer {
             flex: 1 1 auto;
         }
     }
 
-    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+    .footer {
+        display: none;
+    }
+    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         .footer {
-            display: none;
+            display: inline-block;
         }
     }
 
     .meta {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 0.5rem;
         .prefix {
             font-family: map-deep-get($typography, 'font-family', 'bold'),
                 sans-serif;
@@ -83,7 +81,6 @@
     }
 
     h1 {
-        margin: 0;
         color: var(--content-copy);
         // IE11
         @media screen and (-ms-high-contrast: active),
@@ -93,7 +90,6 @@
     }
 
     .intro {
-        margin: 0.5rem 0 0 0;
         color: var(--content-copy);
         // IE11
         @media screen and (-ms-high-contrast: active),
@@ -104,10 +100,6 @@
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             display: block;
         }
-    }
-
-    .footer {
-        padding: 0 1rem 1rem 1rem;
     }
 
     &.isRead:not(:hover):not(:active) {

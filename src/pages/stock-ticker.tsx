@@ -6,6 +6,7 @@ import {
     Props,
 } from '../components/stockticker/StockTicker';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 const initialProps: Props = {
     stocks: [
@@ -141,7 +142,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Stock Ticker"
                 reactComponentName="StockTicker"
                 description={

@@ -6,6 +6,7 @@ import {
 } from '../components/article-latest-news/ArticleLatestNews';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 const initialProps = {
     news: [
@@ -70,7 +71,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Latest news"
                 reactComponentName="ArticleLatestNews"
                 description={

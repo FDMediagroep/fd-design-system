@@ -7,7 +7,6 @@
     transition: box-shadow 0.15s linear;
     margin-bottom: 1px;
     justify-content: space-between;
-    padding: 0;
     background-color: var(--card);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -23,7 +22,6 @@
             (-ms-high-contrast: none) {
             color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
-        margin: 0;
     }
 
     a {
@@ -38,10 +36,6 @@
         }
     }
 
-    .textContainer {
-        margin-bottom: 0;
-    }
-
     .figure.empty img {
         max-width: 100%;
     }
@@ -49,7 +43,6 @@
     .figure.empty {
         position: relative;
         display: flex;
-        margin: 0;
         flex: 0 0 100px;
 
         picture {
@@ -90,13 +83,6 @@
     .teaserText {
         position: relative;
         flex: 1;
-        p {
-            margin-bottom: 0;
-        }
-        padding: 12px;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            padding: 16px;
-        }
 
         > a {
             color: var(--content-copy);
@@ -115,7 +101,6 @@
         top: auto;
         left: auto;
         right: auto;
-        margin: 0 0 8px 0;
         display: flex;
         justify-content: space-between;
         font-family: map-deep-get($typography, 'font-family', 'bold'),

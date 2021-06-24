@@ -1,4 +1,10 @@
-import React, { useState, ReactElement, useEffect, useRef } from 'react';
+import React, {
+    useState,
+    ReactElement,
+    useEffect,
+    useRef,
+    CSSProperties,
+} from 'react';
 import styles from './Explain.module.scss';
 import { getCodePenData } from '../utils/codepen';
 import { renderToString } from 'react-dom/server';
@@ -63,6 +69,10 @@ interface Props {
      * Default: undefined
      */
     previewClassName?: string;
+    /**
+     * Default: undefined
+     */
+    previewStyle?: CSSProperties;
     /**
      * Description of the component.
      */
@@ -212,6 +222,7 @@ function Explain(props: Props) {
             {!props.hidePreview && (
                 <form
                     ref={formRef}
+                    style={props.previewStyle}
                     className={`${styles.previewContainer}${
                         props.previewFlexDirection === 'row'
                             ? ` ${styles.row}`

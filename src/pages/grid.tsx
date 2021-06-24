@@ -1,11 +1,9 @@
 import React from 'react';
 import { Explain } from '../components/Explain';
 import Head from 'next/head';
-import '@fdmg/css-grid/css/flex.css';
-import '@fdmg/css-grid/css/grid.css';
-import '@fdmg/css-grid/GridContainer.css';
 import styles from './grid.module.scss';
 import { getCssClassNames, GridContainer } from '@fdmg/css-grid/GridContainer';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 export const metaTitle = 'Grid';
 export const metaDescription = 'Grid, used to layout a page';
@@ -28,7 +26,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 hideExternalCodeEditors={true}
                 legend="Grid"
                 reactComponentName="GridContainer"

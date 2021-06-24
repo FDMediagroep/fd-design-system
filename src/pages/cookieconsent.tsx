@@ -15,6 +15,7 @@ import PageStore from '../stores/PageStore';
 import ReactMD from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 export const metaTitle = 'CookieConsent';
 export const metaDescription =
@@ -81,7 +82,7 @@ function Page() {
 
             <Explain
                 anchor="locked-content"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Locked content"
                 reactComponentName="LockedContent"
                 description={
@@ -348,7 +349,7 @@ function Page() {
 
             <Explain
                 anchor="cookie-consent"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 hideExternalCodeEditors={true}
                 hidePreview={!opened}
                 legend="Cookie consent"

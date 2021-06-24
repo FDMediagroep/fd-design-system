@@ -26,13 +26,15 @@ function HorizontalCard1(props: Props) {
         <article
             style={props.style}
             className={`${styles.horizontalCard1}${
-                props.isRead ? ` ${styles.isRead}` : ''
-            }${props.variant === 'variant-1' ? ` ${styles.longread}` : ''}`}
+                props.className ? ` ${props.className}` : ''
+            }${props.isRead ? ` ${styles.isRead}` : ''}${
+                props.variant === 'variant-1' ? ` ${styles.longread}` : ''
+            } xs__p-0`}
             id={props.id}
         >
             <a href={props.url} aria-label={props.title}>
                 {(props.imageUrl || props.imageComponent) && (
-                    <figure>
+                    <figure className="xs__m-0">
                         <picture>
                             {props.imageComponent ?? (
                                 <img
@@ -46,19 +48,21 @@ function HorizontalCard1(props: Props) {
                 )}
 
                 {!props.imageUrl && !props.imageComponent && (
-                    <div className={`${styles.figure} ${styles.empty}`}>
+                    <div className={`${styles.figure} ${styles.empty} xs__m-0`}>
                         <img src="/assets/images/fd-logo.svg" />
                     </div>
                 )}
 
-                <div className={styles.teaserText}>
-                    <div className={styles.meta}>
+                <div className={`${styles.teaserText} xs__p+3 s__p+4`}>
+                    <div className={`${styles.meta} xs__m-0 xs__mb+2`}>
                         <span className={styles.prefix}>{props.label}</span>
                         <time>{props.time}</time>
                     </div>
 
                     <div className={styles.textContainer}>
-                        <h1 className="heading serif s">{props.title}</h1>
+                        <h1 className="heading serif s xs__m-0">
+                            {props.title}
+                        </h1>
                     </div>
                 </div>
             </a>

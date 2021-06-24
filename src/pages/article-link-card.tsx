@@ -6,6 +6,7 @@ import {
 } from '../components/article-link-card/LinkCard';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 export const metaTitle = 'Link card';
 export const metaDescription =
@@ -40,7 +41,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Link Card"
                 reactComponentName="LinkCard"
                 description={

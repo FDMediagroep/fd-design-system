@@ -2,6 +2,7 @@ import React from 'react';
 import { Explain } from '../../components/Explain';
 import { TextArea, getCssClassNames } from '../../components/input/TextArea';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Text area';
 export const metaDescription = 'Text area, used in forms';
@@ -25,7 +26,7 @@ function Page() {
 
             <Explain
                 anchor="mandatory"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="column"
                 legend="TextArea (mandatory)"
                 reactComponentName="TextArea"
@@ -54,7 +55,7 @@ function Page() {
 
             <Explain
                 anchor="description"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="column"
                 legend="TextArea (description)"
                 reactComponentName="TextArea"
@@ -86,7 +87,7 @@ function Page() {
 
             <Explain
                 anchor="mandatory-placeholder"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="column"
                 legend="TextArea (mandatory, placeholder)"
                 reactComponentName="TextArea"
@@ -122,7 +123,7 @@ function Page() {
 
             <Explain
                 anchor="description-placeholder"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="column"
                 legend="TextArea (description, placeholder)"
                 reactComponentName="TextArea"
@@ -155,7 +156,7 @@ function Page() {
 
             <Explain
                 anchor="mandatory-default-value"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="column"
                 legend="TextArea (mandatory, default value)"
                 reactComponentName="TextArea"
@@ -191,7 +192,7 @@ function Page() {
 
             <Explain
                 anchor="default-value"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="column"
                 legend="TextArea (default value)"
                 reactComponentName="TextArea"
@@ -224,7 +225,7 @@ function Page() {
 
             <Explain
                 anchor="max-words"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="column"
                 legend="TextArea (max words)"
                 reactComponentName="TextArea"
@@ -260,7 +261,7 @@ function Page() {
 
             <Explain
                 anchor="disabled"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="column"
                 legend="TextArea (disabled)"
                 reactComponentName="TextArea"
@@ -286,7 +287,7 @@ function Page() {
 
             <Explain
                 anchor="localStorage"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="column"
                 legend="TextArea (localStorage)"
                 reactComponentName="TextArea"

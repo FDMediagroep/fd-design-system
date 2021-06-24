@@ -13,7 +13,6 @@
         color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
     }
     menu {
-        margin: 0;
         text-align: right;
         padding-inline-start: 0;
         display: flex;
@@ -29,7 +28,6 @@
         &:hover {
             text-decoration: underline;
         }
-        margin-top: 0.5rem;
         display: none;
         @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
             display: inline;

@@ -6,6 +6,7 @@ import {
 } from '../components/article-image/Infographic';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 const initialProps = {
     smallImageUrl:
@@ -47,7 +48,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Infographic"
                 reactComponentName="InfographicExtended"
                 description={

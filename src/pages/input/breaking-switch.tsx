@@ -5,6 +5,7 @@ import {
     getCssClassNames,
 } from '../../components/input/BreakingSwitch';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Breaking Switch';
 export const metaDescription =
@@ -34,7 +35,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Breaking Switch"
                 reactComponentName="BreakingSwitch"
                 description={

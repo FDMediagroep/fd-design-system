@@ -14,10 +14,10 @@ function Footer(props: Props) {
         <footer
             className={`${styles.footer}${
                 props.className ? ` ${props.className}` : ''
-            }`}
+            } xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4`}
         >
-            <menu>
-                <a onClick={props.onBookmark}>
+            <menu className="xs__m-0">
+                <a onClick={props.onBookmark} className="xs__mt+2">
                     {props.bookmarked ? (
                         <span
                             className={`${styles.icon}${

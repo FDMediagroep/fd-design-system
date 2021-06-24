@@ -6,6 +6,7 @@ import {
 } from '../components/article-summary/Summary';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 const initialProps = {
     title: 'In het kort',
@@ -49,7 +50,7 @@ function Page() {
 
             <Explain
                 anchor="default"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Summary"
                 reactComponentName="Summary"
                 description={
@@ -64,7 +65,7 @@ function Page() {
 
             <Explain
                 anchor="variant-1"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Summary (variant-1)"
                 reactComponentName="Summary"
                 description={
@@ -79,7 +80,7 @@ function Page() {
 
             <Explain
                 anchor="variant-2"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Summary (variant-2)"
                 reactComponentName="Summary"
                 description={

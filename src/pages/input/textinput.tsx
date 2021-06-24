@@ -2,6 +2,7 @@ import React from 'react';
 import { Explain } from '../../components/Explain';
 import { TextInput, getCssClassNames } from '../../components/input/TextInput';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Text input';
 export const metaDescription = 'Text input, used in forms';
@@ -25,7 +26,7 @@ function Page() {
 
             <Explain
                 anchor="mandatory"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Text (mandatory)"
                 reactComponentName="TextInput"
@@ -50,7 +51,7 @@ function Page() {
 
             <Explain
                 anchor="description"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Text (description)"
                 reactComponentName="TextInput"
@@ -82,7 +83,7 @@ function Page() {
 
             <Explain
                 anchor="description-placeholder"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Text (description, placeholder)"
                 reactComponentName="TextInput"
@@ -115,7 +116,7 @@ function Page() {
 
             <Explain
                 anchor="description-default-value"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Number (description, default value)"
                 reactComponentName="TextInput"
@@ -150,7 +151,7 @@ function Page() {
 
             <Explain
                 anchor="description-default-value-hidden-spinners"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Number (description, default value, hidden spinners)"
                 reactComponentName="TextInput"
@@ -189,7 +190,7 @@ function Page() {
 
             <Explain
                 anchor="disabled"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Number (disabled)"
                 reactComponentName="TextInput"

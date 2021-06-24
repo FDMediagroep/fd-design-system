@@ -6,6 +6,7 @@ import {
 } from '../components/financial-agenda/FinancialAgenda';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 const data = [
     {
@@ -193,7 +194,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Financial Agenda"
                 reactComponentName="FinancialAgenda"
                 description={

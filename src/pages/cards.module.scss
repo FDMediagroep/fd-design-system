@@ -50,19 +50,17 @@
 }
 .hybridCard1Preview {
     flex-direction: column;
-    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-        > *:not(:last-child) {
-            border-bottom: 1px solid var(--dividers);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-bottom: 1px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        30
-                    )};
-            }
+    > *:not(:last-child) {
+        border-bottom: 1px solid var(--dividers);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            border-bottom: 1px solid #{map-deep-get(
+                    $colors,
+                    'colors',
+                    'neutral',
+                    30
+                )};
         }
     }
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {

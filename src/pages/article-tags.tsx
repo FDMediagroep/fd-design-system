@@ -7,6 +7,7 @@ import {
 import styles from './article-link-block.module.scss';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 export const metaTitle = 'Article tags';
 export const metaDescription = 'Article tags, used to display tags in articles';
@@ -110,7 +111,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewClassName={styles.preview}
                 legend="Article tags"
                 description={

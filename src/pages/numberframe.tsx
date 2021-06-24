@@ -6,6 +6,7 @@ import {
 } from '../components/numberframe/NumberFrame';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 const initialProps = {
     number: `57%`,
@@ -45,7 +46,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="NumberFrame"
                 reactComponentName="NumberFrame"
                 description={

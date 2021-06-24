@@ -2,6 +2,7 @@ import React from 'react';
 import { Explain } from '../../components/Explain';
 import { TextInput, getCssClassNames } from '../../components/input/TextInput';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Date input';
 export const metaDescription = 'Date input, used in forms';
@@ -25,7 +26,7 @@ function Page() {
 
             <Explain
                 anchor="mandatory"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Date (mandatory)"
                 reactComponentName="TextInput"
@@ -65,7 +66,7 @@ function Page() {
 
             <Explain
                 anchor="description"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Date (description)"
                 reactComponentName="TextInput"
@@ -105,7 +106,7 @@ function Page() {
 
             <Explain
                 anchor="yyyy-mm"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Date YYYY-MM (mandatory)"
                 reactComponentName="TextInput"

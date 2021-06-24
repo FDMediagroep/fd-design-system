@@ -2,6 +2,7 @@ import React from 'react';
 import { Explain } from '../../components/Explain';
 import Head from 'next/head';
 import { Select, getCssClassNames } from '../../components/input/Select';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Select drop-down';
 export const metaDescription = 'Select drop-down, used in forms';
@@ -25,7 +26,7 @@ function Page() {
 
             <Explain
                 anchor="mandatory"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Select (mandatory)"
                 reactComponentName="Select"
@@ -71,7 +72,7 @@ function Page() {
 
             <Explain
                 anchor="optional"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Select (optional)"
                 reactComponentName="Select"
@@ -104,7 +105,7 @@ function Page() {
 
             <Explain
                 anchor="disabled"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Select (disabled)"
                 reactComponentName="Select"

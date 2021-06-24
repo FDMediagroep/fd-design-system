@@ -114,12 +114,12 @@
                 }
             }
 
-            @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
+            @media screen and (max-width: 640px - 0.02px) {
                 &:not(:focus) {
                     width: 0;
+                    border: none;
                     padding: 0;
                     margin: 0;
-                    border: 0;
                 }
             }
 
@@ -190,8 +190,9 @@
 
     .customButton {
         margin-left: 0.5rem;
-        @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-            display: none;
+        display: none;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            display: flex;
         }
     }
     &#{&} {

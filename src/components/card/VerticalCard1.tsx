@@ -37,8 +37,12 @@ function VerticalCard1(props: Props) {
             id={props.id}
             aria-label={props.title}
         >
-            <a href={props.url} aria-label={props.title}>
-                <figure>
+            <a
+                className="xs__p-0 xs__pt+4 xs__pr+4 xs__pl+4"
+                href={props.url}
+                aria-label={props.title}
+            >
+                <figure className="xs__mt-4 xs__mr-4 xs__mb+3 xs__ml-4">
                     <picture>
                         {props.imageUrlS && (
                             <source
@@ -67,14 +71,18 @@ function VerticalCard1(props: Props) {
                 </figure>
 
                 <div className={styles.teaserText}>
-                    <div className={styles.meta}>
+                    <div className={`${styles.meta} xs__mb+2`}>
                         <span className={styles.prefix}>{props.label}</span>
                     </div>
 
                     <div>
-                        <h1 className="heading serif s">{props.title}</h1>
+                        <h1 className="heading serif s xs__m-0">
+                            {props.title}
+                        </h1>
 
-                        <p className={`${styles.intro} body-text sans s`}>
+                        <p
+                            className={`${styles.intro} body-text sans s xs__m-0 xs__mt+2`}
+                        >
                             {props.intro}
                         </p>
                     </div>

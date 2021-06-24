@@ -7,7 +7,6 @@
     transition: box-shadow 0.15s linear;
     margin-bottom: 1px;
     justify-content: space-between;
-    padding: 0;
     background-color: var(--card);
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -23,11 +22,9 @@
             (-ms-high-contrast: none) {
             color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
-        margin: 0;
     }
 
     .intro {
-        margin: 0.5rem 0 0 0;
         color: var(--content-copy);
         // IE11
         @media screen and (-ms-high-contrast: active),
@@ -55,14 +52,10 @@
         }
     }
 
-    .textContainer {
-        margin-bottom: 0;
-    }
     figure {
         overflow: hidden;
         position: relative;
         display: flex;
-        margin: 0;
         flex: 0 0 auto;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             flex: 0 0 116px;
@@ -102,10 +95,6 @@
     .teaserText {
         position: relative;
         flex: 1;
-        padding: 1rem;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            padding: 1rem 1.5rem;
-        }
 
         > a {
             color: var(--content-copy);
@@ -124,7 +113,6 @@
         top: auto;
         left: auto;
         right: auto;
-        margin: 0 0 8px 0;
         display: flex;
         justify-content: space-between;
         font-family: map-deep-get($typography, 'font-family', 'bold'),

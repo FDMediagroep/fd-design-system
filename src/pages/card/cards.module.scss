@@ -30,49 +30,16 @@
     }
 }
 
-.verticalCard1,
-.verticalCard2 {
-    margin: 0 1rem 1rem 0;
-
-    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-        max-width: 300px;
+.horizontalGrid {
+    row-gap: 1px;
+}
+.hybrid1Grid {
+    @media screen and (max-width: 640px - 0.02px) {
+        row-gap: 1px;
     }
 }
-
-.verticalCard3,
-.verticalCard4 {
-    margin-bottom: 1rem;
-}
-
-.hybridCard1,
-.hybridCard2 {
-    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-        max-width: 300px;
-        margin: 0 1rem 1rem 0;
-    }
-}
-.horizontalFlexPreview {
-    flex-direction: column;
-    @media screen and (max-width: map-deep-get($media, 'sizes', 'xs')) {
-        > *:not(:last-child) {
-            border-bottom: 1px solid var(--dividers);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-bottom: 1px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        30
-                    )};
-            }
-        }
-    }
-    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-        > *:not(:last-child) {
-            border: none;
-        }
-        flex-direction: row !important;
-        flex-wrap: wrap;
+.hybrid2Grid {
+    @media screen and (max-width: 768px - 0.02px) {
+        row-gap: 1px;
     }
 }

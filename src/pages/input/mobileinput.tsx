@@ -6,6 +6,7 @@ import {
     Patterns,
 } from '../../components/input/TextInput';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Mobile number input';
 export const metaDescription = 'Mobile number input, used in forms';
@@ -29,7 +30,7 @@ function Page() {
 
             <Explain
                 anchor="mandatory"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Mobile (mandatory)"
                 reactComponentName="TextInput"
@@ -75,7 +76,7 @@ function Page() {
 
             <Explain
                 anchor="mandatory-default-value"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="Mobile (mandatory, default value)"
                 reactComponentName="TextInput"

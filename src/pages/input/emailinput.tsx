@@ -6,6 +6,7 @@ import {
     Patterns,
 } from '../../components/input/TextInput';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'E-mail input';
 export const metaDescription = 'E-mail input, used in forms';
@@ -29,7 +30,7 @@ function Page() {
 
             <Explain
                 anchor="mandatory"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="E-mail (mandatory)"
                 reactComponentName="TextInput"
@@ -74,7 +75,7 @@ function Page() {
 
             <Explain
                 anchor="mandatory-description"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="E-mail (mandatory, description)"
                 reactComponentName="TextInput"
@@ -120,7 +121,7 @@ function Page() {
 
             <Explain
                 anchor="mandatory-description-error"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewFlexDirection="row"
                 legend="E-mail (mandatory, description, error)"
                 reactComponentName="TextInput"

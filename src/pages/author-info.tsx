@@ -6,6 +6,7 @@ import {
 } from '../components/author-info/AuthorInfo';
 import styles from './article-link-block.module.scss';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 export const metaTitle = 'Author info';
 export const metaDescription =
@@ -34,7 +35,7 @@ function Page() {
             </Head>
 
             <Explain
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 previewClassName={styles.preview}
                 legend="Author Info"
                 reactComponentName="AuthorInfo"

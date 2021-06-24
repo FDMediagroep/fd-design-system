@@ -5,6 +5,7 @@ import {
     getCssClassNames,
     HybridCard3,
 } from '../../components/card/HybridCard3';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 const hybridCards3: any = [
     {
@@ -76,7 +77,7 @@ function Page() {
 
             <Explain
                 anchor="hybrid3"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Hybrid Card 3"
                 reactComponentName="HybridCard3"
                 description={
@@ -93,7 +94,7 @@ function Page() {
 
             <Explain
                 anchor="hybrid3time"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Hybrid Card 3"
                 reactComponentName="HybridCard3"
                 description={
@@ -110,7 +111,7 @@ function Page() {
 
             <Explain
                 anchor="hybrid3nointro"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Hybrid Card 3"
                 reactComponentName="HybridCard3"
                 description={

@@ -3,6 +3,7 @@ import { Explain } from '../components/Explain';
 import { ReadMore, getCssClassNames } from '../components/readmore/ReadMore';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
+import { globalCssClassNames } from '../utils/globalCssClassNames';
 
 const initialProps = {
     title: `Ridiculus Sollicitudin Cras Ipsum Ornare`,
@@ -46,7 +47,7 @@ function Page() {
             <Explain
                 anchor="default"
                 bgcolor="var(--product-background-2)"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="ReadMore"
                 reactComponentName="ReadMore"
                 description={
@@ -66,7 +67,7 @@ function Page() {
             <Explain
                 anchor="variant-1"
                 bgcolor="var(--product-background-2)"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="ReadMore (variant-1)"
                 reactComponentName="ReadMore"
                 description={
@@ -85,7 +86,7 @@ function Page() {
 
             <Explain
                 anchor="variant-2"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="ReadMore (variant-2)"
                 reactComponentName="ReadMore"
                 description={

@@ -2,6 +2,7 @@ import React from 'react';
 import { Explain } from '../../components/Explain';
 import { Checkbox, getCssClassNames } from '../../components/input/Checkbox';
 import Head from 'next/head';
+import { globalCssClassNames } from '../../utils/globalCssClassNames';
 
 export const metaTitle = 'Checkbox';
 export const metaDescription = 'Checkbox, used in forms';
@@ -25,7 +26,7 @@ function Page() {
 
             <Explain
                 anchor="default"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Checkbox"
                 reactComponentName="Checkbox"
                 description={
@@ -48,7 +49,7 @@ function Page() {
 
             <Explain
                 anchor="checked"
-                cssClassNames={getCssClassNames()}
+                cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Checkbox (default: checked)"
                 description={
                     <>
