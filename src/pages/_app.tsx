@@ -569,6 +569,11 @@ function App({ Component, pageProps }) {
                                 isToggle: true,
                                 menuItems: [
                                     {
+                                        text: 'CSS Grid 📤',
+                                        href: 'https://github.com/FDMediagroep/fdmg-css-grid',
+                                        target: '_blank',
+                                    },
+                                    {
                                         component: (
                                             <Link href="/grid">
                                                 <a>Test page</a>
@@ -606,6 +611,11 @@ function App({ Component, pageProps }) {
                                         <a>Stock Ticker</a>
                                     </Link>
                                 ),
+                            },
+                            {
+                                text: 'Paddings/Margins system 📤',
+                                href: 'https://github.com/FDMediagroep/fdmg-css-grid#paddingsmargins-system',
+                                target: '_blank',
                             },
                             {
                                 text: 'Typography',
