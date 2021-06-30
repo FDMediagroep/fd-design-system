@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './cards.module.scss';
 import { Explain } from '../../components/Explain';
 import {
     VerticalCard3,
