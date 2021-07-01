@@ -46,7 +46,7 @@
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^12.0.0",
         "@testing-library/user-event": "^13.1.9",
-        "@types/fetch-jsonp": "^1.0.0",
+        "@types/fetch-jsonp": "^1.1.0",
         "@types/jest": "^26.0.23",
         "@types/js-cookie": "^2.2.6",
         "@types/micro-cors": "^0.1.1",
