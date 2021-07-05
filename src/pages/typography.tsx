@@ -34,6 +34,7 @@ function Page() {
                 }
             >
                 <>
+                    <h1 className="heading serif xxs">Reserved</h1>
                     <h1 className="heading serif xs">Heading serif xs</h1>
                     <h1 className="heading serif s">Heading serif s</h1>
                     <h1 className="heading serif m">Heading serif m</h1>
@@ -54,6 +55,7 @@ function Page() {
                 }
             >
                 <>
+                    <h1 className="heading sans xs">Heading sans xxs</h1>
                     <h1 className="heading sans xs">Heading sans xs</h1>
                     <h1 className="heading sans s">Heading sans s</h1>
                     <h1 className="heading sans m">Heading sans m</h1>
@@ -74,6 +76,9 @@ function Page() {
                 }
             >
                 <>
+                    <h1 className="heading sans regular xxs">
+                        Heading sans regular xxs
+                    </h1>
                     <h1 className="heading sans regular xs">
                         Heading sans regular xs
                     </h1>
@@ -106,6 +111,7 @@ function Page() {
                 }
             >
                 <>
+                    <p className="body-text serif xxs">Reserved</p>
                     <p className="body-text serif xs">body-text serif xs</p>
                     <p className="body-text serif s">body-text serif s</p>
                     <p className="body-text serif m">Reserved</p>
@@ -126,6 +132,7 @@ function Page() {
                 }
             >
                 <>
+                    <p className="body-text serif xxs bold">Reserved</p>
                     <p className="body-text serif xs bold">
                         body-text serif xs bold
                     </p>
@@ -150,6 +157,7 @@ function Page() {
                 }
             >
                 <>
+                    <p className="body-text sans xs">Reserved</p>
                     <p className="body-text sans xs">body-text sans xs</p>
                     <p className="body-text sans s">body-text sans s</p>
                     <p className="body-text sans m">body-text sans m</p>
@@ -170,6 +178,7 @@ function Page() {
                 }
             >
                 <>
+                    <p className="body-text sans xxs bold">Reserved</p>
                     <p className="body-text sans xs bold">
                         body-text sans xs bold
                     </p>

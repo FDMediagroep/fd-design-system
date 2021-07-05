@@ -12,6 +12,25 @@
                 sans-serif;
             font-weight: normal;
         }
+        &.xxs {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'sans-serif',
+                    'xxs',
+                    'font-size'
+                )}rem;
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'sans-serif',
+                        'xxs',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
         &.xs {
             font-size: #{map-deep-get(
                     $typography,
@@ -131,6 +150,25 @@
     &.serif {
         letter-spacing: -0.03rem;
         font-family: map-deep-get($typography, 'font-family', 'bold-serif');
+        &.xxs {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'heading',
+                    'serif',
+                    'xs',
+                    'font-size'
+                )}rem;
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'heading',
+                        'serif',
+                        'xs',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
         &.xs {
             font-size: #{map-deep-get(
                     $typography,
@@ -263,6 +301,25 @@
             font-family: map-deep-get($typography, 'font-family', 'bold'),
                 sans-serif;
         }
+        &.xxs {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'sans-serif',
+                    'xs',
+                    'font-size'
+                )}rem;
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'sans-serif',
+                        'xs',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
+        }
         &.xs {
             font-size: #{map-deep-get(
                     $typography,
@@ -382,6 +439,25 @@
         font-family: map-deep-get($typography, 'font-family', 'regular-serif');
         &.bold {
             font-family: map-deep-get($typography, 'font-family', 'bold-serif');
+        }
+        &.xxs {
+            font-size: #{map-deep-get(
+                    $typography,
+                    'body',
+                    'serif',
+                    'xs',
+                    'font-size'
+                )}rem;
+            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
+                font-size: #{map-deep-get(
+                        $typography,
+                        'body',
+                        'serif',
+                        'xs',
+                        's',
+                        'font-size'
+                    )}rem;
+            }
         }
         &.xs {
             font-size: #{map-deep-get(
