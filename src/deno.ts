@@ -61,3 +61,5 @@ export { LockedContent } from './components/cookieconsent/LockedContent';
 export { Menu } from './components/menu/Menu';
 export { Modal } from './components/modal/Modal';
 export { StockTicker } from './components/stockticker/StockTicker';
+
+export { mergeInlineContent } from './utils/articleContent'
