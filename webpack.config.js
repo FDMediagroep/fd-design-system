@@ -210,7 +210,7 @@ module.exports = {
         '/components/stockticker/StockTicker': [
             './src/components/stockticker/StockTicker.tsx',
         ],
-        '/utils/articleContent': ['/utils/articleContent.tsx'],
+        '/utils/articleContent': ['/src/utils/articleContent.tsx'],
 
         // Global
         main: ['./src/main.ts'],
