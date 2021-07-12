@@ -109,6 +109,7 @@ module.exports = {
         '/components/numberframe/NumberFrame': [
             './src/components/numberframe/NumberFrame.tsx',
         ],
+        '/components/oembed/OEmbed': ['./src/components/oembed/OEmbed.tsx'],
         '/components/quote/Quote': ['./src/components/quote/Quote.tsx'],
         '/components/readmore/ReadMore': [
             './src/components/readmore/ReadMore.tsx',
