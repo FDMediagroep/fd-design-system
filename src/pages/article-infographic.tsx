@@ -3,7 +3,7 @@ import { Explain } from '../components/Explain';
 import {
     InfographicExtended,
     getCssClassNames,
-} from '../components/article-image/Infographic';
+} from '../components/article-image/InfographicExtended';
 import PageStore from '../stores/PageStore';
 import Head from 'next/head';
 import { globalCssClassNames } from '../utils/globalCssClassNames';

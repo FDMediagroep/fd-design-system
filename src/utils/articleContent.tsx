@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArticleImage } from '../components/article-image/ArticleImage';
 import { Infographic } from '../components/infographic/Infographic';
-import { InfographicExtended } from '../components/article-image/Infographic';
+import { InfographicExtended } from '../components/article-image/InfographicExtended';
 import { NumberFrame } from '../components/numberframe/NumberFrame';
 import { Quote } from '../components/quote/Quote';
 import { ReadMore } from '../components/readmore/ReadMore';
@@ -51,7 +51,6 @@ export function mergeInlineContent(doc: any) {
             let desktopUrl = '';
             let xlUrl = '';
             let fileName: string;
-            const fNode = childNode.getElementsByTagName('fdmg-filename');
 
             switch (childNode.nodeName) {
                 case 'fdmg-bulletpoint':
@@ -215,7 +214,9 @@ export function mergeInlineContent(doc: any) {
                     );
                     break;
                 case 'fdmg-text-frame':
-                    if (fNode.length) {
+                    if (
+                        childNode?.getElementsByTagName('fdmg-filename')?.length
+                    ) {
                         fileName = innerHTML(childNode, 'fdmg-filename');
                     }
                     jsx.push(
@@ -256,7 +257,7 @@ export function mergeInlineContent(doc: any) {
                 default:
                     // Treat non fdmg elements as normal HTML.
                     if (childNode.nodeName.indexOf('fdmg-') === -1) {
-                        if (!childNode?.childNodes.length) {
+                        if (!childNode.hasChildNodes()) {
                             // Prevent further processing of empty node
                             return true;
                         }

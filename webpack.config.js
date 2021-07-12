@@ -92,7 +92,7 @@ module.exports = {
             './src/components/infographic/Infographic.tsx',
         ],
         '/components/article-image/InfographicExtended': [
-            './src/components/article-image/Infographic.tsx',
+            './src/components/article-image/InfographicExtended.tsx',
         ],
         '/components/article-latest-news/ArticleLatestNews': [
             './src/components/article-latest-news/ArticleLatestNews.tsx',
@@ -113,6 +113,9 @@ module.exports = {
         '/components/quote/Quote': ['./src/components/quote/Quote.tsx'],
         '/components/readmore/ReadMore': [
             './src/components/readmore/ReadMore.tsx',
+        ],
+        '/components/related-pdf/RelatedPdf': [
+            './src/components/related-pdf/RelatedPdf.tsx',
         ],
         '/components/article-summary/Summary': [
             './src/components/article-summary/Summary.tsx',
@@ -211,6 +214,7 @@ module.exports = {
         '/components/stockticker/StockTicker': [
             './src/components/stockticker/StockTicker.tsx',
         ],
+        '/utils/articleContent': ['/src/utils/articleContent.tsx'],
 
         // Global
         main: ['./src/main.ts'],
