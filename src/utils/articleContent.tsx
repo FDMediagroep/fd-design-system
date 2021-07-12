@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArticleImage } from '../components/article-image/ArticleImage';
 import { Infographic } from '../components/infographic/Infographic';
-import { InfographicExtended } from '../components/article-image/Infographic';
+import { InfographicExtended } from '../components/article-image/InfographicExtended';
 import { NumberFrame } from '../components/numberframe/NumberFrame';
 import { Quote } from '../components/quote/Quote';
 import { ReadMore } from '../components/readmore/ReadMore';
