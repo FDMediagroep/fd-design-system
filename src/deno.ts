@@ -16,6 +16,7 @@ export { InfographicExtended } from './components/article-image/Infographic';
 export { LinkBlock } from './components/article-link-block/LinkBlock';
 export { LinkCard as ArticleLinkCard } from './components/article-link-card/LinkCard';
 export { NumberFrame } from './components/numberframe/NumberFrame';
+export { OEmbed } from './components/oembed/OEmbed';
 export { Quote } from './components/quote/Quote';
 export { ReadMore } from './components/readmore/ReadMore';
 export { Summary } from './components/article-summary/Summary';
