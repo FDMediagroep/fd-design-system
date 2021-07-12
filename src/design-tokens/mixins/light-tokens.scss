@@ -51,6 +51,7 @@
     --breaking: #{map-deep-get($colors, 'colors', 'negative', 75)};
     --breaking-label-copy: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --breaking-hover: #{map-deep-get($colors, 'colors', 'negative', 100)};
+    --outline: #{map-deep-get($colors, 'colors', 'neutral', 10)};
 
     /**
      * Card
