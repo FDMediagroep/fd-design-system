@@ -2,7 +2,7 @@ import React from 'react';
 import {
     InfographicExtended,
     getCssClassNames,
-} from '../../../src/components/article-image/Infographic';
+} from '../../../src/components/article-image/InfographicExtended';
 import { render } from '@testing-library/react';
 
 describe('Infographic', () => {

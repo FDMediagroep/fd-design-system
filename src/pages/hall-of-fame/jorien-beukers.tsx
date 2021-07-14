@@ -6,7 +6,7 @@ import { NumberFrame } from '../../components/numberframe/NumberFrame';
 import { WordFrame } from '../../components/wordframe/WordFrame';
 import { ReadMore } from '../../components/readmore/ReadMore';
 import { Summary } from '../../components/article-summary/Summary';
-import { InfographicExtended } from '../../components/article-image/Infographic';
+import { InfographicExtended } from '../../components/article-image/InfographicExtended';
 import { ArticleMeta } from '../../components/article-meta/ArticleMeta';
 import Head from 'next/head';
 import PageStore from '../../stores/PageStore';

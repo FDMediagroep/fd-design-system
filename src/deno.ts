@@ -12,10 +12,11 @@ export { ArticleLatestNews } from './components/article-latest-news/ArticleLates
 export { ArticleTags } from './components/article-tags/ArticleTags';
 export { BulletPoint } from './components/bullet-point/BulletPoint';
 export { Infographic } from './components/infographic/Infographic';
-export { InfographicExtended } from './components/article-image/Infographic';
+export { InfographicExtended } from './components/article-image/InfographicExtended';
 export { LinkBlock } from './components/article-link-block/LinkBlock';
 export { LinkCard as ArticleLinkCard } from './components/article-link-card/LinkCard';
 export { NumberFrame } from './components/numberframe/NumberFrame';
+export { OEmbed } from './components/oembed/OEmbed';
 export { Quote } from './components/quote/Quote';
 export { ReadMore } from './components/readmore/ReadMore';
 export { Summary } from './components/article-summary/Summary';
