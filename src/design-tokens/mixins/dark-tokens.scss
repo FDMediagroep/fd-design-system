@@ -56,6 +56,11 @@
     --outline: #{map-deep-get($colors, 'colors', 'neutral', 90)};
 
     /**
+     * Gift
+     */
+    --gift-by-background: #{map-deep-get($colors, 'colors', 'primary', 100)};
+
+    /**
      * Card
      */
     --card: #{map-deep-get($colors, 'colors', 'neutral', 10)};
