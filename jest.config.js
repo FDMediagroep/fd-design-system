@@ -13,8 +13,7 @@ module.exports = {
     },
     testPathIgnorePatterns: ['/cypress/', '__tests__/mockdata/'],
     moduleNameMapper: {
-        '\\.(css|less|scss|sss|styl)$':
-            '<rootDir>/node_modules/jest-css-modules',
+        '\\.(css|less|scss|sss|styl)$': 'identity-obj-proxy',
     },
     setupFiles: ['<rootDir>/jest/setupTest.js'],
     testEnvironment: 'jsdom',
