@@ -90,7 +90,7 @@
         "react-markdown": "^6.0.2",
         "rehype-raw": "^5.1.0",
         "rehype-sanitize": "^4.0.0",
-        "sass": "^1.36.0",
+        "sass": "^1.37.5",
         "sass-loader": "^12.1.0",
         "style-loader": "^3.2.1",
         "svgo": "^2.3.1",
