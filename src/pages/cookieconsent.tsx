@@ -403,7 +403,7 @@ function Page() {
                         </p>
                         <ReactMD
                             className="markdown"
-                            rehypePlugins={[rehypeRaw, rehypeSanitize]}
+                            rehypePlugins={[rehypeRaw, rehypeSanitize] as any}
                         >
                             {`
 \`\`\`typescript
