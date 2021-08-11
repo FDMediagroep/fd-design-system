@@ -68,7 +68,7 @@ function Page(props: Props) {
             </Head>
             <ReactMD
                 className="markdown"
-                rehypePlugins={[rehypeRaw, rehypeSanitize]}
+                rehypePlugins={[rehypeRaw, rehypeSanitize] as any}
             >
                 {props.readme}
             </ReactMD>
