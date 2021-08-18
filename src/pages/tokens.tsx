@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './tokens.module.scss';
 import fs from 'fs';
 import path from 'path';
-import Head from 'next/dist/next-server/lib/head';
+import Head from 'next/head';
 import colors from '../../public/assets/design-tokens/colors.json';
 import media from '../../public/assets/design-tokens/media.json';
 import typography from '../../public/assets/design-tokens/typography.json';
