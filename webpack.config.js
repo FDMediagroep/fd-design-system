@@ -224,6 +224,7 @@ module.exports = {
         chunkFilename: '[name].chunk.js',
         libraryTarget: 'commonjs2',
         publicPath: '',
+        clean: true,
         // module: true,
     },
     resolve: {
