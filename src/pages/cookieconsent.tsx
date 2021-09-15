@@ -12,10 +12,11 @@ import {
 } from '../components/cookieconsent/CookieConsent';
 import { FdmgIcon } from '../design-tokens/icons';
 import PageStore from '../stores/PageStore';
-import ReactMD from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
-import rehypeSanitize from 'rehype-sanitize';
 import { globalCssClassNames } from '../utils/globalCssClassNames';
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({
+    html: true,
+});
 
 export const metaTitle = 'CookieConsent';
 export const metaDescription =
@@ -401,11 +402,11 @@ function Page() {
                             </a>{' '}
                             and delete your consents from that page.
                         </p>
-                        <ReactMD
+                        <div
                             className="markdown"
-                            rehypePlugins={[rehypeRaw, rehypeSanitize] as any}
-                        >
-                            {`
+                            dangerouslySetInnerHTML={{
+                                __html: md.render(
+                                    `
 \`\`\`typescript
 import { 
     CookieConsentApi
@@ -443,8 +444,10 @@ async function checkCookieconsent() {
     );
 }
 \`\`\`
-`}
-                        </ReactMD>
+`
+                                ),
+                            }}
+                        />
                     </>
                 }
             >

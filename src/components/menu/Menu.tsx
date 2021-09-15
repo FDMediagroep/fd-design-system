@@ -171,7 +171,7 @@ function Menu(props: Props) {
         touchSupport =
             'ontouchstart' in window ||
             navigator['MaxTouchPoints'] > 0 ||
-            navigator.msMaxTouchPoints > 0;
+            navigator['msMaxTouchPoints'] > 0;
 
         document.addEventListener('touchstart', detector);
         document.addEventListener('mousemove', detector);
