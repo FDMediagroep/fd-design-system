@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
-import ReactMD from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
-import rehypeSanitize from 'rehype-sanitize';
 import { useRouter } from 'next/router';
-// import CodeBlock from '../utils/CodeBlock';
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({
+    html: true,
+});
 
 export const metaTitle = 'FD Design System';
 export const metaDescription =
@@ -66,12 +66,12 @@ function Page(props: Props) {
                     content={metaDescription}
                 />
             </Head>
-            <ReactMD
+            <div
                 className="markdown"
-                rehypePlugins={[rehypeRaw, rehypeSanitize] as any}
-            >
-                {props.readme}
-            </ReactMD>
+                dangerouslySetInnerHTML={{
+                    __html: md.render(props.readme),
+                }}
+            />
             <a
                 className="github"
                 href="https://github.com/FDMediagroep/fd-design-system"
