@@ -58,7 +58,7 @@
         "@typescript-eslint/eslint-plugin": "^4.31.1",
         "@typescript-eslint/parser": "^4.31.1",
         "@typescript-eslint/typescript-estree": "^4.31.1",
-        "autoprefixer": "^10.3.4",
+        "autoprefixer": "^10.3.5",
         "copy-webpack-plugin": "^9.0.1",
         "copyfiles": "^2.4.1",
         "cross-env": "^7.0.3",
