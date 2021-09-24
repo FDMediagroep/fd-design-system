@@ -168,7 +168,7 @@ function Page() {
                                 async
                                 src="https://platform.twitter.com/widgets.js"
                                 charSet="utf-8"
-                            ></script>
+                            />
                         </>
                     </LockedContent>
 
@@ -190,7 +190,7 @@ function Page() {
                             height="440"
                             src="https://instagram.com/p/BitdRRzBnYm/embed"
                             frameBorder="0"
-                        ></iframe>
+                        />
                     </LockedContent>
 
                     <LockedContent
@@ -213,7 +213,7 @@ function Page() {
                             frameBorder="no"
                             allow="autoplay"
                             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/618097452&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-                        ></iframe>
+                        />
                     </LockedContent>
 
                     <LockedContent
@@ -237,7 +237,7 @@ function Page() {
                                 frameBorder="0"
                                 allow="autoplay; fullscreen"
                                 allowFullScreen
-                            ></iframe>
+                            />
                         </div>
                     </LockedContent>
                     <LockedContent
@@ -298,7 +298,7 @@ function Page() {
                                 src="static/test.js"&gt;&lt;/script&gt; //
                                 console.log('External script loaded and run')
                             </h3>
-                            <script src="/static/test.js"></script>
+                            <script src="/static/test.js" />
                         </>
                     </LockedContent>
                     <LockedContent

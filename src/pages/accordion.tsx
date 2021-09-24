@@ -77,7 +77,7 @@ const items = [
                                 artikel van FD Mediagroep;
                             </li>
                         </ul>
-                        <p></p>
+                        <p />
                     </li>
                     <li>
                         <p>
