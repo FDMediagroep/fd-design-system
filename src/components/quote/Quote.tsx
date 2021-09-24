@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Quote.module.scss';
 
 interface Props {
-    className: string;
+    className?: string;
     blockquote: string;
     figcaption: string;
 }
