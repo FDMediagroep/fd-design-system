@@ -18,6 +18,7 @@ import { Themes } from '../components/Themes';
 import Link from 'next/link';
 import { debounce } from '../utils/debounce';
 import { handleSearchSubmit } from '../utils/search';
+import { Footer } from '../components/footer/Footer';
 
 /**
  * Make sibling elements same height as its tallest sibling with the given CSS Class Name.
@@ -773,6 +774,8 @@ function App({ Component, pageProps }) {
                 </main>
                 <Tooltip />
             </section>
+
+            <Footer />
         </>
     );
 }
