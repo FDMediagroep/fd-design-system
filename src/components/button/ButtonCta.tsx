@@ -17,7 +17,7 @@ interface Props {
  * @param props
  */
 function ButtonCta(props: Props) {
-    const sizeClass = props.size ? styles.m : '';
+    const sizeClass = props.size === 'm' ? styles.m : '';
 
     return (
         <button

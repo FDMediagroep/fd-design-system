@@ -1,0 +1,170 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+
+.footer {
+    overflow: hidden; // IE11
+    margin-top: 48px;
+    @media screen and (min-width: 1280px) {
+        margin-top: 64px;
+    }
+    background-color: var(--navigation-background);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #e5d1c6;
+    }
+
+    ul {
+        box-sizing: border-box;
+        margin: 0 auto;
+        list-style: none;
+        @media screen and (min-width: 768px) {
+            max-width: 768px;
+        }
+        @media screen and (min-width: 1024px) {
+            max-width: 1024px;
+        }
+        @media screen and (min-width: 1280px) {
+            max-width: 1280px;
+        }
+
+        @media screen and (max-width: 1280px - 0.02px) {
+            li {
+                border-bottom: 1px solid var(--dividers);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    border-bottom: 1px solid #cdbeb4;
+                }
+            }
+        }
+
+        button {
+            width: 100%;
+            padding: 0;
+            border: none;
+            color: var(--meta-copy);
+            background-color: transparent;
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #4c4642;
+            }
+            @media screen and (max-width: 1280px - 0.02px) {
+                cursor: pointer;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    text-decoration: underline;
+                    color: var(--primary);
+                    // IE11
+                    @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                        color: #379596;
+                    }
+
+                    svg path {
+                        fill: var(--primary);
+                        // IE11
+                        @media screen and (-ms-high-contrast: active),
+                            (-ms-high-contrast: none) {
+                            fill: #379596;
+                        }
+                    }
+                }
+            }
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .collapse,
+    .expand {
+        display: flex;
+    }
+
+    [aria-expanded='false'] {
+        .collapse {
+            display: none;
+        }
+    }
+    [aria-expanded='true'] {
+        .expand {
+            display: none;
+        }
+    }
+    @media screen and (min-width: 1280px) {
+        [aria-expanded] {
+            user-select: none;
+            .icon {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1280px - 0.02px) {
+        [hidden] {
+            display: none;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--meta-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #4c4642;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: underline;
+            color: var(--primary);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #379596;
+            }
+        }
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+
+        @media screen and (min-width: 1280px) {
+            border-top: 1px solid var(--dividers);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                border-top: 1px solid #cdbeb4;
+            }
+        }
+        a:hover,
+        a:active,
+        a:focus {
+            svg path {
+                fill: var(--primary);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    fill: #379596;
+                }
+            }
+        }
+    }
+
+    .icon {
+        display: flex;
+        svg {
+            width: 24px;
+            height: 24px;
+            path {
+                fill: var(--meta-copy);
+            }
+        }
+    }
+}

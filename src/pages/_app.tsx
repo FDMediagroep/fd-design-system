@@ -11,13 +11,8 @@ import PageStore, { Page } from '../stores/PageStore';
 import Head from 'next/head';
 import { Tooltip } from '../components/Tooltip';
 import { Menu } from '../components/menu/Menu';
-import { ButtonGhost } from '../components/button/ButtonGhost';
-import { FdIcon, ProfileIcon, SpyglassIcon } from '../design-tokens/icons';
-import { ButtonCta } from '../components/button/ButtonCta';
-import { Themes } from '../components/Themes';
-import Link from 'next/link';
 import { debounce } from '../utils/debounce';
-import { handleSearchSubmit } from '../utils/search';
+import { Footer } from '../components/footer/Footer';
 
 /**
  * Make sibling elements same height as its tallest sibling with the given CSS Class Name.
@@ -128,7 +123,9 @@ function App({ Component, pageProps }) {
                 />
             </Head>
 
-            <Menu
+            <Menu />
+
+            {/* <Menu
                 className={styles.menu}
                 ariaLabel="Main menu"
                 menuItems={[
@@ -765,7 +762,7 @@ function App({ Component, pageProps }) {
                         Inloggen
                     </ButtonGhost>
                 </>
-            </Menu>
+            </Menu> */}
 
             <section className={pageStyle}>
                 <main>
@@ -773,6 +770,8 @@ function App({ Component, pageProps }) {
                 </main>
                 <Tooltip />
             </section>
+
+            <Footer />
         </>
     );
 }
