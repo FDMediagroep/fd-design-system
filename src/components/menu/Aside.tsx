@@ -10,7 +10,7 @@ import {
     HeartOIcon,
     LookingGlassIcon,
 } from '../../design-tokens/icons';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Props } from './Menu';
 import { useRouter } from 'next/router';
 
