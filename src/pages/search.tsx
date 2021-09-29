@@ -404,7 +404,7 @@ const searchIndex: SearchIndex = {
     },
 };
 
-export default function page() {
+export default function Page() {
     const router = useRouter();
     const searchString =
         typeof router.query.q === 'string'

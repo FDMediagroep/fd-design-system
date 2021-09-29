@@ -83,14 +83,15 @@ export enum Patterns {
 }
 
 function Select(props: Props) {
+    const { value: pValue } = props;
     const [value, setValue] = useState(null);
     const errorMessage = props.errorMessage ?? 'Voer een geldige waarde in';
 
     useEffect(() => {
-        if (props.value !== value) {
-            setValue(props.value);
+        if (pValue !== value) {
+            setValue(pValue);
         }
-    }, [props.value]);
+    }, [value, pValue]);
 
     function store(value: string) {
         if (value) {

@@ -124,23 +124,24 @@ export enum Patterns {
 }
 
 function TextInput(props: Props) {
+    const { localStorage: pLocalStorage, id: pId, value: pValue } = props;
     const [value, setValue] = useState(null);
     const errorMessage = props.errorMessage ?? 'Voer een geldige waarde in';
 
     useEffect(() => {
-        const val = props.localStorage
-            ? localStorage.getItem(`fd-input-${props.id}`)
-            : props.value || '';
+        const val = pLocalStorage
+            ? localStorage.getItem(`fd-input-${pId}`)
+            : pValue || '';
         if (val) {
             setValue(val);
         }
-    }, []);
+    }, [pLocalStorage, pId, pValue]);
 
     useEffect(() => {
-        if (props.value !== value) {
-            setValue(props.value);
+        if (pValue !== value) {
+            setValue(pValue);
         }
-    }, [props.value]);
+    }, [pValue, value]);
 
     function store(value: string) {
         if (value) {

@@ -1,12 +1,10 @@
 {
     "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
+        "next/core-web-vitals",
         "prettier",
         "plugin:prettier/recommended"
     ],
-    "plugins": ["react", "@typescript-eslint", "prettier"],
+    "plugins": ["prettier"],
     "env": {
         "browser": true,
         "jasmine": true,
@@ -17,6 +15,9 @@
         "prettier/prettier": ["error"],
         "react/prop-types": "off",
         "react/self-closing-comp": ["warn"],
+        "@next/next/no-document-import-in-page": "warn",
+        "@next/next/no-img-element": "off",
+        "@next/next/no-sync-scripts": "warn",
         "@typescript-eslint/array-type": "off",
         "@typescript-eslint/camelcase": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
@@ -25,15 +26,5 @@
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-var-requires": "off",
         "react/no-unescaped-entities": "off"
-    },
-    "settings": {
-        "react": {
-            "pragma": "React",
-            "version": "detect"
-        }
-    },
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "project": "./tsconfig.json"
     }
 }

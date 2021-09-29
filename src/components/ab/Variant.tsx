@@ -11,9 +11,10 @@ export interface Props {
 }
 
 export function Variant(props: Props) {
+    const { onRunVariant, name: pName } = props;
     useEffect(() => {
-        props?.onRunVariant?.(props.name);
-    }, []);
+        onRunVariant?.(pName);
+    }, [onRunVariant, pName]);
 
     const childrenWithProps = React.Children.map(props.children, (child) => {
         return React.cloneElement(child, {

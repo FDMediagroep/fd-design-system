@@ -105,7 +105,8 @@ export interface Props {
 }
 
 function TextArea(props: Props) {
-    const [value, setValue] = useState(props.value ?? '');
+    const { id, localStorage: pLocalStorage, value: pValue } = props;
+    const [value, setValue] = useState(pValue ?? '');
     const errorMessage = props.errorMessage ?? 'Voer een geldige waarde in';
     const showMaxWordsError = props.maxWords
         ? wordCount(value) > props.maxWords
@@ -116,13 +117,13 @@ function TextArea(props: Props) {
         : false;
 
     useEffect(() => {
-        const val = props.localStorage
-            ? localStorage.getItem(`fd-textarea-${props.id}`)
-            : props.value || '';
+        const val = pLocalStorage
+            ? localStorage.getItem(`fd-textarea-${id}`)
+            : pValue || '';
         if (val) {
             setValue(val);
         }
-    }, [props.value]);
+    }, [pValue, pLocalStorage, id]);
 
     function store(value: string) {
         if (value) {

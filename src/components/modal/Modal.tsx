@@ -54,22 +54,24 @@ export interface Props {
 }
 
 export default function Modal(props: Props) {
+    const { onClose } = props;
+
     const handleBackgroundClose = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             if (!props.disableBackgroundClose) {
                 e.preventDefault();
-                props?.onClose?.(e);
+                onClose?.(e);
             }
         },
-        [props.onClose, props.disableBackgroundClose]
+        [onClose, props.disableBackgroundClose]
     );
 
     const handleModalClose = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
-            props?.onClose?.(e);
+            onClose?.(e);
         },
-        [props.onClose]
+        [onClose]
     );
 
     return (

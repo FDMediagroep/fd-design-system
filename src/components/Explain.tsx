@@ -99,7 +99,13 @@ interface Props {
 }
 
 function Explain(props: Props) {
-    const bgcolor = props.bgcolor || 'var(--product-background)';
+    const {
+        bgcolor: pBgColor,
+        cssClassNames: pCcssClassNames,
+        children,
+        reactComponentName: pReactComponentName,
+    } = props;
+    const bgcolor = pBgColor || 'var(--product-background)';
     const [css, setCss] = useState('');
     const [cssBase64, setCssBase64] = useState(null);
     const [html, setHtml] = useState('');
@@ -125,32 +131,30 @@ function Explain(props: Props) {
     useEffect(() => {
         setReact(
             reactElementToJSXString(
-                props.children,
-                props.reactComponentName
+                children,
+                pReactComponentName
                     ? {
                           displayName: (el: ReactElement<any, any>) => {
                               return typeof el.type === 'string'
                                   ? el.type
-                                  : props.reactComponentName;
+                                  : pReactComponentName;
                           },
                       }
                     : {}
             )
         );
         setHtml(
-            pretty(
-                renderToString(props.children).replace('data-reactroot=""', '')
-            )
+            pretty(renderToString(children).replace('data-reactroot=""', ''))
         );
         setTags(getTags(window.location.pathname));
         setDestination(getDestination(window.location.pathname));
-        const styles = getStyle(...props.cssClassNames);
+        const styles = getStyle(...pCcssClassNames);
         if (styles) {
             const css = cssbeautify(styles);
             setCss(css);
             setCssBase64(btoa(unescape(encodeURIComponent(css))));
         }
-    }, [props.children]);
+    }, [children, pCcssClassNames, pReactComponentName]);
 
     function copyCss() {
         if ('clipboard' in navigator) {

@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import Script from 'next/script';
 import styles from './cookieconsent.module.scss';
 import { Explain } from '../components/Explain';
 import Head from 'next/head';
@@ -56,14 +57,14 @@ function Page() {
         setOpened(!opened);
     }, [opened]);
 
-    const handleModalClose = useCallback(() => {
+    const handleModalClose = () => {
         setOpened(false);
-    }, [opened]);
+    };
 
     const handleUnlock = useCallback(() => {
         console.log(CookieConsentStore.getVendorNames());
         cookieConsentApi.post(CookieConsentStore.getVendorNames());
-    }, [cookieConsentApi]);
+    }, []);
 
     return (
         <div className={styles.cookieConsent}>
@@ -298,7 +299,10 @@ function Page() {
                                 src="static/test.js"&gt;&lt;/script&gt; //
                                 console.log('External script loaded and run')
                             </h3>
-                            <script src="/static/test.js" />
+                            <Script
+                                src="/static/test.js"
+                                strategy={'beforeInteractive'}
+                            />
                         </>
                     </LockedContent>
                     <LockedContent
@@ -326,6 +330,7 @@ function Page() {
                                         src="//static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/alpha/info-circle-solid.svg"
                                         width="24"
                                         height="24"
+                                        alt="icon"
                                     />
                                 </a>
                             </div>
@@ -341,6 +346,7 @@ function Page() {
                                     src="//static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/alpha/info-circle-solid.svg"
                                     width="24"
                                     height="24"
+                                    alt="icon"
                                 />
                             </a>
                         </div>

@@ -24,37 +24,37 @@ interface Props {
 }
 
 function Article(props: Props) {
-    try {
-        const [jsxContent] = useState(
-            mergeInlineContent(
-                new DOMParser().parseFromString(props.articleXml, 'text/xml')
-            )
+    const [jsxContent] = useState(
+        mergeInlineContent(
+            new DOMParser().parseFromString(props.articleXml, 'text/xml')
+        )
+    );
+
+    useEffect(() => {
+        PageStore.setPageType('article');
+
+        new OEmbedLoader(
+            '.soundcloud-embed',
+            'jsonp',
+            'https://soundcloud.com/oembed?format=js&url='
+        );
+        new OEmbedLoader(
+            '.twitter-embed',
+            'jsonp',
+            'https://api.twitter.com/1/statuses/oembed.json?url='
+        );
+        new OEmbedLoader(
+            '.instagram-embed',
+            'json',
+            'https://api.instagram.com/oembed?url='
         );
 
-        useEffect(() => {
-            PageStore.setPageType('article');
+        return () => {
+            PageStore.setPageType('overview');
+        };
+    }, []);
 
-            new OEmbedLoader(
-                '.soundcloud-embed',
-                'jsonp',
-                'https://soundcloud.com/oembed?format=js&url='
-            );
-            new OEmbedLoader(
-                '.twitter-embed',
-                'jsonp',
-                'https://api.twitter.com/1/statuses/oembed.json?url='
-            );
-            new OEmbedLoader(
-                '.instagram-embed',
-                'json',
-                'https://api.instagram.com/oembed?url='
-            );
-
-            return () => {
-                PageStore.setPageType('overview');
-            };
-        }, []);
-
+    try {
         return (
             <article className={styles.article}>
                 <Head>
