@@ -77,12 +77,12 @@ function Footer() {
                         <button
                             className="heading sans xs"
                             aria-controls="footerAbout"
-                            aria-expanded="false"
+                            aria-expanded={false}
                             onClick={handleClick}
                             onKeyDown={handleKeyDown}
                         >
                             <span>Over FD</span>
-                            <span className="icon">
+                            <span className={styles.icon}>
                                 <span
                                     className={styles.collapse}
                                     dangerouslySetInnerHTML={{
@@ -168,12 +168,12 @@ function Footer() {
                         <button
                             className="heading sans xs"
                             aria-controls="footerGeneral"
-                            aria-expanded="false"
+                            aria-expanded={false}
                             onClick={handleClick}
                             onKeyDown={handleKeyDown}
                         >
                             <span>Algemeen</span>
-                            <span className="icon">
+                            <span className={styles.icon}>
                                 <span
                                     className={styles.collapse}
                                     dangerouslySetInnerHTML={{
@@ -261,12 +261,12 @@ function Footer() {
                         <button
                             className="heading sans xs"
                             aria-controls="footerService"
-                            aria-expanded="false"
+                            aria-expanded={false}
                             onClick={handleClick}
                             onKeyDown={handleKeyDown}
                         >
                             <span>Service</span>
-                            <span className="icon">
+                            <span className={styles.icon}>
                                 <span
                                     className={styles.collapse}
                                     dangerouslySetInnerHTML={{
@@ -350,12 +350,12 @@ function Footer() {
                         <button
                             className="heading sans xs"
                             aria-controls="footerProducts"
-                            aria-expanded="false"
+                            aria-expanded={false}
                             onClick={handleClick}
                             onKeyDown={handleKeyDown}
                         >
                             <span>Producten</span>
-                            <span className="icon">
+                            <span className={styles.icon}>
                                 <span
                                     className={styles.collapse}
                                     dangerouslySetInnerHTML={{
@@ -443,12 +443,12 @@ function Footer() {
                         <button
                             className="heading sans xs"
                             aria-controls="footerPartners"
-                            aria-expanded="false"
+                            aria-expanded={false}
                             onClick={handleClick}
                             onKeyDown={handleKeyDown}
                         >
                             <span>Van onze partners</span>
-                            <span className="icon">
+                            <span className={styles.icon}>
                                 <span
                                     className={styles.collapse}
                                     dangerouslySetInnerHTML={{
@@ -503,12 +503,12 @@ function Footer() {
                         <button
                             className="heading sans xs"
                             aria-controls="footerMoreFDMG"
-                            aria-expanded="false"
+                            aria-expanded={false}
                             onClick={handleClick}
                             onKeyDown={handleKeyDown}
                         >
                             <span>Meer van FDMG</span>
-                            <span className="icon">
+                            <span className={styles.icon}>
                                 <span
                                     className={styles.collapse}
                                     dangerouslySetInnerHTML={{
