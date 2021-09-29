@@ -11,13 +11,7 @@ import PageStore, { Page } from '../stores/PageStore';
 import Head from 'next/head';
 import { Tooltip } from '../components/Tooltip';
 import { Menu } from '../components/menu/Menu';
-import { ButtonGhost } from '../components/button/ButtonGhost';
-import { FdIcon, ProfileIcon, SpyglassIcon } from '../design-tokens/icons';
-import { ButtonCta } from '../components/button/ButtonCta';
-import { Themes } from '../components/Themes';
-import Link from 'next/link';
 import { debounce } from '../utils/debounce';
-import { handleSearchSubmit } from '../utils/search';
 import { Footer } from '../components/footer/Footer';
 
 /**
