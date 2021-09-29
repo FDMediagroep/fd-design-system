@@ -129,7 +129,9 @@ function App({ Component, pageProps }) {
                 />
             </Head>
 
-            <Menu
+            <Menu />
+
+            {/* <Menu
                 className={styles.menu}
                 ariaLabel="Main menu"
                 menuItems={[
@@ -766,7 +768,7 @@ function App({ Component, pageProps }) {
                         Inloggen
                     </ButtonGhost>
                 </>
-            </Menu>
+            </Menu> */}
 
             <section className={pageStyle}>
                 <main>

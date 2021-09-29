@@ -206,6 +206,7 @@ module.exports = {
         '/components/cookieconsent/CookieConsent': [
             './src/components/cookieconsent/CookieConsent.tsx',
         ],
+        '/components/footer/Footer': ['./src/components/footer/Footer.tsx'],
         '/components/cookieconsent/ResponderApi': [
             './src/components/cookieconsent/ResponderApi.ts',
         ],
