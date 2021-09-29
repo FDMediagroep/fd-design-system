@@ -280,7 +280,7 @@ function Menu(props: Props) {
             });
             observer.observe(customMenuRef.current);
         }
-    }, [customMenuRef.current]);
+    }, []);
 
     /**
      * Toggle sub-menu visibility.

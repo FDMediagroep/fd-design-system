@@ -59,23 +59,24 @@ interface Props {
 }
 
 function LockedContent(props: Props) {
+    const { vendorName: pVendorName } = props;
     const [unlocked, setUnlocked] = useState(props.unlocked);
     const unlockedRef = useRef(null);
 
     useEffect(() => {
         const subscriptionId = CookieConsentStore.subscribe(() => {
-            setUnlocked(CookieConsentStore.hasVendorName(props.vendorName));
+            setUnlocked(CookieConsentStore.hasVendorName(pVendorName));
         });
         return () => {
             CookieConsentStore.unsubscribe(subscriptionId);
         };
-    }, []);
+    }, [pVendorName]);
 
     useEffect(() => {
         if (unlocked && unlockedRef.current) {
             loadAllScripts(unlockedRef.current);
         }
-    }, [unlocked, unlockedRef.current]);
+    }, [unlocked]);
 
     function unlock() {
         CookieConsentStore.addVendorName(props.vendorName);

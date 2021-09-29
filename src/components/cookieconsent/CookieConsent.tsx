@@ -47,6 +47,7 @@ interface Props {
 const responderApi = new ResponderApi();
 
 function CookieConsent(props: Props) {
+    const { onAcceptAll, onClose, onDenyAll } = props;
     const [checkmarks, setCheckmarks] = useState([]);
 
     const handleAcceptAll = useCallback(
@@ -65,11 +66,11 @@ function CookieConsent(props: Props) {
             CookieConsentStore.setVendorNames(consents);
             responderApi.post(consents);
             setTimeout(() => {
-                props?.onAcceptAll?.(e);
-                props?.onClose?.(e);
+                onAcceptAll?.(e);
+                onClose?.(e);
             }, 10);
         },
-        [props.onClose, props.onAcceptAll]
+        [onClose, onAcceptAll]
     );
 
     const handleDenyAll = useCallback(
@@ -78,11 +79,11 @@ function CookieConsent(props: Props) {
             CookieConsentStore.setVendorNames([]);
             responderApi.post([]);
             setTimeout(() => {
-                props?.onDenyAll?.(e);
-                props?.onClose?.(e);
+                onDenyAll?.(e);
+                onClose?.(e);
             }, 10);
         },
-        [props.onClose, props.onDenyAll]
+        [onClose, onDenyAll]
     );
 
     const handleClose = useCallback(
@@ -91,10 +92,10 @@ function CookieConsent(props: Props) {
             CookieConsentStore.setVendorNames(checkmarks);
             responderApi.post(checkmarks);
             setTimeout(() => {
-                props?.onClose?.(e);
+                onClose?.(e);
             }, 10);
         },
-        [props.onClose, checkmarks]
+        [onClose, checkmarks]
     );
 
     function handleCheckChange(e: React.ChangeEvent<HTMLInputElement>) {

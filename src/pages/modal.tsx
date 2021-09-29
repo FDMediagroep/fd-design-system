@@ -16,9 +16,9 @@ function Page() {
         setOpened(!opened);
     }, [opened]);
 
-    const handleModalClose = useCallback(() => {
+    const handleModalClose = () => {
         setOpened(false);
-    }, [opened]);
+    };
 
     return (
         <>

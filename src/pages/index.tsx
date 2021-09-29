@@ -49,7 +49,7 @@ function Page(props: Props) {
                         router.push(route).then(() => window.scrollTo(0, 0));
                 });
             });
-    }, []);
+    }, [router]);
 
     return (
         <section>

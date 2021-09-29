@@ -44,6 +44,14 @@ function pickVariant(variants: React.ReactElement<Variant, any>[]) {
 const MAX_AGE = 30; // 30 days
 
 export function Experiment(props: ExperimentProps) {
+    const {
+        debug: pDebug,
+        debugUriParam: pDebugUriParam,
+        MAX_AGE: pMAX_AGE,
+        name: pName,
+        pickVariant: pPickVariant,
+        children,
+    } = props;
     const [debug, setDebug] = useState(props.debug ?? false);
     const [cookies, setCookies] = useContext(ABContext);
     const [variant, setVariant] = useState(
@@ -59,20 +67,23 @@ export function Experiment(props: ExperimentProps) {
      */
     useEffect(() => {
         if (variant === -1) {
-            const pickedVariant = props.pickVariant
-                ? props.pickVariant(props.children)
-                : pickVariant(props.children);
+            const pickedVariant = pPickVariant
+                ? pPickVariant(children)
+                : pickVariant(children);
             setVariant(pickedVariant);
         }
-        if (!props.debug) {
+    }, [pPickVariant, children, variant]);
+
+    useEffect(() => {
+        if (!pDebug) {
             setDebug(
                 !!(
-                    props.debugUriParam &&
-                    window.location.href.indexOf(props.debugUriParam) > -1
+                    pDebugUriParam &&
+                    window.location.href.indexOf(pDebugUriParam) > -1
                 )
             );
         }
-    }, []);
+    }, [pDebug, pDebugUriParam]);
 
     /**
      * Whenever the variant changes value we change the value in the cookie as well.
@@ -83,15 +94,17 @@ export function Experiment(props: ExperimentProps) {
             if (cookies) {
                 newCookies = {
                     ...cookies,
-                    [encodeURIComponent(props.name)]: variant,
+                    [encodeURIComponent(pName)]: variant,
                 };
             }
-            setCookies(newCookies);
-            Cookies.set(props.name, `${variant}`, {
-                expires: props.MAX_AGE ?? MAX_AGE,
-            });
+            if (JSON.stringify(cookies) !== JSON.stringify(newCookies)) {
+                setCookies(newCookies);
+                Cookies.set(pName, `${variant}`, {
+                    expires: pMAX_AGE ?? MAX_AGE,
+                });
+            }
         }
-    }, [variant]);
+    }, [variant, pMAX_AGE, pName, cookies, setCookies]);
 
     /**
      * Remove the experiment from the cookie
@@ -168,7 +181,7 @@ export function Experiment(props: ExperimentProps) {
                 ? ReactDOM.createPortal(
                       <Button
                           style={{
-                              position: 'sticky',
+                              position: 'relative',
                               bottom: '0',
                               margin: '.5rem',
                               zIndex: '9999',
