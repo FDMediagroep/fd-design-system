@@ -9,6 +9,7 @@ import {
 import { ButtonCta } from '../button/ButtonCta';
 import Link from 'next/link';
 import { Profile } from './Profile';
+import { Aside } from './Aside';
 
 interface ProgressBlock {
     faded?: boolean;
@@ -23,6 +24,7 @@ export interface Props {
     loggedIn?: boolean;
     noSubscription?: boolean;
     progressBlocks?: ProgressBlock[];
+    onClose?: (e: React.MouseEvent) => void;
 }
 
 const getOffsetTop = (el: HTMLElement) => {
@@ -168,7 +170,7 @@ function Menu(props: any) {
                         <ul
                             className={`${styles['left-menu']} xs__p-0 xs__m-0`}
                         >
-                            <li>
+                            <li className={showAside ? styles.expanded : ''}>
                                 <button
                                     className={`${styles['aside-menu-button']} ${styles['menu-button']} ${styles['main-link']}`}
                                     data-ga-name="menu_click"
@@ -189,7 +191,7 @@ function Menu(props: any) {
                                         Sub menu
                                     </span>
                                 </button>
-                                {/* {{> component/menu/aside }} */}
+                                <Aside onClose={closeAll} />
                             </li>
                         </ul>
                         <ul

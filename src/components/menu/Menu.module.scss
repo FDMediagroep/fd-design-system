@@ -13,6 +13,10 @@
     }
     position: sticky;
 
+    a {
+        text-decoration: none;
+    }
+
     button {
         cursor: pointer;
     }
@@ -1142,6 +1146,15 @@
                         }
                     }
                 }
+            }
+        }
+
+        .label {
+            color: var(--credits);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
             }
         }
     }
