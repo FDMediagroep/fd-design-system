@@ -1,0 +1,11 @@
+.popup {
+    margin-left: 0.5rem;
+    &#{&} {
+        &#{&} {
+            svg {
+                height: 13px;
+                width: 13px;
+            }
+        }
+    }
+}
