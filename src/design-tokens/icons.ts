@@ -17,6 +17,7 @@ export { default as EnvelopeIcon } from '../../public/assets/icons/envelope.svg'
 export { default as ExpandIcon } from '../../public/assets/icons/expand.svg';
 export { default as FacebookIcon } from '../../public/assets/icons/facebook.svg';
 export { default as FdmgIcon } from '../../public/assets/icons/logo-fdmg.svg';
+export { default as GithubIcon } from '../../public/assets/icons/github.svg';
 export { default as GraphIcon } from '../../public/assets/icons/graph.svg';
 export { default as GraphOIcon } from '../../public/assets/icons/graph-o.svg';
 export { default as HamburgerIcon } from '../../public/assets/icons/hamburger.svg';

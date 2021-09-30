@@ -5,6 +5,7 @@ import {
     CollapseIcon,
     EnvelopeIcon,
     ExpandIcon,
+    GithubIcon,
     HamburgerIcon,
     LinkWebsiteIcon,
     LogoFdIcon,
@@ -75,7 +76,6 @@ function Aside(props: Props) {
                         <span className={styles['aria-label']}>Close menu</span>
                     </button>
                 </li>
-
                 <li>
                     <form
                         className={`${styles.search} xs__m+4`}
@@ -98,7 +98,6 @@ function Aside(props: Props) {
                         />
                     </form>
                 </li>
-
                 <li
                     className={`${styles['menu-item']} ${
                         expanded.indexOf('main') > -1 ? 'expanded' : ''
@@ -226,7 +225,6 @@ function Aside(props: Props) {
                         </li>
                     </ul>
                 </li>
-
                 <li
                     className={`${styles['menu-item']} ${
                         expanded.indexOf('article') > -1 ? 'expanded' : ''
@@ -539,7 +537,6 @@ function Aside(props: Props) {
                         </li>
                     </ul>
                 </li>
-
                 <li
                     className={`${styles['menu-item']} ${
                         expanded.indexOf('controls') > -1 ? 'expanded' : ''
@@ -818,7 +815,6 @@ function Aside(props: Props) {
                         </li>
                     </ul>
                 </li>
-
                 <li
                     className={`${styles['menu-item']} ${
                         expanded.indexOf('cards') > -1 ? 'expanded' : ''
@@ -1046,7 +1042,6 @@ function Aside(props: Props) {
                         </li>
                     </ul>
                 </li>
-
                 <li
                     className={`${styles['menu-item']} ${
                         expanded.indexOf('grid') > -1 ? 'expanded' : ''
@@ -1186,7 +1181,6 @@ function Aside(props: Props) {
                         </li>
                     </ul>
                 </li>
-
                 <li
                     className={`${styles['menu-item']} ${
                         expanded.indexOf('typography') > -1 ? 'expanded' : ''
@@ -1266,7 +1260,6 @@ function Aside(props: Props) {
                         </li>
                     </ul>
                 </li>
-
                 <li
                     className={`${styles['menu-item']} ${
                         expanded.indexOf('misc') > -1 ? 'expanded' : ''
@@ -1425,6 +1418,38 @@ function Aside(props: Props) {
                             </Link>
                         </li>
                     </ul>
+                </li>
+                <li
+                    className={`${styles['menu-item']} xs__pt+2 xs__pr+4 xs__pb+2 xs__pl+4`}
+                >
+                    <a
+                        href="https://github.com/FDMediagroep/fd-design-system"
+                        data-ga-name="menu_click"
+                        data-ga-category="user interactions"
+                        data-ga-action="menu click"
+                        data-ga-label="https://github.com/FDMediagroep/fd-design-system"
+                        onClick={handleNavigation}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                        <span
+                            className={styles.icon}
+                            dangerouslySetInnerHTML={{
+                                __html: GithubIcon as any,
+                            }}
+                        />
+                        <span
+                            className={`heading ${styles['button-text']} sans xs xs__ml+3`}
+                        >
+                            GitHub
+                        </span>
+                        <span
+                            className={asideStyles.popup}
+                            dangerouslySetInnerHTML={{
+                                __html: LinkWebsiteIcon as any,
+                            }}
+                        />
+                    </a>
                 </li>
             </ul>
         </aside>
