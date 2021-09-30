@@ -11,8 +11,13 @@ import {
     LookingGlassIcon,
 } from '../../design-tokens/icons';
 import React, { useState } from 'react';
-import { Props } from './Menu';
 import { useRouter } from 'next/router';
+
+interface Props {
+    className?: string;
+    onClose?: (e?: React.MouseEvent) => void;
+    [x: string]: any;
+}
 
 function Aside(props: Props) {
     const router = useRouter();

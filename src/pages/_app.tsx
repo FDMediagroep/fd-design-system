@@ -13,6 +13,8 @@ import { Tooltip } from '../components/Tooltip';
 import { Menu } from '../components/menu/Menu';
 import { debounce } from '../utils/debounce';
 import { Footer } from '../components/footer/Footer';
+import { Profile } from '../components/menu/Profile';
+import { Aside } from '../components/menu/Aside';
 
 /**
  * Make sibling elements same height as its tallest sibling with the given CSS Class Name.
@@ -61,6 +63,8 @@ function isIE() {
 }
 
 function App({ Component, pageProps }) {
+    const [loggedIn, setLoggedIn] = useState(false);
+
     const [pageType, setPageType] = useState<Page>(PageStore.getPageType());
     const [pageStyle, setPageStyle] = useState(styles.overview);
     const darkModeMediaQuery =
@@ -107,11 +111,14 @@ function App({ Component, pageProps }) {
         }
     }, [pageType]);
 
-    const handleSearchBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-        const target = e.currentTarget;
-        setTimeout(() => {
-            target.value = '';
-        }, 300);
+    const handleLogout = () => {
+        setLoggedIn(false);
+    };
+    const handleLogin = () => {
+        setLoggedIn(true);
+    };
+    const handleRegister = (e: React.MouseEvent) => {
+        console.log(e);
     };
 
     return (
@@ -123,7 +130,35 @@ function App({ Component, pageProps }) {
                 />
             </Head>
 
-            <Menu />
+            <Menu
+                loggedIn={loggedIn}
+                aside={<Aside />}
+                profile={
+                    <Profile
+                        access={loggedIn}
+                        companyName={'FD Mediagroep'}
+                        hasQuotum={loggedIn}
+                        freeArticlesCount={3}
+                        fullName={'W. L.'}
+                        loggedIn={loggedIn}
+                        noSubscription={!loggedIn}
+                        progressBlocks={
+                            loggedIn
+                                ? [
+                                      { faded: false },
+                                      { faded: false },
+                                      { faded: false },
+                                      { faded: true },
+                                      { faded: true },
+                                  ]
+                                : null
+                        }
+                        onLogin={handleLogin}
+                        onLogout={handleLogout}
+                        onRegister={handleRegister}
+                    />
+                }
+            />
 
             {/* <Menu
                 className={styles.menu}

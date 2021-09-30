@@ -8,30 +8,22 @@ import {
 } from '../../design-tokens/icons';
 import { ButtonCta } from '../button/ButtonCta';
 import Link from 'next/link';
-import { Profile } from './Profile';
-import { Aside } from './Aside';
-
-interface ProgressBlock {
-    faded?: boolean;
-}
 
 export interface Props {
-    access?: boolean;
-    companyName?: string;
-    customerArticleQuotumModel?: string;
-    fullName?: string;
-    freeArticlesCount?: number;
-    loggedIn?: boolean;
-    noSubscription?: boolean;
-    progressBlocks?: ProgressBlock[];
-    onClose?: (e: React.MouseEvent) => void;
+    aside?: JSX.Element;
+    className?: string;
+    logoUrl?: string;
+    profile?: JSX.Element;
+    onClose?: (e?: React.MouseEvent) => void;
+    [x: string]: any;
 }
 
 const getOffsetTop = (el: HTMLElement) => {
     return el.getBoundingClientRect().top;
 };
 
-function Menu(props: any) {
+function Menu(props: Props) {
+    const { onClose } = props;
     const menuRef = useRef<HTMLDivElement>(null);
     const [stickyState, setStickyState] = useState(false);
     const [backgroundOverlay, setBackgroundOverlay] = useState(false);
@@ -97,24 +89,35 @@ function Menu(props: any) {
         setShowProfile(false);
     }, []);
 
-    const handleAsideButtonClick = (e: React.MouseEvent) => {
-        hideAll();
-        const show = !showAside;
-        setShowAside(show);
-        showBackgroundOverlay(show);
+    const handleAside = useCallback(
+        (show?: boolean) => {
+            hideAll();
+            setShowAside(show);
+            showBackgroundOverlay(show);
+        },
+        [hideAll, showBackgroundOverlay]
+    );
+    const handleAsideButtonClick = () => {
+        handleAside(!showAside);
     };
 
-    const handleProfileButtonClick = (e: React.MouseEvent) => {
-        hideAll();
-        const show = !showProfile;
-        setShowProfile(show);
-        showBackgroundOverlay(show);
+    const handleProfile = useCallback(
+        (show?: boolean) => {
+            hideAll();
+            setShowProfile(show);
+            showBackgroundOverlay(show);
+        },
+        [hideAll, showBackgroundOverlay]
+    );
+    const handleProfileButtonClick = () => {
+        handleProfile(!showProfile);
     };
 
     /**
      * Close and hide all sub menu's
      */
     const closeAll = useCallback(() => {
+        onClose?.();
         hideAll();
         showBackgroundOverlay(false);
         [].slice
@@ -123,7 +126,7 @@ function Menu(props: any) {
                 expandedEl.parentElement.classList.remove('expanded');
                 expandedEl.setAttribute('aria-expanded', 'false');
             });
-    }, [hideAll, showBackgroundOverlay]);
+    }, [hideAll, showBackgroundOverlay, onClose]);
 
     useEffect(() => {
         [].slice
@@ -145,12 +148,15 @@ function Menu(props: any) {
         });
     }, [closeAll]);
 
+    const aside = React.cloneElement(props.aside, { onClose: closeAll });
+    const profile = React.cloneElement(props.profile, { onClose: closeAll });
+
     return (
         <div
             ref={menuRef}
             className={`${styles['header-placeholder']}${
                 stickyState ? ` ${styles.stickied}` : ''
-            }`}
+            }${props.className ? ` ${props.className}` : ''}`}
         >
             <header
                 className={`s__pt+4${
@@ -191,20 +197,23 @@ function Menu(props: any) {
                                         Sub menu
                                     </span>
                                 </button>
-                                <Aside onClose={closeAll} />
+                                {aside}
                             </li>
                         </ul>
                         <ul
                             className={`${styles['middle-menu']} xs__p-0 xs__m-0`}
                         >
                             <li>
-                                <Link passHref={true} href="/">
+                                <Link
+                                    passHref={true}
+                                    href={props.logoUrl ?? '/'}
+                                >
                                     <a
                                         className={styles['home-button']}
                                         data-ga-name="menu_click"
                                         data-ga-category="user interactions"
                                         data-ga-action="menu click"
-                                        data-ga-label="/"
+                                        data-ga-label={props.logoUrl ?? '/'}
                                         aria-label="Home"
                                     >
                                         <span className={styles.logo} />
@@ -271,26 +280,7 @@ function Menu(props: any) {
                                 <ul
                                     className={`${styles['expandable-menu-item']} xs__p-0 xs__m-0`}
                                 >
-                                    <li>
-                                        <Profile
-                                            access={props.access}
-                                            companyName={props.companyName}
-                                            customerArticleQuotumModel={
-                                                props.customerArticleQuotumModel
-                                            }
-                                            freeArticlesCount={
-                                                props.freeArticlesCount
-                                            }
-                                            fullName={props.fullName}
-                                            loggedIn={props.loggedIn}
-                                            noSubscription={
-                                                props.noSubscription
-                                            }
-                                            progressBlocks={
-                                                props.progressBlocks
-                                            }
-                                        />
-                                    </li>
+                                    <li>{profile}</li>
                                 </ul>
                             </li>
                         </ul>

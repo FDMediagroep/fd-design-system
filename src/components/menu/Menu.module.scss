@@ -181,7 +181,7 @@
         }
 
         a,
-        button {
+        .profile-button {
             color: var(--content-copy);
             // IE11
             @media screen and (-ms-high-contrast: active),
@@ -566,7 +566,7 @@
             .menu-item {
                 display: flex;
                 align-items: center;
-                .fd-button-ghost {
+                .menu-item-button {
                     width: 100%;
                 }
                 svg {
@@ -1102,6 +1102,13 @@
         a,
         button {
             background-color: transparent;
+            color: var(--content-copy);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+            }
+
             svg {
                 path {
                     fill: var(--profile-outline);
@@ -1251,34 +1258,8 @@
  * Fix for Safari not handling CSS properties correctly for url().
  */
 :root {
-    &.dark {
-        .header-placeholder header .logo {
-            background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo-dark.svg')
-                center center no-repeat;
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
-                    center center no-repeat;
-            }
-        }
-    }
-    &.light,
-    & {
-        .header-placeholder header .logo {
-            background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
-                center center no-repeat;
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
-                    center center no-repeat;
-            }
-        }
-    }
-
     &,
-    &.system {
+    &:global(.system) {
         @media (prefers-color-scheme: dark) {
             .header-placeholder header .logo {
                 background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo-dark.svg')
@@ -1301,6 +1282,31 @@
                     background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
                         center center no-repeat;
                 }
+            }
+        }
+    }
+
+    &:global(.dark) {
+        .header-placeholder header .logo {
+            background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo-dark.svg')
+                center center no-repeat;
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
+                    center center no-repeat;
+            }
+        }
+    }
+    &:global(.light) {
+        .header-placeholder header .logo {
+            background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
+                center center no-repeat;
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
+                    center center no-repeat;
             }
         }
     }
