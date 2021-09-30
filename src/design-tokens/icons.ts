@@ -6,9 +6,7 @@ export { default as BookmarkOIcon } from '../../public/assets/icons/bookmark-o.s
 export { default as BulletIcon } from '../../public/assets/icons/bullet.svg';
 export { default as BulletRedIcon } from '../../public/assets/icons/bullet_longread.svg';
 export { default as CheckIcon } from '../../public/assets/icons/check.svg';
-export { default as ChevronDownThinIcon } from '../../public/assets/icons/chevron-down-thin.svg';
 export { default as ChevronRightIcon } from '../../public/assets/icons/chevron-right.svg';
-export { default as ChevronUpThinIcon } from '../../public/assets/icons/chevron-up-thin.svg';
 export { default as ClockIcon } from '../../public/assets/icons/clock.svg';
 export { default as CloseIcon } from '../../public/assets/icons/close.svg';
 export { default as CollapseIcon } from '../../public/assets/icons/collapse.svg';
@@ -18,7 +16,6 @@ export { default as EditionsIcon } from '../../public/assets/icons/editions.svg'
 export { default as EnvelopeIcon } from '../../public/assets/icons/envelope.svg';
 export { default as ExpandIcon } from '../../public/assets/icons/expand.svg';
 export { default as FacebookIcon } from '../../public/assets/icons/facebook.svg';
-export { default as FdIcon } from '../../public/assets/icons/logo.svg';
 export { default as FdmgIcon } from '../../public/assets/icons/logo-fdmg.svg';
 export { default as GraphIcon } from '../../public/assets/icons/graph.svg';
 export { default as GraphOIcon } from '../../public/assets/icons/graph-o.svg';
@@ -33,6 +30,7 @@ export { default as MailIcon } from '../../public/assets/icons/mail.svg';
 export { default as MinimiseIcon } from '../../public/assets/icons/minimise.svg';
 export { default as NewspaperIcon } from '../../public/assets/icons/newspaper.svg';
 export { default as PaperclipIcon } from '../../public/assets/icons/paperclip.svg';
+export { default as PencilIcon } from '../../public/assets/icons/pencil.svg';
 export { default as PrivacyIcon } from '../../public/assets/icons/privacy.svg';
 export { default as ProfileIcon } from '../../public/assets/icons/profile.svg';
 export { default as ProfileOIcon } from '../../public/assets/icons/profile-o.svg';
@@ -40,6 +38,7 @@ export { default as RssIcon } from '../../public/assets/icons/rss.svg';
 export { default as SpyglassIcon } from '../../public/assets/icons/spyglass.svg';
 export { default as TwitterIcon } from '../../public/assets/icons/twitter.svg';
 export { default as WhatsAppIcon } from '../../public/assets/icons/whatsapp.svg';
+export { default as Windows8Icon } from '../../public/assets/icons/windows8.svg';
 
 export { default as ValueDownIcon } from '../../public/assets/icons/value-down.svg';
 export { default as ValueUpIcon } from '../../public/assets/icons/value-up.svg';

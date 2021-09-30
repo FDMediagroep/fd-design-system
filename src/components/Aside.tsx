@@ -3,10 +3,16 @@ import asideStyles from './Aside.module.scss';
 import {
     CloseIcon,
     CollapseIcon,
+    EnvelopeIcon,
     ExpandIcon,
+    HamburgerIcon,
     LinkWebsiteIcon,
     LogoFdIcon,
     LookingGlassIcon,
+    NewspaperIcon,
+    PaperclipIcon,
+    PencilIcon,
+    Windows8Icon,
 } from '../design-tokens/icons';
 import React, { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -235,7 +241,7 @@ function Aside(props: Props) {
                         <span
                             className={styles.icon}
                             dangerouslySetInnerHTML={{
-                                __html: LogoFdIcon as any,
+                                __html: NewspaperIcon as any,
                             }}
                         />
                         <span
@@ -548,7 +554,7 @@ function Aside(props: Props) {
                         <span
                             className={styles.icon}
                             dangerouslySetInnerHTML={{
-                                __html: LogoFdIcon as any,
+                                __html: PencilIcon as any,
                             }}
                         />
                         <span
@@ -827,7 +833,7 @@ function Aside(props: Props) {
                         <span
                             className={styles.icon}
                             dangerouslySetInnerHTML={{
-                                __html: LogoFdIcon as any,
+                                __html: EnvelopeIcon as any,
                             }}
                         />
                         <span
@@ -1055,7 +1061,7 @@ function Aside(props: Props) {
                         <span
                             className={styles.icon}
                             dangerouslySetInnerHTML={{
-                                __html: LogoFdIcon as any,
+                                __html: Windows8Icon as any,
                             }}
                         />
                         <span
@@ -1195,7 +1201,7 @@ function Aside(props: Props) {
                         <span
                             className={styles.icon}
                             dangerouslySetInnerHTML={{
-                                __html: LogoFdIcon as any,
+                                __html: HamburgerIcon as any,
                             }}
                         />
                         <span
@@ -1275,7 +1281,7 @@ function Aside(props: Props) {
                         <span
                             className={styles.icon}
                             dangerouslySetInnerHTML={{
-                                __html: LogoFdIcon as any,
+                                __html: PaperclipIcon as any,
                             }}
                         />
                         <span
