@@ -11,8 +11,13 @@ import {
     LookingGlassIcon,
 } from '../../design-tokens/icons';
 import React, { useState } from 'react';
-import { Props } from './Menu';
 import { useRouter } from 'next/router';
+
+interface Props {
+    className?: string;
+    onClose?: (e?: React.MouseEvent) => void;
+    [x: string]: any;
+}
 
 function Aside(props: Props) {
     const router = useRouter();
@@ -356,7 +361,9 @@ function Aside(props: Props) {
                 <li>
                     <ul className="xs__p-0  xs__p+4">
                         <li className=" xs__mb+4">
-                            <h3 className={`heading sans xxs xs__m-0 label`}>
+                            <h3
+                                className={`heading sans xxs xs__m-0 ${styles.label}`}
+                            >
                                 SECTIES
                             </h3>
                         </li>

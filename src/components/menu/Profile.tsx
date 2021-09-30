@@ -8,31 +8,61 @@ import {
 import { Button } from '../button/Button';
 import { ButtonCta } from '../button/ButtonCta';
 import { ButtonGhost } from '../button/ButtonGhost';
-import { Props } from './Menu';
+import { Themes } from '../Themes';
 import styles from './Menu.module.scss';
+
+interface ProgressBlock {
+    faded?: boolean;
+}
+
+export interface Props {
+    access?: boolean;
+    className?: string;
+    companyName?: string;
+    hasQuotum?: boolean;
+    fullName?: string;
+    freeArticlesCount?: number;
+    loggedIn?: boolean;
+    logoUrl?: string;
+    noSubscription?: boolean;
+    progressBlocks?: ProgressBlock[];
+    onClose?: (e?: React.MouseEvent) => void;
+    onLogin?: (e?: React.MouseEvent) => void;
+    onLogout?: (e?: React.MouseEvent) => void;
+    onRegister?: (e?: React.MouseEvent) => void;
+    [x: string]: any;
+}
 
 function Profile(props: Props) {
     return (
-        <div className={`${styles.profile} xs__p+4`}>
+        <div
+            className={`${styles.profile}${
+                props.className ? ` ${props.className}` : ''
+            } xs__p+4`}
+        >
             {props.access ? (
                 props.loggedIn ? (
                     <>
                         <div
                             className={`${styles['user-info']} heading sans xs xs__m-0 xs__mt+2 xs__mb+2`}
                         >
-                            <span className="user heading sans xs">
+                            <span className={`${styles.user} heading sans xs`}>
                                 {props.fullName}
                             </span>
                             {props.companyName ? (
-                                <span className="company body-text sans xs">
+                                <span
+                                    className={`${styles.company} body-text sans xs`}
+                                >
                                     {props.companyName}
                                 </span>
                             ) : null}
                         </div>
 
                         <menu className="xs__m-0 xs__p-0">
-                            {props.customerArticleQuotumModel ? (
-                                <div className="credit xs__pt+2 xs__pb+2">
+                            {props.hasQuotum ? (
+                                <div
+                                    className={`${styles.credit} xs__pt+2 xs__pb+2`}
+                                >
                                     <span className="heading sans xs">
                                         Nog {props.freeArticlesCount}{' '}
                                         {props.freeArticlesCount === 1
@@ -49,7 +79,7 @@ function Profile(props: Props) {
                                                         styles['progress-block']
                                                     }${
                                                         block.faded
-                                                            ? ` faded`
+                                                            ? ` ${styles.faded}`
                                                             : ''
                                                     }`}
                                                 />
@@ -100,7 +130,7 @@ function Profile(props: Props) {
                                 </span>
                             </a>
                             <a
-                                className="menu-item heading sans xs xs__pt+3 xs__pb+3"
+                                className={`${styles['menu-item']} heading sans xs xs__pt+3 xs__pb+3`}
                                 href="https://fd.nl/bewaarde-artikelen"
                                 data-ga-name="menu_click"
                                 data-ga-category="user interactions"
@@ -140,15 +170,18 @@ function Profile(props: Props) {
                                 </span>
                             </a>
 
-                            <span className="menu-item xs__pt+3 xs__pb+2">
+                            <span
+                                className={`${styles['menu-item']} xs__pt+3 xs__pb+2`}
+                            >
                                 <ButtonGhost
+                                    className={styles['menu-item-button']}
                                     size="m"
-                                    href="https://fd.nl/logout"
                                     data-ga-name="menu_click"
                                     data-ga-category="user interactions"
                                     data-ga-action="menu click"
                                     data-ga-label="https://fd.nl/logout"
                                     data-dynamic-import="true"
+                                    onClick={props.onLogout}
                                 >
                                     Uitloggen
                                 </ButtonGhost>
@@ -193,17 +226,18 @@ function Profile(props: Props) {
                                 data-ga-action="menu click"
                                 data-ga-label="https://fd.nl/abonneren"
                                 data-dynamic-import="true"
+                                onClick={props.onRegister}
                             >
                                 <span>Abonneren</span>
                             </ButtonCta>
                             <Button
                                 size="m"
-                                href="https://fd.nl/login?ref={{ref}}"
                                 data-ga-name="menu_click"
                                 data-ga-category="user interactions"
                                 data-ga-action="menu click"
                                 data-ga-label="https://fd.nl/login?ref={{ref}}"
                                 data-dynamic-import="true"
+                                onClick={props.onLogin}
                             >
                                 <span>Inloggen</span>
                             </Button>
@@ -224,17 +258,18 @@ function Profile(props: Props) {
                         data-ga-action="menu click"
                         data-ga-label="https://fd.nl/abonneren"
                         data-dynamic-import="true"
+                        onClick={props.onRegister}
                     >
                         <span>Abonneren</span>
                     </ButtonCta>
                     <Button
                         size="m"
-                        href="https://fd.nl/login?ref={{ref}}"
                         data-ga-name="menu_click"
                         data-ga-category="user interactions"
                         data-ga-action="menu click"
                         data-ga-label="https://fd.nl/login?ref={{ref}}"
                         data-dynamic-import="true"
+                        onClick={props.onLogin}
                     >
                         <span>Inloggen</span>
                     </Button>
@@ -251,6 +286,8 @@ function Profile(props: Props) {
             >
                 <span>Service & Contact</span>
             </a>
+
+            <Themes groupName="sub-menu-themes" />
         </div>
     );
 }

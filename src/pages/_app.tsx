@@ -13,6 +13,8 @@ import { Tooltip } from '../components/Tooltip';
 import { Menu } from '../components/menu/Menu';
 import { debounce } from '../utils/debounce';
 import { Footer } from '../components/footer/Footer';
+import { Profile } from '../components/menu/Profile';
+import { Aside } from '../components/Aside';
 
 /**
  * Make sibling elements same height as its tallest sibling with the given CSS Class Name.
@@ -61,6 +63,8 @@ function isIE() {
 }
 
 function App({ Component, pageProps }) {
+    const [loggedIn, setLoggedIn] = useState(false);
+
     const [pageType, setPageType] = useState<Page>(PageStore.getPageType());
     const [pageStyle, setPageStyle] = useState(styles.overview);
     const darkModeMediaQuery =
@@ -107,11 +111,14 @@ function App({ Component, pageProps }) {
         }
     }, [pageType]);
 
-    const handleSearchBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-        const target = e.currentTarget;
-        setTimeout(() => {
-            target.value = '';
-        }, 300);
+    const handleLogout = () => {
+        setLoggedIn(false);
+    };
+    const handleLogin = () => {
+        setLoggedIn(true);
+    };
+    const handleRegister = (e: React.MouseEvent) => {
+        console.log(e);
     };
 
     return (
@@ -123,497 +130,44 @@ function App({ Component, pageProps }) {
                 />
             </Head>
 
-            <Menu />
+            <Menu
+                loggedIn={loggedIn}
+                aside={<Aside />}
+                profile={
+                    <Profile
+                        access={loggedIn}
+                        companyName={'FD Mediagroep'}
+                        hasQuotum={loggedIn}
+                        freeArticlesCount={3}
+                        fullName={'W. L.'}
+                        loggedIn={loggedIn}
+                        noSubscription={!loggedIn}
+                        progressBlocks={
+                            loggedIn
+                                ? [
+                                      { faded: false },
+                                      { faded: false },
+                                      { faded: false },
+                                      { faded: true },
+                                      { faded: true },
+                                  ]
+                                : null
+                        }
+                        onLogin={handleLogin}
+                        onLogout={handleLogout}
+                        onRegister={handleRegister}
+                    />
+                }
+            />
 
             {/* <Menu
                 className={styles.menu}
                 ariaLabel="Main menu"
                 menuItems={[
                     {
-                        component: (
-                            <Link href="/">
-                                <a style={{ padding: '0' }}>
-                                    <span
-                                        className={styles.logo}
-                                        dangerouslySetInnerHTML={{
-                                            __html: FdIcon as any,
-                                        }}
-                                        aria-label="FD Design System"
-                                    />
-                                </a>
-                            </Link>
-                        ),
-                    },
-                    {
-                        text: 'Main',
-                        isToggle: true,
-                        menuItems: [
-                            {
-                                component: (
-                                    <Link href="/">
-                                        <a>Home</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                text: 'Brandbook 📤',
-                                href: 'https://fd.nl/brandbook',
-                                target: '_blank',
-                            },
-                            {
-                                text: 'Colors 📤',
-                                href: 'https://fdmediagroep.atlassian.net/wiki/spaces/FDMT/pages/771162327/Colors',
-                                target: '_blank',
-                            },
-                            {
-                                component: (
-                                    <Link href="/tokens">
-                                        <a>Design Tokens</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                text: 'Downloads 📤',
-                                href: 'https://fdmediagroep.atlassian.net/wiki/spaces/SHAR/pages/729186428/Bestandslijsten',
-                                target: '_blank',
-                            },
-                        ],
-                    },
-                    {
-                        text: 'Article',
-                        isToggle: true,
-                        menuItems: [
-                            {
-                                component: (
-                                    <Link href="/article-bullet-point">
-                                        <a>BulletPoint</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/financial-agenda">
-                                        <a>Financial Agenda</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/article-image">
-                                        <a>Image</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/article-infographic">
-                                        <a>Infographic</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/article-latest-news">
-                                        <a>Latest News</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/article-link-block">
-                                        <a>LinkBlock</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/article-link-card">
-                                        <a>LinkCard</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/numberframe">
-                                        <a>NumberFrame</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/quote">
-                                        <a>Quote</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/readmore">
-                                        <a>ReadMore</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/article-summary">
-                                        <a>Summary</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/article-tags">
-                                        <a>Tags</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/textframe">
-                                        <a>TextFrame</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                text: 'Toolbar',
-                                isToggle: true,
-                                menuItems: [
-                                    {
-                                        component: (
-                                            <Link href="/toolbar/horizontal">
-                                                <a>Horizontal</a>
-                                            </Link>
-                                        ),
-                                    },
-                                    {
-                                        component: (
-                                            <Link href="/toolbar/vertical">
-                                                <a>Vertical</a>
-                                            </Link>
-                                        ),
-                                    },
-                                ],
-                            },
-                            {
-                                component: (
-                                    <Link href="/wordframe">
-                                        <a>WordFrame</a>
-                                    </Link>
-                                ),
-                            },
-                        ],
-                    },
-                    {
-                        text: 'Controls',
-                        isToggle: true,
-                        menuItems: [
-                            {
-                                component: (
-                                    <Link href="/input/breaking-switch">
-                                        <a>Breaking Switch</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/button/default">
-                                        <a>Button</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/button/cta">
-                                        <a>Button CTA</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/button/follow">
-                                        <a>Button Follow</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/button/ghost">
-                                        <a>Ghost Button</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/input/checkbox">
-                                        <a>Checkbox</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/input/dateinput">
-                                        <a>Date</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/input/emailinput">
-                                        <a>E-mail</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/input/mobileinput">
-                                        <a>Mobile (tel)</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/input/radio">
-                                        <a>Radio</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/input/select">
-                                        <a>Select</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/input/switch">
-                                        <a>Switch</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/input/textarea">
-                                        <a>TextArea</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/input/textinput">
-                                        <a>Text</a>
-                                    </Link>
-                                ),
-                            },
-                        ],
-                    },
-                    {
-                        text: 'Cards',
-                        isToggle: true,
-                        menuItems: [
-                            {
-                                component: (
-                                    <Link href="/cards">
-                                        <a>Overview</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                text: 'Horizontal',
-                                isToggle: true,
-                                menuItems: [
-                                    {
-                                        component: (
-                                            <Link href="/card/horizontal-1">
-                                                <a>Horizontal 1</a>
-                                            </Link>
-                                        ),
-                                    },
-                                    {
-                                        component: (
-                                            <Link href="/card/horizontal-2">
-                                                <a>Horizontal 2</a>
-                                            </Link>
-                                        ),
-                                    },
-                                    {
-                                        component: (
-                                            <Link href="/card/horizontal-3">
-                                                <a>Horizontal 3</a>
-                                            </Link>
-                                        ),
-                                    },
-                                ],
-                            },
-                            {
-                                text: 'Hybrid',
-                                isToggle: true,
-                                menuItems: [
-                                    {
-                                        component: (
-                                            <Link href="/card/hybrid-1">
-                                                <a>Hybrid 1</a>
-                                            </Link>
-                                        ),
-                                    },
-                                    {
-                                        component: (
-                                            <Link href="/card/hybrid-2">
-                                                <a>Hybrid 2</a>
-                                            </Link>
-                                        ),
-                                    },
-                                    {
-                                        component: (
-                                            <Link href="/card/hybrid-3">
-                                                <a>Hybrid 3</a>
-                                            </Link>
-                                        ),
-                                    },
-                                ],
-                            },
-                            {
-                                component: (
-                                    <Link href="/card/link-card">
-                                        <a>LinkCard</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                text: 'Vertical',
-                                isToggle: true,
-                                menuItems: [
-                                    {
-                                        component: (
-                                            <Link href="/card/vertical-1">
-                                                <a>Vertical 1</a>
-                                            </Link>
-                                        ),
-                                    },
-                                    {
-                                        component: (
-                                            <Link href="/card/vertical-2">
-                                                <a>Vertical 2</a>
-                                            </Link>
-                                        ),
-                                    },
-                                    {
-                                        component: (
-                                            <Link href="/card/vertical-3">
-                                                <a>Vertical 3</a>
-                                            </Link>
-                                        ),
-                                    },
-                                    {
-                                        component: (
-                                            <Link href="/card/vertical-4">
-                                                <a>Vertical 4</a>
-                                            </Link>
-                                        ),
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-                    {
                         text: 'Misc.',
                         isToggle: true,
                         menuItems: [
-                            {
-                                component: (
-                                    <Link href="/ab">
-                                        <a>A/B Testing component</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/accordion">
-                                        <a>Accordion</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/author-info">
-                                        <a>Author Info</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                text: 'Cookie Consent',
-                                isToggle: true,
-                                menuItems: [
-                                    {
-                                        component: (
-                                            <Link href="/cookieconsent#cookie-consent">
-                                                <a>Cookie Consent</a>
-                                            </Link>
-                                        ),
-                                    },
-                                    {
-                                        text: 'Locked Content',
-                                        component: (
-                                            <Link href="/cookieconsent#locked-content">
-                                                <a>Locked Content</a>
-                                            </Link>
-                                        ),
-                                    },
-                                ],
-                            },
-                            {
-                                text: 'Grid',
-                                isToggle: true,
-                                menuItems: [
-                                    {
-                                        text: 'CSS Grid 📤',
-                                        href: 'https://github.com/FDMediagroep/fdmg-css-grid',
-                                        target: '_blank',
-                                    },
-                                    {
-                                        component: (
-                                            <Link href="/grid">
-                                                <a>Test page</a>
-                                            </Link>
-                                        ),
-                                    },
-                                    {
-                                        component: (
-                                            <Link href="/achtergrond/1324449/alle-verrijking-op-een-rijtje">
-                                                <a rel="nofollow">
-                                                    Test article
-                                                </a>
-                                            </Link>
-                                        ),
-                                    },
-                                    {
-                                        component: (
-                                            <Link href="/fd-web">
-                                                <a rel="nofollow">Test page</a>
-                                            </Link>
-                                        ),
-                                    },
-                                ],
-                            },
-                            {
-                                component: (
-                                    <Link href="/modal">
-                                        <a>Modal</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                component: (
-                                    <Link href="/stock-ticker">
-                                        <a>Stock Ticker</a>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                text: 'Paddings/Margins system 📤',
-                                href: 'https://github.com/FDMediagroep/fdmg-css-grid#paddingsmargins-system',
-                                target: '_blank',
-                            },
                             {
                                 text: 'Typography',
                                 isToggle: true,
