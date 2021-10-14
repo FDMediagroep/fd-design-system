@@ -236,7 +236,7 @@
         .centered {
             transition: all 0.15s linear;
             height: 100%;
-            width: 100%;
+            max-width: 100%;
             @media screen and (max-width: 640px - 0.02px) {
                 z-index: 1;
                 background-color: var(--product-background);
