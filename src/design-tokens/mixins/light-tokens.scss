@@ -271,4 +271,12 @@
      */
     --ad-label: #{map-deep-get($colors, 'colors', 'neutral', 70)};
     --ad-label-2: #{map-deep-get($colors, 'colors', 'neutral', 70)};
+
+    /**
+     * Shimmer
+     */
+    --shimmer-shade-1: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --shimmer-shade-2: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+    --shimmer-shade-3: #{map-deep-get($colors, 'colors', 'neutral', 70)};
+    --shimmer-shade-4: #{map-deep-get($colors, 'colors', 'neutral', 60)};
 }
