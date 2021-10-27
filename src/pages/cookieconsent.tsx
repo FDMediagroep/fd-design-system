@@ -323,7 +323,7 @@ function Page() {
                             <div className="section-header">
                                 <h3>Gemist de afgelopen 7 dagen?</h3>
                                 <a
-                                    href="/aanbevolen"
+                                    href="https://fd.nl/aanbevolen"
                                     className="section-more last-seven-days"
                                 >
                                     <img
@@ -339,7 +339,7 @@ function Page() {
                                 <span>Bezig met ophalen ...</span>
                             </div>
                             <a
-                                href="/aanbevolen"
+                                href="https://fd.nl/aanbevolen"
                                 className="section-more bottom last-seven-days"
                             >
                                 <img
