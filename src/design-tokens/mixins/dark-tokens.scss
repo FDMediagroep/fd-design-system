@@ -246,6 +246,16 @@
         )};
 
     /**
+     * Article infographic image background
+     */
+    --infographic-extended-background: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            80
+        )};
+
+    /**
      * Profile
      */
     --profile-outline: #{map-deep-get($colors, 'colors', 'neutral', 80)};

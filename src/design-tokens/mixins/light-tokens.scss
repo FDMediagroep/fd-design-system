@@ -244,6 +244,11 @@
         )};
 
     /**
+     * Article infographic image background
+     */
+    --infographic-extended-background: transparent;
+
+    /**
      * Profile
      */
     --profile-outline: #{map-deep-get($colors, 'colors', 'neutral', 40)};
