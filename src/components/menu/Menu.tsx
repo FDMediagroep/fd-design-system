@@ -2,7 +2,9 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './Menu.module.scss';
 import {
     CloseIcon,
+    GithubIcon,
     HamburgerIcon,
+    LookingGlassIcon,
     ProfileIcon,
     ProfileOIcon,
 } from '../../design-tokens/icons';
@@ -31,6 +33,7 @@ function Menu(props: Props) {
     const [hidden, setHidden] = useState(true);
     const [showProfile, setShowProfile] = useState(false);
     const [showAside, setShowAside] = useState(false);
+    const [showSearch, setShowSearch] = useState(false);
 
     useEffect(() => {
         const checkSticky = () => {
@@ -87,6 +90,7 @@ function Menu(props: Props) {
     const hideAll = useCallback(() => {
         setShowAside(false);
         setShowProfile(false);
+        setShowSearch(false);
     }, []);
 
     const handleAside = useCallback(
@@ -111,6 +115,18 @@ function Menu(props: Props) {
     );
     const handleProfileButtonClick = () => {
         handleProfile(!showProfile);
+    };
+
+    const handleSearch = useCallback(
+        (show?: boolean) => {
+            hideAll();
+            setShowSearch(show);
+            showBackgroundOverlay(show);
+        },
+        [hideAll, showBackgroundOverlay]
+    );
+    const handleSearchButtonClick = () => {
+        handleSearch(!showSearch);
     };
 
     /**
@@ -167,7 +183,7 @@ function Menu(props: Props) {
                         : ` ${styles['not-logged-in']}`
                 }${showProfile ? ` ${styles['show-profile']}` : ''}${
                     showAside ? ` ${styles['show-aside-menu']}` : ''
-                }`}
+                }${showSearch ? ` ${styles['show-search-menu']}` : ''}`}
             >
                 <div
                     className={`${styles['centered']} xs__m-0-auto xs__p-0 xs__pl+4 xs__pr+4`}
@@ -215,6 +231,7 @@ function Menu(props: Props) {
                                         data-ga-action="menu click"
                                         data-ga-label={props.logoUrl ?? '/'}
                                         aria-label="Home"
+                                        title="Home"
                                     >
                                         <span className={styles.logo} />
                                         <span className={styles['aria-label']}>
@@ -222,6 +239,27 @@ function Menu(props: Props) {
                                         </span>
                                     </a>
                                 </Link>
+                            </li>
+                            <li
+                                className={`${styles['v-align']} ${styles['menu-button']}`}
+                            >
+                                <a
+                                    href="https://github.com/FDMediagroep/fdmg-css-grid"
+                                    className={`${styles['v-align']} heading sans xs ${styles['main-link']} xs__pl+3 xs__pr+3`}
+                                    data-ga-name="menu_click"
+                                    data-ga-category="user interactions"
+                                    data-ga-action="menu click"
+                                    data-ga-label="https://github.com/FDMediagroep/fdmg-css-grid"
+                                    aria-label="GitHub"
+                                    title="GitHub"
+                                >
+                                    <span
+                                        className={styles['menu-bar-icon']}
+                                        dangerouslySetInnerHTML={{
+                                            __html: GithubIcon as any,
+                                        }}
+                                    />
+                                </a>
                             </li>
                         </ul>
                         <ul
@@ -283,6 +321,39 @@ function Menu(props: Props) {
                                     <li>{profile}</li>
                                 </ul>
                             </li>
+                            <li
+                                className={`${
+                                    styles['show-search-highlight']
+                                } ${showSearch ? styles.expanded : ''}`}
+                            >
+                                <button
+                                    className={`${styles['search-button']} ${styles['menu-button']}`}
+                                    data-ga-name="menu_click"
+                                    data-ga-category="user interactions"
+                                    data-ga-action="menu click"
+                                    data-ga-label="search menu"
+                                    aria-label="Zoeken"
+                                    aria-haspopup="true"
+                                    aria-expanded={showSearch}
+                                    onClick={handleSearchButtonClick}
+                                >
+                                    <span
+                                        className={styles['collapsed-icon']}
+                                        dangerouslySetInnerHTML={{
+                                            __html: LookingGlassIcon as any,
+                                        }}
+                                    />
+                                    <span
+                                        className={styles['expanded-icon']}
+                                        dangerouslySetInnerHTML={{
+                                            __html: CloseIcon as any,
+                                        }}
+                                    />
+                                    <span className={styles['aria-label']}>
+                                        Zoeken
+                                    </span>
+                                </button>
+                            </li>
                         </ul>
                         <div
                             className={`${
@@ -301,6 +372,28 @@ function Menu(props: Props) {
                             </div>
                         </div>
                     </nav>
+                </div>
+                <div className={styles['search-bar']}>
+                    <form
+                        className={`${styles['search']} ${styles['centered']} xs__m-0-auto xs__p-0 xs__pl+4 xs__pr+4`}
+                        action="/search"
+                    >
+                        <label
+                            htmlFor="searchInput"
+                            className="xs__p-0 xs__mr+2 m__mr+6"
+                            dangerouslySetInnerHTML={{
+                                __html: LookingGlassIcon as any,
+                            }}
+                        />
+                        <input
+                            id="searchInput"
+                            type="search"
+                            name="q"
+                            placeholder="Zoeken..."
+                            autoComplete="off"
+                            className="body-text sans s"
+                        />
+                    </form>
                 </div>
             </header>
             <div

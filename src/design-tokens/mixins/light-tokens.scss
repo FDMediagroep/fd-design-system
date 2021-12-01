@@ -251,10 +251,17 @@
     /**
      * Profile
      */
-    --profile-outline: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+    --profile-outline: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --profile-outline-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --profile-outline-active: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --profile-progress-block: #{map-deep-get($colors, 'colors', 'neutral', 50)};
+
+    /**
+     * Search
+     */
+    --search-outline: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --search-outline-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --search-outline-active: #{map-deep-get($colors, 'colors', 'neutral', 30)};
 
     /**
      * Beurs

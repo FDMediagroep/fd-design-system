@@ -9,7 +9,6 @@ import {
     HamburgerIcon,
     LinkWebsiteIcon,
     LogoFdIcon,
-    LookingGlassIcon,
     NewspaperIcon,
     PaperclipIcon,
     PencilIcon,
@@ -46,15 +45,6 @@ function Aside(props: Props) {
         });
     };
 
-    const handleSearch = (e: React.FormEvent) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget as HTMLFormElement);
-        router.push(
-            `/search?q=${encodeURIComponent(formData.get('q').toString())}`
-        );
-        props?.onClose?.(e as any);
-    };
-
     return (
         <aside ref={asideRef} className={styles['expandable-menu-item']}>
             <ul className="xs__p-0 xs__m-0">
@@ -75,28 +65,6 @@ function Aside(props: Props) {
                         />
                         <span className={styles['aria-label']}>Close menu</span>
                     </button>
-                </li>
-                <li>
-                    <form
-                        className={`${styles.search} xs__m+4`}
-                        action="/search"
-                        onSubmit={handleSearch}
-                    >
-                        <label
-                            htmlFor="searchInput"
-                            className="xs__p-0"
-                            dangerouslySetInnerHTML={{
-                                __html: LookingGlassIcon as any,
-                            }}
-                        />
-                        <input
-                            id="searchInput"
-                            type="search"
-                            name="q"
-                            placeholder="Zoeken..."
-                            defaultValue=""
-                        />
-                    </form>
                 </li>
                 <li
                     className={`${styles['menu-item']} ${
