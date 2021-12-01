@@ -215,10 +215,6 @@ function Menu(props: Props) {
                                 </button>
                                 {aside}
                             </li>
-                        </ul>
-                        <ul
-                            className={`${styles['middle-menu']} xs__p-0 xs__m-0`}
-                        >
                             <li>
                                 <Link
                                     passHref={true}
@@ -252,6 +248,8 @@ function Menu(props: Props) {
                                     data-ga-label="https://github.com/FDMediagroep/fdmg-css-grid"
                                     aria-label="GitHub"
                                     title="GitHub"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
                                 >
                                     <span
                                         className={styles['menu-bar-icon']}
