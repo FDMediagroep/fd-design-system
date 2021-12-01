@@ -175,13 +175,7 @@ function Menu(props: Props) {
             }${props.className ? ` ${props.className}` : ''}`}
         >
             <header
-                className={`s__pt+4${
-                    props.loggedIn
-                        ? props.onQuotum
-                            ? ` ${styles['no-subscription']}`
-                            : ` ${styles.subscribed}`
-                        : ` ${styles['not-logged-in']}`
-                }${showProfile ? ` ${styles['show-profile']}` : ''}${
+                className={`${showProfile ? ` ${styles['show-profile']}` : ''}${
                     showAside ? ` ${styles['show-aside-menu']}` : ''
                 }${showSearch ? ` ${styles['show-search-menu']}` : ''}`}
             >
