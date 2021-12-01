@@ -90,7 +90,8 @@
 
         &:active,
         &:focus {
-            svg path {
+            svg path,
+            svg [fill='#73655F'] {
                 fill: var(--profile-outline-active);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
@@ -112,7 +113,8 @@
                     )};
             }
 
-            svg path {
+            svg path,
+            svg [fill='#73655F'] {
                 fill: var(--profile-outline-hover);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
@@ -202,6 +204,17 @@
                         (-ms-high-contrast: none) {
                         fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
                     }
+                }
+            }
+        }
+
+        .search-bar label {
+            svg [fill='#73655F'] {
+                fill: var(--search-outline);
+                // IE11
+                @media screen and (-ms-high-contrast: active),
+                    (-ms-high-contrast: none) {
+                    fill: #{map-deep-get($colors, 'colors', 'neutral', 30)};
                 }
             }
         }
@@ -731,7 +744,7 @@
     }
 
     .search-bar {
-        transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-out;
         position: absolute;
         z-index: 1;
         top: 0;
@@ -1148,7 +1161,8 @@
     }
 
     [aria-expanded='true'] {
-        svg path {
+        svg path,
+        svg [fill='#73655F'] {
             fill: var(--profile-outline-active);
             // IE11
             @media screen and (-ms-high-contrast: active),
@@ -1157,7 +1171,8 @@
             }
         }
         &.search-button {
-            svg path {
+            svg path,
+            svg [fill='#73655F'] {
                 fill: var(--search-outline-active);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
