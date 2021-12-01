@@ -221,7 +221,7 @@ function Menu(props: Props) {
                                     href={props.logoUrl ?? '/'}
                                 >
                                     <a
-                                        className={styles['home-button']}
+                                        className={`${styles['home-button']} xs__pl+3 xs__pr+3`}
                                         data-ga-name="menu_click"
                                         data-ga-category="user interactions"
                                         data-ga-action="menu click"
