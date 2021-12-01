@@ -258,7 +258,7 @@
     /**
      * Profile
      */
-    --profile-outline: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+    --profile-outline: #{map-deep-get($colors, 'colors', 'neutral', 60)};
     --profile-outline-hover: #{map-deep-get($colors, 'colors', 'primary', 25)};
     --profile-outline-active: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --profile-progress-block: #{map-deep-get($colors, 'colors', 'neutral', 50)};
@@ -266,9 +266,9 @@
     /**
      * Search
      */
-    --search-outline: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --search-outline: #{map-deep-get($colors, 'colors', 'neutral', 60)};
     --search-outline-hover: #{map-deep-get($colors, 'colors', 'primary', 25)};
-    --search-outline-active: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --search-outline-active: #{map-deep-get($colors, 'colors', 'neutral', 60)};
 
     /**
      * Beurs
