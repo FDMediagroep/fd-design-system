@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ThemeStore, { Theme } from '../../stores/ThemeStore';
 import styles from './Footer.module.scss';
 
