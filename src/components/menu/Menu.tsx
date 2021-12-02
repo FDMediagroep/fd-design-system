@@ -234,12 +234,12 @@ function Menu(props: Props) {
                                 className={`${styles['v-align']} ${styles['menu-button']}`}
                             >
                                 <a
-                                    href="https://github.com/FDMediagroep/fdmg-css-grid"
+                                    href="https://github.com/FDMediagroep/fd-design-system"
                                     className={`${styles['v-align']} heading sans xs ${styles['main-link']} xs__pl+3 xs__pr+3`}
                                     data-ga-name="menu_click"
                                     data-ga-category="user interactions"
                                     data-ga-action="menu click"
-                                    data-ga-label="https://github.com/FDMediagroep/fdmg-css-grid"
+                                    data-ga-label="https://github.com/FDMediagroep/fd-design-system"
                                     aria-label="GitHub"
                                     title="GitHub"
                                     target="_blank"
