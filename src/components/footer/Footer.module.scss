@@ -108,6 +108,11 @@
             display: none;
         }
     }
+    @media screen and (min-width: 1280px) {
+        [hidden] {
+            display: block;
+        }
+    }
 
     a {
         text-decoration: none;

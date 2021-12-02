@@ -667,14 +667,6 @@ function Footer() {
 
             <section className={`${styles.social} xs__ml+4 xs__mr+4`}>
                 <a
-                    href="?rss"
-                    className={`${styles.icon} xs__p+4`}
-                    title="FD.nl RSS feed"
-                    dangerouslySetInnerHTML={{
-                        __html: RssIcon as any,
-                    }}
-                />
-                <a
                     href="https://www.linkedin.com/company/het-financieele-dagblad"
                     data-ga-name="footer_menu_click"
                     data-ga-category="user interactions"
