@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { CollapseIcon, ExpandIcon } from '../design-tokens/icons';
 import ThemeStore, { Theme } from '../stores/ThemeStore';
 import { Radio } from './input/Radio';
-import styles from './Themes.module.scss';
+import styles from './menu/Menu.module.scss';
 
 interface Props {
     groupName?: string;
@@ -10,6 +11,7 @@ interface Props {
 
 function Themes(props: Props) {
     const [theme, setTheme] = useState(ThemeStore.getTheme());
+    const [userMenuThemeExpanded, setUserMenuTheme] = useState(false);
 
     function changeTheme(theme: Theme) {
         switch (theme) {
@@ -59,43 +61,82 @@ function Themes(props: Props) {
         ThemeStore.setTheme(theme);
     }
 
+    function handleUserMenuThemeClick() {
+        setUserMenuTheme((prev) => !prev);
+    }
+
     return (
         <section
-            data-checked={theme}
-            className={`${styles.themeControls}${
-                props.className ? ` ${props.className}` : ''
-            }`}
+            className={`${styles.theme} xs__m-0 xs__pt+4 xs__pb+4 xs__ml-4 xs__mr-4 xs__mb-4`}
         >
-            <Radio
-                id="systemTheme"
-                type="radio"
-                name="theme"
-                radioGroup={props.groupName ?? 'themes'}
-                value={Theme.SYSTEM}
-                checked={Theme.SYSTEM === theme}
-                onChange={handleThemeChange.bind(null, Theme.SYSTEM)}
-                label="system"
-            />
-            <Radio
-                id="lightTheme"
-                type="radio"
-                name="theme"
-                radioGroup={props.groupName ?? 'themes'}
-                value={Theme.LIGHT}
-                checked={Theme.LIGHT === theme}
-                onChange={handleThemeChange.bind(null, Theme.LIGHT)}
-                label="☀️"
-            />
-            <Radio
-                id="darkTheme"
-                type="radio"
-                name="theme"
-                radioGroup={props.groupName ?? 'themes'}
-                value={Theme.DARK}
-                checked={Theme.DARK === theme}
-                onChange={handleThemeChange.bind(null, Theme.DARK)}
-                label="🌒"
-            />
+            <div className="xs__pl+4 xs__pr+4">
+                <button
+                    className={`${styles['expand-toggle']} heading sans xxs`}
+                    aria-controls="userMenuTheme"
+                    aria-expanded={userMenuThemeExpanded}
+                    title="Weergaveopties"
+                    onClick={handleUserMenuThemeClick}
+                >
+                    <span>Weergaveopties</span>
+                    <span
+                        className={styles['expand-icon']}
+                        dangerouslySetInnerHTML={{
+                            __html: ExpandIcon as any,
+                        }}
+                    />
+                    <span
+                        className={styles['collapse-icon']}
+                        dangerouslySetInnerHTML={{
+                            __html: CollapseIcon as any,
+                        }}
+                    />
+                </button>
+                <section
+                    id="userMenuTheme"
+                    role="region"
+                    className={`body-text sans xs ${styles['expandable-menu-item']}`}
+                >
+                    <div className="xs__mt+3">
+                        <Radio
+                            id="systemTheme"
+                            type="radio"
+                            name="theme"
+                            radioGroup={props.groupName ?? 'themes'}
+                            value={Theme.SYSTEM}
+                            checked={Theme.SYSTEM === theme}
+                            onChange={handleThemeChange.bind(
+                                null,
+                                Theme.SYSTEM
+                            )}
+                            label="Systeem (instellingen apparaat)"
+                        />
+                    </div>
+                    <div className="xs__mt+2">
+                        <Radio
+                            id="lightTheme"
+                            type="radio"
+                            name="theme"
+                            radioGroup={props.groupName ?? 'themes'}
+                            value={Theme.LIGHT}
+                            checked={Theme.LIGHT === theme}
+                            onChange={handleThemeChange.bind(null, Theme.LIGHT)}
+                            label="Lichte weergave"
+                        />
+                    </div>
+                    <div className="xs__mt+2">
+                        <Radio
+                            id="darkTheme"
+                            type="radio"
+                            name="theme"
+                            radioGroup={props.groupName ?? 'themes'}
+                            value={Theme.DARK}
+                            checked={Theme.DARK === theme}
+                            onChange={handleThemeChange.bind(null, Theme.DARK)}
+                            label="Donkere weergave"
+                        />
+                    </div>
+                </section>
+            </div>
         </section>
     );
 }

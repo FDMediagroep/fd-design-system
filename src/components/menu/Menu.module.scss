@@ -14,6 +14,10 @@
         background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     }
 
+    a {
+        text-decoration: none;
+    }
+
     button {
         cursor: pointer;
     }
@@ -1282,7 +1286,7 @@
  * Fix for Safari not handling CSS properties correctly for url().
  */
 :root {
-    &.system,
+    &:global(.system),
     & {
         @media (prefers-color-scheme: dark) {
             .header-placeholder header .logo {
@@ -1310,7 +1314,7 @@
         }
     }
 
-    &.dark {
+    &:global(.dark) {
         .header-placeholder header .logo {
             background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo-dark.svg')
                 center center no-repeat;
@@ -1322,7 +1326,7 @@
             }
         }
     }
-    &.light {
+    &:global(.light) {
         .header-placeholder header .logo {
             background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
                 center center no-repeat;

@@ -275,7 +275,7 @@ function Profile(props: Props) {
                     </Button>
                 </div>
             ) : null}
-            <hr className="xs__m-0 xs__mt+2 xs__mb+2" />
+            <hr className="xs__m-0 xs__mt+2 xs__mb+2 xs__mr-4 xs__ml-4" />
             <a
                 href="https://fd.nl/service"
                 className={`${styles.service} heading sans xxs xs__m-0 xs__pt+2 xs__pb+2`}
@@ -286,6 +286,7 @@ function Profile(props: Props) {
             >
                 <span>Service & Contact</span>
             </a>
+            <hr className="xs__m-0 xs__mt+2 xs__mr-4 xs__ml-4" />
 
             <Themes groupName="sub-menu-themes" />
         </div>
