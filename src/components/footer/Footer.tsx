@@ -722,7 +722,7 @@ function Footer() {
 
             <div className={`${styles['fd-copyright-footer']} xs__mb+4`}>
                 <a
-                    rel="noopener noreferrer"
+                    rel="license noopener noreferrer"
                     href="https://fd.nl/copyright"
                     target="_blank"
                     className="body-text sans xs"
