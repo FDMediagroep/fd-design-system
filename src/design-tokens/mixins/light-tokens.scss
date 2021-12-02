@@ -249,6 +249,12 @@
     --infographic-extended-background: transparent;
 
     /**
+     * Advertorial sponsor logo
+     */
+    --sponsor-logo-background: transparent;
+    --sponsor-logo-padding: 0;
+
+    /**
      * Profile
      */
     --profile-outline: #{map-deep-get($colors, 'colors', 'neutral', 30)};

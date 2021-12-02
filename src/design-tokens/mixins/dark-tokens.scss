@@ -256,6 +256,12 @@
         )};
 
     /**
+     * Advertorial sponsor logo
+     */
+    --sponsor-logo-background: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+    --sponsor-logo-padding: 4px;
+
+    /**
      * Profile
      */
     --profile-outline: #{map-deep-get($colors, 'colors', 'neutral', 60)};

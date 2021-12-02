@@ -8,6 +8,7 @@ import {
     RssIcon,
     TwitterIcon,
 } from '../../design-tokens/icons';
+import { DarkModeToggle } from './DarkModeToggle';
 import styles from './Footer.module.scss';
 
 function Footer() {
@@ -70,7 +71,7 @@ function Footer() {
     );
 
     return (
-        <footer ref={footerRef} className={styles.footer}>
+        <footer ref={footerRef} className={styles['fd-footer']}>
             <ul className="grid xs__p-0 xs__pt+6 xs__pr+4 xs__pl+4">
                 <li className="xs-12 xl-2 xs__pb+4">
                     <h3 className="xs__m-0">
@@ -666,14 +667,6 @@ function Footer() {
 
             <section className={`${styles.social} xs__ml+4 xs__mr+4`}>
                 <a
-                    href="?rss"
-                    className={`${styles.icon} xs__p+4`}
-                    title="FD.nl RSS feed"
-                    dangerouslySetInnerHTML={{
-                        __html: RssIcon as any,
-                    }}
-                />
-                <a
                     href="https://www.linkedin.com/company/het-financieele-dagblad"
                     data-ga-name="footer_menu_click"
                     data-ga-category="user interactions"
@@ -726,6 +719,19 @@ function Footer() {
                     }}
                 />
             </section>
+
+            <div className={`${styles['fd-copyright-footer']} xs__mb+4`}>
+                <a
+                    rel="license noopener noreferrer"
+                    href="https://fd.nl/copyright"
+                    target="_blank"
+                    className="body-text sans xs"
+                >
+                    &copy; Het Financieele Dagblad {new Date().getFullYear()}
+                </a>
+            </div>
+
+            <DarkModeToggle />
         </footer>
     );
 }

@@ -1,7 +1,7 @@
 @import '../../utils/map-deep-get.scss';
 @import '../../design-tokens/colors.scss';
 
-.footer {
+.fd-footer {
     overflow: hidden; // IE11
     margin-top: 48px;
     @media screen and (min-width: 1280px) {
@@ -171,5 +171,70 @@
                 fill: var(--meta-copy);
             }
         }
+    }
+}
+
+.fd-copyright-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    a {
+        display: flex;
+        &:hover,
+        &:active,
+        &:focus {
+            color: var(--primary);
+            // IE11
+            @media screen and (-ms-high-contrast: active),
+                (-ms-high-contrast: none) {
+                color: #379596;
+            }
+        }
+    }
+    img {
+        margin-right: 0.5rem;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.fd-dark-mode-toggle {
+    display: flex;
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        display: none;
+    }
+
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    clear: both;
+
+    label {
+        color: var(--writer);
+    }
+
+    button {
+        padding: 1px 6px;
+        cursor: pointer;
+        color: var(--writer);
+        background-color: transparent;
+        border: none;
+        &.active {
+            cursor: default;
+            text-decoration: underline;
+        }
+        &:hover {
+            text-decoration: underline;
+            &:not(.active) {
+                color: var(--primary);
+            }
+        }
+    }
+
+    span {
+        color: var(--writer);
     }
 }
