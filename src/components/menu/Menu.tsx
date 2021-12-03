@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './Menu.module.scss';
+import buttonStyles from './MenuButton.module.scss';
 import {
     CloseIcon,
     GithubIcon,
@@ -10,6 +11,7 @@ import {
 } from '../../design-tokens/icons';
 import { ButtonCta } from '../button/ButtonCta';
 import Link from 'next/link';
+import { handleSearchSubmit } from '../../utils/search';
 
 export interface Props {
     aside?: JSX.Element;
@@ -262,7 +264,7 @@ function Menu(props: Props) {
                                     <ButtonCta
                                         size="s"
                                         href="https://fd.nl/abo"
-                                        className={`${styles['desktop-register-button']} xs__m-0 xs__ml+2 xs__mr+2`}
+                                        className={`${styles['desktop-register-button']} ${buttonStyles['profile-button-cta']} xs__m-0 xs__ml+2 xs__mr+2`}
                                         data-ga-name="menu_click"
                                         data-ga-category="user interactions"
                                         data-ga-action="menu click"
@@ -369,6 +371,7 @@ function Menu(props: Props) {
                     <form
                         className={`${styles['search']} ${styles['centered']} xs__m-0-auto xs__p-0 xs__pl+4 xs__pr+4`}
                         action="/search"
+                        onSubmit={handleSearchSubmit}
                     >
                         <label
                             htmlFor="searchInput"

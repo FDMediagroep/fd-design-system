@@ -10,6 +10,7 @@ import { ButtonCta } from '../button/ButtonCta';
 import { ButtonGhost } from '../button/ButtonGhost';
 import { Themes } from '../Themes';
 import styles from './Menu.module.scss';
+import buttonStyles from './MenuButton.module.scss';
 
 interface ProgressBlock {
     faded?: boolean;
@@ -219,7 +220,7 @@ function Profile(props: Props) {
                         >
                             <ButtonCta
                                 href="https://fd.nl/abonneren"
-                                className={styles['mobile-register-button']}
+                                className={`${styles['mobile-register-button']} ${buttonStyles['profile-button-cta']}`}
                                 size={'m'}
                                 data-ga-name="menu_click"
                                 data-ga-category="user interactions"
@@ -231,6 +232,7 @@ function Profile(props: Props) {
                                 <span>Abonneren</span>
                             </ButtonCta>
                             <Button
+                                className={styles['profile-button']}
                                 size="m"
                                 data-ga-name="menu_click"
                                 data-ga-category="user interactions"
@@ -252,7 +254,7 @@ function Profile(props: Props) {
                     <ButtonCta
                         size="m"
                         href="https://fd.nl/abonneren"
-                        className={styles['mobile-register-button']}
+                        className={`${styles['mobile-register-button']} ${buttonStyles['profile-button-cta']}`}
                         data-ga-name="menu_click"
                         data-ga-category="user interactions"
                         data-ga-action="menu click"
@@ -263,6 +265,7 @@ function Profile(props: Props) {
                         <span>Abonneren</span>
                     </ButtonCta>
                     <Button
+                        className={buttonStyles['profile-button']}
                         size="m"
                         data-ga-name="menu_click"
                         data-ga-category="user interactions"
