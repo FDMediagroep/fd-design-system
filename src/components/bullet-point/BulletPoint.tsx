@@ -39,7 +39,7 @@ function BulletPoint(props: Props) {
                             }}
                         />
                     )}
-                    {bullet}
+                    <span dangerouslySetInnerHTML={{ __html: bullet }} />
                 </p>
             ))}
         </div>

@@ -47,7 +47,9 @@ exports[`BulletPoint should align correctly 1`] = `
         
 
       </span>
-      one
+      <span>
+        one
+      </span>
     </p>
     <p>
       <span
@@ -91,7 +93,9 @@ exports[`BulletPoint should align correctly 1`] = `
         
 
       </span>
-      two
+      <span>
+        two
+      </span>
     </p>
     <p>
       <span
@@ -135,7 +139,9 @@ exports[`BulletPoint should align correctly 1`] = `
         
 
       </span>
-      three
+      <span>
+        three
+      </span>
     </p>
   </div>
 </div>
@@ -188,7 +194,9 @@ exports[`BulletPoint should align correctly 2`] = `
         
 
       </span>
-      one
+      <span>
+        one
+      </span>
     </p>
     <p>
       <span
@@ -232,7 +240,9 @@ exports[`BulletPoint should align correctly 2`] = `
         
 
       </span>
-      two
+      <span>
+        two
+      </span>
     </p>
     <p>
       <span
@@ -276,7 +286,9 @@ exports[`BulletPoint should align correctly 2`] = `
         
 
       </span>
-      three
+      <span>
+        three
+      </span>
     </p>
   </div>
 </div>
@@ -330,7 +342,9 @@ exports[`BulletPoint should render variants correctly 1`] = `
         
 
       </span>
-      one
+      <span>
+        one
+      </span>
     </p>
     <p>
       <span
@@ -374,7 +388,9 @@ exports[`BulletPoint should render variants correctly 1`] = `
         
 
       </span>
-      two
+      <span>
+        two
+      </span>
     </p>
     <p>
       <span
@@ -418,7 +434,9 @@ exports[`BulletPoint should render variants correctly 1`] = `
         
 
       </span>
-      three
+      <span>
+        three
+      </span>
     </p>
   </div>
 </div>

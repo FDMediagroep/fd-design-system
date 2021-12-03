@@ -10,9 +10,9 @@ describe('ArticleMeta', () => {
         const { getByText } = render(
             <ArticleMeta
                 authors={[
-                    { fullName: 'Willem L.' },
-                    { fullName: 'Pietje P.' },
-                    { fullName: 'Jan D.' },
+                    { id: 1, fullName: 'Willem L.' },
+                    { id: 2, fullName: 'Pietje P.' },
+                    { id: 3, fullName: 'Jan D.' },
                 ]}
                 date="8 mei 2020"
             />
@@ -28,9 +28,9 @@ describe('ArticleMeta', () => {
         const { container } = render(
             <ArticleMeta
                 authors={[
-                    { fullName: 'Willem L.', directory: '/willem-liu' },
-                    { fullName: 'Pietje P.' },
-                    { fullName: 'Jan D.' },
+                    { id: 1, fullName: 'Willem L.', directory: '/willem-liu' },
+                    { id: 2, fullName: 'Pietje P.' },
+                    { id: 3, fullName: 'Jan D.' },
                 ]}
             />
         );
@@ -42,9 +42,9 @@ describe('ArticleMeta', () => {
         const { container } = render(
             <ArticleMeta
                 authors={[
-                    { fullName: 'Willem L.' },
-                    { fullName: 'Pietje P.' },
-                    { fullName: 'Jan D.' },
+                    { id: 1, fullName: 'Willem L.' },
+                    { id: 2, fullName: 'Pietje P.' },
+                    { id: 3, fullName: 'Jan D.' },
                 ]}
             />
         );

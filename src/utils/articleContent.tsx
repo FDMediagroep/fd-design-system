@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArticleImage } from '../components/article-image/ArticleImage';
 import { Infographic } from '../components/infographic/Infographic';
 import { InfographicExtended } from '../components/article-image/InfographicExtended';
@@ -11,27 +11,9 @@ import { TextFrame } from '../components/textframe/TextFrame';
 import { LinkBlock } from '../components/article-link-block/LinkBlock';
 import { Vimeo } from '../components/vimeo/Vimeo';
 import { Youtube } from '../components/youtube/Youtube';
-import { XMLSerializer } from 'xmldom';
-import { BulletPoint, Alignment } from '../components/bullet-point/BulletPoint';
+import { BulletPoint } from '../components/bullet-point/BulletPoint';
 import { OEmbed } from '../components/oembed/OEmbed';
 import { RelatedPdf } from '../components/related-pdf/RelatedPdf';
-
-function innerHTML(node: Element, tagName?: string) {
-    if (tagName) {
-        if (!node.getElementsByTagName(tagName).length) {
-            return '';
-        }
-        return new XMLSerializer()
-            .serializeToString(node.getElementsByTagName(tagName).item(0))
-            .replace(`<${tagName}>`, '')
-            .replace(`</${tagName}>`, '');
-    } else {
-        return new XMLSerializer()
-            .serializeToString(node)
-            .replace(`<${node.nodeName}>`, '')
-            .replace(`</${node.nodeName}>`, '');
-    }
-}
 
 function decodeHtml(encodedHtml: string) {
     return encodedHtml
@@ -42,239 +24,186 @@ function decodeHtml(encodedHtml: string) {
         .replace(/&amp;/g, '&');
 }
 
+function HtmlEmbed(props: any) {
+    const [html, setHtml] = useState(null);
+
+    useEffect(() => {
+        setHtml(decodeHtml(props.html));
+    }, [props.html]);
+
+    try {
+        return <div dangerouslySetInnerHTML={{ __html: html }} />;
+    } catch (e) {
+        console.error(e);
+        return <div />;
+    }
+}
+
+function mergeParagraph(paragraphContents: any[]) {
+    const jsx: JSX.Element[] = [];
+    paragraphContents.forEach((pContent: any, idx: number) => {
+        switch (pContent.name) {
+            case 'fdmg-stock-quote':
+                jsx.push(
+                    <a
+                        key={pContent.key}
+                        data-isin={pContent.isin}
+                        data-exchange={pContent.exchange}
+                        className="company-quote"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        data-ga-name="article_beurskoers_click"
+                        data-ga-category="articles"
+                        data-ga4-category="user interactions"
+                        data-ga-action="beurskoers click"
+                        data-ga-label={pContent.isin}
+                        data-ga-custom-properties="{%22article_id%22: null, %event_value%22: null, %page_notification%22: null, %22section%22: null, %22subsection%22: null}"
+                    >
+                        {pContent['data-name'] ? (
+                            <span>{pContent['data-name']}</span>
+                        ) : null}
+                        {pContent['data-price'] ? (
+                            <span>
+                                {pContent['data-currency'] ?? '$'}
+                                {pContent['data-price']}
+                            </span>
+                        ) : null}
+                        {pContent['data-difference'] ? (
+                            <span className="drop">
+                                {pContent['data-difference']}
+                            </span>
+                        ) : null}
+                    </a>
+                );
+                break;
+            case '#text':
+                jsx.push(pContent.content);
+                break;
+            default:
+                jsx.push(
+                    React.createElement(
+                        pContent.name,
+                        {
+                            ...pContent.attributes,
+                        },
+                        pContent.content
+                    )
+                );
+        }
+    });
+
+    return <p>{jsx}</p>;
+}
+
 export function mergeInlineContent(doc: any) {
     const jsx: JSX.Element[] = [];
-    [].slice
-        .call(doc?.documentElement.childNodes)
-        .forEach((childNode: HTMLElement, idx: number) => {
-            let responsiveUrl = '';
-            let desktopUrl = '';
-            let xlUrl = '';
-            let fileName: string;
-
-            switch (childNode.nodeName) {
-                case 'fdmg-bulletpoint':
+    doc.forEach((content) => {
+        switch (content.name) {
+            case 'h1':
+                jsx.push(
+                    <h1 dangerouslySetInnerHTML={{ __html: content.content }} />
+                );
+                break;
+            case 'h2':
+                jsx.push(
+                    <h2 dangerouslySetInnerHTML={{ __html: content.content }} />
+                );
+                break;
+            case 'h3':
+                jsx.push(
+                    <h3 dangerouslySetInnerHTML={{ __html: content.content }} />
+                );
+                break;
+            case 'h4':
+                jsx.push(
+                    <h4 dangerouslySetInnerHTML={{ __html: content.content }} />
+                );
+                break;
+            case 'h5':
+                jsx.push(
+                    <h5 dangerouslySetInnerHTML={{ __html: content.content }} />
+                );
+                break;
+            case 'h6':
+                jsx.push(
+                    <h6 dangerouslySetInnerHTML={{ __html: content.content }} />
+                );
+                break;
+            case 'p':
+                jsx.push(mergeParagraph(content.contents));
+                break;
+            case 'fdmg-bulletpoint':
+                jsx.push(<BulletPoint {...content} />);
+                break;
+            case 'fdmg-image':
+                jsx.push(<ArticleImage {...content} />);
+                break;
+            case 'fdmg-infographic':
+                jsx.push(<Infographic {...content} />);
+                break;
+            case 'fdmg-infographic-extended':
+                jsx.push(<InfographicExtended {...content} />);
+                break;
+            case 'fdmg-html-embed':
+                jsx.push(
+                    <HtmlEmbed
+                        key={content.key}
+                        html={content.dangerouslySetInnerHTML.__html}
+                    />
+                );
+                break;
+            case 'fdmg-instagram':
+                jsx.push(<OEmbed {...content} />);
+                break;
+            case 'fdmg-number-frame':
+                jsx.push(<NumberFrame {...content} />);
+                break;
+            case 'fdmg-pdf':
+                jsx.push(<RelatedPdf {...content} />);
+                break;
+            case 'fdmg-quote':
+                jsx.push(<Quote {...content} />);
+                break;
+            case 'fdmg-readmore':
+                jsx.push(<ReadMore {...content} />);
+                break;
+            case 'fdmg-related-link':
+                jsx.push(<LinkBlock {...content} />);
+                break;
+            case 'fdmg-soundcloud':
+                jsx.push(<OEmbed {...content} />);
+                break;
+            case 'fdmg-stack-frame':
+                jsx.push(<WordFrame {...content} />);
+                break;
+            case 'fdmg-summary':
+                jsx.push(<Summary {...content} />);
+                break;
+            case 'fdmg-text-frame':
+                jsx.push(<TextFrame {...content} />);
+                break;
+            case 'fdmg-twitter':
+                jsx.push(<OEmbed {...content} />);
+                break;
+            case 'fdmg-vimeo':
+                jsx.push(<Vimeo {...content} />);
+                break;
+            case 'fdmg-youtube':
+                jsx.push(<Youtube {...content} />);
+                break;
+            default:
+                // Treat non fdmg elements as normal HTML.
+                if (content.name.indexOf('fdmg-') === -1) {
                     jsx.push(
-                        <BulletPoint
-                            key={idx}
-                            bullets={innerHTML(childNode, 'fdmg-content').split(
-                                '\n'
-                            )}
-                            alignment={
-                                innerHTML(
-                                    childNode,
-                                    'fdmg-alignment'
-                                ) as Alignment
-                            }
-                        />
-                    );
-                    break;
-                case 'fdmg-image':
-                    jsx.push(
-                        <ArticleImage
-                            key={idx}
-                            caption={innerHTML(childNode, 'fdmg-caption')}
-                            fileName={innerHTML(childNode, 'fdmg-filename')}
-                            credit={innerHTML(childNode, 'fdmg-credit')}
-                        />
-                    );
-                    break;
-                case 'fdmg-infographic':
-                    jsx.push(
-                        <Infographic
-                            key={idx}
-                            src={innerHTML(childNode, 'fdmg-url')}
-                            height={childNode.getAttribute('height')}
-                        />
-                    );
-                    break;
-                case 'fdmg-infographic-extended':
-                    [].slice
-                        .call(childNode.getElementsByTagName('graphic'))
-                        .forEach((graphic) => {
-                            switch (graphic.getAttribute('view')) {
-                                case 'responsive':
-                                    responsiveUrl = graphic.getAttribute('url');
-                                    break;
-                                case 'desktop':
-                                    desktopUrl = graphic.getAttribute('url');
-                                    break;
-                                case 'xl':
-                                    xlUrl = graphic.getAttribute('url');
-                                    break;
-                            }
-                        });
-                    jsx.push(
-                        <InfographicExtended
-                            key={idx}
-                            smallImageUrl={responsiveUrl}
-                            largeImageUrl={desktopUrl}
-                            extraLargeImageUrl={xlUrl}
-                        />
-                    );
-                    break;
-                case 'fdmg-html-embed':
-                    jsx.push(
-                        React.createElement('div', {
-                            key: idx,
+                        React.createElement(content.name, {
+                            key: content.key,
                             dangerouslySetInnerHTML: {
-                                __html: decodeHtml(
-                                    innerHTML(childNode, 'fdmg-html-content')
-                                ),
+                                __html: JSON.stringify(content, null, 2),
                             },
                         })
                     );
-                    break;
-                case 'fdmg-instagram':
-                    jsx.push(
-                        <OEmbed
-                            key={idx}
-                            type="instagram-embed"
-                            url={innerHTML(childNode, 'fdmg-url')}
-                        />
-                    );
-                    break;
-                case 'fdmg-number-frame':
-                    jsx.push(
-                        <NumberFrame
-                            key={idx}
-                            number={innerHTML(childNode, 'fdmg-heading')}
-                            description={innerHTML(childNode, 'fdmg-content')}
-                        />
-                    );
-                    break;
-                case 'fdmg-pdf':
-                    jsx.push(
-                        <RelatedPdf
-                            key={idx}
-                            fileId={innerHTML(childNode, 'fdmg-id')}
-                            fileName={innerHTML(childNode, 'fdmg-filename')}
-                            title={innerHTML(childNode, 'fdmg-title')}
-                        />
-                    );
-                    break;
-                case 'fdmg-quote':
-                    jsx.push(
-                        <Quote
-                            key={idx}
-                            blockquote={innerHTML(childNode, 'fdmg-message')}
-                            figcaption={innerHTML(childNode, 'fdmg-author')}
-                        />
-                    );
-                    break;
-                case 'fdmg-readmore':
-                    jsx.push(
-                        <ReadMore
-                            key={idx}
-                            title={childNode.getAttribute('title')}
-                            links={innerHTML(childNode, 'fdmg-content').split(
-                                '\n'
-                            )}
-                        />
-                    );
-                    break;
-                case 'fdmg-related-link':
-                    jsx.push(
-                        <LinkBlock
-                            key={idx}
-                            title={innerHTML(childNode, 'fdmg-prefix')}
-                            description={innerHTML(childNode, 'fdmg-leadtext')}
-                            url={innerHTML(childNode, 'fdmg-relatedurl')}
-                        />
-                    );
-                    break;
-                case 'fdmg-soundcloud':
-                    jsx.push(
-                        <OEmbed
-                            key={idx}
-                            type="soundcloud-embed"
-                            url={innerHTML(childNode, 'fdmg-url')}
-                        />
-                    );
-                    break;
-                case 'fdmg-stack-frame':
-                    jsx.push(
-                        <WordFrame
-                            key={idx}
-                            title={innerHTML(childNode, 'fdmg-heading')}
-                            description={innerHTML(childNode, 'fdmg-content')}
-                        />
-                    );
-                    break;
-                case 'fdmg-summary':
-                    jsx.push(
-                        <Summary
-                            key={idx}
-                            title={childNode.getAttribute('title')}
-                            summaries={innerHTML(
-                                childNode,
-                                'fdmg-content'
-                            ).split('\n')}
-                        />
-                    );
-                    break;
-                case 'fdmg-text-frame':
-                    if (
-                        childNode?.getElementsByTagName('fdmg-filename')?.length
-                    ) {
-                        fileName = innerHTML(childNode, 'fdmg-filename');
-                    }
-                    jsx.push(
-                        <TextFrame
-                            key={idx}
-                            image={fileName}
-                            title={innerHTML(childNode, 'fdmg-heading')}
-                            descriptions={innerHTML(
-                                childNode,
-                                'fdmg-content'
-                            ).split('\n')}
-                            alignment={innerHTML(childNode, 'fdmg-alignment')}
-                        />
-                    );
-                    break;
-                case 'fdmg-twitter':
-                    jsx.push(
-                        <OEmbed
-                            key={idx}
-                            type="twitter-embed"
-                            url={innerHTML(childNode, 'fdmg-url')}
-                        />
-                    );
-                    break;
-                case 'fdmg-vimeo':
-                    jsx.push(
-                        <Vimeo key={idx} id={innerHTML(childNode, 'fdmg-id')} />
-                    );
-                    break;
-                case 'fdmg-youtube':
-                    jsx.push(
-                        <Youtube
-                            key={idx}
-                            id={innerHTML(childNode, 'fdmg-id')}
-                        />
-                    );
-                    break;
-                default:
-                    // Treat non fdmg elements as normal HTML.
-                    if (childNode.nodeName.indexOf('fdmg-') === -1) {
-                        if (!childNode.hasChildNodes()) {
-                            // Prevent further processing of empty node
-                            return true;
-                        }
-                        jsx.push(
-                            React.createElement(childNode.nodeName, {
-                                key: idx,
-                                dangerouslySetInnerHTML: {
-                                    __html: innerHTML(childNode),
-                                },
-                            })
-                        );
-                    } else {
-                        console.log(
-                            new XMLSerializer().serializeToString(childNode)
-                        );
-                    }
-            }
-        });
+                }
+        }
+    });
     return jsx;
 }

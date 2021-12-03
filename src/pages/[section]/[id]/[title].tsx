@@ -3,31 +3,27 @@ import '@fdmg/css-grid/css/grid.css';
 import '@fdmg/css-grid/css/flex.css';
 import styles from './Article.module.scss';
 import { mergeInlineContent } from '../../../utils/articleContent';
-import { DOMParser } from 'xmldom';
 import PageStore from '../../../stores/PageStore';
 import { OEmbedLoader } from '../../../utils/OEmbedLoader';
 import { ArticleMeta } from '../../../components/article-meta/ArticleMeta';
-import { getPayload } from '../../api/[section]/[id]/[title]';
+import { parseXMLToJSON } from '@fdmg/article-xml-json';
 import Head from 'next/head';
 import { GridContainer } from '@fdmg/css-grid/GridContainer';
 import { VerticalToolbar } from '../../../components/toolbar/VerticalToolbar';
+import {
+    GetStaticPaths,
+    GetStaticPathsContext,
+    GetStaticProps,
+    GetStaticPropsContext,
+} from 'next';
 
 interface Props {
-    section: string;
-    id: number;
-    title: string;
-    authors: any;
-    article: any;
-    articleXml: string;
-    data: string;
-    formattedPublicationDate: string;
+    json: any;
 }
 
 function Article(props: Props) {
     const [jsxContent] = useState(
-        mergeInlineContent(
-            new DOMParser().parseFromString(props.articleXml, 'text/xml')
-        )
+        mergeInlineContent(parseXMLToJSON(props.json.content))
     );
 
     useEffect(() => {
@@ -89,13 +85,15 @@ function Article(props: Props) {
                             <GridContainer attributes={['xs-12', 'gap-bottom']}>
                                 <header>
                                     <ArticleMeta
-                                        authors={props.authors}
-                                        date={props.formattedPublicationDate}
+                                        authors={props.json.authors}
+                                        date={new Date(
+                                            props.json.publicationDate
+                                        ).toUTCString()}
                                     />
 
-                                    <h1>{props.article.title}</h1>
+                                    <h1>{props.json.title}</h1>
                                     <p className={styles.intro}>
-                                        {props.article.intro}
+                                        {props.json.intro}
                                     </p>
                                 </header>
                             </GridContainer>
@@ -165,7 +163,7 @@ function Article(props: Props) {
         console.error(e);
         return (
             <textarea
-                defaultValue={props.data}
+                defaultValue={JSON.stringify(props.json, null, 2)}
                 style={{ width: '100%' }}
                 rows={15}
             />
@@ -173,33 +171,40 @@ function Article(props: Props) {
     }
 }
 
-export async function getServerSideProps({ params }) {
-    const data = await getPayload(params);
-    let article: any;
-    let authors: any[] = [];
-    let formattedPublicationDate: string;
+export const getStaticPaths: GetStaticPaths = async (
+    context: GetStaticPathsContext
+) => {
+    return {
+        paths: [
+            {
+                params: {
+                    id: '1324449',
+                    section: 'achtergrond',
+                    title: 'alle-verrijking-op-een-rijtje',
+                },
+            },
+        ],
+        fallback: 'blocking',
+    };
+};
 
-    try {
-        article = data.accessModel.pageContext.analyticsParameters.article;
-        authors = data.articleDetailsModel.authorInfoList;
-        formattedPublicationDate =
-            data.articleDetailsModel.formattedPublicationDate;
-    } catch (e) {
-        console.error(e);
-    }
-
+export const getStaticProps: GetStaticProps = async (
+    context: GetStaticPropsContext
+) => {
+    const json = await fetch(
+        `${process.env.FDMG_ARTICLE_SERVICE_URL}/${context.params.id}`,
+        {
+            headers: {
+                'x-access-token': `Bearer ${process.env.FDMG_ARTICLE_SERVICE_TOKEN}`,
+            },
+        }
+    ).then((res) => res.json());
     return {
         props: {
-            section: params.section,
-            id: params.id,
-            title: params.title,
-            data,
-            formattedPublicationDate,
-            authors,
-            article: article ?? null,
-            articleXml: `<xml>${article?.content}</xml>`,
+            json,
         },
+        revalidate: 1,
     };
-}
+};
 
 export default Article;
