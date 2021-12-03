@@ -10,6 +10,7 @@ import {
 } from '../../design-tokens/icons';
 import { ButtonCta } from '../button/ButtonCta';
 import Link from 'next/link';
+import { handleSearchSubmit } from '../../utils/search';
 
 export interface Props {
     aside?: JSX.Element;
@@ -369,6 +370,7 @@ function Menu(props: Props) {
                     <form
                         className={`${styles['search']} ${styles['centered']} xs__m-0-auto xs__p-0 xs__pl+4 xs__pr+4`}
                         action="/search"
+                        onSubmit={handleSearchSubmit}
                     >
                         <label
                             htmlFor="searchInput"
