@@ -157,11 +157,6 @@ function Article(props: Props) {
                         ]}
                     />
                 </GridContainer>
-                <textarea
-                    defaultValue={`${JSON.stringify(props.json, null, 2)}`}
-                    style={{ width: '100%' }}
-                    rows={15}
-                />
             </article>
         );
     } catch (e) {
