@@ -41,11 +41,12 @@ function HtmlEmbed(props: any) {
 
 function mergeParagraph(paragraphContents: any[]) {
     const jsx: JSX.Element[] = [];
-    paragraphContents.forEach((pContent: any) => {
+    paragraphContents.forEach((pContent: any, idx: number) => {
         switch (pContent.name) {
             case 'fdmg-stock-quote':
                 jsx.push(
                     <a
+                        key={pContent.key}
                         data-isin={pContent.isin}
                         data-exchange={pContent.exchange}
                         className="company-quote"

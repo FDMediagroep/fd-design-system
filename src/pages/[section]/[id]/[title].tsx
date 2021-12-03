@@ -197,10 +197,10 @@ export const getStaticProps: GetStaticProps = async (
     context: GetStaticPropsContext
 ) => {
     const json = await fetch(
-        `${process.env.fdmg_article_service_url}/${context.params.id}`,
+        `${process.env.FDMG_ARTICLE_SERVICE_URL}/${context.params.id}`,
         {
             headers: {
-                'x-access-token': `Bearer ${process.env.fdmg_article_service_token}`,
+                'x-access-token': `Bearer ${process.env.FDMG_ARTICLE_SERVICE_TOKEN}`,
             },
         }
     ).then((res) => res.json());
@@ -211,34 +211,5 @@ export const getStaticProps: GetStaticProps = async (
         revalidate: 1,
     };
 };
-
-// export async function getServerSideProps({ params }) {
-//     const data = await getPayload(params);
-//     let article: any;
-//     let authors: any[] = [];
-//     let formattedPublicationDate: string;
-
-//     try {
-//         article = data.accessModel.pageContext.analyticsParameters.article;
-//         authors = data.articleDetailsModel.authorInfoList;
-//         formattedPublicationDate =
-//             data.articleDetailsModel.formattedPublicationDate;
-//     } catch (e) {
-//         console.error(e);
-//     }
-
-//     return {
-//         props: {
-//             section: params.section,
-//             id: params.id,
-//             title: params.title,
-//             data,
-//             formattedPublicationDate,
-//             authors,
-//             article: article ?? null,
-//             articleXml: `<xml>${article?.content}</xml>`,
-//         },
-//     };
-// }
 
 export default Article;
