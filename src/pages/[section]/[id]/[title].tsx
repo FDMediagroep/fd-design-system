@@ -200,7 +200,7 @@ export const getStaticProps: GetStaticProps = async (
         `${process.env.fdmg_article_service_url}/${context.params.id}`,
         {
             headers: {
-                'x-access-token': `Bearer ${process.env.fdmg_article_service_dev_token}`,
+                'x-access-token': `Bearer ${process.env.fdmg_article_service_token}`,
             },
         }
     ).then((res) => res.json());
