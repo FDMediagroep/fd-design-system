@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ArticleMeta.module.scss';
 
 type Author = {
+    id: number;
     fullName: string;
     directory?: string;
 };
@@ -20,7 +21,7 @@ function ArticleMeta(props: Props) {
         <section className={styles.meta}>
             <span>
                 {props.authors.map((author) => {
-                    if (author.directory) {
+                    if (author?.directory) {
                         return (
                             <a
                                 key={author.fullName}
