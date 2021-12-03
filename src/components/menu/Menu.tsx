@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './Menu.module.scss';
+import buttonStyles from './MenuButton.module.scss';
 import {
     CloseIcon,
     GithubIcon,
@@ -263,7 +264,7 @@ function Menu(props: Props) {
                                     <ButtonCta
                                         size="s"
                                         href="https://fd.nl/abo"
-                                        className={`${styles['desktop-register-button']} xs__m-0 xs__ml+2 xs__mr+2`}
+                                        className={`${styles['desktop-register-button']} ${buttonStyles['profile-button-cta']} xs__m-0 xs__ml+2 xs__mr+2`}
                                         data-ga-name="menu_click"
                                         data-ga-category="user interactions"
                                         data-ga-action="menu click"
