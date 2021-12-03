@@ -73,7 +73,7 @@ function JorienBeukers() {
                     <h1>JBreaking News</h1>
                 </header>
 
-                <ArticleMeta authors={[{ fullName: 'Carlo M.' }]} />
+                <ArticleMeta authors={[{ id: 1, fullName: 'Carlo M.' }]} />
                 <div className={styles.embedContainer}>
                     <iframe
                         width="560"
@@ -86,7 +86,7 @@ function JorienBeukers() {
                 </div>
 
                 <h1>Voor Rob, achter Rob</h1>
-                <ArticleMeta authors={[{ fullName: 'Menno van B.' }]} />
+                <ArticleMeta authors={[{ id: 1, fullName: 'Menno van B.' }]} />
                 <Summary
                     title="Over Jorien"
                     summaries={[
@@ -123,7 +123,7 @@ function JorienBeukers() {
                     onschatbare waarde zijn! Zet ‘m op!'
                 </p>
                 <h1>Een CMS migratie met Jorien</h1>
-                <ArticleMeta authors={[{ fullName: 'Jeroen S.' }]} />
+                <ArticleMeta authors={[{ id: 1, fullName: 'Jeroen S.' }]} />
                 <p>
                     'Ik wist al wel wie Jorien was, maar pas rondom de invoering
                     van Webwriter leerde ik haar ook echt kennen!'
@@ -201,7 +201,7 @@ function JorienBeukers() {
                     description="versies van The Subtle Art of not Giving a F*ck"
                 />
                 <h1>Onderweg</h1>
-                <ArticleMeta authors={[{ fullName: 'Han D.' }]} />
+                <ArticleMeta authors={[{ id: 1, fullName: 'Han D.' }]} />
                 <p>
                     Je zit weer op een vliegveld, en verveelt je. Dan doe je wat
                     je altijd doet: je doorzoekt zuchtend de slecht gesorteerde
@@ -331,14 +331,16 @@ function JorienBeukers() {
                 />
 
                 <h1>Honderden hongerige mannen</h1>
-                <ArticleMeta authors={[{ fullName: 'Ramses R.' }]} />
+                <ArticleMeta authors={[{ id: 1, fullName: 'Ramses R.' }]} />
                 <InfographicExtended
                     smallImageUrl="/assets/hall-of-fame/jorien-beukers/Jorien-afscheid-MOBIEL-V1-RR.jpg"
                     largeImageUrl="/assets/hall-of-fame/jorien-beukers/Jorien-afscheid-DESKTOP-V1-RR.jpg"
                 />
 
                 <h1>FD stapt over op print-only</h1>
-                <ArticleMeta authors={[{ fullName: 'Elfanie toe L.' }]} />
+                <ArticleMeta
+                    authors={[{ id: 1, fullName: 'Elfanie toe L.' }]}
+                />
                 <p>
                     AMSTERDAM – Na jaren experimenteren heeft de hoofdredactie
                     van het Financieele Dagblad een opmerkelijke keuze gemaakt:
@@ -413,8 +415,8 @@ function JorienBeukers() {
                 <h1>Corona-app loopt vertraging op</h1>
                 <ArticleMeta
                     authors={[
-                        { fullName: 'Martine W.' },
-                        { fullName: 'Van onze redacteuren' },
+                        { id: 1, fullName: 'Martine W.' },
+                        { id: 1, fullName: 'Van onze redacteuren' },
                     ]}
                 />
                 <h2>Nieuwstafel</h2>
@@ -460,7 +462,7 @@ function JorienBeukers() {
                     ‘We houden maar even anderhalve meter afstand.’
                 </p>
                 <h1>‘Weet iemand waar Jorien is?’</h1>
-                <ArticleMeta authors={[{ fullName: 'Jasper H.' }]} />
+                <ArticleMeta authors={[{ id: 1, fullName: 'Jasper H.' }]} />
                 <p>
                     Ze is weg. Vanaf nu definitief onvindbaar voor
                     FD-redacteuren die op zoek zijn naar hulp. Het zijn de
@@ -516,7 +518,7 @@ function JorienBeukers() {
                 />
 
                 <h1>Percolator</h1>
-                <ArticleMeta authors={[{ fullName: 'Bie K.' }]} />
+                <ArticleMeta authors={[{ id: 1, fullName: 'Bie K.' }]} />
                 <Quote
                     blockquote="Oh, wat ben ik technisch! Percolator! Kopje koffie erbij. Dit vergeet ik nooit meer."
                     figcaption="Jorien B."
@@ -527,7 +529,7 @@ function JorienBeukers() {
                 />
 
                 <h1>Gouden tips</h1>
-                <ArticleMeta authors={[{ fullName: 'Alex R.' }]} />
+                <ArticleMeta authors={[{ id: 1, fullName: 'Alex R.' }]} />
                 <Summary summaries={["Dopey's Elixer", 'Husavik', 'Myvatn']} />
                 <p>
                     Ik denk dat ik de trouwste discipel van Jorien ben. Haar
@@ -588,7 +590,7 @@ function JorienBeukers() {
                 </p>
 
                 <h1>Infographic</h1>
-                <ArticleMeta authors={[{ fullName: 'Els E.' }]} />
+                <ArticleMeta authors={[{ id: 1, fullName: 'Els E.' }]} />
                 <InfographicExtended
                     darkModeInvert={true}
                     smallImageUrl="/assets/hall-of-fame/jorien-beukers/042020_ByebyeJorien_EE.svg"
