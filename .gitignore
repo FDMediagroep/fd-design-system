@@ -9,3 +9,4 @@ out/
 js-coverage
 node_modules
 public/service-worker*
+.vercel
