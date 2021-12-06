@@ -340,7 +340,7 @@ function Menu(props: Props) {
                                     data-ga-category="user interactions"
                                     data-ga-action="menu click"
                                     data-ga-label="search menu"
-                                    aria-label="Zoeken"
+                                    aria-label="Search"
                                     aria-haspopup="true"
                                     aria-expanded={showSearchBar}
                                     onClick={handleSearchButtonClick}
@@ -358,7 +358,7 @@ function Menu(props: Props) {
                                         }}
                                     />
                                     <span className={styles['aria-label']}>
-                                        Zoeken
+                                        Search
                                     </span>
                                 </button>
                             </li>
@@ -398,7 +398,7 @@ function Menu(props: Props) {
                             id="searchInput"
                             type="search"
                             name="q"
-                            placeholder="Zoeken..."
+                            placeholder="Search components..."
                             autoComplete="off"
                             className="body-text sans s"
                             value={searchQuery}
