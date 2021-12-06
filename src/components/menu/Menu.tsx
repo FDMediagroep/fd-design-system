@@ -35,7 +35,8 @@ function Menu(props: Props) {
     const [hidden, setHidden] = useState(true);
     const [showProfile, setShowProfile] = useState(false);
     const [showAside, setShowAside] = useState(false);
-    const [showSearch, setShowSearch] = useState(false);
+    const [showSearchBar, setShowSearchBar] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         const checkSticky = () => {
@@ -92,7 +93,7 @@ function Menu(props: Props) {
     const hideAll = useCallback(() => {
         setShowAside(false);
         setShowProfile(false);
-        setShowSearch(false);
+        setShowSearchBar(false);
     }, []);
 
     const handleAside = useCallback(
@@ -119,16 +120,23 @@ function Menu(props: Props) {
         handleProfile(!showProfile);
     };
 
-    const handleSearch = useCallback(
+    const handleShowSearchBar = useCallback(
         (show?: boolean) => {
             hideAll();
-            setShowSearch(show);
+            setShowSearchBar(show);
             showBackgroundOverlay(show);
         },
         [hideAll, showBackgroundOverlay]
     );
     const handleSearchButtonClick = () => {
-        handleSearch(!showSearch);
+        handleShowSearchBar(!showSearchBar);
+    };
+    const handleSearchFormSubmit = async (
+        e: React.FormEvent<HTMLFormElement>
+    ) => {
+        await handleSearchSubmit(e);
+        handleShowSearchBar(false);
+        setSearchQuery('');
     };
 
     /**
@@ -169,6 +177,12 @@ function Menu(props: Props) {
     const aside = React.cloneElement(props.aside, { onClose: closeAll });
     const profile = React.cloneElement(props.profile, { onClose: closeAll });
 
+    const handleSearchInputChange = (
+        e: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setSearchQuery(e.currentTarget.value);
+    };
+
     return (
         <div
             ref={menuRef}
@@ -179,7 +193,7 @@ function Menu(props: Props) {
             <header
                 className={`${showProfile ? ` ${styles['show-profile']}` : ''}${
                     showAside ? ` ${styles['show-aside-menu']}` : ''
-                }${showSearch ? ` ${styles['show-search-menu']}` : ''}`}
+                }${showSearchBar ? ` ${styles['show-search-menu']}` : ''}`}
             >
                 <div
                     className={`${styles['centered']} xs__m-0-auto xs__p-0 xs__pl+4 xs__pr+4`}
@@ -318,7 +332,7 @@ function Menu(props: Props) {
                             <li
                                 className={`${
                                     styles['show-search-highlight']
-                                } ${showSearch ? styles.expanded : ''}`}
+                                } ${showSearchBar ? styles.expanded : ''}`}
                             >
                                 <button
                                     className={`${styles['search-button']} ${styles['menu-button']}`}
@@ -328,7 +342,7 @@ function Menu(props: Props) {
                                     data-ga-label="search menu"
                                     aria-label="Zoeken"
                                     aria-haspopup="true"
-                                    aria-expanded={showSearch}
+                                    aria-expanded={showSearchBar}
                                     onClick={handleSearchButtonClick}
                                 >
                                     <span
@@ -371,7 +385,7 @@ function Menu(props: Props) {
                     <form
                         className={`${styles['search']} ${styles['centered']} xs__m-0-auto xs__p-0 xs__pl+4 xs__pr+4`}
                         action="/search"
-                        onSubmit={handleSearchSubmit}
+                        onSubmit={handleSearchFormSubmit}
                     >
                         <label
                             htmlFor="searchInput"
@@ -387,6 +401,8 @@ function Menu(props: Props) {
                             placeholder="Zoeken..."
                             autoComplete="off"
                             className="body-text sans s"
+                            value={searchQuery}
+                            onChange={handleSearchInputChange}
                         />
                     </form>
                 </div>
