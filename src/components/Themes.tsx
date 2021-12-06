@@ -98,9 +98,7 @@ function Themes(props: Props) {
                     title="Display options"
                     onClick={handleUserMenuThemeClick}
                 >
-                    <span>
-                        Display options {JSON.stringify(userMenuThemeExpanded)}
-                    </span>
+                    <span>Display options</span>
                     <span
                         className={styles['expand-icon']}
                         dangerouslySetInnerHTML={{
