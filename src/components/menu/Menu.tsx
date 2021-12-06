@@ -136,6 +136,7 @@ function Menu(props: Props) {
     ) => {
         await handleSearchSubmit(e);
         handleShowSearchBar(false);
+        setSearchQuery('');
     };
 
     /**
