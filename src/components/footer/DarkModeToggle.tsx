@@ -30,14 +30,14 @@ export function DarkModeToggle() {
         <div
             className={`body-text sans xs ${styles['fd-dark-mode-toggle']} xs__mb+4`}
         >
-            <label>Weergave:</label>
+            <label>Theme:</label>
             <button
                 className={`body-text sans xs system${
                     theme === 'system' ? ` ${styles.active}` : ''
                 }`}
                 onClick={handleThemeChange.bind(null, 'system')}
             >
-                Systeem
+                System
             </button>
             <span>&nbsp;|&nbsp;</span>
             <button
@@ -46,7 +46,7 @@ export function DarkModeToggle() {
                 }`}
                 onClick={handleThemeChange.bind(null, 'light')}
             >
-                Licht
+                Light
             </button>
             <span>&nbsp;|&nbsp;</span>
             <button
@@ -55,7 +55,7 @@ export function DarkModeToggle() {
                 }`}
                 onClick={handleThemeChange.bind(null, 'dark')}
             >
-                Donker
+                Dark
             </button>
         </div>
     );

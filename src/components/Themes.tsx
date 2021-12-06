@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { CollapseIcon, ExpandIcon } from '../design-tokens/icons';
 import ThemeStore, { Theme } from '../stores/ThemeStore';
 import { Radio } from './input/Radio';
@@ -11,7 +11,8 @@ interface Props {
 
 function Themes(props: Props) {
     const [theme, setTheme] = useState(ThemeStore.getTheme());
-    const [userMenuThemeExpanded, setUserMenuTheme] = useState(false);
+    const [userMenuThemeExpanded, setUserMenuThemeExpanded] = useState(false);
+    const toggleButtonRef = useRef<HTMLButtonElement>();
 
     function changeTheme(theme: Theme) {
         switch (theme) {
@@ -39,6 +40,25 @@ function Themes(props: Props) {
     }
 
     useEffect(() => {
+        if (toggleButtonRef.current) {
+            const mutationObserver = new MutationObserver((mutations) => {
+                mutations.forEach((mutationRecord) => {
+                    setUserMenuThemeExpanded(
+                        (mutationRecord.target as HTMLElement).getAttribute(
+                            'aria-expanded'
+                        ) === 'true'
+                    );
+                });
+            });
+            mutationObserver.observe(toggleButtonRef.current, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+            });
+        }
+    }, [toggleButtonRef.current]);
+
+    useEffect(() => {
         const subscriptionId = ThemeStore.subscribe(() => {
             changeTheme(ThemeStore.getTheme());
         });
@@ -62,7 +82,7 @@ function Themes(props: Props) {
     }
 
     function handleUserMenuThemeClick() {
-        setUserMenuTheme((prev) => !prev);
+        setUserMenuThemeExpanded((prev) => !prev);
     }
 
     return (
@@ -71,13 +91,16 @@ function Themes(props: Props) {
         >
             <div className="xs__pl+4 xs__pr+4">
                 <button
+                    ref={toggleButtonRef}
                     className={`${styles['expand-toggle']} heading sans xxs`}
                     aria-controls="userMenuTheme"
                     aria-expanded={userMenuThemeExpanded}
-                    title="Weergaveopties"
+                    title="Display options"
                     onClick={handleUserMenuThemeClick}
                 >
-                    <span>Weergaveopties</span>
+                    <span>
+                        Display options {JSON.stringify(userMenuThemeExpanded)}
+                    </span>
                     <span
                         className={styles['expand-icon']}
                         dangerouslySetInnerHTML={{
@@ -108,7 +131,7 @@ function Themes(props: Props) {
                                 null,
                                 Theme.SYSTEM
                             )}
-                            label="Systeem (instellingen apparaat)"
+                            label="System (device setting)"
                         />
                     </div>
                     <div className="xs__mt+2">
@@ -120,7 +143,7 @@ function Themes(props: Props) {
                             value={Theme.LIGHT}
                             checked={Theme.LIGHT === theme}
                             onChange={handleThemeChange.bind(null, Theme.LIGHT)}
-                            label="Lichte weergave"
+                            label="Light theme"
                         />
                     </div>
                     <div className="xs__mt+2">
@@ -132,7 +155,7 @@ function Themes(props: Props) {
                             value={Theme.DARK}
                             checked={Theme.DARK === theme}
                             onChange={handleThemeChange.bind(null, Theme.DARK)}
-                            label="Donkere weergave"
+                            label="Dark theme"
                         />
                     </div>
                 </section>
