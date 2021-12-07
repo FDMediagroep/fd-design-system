@@ -300,7 +300,7 @@
     /**
      * Checkmark check
      */
-    --checkmark-check: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --checkmark-check: #{map-deep-get($colors, 'colors', 'neutral', 10)};
 
     /**
      * Shimmer
