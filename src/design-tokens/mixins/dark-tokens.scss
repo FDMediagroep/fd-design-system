@@ -298,6 +298,11 @@
     --ad-label-2: #{map-deep-get($colors, 'colors', 'neutral', 20)};
 
     /**
+     * Checkmark check
+     */
+    --checkmark-check: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+
+    /**
      * Shimmer
      */
     --shimmer-shade-1: #{map-deep-get($colors, 'colors', 'neutral', 0)};
