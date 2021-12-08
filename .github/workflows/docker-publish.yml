@@ -32,7 +32,7 @@ jobs:
             docker-compose --file docker-compose.test.yml build
             docker-compose --file docker-compose.test.yml run sut
           else
-            docker build . --file Dockerfile
+            docker build . --file Dockerfile --build-arg FDMG_ARTICLE_SERVICE_TOKEN=${{secrets.FDMG_ARTICLE_SERVICE_TOKEN}} --build-arg FDMG_ARTICLE_SERVICE_URL=${{secrets.FDMG_ARTICLE_SERVICE_URL}}
           fi
 
   # Push image to GitHub Packages.
@@ -42,13 +42,14 @@ jobs:
     needs: test
 
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
+    if: ${{ false }} # Disabled job. We don't want to push our images to the Docker repository.
+    # if: github.event_name == 'push'
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Build image
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME --build-arg FDMG_ARTICLE_SERVICE_TOKEN=${{secrets.FDMG_ARTICLE_SERVICE_TOKEN}} --build-arg FDMG_ARTICLE_SERVICE_URL=${{secrets.FDMG_ARTICLE_SERVICE_URL}}
 
       - name: Log into GH Packages registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
