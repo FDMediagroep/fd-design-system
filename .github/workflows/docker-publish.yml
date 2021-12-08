@@ -32,7 +32,7 @@ jobs:
             docker-compose --file docker-compose.test.yml build
             docker-compose --file docker-compose.test.yml run sut
           else
-            docker build . --file Dockerfile--build-arg --build-arg FDMG_ARTICLE_SERVICE_TOKEN=$FDMG_ARTICLE_SERVICE_TOKEN --build-arg FDMG_ARTICLE_SERVICE_URL=$FDMG_ARTICLE_SERVICE_URL
+            docker build . --file Dockerfile --build-arg FDMG_ARTICLE_SERVICE_TOKEN=$FDMG_ARTICLE_SERVICE_TOKEN --build-arg FDMG_ARTICLE_SERVICE_URL=$FDMG_ARTICLE_SERVICE_URL
           fi
 
   # Push image to GitHub Packages.
