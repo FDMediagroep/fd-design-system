@@ -15,6 +15,7 @@ ENV FDMG_ARTICLE_SERVICE_URL=$FDMG_ARTICLE_SERVICE_URL
 WORKDIR /app
 COPY . .
 COPY --from=deps /app/node_modules ./node_modules
+RUN echo $FDMG_ARTICLE_SERVICE_URL
 RUN npm run build
 
 # Production image, copy all the files and run next
