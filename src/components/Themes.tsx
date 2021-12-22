@@ -56,7 +56,7 @@ function Themes(props: Props) {
                 attributes: true,
             });
         }
-    }, [toggleButtonRef.current]);
+    }, [toggleButtonRef]);
 
     useEffect(() => {
         const subscriptionId = ThemeStore.subscribe(() => {
