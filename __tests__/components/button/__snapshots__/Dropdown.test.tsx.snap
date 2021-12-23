@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown should handle sizes correctly 1`] = `
+<div>
+  <button
+    class="fdDropdown "
+  >
+    <span>
+      Knopje
+    </span>
+    <span
+      class="expand-icon"
+    >
+      <svg
+        fill="none"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        
+    
+        <path
+          clip-rule="evenodd"
+          d="M15.7026 9L11.174 13.58L6.64543 9L5.2543 10.41L11.174 16.41L17.0937 10.41L15.7026 9Z"
+          fill="#73655F"
+          fill-rule="evenodd"
+        />
+        
+
+      </svg>
+      
+
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Dropdown should handle sizes correctly 2`] = `
+<div>
+  <button
+    class="fdDropdown m"
+  >
+    <span>
+      Knopje
+    </span>
+    <span
+      class="expand-icon"
+    >
+      <svg
+        fill="none"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        
+    
+        <path
+          clip-rule="evenodd"
+          d="M15.7026 9L11.174 13.58L6.64543 9L5.2543 10.41L11.174 16.41L17.0937 10.41L15.7026 9Z"
+          fill="#73655F"
+          fill-rule="evenodd"
+        />
+        
+
+      </svg>
+      
+
+    </span>
+  </button>
+</div>
+`;

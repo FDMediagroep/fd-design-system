@@ -413,6 +413,36 @@ function Page(props: Props) {
 export async function getStaticProps({ params }) {
     const data = await getPayload(params);
 
+    // try {
+    //     const breakingList = await fetch(
+    //         `${process.env.FDMG_EDITORIAL_SERVICE_URL}/fd/lists/articles/home.fd4.breakingnews`,
+    //         {
+    //             headers: {
+    //                 Authorization: `Bearer ${process.env.FDMG_SERVICES_TOKEN}`,
+    //             },
+    //         }
+    //     ).then((res) => res.json());
+    //     const openingList = await fetch(
+    //         `${process.env.FDMG_EDITORIAL_SERVICE_URL}/fd/lists/articles/home.fd4.opening`,
+    //         {
+    //             headers: {
+    //                 Authorization: `Bearer ${process.env.FDMG_SERVICES_TOKEN}`,
+    //             },
+    //         }
+    //     ).then((res) => res.json());
+    //     const highlightedList = await fetch(
+    //         `${process.env.FDMG_EDITORIAL_SERVICE_URL}/fd/lists/articles/home.fd4.highlighted`,
+    //         {
+    //             headers: {
+    //                 Authorization: `Bearer ${process.env.FDMG_SERVICES_TOKEN}`,
+    //             },
+    //         }
+    //     ).then((res) => res.json());
+    //     console.log(breakingList, openingList, highlightedList);
+    // } catch (e) {
+    //     console.error(e);
+    // }
+
     return {
         props: {
             data,
