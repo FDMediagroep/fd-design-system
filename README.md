@@ -846,6 +846,36 @@ function Foo() {
 </details>
 
 <details>
+<summary>Dropdown</summary>
+
+[Demo](https://design-system.fd.nl/button/dropdown)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/button/Dropdown.css";
+```
+
+```
+import { Dropdown } from "@fdmg/design-system/components/button/Dropdown";
+
+function Foo() {
+    const [expanded, setExpanded] = useState(false);
+    function handleClick() {
+        console.log('toggle!');
+        setExpanded((expanded) => !expanded)
+    }
+
+    return (
+        <Dropdown expanded={expanded} onClick={handleClick}>Click me!</Dropdown>
+    );
+}
+```
+
+</details>
+
+<details>
 <summary>Date input</summary>
 
 [Demo](https://design-system.fd.nl/input/dateinput)
