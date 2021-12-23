@@ -64,6 +64,10 @@ import {
     metaDescription as buttonGhostDescription,
 } from './button/ghost';
 import {
+    metaTitle as dropdownTitle,
+    metaDescription as dropdownDescription,
+} from './button/dropdown';
+import {
     metaTitle as horizontalCard1Title,
     metaDescription as horizontalCard1Description,
 } from './card/horizontal-1';
@@ -257,6 +261,10 @@ const searchIndex: SearchIndex = {
     '/button/default': {
         title: buttonDefaultTitle,
         description: buttonDefaultDescription,
+    },
+    '/button/dropdown': {
+        title: dropdownTitle,
+        description: dropdownDescription,
     },
     '/button/follow': {
         title: buttonFollowTitle,
