@@ -129,25 +129,23 @@
 
         ul {
             list-style: none;
-            padding: 0 1rem;
             margin: 0;
+            padding: 0;
             width: 100%;
             li {
                 height: 40px;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 white-space: nowrap;
+
                 a {
+                    padding: 0 1rem;
+                    flex: 1 1 auto;
                     display: flex;
+                    align-items: center;
                     justify-content: center;
                     text-decoration: none;
                     color: var(--content-copy);
-                    &:hover,
-                    &:active {
-                        text-decoration: underline;
-                    }
-
                     .podcast-icon {
                         display: flex;
                         margin-right: 0.5rem;
@@ -155,6 +153,26 @@
                         svg path {
                             fill: var(--content-copy);
                         }
+                    }
+
+                    &:focus,
+                    &:hover,
+                    &:active {
+                        color: var(--primary);
+                        background-color: var(--card);
+                        text-decoration: underline;
+                        .podcast-icon {
+                            svg,
+                            svg path {
+                                fill: var(--primary);
+                            }
+                        }
+                    }
+
+                    &:focus,
+                    &:active {
+                        outline: 1.5px solid var(--content-copy);
+                        outline-offset: -1.5px;
                     }
                 }
             }
