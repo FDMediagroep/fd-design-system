@@ -101,7 +101,7 @@ function Page(props: Props) {
 }
 
 export async function getStaticProps() {
-    const readme = require('../../README.md');
+    const readme = require('../README.md');
 
     return {
         props: {
