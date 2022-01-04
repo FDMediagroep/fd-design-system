@@ -1,0 +1,22 @@
+@import '../src/utils/map-deep-get.scss';
+@import '../src/design-tokens/colors.scss';
+@import '../src/design-tokens/media.scss';
+
+.search {
+    .searchContent {
+        max-width: 1024px;
+        margin: 1rem auto;
+    }
+
+    .searchForm {
+        display: flex;
+        .searchTextInput {
+            width: 100%;
+        }
+    }
+
+    .searchResults {
+        display: flex;
+        flex-direction: column;
+    }
+}

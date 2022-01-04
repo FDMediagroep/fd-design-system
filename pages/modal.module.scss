@@ -1,0 +1,16 @@
+@import '../src/utils/map-deep-get.scss';
+@import '../src/design-tokens/typography.scss';
+
+.modal {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 22px;
+        line-height: 1.1;
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+    }
+}

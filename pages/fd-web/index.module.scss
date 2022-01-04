@@ -1,0 +1,74 @@
+@import '../../src/utils/map-deep-get.scss';
+@import '../../src/design-tokens/colors.scss';
+@import '../../src/design-tokens/media.scss';
+@import '../../src/design-tokens/typography.scss';
+
+.page {
+    max-width: 1248px;
+    margin: 0 auto;
+    background-color: var(--product-background);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
+    }
+
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+
+    .topNews {
+        display: flex;
+        flex-direction: column;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            flex-direction: row;
+        }
+
+        main {
+            flex: 1 1 100%;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+                flex: 1 1 75%;
+            }
+        }
+        aside {
+            flex: 1 1 100%;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+                flex: 1 1 25%;
+            }
+        }
+    }
+
+    .category {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            flex-direction: row;
+        }
+    }
+
+    .newsContainer {
+        flex: 1 1 100%;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            flex: 1 1 calc(50% - 1rem);
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            flex: 1 1 calc(33% - 1rem);
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'xl')) {
+            flex: 1 1 calc(25% - 1rem);
+        }
+        display: flex;
+        overflow: hidden;
+    }
+
+    .ie11FullHeight,
+    .fullHeight {
+        height: 100%;
+    }
+
+    .sticky {
+        position: sticky;
+        top: 80px;
+    }
+}

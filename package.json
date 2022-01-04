@@ -84,8 +84,6 @@
         "pretty": "^2.0.0",
         "punycode": "^2.1.1",
         "raw-loader": "^4.0.2",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
         "react-element-to-jsx-string": "^14.3.4",
         "sass": "^1.45.2",
         "sass-loader": "^12.4.0",
@@ -101,7 +99,9 @@
         "webpack-cli": "^4.9.1"
     },
     "dependencies": {
-        "js-cookie": "^3.0.1"
+        "js-cookie": "^3.0.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
     },
     "browserslist": {
         "production": [
