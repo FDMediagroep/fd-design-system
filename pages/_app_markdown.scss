@@ -1,6 +1,6 @@
-@import '../utils/map-deep-get.scss';
-@import '../design-tokens/colors.scss';
-@import '../design-tokens/typography.scss';
+@import '../src/utils/map-deep-get.scss';
+@import '../src/design-tokens/colors.scss';
+@import '../src/design-tokens/typography.scss';
 
 html.dark {
     .markdown {
