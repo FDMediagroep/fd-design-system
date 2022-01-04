@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '@fdmg/css-grid/css/flex.css';
 import '@fdmg/css-grid/css/grid.css';
 import '@fdmg/css-grid/GridContainer.css';
-import '../design-tokens/design-tokens.scss';
+import '../src/design-tokens/design-tokens.scss';
 import './_app.scss';
 import './_app_markdown.scss';
 import './_app_a11y-dark.scss';
