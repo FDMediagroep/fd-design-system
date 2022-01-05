@@ -297,6 +297,7 @@ module.exports = {
         }),
     ],
     externals: {
+        next: 'next',
         react: 'react',
         'react-dom': 'react-dom',
         sass: 'sass',
