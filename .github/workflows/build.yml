@@ -29,7 +29,7 @@ jobs:
     - name: Test
       run: npm test
     - name: Build
-      run: npm run b:ci
+      run: npm run build:ci
       env:
         FDMG_ARTICLE_SERVICE_TOKEN: ${{secrets.FDMG_ARTICLE_SERVICE_TOKEN}}
         FDMG_ARTICLE_SERVICE_URL: ${{secrets.FDMG_ARTICLE_SERVICE_URL}}
