@@ -14,9 +14,9 @@
     },
     "scripts": {
         "build": "next build",
-        "b:ci": "npm run build && npm run b:npm",
-        "b:npm": "npm run webpack:prod && npm run copy:dts",
-        "b:sls": "cross-env SERVERLESS=true next build",
+        "build:ci": "npm run build && npm run build:npm",
+        "build:npm": "npm run webpack:prod && npm run copy:dts",
+        "build:sls": "cross-env SERVERLESS=true next build",
         "copy:dts": "copyfiles \"./dist.d.ts/src/**/*.d.ts\" \"./dist\" -V -u 2",
         "dev": "next dev",
         "docker:build": "docker build -t fd-design-system .",
