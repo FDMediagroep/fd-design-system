@@ -69,7 +69,7 @@
         "identity-obj-proxy": "^3.0.0",
         "jest": "^27.4.6",
         "json-to-scss": "^1.6.2",
-        "markdown-it": "^12.3.0",
+        "markdown-it": "^12.3.2",
         "micro-cors": "^0.1.1",
         "mini-css-extract-plugin": "^2.4.5",
         "next-offline": "^5.0.5",
