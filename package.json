@@ -84,7 +84,7 @@
         "punycode": "^2.1.1",
         "raw-loader": "^4.0.2",
         "react-element-to-jsx-string": "^14.3.4",
-        "sass": "^1.45.2",
+        "sass": "^1.47.0",
         "sass-loader": "^12.4.0",
         "style-loader": "^3.3.1",
         "svgo": "^2.8.0",
