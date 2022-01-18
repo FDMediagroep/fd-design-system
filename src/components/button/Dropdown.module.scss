@@ -190,6 +190,16 @@
         }
     }
 
+    .fd-dropdown-button.m + .fd-dropdown-items {
+        ul {
+            li {
+                a {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
     .fd-dropdown-button:not([aria-expanded='true']) {
         .collapse-icon {
             display: none;
