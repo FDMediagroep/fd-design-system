@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import {
     ApplePodcastsIcon,
     CollapseIcon,
@@ -31,33 +31,49 @@ interface Props {
  * @param props
  */
 function Dropdown(props: Props) {
+    const [expanded, setExpanded] = useState(props.expanded);
     const sizeClass = props.size === 'm' ? styles.m : '';
 
+    function handleMouseEnter() {
+        setExpanded(true);
+    }
+
+    function handleMouseLeave() {
+        setExpanded(false);
+    }
+
     return (
-        <button
+        <div
             {...props}
-            className={`${styles.fdDropdown} ${sizeClass}${
+            className={`${styles['fd-dropdown']} grid${
                 props.className ? ` ${props.className}` : ''
             }`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         >
-            <span>{props.children}</span>
-            {props.expanded ? (
-                <span
-                    className={styles['collapse-icon']}
-                    dangerouslySetInnerHTML={{
-                        __html: CollapseIcon as any,
-                    }}
-                />
-            ) : (
-                <span
-                    className={styles['expand-icon']}
-                    dangerouslySetInnerHTML={{
-                        __html: ExpandIcon as any,
-                    }}
-                />
-            )}
-            {props.expanded ? (
-                <nav>
+            <button
+                className={`xs-12 ${sizeClass} ${styles['fd-dropdown-button']}`}
+                aria-expanded={expanded ? 'true' : 'false'}
+            >
+                <span>{props.children}</span>
+                {expanded ? (
+                    <span
+                        className={styles['collapse-icon']}
+                        dangerouslySetInnerHTML={{
+                            __html: CollapseIcon as any,
+                        }}
+                    />
+                ) : (
+                    <span
+                        className={styles['expand-icon']}
+                        dangerouslySetInnerHTML={{
+                            __html: ExpandIcon as any,
+                        }}
+                    />
+                )}
+            </button>
+            {expanded ? (
+                <nav className={styles['fd-dropdown-items']}>
                     <ul>
                         <li>
                             <Link href={props.spotifyUrl || 'https://fd.nl'}>
@@ -110,7 +126,7 @@ function Dropdown(props: Props) {
                     </ul>
                 </nav>
             ) : null}
-        </button>
+        </div>
     );
 }
 
