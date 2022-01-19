@@ -13,8 +13,6 @@ type Sizes = 's' | 'm';
 
 interface Props {
     className?: string;
-    expanded?: boolean;
-
     spotifyUrl?: string;
     applePodcastsUrl?: string;
     googlePodcastsUrl?: string;
@@ -49,7 +47,7 @@ function Dropdown(props: Props) {
     }, [buttonRef]);
 
     function handleClick() {
-        setExpanded((expanded) => !expanded);
+        setExpanded((prev) => !prev);
     }
 
     return (
@@ -62,7 +60,7 @@ function Dropdown(props: Props) {
             <button
                 ref={buttonRef}
                 className={`xs-12 ${sizeClass} ${styles['fd-dropdown-button']}`}
-                aria-expanded={expanded ? 'true' : 'false'}
+                aria-expanded={expanded}
                 onClick={handleClick}
             >
                 <span>{props.children}</span>
