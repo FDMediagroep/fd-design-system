@@ -18,14 +18,12 @@ describe('VerticalCard4', () => {
                 label="Arbeidsmarkt"
                 intro="This is the intro"
                 title="This is the title"
-                printTitle="This is the print title"
                 url="https://example.com/1/This is the title"
             />
         );
 
         expect(getByText('Arbeidsmarkt')).toBeTruthy();
         expect(getByText('This is the title')).toBeTruthy();
-        expect(getByText('This is the print title')).toBeTruthy();
         expect(getByText('This is the intro')).toBeTruthy();
         expect(getByText('This is the caption')).toBeTruthy();
         expect(container.querySelector('[href]').getAttribute('href')).toBe(
@@ -42,7 +40,6 @@ describe('VerticalCard4', () => {
                 label="Arbeidsmarkt"
                 intro="This is the intro"
                 title="This is the title"
-                printTitle="This is the print title"
                 url="https://example.com/1/This is the title"
             />
         );
