@@ -108,6 +108,10 @@ import {
     metaDescription as verticalCard4Description,
 } from './card/vertical-4';
 import {
+    metaTitle as verticalCard5Title,
+    metaDescription as verticalCard5Description,
+} from './card/vertical-5';
+import {
     metaTitle as cookieconsentTitle,
     metaDescription as cookieconsentDescription,
 } from './cookieconsent';
@@ -315,8 +319,8 @@ const searchIndex: SearchIndex = {
         description: verticalCard4Description,
     },
     '/card/vertical-5': {
-        title: verticalCard1Title,
-        description: verticalCard1Description,
+        title: verticalCard5Title,
+        description: verticalCard5Description,
     },
     '/cookieconsent': {
         title: cookieconsentTitle,

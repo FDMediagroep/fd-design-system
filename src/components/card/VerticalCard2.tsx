@@ -12,7 +12,6 @@ interface Props {
     isRead?: boolean;
     time: string;
     title: string;
-    printTitle?: string;
     intro: string;
     [x: string]: any;
 }

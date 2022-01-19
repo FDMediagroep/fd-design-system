@@ -17,7 +17,6 @@ interface Props {
     label: string;
     isRead?: boolean;
     title: string;
-    printTitle?: string;
     intro: string;
     onBookmark?: (e: React.MouseEvent<HTMLElement>) => void;
     [x: string]: any;

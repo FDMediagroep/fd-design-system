@@ -157,6 +157,18 @@ function Page() {
                             </ul>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <Link href="/card/vertical-5">
+                                <a>Vertical Card 5</a>
+                            </Link>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Podcasts overview</li>
+                            </ul>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </>
