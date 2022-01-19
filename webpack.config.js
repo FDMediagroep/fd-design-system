@@ -167,6 +167,9 @@ module.exports = {
         '/components/card/VerticalCard4': [
             './src/components/card/VerticalCard4.tsx',
         ],
+        '/components/card/VerticalCard5': [
+            './src/components/card/VerticalCard5.tsx',
+        ],
 
         // Design Tokens
         '/components/design-tokens/icons': ['./src/design-tokens/icons.ts'],

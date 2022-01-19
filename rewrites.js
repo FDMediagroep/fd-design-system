@@ -28,6 +28,10 @@ module.exports = [
         destination: '/button/default',
     },
     {
+        source: '/(button/drop-down)',
+        destination: '/button/dropdown',
+    },
+    {
         source: '/(button/volgen|button/tag|button/onderwerp|button/subject|button/favorite)',
         destination: '/button/follow',
     },
@@ -66,6 +70,10 @@ module.exports = [
     {
         source: '/(card/vertical4|cards/vertical4|teaser/vertical4|teasers/vertical4|cards/vertical-4|teaser/vertical-4|teasers/vertical-4)',
         destination: '/card/vertical-4',
+    },
+    {
+        source: '/(card/vertical5|cards/vertical5|teaser/vertical5|teasers/vertical5|cards/vertical-5|teaser/vertical-5|teasers/vertical-5)',
+        destination: '/card/vertical-5',
     },
     {
         source: '/(card|card/teaser|card/teasers|cards/teaser|cards/teasers|teaser|teaser/card|teaser/cards|teasers|teasers/card|teasers/cards)',
