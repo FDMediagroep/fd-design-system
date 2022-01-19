@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Dropdown } from '../button/Dropdown';
 import styles from './VerticalCard5.module.scss';
 
 interface Props {
     id: string;
-    url: string;
     dropdownLabel?: string;
     imageUrl: string;
     imageUrlS?: string;
     imageUrlM?: string;
     imageUrlL?: string;
     caption?: string;
-    label: string;
     title: string;
     intro: string;
     onBookmark?: (e: React.MouseEvent<HTMLElement>) => void;
