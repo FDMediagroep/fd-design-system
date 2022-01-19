@@ -2,72 +2,82 @@
 
 exports[`Dropdown should handle sizes correctly 1`] = `
 <div>
-  <button
-    class="fdDropdown "
+  <div
+    class="fd-dropdown grid"
   >
-    <span>
-      Knopje
-    </span>
-    <span
-      class="expand-icon"
+    <button
+      aria-expanded="false"
+      class="xs-12  fd-dropdown-button"
     >
-      <svg
-        fill="none"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span>
+        Knopje
+      </span>
+      <span
+        class="expand-icon"
       >
-        
+        <svg
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
     
-        <path
-          clip-rule="evenodd"
-          d="M15.7026 9L11.174 13.58L6.64543 9L5.2543 10.41L11.174 16.41L17.0937 10.41L15.7026 9Z"
-          fill="#73655F"
-          fill-rule="evenodd"
-        />
+          <path
+            clip-rule="evenodd"
+            d="M15.7026 9L11.174 13.58L6.64543 9L5.2543 10.41L11.174 16.41L17.0937 10.41L15.7026 9Z"
+            fill="#73655F"
+            fill-rule="evenodd"
+          />
+          
+
+        </svg>
         
 
-      </svg>
-      
-
-    </span>
-  </button>
+      </span>
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Dropdown should handle sizes correctly 2`] = `
 <div>
-  <button
-    class="fdDropdown m"
+  <div
+    class="fd-dropdown grid"
   >
-    <span>
-      Knopje
-    </span>
-    <span
-      class="expand-icon"
+    <button
+      aria-expanded="false"
+      class="xs-12 m fd-dropdown-button"
     >
-      <svg
-        fill="none"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span>
+        Knopje
+      </span>
+      <span
+        class="expand-icon"
       >
-        
+        <svg
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
     
-        <path
-          clip-rule="evenodd"
-          d="M15.7026 9L11.174 13.58L6.64543 9L5.2543 10.41L11.174 16.41L17.0937 10.41L15.7026 9Z"
-          fill="#73655F"
-          fill-rule="evenodd"
-        />
+          <path
+            clip-rule="evenodd"
+            d="M15.7026 9L11.174 13.58L6.64543 9L5.2543 10.41L11.174 16.41L17.0937 10.41L15.7026 9Z"
+            fill="#73655F"
+            fill-rule="evenodd"
+          />
+          
+
+        </svg>
         
 
-      </svg>
-      
-
-    </span>
-  </button>
+      </span>
+    </button>
+  </div>
 </div>
 `;

@@ -23,12 +23,6 @@ interface Props {
  * @param props
  */
 function VerticalCard5(props: Props) {
-    const [dropdownExpanded, setDropdownExpanded] = useState(false);
-
-    function handleDropdown() {
-        setDropdownExpanded((expanded) => !expanded);
-    }
-
     return (
         <article
             style={props.style}
@@ -84,13 +78,7 @@ function VerticalCard5(props: Props) {
                     </div>
                 </div>
             </div>
-            <Dropdown
-                size="m"
-                onClick={handleDropdown}
-                expanded={dropdownExpanded}
-            >
-                {props.dropdownLabel || 'Luister via'}
-            </Dropdown>
+            <Dropdown size="m">{props.dropdownLabel || 'Luister via'}</Dropdown>
         </article>
     );
 }
