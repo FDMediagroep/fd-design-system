@@ -314,6 +314,10 @@ const searchIndex: SearchIndex = {
         title: verticalCard4Title,
         description: verticalCard4Description,
     },
+    '/card/vertical-5': {
+        title: verticalCard1Title,
+        description: verticalCard1Description,
+    },
     '/cookieconsent': {
         title: cookieconsentTitle,
         description: cookieconsentDescription,
