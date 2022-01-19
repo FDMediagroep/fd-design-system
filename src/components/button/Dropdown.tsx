@@ -63,7 +63,7 @@ function Dropdown(props: Props) {
                 aria-expanded={expanded}
                 onClick={handleClick}
             >
-                <span>{props.children}</span>
+                <span className="xs__mr+1">{props.children}</span>
                 <span
                     className={styles['collapse-icon']}
                     dangerouslySetInnerHTML={{
