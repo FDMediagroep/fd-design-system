@@ -1,6 +1,6 @@
 {
     "name": "@fdmg/design-system",
-    "version": "0.4.50",
+    "version": "0.4.51",
     "description": "FD Design System",
     "types": "main.d.ts",
     "main": "main.js",
@@ -52,11 +52,11 @@
         "@types/js-cookie": "^3.0.1",
         "@types/markdown-it": "^12.2.3",
         "@types/micro-cors": "^0.1.2",
-        "@types/node": "^17.0.10",
+        "@types/node": "^17.0.12",
         "@types/react": "^17.0.38",
         "@types/react-dom": "^17.0.11",
         "autoprefixer": "^10.4.2",
-        "copy-webpack-plugin": "^10.2.0",
+        "copy-webpack-plugin": "^10.2.1",
         "copyfiles": "^2.4.1",
         "cross-env": "^7.0.3",
         "css-loader": "^6.5.1",
@@ -71,7 +71,7 @@
         "json-to-scss": "^1.6.2",
         "markdown-it": "^12.3.2",
         "micro-cors": "^0.1.1",
-        "mini-css-extract-plugin": "^2.5.2",
+        "mini-css-extract-plugin": "^2.5.3",
         "next-offline": "^5.0.5",
         "nookies": "^2.5.2",
         "path-to-regexp": "^6.2.0",
@@ -93,9 +93,9 @@
         "ts-loader": "^9.2.6",
         "ts-node": "^10.4.0",
         "typedoc": "^0.22.11",
-        "typescript": "^4.5.4",
+        "typescript": "^4.5.5",
         "webpack-bundle-analyzer": "^4.5.0",
-        "webpack-cli": "^4.9.1"
+        "webpack-cli": "^4.9.2"
     },
     "dependencies": {
         "js-cookie": "^3.0.1",
