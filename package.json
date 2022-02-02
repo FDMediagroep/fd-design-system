@@ -99,7 +99,7 @@
     },
     "dependencies": {
         "js-cookie": "^3.0.1",
-        "next": "^12.0.8",
+        "next": "^12.0.10",
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
     },
