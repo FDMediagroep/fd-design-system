@@ -1,30 +1,27 @@
 import React from 'react';
 import styles from './HybridCard2.module.scss';
-import {
-    Footer,
-    getCssClassNames as getFooterCssClassNames,
-} from './shared/Footer';
 
 export type Variants = 'default' | 'variant-1';
 
 interface Props {
     id: string;
-    bookmarked?: boolean;
     url: string;
+    imageUrl?: string;
+    imageUrlS?: string;
+    imageUrlM?: string;
+    imageUrlL?: string;
+    caption?: string;
     label: string;
-    time?: string;
     isRead?: boolean;
     title: string;
-    intro: string;
-    onBookmark?: (e: React.MouseEvent<HTMLElement>) => void;
     variant?: Variants;
     [x: string]: any;
 }
 
 /**
- * Used on homepage. This version has no image.
+ * Used on homepage.
  * This is called a hybrid card because on small screens its layout is similar to
- * Horizontal Card 1 and on wider screens similar to Vertical Card 1.
+ * Horizontal Card 2 and on wider screens similar to Vertical Card 1.
  * @param props
  */
 function HybridCard2(props: Props) {
@@ -42,6 +39,36 @@ function HybridCard2(props: Props) {
                 href={props.url}
                 aria-label={props.title}
             >
+                {props.imageUrl && (
+                    <figure className="xs__m-0 s__mt-4 s__mr-4 s__mb+3 s__ml-4">
+                        <picture>
+                            {props.imageUrlS && (
+                                <source
+                                    media="(max-width:639px)"
+                                    srcSet={`${props.imageUrlS}`}
+                                />
+                            )}
+                            {props.imageUrlM && (
+                                <source
+                                    media="(max-width:860px)"
+                                    srcSet={`${props.imageUrlM}`}
+                                />
+                            )}
+                            {props.imageUrlL && (
+                                <source
+                                    media="(min-width:861px)"
+                                    srcSet={`${props.imageUrlL}`}
+                                />
+                            )}
+                            <img
+                                src={`${props.imageUrl}`}
+                                alt={props.caption ?? props.title}
+                            />
+                        </picture>
+                        <figcaption>{props.caption}</figcaption>
+                    </figure>
+                )}
+
                 <div
                     className={`${styles.teaserText} xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0`}
                 >
@@ -53,29 +80,15 @@ function HybridCard2(props: Props) {
                         <h1 className="heading serif xs xs__m-0">
                             {props.title}
                         </h1>
-
-                        {props.intro && (
-                            <p
-                                className={`${styles.intro} body-text sans s xs__m-0 xs__mt+2`}
-                            >
-                                {props.intro}
-                            </p>
-                        )}
                     </div>
                 </div>
             </a>
-
-            <Footer
-                className={styles.footer}
-                bookmarked={props.bookmarked}
-                onBookmark={props.onBookmark}
-            />
         </article>
     );
 }
 
 function getCssClassNames(): string[] {
-    return [styles.hybridCard2, ...getFooterCssClassNames()];
+    return [styles.hybridCard2];
 }
 
 export { HybridCard2, getCssClassNames };

@@ -10,7 +10,6 @@ describe('HybridCard2', () => {
         const { container, getByText } = render(
             <HybridCard2
                 id="1"
-                intro="This is the intro"
                 label="Ondernemen"
                 title="This is the title"
                 url="https://example.com/1/This is the title"
@@ -19,7 +18,6 @@ describe('HybridCard2', () => {
 
         expect(getByText('This is the title')).toBeTruthy();
         expect(getByText('Ondernemen')).toBeTruthy();
-        expect(getByText('This is the intro')).toBeTruthy();
         expect(container.querySelector('[href]').getAttribute('href')).toBe(
             'https://example.com/1/This is the title'
         );
@@ -29,9 +27,12 @@ describe('HybridCard2', () => {
         const { container } = render(
             <HybridCard2
                 id="1"
-                intro="This is the intro"
                 label="Ondernemen"
                 title="This is the title"
+                imageUrl="https://images.example.com/image.png"
+                imageUrlS="https://images.example.com/imageS.png"
+                imageUrlM="https://images.example.com/imageM.png"
+                imageUrlL="https://images.example.com/imageL.png"
                 url="https://example.com/1/This is the title"
                 isRead={true}
             />
@@ -43,9 +44,12 @@ describe('HybridCard2', () => {
         const { container } = render(
             <HybridCard2
                 id="1"
-                intro="This is the intro"
                 label="Ondernemen"
                 title="This is the title"
+                imageUrl="https://images.example.com/image.png"
+                imageUrlS="https://images.example.com/imageS.png"
+                imageUrlM="https://images.example.com/imageM.png"
+                imageUrlL="https://images.example.com/imageL.png"
                 url="https://example.com/1/This is the title"
                 variant="variant-1"
             />
@@ -57,9 +61,12 @@ describe('HybridCard2', () => {
         const { container } = render(
             <HybridCard2
                 id="1"
-                intro="This is the intro"
                 label="Ondernemen"
                 title="This is the title"
+                imageUrl="https://images.example.com/image.png"
+                imageUrlS="https://images.example.com/imageS.png"
+                imageUrlM="https://images.example.com/imageM.png"
+                imageUrlL="https://images.example.com/imageL.png"
                 url="https://example.com/1/This is the title"
             />
         );

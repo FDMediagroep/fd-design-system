@@ -35,19 +35,58 @@
         }
     }
 
+    .figure.empty img {
+        max-width: 100%;
+    }
+    figure,
+    .figure.empty {
+        position: relative;
+        display: flex;
+        flex: 0 0 100px;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            flex: 0 0 auto;
+        }
+
+        picture {
+            position: relative;
+            width: 100px;
+            overflow: hidden;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                width: 100%;
+            }
+        }
+
+        img {
+            display: block;
+            position: absolute;
+            height: 100%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: auto;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                width: 100%;
+                height: auto;
+                left: 0;
+                position: relative;
+                transform: none;
+            }
+        }
+
+        figcaption {
+            display: none;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+        }
+    }
+
+    figcaption {
+        display: none;
+    }
+
     .teaserText {
         flex: 1 1 auto;
         .textContainer {
             flex: 1 1 auto;
-        }
-    }
-
-    .footer {
-        display: none;
-    }
-    @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-        .footer {
-            display: inline-block;
         }
     }
 
@@ -89,20 +128,10 @@
         }
     }
 
-    .intro {
-        color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
-        display: none;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            display: block;
-        }
-    }
-
     &.isRead:not(:hover):not(:active) {
+        figure {
+            filter: grayscale(1) sepia(0.15);
+        }
         .meta .prefix,
         .meta time,
         .textContainer h1 {
