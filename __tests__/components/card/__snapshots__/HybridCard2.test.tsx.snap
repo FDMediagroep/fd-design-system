@@ -11,6 +11,29 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
       class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
       href="https://example.com/1/This is the title"
     >
+      <figure
+        class="xs__m-0 s__mt-4 s__mr-4 s__mb+3 s__ml-4"
+      >
+        <picture>
+          <source
+            media="(max-width:639px)"
+            srcset="https://images.example.com/imageS.png"
+          />
+          <source
+            media="(max-width:860px)"
+            srcset="https://images.example.com/imageM.png"
+          />
+          <source
+            media="(min-width:861px)"
+            srcset="https://images.example.com/imageL.png"
+          />
+          <img
+            alt="This is the title"
+            src="https://images.example.com/image.png"
+          />
+        </picture>
+        <figcaption />
+      </figure>
       <div
         class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
       >
@@ -22,6 +45,7 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
           >
             Ondernemen
           </span>
+          <time />
         </div>
         <div
           class="textContainer"
@@ -31,55 +55,9 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
           >
             This is the title
           </h1>
-          <p
-            class="intro body-text sans s xs__m-0 xs__mt+2"
-          >
-            This is the intro
-          </p>
         </div>
       </div>
     </a>
-    <footer
-      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
-    >
-      <menu
-        class="xs__m-0"
-      >
-        <a
-          class="xs__mt+2"
-        >
-          <span
-            class="icon"
-          >
-            <svg
-              fill="none"
-              height="28"
-              viewBox="0 0 28 28"
-              width="28"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-   
-              <path
-                clip-rule="evenodd"
-                d="M21 3.5V24.5L14 21L7 24.5V3.5H21ZM18.6667 5.83333H9.33333V20.7247L14 18.3913L18.6667 20.7247V5.83333Z"
-                fill="#73655F"
-                fill-rule="evenodd"
-              />
-              
-
-            </svg>
-            
-
-          </span>
-          <span
-            data-bookmark="bookmark"
-          >
-            Bewaren
-          </span>
-        </a>
-      </menu>
-    </footer>
   </article>
 </div>
 `;
@@ -96,6 +74,29 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
       class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
       href="https://example.com/1/This is the title"
     >
+      <figure
+        class="xs__m-0 s__mt-4 s__mr-4 s__mb+3 s__ml-4"
+      >
+        <picture>
+          <source
+            media="(max-width:639px)"
+            srcset="https://images.example.com/imageS.png"
+          />
+          <source
+            media="(max-width:860px)"
+            srcset="https://images.example.com/imageM.png"
+          />
+          <source
+            media="(min-width:861px)"
+            srcset="https://images.example.com/imageL.png"
+          />
+          <img
+            alt="This is the title"
+            src="https://images.example.com/image.png"
+          />
+        </picture>
+        <figcaption />
+      </figure>
       <div
         class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
       >
@@ -107,6 +108,7 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
           >
             Ondernemen
           </span>
+          <time />
         </div>
         <div
           class="textContainer"
@@ -116,55 +118,9 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
           >
             This is the title
           </h1>
-          <p
-            class="intro body-text sans s xs__m-0 xs__mt+2"
-          >
-            This is the intro
-          </p>
         </div>
       </div>
     </a>
-    <footer
-      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
-    >
-      <menu
-        class="xs__m-0"
-      >
-        <a
-          class="xs__mt+2"
-        >
-          <span
-            class="icon"
-          >
-            <svg
-              fill="none"
-              height="28"
-              viewBox="0 0 28 28"
-              width="28"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-   
-              <path
-                clip-rule="evenodd"
-                d="M21 3.5V24.5L14 21L7 24.5V3.5H21ZM18.6667 5.83333H9.33333V20.7247L14 18.3913L18.6667 20.7247V5.83333Z"
-                fill="#73655F"
-                fill-rule="evenodd"
-              />
-              
-
-            </svg>
-            
-
-          </span>
-          <span
-            data-bookmark="bookmark"
-          >
-            Bewaren
-          </span>
-        </a>
-      </menu>
-    </footer>
   </article>
 </div>
 `;

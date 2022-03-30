@@ -93,7 +93,7 @@ function Page() {
                         </td>
                         <td>
                             <ul>
-                                <li>Home</li>
+                                <li>Home specials/categories</li>
                             </ul>
                         </td>
                     </tr>
