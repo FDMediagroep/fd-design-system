@@ -1,13 +1,8 @@
 import React from 'react';
 import styles from './VerticalCard1.module.scss';
-import {
-    Footer,
-    getCssClassNames as getFooterCssClassNames,
-} from './shared/Footer';
 
 interface Props {
     id: string;
-    bookmarked?: boolean;
     url: string;
     imageUrl: string;
     imageUrlS?: string;
@@ -18,7 +13,6 @@ interface Props {
     isRead?: boolean;
     title: string;
     intro: string;
-    onBookmark?: (e: React.MouseEvent<HTMLElement>) => void;
     [x: string]: any;
 }
 
@@ -37,7 +31,7 @@ function VerticalCard1(props: Props) {
             aria-label={props.title}
         >
             <a
-                className="xs__p-0 xs__pt+4 xs__pr+4 xs__pl+4"
+                className="xs__p-0 xs__p+4"
                 href={props.url}
                 aria-label={props.title}
             >
@@ -87,18 +81,12 @@ function VerticalCard1(props: Props) {
                     </div>
                 </div>
             </a>
-
-            <Footer
-                className={styles.footer}
-                bookmarked={props.bookmarked}
-                onBookmark={props.onBookmark}
-            />
         </article>
     );
 }
 
 function getCssClassNames(): string[] {
-    return [styles.verticalCard1, ...getFooterCssClassNames()];
+    return [styles.verticalCard1];
 }
 
 export { VerticalCard1, getCssClassNames };

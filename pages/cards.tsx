@@ -81,7 +81,6 @@ function Page() {
                         <td>
                             <ul>
                                 <li>Home</li>
-                                <li>Categories</li>
                             </ul>
                         </td>
                     </tr>

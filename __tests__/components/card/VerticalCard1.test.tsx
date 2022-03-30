@@ -3,7 +3,7 @@ import {
     VerticalCard1,
     getCssClassNames,
 } from '../../../src/components/card/VerticalCard1';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 describe('VerticalCard1', () => {
     test('should render correctly', () => {
@@ -29,29 +29,6 @@ describe('VerticalCard1', () => {
         expect(container.querySelector('[href]').getAttribute('href')).toBe(
             'https://example.com/1/This is the title'
         );
-    });
-
-    test('should handle bookmark clicks correctly', () => {
-        const spy = jest.fn();
-        const { getByText, container } = render(
-            <VerticalCard1
-                id="1"
-                imageUrl="https://images.example.com/image.png"
-                caption="This is the caption"
-                intro="This is the intro"
-                label="Ondernemen"
-                title="This is the title"
-                url="https://example.com/1/This is the title"
-                onBookmark={spy}
-            />
-        );
-
-        expect(getByText('Bewaren')).toBeTruthy();
-        expect(spy).toBeCalledTimes(0);
-        fireEvent.click(container.querySelector('a [data-bookmark]'));
-        expect(spy).toBeCalledTimes(1);
-        fireEvent.click(container.querySelector('a [data-bookmark]'));
-        expect(spy).toBeCalledTimes(2);
     });
 
     test('should have correct class name', () => {

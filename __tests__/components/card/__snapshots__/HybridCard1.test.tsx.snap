@@ -8,7 +8,7 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
   >
     <a
       aria-label="This is the title"
-      class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+      class="s__p-0 s__p+4"
       href="https://example.com/1/This is the title"
     >
       <figure
@@ -52,47 +52,6 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
         </div>
       </div>
     </a>
-    <footer
-      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
-    >
-      <menu
-        class="xs__m-0"
-      >
-        <a
-          class="xs__mt+2"
-        >
-          <span
-            class="icon"
-          >
-            <svg
-              fill="none"
-              height="28"
-              viewBox="0 0 28 28"
-              width="28"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-   
-              <path
-                clip-rule="evenodd"
-                d="M21 3.5V24.5L14 21L7 24.5V3.5H21ZM18.6667 5.83333H9.33333V20.7247L14 18.3913L18.6667 20.7247V5.83333Z"
-                fill="#73655F"
-                fill-rule="evenodd"
-              />
-              
-
-            </svg>
-            
-
-          </span>
-          <span
-            data-bookmark="bookmark"
-          >
-            Bewaren
-          </span>
-        </a>
-      </menu>
-    </footer>
   </article>
 </div>
 `;
@@ -105,7 +64,7 @@ exports[`HybridCard1 should render themes correctly 1`] = `
   >
     <a
       aria-label="This is the title"
-      class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+      class="s__p-0 s__p+4"
       href="https://example.com/1/This is the title"
     >
       <figure
@@ -149,47 +108,6 @@ exports[`HybridCard1 should render themes correctly 1`] = `
         </div>
       </div>
     </a>
-    <footer
-      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
-    >
-      <menu
-        class="xs__m-0"
-      >
-        <a
-          class="xs__mt+2"
-        >
-          <span
-            class="icon"
-          >
-            <svg
-              fill="none"
-              height="28"
-              viewBox="0 0 28 28"
-              width="28"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-   
-              <path
-                clip-rule="evenodd"
-                d="M21 3.5V24.5L14 21L7 24.5V3.5H21ZM18.6667 5.83333H9.33333V20.7247L14 18.3913L18.6667 20.7247V5.83333Z"
-                fill="#73655F"
-                fill-rule="evenodd"
-              />
-              
-
-            </svg>
-            
-
-          </span>
-          <span
-            data-bookmark="bookmark"
-          >
-            Bewaren
-          </span>
-        </a>
-      </menu>
-    </footer>
   </article>
 </div>
 `;
@@ -202,7 +120,7 @@ exports[`HybridCard1 should render themes correctly 2`] = `
   >
     <a
       aria-label="This is the title"
-      class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+      class="s__p-0 s__p+4"
       href="https://example.com/1/This is the title"
     >
       <figure
@@ -246,47 +164,6 @@ exports[`HybridCard1 should render themes correctly 2`] = `
         </div>
       </div>
     </a>
-    <footer
-      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
-    >
-      <menu
-        class="xs__m-0"
-      >
-        <a
-          class="xs__mt+2"
-        >
-          <span
-            class="icon"
-          >
-            <svg
-              fill="none"
-              height="28"
-              viewBox="0 0 28 28"
-              width="28"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-   
-              <path
-                clip-rule="evenodd"
-                d="M21 3.5V24.5L14 21L7 24.5V3.5H21ZM18.6667 5.83333H9.33333V20.7247L14 18.3913L18.6667 20.7247V5.83333Z"
-                fill="#73655F"
-                fill-rule="evenodd"
-              />
-              
-
-            </svg>
-            
-
-          </span>
-          <span
-            data-bookmark="bookmark"
-          >
-            Bewaren
-          </span>
-        </a>
-      </menu>
-    </footer>
   </article>
 </div>
 `;
@@ -299,7 +176,7 @@ exports[`HybridCard1 should render themes correctly 3`] = `
   >
     <a
       aria-label="This is the title"
-      class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+      class="s__p-0 s__p+4"
       href="https://example.com/1/This is the title"
     >
       <figure
@@ -343,47 +220,6 @@ exports[`HybridCard1 should render themes correctly 3`] = `
         </div>
       </div>
     </a>
-    <footer
-      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
-    >
-      <menu
-        class="xs__m-0"
-      >
-        <a
-          class="xs__mt+2"
-        >
-          <span
-            class="icon"
-          >
-            <svg
-              fill="none"
-              height="28"
-              viewBox="0 0 28 28"
-              width="28"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-   
-              <path
-                clip-rule="evenodd"
-                d="M21 3.5V24.5L14 21L7 24.5V3.5H21ZM18.6667 5.83333H9.33333V20.7247L14 18.3913L18.6667 20.7247V5.83333Z"
-                fill="#73655F"
-                fill-rule="evenodd"
-              />
-              
-
-            </svg>
-            
-
-          </span>
-          <span
-            data-bookmark="bookmark"
-          >
-            Bewaren
-          </span>
-        </a>
-      </menu>
-    </footer>
   </article>
 </div>
 `;
@@ -396,7 +232,7 @@ exports[`HybridCard1 should render themes correctly 4`] = `
   >
     <a
       aria-label="This is the title"
-      class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+      class="s__p-0 s__p+4"
       href="https://example.com/1/This is the title"
     >
       <figure
@@ -440,47 +276,6 @@ exports[`HybridCard1 should render themes correctly 4`] = `
         </div>
       </div>
     </a>
-    <footer
-      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
-    >
-      <menu
-        class="xs__m-0"
-      >
-        <a
-          class="xs__mt+2"
-        >
-          <span
-            class="icon"
-          >
-            <svg
-              fill="none"
-              height="28"
-              viewBox="0 0 28 28"
-              width="28"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-   
-              <path
-                clip-rule="evenodd"
-                d="M21 3.5V24.5L14 21L7 24.5V3.5H21ZM18.6667 5.83333H9.33333V20.7247L14 18.3913L18.6667 20.7247V5.83333Z"
-                fill="#73655F"
-                fill-rule="evenodd"
-              />
-              
-
-            </svg>
-            
-
-          </span>
-          <span
-            data-bookmark="bookmark"
-          >
-            Bewaren
-          </span>
-        </a>
-      </menu>
-    </footer>
   </article>
 </div>
 `;
@@ -493,7 +288,7 @@ exports[`HybridCard1 should render themes correctly 5`] = `
   >
     <a
       aria-label="This is the title"
-      class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+      class="s__p-0 s__p+4"
       href="https://example.com/1/This is the title"
     >
       <figure
@@ -537,47 +332,6 @@ exports[`HybridCard1 should render themes correctly 5`] = `
         </div>
       </div>
     </a>
-    <footer
-      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
-    >
-      <menu
-        class="xs__m-0"
-      >
-        <a
-          class="xs__mt+2"
-        >
-          <span
-            class="icon"
-          >
-            <svg
-              fill="none"
-              height="28"
-              viewBox="0 0 28 28"
-              width="28"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-   
-              <path
-                clip-rule="evenodd"
-                d="M21 3.5V24.5L14 21L7 24.5V3.5H21ZM18.6667 5.83333H9.33333V20.7247L14 18.3913L18.6667 20.7247V5.83333Z"
-                fill="#73655F"
-                fill-rule="evenodd"
-              />
-              
-
-            </svg>
-            
-
-          </span>
-          <span
-            data-bookmark="bookmark"
-          >
-            Bewaren
-          </span>
-        </a>
-      </menu>
-    </footer>
   </article>
 </div>
 `;
@@ -590,7 +344,7 @@ exports[`HybridCard1 should render themes correctly 6`] = `
   >
     <a
       aria-label="This is the title"
-      class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+      class="s__p-0 s__p+4"
       href="https://example.com/1/This is the title"
     >
       <figure
@@ -634,47 +388,6 @@ exports[`HybridCard1 should render themes correctly 6`] = `
         </div>
       </div>
     </a>
-    <footer
-      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
-    >
-      <menu
-        class="xs__m-0"
-      >
-        <a
-          class="xs__mt+2"
-        >
-          <span
-            class="icon"
-          >
-            <svg
-              fill="none"
-              height="28"
-              viewBox="0 0 28 28"
-              width="28"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-   
-              <path
-                clip-rule="evenodd"
-                d="M21 3.5V24.5L14 21L7 24.5V3.5H21ZM18.6667 5.83333H9.33333V20.7247L14 18.3913L18.6667 20.7247V5.83333Z"
-                fill="#73655F"
-                fill-rule="evenodd"
-              />
-              
-
-            </svg>
-            
-
-          </span>
-          <span
-            data-bookmark="bookmark"
-          >
-            Bewaren
-          </span>
-        </a>
-      </menu>
-    </footer>
   </article>
 </div>
 `;
@@ -687,7 +400,7 @@ exports[`HybridCard1 should render themes correctly 7`] = `
   >
     <a
       aria-label="This is the title"
-      class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+      class="s__p-0 s__p+4"
       href="https://example.com/1/This is the title"
     >
       <figure
@@ -731,47 +444,6 @@ exports[`HybridCard1 should render themes correctly 7`] = `
         </div>
       </div>
     </a>
-    <footer
-      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
-    >
-      <menu
-        class="xs__m-0"
-      >
-        <a
-          class="xs__mt+2"
-        >
-          <span
-            class="icon"
-          >
-            <svg
-              fill="none"
-              height="28"
-              viewBox="0 0 28 28"
-              width="28"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-   
-              <path
-                clip-rule="evenodd"
-                d="M21 3.5V24.5L14 21L7 24.5V3.5H21ZM18.6667 5.83333H9.33333V20.7247L14 18.3913L18.6667 20.7247V5.83333Z"
-                fill="#73655F"
-                fill-rule="evenodd"
-              />
-              
-
-            </svg>
-            
-
-          </span>
-          <span
-            data-bookmark="bookmark"
-          >
-            Bewaren
-          </span>
-        </a>
-      </menu>
-    </footer>
   </article>
 </div>
 `;
@@ -784,7 +456,7 @@ exports[`HybridCard1 should render themes correctly 8`] = `
   >
     <a
       aria-label="This is the title"
-      class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+      class="s__p-0 s__p+4"
       href="https://example.com/1/This is the title"
     >
       <figure
@@ -828,47 +500,6 @@ exports[`HybridCard1 should render themes correctly 8`] = `
         </div>
       </div>
     </a>
-    <footer
-      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
-    >
-      <menu
-        class="xs__m-0"
-      >
-        <a
-          class="xs__mt+2"
-        >
-          <span
-            class="icon"
-          >
-            <svg
-              fill="none"
-              height="28"
-              viewBox="0 0 28 28"
-              width="28"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-   
-              <path
-                clip-rule="evenodd"
-                d="M21 3.5V24.5L14 21L7 24.5V3.5H21ZM18.6667 5.83333H9.33333V20.7247L14 18.3913L18.6667 20.7247V5.83333Z"
-                fill="#73655F"
-                fill-rule="evenodd"
-              />
-              
-
-            </svg>
-            
-
-          </span>
-          <span
-            data-bookmark="bookmark"
-          >
-            Bewaren
-          </span>
-        </a>
-      </menu>
-    </footer>
   </article>
 </div>
 `;
@@ -882,7 +513,7 @@ exports[`HybridCard1 should render variant-1 correctly 1`] = `
   >
     <a
       aria-label="This is the title"
-      class="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+      class="s__p-0 s__p+4"
       href="https://example.com/1/This is the title"
     >
       <figure
@@ -926,47 +557,6 @@ exports[`HybridCard1 should render variant-1 correctly 1`] = `
         </div>
       </div>
     </a>
-    <footer
-      class="footer footer xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4"
-    >
-      <menu
-        class="xs__m-0"
-      >
-        <a
-          class="xs__mt+2"
-        >
-          <span
-            class="icon"
-          >
-            <svg
-              fill="none"
-              height="28"
-              viewBox="0 0 28 28"
-              width="28"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-   
-              <path
-                clip-rule="evenodd"
-                d="M21 3.5V24.5L14 21L7 24.5V3.5H21ZM18.6667 5.83333H9.33333V20.7247L14 18.3913L18.6667 20.7247V5.83333Z"
-                fill="#73655F"
-                fill-rule="evenodd"
-              />
-              
-
-            </svg>
-            
-
-          </span>
-          <span
-            data-bookmark="bookmark"
-          >
-            Bewaren
-          </span>
-        </a>
-      </menu>
-    </footer>
   </article>
 </div>
 `;
