@@ -35,7 +35,7 @@ function HybridCard2(props: Props) {
             id={props.id}
         >
             <a
-                className="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+                className="s__p-0 s__p+4"
                 href={props.url}
                 aria-label={props.title}
             >
