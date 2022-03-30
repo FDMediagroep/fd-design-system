@@ -63,12 +63,6 @@ export const metaTitle = 'Vertical Card 1';
 export const metaDescription = 'Vertical Card 1, used on the homepage';
 
 function Page() {
-    const [bookmarked, setBookmarked] = useState(false);
-
-    function toggleBookmark() {
-        setBookmarked(!bookmarked);
-    }
-
     return (
         <>
             <Head>
@@ -105,20 +99,14 @@ function Page() {
                 <>
                     <VerticalCard1
                         className="xs-12 s-6 m-4 l-3"
-                        onBookmark={toggleBookmark}
-                        bookmarked={bookmarked}
                         {...verticalCards1[0]}
                     />
                     <VerticalCard1
                         className="xs-12 s-6 m-4 l-3"
-                        onBookmark={toggleBookmark}
-                        bookmarked={bookmarked}
                         {...verticalCards1[1]}
                     />
                     <VerticalCard1
                         className="xs-12 s-6 m-4 l-3"
-                        onBookmark={toggleBookmark}
-                        bookmarked={bookmarked}
                         {...verticalCards1[2]}
                     />
                 </>

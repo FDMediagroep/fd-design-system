@@ -1,15 +1,10 @@
 import React from 'react';
 import styles from './HybridCard1.module.scss';
-import {
-    Footer,
-    getCssClassNames as getFooterCssClassNames,
-} from './shared/Footer';
 
 export type Variants = 'default' | 'variant-1';
 
 interface Props {
     id: string;
-    bookmarked?: boolean;
     url: string;
     imageUrl?: string;
     imageUrlS?: string;
@@ -21,7 +16,6 @@ interface Props {
     isRead?: boolean;
     title: string;
     intro: string;
-    onBookmark?: (e: React.MouseEvent<HTMLElement>) => void;
     variant?: Variants;
     [x: string]: any;
 }
@@ -43,7 +37,7 @@ function HybridCard1(props: Props) {
             id={props.id}
         >
             <a
-                className="s__p-0 s__pt+4 s__pr+4 s__pl+4"
+                className="s__p-0 s__p+4"
                 href={props.url}
                 aria-label={props.title}
             >
@@ -99,18 +93,12 @@ function HybridCard1(props: Props) {
                     </div>
                 </div>
             </a>
-
-            <Footer
-                className={styles.footer}
-                bookmarked={props.bookmarked}
-                onBookmark={props.onBookmark}
-            />
         </article>
     );
 }
 
 function getCssClassNames(): string[] {
-    return [styles.hybridCard1, ...getFooterCssClassNames()];
+    return [styles.hybridCard1];
 }
 
 export { HybridCard1, getCssClassNames };

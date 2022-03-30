@@ -64,12 +64,6 @@ export const metaDescription =
     'Hybrid Card 1, on small screens its similar to Horizontal Card 1 and wider screens similar to Vertical Card 1';
 
 function Page() {
-    const [bookmarked, setBookmarked] = useState(false);
-
-    function toggleBookmark() {
-        setBookmarked(!bookmarked);
-    }
-
     return (
         <>
             <Head>
@@ -111,21 +105,15 @@ function Page() {
                 <>
                     <HybridCard1
                         className="xs-12 s-6 m-4 l-3"
-                        onBookmark={toggleBookmark}
-                        bookmarked={bookmarked}
                         {...hybridCards1[0]}
                     />
                     <HybridCard1
                         className="xs-12 s-6 m-4 l-3"
-                        onBookmark={toggleBookmark}
-                        bookmarked={bookmarked}
                         {...hybridCards1[1]}
                     />
                     <HybridCard1
                         isRead={true}
                         className="xs-12 s-6 m-4 l-3"
-                        onBookmark={toggleBookmark}
-                        bookmarked={bookmarked}
                         {...hybridCards1[2]}
                     />
                 </>
