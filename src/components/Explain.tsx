@@ -18,9 +18,9 @@ import {
     clearDesignTokensTooltips,
 } from '../utils/designTokensTooltip';
 import { PaperclipIcon } from '../design-tokens/icons';
+import cssbeautify from 'cssbeautify';
 
 declare let window: Window | any;
-declare let cssbeautify: (css: string) => string;
 
 interface Props {
     /**
