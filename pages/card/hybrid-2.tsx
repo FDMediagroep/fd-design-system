@@ -22,7 +22,6 @@ const hybridCards2: any = [
         imageUrlL:
             'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url: 'https://fd.nl/beurs/1345386/amerikaanse-technologiebeurs-nasdaq-wordt-mogelijk-strenger-dan-euronext',
-        time: '08:10',
         readingTime: 3,
     },
     {
@@ -38,7 +37,6 @@ const hybridCards2: any = [
         imageUrlL:
             'https://images.fd.nl/MtOzOM5dkRKSllJlW5ZAjzO82yQ.jpg?rect=.095%2c.1069418386491557%2c.79625%2c.7954971857410882&fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url: 'https://fd.nl/profiel/1345186/deloitte-krijgt-met-rianne-jans-een-onverstoorbare-cfo-in-huis',
-        time: '08:10',
         variant: 'variant-1',
     },
     {
@@ -55,7 +53,6 @@ const hybridCards2: any = [
             'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url: 'https://fd.nl/economie-politiek/1345444/grootste-toename-werkloosheid-sinds-2003',
         readingTime: 11,
-        time: '08:10',
         isRead: true,
     },
 ];

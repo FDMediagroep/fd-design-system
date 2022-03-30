@@ -106,22 +106,6 @@
             }
             letter-spacing: 1px;
         }
-
-        time {
-            font-family: map-deep-get($typography, 'font-family', 'bold'),
-                sans-serif;
-            font-size: 0.8125rem;
-            color: var(--meta-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
-            white-space: nowrap;
-            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-                display: none;
-            }
-        }
     }
 
     &[data-variant='variant-1'] {

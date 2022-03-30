@@ -12,7 +12,6 @@ interface Props {
     imageUrlL?: string;
     caption?: string;
     label: string;
-    time?: string;
     isRead?: boolean;
     title: string;
     variant?: Variants;
@@ -75,7 +74,6 @@ function HybridCard2(props: Props) {
                 >
                     <div className={`${styles.meta} xs__mb+2`}>
                         <span className={styles.prefix}>{props.label}</span>
-                        <time>{props.time}</time>
                     </div>
 
                     <div className={styles.textContainer}>
