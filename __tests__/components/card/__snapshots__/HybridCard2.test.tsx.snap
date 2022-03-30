@@ -45,7 +45,6 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
           >
             Ondernemen
           </span>
-          <time />
         </div>
         <div
           class="textContainer"
@@ -108,7 +107,6 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
           >
             Ondernemen
           </span>
-          <time />
         </div>
         <div
           class="textContainer"
