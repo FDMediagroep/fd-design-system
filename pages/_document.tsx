@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-css-tags */
 import React from 'react';
 import Document, { Html, Main, NextScript, Head } from 'next/document';
 
@@ -83,7 +84,6 @@ class MyDocument extends Document<any> {
                         content="/ms-icon-144x144.png"
                     />
 
-                    <script src="/assets/cssbeautify.js" />
                     <link href="/assets/fonts/style.css" rel="stylesheet" />
 
                     <meta property="og:site_name" content="FD Design System" />
