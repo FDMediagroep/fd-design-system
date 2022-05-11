@@ -70,7 +70,7 @@
         "fetch-jsonp": "^1.2.1",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^28.0.3",
-        "jest-environment-jsdom": "^28.0.2",
+        "jest-environment-jsdom": "^28.1.0",
         "json-to-scss": "^1.6.2",
         "markdown-it": "^13.0.1",
         "micro-cors": "^0.1.1",
