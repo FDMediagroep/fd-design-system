@@ -86,7 +86,7 @@
         "pretty": "^2.0.0",
         "punycode": "^2.1.1",
         "raw-loader": "^4.0.2",
-        "react-element-to-jsx-string": "^14.3.4",
+        "react-element-to-jsx-string": "^15.0.0",
         "sass": "^1.51.0",
         "sass-loader": "^12.6.0",
         "style-loader": "^3.3.1",
