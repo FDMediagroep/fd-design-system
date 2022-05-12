@@ -43,11 +43,17 @@
     .figure.empty {
         position: relative;
         display: flex;
-        flex: 0 0 100px;
+        flex: 0 0 80px;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            flex: 0 0 100px;
+        }
 
         picture {
             position: relative;
-            width: 100px;
+            width: 80px;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+                width: 100px;
+            }
             overflow: hidden;
             > img {
                 display: block;
@@ -76,8 +82,13 @@
         background-size: cover;
         background-position: center;
         background-color: #e6d3c6;
-        flex: 0 0 100px;
-        min-height: 100px;
+        flex: 0 0 80px;
+        height: 80px;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            flex: 0 0 100px;
+            min-height: 100px;
+            height: auto;
+        }
     }
 
     .teaserText {
