@@ -3,7 +3,7 @@
 exports[`HorizontalCard1 should render is-read correctly 1`] = `
 <div>
   <article
-    class="horizontalCard1 isRead xs__p-0"
+    class="horizontalCard1 isRead xs__p+4"
     id="1"
   >
     <a
@@ -22,7 +22,7 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
         <figcaption />
       </figure>
       <div
-        class="teaserText xs__p+3 s__p+4"
+        class="teaserText xs__pl+4 s__p+4"
       >
         <div
           class="meta xs__m-0 xs__mb+2"
@@ -54,7 +54,7 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
 exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
 <div>
   <article
-    class="horizontalCard1 longread xs__p-0"
+    class="horizontalCard1 longread xs__p+4"
     id="1"
   >
     <a
@@ -73,7 +73,7 @@ exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
         <figcaption />
       </figure>
       <div
-        class="teaserText xs__p+3 s__p+4"
+        class="teaserText xs__pl+4 s__p+4"
       >
         <div
           class="meta xs__m-0 xs__mb+2"

@@ -3,7 +3,7 @@
 exports[`HybridCard2 should render is-read correctly 1`] = `
 <div>
   <article
-    class="hybridCard2 isRead"
+    class="hybridCard2 isRead xs__p+4"
     id="1"
   >
     <a
@@ -35,7 +35,7 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
         <figcaption />
       </figure>
       <div
-        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
+        class="teaserText xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
           class="meta xs__mb+2"
@@ -64,7 +64,7 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
 exports[`HybridCard2 should render variant-1 correctly 1`] = `
 <div>
   <article
-    class="hybridCard2"
+    class="hybridCard2 xs__p+4"
     data-variant="variant-1"
     id="1"
   >
@@ -97,7 +97,7 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
         <figcaption />
       </figure>
       <div
-        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
+        class="teaserText xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
           class="meta xs__mb+2"

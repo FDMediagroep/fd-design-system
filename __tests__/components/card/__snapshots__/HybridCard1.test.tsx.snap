@@ -3,7 +3,7 @@
 exports[`HybridCard1 should render is-read correctly 1`] = `
 <div>
   <article
-    class="hybridCard1 isRead"
+    class="hybridCard1 isRead xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -25,7 +25,7 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
+        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
           class="meta xs__mb+2"
@@ -59,7 +59,7 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
 exports[`HybridCard1 should render themes correctly 1`] = `
 <div>
   <article
-    class="hybridCard1"
+    class="hybridCard1 xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -81,7 +81,7 @@ exports[`HybridCard1 should render themes correctly 1`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
+        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
           class="meta xs__mb+2"
@@ -115,7 +115,7 @@ exports[`HybridCard1 should render themes correctly 1`] = `
 exports[`HybridCard1 should render themes correctly 2`] = `
 <div>
   <article
-    class="hybridCard1"
+    class="hybridCard1 xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -137,7 +137,7 @@ exports[`HybridCard1 should render themes correctly 2`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
+        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
           class="meta xs__mb+2"
@@ -171,7 +171,7 @@ exports[`HybridCard1 should render themes correctly 2`] = `
 exports[`HybridCard1 should render themes correctly 3`] = `
 <div>
   <article
-    class="hybridCard1"
+    class="hybridCard1 xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -193,7 +193,7 @@ exports[`HybridCard1 should render themes correctly 3`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
+        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
           class="meta xs__mb+2"
@@ -227,7 +227,7 @@ exports[`HybridCard1 should render themes correctly 3`] = `
 exports[`HybridCard1 should render themes correctly 4`] = `
 <div>
   <article
-    class="hybridCard1"
+    class="hybridCard1 xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -249,7 +249,7 @@ exports[`HybridCard1 should render themes correctly 4`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
+        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
           class="meta xs__mb+2"
@@ -283,7 +283,7 @@ exports[`HybridCard1 should render themes correctly 4`] = `
 exports[`HybridCard1 should render themes correctly 5`] = `
 <div>
   <article
-    class="hybridCard1"
+    class="hybridCard1 xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -305,7 +305,7 @@ exports[`HybridCard1 should render themes correctly 5`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
+        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
           class="meta xs__mb+2"
@@ -339,7 +339,7 @@ exports[`HybridCard1 should render themes correctly 5`] = `
 exports[`HybridCard1 should render themes correctly 6`] = `
 <div>
   <article
-    class="hybridCard1"
+    class="hybridCard1 xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -361,7 +361,7 @@ exports[`HybridCard1 should render themes correctly 6`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
+        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
           class="meta xs__mb+2"
@@ -395,7 +395,7 @@ exports[`HybridCard1 should render themes correctly 6`] = `
 exports[`HybridCard1 should render themes correctly 7`] = `
 <div>
   <article
-    class="hybridCard1"
+    class="hybridCard1 xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -417,7 +417,7 @@ exports[`HybridCard1 should render themes correctly 7`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
+        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
           class="meta xs__mb+2"
@@ -451,7 +451,7 @@ exports[`HybridCard1 should render themes correctly 7`] = `
 exports[`HybridCard1 should render themes correctly 8`] = `
 <div>
   <article
-    class="hybridCard1"
+    class="hybridCard1 xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -473,7 +473,7 @@ exports[`HybridCard1 should render themes correctly 8`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
+        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
           class="meta xs__mb+2"
@@ -507,7 +507,7 @@ exports[`HybridCard1 should render themes correctly 8`] = `
 exports[`HybridCard1 should render variant-1 correctly 1`] = `
 <div>
   <article
-    class="hybridCard1"
+    class="hybridCard1 xs__p+4 s__p-0"
     data-variant="variant-1"
     id="1"
   >
@@ -530,7 +530,7 @@ exports[`HybridCard1 should render variant-1 correctly 1`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0"
+        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
           class="meta xs__mb+2"
