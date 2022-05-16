@@ -44,15 +44,19 @@
         position: relative;
         display: flex;
         flex: 0 0 80px;
+        width: 80px;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            flex: 0 0 100px;
+            flex: 0 0 112px;
+            width: 112px;
+            height: 112px;
         }
 
         picture {
             position: relative;
             width: 80px;
             @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-                width: 100px;
+                width: 112px;
+                height: 112px;
             }
             overflow: hidden;
             > img {
@@ -85,8 +89,8 @@
         flex: 0 0 80px;
         height: 80px;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            flex: 0 0 100px;
-            min-height: 100px;
+            flex: 0 0 112px;
+            min-height: 112px;
             height: auto;
         }
     }
