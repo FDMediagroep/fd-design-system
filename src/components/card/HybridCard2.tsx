@@ -31,7 +31,7 @@ function HybridCard2(props: Props) {
             data-variant={props.variant}
             className={`${styles.hybridCard2}${
                 props.className ? ` ${props.className}` : ''
-            }${props.isRead ? ` ${styles.isRead}` : ''}`}
+            }${props.isRead ? ` ${styles.isRead}` : ''} xs__p+4`}
             id={props.id}
         >
             <a
@@ -70,7 +70,7 @@ function HybridCard2(props: Props) {
                 )}
 
                 <div
-                    className={`${styles.teaserText} xs__pt+3 xs__pr+2 xs__pb+2 xs__pl+3 s__p-0`}
+                    className={`${styles.teaserText} xs__pl+4 s__pr-0 s__pb-0 s__pl-0`}
                 >
                     <div className={`${styles.meta} xs__mb+2`}>
                         <span className={styles.prefix}>{props.label}</span>
