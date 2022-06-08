@@ -24,9 +24,9 @@
     > a {
         display: flex;
         flex: 1 1 auto;
-        min-height: 100px;
         flex-direction: row;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            min-height: 100px;
             flex-direction: column;
         }
         text-decoration: none;
@@ -42,17 +42,19 @@
     .figure.empty {
         position: relative;
         display: flex;
-        flex: 0 0 100px;
+        flex: 0 0 80px;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             flex: 0 0 auto;
         }
 
         picture {
             position: relative;
-            width: 100px;
+            width: 80px;
+            height: 80px;
             overflow: hidden;
             @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
                 width: 100%;
+                height: auto;
             }
         }
 
