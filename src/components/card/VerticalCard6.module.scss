@@ -1,0 +1,66 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.verticalCard6 {
+    transition: box-shadow 0.15s linear;
+    position: relative;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    flex-grow: 1;
+    flex-basis: 0;
+    position: relative;
+    background: var(--card);
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    }
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+
+    .cardContent {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+    }
+
+    figure {
+        width: 136px;
+        height: 136px;
+        img {
+            width: 100%;
+        }
+    }
+
+    figcaption {
+        display: none;
+    }
+
+    .textContent {
+        flex: 1 1 auto;
+    }
+
+    .teaserText {
+        flex: 1 1 auto;
+    }
+
+    h1 {
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        }
+    }
+
+    .intro {
+        color: var(--content-copy);
+        // IE11
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+        }
+    }
+}

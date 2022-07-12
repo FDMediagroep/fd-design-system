@@ -20,7 +20,6 @@ import { Aside } from '../src/components/Aside';
 /**
  * Make sibling elements same height as its tallest sibling with the given CSS Class Name.
  */
-
 function resizeSiblings(cssClassName: string) {
     console.debug('resizeSiblings');
     [].slice
