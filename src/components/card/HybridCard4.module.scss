@@ -5,217 +5,105 @@
 
 .hybridCard4 {
     transition: box-shadow 0.15s linear;
-    margin-bottom: 1px;
-    justify-content: space-between;
-    background-color: var(--card);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-    }
-    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
     position: relative;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    background: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
 
-    h1 {
-        color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
-    }
-
-    .intro {
-        color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
-        display: block;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            display: none;
-        }
-    }
-
-    a {
-        text-decoration: none;
+    > a {
         display: flex;
-        flex-direction: column;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            flex-direction: row;
+        flex: 1 1 auto;
+        flex-direction: row;
+        outline-offset: 0;
+        min-height: 80px;
+        text-decoration: none;
+        &:hover h1 {
+            text-decoration: underline;
         }
-        &:focus,
-        &:hover {
-            h1 {
-                text-decoration: underline;
-            }
+        @media screen and (min-width: 640px) {
+            justify-content: flex-end;
+            flex-direction: column;
         }
     }
 
-    figure {
-        overflow: hidden;
+    .figure.empty img {
+        max-width: 100%;
+    }
+    figure,
+    .figure.empty {
         position: relative;
         display: flex;
-        flex: 0 0 auto;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            flex: 0 0 116px;
-            min-height: 116px;
-        }
-
-        picture {
-            position: relative;
-            width: 100%;
-            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-                width: 116px;
-                overflow: hidden;
-            }
-        }
-
+        flex: 0 0 80px;
+        overflow: hidden;
         img {
+            object-fit: cover;
             display: block;
-            width: 100%;
-            height: auto;
-            left: 0;
-            position: relative;
-            transform: none;
-            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-                position: absolute;
-                height: 100%;
-                left: 50%;
-                transform: translate(-50%, 0);
-                width: auto;
-            }
+            position: absolute;
+            height: 80px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: auto;
+            min-height: auto;
         }
-
         figcaption {
             display: none;
+        }
+        @media screen and (min-width: 640px) {
+            min-height: 26.25rem;
+            width: 100%;
+            height: 100%;
+            flex: 0 0 auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            img {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    .prefix {
+        justify-content: space-between;
+        font-family: 'ProximaNovaBold', sans-serif;
+        line-height: 1.2em;
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+        background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        letter-spacing: 1px;
+        @media screen and (min-width: 640px) {
+            font-size: 0.9375rem;
         }
     }
 
     .teaserText {
-        position: relative;
-        flex: 1;
-
-        > a {
-            color: var(--content-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            }
-            display: block;
-            overflow: visible;
-        }
-    }
-
-    .meta {
-        position: inherit;
-        top: auto;
-        left: auto;
-        right: auto;
+        box-sizing: border-box;
         display: flex;
-        justify-content: space-between;
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
-        font-size: 0.8125rem;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            font-size: 0.9375rem;
-        }
-
-        .breaking {
-            font-size: 0.8125rem;
-            @media screen and (min-width: #{map-deep-get($media, 'sizes', 's-min-width')}px) {
-                font-size: 0.875rem;
-            }
-            padding: 2px 8px;
-            color: var(--breaking-label-copy);
-            background-color: var(--breaking);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'negative',
-                        75
-                    )};
-            }
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-family: map-deep-get($typography, 'font-family', 'bold'),
-                sans-serif;
-        }
-
-        time {
-            color: var(--meta-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
-            white-space: nowrap;
+        flex-direction: column;
+        align-items: baseline;
+        @media screen and (min-width: 640px) {
+            position: absolute;
         }
     }
 
-    &.isRead:not(:hover):not(:active) {
-        figure {
-            filter: grayscale(1) sepia(0.15);
-        }
-        .meta .prefix,
-        .meta time,
-        .textContainer h1 {
-            color: var(--card-text-visited);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
-        }
-
-        .meta .breaking {
-            color: var(--card-label-text-visited);
-            background-color: var(--card-label-visited);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        40
-                    )};
-            }
-        }
-
-        background-color: var(--card-visited);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-        }
+    h1 {
+        color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        line-height: 120%;
     }
 
     &:focus:not(:active),
     &:hover:not(:active) {
         box-shadow: var(--card-box-shadow);
-        background-color: var(--card-hover);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-        }
         z-index: 1;
     }
     &:active {
         z-index: 1;
         outline: 2px solid var(--card-outline-active);
-        background-color: var(--card-active);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-        }
     }
 }

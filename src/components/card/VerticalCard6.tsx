@@ -1,82 +1,63 @@
 import React from 'react';
-import { Dropdown } from '../button/Dropdown';
 import styles from './VerticalCard6.module.scss';
 
 interface Props {
     id: string;
-    dropdownLabel?: string;
-    imageUrl: string;
-    imageUrlS?: string;
-    imageUrlM?: string;
-    imageUrlL?: string;
+    url: string;
+    imageComponent?: JSX.Element;
     caption?: string;
+    time?: string;
     title: string;
-    intro: string;
-    onBookmark?: (e: React.MouseEvent<HTMLElement>) => void;
+    isRead?: boolean;
     [x: string]: any;
 }
 
 /**
- * Used on podcasts overview page.
+ * Used as breaking.
  * @param props
  */
 function VerticalCard6(props: Props) {
     return (
         <article
             style={props.style}
-            data-variant={props.variant}
-            className={`xs__p+4 l__p+6 ${styles.verticalCard6}${
+            className={`${styles.verticalCard6}${
                 props.className ? ` ${props.className}` : ''
-            }${props.isRead ? ` ${styles.isRead}` : ''}`}
+            }`}
             id={props.id}
         >
-            <div className={styles.cardContent}>
-                <div className="xs__m-0-auto xs__mb+4 l__mb+6">
+            <a href={props.url} aria-label={props.title}>
+                {(props.imageUrl || props.imageComponent) && (
                     <figure className="xs__m-0">
-                        <picture>
-                            {props.imageUrlS && (
-                                <source
-                                    media="(max-width:639px)"
-                                    srcSet={`${props.imageUrlS}`}
-                                />
-                            )}
-                            {props.imageUrlM && (
-                                <source
-                                    media="(max-width:860px)"
-                                    srcSet={`${props.imageUrlM}`}
-                                />
-                            )}
-                            {props.imageUrlL && (
-                                <source
-                                    media="(min-width:861px)"
-                                    srcSet={`${props.imageUrlL}`}
-                                />
-                            )}
+                        {props.imageComponent ?? (
                             <img
                                 src={`${props.imageUrl}`}
                                 alt={props.caption ?? props.title}
                             />
-                        </picture>
+                        )}
                         <figcaption>{props.caption}</figcaption>
                     </figure>
-                </div>
-                <div className={styles.textContent}>
-                    <div className={styles.teaserText}>
-                        <h1 className="heading serif s xs__m-0">
-                            {props.title}
-                        </h1>
-
-                        {styles.intro ? (
-                            <p
-                                className={`${styles.intro} body-text sans s xs__mt+2 l__mt+4`}
-                            >
-                                {props.intro}
-                            </p>
-                        ) : null}
+                )}
+                {!props.imageUrl && !props.imageComponent && (
+                    <div
+                        className={`${styles.figure} ${styles.empty} xs__m-0 s__mt-4 s__mr-4 s__mb-0 s__ml-4`}
+                    >
+                        <img src="/assets/images/fd-logo.svg" alt="FD-Logo" />
                     </div>
+                )}
+
+                <div
+                    className={`${styles.teaserText}  xs__p+4 m__p-0 xs__p+2 m__p+4`}
+                >
+                    {props.label && (
+                        <span
+                            className={`${styles.prefix} xs__p+1 s__p+2 xs__mb+2`}
+                        >
+                            {props.label}
+                        </span>
+                    )}
+                    <h1 className="heading serif s xs__m-0">{props.title}</h1>
                 </div>
-            </div>
-            <Dropdown size="m">{props.dropdownLabel || 'Luister via'}</Dropdown>
+            </a>
         </article>
     );
 }

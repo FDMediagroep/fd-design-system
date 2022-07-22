@@ -4,14 +4,10 @@ import styles from './HybridCard4.module.scss';
 interface Props {
     id: string;
     url: string;
-    imageUrl?: string;
-    imageUrlS?: string;
-    imageUrlM?: string;
-    imageUrlL?: string;
+    imageComponent?: JSX.Element;
     caption?: string;
     time?: string;
     title: string;
-    intro?: string;
     isRead?: boolean;
     [x: string]: any;
 }
@@ -26,60 +22,36 @@ function HybridCard4(props: Props) {
             style={props.style}
             className={`${styles.hybridCard4}${
                 props.className ? ` ${props.className}` : ''
-            }${props.isRead ? ` ${styles.isRead}` : ''} xs__p-0`}
+            } ${props.isRead ? ` ${styles.isRead}` : ''} xs__p+4 s__p-0`}
             id={props.id}
         >
             <a href={props.url} aria-label={props.title}>
-                {props.imageUrl && (
+                {(props.imageUrl || props.imageComponent) && (
                     <figure className="xs__m-0">
-                        <picture>
-                            {props.imageUrlS && (
-                                <source
-                                    media="(max-width:639px)"
-                                    srcSet={`${props.imageUrlS}`}
-                                />
-                            )}
-                            {props.imageUrlM && (
-                                <source
-                                    media="(max-width:860px)"
-                                    srcSet={`${props.imageUrlM}`}
-                                />
-                            )}
-                            {props.imageUrlL && (
-                                <source
-                                    media="(min-width:861px)"
-                                    srcSet={`${props.imageUrlL}`}
-                                />
-                            )}
+                        {props.imageComponent ?? (
                             <img
                                 src={`${props.imageUrl}`}
                                 alt={props.caption ?? props.title}
                             />
-                        </picture>
+                        )}
                         <figcaption>{props.caption}</figcaption>
                     </figure>
                 )}
-
-                <div className={`${styles.teaserText} xs__p+4 s__pr+6 s__pl+6`}>
-                    <div className={`${styles.meta} xs__m-0 xs__mb+2`}>
-                        <span className={styles.breaking}>Breaking</span>
-
-                        {props.time && <time>{props.time}</time>}
+                {!props.imageUrl && !props.imageComponent && (
+                    <div className={`${styles.figure} ${styles.empty} xs__m-0`}>
+                        <img src="/assets/images/fd-logo.svg" alt="FD-Logo" />
                     </div>
+                )}
 
-                    <div className={styles.textContainer}>
-                        <h1 className="heading serif m xs__m-0">
-                            {props.title}
-                        </h1>
-
-                        {props.intro && (
-                            <p
-                                className={`${styles.intro} body-text sans s xs__m-0 xs__mt+2`}
-                            >
-                                {props.intro}
-                            </p>
-                        )}
-                    </div>
+                <div className={`${styles.teaserText} xs__pl+4 s__p+4 m__p+4`}>
+                    {props.label && (
+                        <span
+                            className={`${styles.prefix} xs__p+1 s__p+2 xs__mb+2`}
+                        >
+                            {props.label}
+                        </span>
+                    )}
+                    <h1 className="heading serif xs xs__m-0">{props.title}</h1>
                 </div>
             </a>
         </article>

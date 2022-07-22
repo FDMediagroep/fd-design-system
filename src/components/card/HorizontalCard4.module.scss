@@ -3,28 +3,33 @@
 @import '../../design-tokens/media.scss';
 @import '../../design-tokens/typography.scss';
 
-.horizontalCard4 {
+.fdHorizontalCard4 {
     transition: box-shadow 0.15s linear;
+    position: relative;
     margin-bottom: 1px;
     justify-content: space-between;
-    background-color: var(--card);
+    background: #{map-deep-get($colors, 'colors', 'primary', 75)};
     // IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     }
-    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
 
-    a {
-        text-decoration: none;
-        color: var(--content-copy);
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    h1 {
+        color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
         // IE11
         @media screen and (-ms-high-contrast: active),
             (-ms-high-contrast: none) {
             color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
         }
-        display: block;
-        overflow: visible;
-        &:focus,
+    }
+
+    a {
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
         &:hover {
             h1 {
                 text-decoration: underline;
@@ -32,128 +37,125 @@
         }
     }
 
+    .figure.empty {
+        display: flex;
+        background-color: #e6d3c6;
+
+        img {
+            display: block;
+            margin: auto;
+            width: 64px;
+        }
+    }
+
+    figure,
+    .figure {
+        background-size: cover;
+        background-position: center;
+        flex: 0 0 80px;
+        height: 80px;
+        @media screen and (min-width: 641px) {
+            flex: 0 0 112px;
+            min-height: 112px;
+        }
+    }
+
+    figure {
+        position: relative;
+        display: flex;
+        flex: 0 0 80px;
+        @media screen and (min-width: 641px) {
+            flex: 0 0 112px;
+        }
+        overflow: hidden;
+
+        img {
+            display: block;
+            position: absolute;
+            height: 100%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: auto;
+        }
+
+        picture {
+            position: relative;
+            width: 80px;
+            @media screen and (min-width: 641px) {
+                width: 112px;
+            }
+            overflow: hidden;
+        }
+
+        figcaption {
+            display: none;
+        }
+    }
+
     .teaserText {
         position: relative;
         flex: 1;
-
         .meta {
-            display: flex;
-            justify-content: space-between;
+            font-family: 'ProximaNovaBold', sans-serif;
             position: inherit;
             top: auto;
             left: auto;
             right: auto;
-            font-family: map-deep-get($typography, 'font-family', 'bold'),
-                sans-serif;
+            display: flex;
+            justify-content: space-between;
             font-size: 0.8125rem;
-            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            @media screen and (min-width: 641px) {
                 font-size: 0.9375rem;
             }
-            color: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
 
-            span {
+            .prefix {
                 text-transform: uppercase;
+                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
+                background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
                 letter-spacing: 1px;
             }
+
             time {
-                font-family: map-deep-get($typography, 'font-family', 'bold'),
-                    sans-serif;
-                color: var(--meta-copy);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-                }
+                color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
                 white-space: nowrap;
             }
         }
-    }
 
-    .textContainer {
-        display: inline-grid;
-    }
-
-    .printTitle {
-        color: var(--meta-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
+        > a {
+            color: #191919;
+            display: block;
+            overflow: visible;
         }
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
     }
 
-    .printTitleText {
-        font-weight: bold;
-    }
-
-    footer menu {
-        float: none;
-    }
-
-    .favorite .ico {
-        margin: inherit;
-        top: inherit;
-    }
-
-    footer menu > * {
-        min-height: inherit;
-        line-height: 22px;
-    }
-
-    footer {
-        min-height: inherit;
+    .empty.figure {
+        align-items: center;
     }
 
     &.isRead:not(:hover):not(:active) {
-        .meta .prefix,
-        .meta time,
-        .printTitle,
-        .textContainer h1,
-        .textContainer p {
-            color: var(--card-text-visited);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
+        @media (prefers-color-scheme: dark) {
+            opacity: var(--card-visited-opacity);
         }
-
-        background-color: var(--card-visited);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        @media (prefers-color-scheme: light) {
+            opacity: var(--card-visited-opacity);
         }
     }
 
     &:focus:not(:active),
     &:hover:not(:active) {
         box-shadow: var(--card-box-shadow);
-        background-color: var(--card-hover);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-        }
         z-index: 1;
     }
     &:active {
         z-index: 1;
         outline: 2px solid var(--card-outline-active);
-        background-color: var(--card-active);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+    }
+}
+
+html.touch {
+    .fdHorizontalCard4 {
+        &:hover {
+            box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
         }
     }
 }

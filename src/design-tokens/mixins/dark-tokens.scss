@@ -67,6 +67,7 @@
     --card-active: #{map-deep-get($colors, 'colors', 'neutral', 0)};
     --card-outline-active: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --card-box-shadow: none;
+    --card-visited-opacity: 0.7;
     --card-visited: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     --card-text-visited: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --card-label-text-visited: #{map-deep-get($colors, 'colors', 'neutral', 10)};

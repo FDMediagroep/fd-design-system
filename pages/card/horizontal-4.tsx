@@ -7,30 +7,25 @@ import {
     HorizontalCard4,
     getCssClassNames,
 } from '../../src/components/card/HorizontalCard4';
+import { FdImgix } from '../../src/components/utils/image/fdImgix';
 
 const horizontalCards4: any = [
     {
         id: '1343052a',
         url: 'https://fd.nl/futures/1343052/levensgevaarlijk-libanon',
         label: 'Omgekeerde kruistocht',
+        imageUrl:
+            'https://fd-internal-development.imgix.net/XSsvNsfpytwq-OQdMRmsCm7J1i8.jpg?auto=format',
         time: '13:11',
         title: 'Levensgevaarlijk Libanon',
         intro: 'Ondanks een op het eerste gezicht veel gevaarlijker levensstijl, verschilt de levensverwachting van Libanezen nog maar drie jaar met die van ons.',
     },
     {
-        id: '1343825a',
-        url: 'https://fd.nl/economie-politiek/1343825/door-crisis-veel-meer-publiek-geld-nodig-voor-green-deal',
-        label: 'Europa',
-        time: '13:08',
-        title: "Diederik Samsom: 'Door crisis veel meer publiek geld nodig voor Green Deal'",
-        printTitle: 'Door crisis veel meer publiek geld nodig voor Green Deal',
-        intro: "De rechterhand van klimaatcommissaris Frans Timmerman waarschuwt voor een 'investeringsgat'. De private sector kan door coronacrisis veel minder bijdragen.",
-        readingTime: 5,
-    },
-    {
         id: '1343823a',
         url: 'https://fd.nl/economie-politiek/1343823/vvd-botst-met-kabinet-en-coalitie-over-steuneisen-klm',
         label: 'Politiek',
+        imageUrl:
+            'https://fd-internal-development.imgix.net/XSsvNsfpytwq-OQdMRmsCm7J1i8.jpg?auto=format',
         time: '12:49',
         title: 'VVD botst met kabinet en coalitie over steuneisen KLM',
         intro: "Liberalen hekelen duurzaamheidsvoorwaarden. 'Het is een reddingsoperatie, geen strafexpeditie', vindt Tweede Kamerlid Roald van der Linde.",
@@ -40,7 +35,8 @@ const horizontalCards4: any = [
 ];
 
 export const metaTitle = 'Horizontal Card 4';
-export const metaDescription = 'Horizontal Card 4, used in the search results';
+export const metaDescription =
+    'Horizontal Card 4, used in "Mijn nieuws" and "Net binnen"';
 
 function Page() {
     return (
@@ -60,22 +56,17 @@ function Page() {
             </Head>
 
             <Explain
-                previewClassName={`${styles.horizontalGrid} grid`}
+                previewClassName={`${styles.horizontalGrid} ${styles.autoMinHeight} grid`}
                 anchor="horizontal4"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Horizontal Card 4"
                 reactComponentName="HorizontalCard4"
                 description={
                     <>
-                        <p>
-                            Used in the search results. Note that the difference
-                            with the Horizontal Card 2 is that it supports
-                            `printTitle`.
-                        </p>
+                        <p>Used on 'Mijn nieuws' and 'Net binnen'</p>
                         <ul>
                             <li>default</li>
-                            <li>with print title</li>
-                            <li>visited</li>
+                            <li>Visited</li>
                         </ul>
                     </>
                 }
@@ -83,15 +74,31 @@ function Page() {
                 <>
                     <HorizontalCard4
                         className="xs-12"
+                        imageComponent={
+                            <FdImgix
+                                src={horizontalCards4[0].imageUrl}
+                                imageSizes={{
+                                    widthS: '160px',
+                                    widthM: '244px',
+                                    widthL: '244px',
+                                }}
+                            />
+                        }
                         {...horizontalCards4[0]}
                     />
                     <HorizontalCard4
                         className="xs-12"
+                        imageComponent={
+                            <FdImgix
+                                src={horizontalCards4[1].imageUrl}
+                                imageSizes={{
+                                    widthS: '160px',
+                                    widthM: '244px',
+                                    widthL: '244px',
+                                }}
+                            />
+                        }
                         {...horizontalCards4[1]}
-                    />
-                    <HorizontalCard4
-                        className="xs-12"
-                        {...horizontalCards4[2]}
                     />
                 </>
             </Explain>

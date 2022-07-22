@@ -8,6 +8,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
 import styles from './cards.module.scss';
+import { FdImgix } from '../../src/components/utils/image/fdImgix';
 
 const horizontalCards1: any = [
     {
@@ -103,11 +104,9 @@ function Page() {
                         className="xs-12"
                         {...horizontalCards1[0]}
                         imageComponent={
-                            <Image
+                            <FdImgix
                                 src={horizontalCards1[0].imageUrl}
-                                alt={horizontalCards1[0].title}
-                                layout="fill"
-                                objectFit="cover"
+                                imageSizes={{ widthS: '300px' }}
                             />
                         }
                     />
@@ -115,11 +114,9 @@ function Page() {
                         className="xs-12"
                         {...horizontalCards1[1]}
                         imageComponent={
-                            <Image
+                            <FdImgix
                                 src={horizontalCards1[1].imageUrl}
-                                alt={horizontalCards1[1].title}
-                                layout="fill"
-                                objectFit="cover"
+                                imageSizes={{ widthS: '300px' }}
                             />
                         }
                     />
@@ -127,11 +124,9 @@ function Page() {
                         className="xs-12"
                         {...horizontalCards1[2]}
                         imageComponent={
-                            <Image
+                            <FdImgix
                                 src={horizontalCards1[2].imageUrl}
-                                alt={horizontalCards1[2].title}
-                                layout="fill"
-                                objectFit="cover"
+                                imageSizes={{ widthS: '300px' }}
                             />
                         }
                     />
