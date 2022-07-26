@@ -32,6 +32,7 @@
         "start": "next start",
         "test": "jest --passWithNoTests",
         "test:updateSnapshots": "jest -u --passWithNoTests",
+        "test:watch": "jest --watch",
         "typedoc": "typedoc",
         "vc:rm": "vc rm fd-design-system --safe --yes",
         "webpack:prod": "cross-env NODE_ENV=production webpack --mode=production",

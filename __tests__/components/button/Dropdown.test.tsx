@@ -60,7 +60,7 @@ describe('Dropdown', () => {
         const { container } = render(<Dropdown>Knopje</Dropdown>);
         console.log(container.firstElementChild.classList);
         // expect(
-        //     container.firstElementChild.classList.contains(
+        //     container?.firstElementChild?.classList.contains(
         //         getCssClassNames()[0]
         //     )
         // ).toBeTruthy();

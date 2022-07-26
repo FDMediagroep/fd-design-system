@@ -40,7 +40,7 @@ describe('ButtonCta', () => {
         const { container } = render(<ButtonCta>Knopje</ButtonCta>);
 
         expect(
-            container.firstElementChild.classList.contains(
+            container?.firstElementChild?.classList.contains(
                 getCssClassNames()[0]
             )
         ).toBeTruthy();

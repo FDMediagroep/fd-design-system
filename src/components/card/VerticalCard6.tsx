@@ -6,9 +6,7 @@ interface Props {
     url: string;
     imageComponent?: JSX.Element;
     caption?: string;
-    time?: string;
     title: string;
-    isRead?: boolean;
     [x: string]: any;
 }
 

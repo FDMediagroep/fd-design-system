@@ -5,10 +5,9 @@ import {
     getCssClassNames,
 } from '../../src/components/card/HorizontalCard1';
 import Head from 'next/head';
-import Image from 'next/image';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
 import styles from './cards.module.scss';
-import { FdImgix } from '../../src/components/utils/image/fdImgix';
+import { FdImgix } from '../../src/components/utils/image/FdImgix';
 
 const horizontalCards1: any = [
     {

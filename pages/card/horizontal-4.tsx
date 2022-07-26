@@ -7,7 +7,7 @@ import {
     HorizontalCard4,
     getCssClassNames,
 } from '../../src/components/card/HorizontalCard4';
-import { FdImgix } from '../../src/components/utils/image/fdImgix';
+import { FdImgix } from '../../src/components/utils/image/FdImgix';
 
 const horizontalCards4: any = [
     {

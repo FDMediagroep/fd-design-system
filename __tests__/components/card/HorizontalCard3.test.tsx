@@ -1,9 +1,9 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import {
     HorizontalCard3,
     getCssClassNames,
 } from '../../../src/components/card/HorizontalCard3';
-import { render } from '@testing-library/react';
 
 describe('HorizontalCard3', () => {
     test('should render correctly', () => {
@@ -25,7 +25,7 @@ describe('HorizontalCard3', () => {
         expect(getByText('‘This is the print title’')).toBeTruthy();
         expect(getByText('Ondernemen')).toBeTruthy();
         expect(getByText('11:50')).toBeTruthy();
-        expect(container.querySelector('[href]').getAttribute('href')).toBe(
+        expect(container.querySelector('[href]')?.getAttribute('href')).toBe(
             'https://example.com/1/This is the title'
         );
     });
@@ -58,7 +58,7 @@ describe('HorizontalCard3', () => {
         );
 
         expect(
-            container.firstElementChild.classList.contains(
+            container?.firstElementChild?.classList.contains(
                 getCssClassNames()[0]
             )
         ).toBeTruthy();

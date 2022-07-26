@@ -7,7 +7,7 @@ import {
     HybridCard4,
     getCssClassNames,
 } from '../../src/components/card/HybridCard4';
-import { FdImgix } from '../../src/components/utils/image/fdImgix';
+import { FdImgix } from '../../src/components/utils/image/FdImgix';
 
 const hybridCards4: any = [
     {

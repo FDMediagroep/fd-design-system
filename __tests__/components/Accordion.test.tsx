@@ -178,7 +178,7 @@ describe('Accordion', () => {
         const { container } = render(<Accordion items={items} />);
 
         expect(
-            container.firstElementChild.classList.contains(
+            container?.firstElementChild?.classList.contains(
                 getCssClassNames()[0]
             )
         ).toBeTruthy();

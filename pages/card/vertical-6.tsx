@@ -6,7 +6,7 @@ import {
     getCssClassNames,
     VerticalCard6,
 } from '../../src/components/card/VerticalCard6';
-import { FdImgix } from '../../src/components/utils/image/fdImgix';
+import { FdImgix } from '../../src/components/utils/image/FdImgix';
 
 const verticalCards6: any = [
     {
