@@ -68,7 +68,7 @@ describe('HorizontalCard1', () => {
         );
 
         expect(
-            container?.firstElementChild?.classList.contains(
+            container.firstElementChild?.classList.contains(
                 getCssClassNames()[0]
             )
         ).toBeTruthy();

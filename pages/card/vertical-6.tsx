@@ -21,7 +21,8 @@ const verticalCards6: any = [
 ];
 
 export const metaTitle = 'Vertical Card 6';
-export const metaDescription = 'Vertical Card 6, used on the homepage';
+export const metaDescription =
+    'Vertical (special) Card 6, used on the homepage';
 
 function Page() {
     return (

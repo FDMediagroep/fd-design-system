@@ -17,11 +17,11 @@ exports[`HorizontalCard3 should render is-read correctly 1`] = `
         <div
           class="meta xs__m-0 xs__mb+2"
         >
-          <span
+          <div
             class="prefix"
           >
             Ondernemen
-          </span>
+          </div>
           <time>
             11:50
           </time>

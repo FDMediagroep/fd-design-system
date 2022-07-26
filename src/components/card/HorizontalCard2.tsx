@@ -28,7 +28,7 @@ function HorizontalCard2(props: Props) {
             <a className="xs__p+4" href={props.url} aria-label={props.title}>
                 <div className={styles.teaserText}>
                     <div className={`${styles.meta} xs__m-0 xs__mb+2`}>
-                        <span className={styles.prefix}>{props.label}</span>
+                        <div className={styles.prefix}>{props.label}</div>
 
                         <time>{props.time}</time>
                     </div>

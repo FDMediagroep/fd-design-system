@@ -30,6 +30,7 @@
         display: flex;
         flex-direction: row;
         text-decoration: none;
+        min-width: 0;
         &:hover {
             h1 {
                 text-decoration: underline;
@@ -95,29 +96,29 @@
     .teaserText {
         position: relative;
         flex: 1;
+        min-width: 0;
         .meta {
             font-family: 'ProximaNovaBold', sans-serif;
-            position: inherit;
-            top: auto;
-            left: auto;
-            right: auto;
             display: flex;
             justify-content: space-between;
             font-size: 0.8125rem;
-            @media screen and (min-width: 641px) {
-                font-size: 0.9375rem;
-            }
-
             .prefix {
+                display: block;
                 text-transform: uppercase;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
                 color: #{map-deep-get($colors, 'colors', 'primary', 75)};
                 background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
                 letter-spacing: 1px;
             }
-
             time {
                 color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
                 white-space: nowrap;
+                margin-left: 0.5rem;
+            }
+            @media screen and (min-width: 641px) {
+                font-size: 0.9375rem;
             }
         }
 

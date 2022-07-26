@@ -21,7 +21,7 @@ const horizontalCards4: any = [
         intro: 'Ondanks een op het eerste gezicht veel gevaarlijker levensstijl, verschilt de levensverwachting van Libanezen nog maar drie jaar met die van ons.',
     },
     {
-        id: '1343823a',
+        id: '1343823b',
         url: 'https://fd.nl/economie-politiek/1343823/vvd-botst-met-kabinet-en-coalitie-over-steuneisen-klm',
         label: 'Politiek',
         imageUrl:
@@ -30,13 +30,21 @@ const horizontalCards4: any = [
         title: 'VVD botst met kabinet en coalitie over steuneisen KLM',
         intro: "Liberalen hekelen duurzaamheidsvoorwaarden. 'Het is een reddingsoperatie, geen strafexpeditie', vindt Tweede Kamerlid Roald van der Linde.",
         isRead: true,
-        readingTime: 7,
+    },
+    {
+        id: '1343823c',
+        url: 'https://fd.nl/economie-politiek/1343823/vvd-botst-met-kabinet-en-coalitie-over-steuneisen-klm',
+        label: 'Politiek',
+        time: '12:49',
+        title: 'VVD botst met kabinet en coalitie over steuneisen KLM',
+        intro: "Liberalen hekelen duurzaamheidsvoorwaarden. 'Het is een reddingsoperatie, geen strafexpeditie', vindt Tweede Kamerlid Roald van der Linde.",
+        isRead: false,
     },
 ];
 
 export const metaTitle = 'Horizontal Card 4';
 export const metaDescription =
-    'Horizontal Card 4, used in "Mijn nieuws" and "Net binnen"';
+    'Horizontal (special) Card 4, used in "Mijn nieuws" and "Net binnen"';
 
 function Page() {
     return (
@@ -67,6 +75,7 @@ function Page() {
                         <ul>
                             <li>default</li>
                             <li>Visited</li>
+                            <li>Without an image</li>
                         </ul>
                     </>
                 }
@@ -99,6 +108,10 @@ function Page() {
                             />
                         }
                         {...horizontalCards4[1]}
+                    />
+                    <HorizontalCard4
+                        className="xs-12"
+                        {...horizontalCards4[2]}
                     />
                 </>
             </Explain>

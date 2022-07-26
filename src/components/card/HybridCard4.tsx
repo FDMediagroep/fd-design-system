@@ -4,11 +4,10 @@ import styles from './HybridCard4.module.scss';
 interface Props {
     id: string;
     url: string;
+    label: string;
     imageComponent?: JSX.Element;
     caption?: string;
-    time?: string;
     title: string;
-    isRead?: boolean;
     [x: string]: any;
 }
 
@@ -22,7 +21,7 @@ function HybridCard4(props: Props) {
             style={props.style}
             className={`${styles.hybridCard4}${
                 props.className ? ` ${props.className}` : ''
-            } ${props.isRead ? ` ${styles.isRead}` : ''} xs__p+4 s__p-0`}
+            } xs__p+4 s__p-0`}
             id={props.id}
         >
             <a href={props.url} aria-label={props.title}>

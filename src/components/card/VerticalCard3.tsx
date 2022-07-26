@@ -38,7 +38,7 @@ function VerticalCard3(props: Props) {
                 <div className={styles.cardContent}>
                     <div className={styles.textContent}>
                         <div className={styles.meta}>
-                            <span className={styles.prefix}>{props.label}</span>
+                            <div className={styles.prefix}>{props.label}</div>
                         </div>
 
                         <div className={styles.teaserText}>

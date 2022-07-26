@@ -3,12 +3,12 @@
 exports[`HybridCard2 should render is-read correctly 1`] = `
 <div>
   <article
-    class="hybridCard2 isRead xs__p+4"
+    class="hybridCard2 isRead"
     id="1"
   >
     <a
       aria-label="This is the title"
-      class="s__p-0 s__p+4"
+      class="xs__p+4"
       href="https://example.com/1/This is the title"
     >
       <figure
@@ -40,11 +40,11 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
         <div
           class="meta xs__mb+2"
         >
-          <span
+          <div
             class="prefix"
           >
             Ondernemen
-          </span>
+          </div>
         </div>
         <div
           class="textContainer"
@@ -64,13 +64,13 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
 exports[`HybridCard2 should render variant-1 correctly 1`] = `
 <div>
   <article
-    class="hybridCard2 xs__p+4"
+    class="hybridCard2"
     data-variant="variant-1"
     id="1"
   >
     <a
       aria-label="This is the title"
-      class="s__p-0 s__p+4"
+      class="xs__p+4"
       href="https://example.com/1/This is the title"
     >
       <figure
@@ -102,11 +102,11 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
         <div
           class="meta xs__mb+2"
         >
-          <span
+          <div
             class="prefix"
           >
             Ondernemen
-          </span>
+          </div>
         </div>
         <div
           class="textContainer"

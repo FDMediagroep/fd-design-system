@@ -28,13 +28,18 @@ const hybridCards4: any = [
             'https://fd-internal-development.imgix.net/XSsvNsfpytwq-OQdMRmsCm7J1i8.jpg?auto=format',
         url: 'https://fd.nl/profiel/1345186/deloitte-krijgt-met-rianne-jans-een-onverstoorbare-cfo-in-huis',
         intro: `Na een kortstondig avontuur bij het ruziënde Centric vindt financieel bestuurder Rianne Jans onderdak bij accountants. `,
-        time: '11:20',
-        isRead: true,
+    },
+    {
+        id: '1345186',
+        label: 'Markten',
+        title: `Deloitte krijgt met Rianne Jans een onverstoorbare cfo in huis`,
+        url: 'https://fd.nl/profiel/1345186/deloitte-krijgt-met-rianne-jans-een-onverstoorbare-cfo-in-huis',
+        intro: `Na een kortstondig avontuur bij het ruziënde Centric vindt financieel bestuurder Rianne Jans onderdak bij accountants. `,
     },
 ];
 
 export const metaTitle = 'Hybrid Card 4';
-export const metaDescription = 'Hybrid Card 4, special card on home';
+export const metaDescription = 'Hybrid (special) Card 4, special card on home';
 
 function Page() {
     return (
@@ -64,27 +69,13 @@ function Page() {
                         <p>Special card on home</p>
                         <ul>
                             <li>default</li>
+                            <li>Without an image</li>
                         </ul>
                     </>
                 }
             >
                 <>
-                    <div className="xs-12 s-6 gap-1 gap-bottom full-heightt">
-                        <HybridCard4
-                            {...hybridCards4[0]}
-                            imageComponent={
-                                <FdImgix
-                                    src={hybridCards4[0].imageUrl}
-                                    imageSizes={{
-                                        widthS: '300px',
-                                        widthM: '351px',
-                                        widthL: '599px',
-                                    }}
-                                />
-                            }
-                        />
-                    </div>
-                    <div className="xs-12 s-6 gap-1 gap-bottom full-heightt">
+                    <div className="xs-12 s-6 gap-1 gap-bottom full-height">
                         <HybridCard4
                             {...hybridCards4[1]}
                             imageComponent={
@@ -98,6 +89,9 @@ function Page() {
                                 />
                             }
                         />
+                    </div>
+                    <div className="xs-12 s-6 gap-1 gap-bottom full-height">
+                        <HybridCard4 {...hybridCards4[2]} />
                     </div>
                 </>
             </Explain>

@@ -47,11 +47,11 @@ function VerticalCard6(props: Props) {
                     className={`${styles.teaserText}  xs__p+4 m__p-0 xs__p+2 m__p+4`}
                 >
                     {props.label && (
-                        <span
+                        <div
                             className={`${styles.prefix} xs__p+1 s__p+2 xs__mb+2`}
                         >
                             {props.label}
-                        </span>
+                        </div>
                     )}
                     <h1 className="heading serif s xs__m-0">{props.title}</h1>
                 </div>

@@ -55,7 +55,7 @@ function HorizontalCard1(props: Props) {
 
                 <div className={`${styles.teaserText} xs__pl+4 s__p+4`}>
                     <div className={`${styles.meta} xs__m-0 xs__mb+2`}>
-                        <span className={styles.prefix}>{props.label}</span>
+                        <div className={styles.prefix}>{props.label}</div>
                         <time>{props.time}</time>
                     </div>
 
