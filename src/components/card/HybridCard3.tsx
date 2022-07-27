@@ -62,7 +62,7 @@ function HybridCard3(props: Props) {
 
                 <div className={`${styles.teaserText} xs__p+4 s__pr+6 s__pl+6`}>
                     <div className={`${styles.meta} xs__m-0 xs__mb+2`}>
-                        <div className={styles.breaking}>Breaking</div>
+                        <span className={styles.breaking}>Breaking</span>
 
                         {props.time && <time>{props.time}</time>}
                     </div>

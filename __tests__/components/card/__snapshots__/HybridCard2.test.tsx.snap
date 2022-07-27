@@ -40,11 +40,11 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
         <div
           class="meta xs__mb+2"
         >
-          <div
+          <span
             class="prefix"
           >
             Ondernemen
-          </div>
+          </span>
         </div>
         <div
           class="textContainer"
@@ -102,11 +102,11 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
         <div
           class="meta xs__mb+2"
         >
-          <div
+          <span
             class="prefix"
           >
             Ondernemen
-          </div>
+          </span>
         </div>
         <div
           class="textContainer"

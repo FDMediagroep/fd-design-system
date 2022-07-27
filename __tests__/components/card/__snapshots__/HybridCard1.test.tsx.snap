@@ -30,11 +30,11 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
         <div
           class="meta xs__mb+2"
         >
-          <div
+          <span
             class="prefix"
           >
             Ondernemen
-          </div>
+          </span>
         </div>
         <div
           class="textContainer"
@@ -86,11 +86,11 @@ exports[`HybridCard1 should render themes correctly 1`] = `
         <div
           class="meta xs__mb+2"
         >
-          <div
+          <span
             class="prefix"
           >
             Ondernemen
-          </div>
+          </span>
         </div>
         <div
           class="textContainer"
@@ -142,11 +142,11 @@ exports[`HybridCard1 should render themes correctly 2`] = `
         <div
           class="meta xs__mb+2"
         >
-          <div
+          <span
             class="prefix"
           >
             Ondernemen
-          </div>
+          </span>
         </div>
         <div
           class="textContainer"
@@ -198,11 +198,11 @@ exports[`HybridCard1 should render themes correctly 3`] = `
         <div
           class="meta xs__mb+2"
         >
-          <div
+          <span
             class="prefix"
           >
             Ondernemen
-          </div>
+          </span>
         </div>
         <div
           class="textContainer"
@@ -254,11 +254,11 @@ exports[`HybridCard1 should render themes correctly 4`] = `
         <div
           class="meta xs__mb+2"
         >
-          <div
+          <span
             class="prefix"
           >
             Ondernemen
-          </div>
+          </span>
         </div>
         <div
           class="textContainer"
@@ -310,11 +310,11 @@ exports[`HybridCard1 should render themes correctly 5`] = `
         <div
           class="meta xs__mb+2"
         >
-          <div
+          <span
             class="prefix"
           >
             Ondernemen
-          </div>
+          </span>
         </div>
         <div
           class="textContainer"
@@ -366,11 +366,11 @@ exports[`HybridCard1 should render themes correctly 6`] = `
         <div
           class="meta xs__mb+2"
         >
-          <div
+          <span
             class="prefix"
           >
             Ondernemen
-          </div>
+          </span>
         </div>
         <div
           class="textContainer"
@@ -422,11 +422,11 @@ exports[`HybridCard1 should render themes correctly 7`] = `
         <div
           class="meta xs__mb+2"
         >
-          <div
+          <span
             class="prefix"
           >
             Ondernemen
-          </div>
+          </span>
         </div>
         <div
           class="textContainer"
@@ -478,11 +478,11 @@ exports[`HybridCard1 should render themes correctly 8`] = `
         <div
           class="meta xs__mb+2"
         >
-          <div
+          <span
             class="prefix"
           >
             Ondernemen
-          </div>
+          </span>
         </div>
         <div
           class="textContainer"
@@ -535,11 +535,11 @@ exports[`HybridCard1 should render variant-1 correctly 1`] = `
         <div
           class="meta xs__mb+2"
         >
-          <div
+          <span
             class="prefix"
           >
             Ondernemen
-          </div>
+          </span>
         </div>
         <div
           class="textContainer"

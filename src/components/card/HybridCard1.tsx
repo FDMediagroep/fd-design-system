@@ -75,7 +75,7 @@ function HybridCard1(props: Props) {
                     className={`${styles.teaserText}  xs__pl+4 s__pr-0 s__pb-0 s__pl-0`}
                 >
                     <div className={`${styles.meta} xs__mb+2`}>
-                        <div className={styles.prefix}>{props.label}</div>
+                        <span className={styles.prefix}>{props.label}</span>
                     </div>
 
                     <div className={styles.textContainer}>
