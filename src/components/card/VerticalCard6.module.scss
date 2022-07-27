@@ -11,11 +11,6 @@
     display: flex;
     height: 100%;
     background: #{map-deep-get($colors, 'colors', 'primary', 75)};
-
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-    }
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
 
     > a {
@@ -30,15 +25,8 @@
         }
     }
 
-    .figure.empty img {
-        max-width: 100%;
-    }
     figure,
     .figure.empty {
-        display: flex;
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
         min-height: 26.25rem;
         img {
             width: 100%;
@@ -54,6 +42,10 @@
         figcaption {
             display: none;
         }
+    }
+
+    .figure.empty img {
+        object-fit: none;
     }
 
     .prefix {
@@ -86,23 +78,10 @@
     &:focus:not(:active),
     &:hover:not(:active) {
         box-shadow: var(--card-box-shadow);
-        //background-color: var(--card-hover);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-        }
         z-index: 1;
     }
     &:active {
         z-index: 1;
         outline: 2px solid var(--card-outline-active);
-        //background-color: var(--card-active);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-        }
     }
 }
