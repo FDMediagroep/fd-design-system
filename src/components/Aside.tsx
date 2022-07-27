@@ -909,6 +909,23 @@ function Aside(props: Props) {
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
+                            <Link href="/card/horizontal-4">
+                                <a
+                                    data-ga-name="menu_click"
+                                    data-ga-category="user interactions"
+                                    data-ga-action="menu click"
+                                    data-ga-label="/card/horizontal-4"
+                                    onClick={handleNavigation}
+                                >
+                                    <span className="heading sans xxs">
+                                        Horizontal 4
+                                    </span>
+                                </a>
+                            </Link>
+                        </li>
+                        <li
+                            className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
+                        >
                             <Link href="/card/hybrid-1">
                                 <a
                                     data-ga-name="menu_click"
@@ -953,6 +970,23 @@ function Aside(props: Props) {
                                 >
                                     <span className="heading sans xxs">
                                         Hybrid 3
+                                    </span>
+                                </a>
+                            </Link>
+                        </li>
+                        <li
+                            className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
+                        >
+                            <Link href="/card/hybrid-4">
+                                <a
+                                    data-ga-name="menu_click"
+                                    data-ga-category="user interactions"
+                                    data-ga-action="menu click"
+                                    data-ga-label="/card/hybrid-4"
+                                    onClick={handleNavigation}
+                                >
+                                    <span className="heading sans xxs">
+                                        Hybrid 4
                                     </span>
                                 </a>
                             </Link>
@@ -1038,6 +1072,23 @@ function Aside(props: Props) {
                                 >
                                     <span className="heading sans xxs">
                                         Vertical 5
+                                    </span>
+                                </a>
+                            </Link>
+                        </li>
+                        <li
+                            className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
+                        >
+                            <Link href="/card/vertical-6">
+                                <a
+                                    data-ga-name="menu_click"
+                                    data-ga-category="user interactions"
+                                    data-ga-action="menu click"
+                                    data-ga-label="/card/vertical-6"
+                                    onClick={handleNavigation}
+                                >
+                                    <span className="heading sans xxs">
+                                        Vertical 6
                                     </span>
                                 </a>
                             </Link>

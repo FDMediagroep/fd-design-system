@@ -30,7 +30,6 @@ function HorizontalCard3(props: Props) {
                 <div className={styles.teaserText}>
                     <div className={`${styles.meta} xs__m-0 xs__mb+2`}>
                         <span className={styles.prefix}>{props.label}</span>
-
                         <time>{props.time}</time>
                     </div>
 
