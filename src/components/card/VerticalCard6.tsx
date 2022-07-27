@@ -37,7 +37,7 @@ function VerticalCard6(props: Props) {
                 )}
                 {!props.imageUrl && !props.imageComponent && (
                     <div
-                        className={`${styles.figure} ${styles.empty} xs__m-0 s__mt-4 s__mr-4 s__mb-0 s__ml-4`}
+                        className={`${styles.figure} ${styles.empty} xs__m-0 s__mt-4 s__mb-0`}
                     >
                         <img src="/assets/images/fd-logo.svg" alt="FD-Logo" />
                     </div>

@@ -18,6 +18,13 @@ const verticalCards6: any = [
         url: 'https://fd.nl/economie-politiek/1345422/lockdown-leidt-tot-recordstijging-aantal-ww-uitkeringen-in-april',
         readingTime: 11,
     },
+    {
+        id: '1345422a',
+        label: 'Arbeidsmarkt',
+        title: 'Lockdown leidt tot recordstijging aantal WW-uitkeringen in april',
+        url: 'https://fd.nl/economie-politiek/1345422/lockdown-leidt-tot-recordstijging-aantal-ww-uitkeringen-in-april',
+        readingTime: 11,
+    },
 ];
 
 export const metaTitle = 'Vertical Card 6';
@@ -67,6 +74,10 @@ function Page() {
                             />
                         }
                         {...verticalCards6[0]}
+                    />
+                    <VerticalCard6
+                        className="xs-12 s-6 m-4 l-3"
+                        {...verticalCards6[1]}
                     />
                 </>
             </Explain>
