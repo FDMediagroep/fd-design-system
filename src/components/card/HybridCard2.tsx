@@ -7,6 +7,10 @@ interface Props {
     id: string;
     url: string;
     caption?: string;
+    imageUrl?: string;
+    imageUrlS?: string;
+    imageUrlM?: string;
+    imageUrlL?: string;
     label: string;
     isRead?: boolean;
     title: string;
