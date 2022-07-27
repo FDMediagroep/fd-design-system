@@ -12,7 +12,7 @@ interface Props {
 }
 
 /**
- * Used as breaking.
+ * Used as Special hybrid card
  * @param props
  */
 function HybridCard4(props: Props) {

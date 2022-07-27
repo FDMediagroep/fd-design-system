@@ -6,7 +6,6 @@ export type Variants = 'default' | 'variant-1';
 interface Props {
     id: string;
     url: string;
-    imageComponent?: JSX.Element;
     caption?: string;
     label: string;
     isRead?: boolean;
