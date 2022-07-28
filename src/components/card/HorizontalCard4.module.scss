@@ -122,12 +122,7 @@
     }
 
     &.isRead:not(:hover):not(:active) {
-        @media (prefers-color-scheme: dark) {
-            opacity: var(--card-visited-opacity);
-        }
-        @media (prefers-color-scheme: light) {
-            opacity: var(--card-visited-opacity);
-        }
+        opacity: var(--card-visited-opacity);
     }
 
     &:focus:not(:active),
