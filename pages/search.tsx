@@ -80,6 +80,10 @@ import {
     metaDescription as horizontalCard3Description,
 } from './card/horizontal-3';
 import {
+    metaTitle as horizontalCard4Title,
+    metaDescription as horizontalCard4Description,
+} from './card/horizontal-4';
+import {
     metaTitle as hybridCard1Title,
     metaDescription as hybridCard1Description,
 } from './card/hybrid-1';
@@ -91,6 +95,10 @@ import {
     metaTitle as hybridCard3Title,
     metaDescription as hybridCard3Description,
 } from './card/hybrid-3';
+import {
+    metaTitle as hybridCard4Title,
+    metaDescription as hybridCard4Description,
+} from './card/hybrid-4';
 import {
     metaTitle as verticalCard1Title,
     metaDescription as verticalCard1Description,
@@ -111,6 +119,10 @@ import {
     metaTitle as verticalCard5Title,
     metaDescription as verticalCard5Description,
 } from './card/vertical-5';
+import {
+    metaTitle as verticalCard6Title,
+    metaDescription as verticalCard6Description,
+} from './card/vertical-6';
 import {
     metaTitle as cookieconsentTitle,
     metaDescription as cookieconsentDescription,
@@ -290,6 +302,10 @@ const searchIndex: SearchIndex = {
         title: horizontalCard3Title,
         description: horizontalCard3Description,
     },
+    '/card/horizontal-4': {
+        title: horizontalCard4Title,
+        description: horizontalCard4Description,
+    },
     '/card/hybrid-1': {
         title: hybridCard1Title,
         description: hybridCard1Description,
@@ -301,6 +317,10 @@ const searchIndex: SearchIndex = {
     '/card/hybrid-3': {
         title: hybridCard3Title,
         description: hybridCard3Description,
+    },
+    '/card/hybrid-4': {
+        title: hybridCard4Title,
+        description: hybridCard4Description,
     },
     '/card/vertical-1': {
         title: verticalCard1Title,
@@ -321,6 +341,10 @@ const searchIndex: SearchIndex = {
     '/card/vertical-5': {
         title: verticalCard5Title,
         description: verticalCard5Description,
+    },
+    '/card/vertical-6': {
+        title: verticalCard6Title,
+        description: verticalCard6Description,
     },
     '/cookieconsent': {
         title: cookieconsentTitle,
