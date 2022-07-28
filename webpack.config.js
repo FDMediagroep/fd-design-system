@@ -145,6 +145,9 @@ module.exports = {
         '/components/card/HorizontalCard3': [
             './src/components/card/HorizontalCard3.tsx',
         ],
+        '/components/card/HorizontalCard4': [
+            './src/components/card/HorizontalCard4.tsx',
+        ],
         '/components/card/HybridCard1': [
             './src/components/card/HybridCard1.tsx',
         ],
@@ -153,6 +156,9 @@ module.exports = {
         ],
         '/components/card/HybridCard3': [
             './src/components/card/HybridCard3.tsx',
+        ],
+        '/components/card/HybridCard4': [
+            './src/components/card/HybridCard4.tsx',
         ],
         '/components/card/LinkCard': ['./src/components/card/LinkCard.tsx'],
         '/components/card/VerticalCard1': [
@@ -169,6 +175,9 @@ module.exports = {
         ],
         '/components/card/VerticalCard5': [
             './src/components/card/VerticalCard5.tsx',
+        ],
+        '/components/card/VerticalCard6': [
+            './src/components/card/VerticalCard6.tsx',
         ],
 
         // Design Tokens
@@ -211,6 +220,9 @@ module.exports = {
             './src/components/cookieconsent/CookieConsent.tsx',
         ],
         '/components/footer/Footer': ['./src/components/footer/Footer.tsx'],
+        '/components/utils/image/FdImgix': [
+            './src/components/utils/image/FdImgix.tsx',
+        ],
         '/components/cookieconsent/ResponderApi': [
             './src/components/cookieconsent/ResponderApi.ts',
         ],

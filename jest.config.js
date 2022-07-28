@@ -15,7 +15,7 @@ const customJestConfig = {
     moduleNameMapper: {
         '\\.(css|less|scss|sss|styl)$': 'identity-obj-proxy',
     },
-    setupFiles: ['<rootDir>/jest/setupTest.js'],
+    setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
     testEnvironment: 'jest-environment-jsdom',
     transform: {
         '\\.svg$': './jest/transformers/raw-loader.js',

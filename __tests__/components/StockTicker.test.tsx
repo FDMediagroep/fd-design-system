@@ -65,12 +65,12 @@ describe('StockTicker', () => {
         );
 
         expect(
-            container.firstElementChild.classList.contains(
+            container.firstElementChild?.classList.contains(
                 getCssClassNames()[0]
             )
         ).toBeTruthy();
         expect(
-            container.firstElementChild.classList.contains('test-class')
+            container.firstElementChild?.classList.contains('test-class')
         ).toBeTruthy();
     });
 });

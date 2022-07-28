@@ -262,7 +262,7 @@
             box-sizing: border-box;
             height: 100%;
             width: 100%;
-            @media screen and (max-width: 640px - 0.02px) {
+            @media screen and (max-width: (640px - 0.02px)) {
                 background-color: var(--navigation-background);
                 // IE11
                 @media screen and (-ms-high-contrast: active),
@@ -356,7 +356,7 @@
             }
 
             .aside-menu-button {
-                @media screen and (max-width: 640px - 0.02px) {
+                @media screen and (max-width: (640px - 0.02px)) {
                     padding-left: 0;
                 }
                 svg {
@@ -874,7 +874,7 @@
             background-color: black;
         }
     }
-    @media screen and (max-width: 640px - 0.02px) {
+    @media screen and (max-width: (640px - 0.02px)) {
         .mobile-header-background-overlay {
             display: block;
             position: fixed;
@@ -932,7 +932,7 @@
             }
         }
     }
-    @media screen and (max-width: 640px - 0.02px) {
+    @media screen and (max-width: (640px - 0.02px)) {
         .show-profile {
             .left-menu li > * {
                 z-index: 1;

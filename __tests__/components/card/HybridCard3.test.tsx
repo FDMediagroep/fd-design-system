@@ -17,7 +17,7 @@ describe('HybridCard3', () => {
 
         expect(getByText('This is the title')).toBeTruthy();
         expect(getByText('Breaking')).toBeTruthy();
-        expect(container.querySelector('[href]').getAttribute('href')).toBe(
+        expect(container?.querySelector('[href]')?.getAttribute('href')).toBe(
             'https://example.com/1/This is the title'
         );
     });
@@ -33,7 +33,7 @@ describe('HybridCard3', () => {
         );
 
         expect(
-            container.firstElementChild.classList.contains(
+            container.firstElementChild?.classList?.contains(
                 getCssClassNames()[0]
             )
         ).toBeTruthy();

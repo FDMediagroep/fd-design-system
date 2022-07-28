@@ -6,11 +6,11 @@ export type Variants = 'default' | 'variant-1';
 interface Props {
     id: string;
     url: string;
+    caption?: string;
     imageUrl?: string;
     imageUrlS?: string;
     imageUrlM?: string;
     imageUrlL?: string;
-    caption?: string;
     label: string;
     isRead?: boolean;
     title: string;
@@ -31,14 +31,10 @@ function HybridCard2(props: Props) {
             data-variant={props.variant}
             className={`${styles.hybridCard2}${
                 props.className ? ` ${props.className}` : ''
-            }${props.isRead ? ` ${styles.isRead}` : ''} xs__p+4`}
+            }${props.isRead ? ` ${styles.isRead}` : ''}`}
             id={props.id}
         >
-            <a
-                className="s__p-0 s__p+4"
-                href={props.url}
-                aria-label={props.title}
-            >
+            <a className="xs__p+4" href={props.url} aria-label={props.title}>
                 {props.imageUrl && (
                     <figure className="xs__m-0 s__mt-4 s__mr-4 s__mb+3 s__ml-4">
                         <picture>

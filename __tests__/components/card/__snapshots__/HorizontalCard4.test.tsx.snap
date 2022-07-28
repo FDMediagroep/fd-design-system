@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HorizontalCard4 should render is-read correctly 1`] = `
+<div>
+  <article
+    class="fdHorizontalCard4 isRead xs__p+4"
+    id="1"
+  >
+    <a
+      aria-label="This is the title"
+      href="https://example.com/1/This is the title"
+    >
+      <figure
+        class="xs__m-0"
+      >
+        <img
+          class="image "
+          sizes="(min-width: 1080px) 244px, (min-width: 768px) 244px, 160px"
+          src="https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1"
+          srcset="https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=100 100w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=116 116w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=135 135w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=156 156w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=181 181w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=210 210w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=244 244w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=283 283w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=328 328w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=380 380w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=441 441w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=512 512w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=594 594w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=689 689w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=799 799w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=927 927w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=1075 1075w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=1247 1247w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=1446 1446w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=1678 1678w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=1946 1946w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=2257 2257w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=2619 2619w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=3038 3038w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=3524 3524w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=4087 4087w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=4741 4741w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=5500 5500w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=6380 6380w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=7401 7401w,
+https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1&w=8192 8192w"
+        />
+        <figcaption />
+      </figure>
+      <div
+        class="teaserText xs__pl+4 s__p+4 s__pt-0"
+      >
+        <div
+          class="meta xs__m-0 xs__mb+2"
+        >
+          <span
+            class="prefix  xs__p+1 s__p+2"
+          >
+            Ondernemen
+          </span>
+          <time>
+            11:40
+          </time>
+        </div>
+        <div
+          class="textContainer"
+        >
+          <h1
+            class="heading serif s xs__m-0"
+          >
+            This is the title
+          </h1>
+        </div>
+      </div>
+    </a>
+  </article>
+</div>
+`;

@@ -199,41 +199,7 @@
     }
 
     &.isRead:not(:hover):not(:active) {
-        figure {
-            filter: grayscale(1) sepia(0.15);
-        }
-        .meta .prefix,
-        .meta time,
-        .textContainer h1 {
-            color: var(--card-text-visited);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
-        }
-
-        .meta .update {
-            color: var(--card-label-text-visited);
-            background-color: var(--card-label-visited);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        40
-                    )};
-            }
-        }
-
-        background-color: var(--card-visited);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-        }
+        opacity: var(--card-visited-opacity);
     }
 
     &:focus:not(:active),

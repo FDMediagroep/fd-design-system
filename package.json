@@ -32,6 +32,7 @@
         "start": "next start",
         "test": "jest --passWithNoTests",
         "test:updateSnapshots": "jest -u --passWithNoTests",
+        "test:watch": "jest --watch",
         "typedoc": "typedoc",
         "vc:rm": "vc rm fd-design-system --safe --yes",
         "webpack:prod": "cross-env NODE_ENV=production webpack --mode=production",
@@ -56,6 +57,7 @@
         "@types/node": "^18.0.6",
         "@types/react": "^18.0.15",
         "@types/react-dom": "^18.0.6",
+        "@types/react-imgix": "^9.4.0",
         "autoprefixer": "^10.4.7",
         "copy-webpack-plugin": "^11.0.0",
         "copyfiles": "^2.4.1",
@@ -104,7 +106,8 @@
         "js-cookie": "^3.0.1",
         "next": "^12.2.2",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-imgix": "^9.5.1"
     },
     "browserslist": {
         "production": [

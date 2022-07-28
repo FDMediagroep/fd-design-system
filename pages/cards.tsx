@@ -56,7 +56,7 @@ function Page() {
                         <td>
                             <ul>
                                 <li>Latest news</li>
-                                <li>My News</li>
+                                <li>My news</li>
                             </ul>
                         </td>
                     </tr>
@@ -69,6 +69,19 @@ function Page() {
                         <td>
                             <ul>
                                 <li>Search</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <Link href="/card/horizontal-4">
+                                <a>Horizontal Card 4</a>
+                            </Link>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>My news</li>
+                                <li>Latest news</li>
                             </ul>
                         </td>
                     </tr>
@@ -105,6 +118,18 @@ function Page() {
                         <td>
                             <ul>
                                 <li>Breaking</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <Link href="/card/hybrid-4">
+                                <a>Hybrid Card 4</a>
+                            </Link>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Home</li>
                             </ul>
                         </td>
                     </tr>
@@ -165,6 +190,18 @@ function Page() {
                         <td>
                             <ul>
                                 <li>Podcasts overview</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <Link href="/card/vertical-6">
+                                <a>Vertical Card 6</a>
+                            </Link>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Home</li>
                             </ul>
                         </td>
                     </tr>

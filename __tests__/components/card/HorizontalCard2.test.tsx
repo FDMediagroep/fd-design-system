@@ -22,7 +22,7 @@ describe('HorizontalCard2', () => {
         expect(getByText('This is the intro of the card')).toBeTruthy();
         expect(getByText('Ondernemen')).toBeTruthy();
         expect(getByText('11:50')).toBeTruthy();
-        expect(container.querySelector('[href]').getAttribute('href')).toBe(
+        expect(container.querySelector('[href]')?.getAttribute('href')).toBe(
             'https://example.com/1/This is the title'
         );
     });
@@ -55,7 +55,7 @@ describe('HorizontalCard2', () => {
         );
 
         expect(
-            container.firstElementChild.classList.contains(
+            container.firstElementChild?.classList.contains(
                 getCssClassNames()[0]
             )
         ).toBeTruthy();
