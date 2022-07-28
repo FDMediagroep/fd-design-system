@@ -1192,6 +1192,50 @@ function Foo() {
 </details>
 
 <details>
+<summary>Horizontal Card 4</summary>
+
+[Demo](https://design-system.fd.nl/card/horizontal-4)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/card/HorizontalCard4.css";
+import "@fdmg/design-system/components/utils/image/FdImgix";
+```
+
+```
+import { HorizontalCard3 } from "@fdmg/design-system/components/card/HorizontalCard4";
+import { FdImgix } from '@fdmg/design-system/components/utils/image/FdImgix';
+
+function Foo() {
+    return (
+        <HorizontalCard4
+            className="xs-12"
+            imageComponent={
+                <FdImgix
+                    src="https://fd-internal-development.imgix.net/XSsvNsfpytwq-OQdMRmsCm7J1i8.jpg?auto=format"
+                    imageSizes={{
+                        widthS: '160px',
+                        widthM: '244px',
+                        widthL: '244px',
+                    }}
+                />
+            }
+            id="1343052a"
+            url="https://fd.nl/futures/1343052/levensgevaarlijk-libanon"
+            label="Omgekeerde kruistocht"
+            time="13:11"
+            title="Levensgevaarlijk Libanon"
+            intro="Ondanks een op het eerste gezicht veel gevaarlijker levensstijl, verschilt de levensverwachting van Libanezen nog maar drie jaar met die van ons."
+        />
+    );
+}
+```
+
+</details>
+
+<details>
 <summary>Hybrid Card 1</summary>
 
 [Demo](https://design-system.fd.nl/card/hybrid-1)
@@ -1305,6 +1349,48 @@ function Foo() {
             intro="Ondanks een op het eerste gezicht veel gevaarlijker levensstijl, verschilt de levensverwachting van Libanezen nog maar drie jaar met die van ons."
             bookmarked={false}
             onBookmark={handleBookmark}
+        />
+    );
+}
+```
+
+</details>
+
+<details>
+<summary>Hybrid Card 4</summary>
+
+[Demo](https://design-system.fd.nl/card/hybrid-4)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/card/HybridCard4.css";
+import "@fdmg/design-system/components/utils/image/FdImgix.css";
+```
+
+```
+import { HybridCard4 } from "@fdmg/design-system/components/card/HybridCard4";
+import { FdImgix } from '@fdmg/design-system/components/utils/image/FdImgix';
+
+function Foo() {
+    return (
+        <HybridCard4
+            id="1345386"
+            label="Markten"
+            title="Beleggers verwachten nieuwe klap op beurzen",
+            url="https://fd.nl/beurs/1345386/amerikaanse-technologiebeurs-nasdaq-wordt-mogelijk-strenger-dan-euronext"
+            intro: `Een tweede coronagolf staat bovenaan de lijst met zorgen van fondsmanagers, volgens een enquête van Bank of America.`,
+            imageComponent={
+                <FdImgix
+                    src="https://fd-internal-development.imgix.net/XSsvNsfpytwq-OQdMRmsCm7J1i8.jpg?auto=format"
+                    imageSizes={{
+                        widthS: '300px',
+                        widthM: '351px',
+                        widthL: '599px',
+                    }}
+                />
+            }
         />
     );
 }
@@ -1508,6 +1594,48 @@ function Foo() {
             imageUrlL="https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0637898686679174%2c.9999999999999999%2c.8442776735459663&fit=crop&crop=faces&auto=format&q=45&w=944&h=531"
             title="Den Haag zet druk op verhuurders om huurverlaging te slikken"
             intro="Het Rijk sluit overheidsingrijpen niet uit om een akkoord tussen verhuurders en winkeliers af te dwingen, nu onderhandelingen moeizaam verlopen."
+        />
+    );
+}
+```
+
+</details>
+
+<details>
+<summary>Vertical Card 6</summary>
+
+[Demo](https://design-system.fd.nl/card/vertical-6)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/card/VerticalCard6.css";
+import "@fdmg/design-system/components/utils/image/FdImgix.css";
+```
+
+```
+import { VerticalCard6 } from "@fdmg/design-system/components/card/VerticalCard6";
+import { FdImgix } from "@fdmg/design-system/components/utils/image/FdImgix";
+
+function Foo() {
+    return (
+        <VerticalCard6
+            className="xs-12 s-6 m-4 l-3"
+            imageComponent={
+                <FdImgix
+                    src={"https://fd-internal-development.imgix.net/XSsvNsfpytwq-OQdMRmsCm7J1i8.jpg?auto=format"}
+                    imageSizes={{
+                        widthS: '300px',
+                        widthM: '351px',
+                        widthL: '599px',
+                    }}
+                />
+            }
+            id="1345422"
+            label="Arbeidsmarkt"
+            title="Lockdown leidt tot recordstijging aantal WW-uitkeringen in april"
+            url="https://fd.nl/economie-politiek/1345422/lockdown-leidt-tot-recordstijging-aantal-ww-uitkeringen-in-april"
         />
     );
 }
