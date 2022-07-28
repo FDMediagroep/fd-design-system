@@ -20,6 +20,24 @@ jobs:
       run: |
         echo $RELEASE_VERSION
         echo ${{ env.RELEASE_VERSION }}
+    - name: Set Timezone
+      uses: szenius/set-timezone@v1.0
+      with:
+        timezoneLinux: "Europe/Amsterdam"
+        timezoneMacos: "Europe/Amsterdam"
+        timezoneWindows: "Europe/Amsterdam"
+    - name: Get current date
+      id: date
+      run: echo "CURRENT_DATETIME=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+    - name: Microsoft Teams
+      uses: aliencube/microsoft-teams-actions@v0.8.0
+      with:
+        webhook_uri: ${{secrets.TEAMS_WEBHOOK}}
+        title: New release - FD Design System ${{ env.RELEASE_VERSION }}
+        summary: New release FD Design System ${{ env.RELEASE_VERSION }} from commit ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}
+        theme_color: 'ffeadb'
+        sections: '[{ "activityTitle": "FD Design System", "facts": [ {"name": "When", "value": "${{ env.CURRENT_DATETIME }}" }, { "name": "Triggered by:", "value": "${{ github.actor }}" }, { "name": "Repository:", "value": "${{ github.repository }}" }, { "name": "Version:", "value": "${{ env.RELEASE_VERSION }}" } ] }]'
+        actions: '[{ "@type": "OpenUri", "name": "View job", "targets": [{ "os": "default", "uri": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" }] }, { "@type": "OpenUri", "name": "Changelog", "targets": [{ "os": "default", "uri": "${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ env.RELEASE_VERSION }}" }] }, { "@type": "OpenUri", "name": "Commit", "targets": [{ "os": "default", "uri": "${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}" }] }, { "@type": "OpenUri", "name": "GitHub", "targets": [{ "os": "default", "uri": "${{ github.server_url }}/${{ github.repository }}" }] }]'
     - name: Use Node.js (NPMJS) ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
