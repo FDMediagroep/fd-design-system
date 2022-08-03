@@ -5,10 +5,6 @@
 .title {
     margin: 2rem 0 1rem 0;
     color: var(--content-copy);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    }
 }
 
 .anchor {
@@ -19,54 +15,26 @@
         width: 1rem;
         height: 1rem;
         fill: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
     }
 }
 
 .previewContainer {
     border: 5px solid var(--dividers);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        border: 5px solid #{map-deep-get($colors, 'colors', 'neutral', 50)};
-        background-color: 5px solid #{map-deep-get(
-                $colors,
-                'colors',
-                'neutral',
-                80
-            )};
-    }
-
     box-sizing: border-box;
+    padding: 1rem;
+    min-height: 45vh;
     &.row {
         flex-direction: row;
     }
-    padding: 1rem;
-    min-height: 40vh;
 }
 
 .description {
     color: var(--content-copy);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    }
     margin-bottom: 1rem;
     a {
         color: var(--link);
         &:hover {
             color: var(--link-hover);
-        }
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            &:hover {
-                color: #{map-deep-get($colors, 'colors', 'primary', 50)};
-            }
         }
     }
     p {
@@ -81,26 +49,17 @@
 .codeToggle {
     cursor: pointer;
     color: var(--content-copy);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    }
 }
 
 .codeContainer {
     color: var(--content-copy);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    }
-
     display: flex;
     flex-wrap: wrap;
+    flex: 1 1 auto;
+    margin-bottom: 1rem;
     @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
         flex-direction: row;
     }
-    flex: 1 1 auto;
-    margin-bottom: 1rem;
     > section {
         flex: 1 1 auto;
         display: flex;
@@ -119,18 +78,10 @@
 .copyIcon {
     cursor: pointer;
     color: var(--content-copy);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    }
 }
 
 .copyIconLabel {
     color: var(--content-copy);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    }
 }
 
 .footer {
@@ -152,11 +103,6 @@
         padding: 0.5rem 0;
         margin-right: 0.5rem;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
     }
 
     a {
@@ -170,11 +116,5 @@
 .textArea {
     color: var(--content-copy);
     background-color: var(--content-background);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-    }
-
     box-sizing: border-box;
 }
