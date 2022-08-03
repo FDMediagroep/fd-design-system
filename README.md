@@ -1205,7 +1205,7 @@ import "@fdmg/design-system/components/utils/image/FdImgix";
 ```
 
 ```
-import { HorizontalCard3 } from "@fdmg/design-system/components/card/HorizontalCard4";
+import { HorizontalCard4 } from "@fdmg/design-system/components/card/HorizontalCard4";
 import { FdImgix } from '@fdmg/design-system/components/utils/image/FdImgix';
 
 function Foo() {
