@@ -33,11 +33,9 @@
 .horizontalGrid {
     row-gap: 1px;
 }
-
 .autoMinHeight {
     min-height: auto;
 }
-
 .hybrid1Grid {
     @media screen and (max-width: (640px - 0.02px)) {
         row-gap: 1px;
