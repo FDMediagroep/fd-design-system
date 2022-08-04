@@ -58,8 +58,8 @@ describe('HorizontalCard4', () => {
                 }
             />
         );
-        expect(container?.querySelector('img')?.getAttribute('src')).toBe(
-            'https://images.example.com/image.png?auto=format&ixlib=react-9.5.1-beta.1'
+        expect(container?.querySelector('img')?.getAttribute('src')).toContain(
+            'https://images.example.com/image.png?auto=format'
         );
     });
 
