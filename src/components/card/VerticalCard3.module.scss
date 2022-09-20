@@ -9,13 +9,8 @@
     flex-direction: column;
     display: flex;
     flex-grow: 1;
-
     position: relative;
     background-color: var(--card);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-    }
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
 
     .cardContent {
@@ -78,11 +73,6 @@
             font-size: 0.875rem;
             text-transform: uppercase;
             color: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
             letter-spacing: 1px;
         }
     }
@@ -90,11 +80,6 @@
     &[data-variant='variant-1'] {
         .prefix {
             color: var(--link-longread);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'longread', 75)};
-            }
         }
     }
     &[data-variant='variant-2'] {
@@ -102,18 +87,6 @@
             padding: 1px 8px;
             color: var(--card);
             background-color: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'primary',
-                        75
-                    )};
-            }
-
             line-height: 2rem;
             font-size: 0.625rem;
             letter-spacing: 2.5px;
@@ -126,21 +99,11 @@
     h1 {
         margin: 0;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
     }
 
     .intro {
         margin: 0.5rem 0 0 0;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
     }
 
     .footer {
@@ -157,11 +120,6 @@
         .teaserText h1,
         .teaserText p {
             color: var(--card-text-visited);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
         }
 
         &[data-variant='variant-2'] {
@@ -169,48 +127,20 @@
             .meta time {
                 color: var(--card-label-text-visited);
                 background-color: var(--card-label-visited);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            90
-                        )};
-                }
             }
         }
-
         background-color: var(--card-visited);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 70)};
-        }
     }
 
     &:focus:not(:active),
     &:hover:not(:active) {
         box-shadow: var(--card-box-shadow);
         background-color: var(--card-hover);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-        }
         z-index: 1;
     }
     &:active {
         z-index: 1;
         outline: 2px solid var(--card-outline-active);
         background-color: var(--card-active);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-        }
     }
 }
