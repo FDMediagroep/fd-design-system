@@ -276,6 +276,7 @@ function Page(props: Props) {
                                                     ) {
                                                         return (
                                                             <GridContainer
+                                                                key={`${sectionModel.defaultCategoryModel.title}-${card.id}`}
                                                                 className={`ie-full-height ${styles.ie11FullHeight}`}
                                                                 attributes={[
                                                                     'xs-12',
@@ -287,7 +288,6 @@ function Page(props: Props) {
                                                                 ]}
                                                             >
                                                                 <HybridCard1
-                                                                    key={`${sectionModel.defaultCategoryModel.title}-${card.id}`}
                                                                     id={card.id}
                                                                     className={`${styles.newsContainer} ${styles.fullHeight}`}
                                                                     caption={
@@ -309,6 +309,7 @@ function Page(props: Props) {
                                                     } else {
                                                         return (
                                                             <GridContainer
+                                                                key={`${sectionModel.defaultCategoryModel.title}-${card.id}`}
                                                                 className={`ie-full-height ${styles.ie11FullHeight}`}
                                                                 attributes={[
                                                                     'xs-12',
@@ -320,7 +321,6 @@ function Page(props: Props) {
                                                                 ]}
                                                             >
                                                                 <HybridCard2
-                                                                    key={`${sectionModel.defaultCategoryModel.title}-${card.id}`}
                                                                     id={card.id}
                                                                     className={`${styles.newsContainer} ${styles.fullHeight}`}
                                                                     caption={
