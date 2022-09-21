@@ -6,11 +6,6 @@ const customJestConfig = {
     collectCoverage: true,
     coverageDirectory: 'js-coverage',
     coverageReporters: ['lcov', 'text'],
-    globals: {
-        'ts-jest': {
-            tsconfig: 'tsconfig.test.json',
-        },
-    },
     testPathIgnorePatterns: ['/cypress/', '__tests__/mockdata/'],
     moduleNameMapper: {
         '\\.(css|less|scss|sss|styl)$': 'identity-obj-proxy',
@@ -18,6 +13,12 @@ const customJestConfig = {
     setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
     testEnvironment: 'jest-environment-jsdom',
     transform: {
+        '^.+\\.tsx?$': [
+            'ts-jest',
+            // required due to custom location of tsconfig.json configuration file
+            // https://kulshekhar.github.io/ts-jest/docs/getting-started/options/tsconfig
+            { tsconfig: 'tsconfig.test.json' },
+        ],
         '\\.svg$': './jest/transformers/raw-loader.js',
     },
 };
