@@ -22,12 +22,6 @@
         padding: 0;
         margin: 0 0 0.9375rem 0;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
-
         font-weight: normal;
         font-size: 1.25rem;
         font-family: map-deep-get($typography, 'font-family', 'regular'),
@@ -43,22 +37,12 @@
             bottom: -3px;
             margin-right: 5px;
             fill: var(--primary);
-            /* IE11 */
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
         }
     }
     &[data-variant='variant-1'] {
         .icon {
             svg {
                 fill: var(--link-longread);
-                /* IE11 */
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    fill: #{map-deep-get($colors, 'colors', 'longread', 75)};
-                }
             }
         }
     }

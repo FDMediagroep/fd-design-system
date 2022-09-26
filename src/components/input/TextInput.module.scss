@@ -13,17 +13,6 @@
         input {
             color: var(--input-color);
             background-color: var(--input-background);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        100
-                    )};
-            }
             &::-webkit-calendar-picker-indicator {
                 filter: var(--input-date-picker-calendar-fill);
             }
@@ -42,24 +31,8 @@
                 min-width: 175px;
             }
             border-bottom: 2px solid var(--input-underline);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-bottom: 2px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        50
-                    )};
-            }
-
             &::placeholder {
                 color: var(--input-placeholder);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-                }
             }
 
             &[data-hide-number-spinners='true'] {
@@ -77,70 +50,22 @@
 
             &:hover {
                 border-color: var(--input-underline-hover);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    border-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            40
-                        )};
-                }
             }
             &:focus {
                 border: none;
                 caret-color: var(--input-caret);
                 border-bottom: 2px solid var(--input-underline-focus);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    caret-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
-                        )};
-                    border-bottom: 2px solid #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
-                        )};
-                }
             }
 
             &:disabled {
                 border-bottom-color: var(--input-underline-disabled);
                 color: var(--input-disabled);
                 background-color: var(--input-fill-disabled);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            90
-                        )};
-                }
-
                 & ~ div > label {
                     color: var(--input-disabled);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-                    }
                 }
                 & ~ .inputMessage {
                     color: var(--input-helper-text-disabled);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-                    }
                 }
             }
 
@@ -160,12 +85,6 @@
             padding: 0;
             transition: all 0.1s ease-out;
             color: var(--input-label);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
-
             font-size: 1rem;
             user-select: none;
             white-space: nowrap;
@@ -206,21 +125,11 @@
             top: 0.5rem;
             right: 2rem;
             color: var(--input-label-focus);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
         }
         .inputMessage {
             transition: all 0.3s ease-out;
             font-size: 0.875rem;
             color: var(--input-helper-text);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
             line-height: 1;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
@@ -234,11 +143,6 @@
         .errorMessage {
             opacity: 0;
             color: var(--input-error);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'negative', 75)};
-            }
             max-height: 0;
             font-family: map-deep-get($typography, 'font-family', 'bold'),
                 sans-serif;
@@ -270,20 +174,10 @@
     input:not([type='date']):not([type='month']):not([type='datetime']):required:not(:disabled):not(:valid):not(:placeholder-shown):not(:focus) {
         &:not(:hover) {
             border-color: var(--input-error);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-color: #{map-deep-get($colors, 'colors', 'negative', 75)};
-            }
         }
 
         ~ div > label {
             color: var(--input-error);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'negative', 75)};
-            }
         }
     }
     input:required:not(:valid):not(:disabled):not(:placeholder-shown):not(:focus)
@@ -309,11 +203,6 @@
         right: 1rem;
         svg {
             fill: var(--input-valid);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
             width: 12px;
             height: 12px;
         }

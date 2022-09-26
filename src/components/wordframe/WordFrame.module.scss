@@ -21,11 +21,6 @@
         line-height: 1.333;
         font-size: 1.5rem;
         color: var(--wordframe);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-        }
 
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             font-size: 1.625rem;
@@ -49,16 +44,6 @@
             @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
                 width: 91px;
                 border-top: 11px solid var(--wordframe);
-            }
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-top: 11px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        30
-                    )};
             }
         }
     }

@@ -23,11 +23,6 @@
             padding: 0.5rem 1rem 0;
             transition: all 0.1s ease-out;
             color: var(--input-label);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
             font-size: 1rem;
             user-select: none;
             white-space: nowrap;
@@ -41,17 +36,6 @@
                 font-size: 0.875rem;
                 top: 0;
                 background-color: var(--input-background);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            100
-                        )};
-                }
-
                 right: 1rem;
             }
         }
@@ -59,34 +43,12 @@
             font-size: 0.875rem;
             top: 0;
             background-color: var(--input-background);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        100
-                    )};
-            }
-
             right: 1rem;
         }
         textarea:not(:placeholder-shown) ~ div > label {
             font-size: 0.875rem;
             top: 0;
             background-color: var(--input-background);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        100
-                    )};
-            }
-
             right: 1rem;
         }
         textarea:not(:-ms-input-placeholder) ~ div > label,
@@ -94,17 +56,6 @@
             font-size: 0.875rem;
             top: 0;
             background-color: var(--input-background);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        100
-                    )};
-            }
-
             right: 1rem;
         }
         textarea:focus ~ div > label {
@@ -112,18 +63,6 @@
             top: 0;
             color: var(--input-label-focus);
             background-color: var(--input-background);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        100
-                    )};
-            }
-
             right: 1rem;
         }
 
@@ -140,107 +79,28 @@
             border-bottom: 2px solid var(--input-underline);
             color: var(--input-color);
             background-color: var(--input-background);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-bottom: 2px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        50
-                    )};
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        100
-                    )};
-            }
-
             &::placeholder {
                 color: var(--input-placeholder);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-                }
-            }
-
             &:hover {
                 border-color: var(--input-underline-hover);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    border-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            40
-                        )};
-                }
             }
             &:focus {
                 border: none;
                 caret-color: var(--input-caret);
                 border-bottom: 2px solid var(--input-underline-focus);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    caret-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
-                        )};
-                    border-bottom: 2px solid #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
-                        )};
-                }
             }
 
             &:disabled {
                 border-bottom-color: var(--input-underline-disabled);
                 color: var(--input-disabled);
                 background-color: var(--input-fill-disabled);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            90
-                        )};
-                }
-
                 & ~ div > label {
                     background-color: var(--input-fill-disabled);
                     color: var(--input-disabled);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-                        background-color: #{map-deep-get(
-                                $colors,
-                                'colors',
-                                'neutral',
-                                90
-                            )};
-                    }
                 }
 
                 & ~ .textareaMessage {
                     color: var(--input-helper-text-disabled);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-                    }
                 }
             }
 
@@ -254,11 +114,6 @@
             transition: all 0.3s ease-out;
             font-size: 0.875rem;
             color: var(--input-helper-text);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
             line-height: 1;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
@@ -308,19 +163,8 @@
     }
     textarea:required:not(:valid):not(:disabled):not(:placeholder-shown):not(:focus) {
         color: var(--input-error);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'negative', 75)};
-        }
-
         ~ label {
             color: var(--input-error);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'negative', 75)};
-            }
         }
     }
     textarea[data-show-error='true'] ~ .errorMessage:not(:empty),
@@ -334,27 +178,12 @@
         textarea[data-show-error='true']:not(:focus):not(:hover) {
             border-bottom-color: var(--input-error);
             ~ div label {
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    border-bottom-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'negative',
-                            75
-                        )};
-                }
             }
         }
     }
     textarea[data-show-error='true'] {
         ~ div label {
             color: var(--input-error);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'negative', 75)};
-            }
         }
     }
     textarea:required:not(:valid):not(:disabled):not(:-ms-input-placeholder):not(:focus)
@@ -374,11 +203,6 @@
         right: 1rem;
         svg {
             fill: var(--input-valid);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
             width: 12px;
             height: 12px;
         }

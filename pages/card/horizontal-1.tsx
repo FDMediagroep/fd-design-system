@@ -92,7 +92,6 @@ function Page() {
                         <ul>
                             <li>default</li>
                             <li>visited</li>
-                            <li>variant-1</li>
                             <li>no image</li>
                         </ul>
                     </>
@@ -115,16 +114,6 @@ function Page() {
                         imageComponent={
                             <FdImgix
                                 src={horizontalCards1[1].imageUrl}
-                                imageSizes={{ widthS: '300px' }}
-                            />
-                        }
-                    />
-                    <HorizontalCard1
-                        className="xs-12"
-                        {...horizontalCards1[2]}
-                        imageComponent={
-                            <FdImgix
-                                src={horizontalCards1[2].imageUrl}
                                 imageSizes={{ widthS: '300px' }}
                             />
                         }

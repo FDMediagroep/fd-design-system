@@ -64,7 +64,7 @@ function VerticalCard1(props: Props) {
                 </figure>
 
                 <div className={styles.teaserText}>
-                    <div className={`${styles.meta} xs__mb+2`}>
+                    <div className={`${styles.meta} xs__mb+2 body-text sans s`}>
                         <span className={styles.prefix}>{props.label}</span>
                     </div>
 
@@ -72,7 +72,6 @@ function VerticalCard1(props: Props) {
                         <h1 className="heading serif s xs__m-0">
                             {props.title}
                         </h1>
-
                         <p
                             className={`${styles.intro} body-text sans s xs__m-0 xs__mt+2`}
                         >

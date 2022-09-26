@@ -11,11 +11,6 @@
     display: block;
     width: auto;
     background-color: var(--card);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-    }
-
     h3,
     .content {
         display: block;
@@ -43,11 +38,6 @@
             sans-serif;
         margin: 0;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
     }
 
     .content {
@@ -55,17 +45,6 @@
         align-items: center;
         color: var(--content-copy);
         border-top: 1px solid var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            border-top: 1px solid #{map-deep-get(
-                    $colors,
-                    'colors',
-                    'neutral',
-                    50
-                )};
-        }
         font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;
         font-size: 1rem;
@@ -95,16 +74,6 @@
             &:focus {
                 ~ .switchLabel {
                     outline: 1px solid var(--dividers);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        outline: 1px solid #{map-deep-get(
-                                $colors,
-                                'colors',
-                                'neutral',
-                                50
-                            )};
-                    }
                 }
             }
         }
@@ -117,11 +86,6 @@
             font-size: 0.625rem;
             text-transform: uppercase;
             background: var(--dividers);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-            }
             border-radius: 28px;
             transition: opacity 0.15s ease-out, background 0.15s ease-out;
             .iconCheck,
@@ -147,11 +111,6 @@
         }
         .switchInput:checked ~ .switchLabel {
             background: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
             .iconCheck {
                 visibility: visible;
             }

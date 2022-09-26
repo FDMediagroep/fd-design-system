@@ -15,11 +15,6 @@
     min-width: 20vw;
     border: 5px solid var(--dividers);
     background-color: var(--card);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-        border: 5px solid #{map-deep-get($colors, 'colors', 'neutral', 50)};
-    }
 
     h3,
     p {
@@ -35,18 +30,8 @@
 
     fieldset {
         border: 1px solid var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border: 1px solid #{map-deep-get($colors, 'colors', 'neutral', 50)};
-        }
     }
     legend {
         color: var(--writer);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-        }
     }
 }

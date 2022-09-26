@@ -13,7 +13,6 @@ interface Props {
     time: string;
     title: string;
     isRead?: boolean;
-    variant?: 'variant-1';
     [x: string]: any;
 }
 
@@ -27,9 +26,7 @@ function HorizontalCard1(props: Props) {
             style={props.style}
             className={`${styles.horizontalCard1}${
                 props.className ? ` ${props.className}` : ''
-            }${props.isRead ? ` ${styles.isRead}` : ''}${
-                props.variant === 'variant-1' ? ` ${styles.longread}` : ''
-            } xs__p+4`}
+            }${props.isRead ? ` ${styles.isRead}` : ''} xs__p+4`}
             id={props.id}
         >
             <a href={props.url} aria-label={props.title}>
@@ -54,9 +51,11 @@ function HorizontalCard1(props: Props) {
                 )}
 
                 <div className={`${styles.teaserText} xs__pl+4 s__p+4`}>
-                    <div className={`${styles.meta} xs__m-0 xs__mb+2`}>
+                    <div
+                        className={`${styles.meta} xs__m-0 xs__mb+2 body-text sans s`}
+                    >
                         <span className={styles.prefix}>{props.label}</span>
-                        <time>{props.time}</time>
+                        <time>&nbsp;•&nbsp;{props.time}</time>
                     </div>
 
                     <div className={styles.textContainer}>

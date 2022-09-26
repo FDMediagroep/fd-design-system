@@ -25,22 +25,6 @@ const verticalCards1: any = [
         readingTime: 3,
     },
     {
-        id: '1321841',
-        label: 'Detailhandel',
-        title: 'Den Haag zet druk op verhuurders om huurverlaging te slikken',
-        imageUrl:
-            'https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0018761726078799%2c.9999999999999999%2c.99812382739212&fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
-        imageUrlS:
-            'https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0018761726078799%2c.9999999999999999%2c.99812382739212&fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
-        imageUrlM:
-            'https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0637898686679174%2c.9999999999999999%2c.8442776735459663&fit=crop&crop=faces&auto=format&q=45&w=351&h=234',
-        imageUrlL:
-            'https://fd-external-development.imgix.net/b2ee977d67c3a1b815ed2855a5ae02f2357e6062.jpg?rect=.0%2c.0637898686679174%2c.9999999999999999%2c.8442776735459663&fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
-        url: 'https://fd.nl/ondernemen/1321841/den-haag-zet-druk-op-pandeigenaren-om-huurverlaging-winkeliers-te-slikken',
-        intro: `Het Rijk sluit overheidsingrijpen niet uit om een akkoord tussen verhuurders en winkeliers af te dwingen, nu onderhandelingen moeizaam verlopen.`,
-        readingTime: 5,
-    },
-    {
         id: '1357440',
         label: 'Fiscaal',
         title: 'Kabinet verwacht bijna €1 mrd aan dividendbelasting te moeten terugbetalen',
@@ -90,7 +74,6 @@ function Page() {
                         <p>Used on homepage.</p>
                         <ul>
                             <li>default</li>
-                            <li>default</li>
                             <li>visited</li>
                         </ul>
                     </>
@@ -104,10 +87,6 @@ function Page() {
                     <VerticalCard1
                         className="xs-12 s-6 m-4 l-3"
                         {...verticalCards1[1]}
-                    />
-                    <VerticalCard1
-                        className="xs-12 s-6 m-4 l-3"
-                        {...verticalCards1[2]}
                     />
                 </>
             </Explain>

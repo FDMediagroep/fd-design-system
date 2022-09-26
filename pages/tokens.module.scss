@@ -13,11 +13,6 @@
     small,
     label {
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-        }
     }
     h1 {
         margin: 2rem 0 1rem 0;
@@ -31,15 +26,9 @@
     fieldset {
         box-sizing: border-box;
         flex: 0 1 calc(100% - 0.5rem);
+        border: 1px solid var(--dividers);
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             flex: 0 1 calc(50% - 0.5rem);
-        }
-
-        border: 1px solid var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border-color: #{map-deep-get($colors, 'colors', 'neutral', 50)};
         }
     }
     textarea {
@@ -48,12 +37,6 @@
         height: 200px;
         color: var(--content-copy);
         background-color: var(--content-background);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
     }
 
     .fontsContainer,
@@ -94,12 +77,6 @@
         outline: none;
         color: var(--content-copy);
         background-color: var(--product-background);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-        }
     }
 
     .icon {

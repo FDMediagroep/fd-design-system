@@ -6,23 +6,8 @@
 .summary {
     margin: 2.5rem 0;
     border-bottom: 1px solid var(--dividers);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        border-bottom: 1px solid #{map-deep-get(
-                $colors,
-                'colors',
-                'neutral',
-                50
-            )};
-    }
-
     h3 {
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
         margin-bottom: 1rem;
         position: relative;
         background: linear-gradient(var(--dividers), var(--dividers)) 0 0/100%
@@ -31,38 +16,8 @@
                 no-repeat,
             linear-gradient(var(--dividers), var(--dividers)) 0 8px/100% 1px
                 no-repeat;
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background: linear-gradient(
-                        #{map-deep-get($colors, 'colors', 'neutral', 50)},
-                        #{map-deep-get($colors, 'colors', 'neutral', 50)}
-                    )
-                    0 0/100% 1px no-repeat,
-                linear-gradient(
-                        #{map-deep-get($colors, 'colors', 'neutral', 50)},
-                        #{map-deep-get($colors, 'colors', 'neutral', 50)}
-                    )
-                    0 4px/100% 1px no-repeat,
-                linear-gradient(
-                        #{map-deep-get($colors, 'colors', 'neutral', 50)},
-                        #{map-deep-get($colors, 'colors', 'neutral', 50)}
-                    )
-                    0 8px/100% 1px no-repeat;
-        }
-
         padding: 22px 0 15px 0;
         border-bottom: 1px solid var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border-bottom: 1px solid #{map-deep-get(
-                    $colors,
-                    'colors',
-                    'neutral',
-                    50
-                )};
-        }
         margin-top: initial;
     }
 
@@ -79,11 +34,6 @@
     li:before {
         content: '\2022';
         color: var(--primary);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-        }
         font-weight: bold;
         display: inline-block;
         font-size: 2rem;
@@ -97,21 +47,11 @@
     &[data-variant='variant-1'] {
         li:before {
             color: var(--link-longread);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'longread', 50)};
-            }
         }
     }
     &[data-variant='variant-2'] {
         li:before {
             color: var(--link-persoonlijk);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'persoonlijk', 75)};
-            }
         }
     }
 }

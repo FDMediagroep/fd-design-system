@@ -7,11 +7,6 @@
     max-width: 1248px;
     margin: 0 auto;
     background-color: var(--product-background);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-    }
-
     flex: 1 1 100%;
     display: flex;
     flex-direction: column;

@@ -9,10 +9,6 @@
     right: 0;
     position: sticky;
     background-color: var(--product-background);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-    }
 
     a {
         text-decoration: none;
@@ -78,18 +74,8 @@
         cursor: pointer;
         border: none;
         background: var(--navigation-background);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background: #{map-deep-get($colors, 'colors', 'neutral', 70)};
-        }
         &.expanded {
             background: var(--sub-navigation-background);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-            }
         }
 
         &:active,
@@ -97,46 +83,19 @@
             svg path,
             svg [fill='#73655F'] {
                 fill: var(--profile-outline-active);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                }
             }
         }
         &:hover {
             background-color: var(--sub-navigation-background);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        80
-                    )};
-            }
-
             svg path,
             svg [fill='#73655F'] {
                 fill: var(--profile-outline-hover);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                }
             }
         }
     }
 
     .logo {
         background: var(--logo) center center no-repeat;
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
-                center center no-repeat;
-        }
         display: inline-block;
         width: 48px;
         height: 100%;
@@ -157,58 +116,20 @@
         background: var(--navigation-background);
         border-bottom: 2px solid var(--dividers);
         overflow-x: clip;
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            background: #{map-deep-get($colors, 'colors', 'neutral', 70)};
-            border-bottom: 2px solid #{map-deep-get(
-                    $colors,
-                    'colors',
-                    'neutral',
-                    60
-                )};
-        }
-
         a,
         button {
             color: var(--content-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            }
             &:active,
             &:focus {
                 color: var(--link-active);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                }
                 svg path {
                     fill: var(--profile-outline-active);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                    }
                 }
             }
             &:hover {
                 color: var(--navigation-item-hover);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                }
                 svg path {
                     fill: var(--profile-outline-hover);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                    }
                 }
             }
         }
@@ -216,11 +137,6 @@
         .search-bar label {
             svg [fill='#73655F'] {
                 fill: var(--search-outline);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    fill: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-                }
             }
         }
 
@@ -229,21 +145,11 @@
             &:focus {
                 svg path {
                     fill: var(--search-outline-active);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-                    }
                 }
             }
             &:hover {
                 svg path {
                     fill: var(--search-outline-hover);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                    }
                 }
             }
         }
@@ -264,16 +170,6 @@
             width: 100%;
             @media screen and (max-width: (640px - 0.02px)) {
                 background-color: var(--navigation-background);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            70
-                        )};
-                }
             }
             display: block;
             position: relative;
@@ -327,16 +223,6 @@
                     position: absolute;
                 }
                 background: var(--sub-navigation-background);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            80
-                        )};
-                }
                 li {
                     float: none;
                     flex: 1 1 auto;
@@ -455,18 +341,8 @@
         cursor: pointer;
         &:not(:hover):not(:active):not(:focus) {
             color: var(--navigation-item);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-            }
             svg path {
                 fill: var(--navigation-item);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    fill: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-                }
             }
         }
 
@@ -484,12 +360,6 @@
         flex-direction: column;
         right: 15px;
         background: var(--navigation-item-active);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background: #{map-deep-get($colors, 'colors', 'neutral', 70)};
-        }
-
         .button-group {
             display: flex;
             flex-direction: column;
@@ -501,27 +371,12 @@
         hr {
             border: none;
             border-top: 1px solid var(--dividers);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-top: 1px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        60
-                    )};
-            }
         }
 
         .user-info {
             .company {
                 display: block;
                 color: var(--meta-copy);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-                }
             }
         }
         menu {
@@ -542,16 +397,6 @@
                 svg {
                     path {
                         fill: var(--profile-outline);
-                        // IE11
-                        @media screen and (-ms-high-contrast: active),
-                            (-ms-high-contrast: none) {
-                            fill: #{map-deep-get(
-                                    $colors,
-                                    'colors',
-                                    'neutral',
-                                    40
-                                )};
-                        }
                     }
                 }
                 &:active,
@@ -559,16 +404,6 @@
                     svg {
                         path {
                             fill: var(--profile-outline-active);
-                            // IE11
-                            @media screen and (-ms-high-contrast: active),
-                                (-ms-high-contrast: none) {
-                                fill: #{map-deep-get(
-                                        $colors,
-                                        'colors',
-                                        'primary',
-                                        75
-                                    )};
-                            }
                         }
                     }
                 }
@@ -576,16 +411,6 @@
                     svg {
                         path {
                             fill: var(--profile-outline-hover);
-                            // IE11
-                            @media screen and (-ms-high-contrast: active),
-                                (-ms-high-contrast: none) {
-                                fill: #{map-deep-get(
-                                        $colors,
-                                        'colors',
-                                        'primary',
-                                        75
-                                    )};
-                            }
                         }
                     }
                 }
@@ -601,12 +426,6 @@
                 width: 10px;
                 height: 15px;
                 background: var(--profile-progress-block);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-                }
-
                 margin: 0 2px 2px 0;
                 &.faded {
                     opacity: 0.5;
@@ -670,11 +489,6 @@
 
             path {
                 fill: var(--profile-outline);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-                }
             }
         }
 
@@ -740,11 +554,6 @@
 
             path {
                 fill: var(--search-outline);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-                }
             }
         }
     }
@@ -760,12 +569,6 @@
         opacity: 0;
         visibility: hidden;
         background-color: var(--navigation-background);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 70)};
-        }
-
         svg {
             width: 24px;
             height: 24px;
@@ -798,17 +601,6 @@
 
                 color: var(--content-copy);
                 background-color: var(--navigation-background);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            70
-                        )};
-                }
                 &::placeholder {
                     /* Chrome, Firefox, Opera, Safari 10.1+ */
                     color: var(--input-label);
@@ -897,27 +689,12 @@
             > [aria-expanded],
             .profile {
                 background-color: var(--sub-navigation-background);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            80
-                        )};
-                }
             }
         }
     }
     .show-stock-menu .show-stock-menu-highlight,
     .show-profile .show-profile-highlight {
         z-index: 1;
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            z-index: 2;
-        }
     }
     .show-search-menu .show-search-highlight {
         z-index: 2;
@@ -964,24 +741,8 @@
             width: 376px;
         }
         background-color: var(--sub-navigation-background);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-        }
-
         .expanded {
             background-color: var(--navigation-background);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        70
-                    )};
-            }
         }
 
         .close-aside-menu-button {
@@ -1002,11 +763,6 @@
                 }
                 path {
                     fill: var(--profile-outline-active);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                    }
                 }
             }
         }
@@ -1069,16 +825,6 @@
             }
             &.secondary {
                 background-color: var(--navigation-background);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            70
-                        )};
-                }
             }
         }
 
@@ -1089,16 +835,6 @@
                 flex: 1 1 auto;
                 border: none;
                 border-top: 1px solid var(--dividers);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    border-top: 1px solid #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            60
-                        )};
-                }
             }
         }
 
@@ -1108,11 +844,6 @@
             svg {
                 path {
                     fill: var(--profile-outline);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-                    }
                 }
             }
             &:active,
@@ -1120,16 +851,6 @@
                 svg {
                     path {
                         fill: var(--profile-outline-active);
-                        // IE11
-                        @media screen and (-ms-high-contrast: active),
-                            (-ms-high-contrast: none) {
-                            fill: #{map-deep-get(
-                                    $colors,
-                                    'colors',
-                                    'primary',
-                                    75
-                                )};
-                        }
                     }
                 }
             }
@@ -1137,16 +858,6 @@
                 svg {
                     path {
                         fill: var(--profile-outline-hover);
-                        // IE11
-                        @media screen and (-ms-high-contrast: active),
-                            (-ms-high-contrast: none) {
-                            fill: #{map-deep-get(
-                                    $colors,
-                                    'colors',
-                                    'primary',
-                                    75
-                                )};
-                        }
                     }
                 }
             }
@@ -1154,11 +865,6 @@
 
         .label {
             color: var(--credits);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
         }
     }
 
@@ -1170,21 +876,11 @@
         svg path,
         svg [fill='#73655F'] {
             fill: var(--profile-outline-active);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
         }
         &.search-button {
             svg path,
             svg [fill='#73655F'] {
                 fill: var(--search-outline-active);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-                }
             }
         }
     }
@@ -1239,11 +935,6 @@
         -webkit-border-radius: 0.25rem;
         border-radius: 0.25rem;
         background: var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-        }
     }
 
     ::-webkit-scrollbar-thumb {
@@ -1261,11 +952,6 @@
     }
 
     .theme {
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            display: none;
-        }
         .fd-input-radio .radio {
             overflow: unset;
             height: 22px;
@@ -1292,24 +978,12 @@
             .header-placeholder header .logo {
                 background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo-dark.svg')
                     center center no-repeat;
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
-                        center center no-repeat;
-                }
             }
         }
         @media (prefers-color-scheme: light) {
             .header-placeholder header .logo {
                 background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
                     center center no-repeat;
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
-                        center center no-repeat;
-                }
             }
         }
     }
@@ -1318,24 +992,12 @@
         .header-placeholder header .logo {
             background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo-dark.svg')
                 center center no-repeat;
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
-                    center center no-repeat;
-            }
         }
     }
     &:global(.light) {
         .header-placeholder header .logo {
             background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
                 center center no-repeat;
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background: url('https://static-dev.fd.nl/assets/4.1-SNAPSHOT/img/fd/static/logo.svg')
-                    center center no-repeat;
-            }
         }
     }
 

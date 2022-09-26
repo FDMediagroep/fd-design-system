@@ -18,16 +18,6 @@ const horizontalCards3: any = [
         intro: 'Ondanks een op het eerste gezicht veel gevaarlijker levensstijl, verschilt de levensverwachting van Libanezen nog maar drie jaar met die van ons.',
     },
     {
-        id: '1343825a',
-        url: 'https://fd.nl/economie-politiek/1343825/door-crisis-veel-meer-publiek-geld-nodig-voor-green-deal',
-        label: 'Europa',
-        time: '13:08',
-        title: "Diederik Samsom: 'Door crisis veel meer publiek geld nodig voor Green Deal'",
-        printTitle: 'Door crisis veel meer publiek geld nodig voor Green Deal',
-        intro: "De rechterhand van klimaatcommissaris Frans Timmerman waarschuwt voor een 'investeringsgat'. De private sector kan door coronacrisis veel minder bijdragen.",
-        readingTime: 5,
-    },
-    {
         id: '1343823a',
         url: 'https://fd.nl/economie-politiek/1343823/vvd-botst-met-kabinet-en-coalitie-over-steuneisen-klm',
         label: 'Politiek',
@@ -67,14 +57,9 @@ function Page() {
                 reactComponentName="HorizontalCard3"
                 description={
                     <>
-                        <p>
-                            Used in the search results. Note that the difference
-                            with the Horizontal Card 2 is that it supports
-                            `printTitle`.
-                        </p>
+                        <p>Used in the search results.</p>
                         <ul>
                             <li>default</li>
-                            <li>with print title</li>
                             <li>visited</li>
                         </ul>
                     </>
@@ -88,10 +73,6 @@ function Page() {
                     <HorizontalCard3
                         className="xs-12"
                         {...horizontalCards3[1]}
-                    />
-                    <HorizontalCard3
-                        className="xs-12"
-                        {...horizontalCards3[2]}
                     />
                 </>
             </Explain>

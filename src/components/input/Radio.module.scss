@@ -5,11 +5,6 @@
 .fdRadio {
     line-height: 1.5;
     color: var(--content-copy);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    }
-
     input {
         opacity: 0;
         position: absolute;
@@ -24,12 +19,6 @@
         margin-bottom: 0.5rem;
         cursor: pointer;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
-
         font-size: 1rem;
         line-height: 1.5;
         font-family: map-deep-get($typography, 'font-family', 'regular'),
@@ -43,29 +32,8 @@
             width: 20px;
             height: 20px;
             border: 1px solid var(--radio-border);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border: 1px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'primary',
-                        75
-                    )};
-            }
-
             transition: border-color 0.3s;
             background-color: var(--radio-fill);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        100
-                    )};
-            }
             border-radius: 50%;
         }
         &:after {
@@ -82,64 +50,22 @@
         &:before {
             border-color: var(--radio-border);
             background-color: var(--radio-hover);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'primary',
-                        25
-                    )};
-            }
         }
         color: var(--radio-label-hover);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-        }
     }
     input:focus ~ .radio {
         &:before {
             color: var(--radio-hover);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
         }
     }
 
     input:checked ~ .radio {
         &:before {
             background-color: var(--radio-fill-checked);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'primary',
-                        75
-                    )};
-            }
         }
         &:after {
             opacity: 1;
             background-color: var(--radio-check);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'primary',
-                        75
-                    )};
-            }
-
             border: none;
             width: 8px;
             height: 8px;

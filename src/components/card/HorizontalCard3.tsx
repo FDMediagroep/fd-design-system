@@ -7,7 +7,6 @@ interface Props {
     label: string;
     time: string;
     title: string;
-    printTitle?: string;
     intro: string;
     isRead?: boolean;
     [x: string]: any;
@@ -28,26 +27,17 @@ function HorizontalCard3(props: Props) {
         >
             <a className="xs__p+4" href={props.url} aria-label={props.title}>
                 <div className={styles.teaserText}>
-                    <div className={`${styles.meta} xs__m-0 xs__mb+2`}>
+                    <div
+                        className={`${styles.meta} xs__m-0 xs__mb+2 body-text sans s`}
+                    >
                         <span className={styles.prefix}>{props.label}</span>
-                        <time>{props.time}</time>
+                        <time>&nbsp;•&nbsp;{props.time}</time>
                     </div>
 
                     <div className={styles.textContainer}>
                         <h1 className="heading serif s xs__m-0">
                             {props.title}
                         </h1>
-                        {props.printTitle && (
-                            <p
-                                className={`${styles.printTitle} body-text sans xs xs__m-0`}
-                            >
-                                <span>Krantentitel: </span>
-                                <span className={styles.printTitleText}>
-                                    ‘{props.printTitle}’
-                                </span>
-                            </p>
-                        )}
-
                         <p
                             className={`${styles.intro} body-text sans s xs__m-0 xs__mt+1`}
                         >

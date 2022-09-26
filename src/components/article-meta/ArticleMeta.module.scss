@@ -14,27 +14,12 @@
     line-height: 1.2;
     font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     color: var(--writer);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-    }
-
     a.author:hover {
         color: var(--primary);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-        }
     }
 
     .author {
         color: var(--writer);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-        }
         text-decoration: none;
         &:not(:first-child):before {
             content: ', ';

@@ -14,7 +14,6 @@ interface Props {
     label: string;
     isRead?: boolean;
     title: string;
-    variant?: Variants;
     [x: string]: any;
 }
 
@@ -28,7 +27,6 @@ function HybridCard2(props: Props) {
     return (
         <article
             style={props.style}
-            data-variant={props.variant}
             className={`${styles.hybridCard2}${
                 props.className ? ` ${props.className}` : ''
             }${props.isRead ? ` ${styles.isRead}` : ''}`}
@@ -68,7 +66,7 @@ function HybridCard2(props: Props) {
                 <div
                     className={`${styles.teaserText} xs__pl+4 s__pr-0 s__pb-0 s__pl-0`}
                 >
-                    <div className={`${styles.meta} xs__mb+2`}>
+                    <div className={`${styles.meta} xs__mb+2 body-text sans s`}>
                         <span className={styles.prefix}>{props.label}</span>
                     </div>
 

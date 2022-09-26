@@ -12,10 +12,6 @@
         position: absolute;
     }
     background-color: var(--toolbar-horizontal);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 0)};
-    }
 
     &#{&} {
         button {
@@ -26,29 +22,9 @@
             outline: none;
             padding: 0.75rem;
             background-color: var(--toolbar-horizontal);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        0
-                    )};
-            }
 
             &:focus {
                 background-color: var(--toolbar-horizontal);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            0
-                        )};
-                }
             }
 
             .icon {
@@ -59,11 +35,6 @@
                     width: 1rem;
                     height: 1rem;
                     fill: var(--toolbar-horizontal-icon);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        fill: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-                    }
                 }
 
                 &.bookmarkFill {
@@ -86,25 +57,10 @@
             &:hover,
             &:active {
                 background-color: var(--toolbar-horizontal);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            0
-                        )};
-                }
 
                 svg,
                 svg [fill='#917F78'] {
                     fill: var(--toolbar-horizontal-hover-color);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        fill: #{map-deep-get($colors, 'colors', 'primary', 50)};
-                    }
                 }
             }
         }
@@ -113,11 +69,6 @@
     hr {
         border: none;
         border-left: 1px solid var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border-left: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-        }
         height: 1.5rem;
         margin: 1rem 0;
     }

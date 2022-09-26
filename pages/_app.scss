@@ -12,11 +12,6 @@ html.light {
     transition: background-color 0.2s linear, color 0.2s linear;
     color: var(--content-copy);
     background-color: var(--product-background);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-    }
 }
 
 html,
