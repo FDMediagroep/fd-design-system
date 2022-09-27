@@ -99,8 +99,11 @@
         left: auto;
         right: auto;
         display: flex;
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
+        .update,
+        .prefix {
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+        }
         .update {
             padding: 1px 8px;
             color: var(--card);
@@ -113,6 +116,11 @@
 
         .prefix {
             color: var(--primary);
+        }
+
+        .dot {
+            margin: 0 0.25rem;
+            color: var(--meta-copy);
         }
 
         time {

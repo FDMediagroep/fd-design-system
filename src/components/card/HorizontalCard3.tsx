@@ -30,11 +30,15 @@ function HorizontalCard3(props: Props) {
                     <div
                         className={`${styles.meta} xs__m-0 xs__mb+2 body-text sans s`}
                     >
-                        <span className={styles.prefix}>{props.label}</span>
-                        <time>
-                            <span>•</span>
-                            {props.time}
-                        </time>
+                        {props.label && (
+                            <>
+                                <span className={styles.prefix}>
+                                    {props.label}
+                                </span>
+                                <span className={styles.dot}>•</span>
+                            </>
+                        )}
+                        <time>{props.time}</time>
                     </div>
 
                     <div className={styles.textContainer}>

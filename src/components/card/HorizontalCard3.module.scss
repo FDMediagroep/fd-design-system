@@ -25,7 +25,6 @@
     .teaserText {
         position: relative;
         flex: 1;
-
         .meta {
             display: flex;
             position: inherit;
@@ -35,31 +34,19 @@
             font-family: map-deep-get($typography, 'font-family', 'bold'),
                 sans-serif;
             color: var(--primary);
+            .dot {
+                margin: 0 0.25rem;
+                color: var(--meta-copy);
+            }
             time {
-                font-family: map-deep-get($typography, 'font-family', 'bold'),
-                    sans-serif;
                 color: var(--meta-copy);
                 white-space: nowrap;
-                span {
-                    margin: 0 0.25rem;
-                }
             }
         }
     }
 
     .textContainer {
         display: inline-grid;
-    }
-
-    .printTitle {
-        color: var(--meta-copy);
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
-
-    .printTitleText {
-        font-weight: bold;
     }
 
     footer menu {
@@ -83,7 +70,7 @@
     &.isRead:not(:hover):not(:active) {
         .meta .prefix,
         .meta time,
-        .printTitle,
+        .dot,
         .textContainer h1,
         .textContainer p {
             color: var(--card-text-visited);

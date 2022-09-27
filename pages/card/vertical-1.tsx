@@ -41,6 +41,22 @@ const verticalCards1: any = [
         readingTime: 2,
         isRead: true,
     },
+
+    {
+        id: '1345422',
+        title: 'Lockdown leidt tot recordstijging aantal WW-uitkeringen in april',
+        imageUrl:
+            'https://images.fd.nl/Cz9PTU-el_agiaSDvJOfmwrvu6g.jpg?rect=.0%2c.0428571428571429%2c.9999999999999999%2c.95&fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
+        imageUrlS:
+            'https://images.fd.nl/Cz9PTU-el_agiaSDvJOfmwrvu6g.jpg?rect=.0%2c.0428571428571429%2c.9999999999999999%2c.95&fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
+        imageUrlM:
+            'https://images.fd.nl/Cz9PTU-el_agiaSDvJOfmwrvu6g.jpg?rect=.0%2c.0428571428571429%2c.9999999999999999%2c.95&fit=crop&crop=faces&auto=format&q=45&w=351&h=234',
+        imageUrlL:
+            'https://images.fd.nl/Cz9PTU-el_agiaSDvJOfmwrvu6g.jpg?rect=.0%2c.0428571428571429%2c.9999999999999999%2c.95&fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
+        url: 'https://fd.nl/economie-politiek/1345422/lockdown-leidt-tot-recordstijging-aantal-ww-uitkeringen-in-april',
+        intro: `Scherpe stijging met 17% tot 292.000 uitkeringen, blijkt uit cijfers van het UWV. Tijdens de kredietcrisis in 2008 liep de werkloosheid veel geleidelijker op.`,
+        readingTime: 3,
+    },
 ];
 
 export const metaTitle = 'Vertical Card 1';
@@ -75,6 +91,7 @@ function Page() {
                         <ul>
                             <li>default</li>
                             <li>visited</li>
+                            <li>without a label</li>
                         </ul>
                     </>
                 }
@@ -87,6 +104,10 @@ function Page() {
                     <VerticalCard1
                         className="xs-12 s-6 m-4 l-3"
                         {...verticalCards1[1]}
+                    />
+                    <VerticalCard1
+                        className="xs-12 s-6 m-4 l-3"
+                        {...verticalCards1[2]}
                     />
                 </>
             </Explain>

@@ -20,6 +20,14 @@ const horizontalCards3: any = [
     {
         id: '1343823a',
         url: 'https://fd.nl/economie-politiek/1343823/vvd-botst-met-kabinet-en-coalitie-over-steuneisen-klm',
+        time: '12:49',
+        title: 'VVD botst met kabinet en coalitie over steuneisen KLM',
+        intro: "Liberalen hekelen duurzaamheidsvoorwaarden. 'Het is een reddingsoperatie, geen strafexpeditie', vindt Tweede Kamerlid Roald van der Linde.",
+        readingTime: 7,
+    },
+    {
+        id: '1343823a',
+        url: 'https://fd.nl/economie-politiek/1343823/vvd-botst-met-kabinet-en-coalitie-over-steuneisen-klm',
         label: 'Politiek',
         time: '12:49',
         title: 'VVD botst met kabinet en coalitie over steuneisen KLM',
@@ -60,6 +68,7 @@ function Page() {
                         <p>Used in the search results.</p>
                         <ul>
                             <li>default</li>
+                            <li>without a label</li>
                             <li>visited</li>
                         </ul>
                     </>
@@ -73,6 +82,10 @@ function Page() {
                     <HorizontalCard3
                         className="xs-12"
                         {...horizontalCards3[1]}
+                    />
+                    <HorizontalCard3
+                        className="xs-12"
+                        {...horizontalCards3[2]}
                     />
                 </>
             </Explain>

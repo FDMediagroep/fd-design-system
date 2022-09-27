@@ -11,7 +11,7 @@ interface Props {
     imageUrlM?: string;
     imageUrlL?: string;
     caption?: string;
-    label: string;
+    label?: string;
     time?: string;
     isRead?: boolean;
     title: string;
@@ -72,9 +72,17 @@ function HybridCard1(props: Props) {
                 <div
                     className={`${styles.teaserText}  xs__pl+4 s__pr-0 s__pb-0 s__pl-0`}
                 >
-                    <div className={`${styles.meta} xs__mb+2 body-text sans s`}>
-                        <span className={styles.prefix}>{props.label}</span>
-                    </div>
+                    {props.label && (
+                        <>
+                            <div
+                                className={`${styles.meta} xs__mb+2 body-text sans s`}
+                            >
+                                <span className={styles.prefix}>
+                                    {props.label}
+                                </span>
+                            </div>
+                        </>
+                    )}
 
                     <div className={styles.textContainer}>
                         <h1 className="heading serif xs xs__m-0">

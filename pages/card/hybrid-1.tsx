@@ -40,6 +40,21 @@ const hybridCards1: any = [
         url: 'https://fd.nl/economie-politiek/1345444/grootste-toename-werkloosheid-sinds-2003',
         readingTime: 7,
     },
+
+    {
+        id: '1345444',
+        title: 'Bulk van de werklozen komt in de komende maanden',
+        imageUrl:
+            'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=300',
+        imageUrlS:
+            'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=300',
+        imageUrlM:
+            'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=351&h=234',
+        imageUrlL:
+            'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
+        url: 'https://fd.nl/economie-politiek/1345444/grootste-toename-werkloosheid-sinds-2003',
+        readingTime: 7,
+    },
 ];
 
 export const metaTitle = 'Hybrid Card 1';
@@ -80,6 +95,7 @@ function Page() {
                         <ul>
                             <li>default</li>
                             <li>visited</li>
+                            <li>without a label</li>
                         </ul>
                     </>
                 }
@@ -93,6 +109,11 @@ function Page() {
                         isRead={true}
                         className="xs-12 s-6 m-4 l-3"
                         {...hybridCards1[1]}
+                    />
+
+                    <HybridCard1
+                        className="xs-12 s-6 m-4 l-3"
+                        {...hybridCards1[2]}
                     />
                 </>
             </Explain>

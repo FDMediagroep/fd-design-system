@@ -25,6 +25,15 @@ const horizontalCards1: any = [
         url: 'https://fd.nl/economie-politiek/1343620/leraren-hebben-straks-geen-klassen-van-32-leerlingen-meer',
         imageUrl:
             'https://images.fd.nl/-wbqLswT8IrCcrXMrWXEnzrd3lg.jpg?fit=crop&crop=faces&auto=format&q=45&w=300',
+        time: '07:18',
+        title: "'Leraren hebben straks geen klassen van 32 leerlingen meer'",
+        readingTime: 7,
+    },
+    {
+        id: '1343728',
+        url: 'https://fd.nl/economie-politiek/1343620/leraren-hebben-straks-geen-klassen-van-32-leerlingen-meer',
+        imageUrl:
+            'https://images.fd.nl/-wbqLswT8IrCcrXMrWXEnzrd3lg.jpg?fit=crop&crop=faces&auto=format&q=45&w=300',
         label: 'Coronakronieken',
         time: '07:18',
         title: "'Leraren hebben straks geen klassen van 32 leerlingen meer'",
@@ -91,6 +100,7 @@ function Page() {
                         <p>Used on category, dossier pages.</p>
                         <ul>
                             <li>default</li>
+                            <li>wihtout a label</li>
                             <li>visited</li>
                             <li>no image</li>
                         </ul>
@@ -114,6 +124,16 @@ function Page() {
                         imageComponent={
                             <FdImgix
                                 src={horizontalCards1[1].imageUrl}
+                                imageSizes={{ widthS: '300px' }}
+                            />
+                        }
+                    />
+                    <HorizontalCard1
+                        className="xs-12"
+                        {...horizontalCards1[2]}
+                        imageComponent={
+                            <FdImgix
+                                src={horizontalCards1[2].imageUrl}
                                 imageSizes={{ widthS: '300px' }}
                             />
                         }
