@@ -32,10 +32,12 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
           >
             Ondernemen
           </span>
+          <span
+            class="dot"
+          >
+            •
+          </span>
           <time>
-            <span>
-              •
-            </span>
             11:40
           </time>
         </div>
@@ -86,10 +88,12 @@ exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
           >
             Ondernemen
           </span>
+          <span
+            class="dot"
+          >
+            •
+          </span>
           <time>
-            <span>
-              •
-            </span>
             11:40
           </time>
         </div>

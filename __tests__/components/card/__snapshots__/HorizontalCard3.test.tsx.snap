@@ -22,10 +22,12 @@ exports[`HorizontalCard3 should render is-read correctly 1`] = `
           >
             Ondernemen
           </span>
+          <span
+            class="dot"
+          >
+            •
+          </span>
           <time>
-            <span>
-              •
-            </span>
             11:50
           </time>
         </div>
