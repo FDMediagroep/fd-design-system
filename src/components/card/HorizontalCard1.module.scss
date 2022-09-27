@@ -118,6 +118,9 @@
         time {
             color: var(--meta-copy);
             white-space: nowrap;
+            span {
+                margin: 0 0.25rem;
+            }
         }
     }
 
