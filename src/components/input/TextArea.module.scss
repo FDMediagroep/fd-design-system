@@ -79,8 +79,11 @@
             border-bottom: 2px solid var(--input-underline);
             color: var(--input-color);
             background-color: var(--input-background);
+
             &::placeholder {
                 color: var(--input-placeholder);
+            }
+
             &:hover {
                 border-color: var(--input-underline-hover);
             }
@@ -94,6 +97,7 @@
                 border-bottom-color: var(--input-underline-disabled);
                 color: var(--input-disabled);
                 background-color: var(--input-fill-disabled);
+
                 & ~ div > label {
                     background-color: var(--input-fill-disabled);
                     color: var(--input-disabled);
@@ -163,6 +167,7 @@
     }
     textarea:required:not(:valid):not(:disabled):not(:placeholder-shown):not(:focus) {
         color: var(--input-error);
+
         ~ label {
             color: var(--input-error);
         }
@@ -177,8 +182,6 @@
     &#{&} {
         textarea[data-show-error='true']:not(:focus):not(:hover) {
             border-bottom-color: var(--input-error);
-            ~ div label {
-            }
         }
     }
     textarea[data-show-error='true'] {

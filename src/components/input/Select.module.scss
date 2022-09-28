@@ -98,12 +98,6 @@
             overflow: hidden;
             cursor: text;
         }
-        @supports (-ms-ime-align: auto) {
-            select ~ label {
-                font-size: 0.875rem;
-                top: 0.5rem;
-            }
-        }
         select:not([type='month']):not([type='date']):not([type='datetime']):not([placeholder=' '])
             ~ div
             > label {

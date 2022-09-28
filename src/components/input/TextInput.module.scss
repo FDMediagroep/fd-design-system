@@ -93,12 +93,6 @@
             overflow: hidden;
             cursor: text;
         }
-        @supports (-ms-ime-align: auto) {
-            input ~ label {
-                font-size: 0.875rem;
-                top: 0.5rem;
-            }
-        }
         input:not([type='month']):not([type='date']):not([type='datetime']):not([placeholder=' '])
             ~ div
             > label {

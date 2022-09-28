@@ -100,7 +100,7 @@ function Page() {
                         <p>Used on category, dossier pages.</p>
                         <ul>
                             <li>default</li>
-                            <li>wihtout a label</li>
+                            <li>without a label</li>
                             <li>visited</li>
                             <li>no image</li>
                         </ul>
