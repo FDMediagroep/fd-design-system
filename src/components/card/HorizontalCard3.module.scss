@@ -31,9 +31,12 @@
             top: auto;
             left: auto;
             right: auto;
-            font-family: map-deep-get($typography, 'font-family', 'bold'),
-                sans-serif;
             color: var(--primary);
+            .update,
+            .prefix {
+                font-family: map-deep-get($typography, 'font-family', 'bold'),
+                    sans-serif;
+            }
             .dot {
                 margin: 0 0.25rem;
                 color: var(--meta-copy);
