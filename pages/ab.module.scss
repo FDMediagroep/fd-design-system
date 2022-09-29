@@ -13,19 +13,6 @@
         &:hover {
             color: var(--link-hover);
         }
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            &:hover {
-                color: #{map-deep-get($colors, 'colors', 'primary', 50)};
-            }
-        }
-    }
-
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     }
     :global(.css-variant-1) {
         color: red;
@@ -45,11 +32,5 @@
         height: 300px;
         color: var(--content-copy);
         background-color: var(--content-background);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
     }
 }

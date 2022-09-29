@@ -19,37 +19,11 @@
             outline: none;
             padding: 0.75rem;
             background-color: var(--toolbar);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        80
-                    )};
-            }
 
             &:hover,
             &:focus {
                 box-shadow: inset 2px 0 0 0 var(--toolbar-hover-color);
                 background-color: var(--toolbar);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    box-shadow: inset 2px 0 0 0 #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
-                        )};
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            80
-                        )};
-                }
             }
             &:active,
             &:hover:active {
@@ -64,11 +38,6 @@
                     width: 20px;
                     height: 20px;
                     fill: var(--toolbar-icon);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-                    }
                 }
 
                 &.bookmarkFill {
@@ -93,11 +62,6 @@
                 svg,
                 svg [fill='#917F78'] {
                     fill: var(--toolbar-hover-color);
-                    // IE11
-                    @media screen and (-ms-high-contrast: active),
-                        (-ms-high-contrast: none) {
-                        fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                    }
                 }
             }
         }

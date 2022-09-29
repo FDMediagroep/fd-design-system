@@ -3,16 +3,8 @@
 
 .profile-button.profile-button {
     color: var(--button-text);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
-    }
 }
 
 .profile-button-cta.profile-button-cta {
     color: var(--button-text);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
-    }
 }

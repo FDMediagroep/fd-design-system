@@ -6,15 +6,11 @@
 .article {
     max-width: 1248px;
     margin: 0 0.5rem;
+    color: var(--content-copy);
+    align-self: center;
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         margin: 0 1rem;
     }
-    color: var(--content-copy);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    }
-    align-self: center;
 
     header {
         margin-bottom: 40px;
@@ -98,14 +94,9 @@
 
         > a {
             text-decoration: none;
+            color: var(--primary);
             &:hover {
                 text-decoration: underline;
-            }
-            color: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
             }
         }
     }

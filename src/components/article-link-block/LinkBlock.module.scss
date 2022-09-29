@@ -14,12 +14,6 @@
     width: auto;
     color: var(--primary);
     background-color: var(--card-2);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-        color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-    }
-
     &.right {
         margin: 40px auto;
         box-sizing: border-box;
@@ -35,12 +29,6 @@
         margin-bottom: 0.5rem;
         padding: 0;
         color: var(--primary);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-        }
-
         font-weight: normal;
         font-size: 1rem;
         font-family: map-deep-get($typography, 'font-family', 'bold'),
@@ -54,12 +42,6 @@
         margin: 0;
         padding: 0;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
-
         font-weight: normal;
         font-size: 1.0625rem;
         font-family: map-deep-get($typography, 'font-family', 'regular'),
@@ -74,11 +56,6 @@
         top: calc(50% - 12px);
         svg {
             fill: var(--meta-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
             height: 23px;
             width: 23px;
         }
@@ -87,11 +64,6 @@
     &[data-variant='variant-1'] {
         p {
             color: var(--link-longread);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'longread', 50)};
-            }
         }
     }
 }

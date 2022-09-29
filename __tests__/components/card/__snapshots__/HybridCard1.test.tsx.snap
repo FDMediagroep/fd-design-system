@@ -28,7 +28,7 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
         class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2"
+          class="meta xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"
@@ -84,7 +84,7 @@ exports[`HybridCard1 should render themes correctly 1`] = `
         class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2"
+          class="meta xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"
@@ -140,7 +140,7 @@ exports[`HybridCard1 should render themes correctly 2`] = `
         class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2"
+          class="meta xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"
@@ -196,7 +196,7 @@ exports[`HybridCard1 should render themes correctly 3`] = `
         class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2"
+          class="meta xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"
@@ -252,7 +252,7 @@ exports[`HybridCard1 should render themes correctly 4`] = `
         class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2"
+          class="meta xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"
@@ -308,7 +308,7 @@ exports[`HybridCard1 should render themes correctly 5`] = `
         class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2"
+          class="meta xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"
@@ -364,7 +364,7 @@ exports[`HybridCard1 should render themes correctly 6`] = `
         class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2"
+          class="meta xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"
@@ -420,7 +420,7 @@ exports[`HybridCard1 should render themes correctly 7`] = `
         class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2"
+          class="meta xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"
@@ -476,7 +476,7 @@ exports[`HybridCard1 should render themes correctly 8`] = `
         class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2"
+          class="meta xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"
@@ -508,7 +508,6 @@ exports[`HybridCard1 should render variant-1 correctly 1`] = `
 <div>
   <article
     class="hybridCard1 xs__p+4 s__p-0"
-    data-variant="variant-1"
     id="1"
   >
     <a
@@ -533,7 +532,7 @@ exports[`HybridCard1 should render variant-1 correctly 1`] = `
         class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2"
+          class="meta xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"

@@ -15,11 +15,6 @@
         font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
         color: var(--quote);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-        }
         line-height: 1.333;
         margin: 0;
         &:before {
@@ -36,16 +31,6 @@
                 width: 91px;
                 border-top: 11px solid var(--quote);
             }
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-top: 11px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        30
-                    )};
-            }
         }
     }
 
@@ -53,11 +38,6 @@
         margin-top: 1rem;
         padding: 0;
         color: var(--quote);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-        }
         font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;
         font-size: 1rem;

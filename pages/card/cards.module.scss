@@ -6,11 +6,6 @@
     &,
     td {
         border: 1px solid var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border: 1px solid #{map-deep-get($colors, 'colors', 'neutral', 30)};
-        }
         border-collapse: collapse;
         padding: 0.5rem 1rem;
         vertical-align: top;
@@ -22,11 +17,6 @@
 
     a {
         color: var(--primary);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-        }
     }
 }
 
