@@ -154,24 +154,12 @@ module.exports = {
         '/components/card/HybridCard2': [
             './src/components/card/HybridCard2.tsx',
         ],
-        '/components/card/HybridCard3': [
-            './src/components/card/HybridCard3.tsx',
-        ],
         '/components/card/HybridCard4': [
             './src/components/card/HybridCard4.tsx',
         ],
         '/components/card/LinkCard': ['./src/components/card/LinkCard.tsx'],
         '/components/card/VerticalCard1': [
             './src/components/card/VerticalCard1.tsx',
-        ],
-        '/components/card/VerticalCard2': [
-            './src/components/card/VerticalCard2.tsx',
-        ],
-        '/components/card/VerticalCard3': [
-            './src/components/card/VerticalCard3.tsx',
-        ],
-        '/components/card/VerticalCard4': [
-            './src/components/card/VerticalCard4.tsx',
         ],
         '/components/card/VerticalCard5': [
             './src/components/card/VerticalCard5.tsx',

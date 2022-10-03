@@ -5,11 +5,9 @@ import '@fdmg/css-grid/css/flex.css';
 import { VerticalCard1 } from '../../src/components/card/VerticalCard1';
 import { getPayload } from '../api/fd-web';
 import { HybridCard1 } from '../../src/components/card/HybridCard1';
-import { VerticalCard3 } from '../../src/components/card/VerticalCard3';
 import { HybridCard2 } from '../../src/components/card/HybridCard2';
 import Head from 'next/head';
 import { GridContainer } from '@fdmg/css-grid/GridContainer';
-import { HybridCard3 } from '../../src/components/card/HybridCard3';
 
 interface Props {
     data: any;
@@ -30,28 +28,6 @@ function Page(props: Props) {
                 <p>Last update: {new Date(props.timestamp).toLocaleString()}</p>
 
                 <GridContainer className="top-content" attributes={['grid']}>
-                    {breakingTeaser && (
-                        <GridContainer
-                            className={`ie-full-height ${styles.ie11FullHeight}`}
-                            attributes={['xs-12', 'gap-1', 'gap-bottom']}
-                        >
-                            <HybridCard3
-                                id={breakingTeaser.id}
-                                className={`${styles.newsContainer} ${styles.fullHeight}`}
-                                caption={breakingTeaser?.title}
-                                intro={breakingTeaser?.intro}
-                                label={breakingTeaser?.topicPrefixOrCategory}
-                                theme={breakingTeaser?.image?.backgroundColor}
-                                title={breakingTeaser?.title}
-                                url={`${breakingTeaser?.publicationUrl}`}
-                                imageUrl={`${breakingTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlS={`${breakingTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
-                                imageUrlM={`${breakingTeaser?.image?.normalUrl}&rect=.17625%2c.0%2c.61875%2c.9999999999999999&q=45&w=320`}
-                                imageUrlL={`${breakingTeaser?.image?.wideUrl}&rect=.17625%2c.0%2c.61875%2c.9999999999999999&q=45&w=320`}
-                            />
-                        </GridContainer>
-                    )}
-
                     <GridContainer
                         className="editorial-content"
                         attributes={['xs-12', 'l-9', 'gap-1', 'gap-bottom']}
@@ -62,7 +38,7 @@ function Page(props: Props) {
                                     className={`ie-full-height ${styles.ie11FullHeight}`}
                                     attributes={['xs-12', 'gap-bottom']}
                                 >
-                                    <VerticalCard3
+                                    <VerticalCard1
                                         id={singleOpeningTeaser.id}
                                         className={`${styles.newsContainer} ${styles.fullHeight}`}
                                         caption={singleOpeningTeaser?.title}
