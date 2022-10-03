@@ -45,12 +45,12 @@ function HybridCard4(props: Props) {
                 <div className={`${styles.teaserText} xs__pl+4 s__p+4 m__p+4`}>
                     {props.label && (
                         <span
-                            className={`${styles.prefix} xs__p+1 s__p+2 xs__mb+2`}
+                            className={`${styles.prefix} xs__mb+2  body-text sans s`}
                         >
                             {props.label}
                         </span>
                     )}
-                    <h1 className="heading serif xs xs__m-0">{props.title}</h1>
+                    <h1 className="heading serif s xs__m-0">{props.title}</h1>
                 </div>
             </a>
         </article>

@@ -47,11 +47,18 @@ function HorizontalCard4(props: Props) {
                     </div>
                 )}
 
-                <div className={`${styles.teaserText} xs__pl+4 s__p+4 s__pt-0`}>
-                    <div className={`${styles.meta} xs__m-0 xs__mb+2`}>
-                        <span className={`${styles.prefix}  xs__p+1 s__p+2`}>
-                            {props.label}
-                        </span>
+                <div className={`${styles.teaserText} xs__pl+4 s__p+4`}>
+                    <div
+                        className={`${styles.meta} xs__m-0 xs__mb+2 body-text sans s`}
+                    >
+                        {props.label && (
+                            <>
+                                <span className={styles.prefix}>
+                                    {props.label}
+                                </span>
+                                <span className={styles.dot}>•</span>
+                            </>
+                        )}
                         <time>{props.time}</time>
                     </div>
 
