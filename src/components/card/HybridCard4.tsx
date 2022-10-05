@@ -50,7 +50,7 @@ function HybridCard4(props: Props) {
                             {props.label}
                         </span>
                     )}
-                    <h1 className="heading serif s xs__m-0">{props.title}</h1>
+                    <h1 className="heading serif xs xs__m-0">{props.title}</h1>
                 </div>
             </a>
         </article>
