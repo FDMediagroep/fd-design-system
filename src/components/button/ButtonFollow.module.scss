@@ -9,12 +9,6 @@
     padding: 5px 10px;
     border: 1px solid var(--primary);
     color: var(--primary);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        border: 1px solid #{map-deep-get($colors, 'colors', 'primary', 75)};
-        color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-    }
-
     background-color: transparent;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -25,13 +19,6 @@
         background-color: var(--primary);
         border-color: var(--primary);
         color: var(--content-background);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            border-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-        }
     }
     .cross {
         &:before {
@@ -65,16 +52,6 @@
             color: var(--primary);
             background-color: transparent;
         }
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-            &:hover {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
-        }
-
         .cross {
             transform: rotate(45deg);
         }

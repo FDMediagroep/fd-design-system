@@ -11,7 +11,7 @@
     flex-grow: 1;
     position: relative;
     background-color: var(--card);
-    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0.2px rgba(0, 0, 0, 0.1);
     .cardContent {
         flex: 1 1 auto;
         display: flex;
@@ -107,11 +107,6 @@
         .teaserText h1,
         .teaserText p {
             color: var(--card-text-visited);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
         }
 
         &[data-variant='variant-2'] {
@@ -119,17 +114,6 @@
             .meta time {
                 color: var(--card-label-text-visited);
                 background-color: var(--card-label-visited);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            90
-                        )};
-                }
             }
         }
 

@@ -5,19 +5,9 @@
 .fdLatestNews {
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
     background-color: var(--card-2);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-    }
-
     h3 {
         margin: 0;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
     }
 
     h3,
@@ -37,17 +27,6 @@
         display: block;
         border-top: 1px solid var(--dividers);
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            border-top: 1px solid #{map-deep-get(
-                    $colors,
-                    'colors',
-                    'neutral',
-                    50
-                )};
-        }
         .isRead {
             opacity: 0.6;
         }
@@ -56,18 +35,8 @@
                 text-decoration: underline;
             }
             color: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
             .icon svg {
                 fill: var(--primary);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                }
             }
         }
         text-decoration: none;
@@ -79,11 +48,6 @@
         top: calc(50% - 12px);
         svg {
             fill: var(--meta-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
             height: 23px;
             width: 23px;
         }
@@ -91,11 +55,6 @@
 
     time {
         color: var(--writer);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-        }
         display: block;
         font-size: 0.8125rem;
         @media only screen and (min-width: 641px) {

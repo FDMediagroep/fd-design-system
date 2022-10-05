@@ -7,11 +7,6 @@
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
     color: var(--primary);
     background-color: var(--card-2);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-        color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-    }
     h3 {
         font-size: 1.125rem;
         line-height: 1.222;
@@ -42,16 +37,6 @@
         display: inline-block;
         width: 100%;
         border-top: 1px solid var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border-top: 1px solid #{map-deep-get(
-                    $colors,
-                    'colors',
-                    'neutral',
-                    50
-                )};
-        }
         > div {
             margin: 0.5rem 1rem;
             display: flex;
@@ -64,18 +49,8 @@
         position: relative;
         top: 5px;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
         &:hover {
             color: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
         }
         display: block;
         white-space: nowrap;
@@ -105,11 +80,6 @@
             width: 1rem;
             height: 1rem;
             fill: var(--meta-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
         }
     }
     .tagContainer.selected {

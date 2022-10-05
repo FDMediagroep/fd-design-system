@@ -21,20 +21,10 @@
 
         .caption {
             color: var(--captions);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 20)};
-            }
         }
 
         .credit {
             color: var(--credits);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-            }
             margin-left: 5px;
             white-space: nowrap;
         }

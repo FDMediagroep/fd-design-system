@@ -16,12 +16,6 @@
         cursor: pointer;
         svg {
             fill: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
-
             width: 1rem;
             height: 1rem;
         }

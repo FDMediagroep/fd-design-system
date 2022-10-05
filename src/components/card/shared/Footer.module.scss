@@ -8,10 +8,6 @@
     font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     font-size: 0.875rem;
     color: var(--meta-copy);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-    }
     menu {
         text-align: right;
         padding-inline-start: 0;
@@ -40,11 +36,6 @@
             sans-serif;
         font-size: 0.875rem;
         color: var(--meta-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-        }
     }
 
     .icon {
@@ -54,11 +45,6 @@
             width: 1rem;
             height: 1rem;
             fill: var(--meta-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
         }
     }
 }

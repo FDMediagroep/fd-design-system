@@ -10,16 +10,6 @@
         &:hover ~ .switch,
         &:focus ~ .switch {
             outline: 1px solid var(--dividers);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                outline: 1px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        50
-                    )};
-            }
         }
     }
     .switch {
@@ -42,16 +32,6 @@
             top: 0.25rem;
             border-radius: 7px;
             background-color: var(--switch-fill);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        60
-                    )};
-            }
         }
         &:after {
             content: '';
@@ -72,16 +52,6 @@
             );
             border-image-slice: 1;
             background-color: var(--switch-knob);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'primary',
-                        60
-                    )};
-            }
             left: 0;
             top: 0;
         }
@@ -91,27 +61,12 @@
     input:hover {
         ~ .switchLabel {
             color: var(--switch-label-hover);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
         }
     }
     input:hover {
         ~ .switch {
             &:before {
                 background-color: var(--switch-hover);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            25
-                        )};
-                }
             }
         }
     }
@@ -119,30 +74,10 @@
     input:checked ~ .switch {
         &:before {
             background-color: var(--switch-check-fill);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'primary',
-                        25
-                    )};
-            }
         }
         &:after {
             left: calc(100% - 20px);
             background-color: var(--switch-active);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'persoonlijk',
-                        50
-                    )};
-            }
         }
     }
 
@@ -153,11 +88,6 @@
         cursor: pointer;
         font-size: 1rem;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
         position: relative;
         font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;

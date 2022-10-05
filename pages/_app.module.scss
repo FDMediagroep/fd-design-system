@@ -14,26 +14,18 @@
     main {
         display: flex;
         flex: 1 1 auto;
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            flex: 1 1 100%;
-        }
-
         flex-direction: column;
         min-height: 100vh;
         padding: 0 1rem;
-        max-width: 100%;
+        // max-width: 100%;
         box-sizing: border-box;
+        max-width: 1280px;
+        margin: 0 auto;
     }
 }
 
 .article {
     background-color: var(--product-background-2);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-    }
 }
 
 .menu {
@@ -54,64 +46,16 @@
             color: var(--input-color);
             background-color: var(--input-background);
             border-bottom: 2px solid var(--input-underline);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        100
-                    )};
-                border-bottom: 2px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        50
-                    )};
-            }
             &::placeholder {
                 color: var(--input-placeholder);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-                }
             }
             &:hover {
                 border-color: var(--input-underline-hover);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    border-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'neutral',
-                            40
-                        )};
-                }
             }
             &:focus {
                 border: none;
                 caret-color: var(--input-caret);
                 border-bottom: 2px solid var(--input-underline-focus);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    caret-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
-                        )};
-                    border-bottom: 2px solid #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            75
-                        )};
-                }
             }
 
             @media screen and (max-width: 640px - 0.02px) {
@@ -141,11 +85,6 @@
             width: 1rem;
             height: 1rem;
             fill: var(--content-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            }
         }
     }
 
@@ -177,11 +116,6 @@
         }
         figcaption {
             color: var(--content-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-            }
         }
         img {
             width: 1rem;

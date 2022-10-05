@@ -27,10 +27,6 @@ html.system {
 
 .markdown {
     color: var(--content-copy);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    }
     h1,
     h2,
     h3,
@@ -46,30 +42,12 @@ html.system {
     h2 {
         padding-bottom: 0.5rem;
         border-bottom: 1px solid var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border-bottom: 1px solid #{map-deep-get(
-                    $colors,
-                    'colors',
-                    'neutral',
-                    60
-                )};
-        }
     }
 
     a {
         color: var(--link);
         &:hover {
             color: var(--link-hover);
-        }
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            &:hover {
-                color: #{map-deep-get($colors, 'colors', 'primary', 50)};
-            }
         }
     }
 
@@ -82,24 +60,12 @@ html.system {
     code {
         padding: 0.2rem 0.3rem;
         background-color: var(--card);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-        }
     }
     pre {
         padding: 1rem;
         overflow: auto;
         max-width: 100%;
-
         border: 1px solid var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border: 1px solid #{map-deep-get($colors, 'colors', 'neutral', 60)};
-        }
-
         &::-webkit-scrollbar {
             width: 0.5rem;
             height: 0.5rem;
@@ -109,11 +75,6 @@ html.system {
             -webkit-border-radius: 0.25rem;
             border-radius: 0.25rem;
             background: var(--dividers);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-            }
         }
 
         &::-webkit-scrollbar-thumb {
@@ -148,10 +109,5 @@ html.system {
         height: 0.25rem;
         background-color: var(--dividers);
         border: none;
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-        }
     }
 }

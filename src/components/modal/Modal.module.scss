@@ -16,11 +16,6 @@
         z-index: 99998;
         opacity: 0.8;
         background-color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
     }
 
     .contentBackground {
@@ -48,11 +43,6 @@
     .contentBox {
         position: fixed;
         overflow: hidden;
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            overflow: auto;
-        }
         display: flex;
         flex-direction: column;
         top: 0;
@@ -82,20 +72,9 @@
         line-height: 1.412;
 
         background-color: var(--product-background);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-        }
-
         a {
             text-decoration: none;
             color: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
         }
     }
 
@@ -132,12 +111,6 @@
         }
 
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
-
         &::-webkit-scrollbar {
             width: 0.5rem;
             height: 0.5rem;
@@ -147,11 +120,6 @@
             -webkit-border-radius: 0.25rem;
             border-radius: 0.25rem;
             background: var(--dividers);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background: #{map-deep-get($colors, 'colors', 'neutral', 50)};
-            }
         }
 
         &::-webkit-scrollbar-thumb {
@@ -189,16 +157,6 @@
         }
 
         border-top: 1px solid var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border-top: 1px solid #{map-deep-get(
-                    $colors,
-                    'colors',
-                    'neutral',
-                    50
-                )};
-        }
     }
 
     .closeIcon svg {
@@ -212,12 +170,6 @@
         fill: var(--primary);
         width: 23px;
         height: 23px;
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-        }
-
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             display: block;
         }

@@ -16,12 +16,6 @@
         margin-bottom: 0.5rem;
         cursor: pointer;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
-
         font-size: 1rem;
         font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;
@@ -35,29 +29,9 @@
             width: 20px;
             height: 20px;
             border: 1.5px solid var(--checkbox-border);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border: 1.5px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'primary',
-                        75
-                    )};
-            }
 
             transition: border-color 0.3s;
             background-color: var(--checkbox-fill);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        100
-                    )};
-            }
         }
         &:after {
             content: '';
@@ -68,22 +42,6 @@
             height: 4px;
             border-left: 1.5px solid var(--checkbox-check);
             border-bottom: 1.5px solid var(--checkbox-check);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-left: 1.5px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        100
-                    )};
-                border-bottom: 1.5px solid #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'neutral',
-                        100
-                    )};
-            }
             opacity: 0;
             transition: all 0.3s;
             transform: rotate(-48deg);
@@ -95,40 +53,15 @@
         ~ .checkbox {
             &:before {
                 background-color: var(--checkbox-hover);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    background-color: #{map-deep-get(
-                            $colors,
-                            'colors',
-                            'primary',
-                            25
-                        )};
-                }
             }
 
             color: var(--checkbox-label-hover);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
         }
     }
 
     input:checked ~ .checkbox {
         &:before {
             background-color: var(--checkbox-fill-checked);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                background-color: #{map-deep-get(
-                        $colors,
-                        'colors',
-                        'primary',
-                        75
-                    )};
-            }
         }
         &:after {
             opacity: 1;

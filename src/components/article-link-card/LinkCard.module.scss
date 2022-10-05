@@ -11,11 +11,6 @@
     display: block;
     width: auto;
     background-color: var(--card-2);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-    }
-
     h3,
     a {
         display: block;
@@ -43,11 +38,6 @@
             sans-serif;
         margin: 0;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
     }
 
     > a {
@@ -57,41 +47,15 @@
         font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;
         border-top: 1px solid var(--dividers);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border-top: 1px solid #{map-deep-get(
-                    $colors,
-                    'colors',
-                    'neutral',
-                    50
-                )};
-        }
-
         line-height: 1.2em;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
         .is-read {
             opacity: 0.6;
         }
         &:hover {
             color: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
             .icon svg {
                 fill: var(--primary);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                }
             }
         }
         text-decoration: none;
@@ -108,11 +72,6 @@
         top: calc(50% - 12px);
         svg {
             fill: var(--meta-copy);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
             height: 23px;
             width: 23px;
         }
