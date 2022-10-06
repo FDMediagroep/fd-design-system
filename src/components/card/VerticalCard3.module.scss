@@ -1,0 +1,146 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.verticalCard3 {
+    transition: box-shadow 0.15s linear;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    background-color: var(--card);
+    box-shadow: 0 1px 0.2px rgba(0, 0, 0, 0.1);
+
+    .cardContent {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column-reverse;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            flex-direction: column;
+        }
+    }
+
+    a {
+        padding: 1rem;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        text-decoration: none;
+        &:hover h1 {
+            text-decoration: underline;
+        }
+    }
+
+    figure {
+        flex: 0 0 auto; // IE11 fix
+        margin: -1rem -1rem 0 -1rem;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            margin: 0 -1rem -1rem -1rem;
+        }
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    figcaption {
+        display: none;
+    }
+
+    .textContent {
+        flex: 1 1 auto;
+        margin: 1rem 0 0 0 !important;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            margin: 0 0 1rem 0 !important;
+        }
+        padding: 0 !important; // override styles from outside component. Remove this when outer-styles are removed.
+    }
+
+    .teaserText {
+        flex: 1 1 auto;
+        padding: 0 !important; // override styles from outside component. Remove this when outer-styles are removed.
+    }
+
+    .meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        .prefix {
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+    }
+
+    &[data-variant='variant-1'] {
+        .prefix {
+            color: var(--link-longread);
+        }
+    }
+    &[data-variant='variant-2'] {
+        .prefix {
+            padding: 1px 8px;
+            color: var(--card);
+            background-color: var(--primary);
+            line-height: 2rem;
+            font-size: 0.625rem;
+            letter-spacing: 2.5px;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+            text-transform: uppercase;
+        }
+    }
+
+    h1 {
+        margin: 0;
+        color: var(--content-copy);
+    }
+
+    .intro {
+        margin: 0.5rem 0 0 0;
+        color: var(--content-copy);
+    }
+
+    .footer {
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    &.isRead:not(:hover):not(:active):not(:focus) {
+        figure img {
+            filter: grayscale(1) sepia(0.15);
+        }
+        &:not([data-variant]) .meta .prefix,
+        &[data-variant='variant-1'] .meta .prefix,
+        .meta time,
+        .teaserText h1,
+        .teaserText p {
+            color: var(--card-text-visited);
+        }
+
+        &[data-variant='variant-2'] {
+            .meta .prefix,
+            .meta time {
+                color: var(--card-label-text-visited);
+                background-color: var(--card-label-visited);
+            }
+        }
+        background-color: var(--card-visited);
+    }
+
+    &:focus:not(:active),
+    &:hover:not(:active) {
+        box-shadow: var(--card-box-shadow);
+        background-color: var(--card-hover);
+        z-index: 1;
+    }
+    &:active {
+        z-index: 1;
+        outline: 2px solid var(--card-outline-active);
+        background-color: var(--card-active);
+    }
+}

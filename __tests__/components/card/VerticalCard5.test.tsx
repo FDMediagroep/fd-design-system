@@ -9,6 +9,7 @@ describe('VerticalCard5', () => {
     test('should render correctly', () => {
         const { container, getByText } = render(
             <VerticalCard5
+                url="podcastUrl"
                 id="1"
                 imageUrl="https://images.example.com/image.png"
                 imageUrlS="https://images.example.com/imageS.png"
@@ -28,6 +29,7 @@ describe('VerticalCard5', () => {
     test('should have correct class name', () => {
         const { container } = render(
             <VerticalCard5
+                url="podcastUrl"
                 id="1"
                 imageUrl="https://images.example.com/image.png"
                 caption="This is the caption"
