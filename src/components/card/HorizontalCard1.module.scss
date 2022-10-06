@@ -98,7 +98,6 @@
         top: auto;
         left: auto;
         right: auto;
-        display: flex;
         .update,
         .prefix {
             font-family: map-deep-get($typography, 'font-family', 'bold'),
