@@ -960,23 +960,6 @@ function Aside(props: Props) {
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/card/hybrid-3">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/hybrid-3"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Hybrid 3
-                                    </span>
-                                </a>
-                            </Link>
-                        </li>
-                        <li
-                            className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
-                        >
                             <Link href="/card/hybrid-4">
                                 <a
                                     data-ga-name="menu_click"
@@ -1004,57 +987,6 @@ function Aside(props: Props) {
                                 >
                                     <span className="heading sans xxs">
                                         Vertical 1
-                                    </span>
-                                </a>
-                            </Link>
-                        </li>
-                        <li
-                            className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
-                        >
-                            <Link href="/card/vertical-2">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/vertical-2"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Vertical 2
-                                    </span>
-                                </a>
-                            </Link>
-                        </li>
-                        <li
-                            className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
-                        >
-                            <Link href="/card/vertical-3">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/vertical-3"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Vertical 3
-                                    </span>
-                                </a>
-                            </Link>
-                        </li>
-                        <li
-                            className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
-                        >
-                            <Link href="/card/vertical-4">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/vertical-4"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Vertical 4
                                     </span>
                                 </a>
                             </Link>

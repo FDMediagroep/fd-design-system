@@ -60,18 +60,6 @@ module.exports = [
         destination: '/card/vertical-1',
     },
     {
-        source: '/(card/vertical2|cards/vertical2|teaser/vertical2|teasers/vertical2|cards/vertical-2|teaser/vertical-2|teasers/vertical-2)',
-        destination: '/card/vertical-2',
-    },
-    {
-        source: '/(card/vertical3|cards/vertical3|teaser/vertical3|teasers/vertical3|cards/vertical-3|teaser/vertical-3|teasers/vertical-3)',
-        destination: '/card/vertical-3',
-    },
-    {
-        source: '/(card/vertical4|cards/vertical4|teaser/vertical4|teasers/vertical4|cards/vertical-4|teaser/vertical-4|teasers/vertical-4)',
-        destination: '/card/vertical-4',
-    },
-    {
         source: '/(card/vertical5|cards/vertical5|teaser/vertical5|teasers/vertical5|cards/vertical-5|teaser/vertical-5|teasers/vertical-5)',
         destination: '/card/vertical-5',
     },

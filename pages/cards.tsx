@@ -111,18 +111,6 @@ function Page() {
                     </tr>
                     <tr>
                         <td>
-                            <Link href="/card/hybrid-3">
-                                <a>Hybrid Card 3</a>
-                            </Link>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>Breaking</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
                             <Link href="/card/hybrid-4">
                                 <a>Hybrid Card 4</a>
                             </Link>
@@ -142,41 +130,7 @@ function Page() {
                         <td>
                             <ul>
                                 <li>Home</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <Link href="/card/vertical-2">
-                                <a>Vertical Card 2</a>
-                            </Link>
-                        </td>
-                        <td>
-                            <ul>
                                 <li>Dossier overview</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <Link href="/card/vertical-3">
-                                <a>Vertical Card 3</a>
-                            </Link>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>Home</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <Link href="/card/vertical-4">
-                                <a>Vertical Card 4</a>
-                            </Link>
-                        </td>
-                        <td>
-                            <ul>
                                 <li>Persoonlijk Home</li>
                             </ul>
                         </td>

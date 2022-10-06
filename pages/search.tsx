@@ -92,10 +92,6 @@ import {
     metaDescription as hybridCard2Description,
 } from './card/hybrid-2';
 import {
-    metaTitle as hybridCard3Title,
-    metaDescription as hybridCard3Description,
-} from './card/hybrid-3';
-import {
     metaTitle as hybridCard4Title,
     metaDescription as hybridCard4Description,
 } from './card/hybrid-4';
@@ -103,18 +99,6 @@ import {
     metaTitle as verticalCard1Title,
     metaDescription as verticalCard1Description,
 } from './card/vertical-1';
-import {
-    metaTitle as verticalCard2Title,
-    metaDescription as verticalCard2Description,
-} from './card/vertical-2';
-import {
-    metaTitle as verticalCard3Title,
-    metaDescription as verticalCard3Description,
-} from './card/vertical-3';
-import {
-    metaTitle as verticalCard4Title,
-    metaDescription as verticalCard4Description,
-} from './card/vertical-4';
 import {
     metaTitle as verticalCard5Title,
     metaDescription as verticalCard5Description,
@@ -314,10 +298,6 @@ const searchIndex: SearchIndex = {
         title: hybridCard2Title,
         description: hybridCard2Description,
     },
-    '/card/hybrid-3': {
-        title: hybridCard3Title,
-        description: hybridCard3Description,
-    },
     '/card/hybrid-4': {
         title: hybridCard4Title,
         description: hybridCard4Description,
@@ -325,18 +305,6 @@ const searchIndex: SearchIndex = {
     '/card/vertical-1': {
         title: verticalCard1Title,
         description: verticalCard1Description,
-    },
-    '/card/vertical-2': {
-        title: verticalCard2Title,
-        description: verticalCard2Description,
-    },
-    '/card/vertical-3': {
-        title: verticalCard3Title,
-        description: verticalCard3Description,
-    },
-    '/card/vertical-4': {
-        title: verticalCard4Title,
-        description: verticalCard4Description,
     },
     '/card/vertical-5': {
         title: verticalCard5Title,
