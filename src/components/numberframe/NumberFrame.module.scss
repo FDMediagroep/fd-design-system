@@ -14,10 +14,6 @@
     }
 
     color: var(--numberframe);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 30)};
-    }
     h2 {
         line-height: 1;
         margin: 0;
@@ -49,11 +45,6 @@
             }
             @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
                 width: 91px;
-                border-top: 11px solid var(--numberframe);
-            }
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
                 border-top: 11px solid var(--numberframe);
             }
         }

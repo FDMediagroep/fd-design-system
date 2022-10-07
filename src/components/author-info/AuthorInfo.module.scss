@@ -6,11 +6,6 @@
 .fdAuthorInfo {
     color: var(--content-copy);
     background-color: var(--card);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-    }
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
 
     h3 {
@@ -23,11 +18,6 @@
         font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
     }
 
     .profile,

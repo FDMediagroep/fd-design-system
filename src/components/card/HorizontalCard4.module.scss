@@ -9,11 +9,10 @@
     margin-bottom: 1px;
     justify-content: space-between;
     background: #{map-deep-get($colors, 'colors', 'primary', 75)};
-    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0.2px rgba(0, 0, 0, 0.1);
     position: relative;
-
     h1 {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     }
 
     a {
@@ -84,36 +83,45 @@
     .teaserText {
         position: relative;
         flex: 1;
-        min-width: 0; // truncate label
-        .meta {
-            font-family: 'ProximaNovaBold', sans-serif;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8125rem;
-            .prefix {
-                display: block; // truncate label
-                text-transform: uppercase;
-                white-space: nowrap; // truncate label
-                overflow: hidden; // truncate label
-                text-overflow: ellipsis; // truncate label
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-                letter-spacing: 1px;
-            }
-            time {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-                white-space: nowrap; // truncate label
-                margin-left: 0.5rem; // truncate label
-            }
-            @media screen and (min-width: 641px) {
-                font-size: 0.9375rem;
-            }
-        }
-
         > a {
-            color: #191919;
+            color: var(--content-copy);
             display: block;
             overflow: visible;
+        }
+    }
+
+    .meta {
+        position: inherit;
+        top: auto;
+        left: auto;
+        right: auto;
+        .update,
+        .prefix {
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+        }
+        .update {
+            padding: 1px 8px;
+            color: var(--card);
+            background-color: var(--primary);
+            line-height: 2em;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+            text-transform: uppercase;
+        }
+
+        .prefix {
+            color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+        }
+
+        .dot {
+            margin: 0 0.25rem;
+            color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+        }
+
+        time {
+            color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+            white-space: nowrap;
         }
     }
 
@@ -139,7 +147,7 @@
 html.touch {
     .fdHorizontalCard4 {
         &:hover {
-            box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 0.2px rgba(0, 0, 0, 0.1);
         }
     }
 }

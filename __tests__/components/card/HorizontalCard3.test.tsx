@@ -14,15 +14,12 @@ describe('HorizontalCard3', () => {
                 label="Ondernemen"
                 title="This is the title"
                 time="11:50"
-                printTitle="This is the print title"
                 url="https://example.com/1/This is the title"
             />
         );
 
         expect(getByText('This is the title')).toBeTruthy();
         expect(getByText('This is the intro of the card')).toBeTruthy();
-        expect(getByText('Krantentitel:')).toBeTruthy();
-        expect(getByText('‘This is the print title’')).toBeTruthy();
         expect(getByText('Ondernemen')).toBeTruthy();
         expect(getByText('11:50')).toBeTruthy();
         expect(container.querySelector('[href]')?.getAttribute('href')).toBe(

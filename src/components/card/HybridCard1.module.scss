@@ -10,16 +10,11 @@
     display: flex;
     position: relative;
     width: 100%;
+    background-color: var(--card);
+    box-shadow: 0 1px 0.2px rgba(0, 0, 0, 0.1);
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         height: 100%;
     }
-
-    background-color: var(--card);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-    }
-    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
 
     > a {
         display: flex;
@@ -107,45 +102,16 @@
         .prefix {
             font-family: map-deep-get($typography, 'font-family', 'bold'),
                 sans-serif;
-            font-size: 0.875rem;
-            text-transform: uppercase;
             color: var(--primary);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
-            letter-spacing: 1px;
-        }
-    }
-
-    &[data-variant='variant-1'] {
-        .prefix {
-            color: var(--link-longread);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'longread', 75)};
-            }
         }
     }
 
     h1 {
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
     }
 
     .intro {
         color: var(--content-copy);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
         display: none;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             display: block;
@@ -160,41 +126,20 @@
         .meta time,
         .textContainer h1 {
             color: var(--card-text-visited);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'neutral', 40)};
-            }
         }
 
         background-color: var(--card-visited);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-        }
     }
 
     &:focus:not(:active),
     &:hover:not(:active) {
         box-shadow: var(--card-box-shadow);
         background-color: var(--card-hover);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-        }
         z-index: 1;
     }
     &:active {
         z-index: 1;
         outline: 2px solid var(--card-outline-active);
         background-color: var(--card-active);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            background-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-        }
     }
 }

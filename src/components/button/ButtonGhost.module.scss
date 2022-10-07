@@ -20,12 +20,6 @@
     font-size: 0.875rem;
     line-height: 1.25;
     color: var(--button-ghost-text);
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        display: inline-block;
-        opacity: 1; // Remove this line for fd.nl
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    }
     text-decoration: none;
     cursor: pointer;
     padding: 0 1rem;
@@ -47,12 +41,6 @@
 
     svg {
         fill: var(--button-ghost-text);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            fill: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        }
-
         width: 1rem;
         height: 1rem;
         margin: 0 0.5rem;
@@ -72,27 +60,7 @@
         outline-color: var(--button-ghost-hover);
         svg {
             fill: var(--button-ghost-hover);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
         }
-    }
-    // IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        background-color: transparent;
-        outline-color: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-        &:hover {
-            outline-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-        }
-    }
-
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        height: 100%;
-        min-height: 32px;
-        max-height: 32px;
     }
     &.m {
         font-size: 1rem;
@@ -108,20 +76,10 @@
     &:active,
     &:focus {
         outline-color: var(--button-ghost-outline);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            outline-color: #{map-deep-get($colors, 'colors', 'primary', 100)};
-        }
     }
 
     &:hover {
         outline-color: var(--button-ghost-hover-outline);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            outline-color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-        }
     }
 
     &:before {
@@ -139,18 +97,9 @@
 
     &:focus {
         color: var(--button-ghost-focus);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'primary', 100)};
-        }
+
         svg {
             fill: var(--button-ghost-focus);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'primary', 100)};
-            }
         }
     }
 
@@ -183,54 +132,21 @@
 
         color: var(--button-ghost-active-text);
         background-color: var(--button-ghost-active);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            background-color: #{map-deep-get($colors, 'colors', 'primary', 25)};
-        }
-
         svg {
             fill: var(--button-ghost-active-text);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
         }
     }
 
     &:hover {
         color: var(--button-ghost-hover);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-        }
-
         svg {
             fill: var(--button-ghost-hover);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
         }
 
         &:active {
             color: var(--button-ghost-active-text);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-            }
             svg {
                 fill: var(--button-ghost-active-text);
-                // IE11
-                @media screen and (-ms-high-contrast: active),
-                    (-ms-high-contrast: none) {
-                    fill: #{map-deep-get($colors, 'colors', 'primary', 75)};
-                }
             }
         }
     }
@@ -240,13 +156,6 @@
         outline-color: var(--button-ghost-disabled);
         color: var(--button-ghost-disabled);
         background-color: var(--button-ghost);
-        // IE11
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-            outline-color: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-            background-color: transparent;
-        }
         transform: scale(1);
         * {
             pointer-events: none;
@@ -254,11 +163,6 @@
 
         svg {
             fill: var(--button-ghost-disabled);
-            // IE11
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                fill: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-            }
         }
     }
 

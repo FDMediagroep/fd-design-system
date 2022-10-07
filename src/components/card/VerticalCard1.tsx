@@ -9,7 +9,7 @@ interface Props {
     imageUrlM?: string;
     imageUrlL?: string;
     caption?: string;
-    label: string;
+    label?: string;
     isRead?: boolean;
     title: string;
     intro: string;
@@ -64,15 +64,22 @@ function VerticalCard1(props: Props) {
                 </figure>
 
                 <div className={styles.teaserText}>
-                    <div className={`${styles.meta} xs__mb+2`}>
-                        <span className={styles.prefix}>{props.label}</span>
-                    </div>
+                    {props.label && (
+                        <>
+                            <div
+                                className={`${styles.meta} xs__mb+2 body-text sans s`}
+                            >
+                                <span className={styles.prefix}>
+                                    {props.label}
+                                </span>
+                            </div>
+                        </>
+                    )}
 
                     <div>
                         <h1 className="heading serif s xs__m-0">
                             {props.title}
                         </h1>
-
                         <p
                             className={`${styles.intro} body-text sans s xs__m-0 xs__mt+2`}
                         >

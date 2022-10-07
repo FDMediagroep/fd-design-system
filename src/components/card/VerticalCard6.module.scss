@@ -11,7 +11,7 @@
     display: flex;
     height: 100%;
     background: #{map-deep-get($colors, 'colors', 'primary', 75)};
-    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0.2px rgba(0, 0, 0, 0.1);
 
     > a {
         display: flex;
@@ -48,17 +48,9 @@
     }
 
     .prefix {
-        justify-content: space-between;
-        font-family: 'ProximaNovaBold', sans-serif;
-        line-height: 1.2em;
-        font-size: 0.8125rem;
-        text-transform: uppercase;
-        color: #{map-deep-get($colors, 'colors', 'primary', 75)};
-        background: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-        letter-spacing: 1px;
-        @media screen and (min-width: 640px) {
-            font-size: 0.9375rem;
-        }
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+        color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     }
 
     .teaserText {
@@ -71,8 +63,7 @@
     }
 
     h1 {
-        color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
-        line-height: 120%;
+        color: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     }
 
     &:focus:not(:active),

@@ -25,12 +25,17 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
         class="teaserText xs__pl+4 s__p+4"
       >
         <div
-          class="meta xs__m-0 xs__mb+2"
+          class="meta xs__m-0 xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"
           >
             Ondernemen
+          </span>
+          <span
+            class="dot"
+          >
+            •
           </span>
           <time>
             11:40
@@ -54,7 +59,7 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
 exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
 <div>
   <article
-    class="horizontalCard1 longread xs__p+4"
+    class="horizontalCard1 xs__p+4"
     id="1"
   >
     <a
@@ -76,12 +81,17 @@ exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
         class="teaserText xs__pl+4 s__p+4"
       >
         <div
-          class="meta xs__m-0 xs__mb+2"
+          class="meta xs__m-0 xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"
           >
             Ondernemen
+          </span>
+          <span
+            class="dot"
+          >
+            •
           </span>
           <time>
             11:40
