@@ -26,31 +26,45 @@
     .teaserText {
         position: relative;
         flex: 1;
+        > a {
+            color: var(--content-copy);
+            display: block;
+            overflow: visible;
+        }
+    }
 
-        .meta {
-            display: flex;
-            justify-content: space-between;
-            position: inherit;
-            top: auto;
-            left: auto;
-            right: auto;
+    .meta {
+        position: inherit;
+        top: auto;
+        left: auto;
+        right: auto;
+        .update,
+        .prefix {
             font-family: map-deep-get($typography, 'font-family', 'bold'),
                 sans-serif;
-            font-size: 0.8125rem;
-            @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-                font-size: 0.9375rem;
-            }
+        }
+        .update {
+            padding: 1px 8px;
+            color: var(--card);
+            background-color: var(--primary);
+            line-height: 2em;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+            text-transform: uppercase;
+        }
+
+        .prefix {
             color: var(--primary);
-            span {
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-            time {
-                font-family: map-deep-get($typography, 'font-family', 'bold'),
-                    sans-serif;
-                color: var(--meta-copy);
-                white-space: nowrap;
-            }
+        }
+
+        .dot {
+            margin: 0 0.25rem;
+            color: var(--meta-copy);
+        }
+
+        time {
+            color: var(--meta-copy);
+            white-space: nowrap;
         }
     }
 
