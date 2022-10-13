@@ -12,15 +12,20 @@ exports[`HorizontalCard2 should render is-read correctly 1`] = `
       href="https://example.com/1/This is the title"
     >
       <div
-        class="teaserText"
+        class="teaserText xs__pl+4 s__p+4"
       >
         <div
-          class="meta xs__m-0 xs__mb+2"
+          class="meta xs__m-0 xs__mb+2 body-text sans s"
         >
           <span
             class="prefix"
           >
             Ondernemen
+          </span>
+          <span
+            class="dot"
+          >
+            •
           </span>
           <time>
             11:50
