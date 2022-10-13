@@ -55,7 +55,6 @@
 
         .prefix {
             color: var(--primary);
-<<<<<<< HEAD
         }
 
         .dot {
@@ -66,18 +65,6 @@
         time {
             color: var(--meta-copy);
             white-space: nowrap;
-=======
-            span {
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-            time {
-                font-family: map-deep-get($typography, 'font-family', 'bold'),
-                    sans-serif;
-                color: var(--meta-copy);
-                white-space: nowrap;
-            }
->>>>>>> origin/master
         }
     }
 
