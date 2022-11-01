@@ -74,19 +74,15 @@ function Page() {
                         Button call-to-action (small)
                     </ButtonCta>
                     <ButtonCta id="demoButtonCtaSIcon">
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span>
+                            <EnvelopeIcon />
+                        </span>
                         <span>Icon call-to-action (small)</span>
                     </ButtonCta>
                     <ButtonCta id="demoButtonCtaSDisabled" disabled="disabled">
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span>
+                            <EnvelopeIcon />
+                        </span>
                         <span>Disabled call-to-action (small)</span>
                     </ButtonCta>
                 </>
@@ -136,11 +132,9 @@ function Page() {
                         Button call-to-action (medium)
                     </ButtonCta>
                     <ButtonCta id="demoButtonCtaMIcon" size="m">
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span>
+                            <EnvelopeIcon />
+                        </span>
                         <span>Icon call-to-action (medium)</span>
                     </ButtonCta>
                     <ButtonCta
@@ -148,11 +142,9 @@ function Page() {
                         disabled="disabled"
                         size="m"
                     >
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span>
+                            <EnvelopeIcon />
+                        </span>
                         <span>Disabled call-to-action (medium)</span>
                     </ButtonCta>
                 </>

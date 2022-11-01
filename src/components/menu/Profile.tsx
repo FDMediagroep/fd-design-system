@@ -98,12 +98,9 @@ function Profile(props: Props) {
                                 data-ga-action="menu click"
                                 data-ga-label="https://fd.nl/mijn-fd"
                             >
-                                <span
-                                    className="icon"
-                                    dangerouslySetInnerHTML={{
-                                        __html: AuthorIcon as any,
-                                    }}
-                                />
+                                <span className="icon">
+                                    <AuthorIcon />
+                                </span>
                                 <span
                                     className={`${styles['button-text']} xs__ml+3`}
                                 >
@@ -118,12 +115,9 @@ function Profile(props: Props) {
                                 data-ga-action="menu click"
                                 data-ga-label="https://fd.nl/mijn-fd/nieuwsbrieven"
                             >
-                                <span
-                                    className="icon"
-                                    dangerouslySetInnerHTML={{
-                                        __html: MailIcon as any,
-                                    }}
-                                />
+                                <span className="icon">
+                                    <MailIcon />
+                                </span>
                                 <span
                                     className={`${styles['button-text']} xs__ml+3`}
                                 >
@@ -138,12 +132,9 @@ function Profile(props: Props) {
                                 data-ga-action="menu click"
                                 data-ga-label="https://fd.nl/bewaarde-artikelen"
                             >
-                                <span
-                                    className="icon"
-                                    dangerouslySetInnerHTML={{
-                                        __html: BookmarkOIcon as any,
-                                    }}
-                                />
+                                <span className="icon">
+                                    <BookmarkOIcon />
+                                </span>
                                 <span
                                     className={`${styles['button-text']} xs__ml+3`}
                                 >
@@ -158,12 +149,9 @@ function Profile(props: Props) {
                                 data-ga-action="menu click"
                                 data-ga-label="https://fd.nl/cookiebeleid"
                             >
-                                <span
-                                    className="icon"
-                                    dangerouslySetInnerHTML={{
-                                        __html: PrivacyIcon as any,
-                                    }}
-                                />
+                                <span className="icon">
+                                    <PrivacyIcon />
+                                </span>
                                 <span
                                     className={`${styles['button-text']} xs__ml+3`}
                                 >

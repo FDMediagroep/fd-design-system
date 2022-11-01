@@ -182,10 +182,9 @@ function TextArea(props: Props) {
                 />
                 <div>
                     <label htmlFor={props.id}>{props.label ?? 'Value'}</label>
-                    <span
-                        className={styles.iconCheck}
-                        dangerouslySetInnerHTML={{ __html: CheckIcon as any }}
-                    />
+                    <span className={styles.iconCheck}>
+                        <CheckIcon />
+                    </span>
                 </div>
                 <div
                     className={`${styles.textareaMessage} ${styles.errorMessage}`}

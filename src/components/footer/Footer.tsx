@@ -5,7 +5,6 @@ import {
     FacebookIcon,
     InstagramIcon,
     LinkedInIcon,
-    RssIcon,
     TwitterIcon,
 } from '../../design-tokens/icons';
 import { DarkModeToggle } from './DarkModeToggle';
@@ -84,18 +83,12 @@ function Footer() {
                         >
                             <span>Over FD</span>
                             <span className={styles.icon}>
-                                <span
-                                    className={styles.collapse}
-                                    dangerouslySetInnerHTML={{
-                                        __html: CollapseIcon as any,
-                                    }}
-                                />
-                                <span
-                                    className={styles.expand}
-                                    dangerouslySetInnerHTML={{
-                                        __html: ExpandIcon as any,
-                                    }}
-                                />
+                                <span className={styles.collapse}>
+                                    <CollapseIcon />
+                                </span>
+                                <span className={styles.expand}>
+                                    <ExpandIcon />
+                                </span>
                             </span>
                         </button>
                     </h3>
@@ -175,18 +168,12 @@ function Footer() {
                         >
                             <span>Algemeen</span>
                             <span className={styles.icon}>
-                                <span
-                                    className={styles.collapse}
-                                    dangerouslySetInnerHTML={{
-                                        __html: CollapseIcon as any,
-                                    }}
-                                />
-                                <span
-                                    className={styles.expand}
-                                    dangerouslySetInnerHTML={{
-                                        __html: ExpandIcon as any,
-                                    }}
-                                />
+                                <span className={styles.collapse}>
+                                    <CollapseIcon />
+                                </span>
+                                <span className={styles.expand}>
+                                    <ExpandIcon />
+                                </span>
                             </span>
                         </button>
                     </h3>
@@ -268,18 +255,12 @@ function Footer() {
                         >
                             <span>Service</span>
                             <span className={styles.icon}>
-                                <span
-                                    className={styles.collapse}
-                                    dangerouslySetInnerHTML={{
-                                        __html: CollapseIcon as any,
-                                    }}
-                                />
-                                <span
-                                    className={styles.expand}
-                                    dangerouslySetInnerHTML={{
-                                        __html: ExpandIcon as any,
-                                    }}
-                                />
+                                <span className={styles.collapse}>
+                                    <CollapseIcon />
+                                </span>
+                                <span className={styles.expand}>
+                                    <ExpandIcon />
+                                </span>
                             </span>
                         </button>
                     </h3>
@@ -357,18 +338,12 @@ function Footer() {
                         >
                             <span>Producten</span>
                             <span className={styles.icon}>
-                                <span
-                                    className={styles.collapse}
-                                    dangerouslySetInnerHTML={{
-                                        __html: CollapseIcon as any,
-                                    }}
-                                />
-                                <span
-                                    className={styles.expand}
-                                    dangerouslySetInnerHTML={{
-                                        __html: ExpandIcon as any,
-                                    }}
-                                />
+                                <span className={styles.collapse}>
+                                    <CollapseIcon />
+                                </span>
+                                <span className={styles.expand}>
+                                    <ExpandIcon />
+                                </span>
                             </span>
                         </button>
                     </h3>
@@ -450,18 +425,12 @@ function Footer() {
                         >
                             <span>Van onze partners</span>
                             <span className={styles.icon}>
-                                <span
-                                    className={styles.collapse}
-                                    dangerouslySetInnerHTML={{
-                                        __html: CollapseIcon as any,
-                                    }}
-                                />
-                                <span
-                                    className={styles.expand}
-                                    dangerouslySetInnerHTML={{
-                                        __html: ExpandIcon as any,
-                                    }}
-                                />
+                                <span className={styles.collapse}>
+                                    <CollapseIcon />
+                                </span>
+                                <span className={styles.expand}>
+                                    <ExpandIcon />
+                                </span>
                             </span>
                         </button>
                     </h3>
@@ -510,18 +479,12 @@ function Footer() {
                         >
                             <span>Meer van FDMG</span>
                             <span className={styles.icon}>
-                                <span
-                                    className={styles.collapse}
-                                    dangerouslySetInnerHTML={{
-                                        __html: CollapseIcon as any,
-                                    }}
-                                />
-                                <span
-                                    className={styles.expand}
-                                    dangerouslySetInnerHTML={{
-                                        __html: ExpandIcon as any,
-                                    }}
-                                />
+                                <span className={styles.collapse}>
+                                    <CollapseIcon />
+                                </span>
+                                <span className={styles.expand}>
+                                    <ExpandIcon />
+                                </span>
                             </span>
                         </button>
                     </h3>
@@ -675,10 +638,9 @@ function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${styles.icon} xs__p+4`}
-                    dangerouslySetInnerHTML={{
-                        __html: LinkedInIcon as any,
-                    }}
-                />
+                >
+                    <LinkedInIcon />
+                </a>
                 <a
                     href="https://twitter.com/FD_Nieuws"
                     data-ga-name="footer_menu_click"
@@ -688,10 +650,9 @@ function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${styles.icon} xs__p+4`}
-                    dangerouslySetInnerHTML={{
-                        __html: TwitterIcon as any,
-                    }}
-                />
+                >
+                    <TwitterIcon />
+                </a>
                 <a
                     href="https://nl-nl.facebook.com/Hetfd"
                     data-ga-name="footer_menu_click"
@@ -701,10 +662,9 @@ function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${styles.icon} xs__p+4`}
-                    dangerouslySetInnerHTML={{
-                        __html: FacebookIcon as any,
-                    }}
-                />
+                >
+                    <FacebookIcon />
+                </a>
                 <a
                     href="https://www.instagram.com/financieeledagblad/"
                     data-ga-name="footer_menu_click"
@@ -714,10 +674,9 @@ function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${styles.icon} xs__p+4`}
-                    dangerouslySetInnerHTML={{
-                        __html: InstagramIcon as any,
-                    }}
-                />
+                >
+                    <InstagramIcon />
+                </a>
             </section>
 
             <div className={`${styles['fd-copyright-footer']} xs__mb+4`}>

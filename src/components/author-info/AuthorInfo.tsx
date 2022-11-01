@@ -60,12 +60,9 @@ function AuthorInfo(props: Props) {
                         className={styles.button}
                         onClick={props.onEmailClick}
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <EnvelopeIcon />
+                        </span>
                         <span className={styles.buttonText}>E-mail</span>
                     </Button>
                 ) : null}
@@ -74,12 +71,9 @@ function AuthorInfo(props: Props) {
                         className={styles.button}
                         onClick={props.onTwitterClick}
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: TwitterIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <TwitterIcon />
+                        </span>
                         <span className={styles.buttonText}>Twitter</span>
                     </Button>
                 ) : null}
@@ -88,12 +82,9 @@ function AuthorInfo(props: Props) {
                         className={styles.button}
                         onClick={props.onLinkedInClick}
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: LinkedInIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <LinkedInIcon />
+                        </span>
                         <span className={styles.buttonText}>LinkedIn</span>
                     </Button>
                 ) : null}

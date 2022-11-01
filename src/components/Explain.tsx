@@ -212,10 +212,9 @@ function Explain(props: Props) {
                         onClick={copyAnchor.bind(null, props.anchor)}
                         title="Copy link"
                         aria-label={`Copy link to ${props.legend}`}
-                        dangerouslySetInnerHTML={{
-                            __html: PaperclipIcon as any,
-                        }}
-                    />
+                    >
+                        <PaperclipIcon />
+                    </button>
                 ) : null}
             </h2>
             {props.description && (
@@ -393,7 +392,7 @@ function Explain(props: Props) {
                 {!!tags?.length && <span>Synonyms:</span>}
                 {tags?.map((tag) => (
                     <Link key={tag} href={destination} as={`/${tag}`}>
-                        <a>{tag}</a>
+                        {tag}
                     </Link>
                 ))}
             </section>

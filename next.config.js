@@ -69,12 +69,21 @@ module.exports = withOffline({
         });
 
         // SVG
-        config.module.rules.push({
-            test: /\.svg$/,
+        config.module.rules.unshift({
+            test: /\.svg$/i,
             use: [
-                'raw-loader',
                 {
-                    loader: 'svgo-loader',
+                    loader: 'react-svg-loader',
+                    options: {
+                        jsx: false, // true outputs JSX tags
+                        svgo: {
+                            plugins: [
+                                {
+                                    removeViewBox: false,
+                                },
+                            ],
+                        },
+                    },
                 },
             ],
         });

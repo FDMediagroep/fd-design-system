@@ -110,19 +110,17 @@ function ArticleTags(props: Props) {
                                     <span
                                         className={styles.defaultIcon}
                                         data-tag={tag.tag}
-                                        dangerouslySetInnerHTML={{
-                                            __html: BellOIcon as any,
-                                        }}
                                         onClick={onEnableAlertClick}
-                                    />
+                                    >
+                                        <BellOIcon />
+                                    </span>
                                     <span
                                         className={styles.activeIcon}
                                         data-tag={tag.tag}
-                                        dangerouslySetInnerHTML={{
-                                            __html: BellIcon as any,
-                                        }}
                                         onClick={onDisableAlertClick}
-                                    />
+                                    >
+                                        <BellIcon />
+                                    </span>
                                 </span>
                                 <ButtonFollow
                                     onClick={onFollowClick}

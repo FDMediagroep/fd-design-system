@@ -318,9 +318,18 @@ module.exports = {
             {
                 test: /\.svg$/,
                 use: [
-                    'raw-loader',
                     {
-                        loader: 'svgo-loader',
+                        loader: 'react-svg-loader',
+                        options: {
+                            jsx: false, // true outputs JSX tags
+                            svgo: {
+                                plugins: [
+                                    {
+                                        removeViewBox: false,
+                                    },
+                                ],
+                            },
+                        },
                     },
                 ],
             },

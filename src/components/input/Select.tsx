@@ -149,17 +149,12 @@ function Select(props: Props) {
                 </select>
                 <div>
                     <label htmlFor={props.id}>{props.label ?? 'Value'}</label>
-                    <span
-                        className={styles.iconCheck}
-                        dangerouslySetInnerHTML={{ __html: CheckIcon as any }}
-                    />
-                    <label
-                        htmlFor={props.id}
-                        className={styles.arrow}
-                        dangerouslySetInnerHTML={{
-                            __html: DownThinIcon as any,
-                        }}
-                    />
+                    <span className={styles.iconCheck}>
+                        <CheckIcon />
+                    </span>
+                    <label htmlFor={props.id} className={styles.arrow}>
+                        <DownThinIcon />
+                    </label>
                 </div>
                 {props.type !== 'date' && props.type !== 'datetime' ? (
                     <div

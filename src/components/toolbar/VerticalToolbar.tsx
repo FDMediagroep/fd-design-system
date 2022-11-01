@@ -54,10 +54,9 @@ function VerticalToolbar(props: Props) {
                 size="s"
                 onClick={props.onClick.bind(null, EventType.WHATSAPP, props)}
             >
-                <span
-                    className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: WhatsAppIcon as any }}
-                />
+                <span className={styles.icon}>
+                    <WhatsAppIcon />
+                </span>
                 <span className={styles.ariaLabel}>Deel via WhatsApp</span>
             </Button>
             <Button
@@ -65,10 +64,9 @@ function VerticalToolbar(props: Props) {
                 size="s"
                 onClick={props.onClick.bind(null, EventType.TWITTER, props)}
             >
-                <span
-                    className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: TwitterIcon as any }}
-                />
+                <span className={styles.icon}>
+                    <TwitterIcon />
+                </span>
                 <span className={styles.ariaLabel}>Deel via Twitter</span>
             </Button>
             <Button
@@ -76,10 +74,9 @@ function VerticalToolbar(props: Props) {
                 size="s"
                 onClick={props.onClick.bind(null, EventType.LINKED_IN, props)}
             >
-                <span
-                    className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: LinkedInIcon as any }}
-                />
+                <span className={styles.icon}>
+                    <LinkedInIcon />
+                </span>
                 <span className={styles.ariaLabel}>Deel via LinkedIn</span>
             </Button>
             <Button
@@ -87,10 +84,9 @@ function VerticalToolbar(props: Props) {
                 size="s"
                 onClick={props.onClick.bind(null, EventType.FACEBOOK, props)}
             >
-                <span
-                    className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: FacebookIcon as any }}
-                />
+                <span className={styles.icon}>
+                    <FacebookIcon />
+                </span>
                 <span className={styles.ariaLabel}>Deel via Facebook</span>
             </Button>
             <Button
@@ -98,10 +94,9 @@ function VerticalToolbar(props: Props) {
                 size="s"
                 onClick={props.onClick.bind(null, EventType.EMAIL, props)}
             >
-                <span
-                    className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: EnvelopeIcon as any }}
-                />
+                <span className={styles.icon}>
+                    <EnvelopeIcon />
+                </span>
                 <span className={styles.ariaLabel}>Deel via E-mail</span>
             </Button>
             <hr />
@@ -111,14 +106,12 @@ function VerticalToolbar(props: Props) {
                 className={props.bookmarked && `active`}
                 onClick={props.onClick.bind(null, EventType.BOOKMARK, props)}
             >
-                <span
-                    className={`${styles.icon} ${styles.bookmarkFill}`}
-                    dangerouslySetInnerHTML={{ __html: BookmarkIcon as any }}
-                />
-                <span
-                    className={`${styles.icon} ${styles.bookmarkClear}`}
-                    dangerouslySetInnerHTML={{ __html: BookmarkOIcon as any }}
-                />
+                <span className={`${styles.icon} ${styles.bookmarkFill}`}>
+                    <BookmarkIcon />
+                </span>
+                <span className={`${styles.icon} ${styles.bookmarkClear}`}>
+                    <BookmarkOIcon />
+                </span>
                 <span className={styles.ariaLabel}>Bewaren</span>
             </Button>
             <Button
@@ -126,10 +119,9 @@ function VerticalToolbar(props: Props) {
                 size="s"
                 onClick={props.onClick.bind(null, EventType.DOWNLOAD, props)}
             >
-                <span
-                    className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: DownloadIcon as any }}
-                />
+                <span className={styles.icon}>
+                    <DownloadIcon />
+                </span>
                 <span className={styles.ariaLabel}>Download PDF</span>
             </Button>
             <Button
@@ -137,10 +129,9 @@ function VerticalToolbar(props: Props) {
                 size="s"
                 onClick={props.onClick.bind(null, EventType.NEWSPAPER, props)}
             >
-                <span
-                    className={styles.icon}
-                    dangerouslySetInnerHTML={{ __html: NewspaperIcon as any }}
-                />
+                <span className={styles.icon}>
+                    <NewspaperIcon />
+                </span>
                 <span className={styles.ariaLabel}>Krant weergave</span>
             </Button>
         </section>

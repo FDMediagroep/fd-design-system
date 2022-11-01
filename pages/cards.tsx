@@ -34,7 +34,7 @@ function Page() {
                     <tr>
                         <td>
                             <Link href="/card/horizontal-1">
-                                <a>Horizontal Card 1</a>
+                                Horizontal Card 1
                             </Link>
                         </td>
                         <td>
@@ -50,7 +50,7 @@ function Page() {
                     <tr>
                         <td>
                             <Link href="/card/horizontal-2">
-                                <a>Horizontal Card 2</a>
+                                Horizontal Card 2
                             </Link>
                         </td>
                         <td>
@@ -63,7 +63,7 @@ function Page() {
                     <tr>
                         <td>
                             <Link href="/card/horizontal-3">
-                                <a>Horizontal Card 3</a>
+                                Horizontal Card 3
                             </Link>
                         </td>
                         <td>
@@ -75,7 +75,7 @@ function Page() {
                     <tr>
                         <td>
                             <Link href="/card/horizontal-4">
-                                <a>Horizontal Card 4</a>
+                                Horizontal Card 4
                             </Link>
                         </td>
                         <td>
@@ -87,9 +87,7 @@ function Page() {
                     </tr>
                     <tr>
                         <td>
-                            <Link href="/card/hybrid-1">
-                                <a>Hybrid Card 1</a>
-                            </Link>
+                            <Link href="/card/hybrid-1">Hybrid Card 1</Link>
                         </td>
                         <td>
                             <ul>
@@ -99,9 +97,7 @@ function Page() {
                     </tr>
                     <tr>
                         <td>
-                            <Link href="/card/hybrid-2">
-                                <a>Hybrid Card 2</a>
-                            </Link>
+                            <Link href="/card/hybrid-2">Hybrid Card 2</Link>
                         </td>
                         <td>
                             <ul>
@@ -111,9 +107,7 @@ function Page() {
                     </tr>
                     <tr>
                         <td>
-                            <Link href="/card/hybrid-4">
-                                <a>Hybrid Card 4</a>
-                            </Link>
+                            <Link href="/card/hybrid-4">Hybrid Card 4</Link>
                         </td>
                         <td>
                             <ul>
@@ -123,9 +117,7 @@ function Page() {
                     </tr>
                     <tr>
                         <td>
-                            <Link href="/card/vertical-1">
-                                <a>Vertical Card 1</a>
-                            </Link>
+                            <Link href="/card/vertical-1">Vertical Card 1</Link>
                         </td>
                         <td>
                             <ul>
@@ -137,9 +129,7 @@ function Page() {
                     </tr>
                     <tr>
                         <td>
-                            <Link href="/card/vertical-5">
-                                <a>Vertical Card 5</a>
-                            </Link>
+                            <Link href="/card/vertical-5">Vertical Card 5</Link>
                         </td>
                         <td>
                             <ul>
@@ -149,9 +139,7 @@ function Page() {
                     </tr>
                     <tr>
                         <td>
-                            <Link href="/card/vertical-6">
-                                <a>Vertical Card 6</a>
-                            </Link>
+                            <Link href="/card/vertical-6">Vertical Card 6</Link>
                         </td>
                         <td>
                             <ul>

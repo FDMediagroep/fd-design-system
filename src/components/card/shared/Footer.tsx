@@ -25,10 +25,9 @@ function Footer(props: Props) {
                                     ? ` ${props.iconSpanClassName}`
                                     : ''
                             }`}
-                            dangerouslySetInnerHTML={{
-                                __html: BookmarkIcon as any,
-                            }}
-                        />
+                        >
+                            <BookmarkIcon />
+                        </span>
                     ) : (
                         <span
                             className={`${styles.icon}${
@@ -36,10 +35,9 @@ function Footer(props: Props) {
                                     ? ` ${props.iconSpanClassName}`
                                     : ''
                             }`}
-                            dangerouslySetInnerHTML={{
-                                __html: BookmarkOIcon as any,
-                            }}
-                        />
+                        >
+                            <BookmarkOIcon />
+                        </span>
                     )}
                     <span data-bookmark="bookmark">Bewaren</span>
                 </a>
