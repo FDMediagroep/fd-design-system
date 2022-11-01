@@ -17,12 +17,12 @@ exports[`Dropdown should handle sizes correctly 1`] = `
       <span
         class="collapse-icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
       <span
         class="expand-icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
     </button>
     <nav
@@ -30,52 +30,40 @@ exports[`Dropdown should handle sizes correctly 1`] = `
     >
       <ul>
         <li>
-          <a
-            href="https://fd.nl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <span>
             <span
               class="podcast-icon"
             >
-              test-file-stub
+              <test-file-stub />
             </span>
             <span>
               Spotify
             </span>
-          </a>
+          </span>
         </li>
         <li>
-          <a
-            href="https://fd.nl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <span>
             <span
               class="podcast-icon"
             >
-              test-file-stub
+              <test-file-stub />
             </span>
             <span>
               Apple Podcasts
             </span>
-          </a>
+          </span>
         </li>
         <li>
-          <a
-            href="https://fd.nl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <span>
             <span
               class="podcast-icon"
             >
-              test-file-stub
+              <test-file-stub />
             </span>
             <span>
               Google Podcasts
             </span>
-          </a>
+          </span>
         </li>
       </ul>
     </nav>
@@ -100,12 +88,12 @@ exports[`Dropdown should handle sizes correctly 2`] = `
       <span
         class="collapse-icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
       <span
         class="expand-icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
     </button>
     <nav
@@ -113,52 +101,40 @@ exports[`Dropdown should handle sizes correctly 2`] = `
     >
       <ul>
         <li>
-          <a
-            href="https://fd.nl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <span>
             <span
               class="podcast-icon"
             >
-              test-file-stub
+              <test-file-stub />
             </span>
             <span>
               Spotify
             </span>
-          </a>
+          </span>
         </li>
         <li>
-          <a
-            href="https://fd.nl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <span>
             <span
               class="podcast-icon"
             >
-              test-file-stub
+              <test-file-stub />
             </span>
             <span>
               Apple Podcasts
             </span>
-          </a>
+          </span>
         </li>
         <li>
-          <a
-            href="https://fd.nl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <span>
             <span
               class="podcast-icon"
             >
-              test-file-stub
+              <test-file-stub />
             </span>
             <span>
               Google Podcasts
             </span>
-          </a>
+          </span>
         </li>
       </ul>
     </nav>

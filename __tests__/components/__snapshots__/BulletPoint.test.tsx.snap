@@ -9,7 +9,7 @@ exports[`BulletPoint should align correctly 1`] = `
       <span
         class="icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
       <span>
         one
@@ -19,7 +19,7 @@ exports[`BulletPoint should align correctly 1`] = `
       <span
         class="icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
       <span>
         two
@@ -29,7 +29,7 @@ exports[`BulletPoint should align correctly 1`] = `
       <span
         class="icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
       <span>
         three
@@ -48,7 +48,7 @@ exports[`BulletPoint should align correctly 2`] = `
       <span
         class="icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
       <span>
         one
@@ -58,7 +58,7 @@ exports[`BulletPoint should align correctly 2`] = `
       <span
         class="icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
       <span>
         two
@@ -68,7 +68,7 @@ exports[`BulletPoint should align correctly 2`] = `
       <span
         class="icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
       <span>
         three
@@ -88,7 +88,7 @@ exports[`BulletPoint should render variants correctly 1`] = `
       <span
         class="icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
       <span>
         one
@@ -98,7 +98,7 @@ exports[`BulletPoint should render variants correctly 1`] = `
       <span
         class="icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
       <span>
         two
@@ -108,7 +108,7 @@ exports[`BulletPoint should render variants correctly 1`] = `
       <span
         class="icon"
       >
-        test-file-stub
+        <test-file-stub />
       </span>
       <span>
         three

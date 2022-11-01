@@ -79,11 +79,13 @@ function Dropdown(props: Props) {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <span className={styles['podcast-icon']}>
-                                <SpotifyIcon />
-                            </span>
+                            <span>
+                                <span className={styles['podcast-icon']}>
+                                    <SpotifyIcon />
+                                </span>
 
-                            <span>Spotify</span>
+                                <span>Spotify</span>
+                            </span>
                         </Link>
                     </li>
                     <li>
@@ -92,11 +94,13 @@ function Dropdown(props: Props) {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <span className={styles['podcast-icon']}>
-                                <ApplePodcastsIcon />
-                            </span>
+                            <span>
+                                <span className={styles['podcast-icon']}>
+                                    <ApplePodcastsIcon />
+                                </span>
 
-                            <span>Apple Podcasts</span>
+                                <span>Apple Podcasts</span>
+                            </span>
                         </Link>
                     </li>
                     <li>
@@ -105,11 +109,13 @@ function Dropdown(props: Props) {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <span className={styles['podcast-icon']}>
-                                <GooglePodcastsIcon />
-                            </span>
+                            <span>
+                                <span className={styles['podcast-icon']}>
+                                    <GooglePodcastsIcon />
+                                </span>
 
-                            <span>Google Podcasts</span>
+                                <span>Google Podcasts</span>
+                            </span>
                         </Link>
                     </li>
                 </ul>
