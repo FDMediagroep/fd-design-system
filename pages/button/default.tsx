@@ -49,20 +49,16 @@ function Page() {
                 <>
                     <Button id="demoButtonS">Button (small)</Button>
                     <Button id="demoButtonSIcon">
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span>
+                            <EnvelopeIcon />
+                        </span>
                         <span>Icon (small)</span>
                     </Button>
 
                     <Button id="demoButtonSDisabled" disabled="disabled">
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span>
+                            <EnvelopeIcon />
+                        </span>
                         <span>Disabled (small)</span>
                     </Button>
                 </>
@@ -92,11 +88,9 @@ function Page() {
                         Button (medium)
                     </Button>
                     <Button id="demoButtonMIcon" size="m">
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span>
+                            <EnvelopeIcon />
+                        </span>
                         <span>Icon (medium)</span>
                     </Button>
 
@@ -105,11 +99,9 @@ function Page() {
                         disabled="disabled"
                         size="m"
                     >
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span>
+                            <EnvelopeIcon />
+                        </span>
                         <span>Disabled (medium)</span>
                     </Button>
                 </>

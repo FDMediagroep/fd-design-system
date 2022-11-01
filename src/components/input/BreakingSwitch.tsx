@@ -52,18 +52,12 @@ export default function BreakingSwitch(props: Props) {
                             }
                         />
                         <span className={styles.switchLabel}>
-                            <span
-                                className={styles.iconCheck}
-                                dangerouslySetInnerHTML={{
-                                    __html: CheckIcon as any,
-                                }}
-                            />
-                            <span
-                                className={styles.iconTimes}
-                                dangerouslySetInnerHTML={{
-                                    __html: CloseIcon as any,
-                                }}
-                            />
+                            <span className={styles.iconCheck}>
+                                <CheckIcon />
+                            </span>
+                            <span className={styles.iconTimes}>
+                                <CloseIcon />
+                            </span>
                         </span>
                         <span className={styles.switchHandle} />
                     </label>

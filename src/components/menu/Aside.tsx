@@ -55,11 +55,9 @@ function Aside(props: Props) {
                         data-ga-label="close sub menu via button"
                         onClick={props.onClose}
                     >
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: CloseIcon as any,
-                            }}
-                        />
+                        <span>
+                            <CloseIcon />
+                        </span>
                         <span className={styles['aria-label']}>Close menu</span>
                     </button>
                 </li>
@@ -70,13 +68,9 @@ function Aside(props: Props) {
                         action="/search"
                         onSubmit={handleSearch}
                     >
-                        <label
-                            htmlFor="searchInput"
-                            className="xs__p-0"
-                            dangerouslySetInnerHTML={{
-                                __html: LookingGlassIcon as any,
-                            }}
-                        />
+                        <label htmlFor="searchInput" className="xs__p-0">
+                            <LookingGlassIcon />
+                        </label>
                         <input
                             id="searchInput"
                             type="search"
@@ -97,12 +91,9 @@ function Aside(props: Props) {
                         data-ga-action="menu click"
                         data-ga-label="https://fd.nl/mijn-nieuws"
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: HeartOIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <HeartOIcon />
+                        </span>
                         <span
                             className={`heading ${styles['button-text']} sans xs xs__ml+3`}
                         >
@@ -120,12 +111,9 @@ function Aside(props: Props) {
                         data-ga-action="menu click"
                         data-ga-label="https://fd.nl/net-binnen"
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: ClockIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <ClockIcon />
+                        </span>
                         <span
                             className={`heading ${styles['button-text']} sans xs xs__ml+3`}
                         >
@@ -146,33 +134,25 @@ function Aside(props: Props) {
                     >
                         <span
                             className={`${styles.icon} ${styles['collapsed-icon']}`}
-                            dangerouslySetInnerHTML={{
-                                __html: GraphOIcon as any,
-                            }}
-                        />
+                        >
+                            <GraphOIcon />
+                        </span>
                         <span
                             className={`${styles.icon} ${styles['expanded-icon']}`}
-                            dangerouslySetInnerHTML={{
-                                __html: GraphIcon as any,
-                            }}
-                        />
+                        >
+                            <GraphIcon />
+                        </span>
                         <span
                             className={`heading ${styles['button-text']} sans xs xs__ml+3`}
                         >
                             Beurs
                         </span>
-                        <span
-                            className={styles['expand-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: ExpandIcon as any,
-                            }}
-                        />
-                        <span
-                            className={styles['collapse-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: CollapseIcon as any,
-                            }}
-                        />
+                        <span className={styles['expand-icon']}>
+                            <ExpandIcon />
+                        </span>
+                        <span className={styles['collapse-icon']}>
+                            <CollapseIcon />
+                        </span>
                     </button>
                     <ul
                         className={`${styles['expandable-menu-item']} xs__p-0 xs__pt+1 xs__pr+4 xs__pl+6 s__pl+7`}
@@ -339,12 +319,9 @@ function Aside(props: Props) {
                         data-ga-action="menu click"
                         data-ga-label="https://fd.nl/krant"
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: EditionsIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <EditionsIcon />
+                        </span>
                         <span
                             className={`heading ${styles['button-text']} sans xs xs__ml+3`}
                         >

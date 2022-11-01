@@ -25,19 +25,13 @@ function BulletPoint(props: Props) {
             {props.bullets.map((bullet, idx) => (
                 <p key={idx}>
                     {props.variant ? (
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: BulletRedIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <BulletRedIcon />
+                        </span>
                     ) : (
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: BulletIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <BulletIcon />
+                        </span>
                     )}
                     <span dangerouslySetInnerHTML={{ __html: bullet }} />
                 </p>

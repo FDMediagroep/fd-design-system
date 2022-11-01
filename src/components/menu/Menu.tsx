@@ -214,11 +214,9 @@ function Menu(props: Props) {
                                     aria-label="Sub menu"
                                     onClick={handleAsideButtonClick}
                                 >
-                                    <span
-                                        dangerouslySetInnerHTML={{
-                                            __html: HamburgerIcon as any,
-                                        }}
-                                    />
+                                    <span>
+                                        <HamburgerIcon />
+                                    </span>
                                     <span className={styles['aria-label']}>
                                         Sub menu
                                     </span>
@@ -229,21 +227,18 @@ function Menu(props: Props) {
                                 <Link
                                     passHref={true}
                                     href={props.logoUrl ?? '/'}
+                                    className={`${styles['home-button']} xs__pl+3 xs__pr+3`}
+                                    data-ga-name="menu_click"
+                                    data-ga-category="user interactions"
+                                    data-ga-action="menu click"
+                                    data-ga-label={props.logoUrl ?? '/'}
+                                    aria-label="Home"
+                                    title="Home"
                                 >
-                                    <a
-                                        className={`${styles['home-button']} xs__pl+3 xs__pr+3`}
-                                        data-ga-name="menu_click"
-                                        data-ga-category="user interactions"
-                                        data-ga-action="menu click"
-                                        data-ga-label={props.logoUrl ?? '/'}
-                                        aria-label="Home"
-                                        title="Home"
-                                    >
-                                        <span className={styles.logo} />
-                                        <span className={styles['aria-label']}>
-                                            Home
-                                        </span>
-                                    </a>
+                                    <span className={styles.logo} />
+                                    <span className={styles['aria-label']}>
+                                        Home
+                                    </span>
                                 </Link>
                             </li>
                             <li
@@ -261,12 +256,9 @@ function Menu(props: Props) {
                                     target="_blank"
                                     rel="noreferrer noopener"
                                 >
-                                    <span
-                                        className={styles['menu-bar-icon']}
-                                        dangerouslySetInnerHTML={{
-                                            __html: GithubIcon as any,
-                                        }}
-                                    />
+                                    <span className={styles['menu-bar-icon']}>
+                                        <GithubIcon />
+                                    </span>
                                 </a>
                             </li>
                         </ul>
@@ -305,20 +297,16 @@ function Menu(props: Props) {
                                     aria-expanded={showProfile}
                                     onClick={handleProfileButtonClick}
                                 >
-                                    <span
-                                        className={styles['collapsed-icon']}
-                                        dangerouslySetInnerHTML={{
-                                            __html: props.loggedIn
-                                                ? (ProfileIcon as any)
-                                                : (ProfileOIcon as any),
-                                        }}
-                                    />
-                                    <span
-                                        className={styles['expanded-icon']}
-                                        dangerouslySetInnerHTML={{
-                                            __html: CloseIcon as any,
-                                        }}
-                                    />
+                                    <span className={styles['collapsed-icon']}>
+                                        {props.loggedIn ? (
+                                            <ProfileIcon />
+                                        ) : (
+                                            <ProfileOIcon />
+                                        )}
+                                    </span>
+                                    <span className={styles['expanded-icon']}>
+                                        <CloseIcon />
+                                    </span>
                                     <span className={styles['aria-label']}>
                                         Profiel menu
                                     </span>
@@ -345,18 +333,12 @@ function Menu(props: Props) {
                                     aria-expanded={showSearchBar}
                                     onClick={handleSearchButtonClick}
                                 >
-                                    <span
-                                        className={styles['collapsed-icon']}
-                                        dangerouslySetInnerHTML={{
-                                            __html: LookingGlassIcon as any,
-                                        }}
-                                    />
-                                    <span
-                                        className={styles['expanded-icon']}
-                                        dangerouslySetInnerHTML={{
-                                            __html: CloseIcon as any,
-                                        }}
-                                    />
+                                    <span className={styles['collapsed-icon']}>
+                                        <LookingGlassIcon />
+                                    </span>
+                                    <span className={styles['expanded-icon']}>
+                                        <CloseIcon />
+                                    </span>
                                     <span className={styles['aria-label']}>
                                         Search
                                     </span>
@@ -390,10 +372,9 @@ function Menu(props: Props) {
                         <label
                             htmlFor="searchInput"
                             className="xs__p-0 xs__mr+2 m__mr+6"
-                            dangerouslySetInnerHTML={{
-                                __html: LookingGlassIcon as any,
-                            }}
-                        />
+                        >
+                            <LookingGlassIcon />
+                        </label>
                         <input
                             id="searchInput"
                             type="search"

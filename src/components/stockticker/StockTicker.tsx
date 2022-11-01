@@ -68,19 +68,13 @@ function StockTicker(props: Props) {
                     >
                         <div className={styles.arrow}>
                             {stock.percentage >= 0 ? (
-                                <span
-                                    className={styles.icon}
-                                    dangerouslySetInnerHTML={{
-                                        __html: ValueUpIcon as any,
-                                    }}
-                                />
+                                <span className={styles.icon}>
+                                    <ValueUpIcon />
+                                </span>
                             ) : (
-                                <span
-                                    className={styles.icon}
-                                    dangerouslySetInnerHTML={{
-                                        __html: ValueDownIcon as any,
-                                    }}
-                                />
+                                <span className={styles.icon}>
+                                    <ValueDownIcon />
+                                </span>
                             )}
                         </div>
                         <span className={styles.stock}>

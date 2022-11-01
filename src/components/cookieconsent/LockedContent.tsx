@@ -105,12 +105,9 @@ function LockedContent(props: Props) {
                 onKeyPress={handleActivation}
             >
                 <span className={styles.lockText}>
-                    <span
-                        className={styles.lock}
-                        dangerouslySetInnerHTML={{
-                            __html: SpyglassIcon as any,
-                        }}
-                    />{' '}
+                    <span className={styles.lock}>
+                        <SpyglassIcon />
+                    </span>{' '}
                     <span>{props.lockDescription}</span>
                 </span>
             </div>

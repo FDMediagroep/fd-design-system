@@ -99,18 +99,12 @@ function Themes(props: Props) {
                     onClick={handleUserMenuThemeClick}
                 >
                     <span>Display options</span>
-                    <span
-                        className={styles['expand-icon']}
-                        dangerouslySetInnerHTML={{
-                            __html: ExpandIcon as any,
-                        }}
-                    />
-                    <span
-                        className={styles['collapse-icon']}
-                        dangerouslySetInnerHTML={{
-                            __html: CollapseIcon as any,
-                        }}
-                    />
+                    <span className={styles['expand-icon']}>
+                        <ExpandIcon />
+                    </span>
+                    <span className={styles['collapse-icon']}>
+                        <CollapseIcon />
+                    </span>
                 </button>
                 <section
                     id="userMenuTheme"

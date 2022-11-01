@@ -33,10 +33,9 @@ export function Debug(props: Props) {
                             className={styles.icon}
                             onClick={handleRemoveExperiment}
                             title="Remove experiment cookie"
-                            dangerouslySetInnerHTML={{
-                                __html: CloseIcon as any,
-                            }}
-                        />
+                        >
+                            <CloseIcon />
+                        </span>
                     </h2>
                     {props.children.map(
                         (child: React.ReactElement, idx: number) => (

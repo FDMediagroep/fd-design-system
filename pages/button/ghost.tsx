@@ -66,11 +66,9 @@ function Page() {
                         Button (small)
                     </ButtonGhost>
                     <ButtonGhost id="demoGhostButtonSIcon">
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span>
+                            <EnvelopeIcon />
+                        </span>
                         <span>Icon (small)</span>
                     </ButtonGhost>
 
@@ -78,11 +76,9 @@ function Page() {
                         id="demoGhostButtonSDisabled"
                         disabled="disabled"
                     >
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span>
+                            <EnvelopeIcon />
+                        </span>
                         <span>Disabled (small)</span>
                     </ButtonGhost>
                 </>
@@ -124,11 +120,9 @@ function Page() {
                         Button (medium)
                     </ButtonGhost>
                     <ButtonGhost id="demoGhostButtonMIcon" size="m">
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span>
+                            <EnvelopeIcon />
+                        </span>
                         <span>Icon (medium)</span>
                     </ButtonGhost>
 
@@ -137,11 +131,9 @@ function Page() {
                         disabled="disabled"
                         size="m"
                     >
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span>
+                            <EnvelopeIcon />
+                        </span>
                         <span>Disabled (medium)</span>
                     </ButtonGhost>
                 </>

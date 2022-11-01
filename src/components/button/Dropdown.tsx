@@ -64,61 +64,52 @@ function Dropdown(props: Props) {
                 onClick={handleClick}
             >
                 <span className="xs__mr+1">{props.children}</span>
-                <span
-                    className={styles['collapse-icon']}
-                    dangerouslySetInnerHTML={{
-                        __html: CollapseIcon as any,
-                    }}
-                />
-                <span
-                    className={styles['expand-icon']}
-                    dangerouslySetInnerHTML={{
-                        __html: ExpandIcon as any,
-                    }}
-                />
+                <span className={styles['collapse-icon']}>
+                    <CollapseIcon />
+                </span>
+                <span className={styles['expand-icon']}>
+                    <ExpandIcon />
+                </span>
             </button>
             <nav className={styles['fd-dropdown-items']}>
                 <ul>
                     <li>
-                        <Link href={props.spotifyUrl || 'https://fd.nl'}>
-                            <a target="_blank" rel="noopener noreferrer">
-                                <span
-                                    className={styles['podcast-icon']}
-                                    dangerouslySetInnerHTML={{
-                                        __html: SpotifyIcon as any,
-                                    }}
-                                />
+                        <Link
+                            href={props.spotifyUrl || 'https://fd.nl'}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span className={styles['podcast-icon']}>
+                                <SpotifyIcon />
+                            </span>
 
-                                <span>Spotify</span>
-                            </a>
+                            <span>Spotify</span>
                         </Link>
                     </li>
                     <li>
-                        <Link href={props.applePodcastsUrl || 'https://fd.nl'}>
-                            <a target="_blank" rel="noopener noreferrer">
-                                <span
-                                    className={styles['podcast-icon']}
-                                    dangerouslySetInnerHTML={{
-                                        __html: ApplePodcastsIcon as any,
-                                    }}
-                                />
+                        <Link
+                            href={props.applePodcastsUrl || 'https://fd.nl'}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span className={styles['podcast-icon']}>
+                                <ApplePodcastsIcon />
+                            </span>
 
-                                <span>Apple Podcasts</span>
-                            </a>
+                            <span>Apple Podcasts</span>
                         </Link>
                     </li>
                     <li>
-                        <Link href={props.googlePodcastsUrl || 'https://fd.nl'}>
-                            <a target="_blank" rel="noopener noreferrer">
-                                <span
-                                    className={styles['podcast-icon']}
-                                    dangerouslySetInnerHTML={{
-                                        __html: GooglePodcastsIcon as any,
-                                    }}
-                                />
+                        <Link
+                            href={props.googlePodcastsUrl || 'https://fd.nl'}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span className={styles['podcast-icon']}>
+                                <GooglePodcastsIcon />
+                            </span>
 
-                                <span>Google Podcasts</span>
-                            </a>
+                            <span>Google Podcasts</span>
                         </Link>
                     </li>
                 </ul>

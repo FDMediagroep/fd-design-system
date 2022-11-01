@@ -486,12 +486,9 @@ async function checkCookieconsent() {
                     }
                     title={
                         <header className={styles.header}>
-                            <span
-                                className={styles.icon}
-                                dangerouslySetInnerHTML={{
-                                    __html: FdmgIcon as any,
-                                }}
-                            />
+                            <span className={styles.icon}>
+                                <FdmgIcon />
+                            </span>
                         </header>
                     }
                     opened={opened}

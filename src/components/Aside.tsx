@@ -58,11 +58,9 @@ function Aside(props: Props) {
                         data-ga-label="close sub menu via button"
                         onClick={handleNavigation}
                     >
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html: CloseIcon as any,
-                            }}
-                        />
+                        <span>
+                            <CloseIcon />
+                        </span>
                         <span className={styles['aria-label']}>Close menu</span>
                     </button>
                 </li>
@@ -77,29 +75,20 @@ function Aside(props: Props) {
                         aria-label="Toggle Main sub-menu"
                         onClick={handleToggle.bind(null, 'main')}
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: LogoFdIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <LogoFdIcon />
+                        </span>
                         <span
                             className={`heading ${styles['button-text']} sans xs xs__ml+3`}
                         >
                             Main
                         </span>
-                        <span
-                            className={styles['expand-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: ExpandIcon as any,
-                            }}
-                        />
-                        <span
-                            className={styles['collapse-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: CollapseIcon as any,
-                            }}
-                        />
+                        <span className={styles['expand-icon']}>
+                            <ExpandIcon />
+                        </span>
+                        <span className={styles['collapse-icon']}>
+                            <CollapseIcon />
+                        </span>
                     </button>
                     <ul
                         className={`${styles['expandable-menu-item']} xs__p-0 xs__pt+1 xs__pr+4 xs__pl+6 s__pl+7`}
@@ -120,12 +109,9 @@ function Aside(props: Props) {
                                 <span className="heading sans xxs">
                                     Brandbook
                                 </span>
-                                <span
-                                    className={asideStyles.popup}
-                                    dangerouslySetInnerHTML={{
-                                        __html: LinkWebsiteIcon as any,
-                                    }}
-                                />
+                                <span className={asideStyles.popup}>
+                                    <LinkWebsiteIcon />
+                                </span>
                             </a>
                         </li>
                         <li
@@ -142,12 +128,9 @@ function Aside(props: Props) {
                                 onClick={handleNavigation}
                             >
                                 <span className="heading sans xxs">Colors</span>
-                                <span
-                                    className={asideStyles.popup}
-                                    dangerouslySetInnerHTML={{
-                                        __html: LinkWebsiteIcon as any,
-                                    }}
-                                />
+                                <span className={asideStyles.popup}>
+                                    <LinkWebsiteIcon />
+                                </span>
                             </a>
                         </li>
                         <li
@@ -166,29 +149,23 @@ function Aside(props: Props) {
                                 <span className="heading sans xxs">
                                     Downloads
                                 </span>
-                                <span
-                                    className={asideStyles.popup}
-                                    dangerouslySetInnerHTML={{
-                                        __html: LinkWebsiteIcon as any,
-                                    }}
-                                />
+                                <span className={asideStyles.popup}>
+                                    <LinkWebsiteIcon />
+                                </span>
                             </a>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+1`}
                         >
-                            <Link href="/tokens">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/tokens"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Tokens
-                                    </span>
-                                </a>
+                            <Link
+                                href="/tokens"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/tokens"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">Tokens</span>
                             </Link>
                         </li>
                     </ul>
@@ -204,29 +181,20 @@ function Aside(props: Props) {
                         aria-label="Toggle Article sub-menu"
                         onClick={handleToggle.bind(null, 'article')}
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: NewspaperIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <NewspaperIcon />
+                        </span>
                         <span
                             className={`heading ${styles['button-text']} sans xs xs__ml+3`}
                         >
                             Article
                         </span>
-                        <span
-                            className={styles['expand-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: ExpandIcon as any,
-                            }}
-                        />
-                        <span
-                            className={styles['collapse-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: CollapseIcon as any,
-                            }}
-                        />
+                        <span className={styles['expand-icon']}>
+                            <ExpandIcon />
+                        </span>
+                        <span className={styles['collapse-icon']}>
+                            <CollapseIcon />
+                        </span>
                     </button>
                     <ul
                         className={`${styles['expandable-menu-item']} xs__p-0 xs__pt+1 xs__pr+4 xs__pl+6 s__pl+7`}
@@ -234,273 +202,251 @@ function Aside(props: Props) {
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/article-bullet-point">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/article-bullet-point"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Bulletpoint
-                                    </span>
-                                </a>
+                            <Link
+                                href="/article-bullet-point"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/article-bullet-point"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Bulletpoint
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/financial-agenda">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/financial-agenda"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Financial Agenda
-                                    </span>
-                                </a>
+                            <Link
+                                href="/financial-agenda"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/financial-agenda"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Financial Agenda
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/article-image">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/article-image"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Image
-                                    </span>
-                                </a>
+                            <Link
+                                href="/article-image"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/article-image"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">Image</span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/article-infographic">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/article-infographic"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Infographic
-                                    </span>
-                                </a>
+                            <Link
+                                href="/article-infographic"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/article-infographic"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Infographic
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/article-latest-news">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/article-latest-news"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Latest news
-                                    </span>
-                                </a>
+                            <Link
+                                href="/article-latest-news"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/article-latest-news"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Latest news
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/article-link-block">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/article-link-block"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        LinkBlock
-                                    </span>
-                                </a>
+                            <Link
+                                href="/article-link-block"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/article-link-block"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    LinkBlock
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/article-link-card">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/article-link-card"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        LinkCard
-                                    </span>
-                                </a>
+                            <Link
+                                href="/article-link-card"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/article-link-card"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    LinkCard
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/numberframe">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/numberframe"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        NumberFrame
-                                    </span>
-                                </a>
+                            <Link
+                                href="/numberframe"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/numberframe"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    NumberFrame
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/quote">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/quote"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Quote
-                                    </span>
-                                </a>
+                            <Link
+                                href="/quote"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/quote"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">Quote</span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/readmore">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/readmore"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        ReadMore
-                                    </span>
-                                </a>
+                            <Link
+                                href="/readmore"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/readmore"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    ReadMore
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/summary">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/summary"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Summary
-                                    </span>
-                                </a>
+                            <Link
+                                href="/summary"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/summary"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Summary
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/tags">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/tags"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Tags
-                                    </span>
-                                </a>
+                            <Link
+                                href="/tags"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/tags"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">Tags</span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/textframe">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/textframe"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        TextFrame
-                                    </span>
-                                </a>
+                            <Link
+                                href="/textframe"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/textframe"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    TextFrame
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/toolbar/horizontal">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/toolbar/horizontal"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Toolbar (horizontal)
-                                    </span>
-                                </a>
+                            <Link
+                                href="/toolbar/horizontal"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/toolbar/horizontal"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Toolbar (horizontal)
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/toolbar/vertical">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/toolbar/vertical"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Toolbar (vertical)
-                                    </span>
-                                </a>
+                            <Link
+                                href="/toolbar/vertical"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/toolbar/vertical"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Toolbar (vertical)
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/wordframe">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/wordframe"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        WordFrame
-                                    </span>
-                                </a>
+                            <Link
+                                href="/wordframe"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/wordframe"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    WordFrame
+                                </span>
                             </Link>
                         </li>
                     </ul>
@@ -516,29 +462,20 @@ function Aside(props: Props) {
                         aria-label="Toggle Controls sub-menu"
                         onClick={handleToggle.bind(null, 'controls')}
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: PencilIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <PencilIcon />
+                        </span>
                         <span
                             className={`heading ${styles['button-text']} sans xs xs__ml+3`}
                         >
                             Controls
                         </span>
-                        <span
-                            className={styles['expand-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: ExpandIcon as any,
-                            }}
-                        />
-                        <span
-                            className={styles['collapse-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: CollapseIcon as any,
-                            }}
-                        />
+                        <span className={styles['expand-icon']}>
+                            <ExpandIcon />
+                        </span>
+                        <span className={styles['collapse-icon']}>
+                            <CollapseIcon />
+                        </span>
                     </button>
                     <ul
                         className={`${styles['expandable-menu-item']} xs__p-0 xs__pt+1 xs__pr+4 xs__pl+6 s__pl+7`}
@@ -546,256 +483,229 @@ function Aside(props: Props) {
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/input/breaking-switch">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/input/breaking-switch"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Breaking Switch
-                                    </span>
-                                </a>
+                            <Link
+                                href="/input/breaking-switch"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/input/breaking-switch"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Breaking Switch
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/button/default">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/button/default"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Button (default)
-                                    </span>
-                                </a>
+                            <Link
+                                href="/button/default"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/button/default"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Button (default)
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/button/cta">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/button/cta"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Button CTA
-                                    </span>
-                                </a>
+                            <Link
+                                href="/button/cta"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/button/cta"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Button CTA
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/button/follow">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/button/follow"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Button Follow
-                                    </span>
-                                </a>
+                            <Link
+                                href="/button/follow"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/button/follow"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Button Follow
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/button/ghost">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/button/ghost"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Button Ghost
-                                    </span>
-                                </a>
+                            <Link
+                                href="/button/ghost"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/button/ghost"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Button Ghost
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/input/checkbox">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/input/checkbox"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Checkbox
-                                    </span>
-                                </a>
+                            <Link
+                                href="/input/checkbox"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/input/checkbox"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Checkbox
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/input/dateinput">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/input/dateinput"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Date
-                                    </span>
-                                </a>
+                            <Link
+                                href="/input/dateinput"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/input/dateinput"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">Date</span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/button/dropdown">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/button/dropdown"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Dropdown
-                                    </span>
-                                </a>
+                            <Link
+                                href="/button/dropdown"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/button/dropdown"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Dropdown
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/input/emailinput">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/input/emailinput"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        E-mail
-                                    </span>
-                                </a>
+                            <Link
+                                href="/input/emailinput"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/input/emailinput"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">E-mail</span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/input/mobileinput">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/input/mobileinput"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Mobile (tel)
-                                    </span>
-                                </a>
+                            <Link
+                                href="/input/mobileinput"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/input/mobileinput"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Mobile (tel)
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/input/radio">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/input/radio"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Radio
-                                    </span>
-                                </a>
+                            <Link
+                                href="/input/radio"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/input/radio"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">Radio</span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/input/select">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/input/select"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Select
-                                    </span>
-                                </a>
+                            <Link
+                                href="/input/select"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/input/select"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">Select</span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/input/switch">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/input/switch"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Switch
-                                    </span>
-                                </a>
+                            <Link
+                                href="/input/switch"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/input/switch"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">Switch</span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/input/textarea">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/input/textarea"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        TextArea
-                                    </span>
-                                </a>
+                            <Link
+                                href="/input/textarea"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/input/textarea"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    TextArea
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/input/textinput">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/input/textinput"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Text
-                                    </span>
-                                </a>
+                            <Link
+                                href="/input/textinput"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/input/textinput"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">Text</span>
                             </Link>
                         </li>
                     </ul>
@@ -811,29 +721,20 @@ function Aside(props: Props) {
                         aria-label="Toggle Cards sub-menu"
                         onClick={handleToggle.bind(null, 'cards')}
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: EnvelopeIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <EnvelopeIcon />
+                        </span>
                         <span
                             className={`heading ${styles['button-text']} sans xs xs__ml+3`}
                         >
                             Cards
                         </span>
-                        <span
-                            className={styles['expand-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: ExpandIcon as any,
-                            }}
-                        />
-                        <span
-                            className={styles['collapse-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: CollapseIcon as any,
-                            }}
-                        />
+                        <span className={styles['expand-icon']}>
+                            <ExpandIcon />
+                        </span>
+                        <span className={styles['collapse-icon']}>
+                            <CollapseIcon />
+                        </span>
                     </button>
                     <ul
                         className={`${styles['expandable-menu-item']} xs__p-0 xs__pt+1 xs__pr+4 xs__pl+6 s__pl+7`}
@@ -841,188 +742,177 @@ function Aside(props: Props) {
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/cards">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/cards"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Overview
-                                    </span>
-                                </a>
+                            <Link
+                                href="/cards"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/cards"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Overview
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/card/horizontal-1">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/horizontal-1"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Horizontal 1
-                                    </span>
-                                </a>
+                            <Link
+                                href="/card/horizontal-1"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/card/horizontal-1"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Horizontal 1
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/card/horizontal-2">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/horizontal-2"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Horizontal 2
-                                    </span>
-                                </a>
+                            <Link
+                                href="/card/horizontal-2"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/card/horizontal-2"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Horizontal 2
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/card/horizontal-3">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/horizontal-3"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Horizontal 3
-                                    </span>
-                                </a>
+                            <Link
+                                href="/card/horizontal-3"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/card/horizontal-3"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Horizontal 3
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/card/horizontal-4">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/horizontal-4"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Horizontal 4
-                                    </span>
-                                </a>
+                            <Link
+                                href="/card/horizontal-4"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/card/horizontal-4"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Horizontal 4
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/card/hybrid-1">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/hybrid-1"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Hybrid 1
-                                    </span>
-                                </a>
+                            <Link
+                                href="/card/hybrid-1"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/card/hybrid-1"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Hybrid 1
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/card/hybrid-2">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/hybrid-2"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Hybrid 2
-                                    </span>
-                                </a>
+                            <Link
+                                href="/card/hybrid-2"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/card/hybrid-2"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Hybrid 2
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/card/hybrid-4">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/hybrid-4"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Hybrid 4
-                                    </span>
-                                </a>
+                            <Link
+                                href="/card/hybrid-4"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/card/hybrid-4"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Hybrid 4
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/card/vertical-1">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/vertical-1"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Vertical 1
-                                    </span>
-                                </a>
+                            <Link
+                                href="/card/vertical-1"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/card/vertical-1"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Vertical 1
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/card/vertical-5">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/vertical-5"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Vertical 5
-                                    </span>
-                                </a>
+                            <Link
+                                href="/card/vertical-5"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/card/vertical-5"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Vertical 5
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/card/vertical-6">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/card/vertical-6"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Vertical 6
-                                    </span>
-                                </a>
+                            <Link
+                                href="/card/vertical-6"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/card/vertical-6"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Vertical 6
+                                </span>
                             </Link>
                         </li>
                     </ul>
@@ -1038,29 +928,20 @@ function Aside(props: Props) {
                         aria-label="Toggle Grid sub-menu"
                         onClick={handleToggle.bind(null, 'grid')}
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: Windows8Icon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <Windows8Icon />
+                        </span>
                         <span
                             className={`heading ${styles['button-text']} sans xs xs__ml+3`}
                         >
                             Grid
                         </span>
-                        <span
-                            className={styles['expand-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: ExpandIcon as any,
-                            }}
-                        />
-                        <span
-                            className={styles['collapse-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: CollapseIcon as any,
-                            }}
-                        />
+                        <span className={styles['expand-icon']}>
+                            <ExpandIcon />
+                        </span>
+                        <span className={styles['collapse-icon']}>
+                            <CollapseIcon />
+                        </span>
                     </button>
                     <ul
                         className={`${styles['expandable-menu-item']} xs__p-0 xs__pt+1 xs__pr+4 xs__pl+6 s__pl+7`}
@@ -1081,63 +962,57 @@ function Aside(props: Props) {
                                 <span className="heading sans xxs">
                                     CSS Grid
                                 </span>
-                                <span
-                                    className={asideStyles.popup}
-                                    dangerouslySetInnerHTML={{
-                                        __html: LinkWebsiteIcon as any,
-                                    }}
-                                />
+                                <span className={asideStyles.popup}>
+                                    <LinkWebsiteIcon />
+                                </span>
                             </a>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/grid">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/grid"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Test page
-                                    </span>
-                                </a>
+                            <Link
+                                href="/grid"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/grid"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Test page
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/achtergrond/1324449/alle-verrijking-op-een-rijtje">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/achtergrond/1324449/alle-verrijking-op-een-rijtje"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Test article page
-                                    </span>
-                                </a>
+                            <Link
+                                href="/achtergrond/1324449/alle-verrijking-op-een-rijtje"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/achtergrond/1324449/alle-verrijking-op-een-rijtje"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Test article page
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/fd-web">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/fd-web"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Test home page
-                                    </span>
-                                </a>
+                            <Link
+                                href="/fd-web"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/fd-web"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Test home page
+                                </span>
                             </Link>
                         </li>
                         <li
@@ -1156,12 +1031,9 @@ function Aside(props: Props) {
                                 <span className="heading sans xxs">
                                     Paddings/Margins system
                                 </span>
-                                <span
-                                    className={asideStyles.popup}
-                                    dangerouslySetInnerHTML={{
-                                        __html: LinkWebsiteIcon as any,
-                                    }}
-                                />
+                                <span className={asideStyles.popup}>
+                                    <LinkWebsiteIcon />
+                                </span>
                             </a>
                         </li>
                     </ul>
@@ -1177,29 +1049,20 @@ function Aside(props: Props) {
                         aria-label="Toggle Typography sub-menu"
                         onClick={handleToggle.bind(null, 'typography')}
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: HamburgerIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <HamburgerIcon />
+                        </span>
                         <span
                             className={`heading ${styles['button-text']} sans xs xs__ml+3`}
                         >
                             Typography
                         </span>
-                        <span
-                            className={styles['expand-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: ExpandIcon as any,
-                            }}
-                        />
-                        <span
-                            className={styles['collapse-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: CollapseIcon as any,
-                            }}
-                        />
+                        <span className={styles['expand-icon']}>
+                            <ExpandIcon />
+                        </span>
+                        <span className={styles['collapse-icon']}>
+                            <CollapseIcon />
+                        </span>
                     </button>
                     <ul
                         className={`${styles['expandable-menu-item']} xs__p-0 xs__pt+1 xs__pr+4 xs__pl+6 s__pl+7`}
@@ -1207,18 +1070,17 @@ function Aside(props: Props) {
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/typography">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/typography"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Overview
-                                    </span>
-                                </a>
+                            <Link
+                                href="/typography"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/typography"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Overview
+                                </span>
                             </Link>
                         </li>
                         <li
@@ -1235,12 +1097,9 @@ function Aside(props: Props) {
                                 rel="noreferrer noopener"
                             >
                                 <span className="heading sans xxs">Docs</span>
-                                <span
-                                    className={asideStyles.popup}
-                                    dangerouslySetInnerHTML={{
-                                        __html: LinkWebsiteIcon as any,
-                                    }}
-                                />
+                                <span className={asideStyles.popup}>
+                                    <LinkWebsiteIcon />
+                                </span>
                             </a>
                         </li>
                     </ul>
@@ -1256,29 +1115,20 @@ function Aside(props: Props) {
                         aria-label="Toggle miscellaneous sub-menu"
                         onClick={handleToggle.bind(null, 'misc')}
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: PaperclipIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <PaperclipIcon />
+                        </span>
                         <span
                             className={`heading ${styles['button-text']} sans xs xs__ml+3`}
                         >
                             Miscellaneous
                         </span>
-                        <span
-                            className={styles['expand-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: ExpandIcon as any,
-                            }}
-                        />
-                        <span
-                            className={styles['collapse-icon']}
-                            dangerouslySetInnerHTML={{
-                                __html: CollapseIcon as any,
-                            }}
-                        />
+                        <span className={styles['expand-icon']}>
+                            <ExpandIcon />
+                        </span>
+                        <span className={styles['collapse-icon']}>
+                            <CollapseIcon />
+                        </span>
                     </button>
                     <ul
                         className={`${styles['expandable-menu-item']} xs__p-0 xs__pt+1 xs__pr+4 xs__pl+6 s__pl+7`}
@@ -1286,120 +1136,111 @@ function Aside(props: Props) {
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/ab">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/ab"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        A/B Testing component
-                                    </span>
-                                </a>
+                            <Link
+                                href="/ab"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/ab"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    A/B Testing component
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/accordion">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/accordion"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Accordion
-                                    </span>
-                                </a>
+                            <Link
+                                href="/accordion"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/accordion"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Accordion
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/author-info">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/author-info"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Author Info
-                                    </span>
-                                </a>
+                            <Link
+                                href="/author-info"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/author-info"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Author Info
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/cookieconsent#cookie-consent">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/cookieconsent#cookie-consent"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Cookie consent
-                                    </span>
-                                </a>
+                            <Link
+                                href="/cookieconsent#cookie-consent"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/cookieconsent#cookie-consent"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Cookie consent
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/cookieconsent#locked-content">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/cookieconsent#locked-content"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Locked content
-                                    </span>
-                                </a>
+                            <Link
+                                href="/cookieconsent#locked-content"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/cookieconsent#locked-content"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Locked content
+                                </span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/modal">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/modal"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Modal
-                                    </span>
-                                </a>
+                            <Link
+                                href="/modal"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/modal"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">Modal</span>
                             </Link>
                         </li>
                         <li
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
-                            <Link href="/stock-ticker">
-                                <a
-                                    data-ga-name="menu_click"
-                                    data-ga-category="user interactions"
-                                    data-ga-action="menu click"
-                                    data-ga-label="/stock-ticker"
-                                    onClick={handleNavigation}
-                                >
-                                    <span className="heading sans xxs">
-                                        Stock Ticker
-                                    </span>
-                                </a>
+                            <Link
+                                href="/stock-ticker"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/stock-ticker"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    Stock Ticker
+                                </span>
                             </Link>
                         </li>
                     </ul>
@@ -1417,23 +1258,17 @@ function Aside(props: Props) {
                         target="_blank"
                         rel="noreferrer noopener"
                     >
-                        <span
-                            className={styles.icon}
-                            dangerouslySetInnerHTML={{
-                                __html: GithubIcon as any,
-                            }}
-                        />
+                        <span className={styles.icon}>
+                            <GithubIcon />
+                        </span>
                         <span
                             className={`heading ${styles['button-text']} sans xs xs__ml+3`}
                         >
                             GitHub
                         </span>
-                        <span
-                            className={asideStyles.popup}
-                            dangerouslySetInnerHTML={{
-                                __html: LinkWebsiteIcon as any,
-                            }}
-                        />
+                        <span className={asideStyles.popup}>
+                            <LinkWebsiteIcon />
+                        </span>
                     </a>
                 </li>
             </ul>

@@ -26,10 +26,9 @@ function LinkBlock(props: Props) {
         >
             <p>{props.title}</p>
             <h2>{props.description}</h2>
-            <span
-                className={styles.icon}
-                dangerouslySetInnerHTML={{ __html: ChevronRightIcon as any }}
-            />
+            <span className={styles.icon}>
+                <ChevronRightIcon />
+            </span>
         </a>
     );
 }
