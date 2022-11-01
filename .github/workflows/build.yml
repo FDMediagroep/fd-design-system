@@ -12,10 +12,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [16.x, 18.x]
         experimental: [false]
         include:
-        - node: 18.x
+        - node: 19.x
           experimental: true
     steps:
     - uses: actions/checkout@v2
