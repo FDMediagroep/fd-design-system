@@ -317,7 +317,21 @@ module.exports = {
             // SVG
             {
                 test: /\.svg$/,
-                use: ['react-svg-loader'],
+                use: [
+                    {
+                        loader: 'react-svg-loader',
+                        options: {
+                            jsx: false, // true outputs JSX tags
+                            svgo: {
+                                plugins: [
+                                    {
+                                        removeViewBox: false,
+                                    },
+                                ],
+                            },
+                        },
+                    },
+                ],
             },
             // all files with a `.ts` or `.tsx` extension will be handled by a TypeScript loader
             {
