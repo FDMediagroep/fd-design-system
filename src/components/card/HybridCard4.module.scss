@@ -18,7 +18,6 @@
         flex: 1 1 auto;
         flex-direction: row;
         outline-offset: 0;
-        min-height: 80px;
         text-decoration: none;
         &:hover h1 {
             text-decoration: underline;
@@ -57,6 +56,7 @@
             right: 0;
             bottom: 0;
             left: 0;
+            aspect-ratio: 1/1;
             img {
                 position: absolute;
                 height: 100%;
