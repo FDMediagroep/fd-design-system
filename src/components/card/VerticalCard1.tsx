@@ -67,35 +67,29 @@ function VerticalCard1(props: Props) {
 
                 <div className={styles.teaserText}>
                     {props.label && (
-                        <>
-                            <div
-                                className={`${styles.meta} xs__mb+2 body-text sans xs`}
-                            >
-                                <span className={styles.prefix}>
-                                    {props.readingTime && (
-                                        <span
-                                            className={styles['reading-time']}
-                                        >
-                                            {props.readingTime} •{' '}
-                                        </span>
-                                    )}
-                                    {props.label}
-                                </span>
-                            </div>
-                        </>
+                        <div
+                            className={`${styles.meta} xs__mb+2 body-text sans xs`}
+                        >
+                            <span className={styles.prefix}>
+                                {props.readingTime && (
+                                    <span className={styles['reading-time']}>
+                                        {props.readingTime} •{' '}
+                                    </span>
+                                )}
+                                {props.label}
+                            </span>
+                        </div>
                     )}
                     {!props.label && props.readingTime && (
-                        <>
-                            <div
-                                className={`${styles.meta} xs__mb+2 body-text sans xs`}
-                            >
-                                <span className={styles.prefix}>
-                                    <span className={styles['reading-time']}>
-                                        {props.readingTime}
-                                    </span>
+                        <div
+                            className={`${styles.meta} xs__mb+2 body-text sans xs`}
+                        >
+                            <span className={styles.prefix}>
+                                <span className={styles['reading-time']}>
+                                    {props.readingTime}
                                 </span>
-                            </div>
-                        </>
+                            </span>
+                        </div>
                     )}
 
                     <div>
