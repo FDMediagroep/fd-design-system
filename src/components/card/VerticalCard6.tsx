@@ -51,9 +51,7 @@ function VerticalCard6(props: Props) {
                     className={`${styles.teaserText} xs__p+4 m__p-0 xs__p+2 m__p+4`}
                 >
                     {props.label && (
-                        <div
-                            className={`${styles.prefix} xs__mb+2 body-text sans xs`}
-                        >
+                        <div className={`xs__mb+2 body-text sans xs`}>
                             {props.readingTime && (
                                 <span className={styles['reading-time']}>
                                     {props.readingTime} •{' '}
@@ -63,9 +61,7 @@ function VerticalCard6(props: Props) {
                         </div>
                     )}
                     {!props.label && props.readingTime && (
-                        <div
-                            className={`${styles.prefix} xs__mb+2 body-text sans xs`}
-                        >
+                        <div className={`xs__mb+2 body-text sans xs`}>
                             <span className={styles['reading-time']}>
                                 {props.readingTime}
                             </span>
