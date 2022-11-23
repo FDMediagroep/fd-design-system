@@ -84,19 +84,15 @@ function VerticalCard1(props: Props) {
                             </div>
                         </>
                     )}
-                    {!props.label && (
+                    {!props.label && props.readingTime && (
                         <>
                             <div
                                 className={`${styles.meta} xs__mb+2 body-text sans xs`}
                             >
                                 <span className={styles.prefix}>
-                                    {props.readingTime && (
-                                        <span
-                                            className={styles['reading-time']}
-                                        >
-                                            {props.readingTime}
-                                        </span>
-                                    )}
+                                    <span className={styles['reading-time']}>
+                                        {props.readingTime}
+                                    </span>
                                 </span>
                             </div>
                         </>

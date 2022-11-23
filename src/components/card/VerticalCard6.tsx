@@ -2,12 +2,16 @@ import React from 'react';
 import styles from './VerticalCard6.module.scss';
 
 interface Props {
+    style?: React.CSSProperties;
+    className?: string;
     id: string;
+    imageUrl?: string;
     url: string;
     imageComponent?: JSX.Element;
     caption?: string;
     title: string;
-    [x: string]: any;
+    label?: string;
+    readingTime?: string;
 }
 
 /**
@@ -48,9 +52,23 @@ function VerticalCard6(props: Props) {
                 >
                     {props.label && (
                         <div
-                            className={`${styles.prefix} xs__mb+2 body-text sans s`}
+                            className={`${styles.prefix} xs__mb+2 body-text sans xs`}
                         >
+                            {props.readingTime && (
+                                <span className={styles['reading-time']}>
+                                    {props.readingTime} •{' '}
+                                </span>
+                            )}
                             {props.label}
+                        </div>
+                    )}
+                    {!props.label && props.readingTime && (
+                        <div
+                            className={`${styles.prefix} xs__mb+2 body-text sans xs`}
+                        >
+                            <span className={styles['reading-time']}>
+                                {props.readingTime}
+                            </span>
                         </div>
                     )}
                     <h1 className="heading serif s xs__m-0">{props.title}</h1>

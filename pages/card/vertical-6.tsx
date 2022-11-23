@@ -16,14 +16,19 @@ const verticalCards6: any = [
         imageUrl:
             'https://fd-internal-development.imgix.net/XSsvNsfpytwq-OQdMRmsCm7J1i8.jpg?auto=format',
         url: 'https://fd.nl/economie-politiek/1345422/lockdown-leidt-tot-recordstijging-aantal-ww-uitkeringen-in-april',
-        readingTime: 11,
+        readingTime: '13 min leestijd',
     },
     {
         id: '1345422a',
         label: 'Arbeidsmarkt',
         title: 'Lockdown leidt tot recordstijging aantal WW-uitkeringen in april',
         url: 'https://fd.nl/economie-politiek/1345422/lockdown-leidt-tot-recordstijging-aantal-ww-uitkeringen-in-april',
-        readingTime: 11,
+    },
+    {
+        id: '1345422a',
+        title: 'Lockdown leidt tot recordstijging aantal WW-uitkeringen in april',
+        url: 'https://fd.nl/economie-politiek/1345422/lockdown-leidt-tot-recordstijging-aantal-ww-uitkeringen-in-april',
+        readingTime: '11 min leestijd',
     },
 ];
 
@@ -36,7 +41,7 @@ function Page() {
         <>
             <Head>
                 <title>
-                    {metaTitle} - Design System - Het Financieele Dagblad
+                    {`${metaTitle} - Design System - Het Financieele Dagblad`}
                 </title>
                 <meta name="description" content={metaDescription} />
                 <meta property="og:title" content={metaTitle} />
@@ -78,6 +83,10 @@ function Page() {
                     <VerticalCard6
                         className="xs-12 s-6 m-4 l-3"
                         {...verticalCards6[1]}
+                    />
+                    <VerticalCard6
+                        className="xs-12 s-6 m-4 l-3"
+                        {...verticalCards6[2]}
                     />
                 </>
             </Explain>
