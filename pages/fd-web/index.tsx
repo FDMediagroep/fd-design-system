@@ -286,9 +286,6 @@ function Page(props: Props) {
                                                                     caption={
                                                                         card?.title
                                                                     }
-                                                                    intro={
-                                                                        card?.intro
-                                                                    }
                                                                     label={
                                                                         card?.topicPrefixOrCategory
                                                                     }
