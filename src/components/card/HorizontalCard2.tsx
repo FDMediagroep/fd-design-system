@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './HorizontalCard2.module.scss';
 
 interface Props {
+    style?: React.CSSProperties;
+    className?: string;
     id: string;
     url: string;
     label: string;
@@ -9,7 +11,6 @@ interface Props {
     title: string;
     intro: string;
     isRead?: boolean;
-    [x: string]: any;
 }
 
 /**
