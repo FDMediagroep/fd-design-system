@@ -98,11 +98,6 @@
         top: auto;
         left: auto;
         right: auto;
-        .update,
-        .prefix {
-            font-family: map-deep-get($typography, 'font-family', 'bold'),
-                sans-serif;
-        }
         .update {
             padding: 1px 8px;
             color: var(--card);
@@ -114,7 +109,7 @@
         }
 
         .prefix {
-            color: var(--primary);
+            color: var(--primary-active);
         }
 
         .dot {
