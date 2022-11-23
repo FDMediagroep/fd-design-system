@@ -28,17 +28,18 @@ function HorizontalCard2(props: Props) {
             <a className="xs__p+4" href={props.url} aria-label={props.title}>
                 <div className={`${styles.teaserText} xs__pl+4 s__p+4`}>
                     <div
-                        className={`${styles.meta} xs__m-0 xs__mb+2 body-text sans s`}
+                        className={`${styles.meta} xs__m-0 xs__mb+2 body-text sans xs`}
                     >
+                        <time>{props.time}</time>
+
                         {props.label && (
                             <>
+                                <span className={styles.dot}>•</span>
                                 <span className={styles.prefix}>
                                     {props.label}
                                 </span>
-                                <span className={styles.dot}>•</span>
                             </>
                         )}
-                        <time>{props.time}</time>
                     </div>
 
                     <div className={styles.textContainer}>
