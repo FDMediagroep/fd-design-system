@@ -55,7 +55,7 @@ function Page(props: Props) {
         <section>
             <Head>
                 <title>
-                    {metaTitle} - Design System - Het Financieele Dagblad
+                    {`${metaTitle} - Design System - Het Financieele Dagblad`}
                 </title>
                 <meta name="description" content={metaDescription} />
                 <meta property="og:title" content={metaTitle} />

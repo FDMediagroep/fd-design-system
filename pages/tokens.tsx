@@ -73,7 +73,7 @@ function Tokens(props: Props) {
         <section className={styles.tokens}>
             <Head>
                 <title>
-                    {metaTitle} - Design System - Het Financieele Dagblad
+                    {`${metaTitle} - Design System - Het Financieele Dagblad`}
                 </title>
                 <meta name="description" content={metaDescription} />
                 <meta property="og:title" content={metaTitle} />

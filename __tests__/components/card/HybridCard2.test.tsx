@@ -51,7 +51,6 @@ describe('HybridCard2', () => {
                 imageUrlM="https://images.example.com/imageM.png"
                 imageUrlL="https://images.example.com/imageL.png"
                 url="https://example.com/1/This is the title"
-                variant="variant-1"
             />
         );
         expect(container).toMatchSnapshot();
