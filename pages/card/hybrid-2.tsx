@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './cards.module.scss';
 import { Explain } from '../../src/components/Explain';
 import {
@@ -22,7 +22,7 @@ const hybridCards2: any = [
         imageUrlL:
             'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url: 'https://fd.nl/beurs/1345386/amerikaanse-technologiebeurs-nasdaq-wordt-mogelijk-strenger-dan-euronext',
-        readingTime: 3,
+        readingTime: '13 min leestijd',
     },
     {
         id: '1345444',
@@ -37,7 +37,6 @@ const hybridCards2: any = [
         imageUrlL:
             'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url: 'https://fd.nl/economie-politiek/1345444/grootste-toename-werkloosheid-sinds-2003',
-        readingTime: 11,
         isRead: true,
     },
 
@@ -53,7 +52,7 @@ const hybridCards2: any = [
         imageUrlL:
             'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url: 'https://fd.nl/economie-politiek/1345444/grootste-toename-werkloosheid-sinds-2003',
-        readingTime: 11,
+        readingTime: '11 min leestijd',
     },
 ];
 
