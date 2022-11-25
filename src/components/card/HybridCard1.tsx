@@ -18,7 +18,7 @@ interface Props {
     isRead?: boolean;
     title: string;
     intro: string;
-    readingTime?: string;
+    readingTime?: number;
 }
 
 /**
@@ -81,7 +81,7 @@ function HybridCard1(props: Props) {
                             <span className={styles.prefix}>
                                 {props.readingTime && (
                                     <span className={styles['reading-time']}>
-                                        {props.readingTime} •{' '}
+                                        {props.readingTime} min leestijd •{' '}
                                     </span>
                                 )}
                                 {props.label}
@@ -94,7 +94,7 @@ function HybridCard1(props: Props) {
                         >
                             <span className={styles.prefix}>
                                 <span className={styles['reading-time']}>
-                                    {props.readingTime}
+                                    {props.readingTime} min leestijd
                                 </span>
                             </span>
                         </div>

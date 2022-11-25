@@ -22,7 +22,7 @@ const hybridCards2: any = [
         imageUrlL:
             'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url: 'https://fd.nl/beurs/1345386/amerikaanse-technologiebeurs-nasdaq-wordt-mogelijk-strenger-dan-euronext',
-        readingTime: '13 min leestijd',
+        readingTime: 13,
     },
     {
         id: '1345444',
@@ -52,7 +52,7 @@ const hybridCards2: any = [
         imageUrlL:
             'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url: 'https://fd.nl/economie-politiek/1345444/grootste-toename-werkloosheid-sinds-2003',
-        readingTime: '11 min leestijd',
+        readingTime: 11,
     },
 ];
 

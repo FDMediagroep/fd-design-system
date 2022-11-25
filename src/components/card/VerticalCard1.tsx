@@ -12,7 +12,7 @@ interface Props {
     imageUrlL?: string;
     caption?: string;
     label?: string;
-    readingTime?: string;
+    readingTime?: number;
     isRead?: boolean;
     title: string;
     intro: string;
@@ -73,7 +73,7 @@ function VerticalCard1(props: Props) {
                             <span className={styles.prefix}>
                                 {props.readingTime && (
                                     <span className={styles['reading-time']}>
-                                        {props.readingTime} •{' '}
+                                        {props.readingTime} min leestijd •{' '}
                                     </span>
                                 )}
                                 {props.label}
@@ -86,7 +86,7 @@ function VerticalCard1(props: Props) {
                         >
                             <span className={styles.prefix}>
                                 <span className={styles['reading-time']}>
-                                    {props.readingTime}
+                                    {props.readingTime} min leestijd
                                 </span>
                             </span>
                         </div>

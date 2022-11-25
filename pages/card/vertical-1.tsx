@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Explain } from '../../src/components/Explain';
 import {
     VerticalCard1,
@@ -37,7 +37,7 @@ const verticalCards1: any = [
             'https://images.fd.nl/yDQG_K45XE2ZIJOmE57wc1FIbcM.jpg?fit=crop&crop=faces&auto=format,compress&q=45&w=599&h=399',
         url: 'https://fd.nl/economie-politiek/1357440/europees-arrest-dividendbelasting-kost-schatkist-910-mln',
         intro: `Nederlands bedrijf met aandelenportefeuille betaalt het gelag.`,
-        readingTime: '12 min leestijd',
+        readingTime: 12,
         isRead: true,
     },
     {
@@ -53,7 +53,7 @@ const verticalCards1: any = [
             'https://images.fd.nl/Cz9PTU-el_agiaSDvJOfmwrvu6g.jpg?rect=.0%2c.0428571428571429%2c.9999999999999999%2c.95&fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url: 'https://fd.nl/economie-politiek/1345422/lockdown-leidt-tot-recordstijging-aantal-ww-uitkeringen-in-april',
         intro: `Scherpe stijging met 17% tot 292.000 uitkeringen, blijkt uit cijfers van het UWV. Tijdens de kredietcrisis in 2008 liep de werkloosheid veel geleidelijker op.`,
-        readingTime: '11 min leestijd',
+        readingTime: 11,
     },
 ];
 

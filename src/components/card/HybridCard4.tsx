@@ -11,7 +11,7 @@ interface Props {
     imageComponent?: JSX.Element;
     caption?: string;
     title: string;
-    readingTime?: string;
+    readingTime?: number;
 }
 
 /**
@@ -50,7 +50,7 @@ function HybridCard4(props: Props) {
                         <span className={`xs__mb+2  body-text sans xs`}>
                             {props.readingTime && (
                                 <span className={styles['reading-time']}>
-                                    {props.readingTime} •{' '}
+                                    {props.readingTime} min leestijd •{' '}
                                 </span>
                             )}
                             {props.label}
@@ -59,7 +59,7 @@ function HybridCard4(props: Props) {
                     {!props.label && props.readingTime && (
                         <span className={`xs__mb+2 body-text sans xs`}>
                             <span className={styles['reading-time']}>
-                                {props.readingTime}
+                                {props.readingTime} min leestijd
                             </span>
                         </span>
                     )}

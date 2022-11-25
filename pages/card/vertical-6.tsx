@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Explain } from '../../src/components/Explain';
 import Head from 'next/head';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
@@ -16,7 +16,7 @@ const verticalCards6: any = [
         imageUrl:
             'https://fd-internal-development.imgix.net/XSsvNsfpytwq-OQdMRmsCm7J1i8.jpg?auto=format',
         url: 'https://fd.nl/economie-politiek/1345422/lockdown-leidt-tot-recordstijging-aantal-ww-uitkeringen-in-april',
-        readingTime: '13 min leestijd',
+        readingTime: 13,
     },
     {
         id: '1345422a',
@@ -28,7 +28,7 @@ const verticalCards6: any = [
         id: '1345422a',
         title: 'Lockdown leidt tot recordstijging aantal WW-uitkeringen in april',
         url: 'https://fd.nl/economie-politiek/1345422/lockdown-leidt-tot-recordstijging-aantal-ww-uitkeringen-in-april',
-        readingTime: '11 min leestijd',
+        readingTime: 11,
     },
 ];
 

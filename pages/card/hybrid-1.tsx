@@ -23,7 +23,7 @@ const hybridCards1: any = [
             'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url: 'https://fd.nl/beurs/1345386/amerikaanse-technologiebeurs-nasdaq-wordt-mogelijk-strenger-dan-euronext',
         intro: `Een tweede coronagolf staat bovenaan de lijst met zorgen van fondsmanagers, volgens een enquête van Bank of America.`,
-        readingTime: '13 min leestijd',
+        readingTime: 13,
     },
     {
         id: '1345444',
@@ -52,7 +52,7 @@ const hybridCards1: any = [
         imageUrlL:
             'https://images.fd.nl/2V1xFJ-1OddgzcJgKmiPOv0t4yY.jpg?fit=crop&crop=faces&auto=format&q=45&w=599&h=399',
         url: 'https://fd.nl/economie-politiek/1345444/grootste-toename-werkloosheid-sinds-2003',
-        readingTime: '7 min leestijd',
+        readingTime: 7,
     },
 ];
 
