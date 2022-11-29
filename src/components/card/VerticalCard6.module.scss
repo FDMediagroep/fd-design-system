@@ -49,11 +49,6 @@
         object-fit: none;
     }
 
-    .prefix {
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
-    }
-
     .teaserText {
         position: absolute;
         box-sizing: border-box;

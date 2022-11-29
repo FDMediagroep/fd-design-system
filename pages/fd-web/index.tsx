@@ -46,10 +46,6 @@ function Page(props: Props) {
                                         label={
                                             singleOpeningTeaser?.topicPrefixOrCategory
                                         }
-                                        theme={
-                                            singleOpeningTeaser?.image
-                                                ?.backgroundColor
-                                        }
                                         title={singleOpeningTeaser?.title}
                                         url={`${singleOpeningTeaser?.publicationUrl}`}
                                         imageUrl={`${singleOpeningTeaser?.image?.squareUrl}&q=45&w=599&h=399`}
@@ -81,9 +77,6 @@ function Page(props: Props) {
                                             intro={teaser?.intro}
                                             label={
                                                 teaser?.topicPrefixOrCategory
-                                            }
-                                            theme={
-                                                teaser?.image?.backgroundColor
                                             }
                                             title={teaser?.title}
                                             url={`${teaser?.publicationUrl}`}
@@ -117,9 +110,6 @@ function Page(props: Props) {
                                             label={
                                                 teaser?.topicPrefixOrCategory
                                             }
-                                            theme={
-                                                teaser?.image?.backgroundColor
-                                            }
                                             title={teaser?.title}
                                             url={`${teaser?.publicationUrl}`}
                                             imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
@@ -152,9 +142,6 @@ function Page(props: Props) {
                                             label={
                                                 teaser?.topicPrefixOrCategory
                                             }
-                                            theme={
-                                                teaser?.image?.backgroundColor
-                                            }
                                             title={teaser?.title}
                                             url={`${teaser?.publicationUrl}`}
                                             imageUrl={`${teaser?.image?.squareUrl}&q=45&w=599&h=399`}
@@ -186,9 +173,6 @@ function Page(props: Props) {
                                             intro={teaser?.intro}
                                             label={
                                                 teaser?.topicPrefixOrCategory
-                                            }
-                                            theme={
-                                                teaser?.image?.backgroundColor
                                             }
                                             title={teaser?.title}
                                             url={`${teaser?.publicationUrl}`}
@@ -301,9 +285,6 @@ function Page(props: Props) {
                                                                     className={`${styles.newsContainer} ${styles.fullHeight}`}
                                                                     caption={
                                                                         card?.title
-                                                                    }
-                                                                    intro={
-                                                                        card?.intro
                                                                     }
                                                                     label={
                                                                         card?.topicPrefixOrCategory

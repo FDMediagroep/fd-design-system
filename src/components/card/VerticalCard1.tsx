@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './VerticalCard1.module.scss';
 
 interface Props {
+    style?: React.CSSProperties;
+    className?: string;
     id: string;
     url: string;
     imageUrl: string;
@@ -10,10 +12,10 @@ interface Props {
     imageUrlL?: string;
     caption?: string;
     label?: string;
+    readingTime?: number;
     isRead?: boolean;
     title: string;
     intro: string;
-    [x: string]: any;
 }
 
 /**
@@ -65,15 +67,29 @@ function VerticalCard1(props: Props) {
 
                 <div className={styles.teaserText}>
                     {props.label && (
-                        <>
-                            <div
-                                className={`${styles.meta} xs__mb+2 body-text sans s`}
-                            >
-                                <span className={styles.prefix}>
-                                    {props.label}
+                        <div
+                            className={`${styles.meta} xs__mb+2 body-text sans xs`}
+                        >
+                            <span className={styles.prefix}>
+                                {props.readingTime && (
+                                    <span className={styles['reading-time']}>
+                                        {props.readingTime} min leestijd •{' '}
+                                    </span>
+                                )}
+                                {props.label}
+                            </span>
+                        </div>
+                    )}
+                    {!props.label && props.readingTime && (
+                        <div
+                            className={`${styles.meta} xs__mb+2 body-text sans xs`}
+                        >
+                            <span className={styles.prefix}>
+                                <span className={styles['reading-time']}>
+                                    {props.readingTime} min leestijd
                                 </span>
-                            </div>
-                        </>
+                            </span>
+                        </div>
                     )}
 
                     <div>

@@ -2,13 +2,16 @@ import React from 'react';
 import styles from './HybridCard4.module.scss';
 
 interface Props {
+    style?: React.CSSProperties;
+    className?: string;
     id: string;
     url: string;
+    imageUrl?: string;
     label: string;
     imageComponent?: JSX.Element;
     caption?: string;
     title: string;
-    [x: string]: any;
+    readingTime?: number;
 }
 
 /**
@@ -44,12 +47,23 @@ function HybridCard4(props: Props) {
 
                 <div className={`${styles.teaserText} xs__pl+4 s__p+4 m__p+4`}>
                     {props.label && (
-                        <span
-                            className={`${styles.prefix} xs__mb+2  body-text sans s`}
-                        >
+                        <span className={`xs__mb+2  body-text sans xs`}>
+                            {props.readingTime && (
+                                <span className={styles['reading-time']}>
+                                    {props.readingTime} min leestijd •{' '}
+                                </span>
+                            )}
                             {props.label}
                         </span>
                     )}
+                    {!props.label && props.readingTime && (
+                        <span className={`xs__mb+2 body-text sans xs`}>
+                            <span className={styles['reading-time']}>
+                                {props.readingTime} min leestijd
+                            </span>
+                        </span>
+                    )}
+
                     <h1 className="heading serif xs xs__m-0">{props.title}</h1>
                 </div>
             </a>

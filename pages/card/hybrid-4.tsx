@@ -19,6 +19,7 @@ const hybridCards4: any = [
 
         url: 'https://fd.nl/beurs/1345386/amerikaanse-technologiebeurs-nasdaq-wordt-mogelijk-strenger-dan-euronext',
         intro: `Een tweede coronagolf staat bovenaan de lijst met zorgen van fondsmanagers, volgens een enquête van Bank of America.`,
+        readingTime: 13,
     },
     {
         id: '1345186',
@@ -31,10 +32,10 @@ const hybridCards4: any = [
     },
     {
         id: '1345186',
-        label: 'Markten',
         title: `Deloitte krijgt met Rianne Jans een onverstoorbare cfo in huis`,
         url: 'https://fd.nl/profiel/1345186/deloitte-krijgt-met-rianne-jans-een-onverstoorbare-cfo-in-huis',
         intro: `Na een kortstondig avontuur bij het ruziënde Centric vindt financieel bestuurder Rianne Jans onderdak bij accountants. `,
+        readingTime: 11,
     },
 ];
 
@@ -46,7 +47,7 @@ function Page() {
         <>
             <Head>
                 <title>
-                    {metaTitle} - Design System - Het Financieele Dagblad
+                    {`${metaTitle} - Design System - Het Financieele Dagblad`}
                 </title>
                 <meta name="description" content={metaDescription} />
                 <meta property="og:title" content={metaTitle} />
@@ -75,6 +76,21 @@ function Page() {
                 }
             >
                 <>
+                    <div className="xs-12 s-6 gap-1 gap-bottom full-height">
+                        <HybridCard4
+                            {...hybridCards4[0]}
+                            imageComponent={
+                                <FdImgix
+                                    src={hybridCards4[1].imageUrl}
+                                    imageSizes={{
+                                        widthS: '300px',
+                                        widthM: '351px',
+                                        widthL: '599px',
+                                    }}
+                                />
+                            }
+                        />
+                    </div>
                     <div className="xs-12 s-6 gap-1 gap-bottom full-height">
                         <HybridCard4
                             {...hybridCards4[1]}

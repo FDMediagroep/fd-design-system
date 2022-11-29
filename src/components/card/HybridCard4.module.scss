@@ -78,11 +78,6 @@
         }
     }
 
-    .prefix {
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
-    }
-
     .teaserText {
         box-sizing: border-box;
         display: flex;

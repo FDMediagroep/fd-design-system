@@ -4,6 +4,8 @@ import styles from './HybridCard1.module.scss';
 export type Variants = 'default' | 'variant-1';
 
 interface Props {
+    style?: React.CSSProperties;
+    className?: string;
     id: string;
     url: string;
     imageUrl?: string;
@@ -16,7 +18,7 @@ interface Props {
     isRead?: boolean;
     title: string;
     intro: string;
-    [x: string]: any;
+    readingTime?: number;
 }
 
 /**
@@ -73,15 +75,29 @@ function HybridCard1(props: Props) {
                     className={`${styles.teaserText}  xs__pl+4 s__pr-0 s__pb-0 s__pl-0`}
                 >
                     {props.label && (
-                        <>
-                            <div
-                                className={`${styles.meta} xs__mb+2 body-text sans s`}
-                            >
-                                <span className={styles.prefix}>
-                                    {props.label}
+                        <div
+                            className={`${styles.meta} xs__mb+2 body-text sans xs`}
+                        >
+                            <span className={styles.prefix}>
+                                {props.readingTime && (
+                                    <span className={styles['reading-time']}>
+                                        {props.readingTime} min leestijd •{' '}
+                                    </span>
+                                )}
+                                {props.label}
+                            </span>
+                        </div>
+                    )}
+                    {!props.label && props.readingTime && (
+                        <div
+                            className={`${styles.meta} xs__mb+2 body-text sans xs`}
+                        >
+                            <span className={styles.prefix}>
+                                <span className={styles['reading-time']}>
+                                    {props.readingTime} min leestijd
                                 </span>
-                            </div>
-                        </>
+                            </span>
+                        </div>
                     )}
 
                     <div className={styles.textContainer}>
