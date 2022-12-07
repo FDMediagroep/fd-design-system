@@ -57,7 +57,6 @@ describe('HybridCard1', () => {
                 label="Ondernemen"
                 title="This is the title"
                 url="https://example.com/1/This is the title"
-                variant="variant-1"
             />
         );
         expect(container).toMatchSnapshot();
@@ -73,7 +72,6 @@ describe('HybridCard1', () => {
                 label="Ondernemen"
                 title="This is the title"
                 url="https://example.com/1/This is the title"
-                theme="theme1"
             />
         );
         const { container: container2 } = render(
@@ -85,7 +83,6 @@ describe('HybridCard1', () => {
                 label="Ondernemen"
                 title="This is the title"
                 url="https://example.com/1/This is the title"
-                theme="theme2"
             />
         );
         const { container: container3 } = render(
@@ -97,7 +94,6 @@ describe('HybridCard1', () => {
                 label="Ondernemen"
                 title="This is the title"
                 url="https://example.com/1/This is the title"
-                theme="theme3"
             />
         );
         const { container: container4 } = render(
@@ -109,7 +105,6 @@ describe('HybridCard1', () => {
                 label="Ondernemen"
                 title="This is the title"
                 url="https://example.com/1/This is the title"
-                theme="theme4"
             />
         );
         const { container: container5 } = render(
@@ -121,7 +116,6 @@ describe('HybridCard1', () => {
                 label="Ondernemen"
                 title="This is the title"
                 url="https://example.com/1/This is the title"
-                theme="theme5"
             />
         );
         const { container: container6 } = render(
@@ -133,7 +127,6 @@ describe('HybridCard1', () => {
                 label="Ondernemen"
                 title="This is the title"
                 url="https://example.com/1/This is the title"
-                theme="theme6"
             />
         );
         const { container: container7 } = render(
@@ -145,7 +138,6 @@ describe('HybridCard1', () => {
                 label="Ondernemen"
                 title="This is the title"
                 url="https://example.com/1/This is the title"
-                theme="theme7"
             />
         );
         const { container: container8 } = render(
@@ -157,7 +149,6 @@ describe('HybridCard1', () => {
                 label="Ondernemen"
                 title="This is the title"
                 url="https://example.com/1/This is the title"
-                theme="theme8"
             />
         );
         expect(container1).toMatchSnapshot();

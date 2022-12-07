@@ -44,9 +44,10 @@
         display: flex;
         justify-content: space-between;
         .prefix {
-            font-family: map-deep-get($typography, 'font-family', 'bold'),
-                sans-serif;
-            color: var(--primary);
+            color: var(--primary-active);
+        }
+        .reading-time {
+            color: var(--meta-copy);
         }
     }
 

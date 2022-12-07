@@ -38,7 +38,7 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
         class="teaserText xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans s"
+          class="meta xs__mb+2 body-text sans xs"
         >
           <span
             class="prefix"
@@ -99,7 +99,7 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
         class="teaserText xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans s"
+          class="meta xs__mb+2 body-text sans xs"
         >
           <span
             class="prefix"

@@ -55,21 +55,21 @@ https://images.example.com/image.png?auto=format&ixlib=react-9.5.4&w=8192 8192w"
         class="teaserText xs__pl+4 s__p+4"
       >
         <div
-          class="meta xs__m-0 xs__mb+2 body-text sans s"
+          class="meta xs__m-0 xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
-            Ondernemen
-          </span>
+          <time>
+            11:40
+          </time>
           <span
             class="dot"
           >
             •
           </span>
-          <time>
-            11:40
-          </time>
+          <span
+            class="prefix"
+          >
+            Ondernemen
+          </span>
         </div>
         <div
           class="textContainer"
