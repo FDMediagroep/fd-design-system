@@ -1,3 +1,3 @@
 import './design-tokens.scss';
-
-export default {};
+const obj = {};
+export default obj;

@@ -7,7 +7,6 @@ import { GridContainer } from '@fdmg/css-grid/GridContainer';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { HorizontalCard3 } from '../src/components/card/HorizontalCard3';
 import styles from './search.module.scss';
 
 import { metaTitle as abTitle, metaDescription as abDescription } from './ab';
@@ -75,10 +74,6 @@ import {
     metaTitle as horizontalCard2Title,
     metaDescription as horizontalCard2Description,
 } from './card/horizontal-2';
-import {
-    metaTitle as horizontalCard3Title,
-    metaDescription as horizontalCard3Description,
-} from './card/horizontal-3';
 import {
     metaTitle as horizontalCard4Title,
     metaDescription as horizontalCard4Description,
@@ -205,6 +200,7 @@ import {
 } from './wordframe';
 import { TextInput } from '../src/components/input/TextInput';
 import { handleSearchSubmit, interceptLinks } from '../src/utils/search';
+import { HorizontalCard2 } from '../src/deno';
 
 type SearchIndex = {
     [x: string]: {
@@ -281,10 +277,6 @@ const searchIndex: SearchIndex = {
     '/card/horizontal-2': {
         title: horizontalCard2Title,
         description: horizontalCard2Description,
-    },
-    '/card/horizontal-3': {
-        title: horizontalCard3Title,
-        description: horizontalCard3Description,
     },
     '/card/horizontal-4': {
         title: horizontalCard4Title,
@@ -519,13 +511,13 @@ export default function Page() {
                             const title = result[1].title;
                             const description = result[1].description;
                             return (
-                                <HorizontalCard3
+                                <HorizontalCard2
                                     key={idx}
                                     id={path}
                                     title={title}
                                     intro={description}
                                     label="Component"
-                                    time=""
+                                    time="12:34"
                                     url={path}
                                 />
                             );

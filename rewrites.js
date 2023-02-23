@@ -44,10 +44,6 @@ module.exports = [
         destination: '/card/horizontal-2',
     },
     {
-        source: '/(card/horizontal3|cards/horizontal3|teaser/horizontal3|teasers/horizontal3|cards/horizontal-3|teaser/horizontal-3|teasers/horizontal-3)',
-        destination: '/card/horizontal-3',
-    },
-    {
         source: '/(card/hybrid1|cards/hybrid1|teaser/hybrid1|teasers/hybrid1|cards/hybrid-1|teaser/hybrid-1|teasers/hybrid-1)',
         destination: '/card/hybrid-1',
     },

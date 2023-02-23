@@ -142,9 +142,6 @@ module.exports = {
         '/components/card/HorizontalCard2': [
             './src/components/card/HorizontalCard2.tsx',
         ],
-        '/components/card/HorizontalCard3': [
-            './src/components/card/HorizontalCard3.tsx',
-        ],
         '/components/card/HorizontalCard4': [
             './src/components/card/HorizontalCard4.tsx',
         ],

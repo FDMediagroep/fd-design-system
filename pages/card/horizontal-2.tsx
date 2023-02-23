@@ -40,7 +40,7 @@ const horizontalCards2: any = [
 
 export const metaTitle = 'Horizontal Card 2';
 export const metaDescription =
-    'Horizontal Card 2, used on latest news, my news pages';
+    'Horizontal Card 2, used on search and author pages';
 
 function Page() {
     return (
