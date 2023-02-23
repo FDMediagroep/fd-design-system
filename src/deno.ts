@@ -44,10 +44,14 @@ export { Dropdown } from './components/button/Dropdown';
 // Cards
 export { HorizontalCard1 } from './components/card/HorizontalCard1';
 export { HorizontalCard2 } from './components/card/HorizontalCard2';
+export { HorizontalCard4 } from './components/card/HorizontalCard4';
 export { HybridCard1 } from './components/card/HybridCard1';
 export { HybridCard2 } from './components/card/HybridCard2';
+export { HybridCard4 } from './components/card/HybridCard4';
 export { LinkCard } from './components/card/LinkCard';
 export { VerticalCard1 } from './components/card/VerticalCard1';
+export { VerticalCard5 } from './components/card/VerticalCard5';
+export { VerticalCard6 } from './components/card/VerticalCard6';
 
 // Misc.
 export * from './components/ab/ab';
