@@ -44,7 +44,6 @@ export { Dropdown } from './components/button/Dropdown';
 // Cards
 export { HorizontalCard1 } from './components/card/HorizontalCard1';
 export { HorizontalCard2 } from './components/card/HorizontalCard2';
-export { HorizontalCard3 } from './components/card/HorizontalCard3';
 export { HybridCard1 } from './components/card/HybridCard1';
 export { HybridCard2 } from './components/card/HybridCard2';
 export { LinkCard } from './components/card/LinkCard';

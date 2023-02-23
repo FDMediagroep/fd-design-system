@@ -1160,38 +1160,6 @@ function Foo() {
 </details>
 
 <details>
-<summary>Horizontal Card 3</summary>
-
-[Demo](https://design-system.fd.nl/card/horizontal-3)
-
-Component CSS:
-
-```
-import "@fdmg/design-system/components/design-tokens/design-tokens.css";
-import "@fdmg/design-system/components/card/HorizontalCard3.css";
-```
-
-```
-import { HorizontalCard3 } from "@fdmg/design-system/components/card/HorizontalCard3";
-
-function Foo() {
-    return (
-        <HorizontalCard3
-            id="1343052"
-            url="https://fd.nl/futures/1343052/levensgevaarlijk-libanon"
-            label="Levensgevaarlijk Libanon"
-            time="13:11"
-            title="Omgekeerde kruistocht"
-            printTitle="De kruistocht in reverse"
-            intro="Ondanks een op het eerste gezicht veel gevaarlijker levensstijl, verschilt de levensverwachting van Libanezen nog maar drie jaar met die van ons."
-        />
-    );
-}
-```
-
-</details>
-
-<details>
 <summary>Horizontal Card 4</summary>
 
 [Demo](https://design-system.fd.nl/card/horizontal-4)
