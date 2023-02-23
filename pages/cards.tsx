@@ -55,19 +55,7 @@ function Page() {
                         </td>
                         <td>
                             <ul>
-                                <li>Latest news</li>
-                                <li>My news</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <Link href="/card/horizontal-3">
-                                Horizontal Card 3
-                            </Link>
-                        </td>
-                        <td>
-                            <ul>
+                                <li>Author pages</li>
                                 <li>Search</li>
                             </ul>
                         </td>
