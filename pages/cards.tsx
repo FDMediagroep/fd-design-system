@@ -120,7 +120,7 @@ function Page() {
                             <ul>
                                 <li>Home</li>
                                 <li>Dossier overview</li>
-                                <li>Persoonlijk</li>s
+                                <li>Persoonlijk</li>
                             </ul>
                         </td>
                     </tr>
