@@ -97,7 +97,9 @@ function Page() {
                 reactComponentName="HorizontalCard1"
                 description={
                     <>
-                        <p>Used on category, dossier pages.</p>
+                        <p>
+                            Used to provide information spread out horizontally.
+                        </p>
                         <ul>
                             <li>default</li>
                             <li>without a label</li>

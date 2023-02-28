@@ -85,7 +85,10 @@ function Page() {
                 reactComponentName="HybridCard2"
                 description={
                     <>
-                        <p>Used on homepage. This card has no image.</p>
+                        <p>
+                            Used to provide information spread out horizontally
+                            on larger screens and vertically on smaller screens.
+                        </p>
                         <p>
                             This is called a hybrid card because on small
                             screens its layout is similar to Horizontal Card 1

@@ -67,7 +67,9 @@ function Page() {
                 reactComponentName="HorizontalCard2"
                 description={
                     <>
-                        <p>Used on latest news, my news pages.</p>
+                        <p>
+                            Used to provide information spread out horizontally.
+                        </p>
                         <ul>
                             <li>default</li>
                             <li>visited</li>

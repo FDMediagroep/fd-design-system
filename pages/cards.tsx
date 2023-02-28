@@ -40,9 +40,13 @@ function Page() {
                         <td>
                             <ul>
                                 <li>Author</li>
+                                <li>Account</li>
                                 <li>Beurs</li>
-                                <li>Category</li>
                                 <li>Dossier</li>
+                                <li>Error</li>
+                                <li>My News</li>
+                                <li>Net Binnen</li>
+                                <li>Section</li>
                                 <li>Tag</li>
                             </ul>
                         </td>
@@ -70,6 +74,8 @@ function Page() {
                             <ul>
                                 <li>My news</li>
                                 <li>Latest news</li>
+                                <li>Net Binnen</li>
+                                <li>Section</li>
                             </ul>
                         </td>
                     </tr>
@@ -80,6 +86,7 @@ function Page() {
                         <td>
                             <ul>
                                 <li>Home</li>
+                                <li>Persoonlijk</li>
                             </ul>
                         </td>
                     </tr>
@@ -89,7 +96,8 @@ function Page() {
                         </td>
                         <td>
                             <ul>
-                                <li>Home specials/categories</li>
+                                <li>Home</li>
+                                <li>Article</li>
                             </ul>
                         </td>
                     </tr>
@@ -100,6 +108,7 @@ function Page() {
                         <td>
                             <ul>
                                 <li>Home</li>
+                                <li>Article</li>
                             </ul>
                         </td>
                     </tr>
@@ -111,7 +120,7 @@ function Page() {
                             <ul>
                                 <li>Home</li>
                                 <li>Dossier overview</li>
-                                <li>Persoonlijk Home</li>
+                                <li>Persoonlijk</li>s
                             </ul>
                         </td>
                     </tr>
