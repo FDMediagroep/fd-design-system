@@ -71,7 +71,10 @@ function Page() {
                 reactComponentName="HorizontalCard4"
                 description={
                     <>
-                        <p>Used on 'Mijn nieuws' and 'Net binnen'</p>
+                        <p>
+                            Used as a more attention seeking way to provide
+                            information spread out horizontally.
+                        </p>
                         <ul>
                             <li>default</li>
                             <li>Visited</li>

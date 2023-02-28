@@ -67,7 +67,11 @@ function Page() {
                 reactComponentName="HybridCard4"
                 description={
                     <>
-                        <p>Special card on home</p>
+                        <p>
+                            Used as a more attention seeking way to provide
+                            information spread out horizontally on larger
+                            screens and vertically on smaller screens.
+                        </p>
                         <ul>
                             <li>default</li>
                             <li>Without an image</li>

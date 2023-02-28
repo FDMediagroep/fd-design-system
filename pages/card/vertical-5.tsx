@@ -89,7 +89,9 @@ function Page() {
                 reactComponentName="VerticalCard5"
                 description={
                     <>
-                        <p>Used on podcasts overview page.</p>
+                        <p>
+                            Used to provide information spread out vertically.
+                        </p>
                     </>
                 }
             >

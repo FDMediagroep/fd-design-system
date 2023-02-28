@@ -85,7 +85,9 @@ function Page() {
                 reactComponentName="VerticalCard1"
                 description={
                     <>
-                        <p>Used on homepage.</p>
+                        <p>
+                            Used to provide information spread out vertically.
+                        </p>
                         <ul>
                             <li>default</li>
                             <li>visited</li>
