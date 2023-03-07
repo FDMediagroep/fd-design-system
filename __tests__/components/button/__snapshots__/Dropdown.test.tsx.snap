@@ -30,58 +30,40 @@ exports[`Dropdown should handle sizes correctly 1`] = `
     >
       <ul>
         <li>
-          <a
-            href="https://fd.nl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              <span
-                class="podcast-icon"
-              >
-                <test-file-stub />
-              </span>
-              <span>
-                Spotify
-              </span>
+          <span>
+            <span
+              class="podcast-icon"
+            >
+              <test-file-stub />
             </span>
-          </a>
+            <span>
+              Spotify
+            </span>
+          </span>
         </li>
         <li>
-          <a
-            href="https://fd.nl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              <span
-                class="podcast-icon"
-              >
-                <test-file-stub />
-              </span>
-              <span>
-                Apple Podcasts
-              </span>
+          <span>
+            <span
+              class="podcast-icon"
+            >
+              <test-file-stub />
             </span>
-          </a>
+            <span>
+              Apple Podcasts
+            </span>
+          </span>
         </li>
         <li>
-          <a
-            href="https://fd.nl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              <span
-                class="podcast-icon"
-              >
-                <test-file-stub />
-              </span>
-              <span>
-                Google Podcasts
-              </span>
+          <span>
+            <span
+              class="podcast-icon"
+            >
+              <test-file-stub />
             </span>
-          </a>
+            <span>
+              Google Podcasts
+            </span>
+          </span>
         </li>
       </ul>
     </nav>
@@ -119,58 +101,40 @@ exports[`Dropdown should handle sizes correctly 2`] = `
     >
       <ul>
         <li>
-          <a
-            href="https://fd.nl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              <span
-                class="podcast-icon"
-              >
-                <test-file-stub />
-              </span>
-              <span>
-                Spotify
-              </span>
+          <span>
+            <span
+              class="podcast-icon"
+            >
+              <test-file-stub />
             </span>
-          </a>
+            <span>
+              Spotify
+            </span>
+          </span>
         </li>
         <li>
-          <a
-            href="https://fd.nl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              <span
-                class="podcast-icon"
-              >
-                <test-file-stub />
-              </span>
-              <span>
-                Apple Podcasts
-              </span>
+          <span>
+            <span
+              class="podcast-icon"
+            >
+              <test-file-stub />
             </span>
-          </a>
+            <span>
+              Apple Podcasts
+            </span>
+          </span>
         </li>
         <li>
-          <a
-            href="https://fd.nl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              <span
-                class="podcast-icon"
-              >
-                <test-file-stub />
-              </span>
-              <span>
-                Google Podcasts
-              </span>
+          <span>
+            <span
+              class="podcast-icon"
+            >
+              <test-file-stub />
             </span>
-          </a>
+            <span>
+              Google Podcasts
+            </span>
+          </span>
         </li>
       </ul>
     </nav>

@@ -29,6 +29,7 @@ const getOffsetTop = (el: HTMLElement) => {
 function Menu(props: Props) {
     const { onClose } = props;
     const menuRef = useRef<HTMLDivElement>(null);
+    const searchInputRef = useRef<HTMLInputElement>(null);
     const [stickyState, setStickyState] = useState(false);
     const [backgroundOverlay, setBackgroundOverlay] = useState(false);
     const [hiding, setHiding] = useState(false);
@@ -363,7 +364,14 @@ function Menu(props: Props) {
                         </div>
                     </nav>
                 </div>
-                <div className={styles['search-bar']}>
+                <div
+                    className={styles['search-bar']}
+                    onTransitionEnd={() => {
+                        if (showSearchBar && searchInputRef !== null) {
+                            searchInputRef.current.focus();
+                        }
+                    }}
+                >
                     <form
                         className={`${styles['search']} ${styles['centered']} xs__m-0-auto xs__p-0 xs__pl+4 xs__pr+4`}
                         action="/search"
@@ -376,6 +384,7 @@ function Menu(props: Props) {
                             <LookingGlassIcon />
                         </label>
                         <input
+                            ref={searchInputRef}
                             id="searchInput"
                             type="search"
                             name="q"
