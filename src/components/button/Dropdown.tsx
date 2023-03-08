@@ -125,7 +125,7 @@ function Dropdown(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdDropdown];
+    return [styles['fd-dropdown']];
 }
 
 export { Dropdown, getCssClassNames };

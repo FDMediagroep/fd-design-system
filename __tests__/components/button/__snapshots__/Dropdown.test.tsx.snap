@@ -30,40 +30,58 @@ exports[`Dropdown should handle sizes correctly 1`] = `
     >
       <ul>
         <li>
-          <span>
-            <span
-              class="podcast-icon"
-            >
-              <test-file-stub />
-            </span>
+          <a
+            href="https://fd.nl"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <span>
-              Spotify
+              <span
+                class="podcast-icon"
+              >
+                <test-file-stub />
+              </span>
+              <span>
+                Spotify
+              </span>
             </span>
-          </span>
+          </a>
         </li>
         <li>
-          <span>
-            <span
-              class="podcast-icon"
-            >
-              <test-file-stub />
-            </span>
+          <a
+            href="https://fd.nl"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <span>
-              Apple Podcasts
+              <span
+                class="podcast-icon"
+              >
+                <test-file-stub />
+              </span>
+              <span>
+                Apple Podcasts
+              </span>
             </span>
-          </span>
+          </a>
         </li>
         <li>
-          <span>
-            <span
-              class="podcast-icon"
-            >
-              <test-file-stub />
-            </span>
+          <a
+            href="https://fd.nl"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <span>
-              Google Podcasts
+              <span
+                class="podcast-icon"
+              >
+                <test-file-stub />
+              </span>
+              <span>
+                Google Podcasts
+              </span>
             </span>
-          </span>
+          </a>
         </li>
       </ul>
     </nav>
@@ -101,40 +119,58 @@ exports[`Dropdown should handle sizes correctly 2`] = `
     >
       <ul>
         <li>
-          <span>
-            <span
-              class="podcast-icon"
-            >
-              <test-file-stub />
-            </span>
+          <a
+            href="https://fd.nl"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <span>
-              Spotify
+              <span
+                class="podcast-icon"
+              >
+                <test-file-stub />
+              </span>
+              <span>
+                Spotify
+              </span>
             </span>
-          </span>
+          </a>
         </li>
         <li>
-          <span>
-            <span
-              class="podcast-icon"
-            >
-              <test-file-stub />
-            </span>
+          <a
+            href="https://fd.nl"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <span>
-              Apple Podcasts
+              <span
+                class="podcast-icon"
+              >
+                <test-file-stub />
+              </span>
+              <span>
+                Apple Podcasts
+              </span>
             </span>
-          </span>
+          </a>
         </li>
         <li>
-          <span>
-            <span
-              class="podcast-icon"
-            >
-              <test-file-stub />
-            </span>
+          <a
+            href="https://fd.nl"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <span>
-              Google Podcasts
+              <span
+                class="podcast-icon"
+              >
+                <test-file-stub />
+              </span>
+              <span>
+                Google Podcasts
+              </span>
             </span>
-          </span>
+          </a>
         </li>
       </ul>
     </nav>
