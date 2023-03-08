@@ -20,28 +20,26 @@ describe('Dropdown', () => {
 
         expect(getByText('Knopje')).toBeTruthy();
         expect(spy).toBeCalledTimes(0);
-        fireEvent.click(container.querySelector('button'));
+        fireEvent.click(container.querySelector('button')!);
         expect(spy).toBeCalledTimes(1);
-        fireEvent.click(container.querySelector('button'));
+        fireEvent.click(container.querySelector('button')!);
         expect(spy).toBeCalledTimes(2);
     });
 
     test('should show dropdown correctly', () => {
-        const { container, rerender, getByText } = render(
-            <Dropdown>Knopje</Dropdown>
-        );
+        const { container } = render(<Dropdown>Knopje</Dropdown>);
 
         expect(
             container
-                .querySelector('[aria-expanded]')
+                .querySelector('[aria-expanded]')!
                 .getAttribute('aria-expanded')
         ).toBe('false');
 
-        fireEvent.click(container.querySelector('button'));
+        fireEvent.click(container.querySelector('button')!);
 
         expect(
             container
-                .querySelector('[aria-expanded]')
+                .querySelector('[aria-expanded]')!
                 .getAttribute('aria-expanded')
         ).toBe('true');
     });
@@ -58,11 +56,10 @@ describe('Dropdown', () => {
 
     test('should have correct class name', () => {
         const { container } = render(<Dropdown>Knopje</Dropdown>);
-        console.log(container.firstElementChild.classList);
-        // expect(
-        //     container.firstElementChild?.classList.contains(
-        //         getCssClassNames()[0]
-        //     )
-        // ).toBeTruthy();
+        expect(
+            container.firstElementChild?.classList.contains(
+                getCssClassNames()[0]
+            )
+        ).toBeTruthy();
     });
 });
