@@ -231,6 +231,7 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        fallback: { crypto: false },
     },
     plugins: [
         new webpack.DefinePlugin({
@@ -305,7 +306,6 @@ module.exports = {
     module: {
         strictExportPresence: true,
         rules: [
-            { parser: { requireEnsure: false } },
             // Markdown
             {
                 test: /\.md$/,
