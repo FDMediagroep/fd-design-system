@@ -17,9 +17,5 @@
         "incremental": true
     },
     "exclude": ["./node_modules", "./__tests__", "./dist.d.ts", "./dist"],
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-    "typedocOptions": {
-        "mode": "modules",
-        "out": "docs"
-    }
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

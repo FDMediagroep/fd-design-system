@@ -67,9 +67,5 @@
         // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
         "resolveJsonModule": true
     },
-    "exclude": ["./dist", "./__tests__", "./src/pages"],
-    "typedocOptions": {
-        "mode": "modules",
-        "out": "docs"
-    }
+    "exclude": ["./dist", "./__tests__", "./src/pages"]
 }
