@@ -33,6 +33,7 @@
             75
         )};
     --dividers: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+    --divider-section-header: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     --content-copy: #{map-deep-get($colors, 'colors', 'neutral', 10)};
     --opaque-label-copy: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     --title-copy: #{map-deep-get($colors, 'colors', 'neutral', 10)};
