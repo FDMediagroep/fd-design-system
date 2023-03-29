@@ -1,0 +1,131 @@
+@import '../../utils/map-deep-get.scss';
+@import '../../design-tokens/colors.scss';
+@import '../../design-tokens/media.scss';
+@import '../../design-tokens/typography.scss';
+
+.horizontalCard3 {
+    transition: box-shadow 0.15s linear;
+    margin-bottom: 1px;
+    background-color: var(--card);
+    box-shadow: 0 1px 0.2px rgba(0, 0, 0, 0.1);
+    min-height: 100%;
+    display: flex;
+    box-sizing: border-box;
+    h1 {
+        color: var(--content-copy);
+    }
+    a {
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        &:focus,
+        &:hover {
+            h1 {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .figure.empty {
+        background-size: cover;
+        background-position: center;
+        background-color: #e6d3c6;
+        img {
+            max-width: 100%;
+        }
+    }
+    figure,
+    .figure.empty {
+        position: relative;
+        display: flex;
+        flex: 0 0 80px;
+        width: 80px;
+        height: 80px;
+        max-height: 80px;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            flex: 0 0 96px;
+            width: 96px;
+            height: 96px;
+            max-height: 96px;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            flex: 0 0 120px;
+            width: 120px;
+            height: 120px;
+            max-height: 120px;
+        }
+        picture {
+            position: relative;
+            flex: 0 0 80px;
+            width: 80px;
+            height: 80px;
+            @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+                flex: 0 0 96px;
+                width: 96px;
+                height: 96px;
+            }
+            @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+                flex: 0 0 120px;
+                width: 120px;
+                height: 120px;
+            }
+            overflow: hidden;
+            > img {
+                display: block;
+                position: absolute;
+                height: 100%;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: auto;
+            }
+        }
+
+        figcaption {
+            display: none;
+            font-family: map-deep-get($typography, 'font-family', 'bold'),
+                sans-serif;
+        }
+    }
+
+    .figure.empty img {
+        width: 64px;
+        margin: auto;
+    }
+
+    .figure,
+    figure {
+        flex: 0 0 80px;
+        min-height: 80px;
+        height: auto;
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+            flex: 0 0 96px;
+            min-height: 96px;
+        }
+        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
+            flex: 0 0 120px;
+            min-height: 120px;
+        }
+    }
+
+    .teaserText {
+        display: flex;
+        align-items: center;
+    }
+
+    &.isRead:not(:hover):not(:active) {
+        opacity: var(--card-visited-opacity);
+    }
+
+    &:focus:not(:active),
+    &:hover:not(:active) {
+        box-shadow: var(--card-box-shadow);
+        background-color: var(--card-hover);
+        z-index: 1;
+    }
+    &:active {
+        z-index: 1;
+        outline: 2px solid var(--card-outline-active);
+        background-color: var(--card-active);
+    }
+}

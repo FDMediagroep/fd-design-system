@@ -23,6 +23,15 @@
 .horizontalGrid {
     row-gap: 1px;
 }
+
+.horizontal3-grid {
+    > div {
+        height: 100%;
+    }
+    @media screen and (max-width: (768px - 0.02px)) {
+        row-gap: 1px;
+    }
+}
 .autoMinHeight {
     min-height: auto;
 }
