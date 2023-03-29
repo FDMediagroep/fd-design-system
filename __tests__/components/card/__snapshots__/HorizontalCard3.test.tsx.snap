@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HorizontalCard4 should render is-read correctly 1`] = `
+exports[`HorizontalCard3 should render is-read correctly 1`] = `
 <div>
   <article
     class="horizontalCard3 isRead xs__p+4"

@@ -6,7 +6,7 @@ import {
 import { render } from '@testing-library/react';
 import { FdImgix } from '../../../src/components/utils/image/FdImgix';
 
-describe('HorizontalCard4', () => {
+describe('HorizontalCard3', () => {
     test('should render correctly', () => {
         const { container, getByText } = render(
             <HorizontalCard3
