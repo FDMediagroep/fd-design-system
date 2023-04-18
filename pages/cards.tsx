@@ -66,6 +66,18 @@ function Page() {
                     </tr>
                     <tr>
                         <td>
+                            <Link href="/card/horizontal-3">
+                                Horizontal Card 3
+                            </Link>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Homepage podcast card</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <Link href="/card/horizontal-4">
                                 Horizontal Card 4
                             </Link>
