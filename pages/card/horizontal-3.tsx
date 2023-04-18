@@ -142,7 +142,7 @@ function Page() {
                                 }
                             />
                         </div>
-                        <div className={` xs-12 s-6 m-6 l-6`}>
+                        <div className={`xs-12 s-6 m-6 l-6`}>
                             <HorizontalCard3
                                 {...horizontalCards3[1]}
                                 imageComponent={
