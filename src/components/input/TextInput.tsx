@@ -113,6 +113,13 @@ export interface Props {
     localStorage?: boolean;
 
     /**
+     * Custom validator
+     * @param input
+     * @returns `true` if valid and `false` if otherwise
+     */
+    customValidator?: (input: HTMLInputElement) => boolean;
+
+    /**
      * Misc. properties.
      */
     [x: string]: any;
@@ -159,6 +166,16 @@ function TextInput(props: Props) {
         } else {
             setValue('');
         }
+        if (props.customValidator) {
+            if (props.customValidator(event.target)) {
+                (event.currentTarget as HTMLInputElement).setCustomValidity('');
+            } else {
+                (event.currentTarget as HTMLInputElement).setCustomValidity(
+                    errorMessage
+                );
+            }
+        }
+
         if (props.onChange) {
             props.onChange(event);
         }

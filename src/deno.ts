@@ -19,6 +19,7 @@ export { NumberFrame } from './components/numberframe/NumberFrame';
 export { OEmbed } from './components/oembed/OEmbed';
 export { Quote } from './components/quote/Quote';
 export { ReadMore } from './components/readmore/ReadMore';
+export { RelatedPdf } from './components/related-pdf/RelatedPdf';
 export { Summary } from './components/article-summary/Summary';
 export { TextFrame } from './components/textframe/TextFrame';
 export { HorizontalToolbar } from './components/toolbar/HorizontalToolbar';

@@ -19,7 +19,10 @@ function Summary(props: Props) {
             <h3 className="heading sans s">{props.title ?? 'In het kort'}</h3>
             <ul className="body-text sans s">
                 {props.summaries.map((summary) => (
-                    <li key={summary}>{summary}</li>
+                    <li
+                        key={summary}
+                        dangerouslySetInnerHTML={{ __html: summary }}
+                    />
                 ))}
             </ul>
         </div>
