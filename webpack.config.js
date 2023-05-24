@@ -231,7 +231,7 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        fallback: { crypto: false },
+        fallback: { crypto: false, fs: false, stream: false, zlib: false },
     },
     plugins: [
         new webpack.DefinePlugin({
