@@ -43,7 +43,7 @@
     "devDependencies": {
         "@fdmg/article-xml-json": "^1.0.20",
         "@fdmg/css-grid": "^2.0.22",
-        "@fdmg/resubstitute": "^0.1.10",
+        "@fdmg/resubstitute": "^0.1.11",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^14.0.0",
         "@testing-library/user-event": "^14.4.3",
