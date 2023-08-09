@@ -15,7 +15,7 @@ jobs:
         node-version: [18.x]
         experimental: [false]
         include:
-        - node: 19.x
+        - node: 20.x
           experimental: true
     steps:
     - uses: actions/checkout@v2
