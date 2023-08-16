@@ -1,5 +1,4 @@
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 import { Experiment, Variant } from '../../../src/components/ab/ab';
 
@@ -84,7 +83,9 @@ describe('AB Experiment', () => {
         fireEvent.click(document.querySelectorAll('label')[1]);
 
         // Close debug modal
-        fireEvent.click(document.querySelector('.debug-modal-content h2 span'));
+        fireEvent.click(
+            document.querySelector('.debug-modal-content h2 span')!
+        );
         expect(document.querySelectorAll('h2').length).toEqual(1);
 
         // Assert we are in variant 2

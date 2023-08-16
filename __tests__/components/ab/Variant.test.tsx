@@ -1,5 +1,4 @@
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 import { Variant } from '../../../src/components/ab/ab';
 
@@ -26,7 +25,7 @@ describe('AB Variant', () => {
         expect(getByText('Headline 1', { exact: false })).toBeTruthy();
 
         expect(spy).toBeCalledTimes(0);
-        fireEvent.click(container.querySelector('h1'));
+        fireEvent.click(container.querySelector('h1')!);
         expect(spy).toBeCalledTimes(1);
     });
 });
