@@ -17,9 +17,8 @@ export class OEmbedLoader {
                             this.runScripts(element);
                             break;
                         case 'jsonp':
-                            element.innerHTML = await this.getHtmlFromJsonp(
-                                url
-                            );
+                            element.innerHTML =
+                                await this.getHtmlFromJsonp(url);
                             this.runScripts(element);
                             break;
                     }
