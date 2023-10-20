@@ -311,6 +311,7 @@
     /**
       * Topics
       */
+    --topics-card-copy: #{map-deep-get($colors, 'colors', 'neutral', 100)};
     --topics-card-label: #{map-deep-get($colors, 'colors', 'primary', 100)};
 
     /**
