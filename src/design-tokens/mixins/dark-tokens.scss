@@ -305,6 +305,22 @@
     --checkmark-check: #{map-deep-get($colors, 'colors', 'neutral', 10)};
 
     /**
+     * Pagination
+     */
+    --pagination-current-copy: #{map-deep-get($colors, 'colors', 'neutral', 0)};
+    --pagination-current-background: #{map-deep-get(
+            $colors,
+            'colors',
+            'primary',
+            25
+        )};
+
+    /**
+      * Topics
+      */
+    --topics-card-label: #{map-deep-get($colors, 'colors', 'primary', 50)};
+
+    /**
      * Shimmer
      */
     --shimmer-shade-1: #{map-deep-get($colors, 'colors', 'neutral', 0)};
