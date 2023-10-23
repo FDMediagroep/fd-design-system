@@ -316,10 +316,10 @@
         )};
 
     /**
-      * Topics
+      * Interests
       */
-    --topics-card-copy: #{map-deep-get($colors, 'colors', 'neutral', 100)};
-    --topics-card-label: #{map-deep-get($colors, 'colors', 'primary', 50)};
+    --interests-card-copy: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    --interests-card-label: #{map-deep-get($colors, 'colors', 'primary', 50)};
 
     /**
      * Shimmer

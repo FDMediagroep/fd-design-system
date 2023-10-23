@@ -95,6 +95,10 @@ import {
     metaDescription as verticalCard1Description,
 } from './card/vertical-1';
 import {
+    metaTitle as verticalCard2Title,
+    metaDescription as verticalCard2Description,
+} from './card/vertical-2';
+import {
     metaTitle as verticalCard5Title,
     metaDescription as verticalCard5Description,
 } from './card/vertical-5';
@@ -297,6 +301,10 @@ const searchIndex: SearchIndex = {
     '/card/vertical-1': {
         title: verticalCard1Title,
         description: verticalCard1Description,
+    },
+    '/card/vertical-2': {
+        title: verticalCard2Title,
+        description: verticalCard2Description,
     },
     '/card/vertical-5': {
         title: verticalCard5Title,
