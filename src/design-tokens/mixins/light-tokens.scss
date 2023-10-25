@@ -298,6 +298,23 @@
     --checkmark-check: #{map-deep-get($colors, 'colors', 'neutral', 90)};
 
     /**
+     * Pagination
+     */
+    --pagination-current-copy: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    --pagination-current-background: #{map-deep-get(
+            $colors,
+            'colors',
+            'primary',
+            100
+        )};
+
+    /**
+      * Interests
+      */
+    --interests-card-copy: #{map-deep-get($colors, 'colors', 'neutral', 100)};
+    --interests-card-label: #{map-deep-get($colors, 'colors', 'primary', 100)};
+
+    /**
      * Shimmer
      */
     --shimmer-shade-1: #{map-deep-get($colors, 'colors', 'neutral', 90)};

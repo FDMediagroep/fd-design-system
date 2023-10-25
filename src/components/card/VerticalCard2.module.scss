@@ -1,0 +1,49 @@
+.verticalCard2 {
+    aspect-ratio: 3/2;
+
+    a {
+        position: relative;
+        display: inline-block;
+    }
+
+    figure {
+        margin: 0;
+        line-height: 0;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        position: relative;
+        .gradient-overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.7) 0%,
+                rgba(0, 0, 0, 0.2) 50%,
+                rgba(0, 0, 0, 0.05) 100%
+            );
+        }
+    }
+
+    h2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        color: var(--interests-card-copy);
+    }
+
+    .unseen-count {
+        background-color: var(--interests-card-label);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: var(--interests-card-copy);
+        text-wrap: nowrap;
+    }
+}
