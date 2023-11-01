@@ -54,7 +54,7 @@
         "@types/markdown-it": "^13.0.5",
         "@types/micro-cors": "^0.1.4",
         "@types/node": "^20.8.8",
-        "@types/react": "^18.2.31",
+        "@types/react": "^18.2.33",
         "@types/react-dom": "^18.2.14",
         "@types/react-imgix": "^9.5.2",
         "autoprefixer": "^10.4.16",
