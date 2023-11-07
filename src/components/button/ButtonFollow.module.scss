@@ -7,18 +7,19 @@
     border-radius: 2px;
     white-space: nowrap;
     padding: 5px 10px;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    background-color: transparent;
+    border: 1px solid var(--button-follow-outline);
+    color: var(--button-follow-text);
+    background-color: var(--button-follow);
     cursor: pointer;
     transition: background-color 0.2s;
     font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     font-size: 0.875rem;
 
-    &:hover {
-        background-color: var(--primary);
-        border-color: var(--primary);
-        color: var(--content-background);
+    &:hover,
+    &:focus {
+        background-color: transparent;
+        border-color: var(--button-follow-outline);
+        color: var(--button-follow-text-hover);
     }
     .cross {
         &:before {
@@ -46,11 +47,12 @@
     }
 
     &[data-selected='true'] {
-        background-color: var(--primary);
-        color: var(--content-background);
+        background-color: var(--button-follow-active);
+        color: var(--button-follow-active-text);
+        &:focus,
         &:hover {
-            color: var(--primary);
-            background-color: transparent;
+            color: var(--button-follow-text-active-hover);
+            background-color: var(--button-follow-active-hover);
         }
         .cross {
             transform: rotate(45deg);
@@ -62,34 +64,6 @@
         .default-icon,
         .activeText {
             display: inline;
-        }
-    }
-
-    &.persoonlijk {
-        .cross,
-        .buttonText {
-            color: #000000;
-        }
-
-        &:hover {
-            .cross,
-            .buttonText {
-                color: #ffffff;
-            }
-        }
-
-        &[data-selected='true'] {
-            .buttonText,
-            .cross {
-                color: #ffffff;
-            }
-            &:hover {
-                .buttonText,
-                .cross {
-                    color: #000000;
-                    background-color: transparent;
-                }
-            }
         }
     }
 }
