@@ -359,6 +359,22 @@ function Aside(props: Props) {
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
                             <Link
+                                href="/article-related-topics"
+                                data-ga-name="menu_click"
+                                data-ga-category="user interactions"
+                                data-ga-action="menu click"
+                                data-ga-label="/article-related-topics"
+                                onClick={handleNavigation}
+                            >
+                                <span className="heading sans xxs">
+                                    RelatedTopics
+                                </span>
+                            </Link>
+                        </li>
+                        <li
+                            className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
+                        >
+                            <Link
                                 href="/summary"
                                 data-ga-name="menu_click"
                                 data-ga-category="user interactions"

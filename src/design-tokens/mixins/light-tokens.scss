@@ -162,6 +162,8 @@
         )};
     --link-longread: #{map-deep-get($colors, 'colors', 'longread', 75)};
     --link-longread-hover: #{map-deep-get($colors, 'colors', 'longread', 25)};
+    --dark-link: #{map-deep-get($colors, 'colors', 'primary', 100)};
+    --dark-link-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
 
     /**
      * Stocks

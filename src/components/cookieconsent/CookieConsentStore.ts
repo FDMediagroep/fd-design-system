@@ -52,4 +52,5 @@ class CookieConsentStore extends ReSubstitute {
     }
 }
 
-export default new CookieConsentStore();
+const cookieConsentStore = new CookieConsentStore();
+export default cookieConsentStore;
