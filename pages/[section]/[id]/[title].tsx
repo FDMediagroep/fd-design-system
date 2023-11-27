@@ -191,8 +191,9 @@ export const getStaticPaths: GetStaticPaths = async (
 export const getStaticProps: GetStaticProps = async (
     context: GetStaticPropsContext
 ) => {
+    const articleId = parseInt(`${context.params.id}`, 10);
     const json = await fetch(
-        `${process.env.FDMG_ARTICLE_SERVICE_URL}/${context.params.id}`,
+        `${process.env.FDMG_ARTICLE_SERVICE_URL}/${articleId}`,
         {
             headers: {
                 'x-access-token': `Bearer ${process.env.FDMG_ARTICLE_SERVICE_TOKEN}`,
