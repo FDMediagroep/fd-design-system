@@ -84,6 +84,7 @@ function mergeParagraph(paragraphContents: any[]) {
                     React.createElement(
                         pContent.name,
                         {
+                            key: pContent.key,
                             ...pContent.attributes,
                         },
                         pContent.content
@@ -101,48 +102,68 @@ export function mergeInlineContent(doc: any) {
         switch (content.name) {
             case 'h1':
                 jsx.push(
-                    <h1 dangerouslySetInnerHTML={{ __html: content.content }} />
+                    <h1
+                        key={content.key}
+                        dangerouslySetInnerHTML={{ __html: content.content }}
+                    />
                 );
                 break;
             case 'h2':
                 jsx.push(
-                    <h2 dangerouslySetInnerHTML={{ __html: content.content }} />
+                    <h2
+                        key={content.key}
+                        dangerouslySetInnerHTML={{ __html: content.content }}
+                    />
                 );
                 break;
             case 'h3':
                 jsx.push(
-                    <h3 dangerouslySetInnerHTML={{ __html: content.content }} />
+                    <h3
+                        key={content.key}
+                        dangerouslySetInnerHTML={{ __html: content.content }}
+                    />
                 );
                 break;
             case 'h4':
                 jsx.push(
-                    <h4 dangerouslySetInnerHTML={{ __html: content.content }} />
+                    <h4
+                        key={content.key}
+                        dangerouslySetInnerHTML={{ __html: content.content }}
+                    />
                 );
                 break;
             case 'h5':
                 jsx.push(
-                    <h5 dangerouslySetInnerHTML={{ __html: content.content }} />
+                    <h5
+                        key={content.key}
+                        dangerouslySetInnerHTML={{ __html: content.content }}
+                    />
                 );
                 break;
             case 'h6':
                 jsx.push(
-                    <h6 dangerouslySetInnerHTML={{ __html: content.content }} />
+                    <h6
+                        key={content.key}
+                        dangerouslySetInnerHTML={{ __html: content.content }}
+                    />
                 );
                 break;
             case 'p':
                 jsx.push(mergeParagraph(content.contents));
                 break;
             case 'fdmg-bulletpoint':
-                jsx.push(<BulletPoint {...content} />);
+                jsx.push(<BulletPoint key={content.key} {...content} />);
                 break;
             case 'fdmg-image':
-                jsx.push(<ArticleImage {...content} />);
+                jsx.push(<ArticleImage key={content.key} {...content} />);
                 break;
             case 'fdmg-infographic':
-                jsx.push(<Infographic {...content} />);
+                jsx.push(<Infographic key={content.key} {...content} />);
                 break;
             case 'fdmg-infographic-extended':
-                jsx.push(<InfographicExtended {...content} />);
+                jsx.push(
+                    <InfographicExtended key={content.key} {...content} />
+                );
                 break;
             case 'fdmg-html-embed':
                 jsx.push(
@@ -153,43 +174,43 @@ export function mergeInlineContent(doc: any) {
                 );
                 break;
             case 'fdmg-instagram':
-                jsx.push(<OEmbed {...content} />);
+                jsx.push(<OEmbed key={content.key} {...content} />);
                 break;
             case 'fdmg-number-frame':
-                jsx.push(<NumberFrame {...content} />);
+                jsx.push(<NumberFrame key={content.key} {...content} />);
                 break;
             case 'fdmg-pdf':
-                jsx.push(<RelatedPdf {...content} />);
+                jsx.push(<RelatedPdf key={content.key} {...content} />);
                 break;
             case 'fdmg-quote':
-                jsx.push(<Quote {...content} />);
+                jsx.push(<Quote key={content.key} {...content} />);
                 break;
             case 'fdmg-readmore':
-                jsx.push(<ReadMore {...content} />);
+                jsx.push(<ReadMore key={content.key} {...content} />);
                 break;
             case 'fdmg-related-link':
-                jsx.push(<LinkBlock {...content} />);
+                jsx.push(<LinkBlock key={content.key} {...content} />);
                 break;
             case 'fdmg-soundcloud':
-                jsx.push(<OEmbed {...content} />);
+                jsx.push(<OEmbed key={content.key} {...content} />);
                 break;
             case 'fdmg-stack-frame':
-                jsx.push(<WordFrame {...content} />);
+                jsx.push(<WordFrame key={content.key} {...content} />);
                 break;
             case 'fdmg-summary':
-                jsx.push(<Summary {...content} />);
+                jsx.push(<Summary key={content.key} {...content} />);
                 break;
             case 'fdmg-text-frame':
-                jsx.push(<TextFrame {...content} />);
+                jsx.push(<TextFrame key={content.key} {...content} />);
                 break;
             case 'fdmg-twitter':
-                jsx.push(<OEmbed {...content} />);
+                jsx.push(<OEmbed key={content.key} {...content} />);
                 break;
             case 'fdmg-vimeo':
-                jsx.push(<Vimeo {...content} />);
+                jsx.push(<Vimeo key={content.key} {...content} />);
                 break;
             case 'fdmg-youtube':
-                jsx.push(<Youtube {...content} />);
+                jsx.push(<Youtube key={content.key} {...content} />);
                 break;
             default:
                 // Treat non fdmg elements as normal HTML.
