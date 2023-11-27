@@ -476,6 +476,47 @@ function Foo() {
 </details>
 
 <details>
+<summary>RelatedTopics</summary>
+
+[Demo](https://design-system.fd.nl/article-related-topics)
+
+Component CSS:
+
+```
+import "@fdmg/design-system/components/design-tokens/design-tokens.css";
+import "@fdmg/design-system/components/article-related-topics/RelatedTopics.css";
+```
+
+```
+import { RelatedTopics } from "@fdmg/design-system/components/article-related-topics/RelatedTopics";
+
+function Foo() {
+    return (
+        <RelatedTopics topics={[{
+                topic: 'Topic 1',
+                href: '/tag/topic1',
+                onClick: () => {},
+                selected: false,
+            },
+            {
+                topic: 'Topic 2',
+                href: '/tag/topic2',
+                selected: true,
+                onClick: () => {},
+            },
+            {
+                topic: 'Topic 3',
+                href: '/tag/topic3',
+                selected: false,
+                onClick: () => {},
+            }]}/>
+    );
+}
+```
+
+</details>
+
+<details>
 <summary>Summary</summary>
 
 [Demo](https://design-system.fd.nl/article-summary)
