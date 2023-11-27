@@ -1,3 +1,4 @@
+import React from 'react';
 import { ButtonFollow } from '../button/ButtonFollow';
 import styles from './RelatedTopics.module.scss';
 
@@ -29,6 +30,7 @@ function RelatedTopics(props: Props) {
                                 tag={topic.topic}
                                 key={topic.topic}
                                 selected={topic.selected}
+                                onClick={topic.onClick}
                             />
                         </li>
                     );
