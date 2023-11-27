@@ -23,7 +23,7 @@ export interface Props {
 }
 
 const getOffsetTop = (el: HTMLElement) => {
-    return el.getBoundingClientRect().top;
+    return el?.getBoundingClientRect()?.top;
 };
 
 function Menu(props: Props) {
