@@ -15,4 +15,5 @@ class PageStore extends ReSubstitute {
     }
 }
 
-export default new PageStore();
+const pageStore = new PageStore();
+export default pageStore;
