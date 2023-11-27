@@ -1,0 +1,31 @@
+.fd-related-topics {
+    background-color: var(--card-2);
+    box-shadow: 0 2px 0.2px rgb(0 0 0 / 10%);
+
+    h3 {
+        color: var(--content-copy);
+        border-bottom: 1px solid var(--dividers);
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        li {
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            display: flex;
+            justify-content: space-between;
+
+            a {
+                color: var(--dark-link);
+                text-decoration: none;
+                &:hover {
+                    color: var(--dark-link-hover);
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
