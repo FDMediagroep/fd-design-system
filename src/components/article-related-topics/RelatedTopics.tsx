@@ -16,7 +16,9 @@ interface Props {
 function RelatedTopics(props: Props) {
     return (
         <section className={`${styles['fd-related-topics']} xs__mb+8`}>
-            <h3 className="heading sans s xs__p+4">Gerelateerde onderwerpen</h3>
+            <h3 className="heading sans s xs__p+4 xs__m-0">
+                Gerelateerde onderwerpen
+            </h3>
             <ul className="xs__p+4">
                 {props.topics.map((topic) => {
                     return (
