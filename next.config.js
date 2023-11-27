@@ -1,4 +1,3 @@
-const withOffline = require('next-offline');
 const rewriteConfig = require('./rewrites');
 
 const serverless = {};
@@ -8,34 +7,11 @@ if (process.env.SERVERLESS) {
     serverless.target = 'serverless';
 }
 
-module.exports = withOffline({
+module.exports = {
     ...serverless,
     images: {
         domains: ['images.fd.nl', 'fd-external-development.imgix.net'],
         disableStaticImages: true,
-    },
-    generateInDevMode: false,
-    workboxOpts: {
-        cleanupOutdatedCaches: true,
-        swDest: '../public/service-worker.js',
-        runtimeCaching: [
-            // {
-            //     urlPattern: /^https?.*\.[a-zA-Z0-9]*\??.*$/,
-            //     handler: 'NetworkFirst',
-            //     options: {
-            //         cacheName: 'https-calls',
-            //         networkTimeoutSeconds: 15,
-            //         expiration: {
-            //             maxEntries: 250,
-            //             maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
-            //         },
-            //         cacheableResponse: {
-            //             statuses: [0, 200],
-            //         },
-            //     },
-            // },
-        ],
-        importScripts: [],
     },
     async rewrites() {
         return [
@@ -135,4 +111,4 @@ module.exports = withOffline({
 
         return config;
     },
-});
+};

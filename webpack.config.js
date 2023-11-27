@@ -103,6 +103,9 @@ module.exports = {
         '/components/article-link-card/LinkCard': [
             './src/components/article-link-card/LinkCard.tsx',
         ],
+        '/components/article-related-topics/RelatedTopics': [
+            './src/components/article-related-topics/RelatedTopics.tsx',
+        ],
         '/components/bullet-point/BulletPoint': [
             './src/components/bullet-point/BulletPoint.tsx',
         ],

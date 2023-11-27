@@ -9,10 +9,6 @@ interface Props {
     tag: string;
     addText?: string;
     removeText?: string;
-    /**
-     * variant-1: persoonlijk
-     */
-    variant?: 'variant-1';
     [x: string]: any;
 }
 
@@ -26,8 +22,8 @@ function ButtonFollow(props: Props) {
             <button
                 {...props}
                 className={`${styles.fdFollowButton}${
-                    props.variant ? ` ${styles.persoonlijk}` : ''
-                }${props.className ? ` ${props.className}` : ''}`}
+                    props.className ? ` ${props.className}` : ''
+                }`}
                 data-tag={props.tag}
                 data-selected={props.selected}
                 data-addurl={props.addUrl ?? '/add-interest'}

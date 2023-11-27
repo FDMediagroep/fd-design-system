@@ -19,4 +19,5 @@ class ThemeStore extends ReSubstitute {
     }
 }
 
-export default new ThemeStore();
+const themeStore = new ThemeStore();
+export default themeStore;

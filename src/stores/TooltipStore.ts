@@ -14,4 +14,5 @@ class TooltipStore extends ReSubstitute {
     }
 }
 
-export default new TooltipStore();
+const tooltipStore = new TooltipStore();
+export default tooltipStore;

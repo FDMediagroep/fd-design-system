@@ -164,6 +164,8 @@
         )};
     --link-longread: #{map-deep-get($colors, 'colors', 'longread', 50)};
     --link-longread-hover: #{map-deep-get($colors, 'colors', 'longread', 25)};
+    --dark-link: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --dark-link-hover: #{map-deep-get($colors, 'colors', 'primary', 50)};
 
     /**
      * Stocks
@@ -205,6 +207,30 @@
     --button-ghost-active-text: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --button-ghost-active: #{map-deep-get($colors, 'colors', 'primary', 25)};
     --button-ghost-disabled: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --button-follow-text: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+    --button-follow: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --button-follow-active: transparent;
+    --button-follow-active-hover: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            90
+        )};
+    --button-follow-text-active: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            90
+        )};
+    --button-follow-text-active-hover: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            10
+        )};
+    --button-follow-hover: #{map-deep-get($colors, 'colors', 'neutral', 10)};
+    --button-follow-text-hover: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --button-follow-outline: #{map-deep-get($colors, 'colors', 'neutral', 90)};
 
     --upsell-gradient: linear-gradient(
         to bottom,
