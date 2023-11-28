@@ -39,7 +39,7 @@ function HtmlEmbed(props: any) {
     }
 }
 
-function mergeParagraph(paragraphContents: any[]) {
+function mergeParagraph(paragraphContents: any[], key?: string | number) {
     const jsx: JSX.Element[] = [];
     paragraphContents.forEach((pContent: any, idx: number) => {
         switch (pContent.name) {
@@ -93,7 +93,7 @@ function mergeParagraph(paragraphContents: any[]) {
         }
     });
 
-    return <p>{jsx}</p>;
+    return <p {...(key ? { key: key } : {})}>{jsx}</p>;
 }
 
 export function mergeInlineContent(doc: any) {
@@ -149,7 +149,7 @@ export function mergeInlineContent(doc: any) {
                 );
                 break;
             case 'p':
-                jsx.push(mergeParagraph(content.contents));
+                jsx.push(mergeParagraph(content.contents, content.key));
                 break;
             case 'fdmg-bulletpoint':
                 jsx.push(<BulletPoint key={content.key} {...content} />);
