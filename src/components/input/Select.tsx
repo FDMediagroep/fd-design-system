@@ -142,7 +142,6 @@ function Select(props: Props) {
                     title={props.title ?? props.label ?? 'Value'}
                     onFocus={props.onFocus}
                     onBlur={props.onBlur}
-                    placeholder={props.placeholder ? props.placeholder : ' '}
                     aria-label={props.label ?? props.title ?? 'Value'}
                 >
                     {props.children}
