@@ -89,7 +89,7 @@
         "react-element-to-jsx-string": "^15.0.0",
         "react-svg-loader": "^3.0.3",
         "sass": "^1.69.5",
-        "sass-loader": "^13.3.2",
+        "sass-loader": "^13.3.3",
         "style-loader": "^3.3.3",
         "ts-jest": "^29.1.1",
         "ts-loader": "^9.5.1",
