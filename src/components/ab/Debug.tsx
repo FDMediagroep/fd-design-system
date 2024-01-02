@@ -21,7 +21,6 @@ export function Debug(props: Props) {
     return (
         <Modal
             className={`${styles.debug} debug-modal`}
-            contentBoxClassName="debug-modal-content"
             opened={props.open}
             onClose={props.handleClose}
         >

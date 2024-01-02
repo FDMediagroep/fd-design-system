@@ -67,7 +67,7 @@ export default function Modal(props: Props) {
 
     useEffect(() => {
         if (props.opened) {
-            dialogRef.current.showModal();
+            dialogRef.current?.showModal?.();
         }
     }, [props.opened]);
 
