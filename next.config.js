@@ -37,6 +37,38 @@ module.exports = {
             },
         ];
     },
+    headers() {
+        return [
+            {
+                // Apply these headers to all routes in your application.
+                source: '/:path*',
+                headers: [
+                    {
+                        key: 'Content-Security-Policy',
+                        value: "default-src http: https: data: blob: ws: wss: 'unsafe-inline' 'unsafe-eval';"
+                            .replace(/\s{2,}/g, ' ')
+                            .trim(),
+                    },
+                    {
+                        key: 'Referrer-Policy',
+                        value: 'strict-origin-when-cross-origin',
+                    },
+                    {
+                        key: 'strict-transport-security',
+                        value: 'max-age=15724800',
+                    },
+                    {
+                        key: 'X-Content-Type-Options',
+                        value: 'nosniff',
+                    },
+                    {
+                        key: 'X-Frame-Options',
+                        value: 'SAMEORIGIN',
+                    },
+                ],
+            },
+        ];
+    },
     webpack: (config, options) => {
         // Markdown
         config.module.rules.push({

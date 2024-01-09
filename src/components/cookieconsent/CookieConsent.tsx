@@ -38,7 +38,7 @@ interface Props {
     denyAllLabel?: string;
     description?: JSX.Element | string;
     onAcceptAll?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-    onClose?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    onClose?: () => void;
     onDenyAll?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     opened?: boolean;
     title?: JSX.Element | string;
@@ -67,7 +67,7 @@ function CookieConsent(props: Props) {
             responderApi.post(consents);
             setTimeout(() => {
                 onAcceptAll?.(e);
-                onClose?.(e);
+                onClose?.();
             }, 10);
         },
         [onClose, onAcceptAll]
@@ -80,7 +80,7 @@ function CookieConsent(props: Props) {
             responderApi.post([]);
             setTimeout(() => {
                 onDenyAll?.(e);
-                onClose?.(e);
+                onClose?.();
             }, 10);
         },
         [onClose, onDenyAll]
@@ -92,7 +92,7 @@ function CookieConsent(props: Props) {
             CookieConsentStore.setVendorNames(checkmarks);
             responderApi.post(checkmarks);
             setTimeout(() => {
-                onClose?.(e);
+                onClose?.();
             }, 10);
         },
         [onClose, checkmarks]

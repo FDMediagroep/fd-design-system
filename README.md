@@ -1745,8 +1745,8 @@ import { Modal } from '@fdmg/design-system/components/modal/Modal';
 
 function Foo() {
     return (
-        <Modal opened={true} onClose={() => {}>
-            <>
+        <Modal opened={true} onClose={() => {}}>
+            <section className="xs_p+4">
                 <h2>Abonnement wijzigen of opzeggen</h2>
                 <p>
                     Voor wijzigingen kunt u elk moment bellen. Voor
@@ -1763,7 +1763,8 @@ function Foo() {
                     Ook kijken we graag samen met u naar een
                     abonnementsvorm die wellicht beter bij u past.
                 </p>
-            </>
+                <ButtonCta className="close">Sluiten</ButtonCta>
+            </section>
         </Modal>
     );
 }

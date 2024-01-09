@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { Switch } from '../src/components/input/Switch';
 import styles from './modal.module.scss';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
+import { ButtonCta } from '../src/deno';
 
 export const metaTitle = 'Modal';
 export const metaDescription = 'Modal, used to display a modal overlay';
@@ -47,8 +48,8 @@ function Page() {
                         <p>Used as modal overlay.</p>
                         <p>This element is solely used to display a modal.</p>
                         <p>
-                            Add the class .fdOpenModal to the root modal element
-                            to show the modal.
+                            Any element passed as <i>props.children</i> with a
+                            className <i>close</i> will trigger this on click.
                         </p>
                         <Switch
                             id="modalSwitch"
@@ -64,7 +65,7 @@ function Page() {
                     opened={opened}
                     onClose={handleModalClose}
                 >
-                    <>
+                    <section className="xs__p+4">
                         <h2>Abonnement wijzigen of opzeggen</h2>
                         <p>
                             Voor wijzigingen kunt u elk moment bellen. Voor
@@ -120,7 +121,8 @@ function Page() {
                             orci luctus et ultrices posuere cubilia Curae; In ac
                             dui quis mi consectetuer lacinia.
                         </p>
-                    </>
+                        <ButtonCta className="close">Sluiten</ButtonCta>
+                    </section>
                 </Modal>
             </Explain>
         </>
