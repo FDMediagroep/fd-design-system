@@ -1,51 +1,21 @@
-import React, { useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './Modal.module.scss';
 import { CloseIcon } from '../../design-tokens/icons';
-import {
-    ButtonCta,
-    getCssClassNames as getButtonCtaCssClassNames,
-} from '../button/ButtonCta';
 
 export interface Props {
-    /**
-     * Class name for the obscuring modal background.
-     */
-    backgroundClassName?: string;
     /**
      * Class name for the root container of the modal.
      */
     className?: string;
-    /**
-     * Class name for the content box.
-     */
-    contentBoxClassName?: string;
-    /**
-     * Class name for the content background.
-     * This is the background with attached click listener for closing the modal.
-     */
-    contentBackgroundClassName?: string;
-    /**
-     * Disable closing the overlay when clicked outside of the overlay content.
-     */
-    disableBackgroundClose?: boolean;
-
-    /**
-     * Hide the close button (full-screen modal). Make sure you provide other
-     * means of closing the modal if you set this to true.
-     */
-    hideCloseButton?: boolean;
-
-    /**
-     * Hide the close icon. Make sure you provide other
-     * means of closing the modal if you set this to true.
-     */
-    hideCloseIcon?: boolean;
 
     /**
      * Callback function to call when the overlay is being closed by the included
      * close functions.
+     *
+     * Any element passed as `props.children` with a className `close` will trigger
+     * this on click.
      */
-    onClose?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    onClose?: () => void;
     /**
      * Set to true to show the overlay.
      */
@@ -54,79 +24,82 @@ export interface Props {
 }
 
 export default function Modal(props: Props) {
+    const dialogRef = useRef<HTMLDialogElement>();
+    const [closing, setClosing] = useState(false);
     const { onClose } = props;
 
-    const handleBackgroundClose = useCallback(
-        (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-            if (!props.disableBackgroundClose) {
-                e.preventDefault();
-                onClose?.(e);
-            }
-        },
-        [onClose, props.disableBackgroundClose]
-    );
+    function onClosing() {
+        setClosing(true);
+    }
 
-    const handleModalClose = useCallback(
-        (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-            e.preventDefault();
-            onClose?.(e);
-        },
-        [onClose]
-    );
+    if (closing) {
+        const modal = dialogRef.current;
+        if (modal) {
+            const closeFn = () => {
+                modal.close();
+                setClosing(false);
+                onClose();
+                modal.removeEventListener('animationend', closeFn);
+            };
+            modal.addEventListener('animationend', closeFn);
+        }
+    }
+
+    useEffect(() => {
+        if (dialogRef.current) {
+            const modal = dialogRef.current;
+            modal.addEventListener('close', onClosing);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    onClosing();
+                }
+            });
+
+            [].slice
+                .call(modal.querySelectorAll('.close'))
+                .forEach((element: HTMLElement) => {
+                    element.addEventListener('click', () => {
+                        onClosing();
+                    });
+                });
+        }
+    }, [dialogRef]);
+
+    useEffect(() => {
+        if (props.opened) {
+            dialogRef.current?.showModal?.();
+        }
+    }, [props.opened]);
 
     return (
-        <div
-            className={`${styles.modal}${props.opened ? ` fdOpenModal` : ''}${
-                props.className ? ` ${props.className}` : ''
-            }`}
+        <dialog
+            ref={dialogRef}
+            className={`${styles['fd-modal']} ${
+                props.className ? props.className : ''
+            } ${closing ? styles['closing'] : ''}`}
         >
-            <div
-                className={`${styles.modalBackground}${
-                    props.backgroundClassName
-                        ? ` ${props.backgroundClassName}`
-                        : ''
-                }`}
-            />
-            <div
-                className={`${styles.contentBackground}${
-                    props.contentBackgroundClassName
-                        ? ` ${props.contentBackgroundClassName}`
-                        : ''
-                }`}
-                onClick={handleBackgroundClose}
+            <h2
+                className={`${styles['title-bar']} heading sans s xs__p+4 xs__m-0`}
             >
-                <div
-                    className={`${styles.contentBox}${
-                        props.contentBoxClassName
-                            ? ` ${props.contentBoxClassName}`
-                            : ''
-                    }`}
-                    onClick={(e) => e.stopPropagation()}
+                Hoe werkt het delen?
+                <button
+                    className={`${styles['close-icon']} close xs__p-0`}
+                    aria-label="Sluiten"
+                    onClick={onClosing}
                 >
-                    {!props.hideCloseIcon && (
-                        <span
-                            className={styles.closeIcon}
-                            onClick={handleModalClose}
-                        >
-                            <CloseIcon />
-                        </span>
-                    )}
-                    <div className={styles.content}>{props.children}</div>
-                    {!props.hideCloseButton && (
-                        <div className={styles.buttonContainer}>
-                            <ButtonCta onClick={handleModalClose}>
-                                Sluiten
-                            </ButtonCta>
-                        </div>
-                    )}
-                </div>
+                    <CloseIcon />
+                </button>
+            </h2>
+
+            <div className={`${styles['content']} body-text sans s`}>
+                {props.children}
             </div>
-        </div>
+        </dialog>
     );
 }
 
 function getCssClassNames(): string[] {
-    return [styles.modal, ...getButtonCtaCssClassNames()];
+    return [styles['fd-modal']];
 }
 
 export { Modal, getCssClassNames };

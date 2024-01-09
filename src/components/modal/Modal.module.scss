@@ -3,114 +3,61 @@
 @import '../../design-tokens/media.scss';
 @import '../../design-tokens/typography.scss';
 
-.modal {
-    .modalBackground {
-        display: none;
-        position: fixed;
-        justify-content: center;
-        align-items: center;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 99998;
-        opacity: 0.8;
-        background-color: var(--content-copy);
+.fd-modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: grayscale(1);
+    cursor: pointer;
+    user-select: none;
+}
+
+.fd-modal {
+    background-color: var(--product-background-2);
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    max-height: 100vh;
+    max-width: 100%;
+    width: 100%;
+    @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
+        max-width: 560px;
+        max-height: 90vh;
     }
 
-    .contentBackground {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 99999;
-        justify-content: center;
-        align-items: center;
-        touch-action: none; // Safari overscroll bug fix
-    }
-
-    &:global(.fdOpenModal) {
-        .modalBackground {
-            display: block;
-        }
-        .contentBackground {
-            display: flex;
-        }
-    }
-
-    .contentBox {
-        position: fixed;
-        overflow: hidden;
+    .title-bar {
+        background-color: var(--product-background-2);
+        border-bottom: 1px solid var(--neutral-60, var(--dividers));
         display: flex;
-        flex-direction: column;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--content-copy);
 
-        // Safari fixes
-        @supports (-webkit-touch-callout: none) {
-            /* CSS specific to iOS devices */
-            @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
-                max-height: calc(
-                    100vh - calc(100vh - 100%) - 44px
-                ); // Safari viewport fix
-                bottom: 44px; // Safari viewport fix
+        .close-icon {
+            display: flex;
+            background-color: transparent;
+            border: none;
+            svg {
+                cursor: pointer;
+                width: 24px;
+                height: 24px;
+                path {
+                    fill: var(--content-copy);
+                }
+                &:hover {
+                    path {
+                        fill: var(--link-hover);
+                    }
+                }
             }
-        }
-
-        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
-            position: relative;
-            max-width: 560px;
-            max-height: 80vh;
-        }
-        font-family: map-deep-get($typography, 'font-family', 'regular'),
-            sans-serif;
-        font-size: 17px;
-        line-height: 1.412;
-
-        background-color: var(--product-background);
-        a {
-            text-decoration: none;
-            color: var(--primary);
         }
     }
 
     .content {
-        position: relative;
-        flex: 1 1 auto;
-        padding: 2rem;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
-            padding: 2rem 3rem 2rem 2rem;
-        }
-
-        // Safari fixes
-        @supports (-webkit-touch-callout: none) {
-            /* CSS specific to iOS devices */
-            @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
-                max-height: calc(
-                    100vh - calc(100vh - 100%) - 44px
-                ); // Safari viewport fix
-                padding: calc(2rem + env(safe-area-inset-top))
-                    calc(2rem + env(safe-area-inset-right))
-                    calc(2rem + env(safe-area-inset-bottom))
-                    calc(2rem + env(safe-area-inset-left)); // Safari notch fix
-            }
-        }
-
         box-sizing: border-box;
         overflow-y: auto;
         overscroll-behavior: contain;
-        > :first-child {
-            margin-top: 0;
-        }
-        > :last-child {
-            margin-bottom: 0;
-        }
-
         color: var(--content-copy);
+        width: 100%;
+
         &::-webkit-scrollbar {
             width: 0.5rem;
             height: 0.5rem;
@@ -136,42 +83,60 @@
             background: rgba(0, 0, 0, 0.1);
         }
     }
+}
 
-    .buttonContainer {
-        padding: 1rem 0 2rem 0;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        touch-action: none; // Safari overscroll bug fix
-
-        // Safari fixes
-        @supports (-webkit-touch-callout: none) {
-            /* CSS specific to iOS devices */
-            @media (orientation: landscape) and (max-width: map-deep-get($media, 'sizes', 'l')) {
-                padding-bottom: env(safe-area-inset-bottom); // Safari notch fix
-            }
-        }
-
-        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
-            display: none;
-        }
-
-        border-top: 1px solid var(--dividers);
+.fd-modal[open] {
+    display: flex;
+    flex-direction: column;
+    animation: fadeDialogIn 0.15s linear forwards;
+    &::backdrop {
+        animation: fadeDialogBackdropIn 0.15s linear forwards;
     }
+}
 
-    .closeIcon svg {
-        z-index: 1;
-        display: none;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        margin: 0;
-        cursor: pointer;
-        fill: var(--primary);
-        width: 23px;
-        height: 23px;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
-            display: block;
-        }
+.fd-modal[open].closing {
+    animation: fadeDialogOut 0.15s linear forwards;
+    &::backdrop {
+        animation: fadeDialogBackdropOut 0.15s linear forwards;
+    }
+}
+
+@keyframes fadeDialogIn {
+    0% {
+        opacity: 0.2;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeDialogOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+@keyframes fadeDialogBackdropIn {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeDialogBackdropOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
