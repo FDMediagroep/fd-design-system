@@ -34,8 +34,11 @@ export default function Modal(props: Props) {
 
     if (closing) {
         const modal = dialogRef.current;
+        console.log('CLOSING;');
         if (modal) {
+            console.log('CLOSING2');
             const closeFn = () => {
+                console.log('CLOSING3');
                 modal.close();
                 setClosing(false);
                 onClose();
