@@ -34,8 +34,11 @@ export default function Modal(props: Props) {
 
     if (closing) {
         const modal = dialogRef.current;
+        console.log('CLOSING;');
         if (modal) {
+            console.log('CLOSING2');
             const closeFn = () => {
+                console.log('CLOSING3');
                 modal.close();
                 setClosing(false);
                 onClose();
@@ -48,7 +51,12 @@ export default function Modal(props: Props) {
     useEffect(() => {
         if (dialogRef.current) {
             const modal = dialogRef.current;
-            modal.addEventListener('close', onClosing);
+            modal.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    onClosing();
+                }
+            });
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     onClosing();
@@ -63,7 +71,7 @@ export default function Modal(props: Props) {
                     });
                 });
         }
-    }, [dialogRef]);
+    }, [dialogRef, onClose]);
 
     useEffect(() => {
         if (props.opened) {
