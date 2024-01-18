@@ -90,7 +90,7 @@
         "react-svg-loader": "^3.0.3",
         "sass": "^1.69.7",
         "sass-loader": "^13.3.3",
-        "style-loader": "^3.3.3",
+        "style-loader": "^3.3.4",
         "ts-jest": "^29.1.1",
         "ts-loader": "^9.5.1",
         "ts-node": "^10.9.2",
