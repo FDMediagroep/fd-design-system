@@ -516,11 +516,11 @@ function Aside(props: Props) {
                             className={`${styles['menu-item']} xs__p+3 xs__pb+2`}
                         >
                             <Link
-                                href="/button/default"
+                                href="/button/button"
                                 data-ga-name="menu_click"
                                 data-ga-category="user interactions"
                                 data-ga-action="menu click"
-                                data-ga-label="/button/default"
+                                data-ga-label="/button/button"
                                 onClick={handleNavigation}
                             >
                                 <span className="heading sans xxs">

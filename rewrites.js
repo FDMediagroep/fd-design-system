@@ -25,7 +25,7 @@ module.exports = [
     },
     {
         source: '/(button/button|button/redactioneel|button/editorial|button/comment|button/share|button/vote)',
-        destination: '/button/default',
+        destination: '/button/button',
     },
     {
         source: '/(button/drop-down)',

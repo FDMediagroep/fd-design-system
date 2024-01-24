@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { ArticleImage } from '../components/article-image/ArticleImage';
 import { Infographic } from '../components/infographic/Infographic';
 import { InfographicExtended } from '../components/article-image/InfographicExtended';
@@ -14,6 +14,11 @@ import { Youtube } from '../components/youtube/Youtube';
 import { BulletPoint } from '../components/bullet-point/BulletPoint';
 import { OEmbed } from '../components/oembed/OEmbed';
 import { RelatedPdf } from '../components/related-pdf/RelatedPdf';
+import {
+    fdmgHtmlEmbed,
+    fdmgObject,
+    fdmgStockQuote,
+} from '@fdmg/article-xml-json';
 
 function decodeHtml(encodedHtml: string) {
     return encodedHtml
@@ -39,16 +44,20 @@ function HtmlEmbed(props: any) {
     }
 }
 
-function mergeParagraph(paragraphContents: any[], key?: string | number) {
+function mergeParagraph(
+    paragraphContents: fdmgObject[],
+    key?: string | number
+) {
     const jsx: JSX.Element[] = [];
-    paragraphContents.forEach((pContent: any, idx: number) => {
+    paragraphContents?.forEach((pContent, idx: number) => {
         switch (pContent.name) {
             case 'fdmg-stock-quote':
+                const stockQuote = pContent as fdmgStockQuote;
                 jsx.push(
                     <a
-                        key={pContent.key}
-                        data-isin={pContent.isin}
-                        data-exchange={pContent.exchange}
+                        key={`${key}-${idx}`}
+                        data-isin={stockQuote.isin}
+                        data-exchange={stockQuote.exchange}
                         className="company-quote"
                         target="_blank"
                         rel="noreferrer noopener"
@@ -56,35 +65,39 @@ function mergeParagraph(paragraphContents: any[], key?: string | number) {
                         data-ga-category="articles"
                         data-ga4-category="user interactions"
                         data-ga-action="beurskoers click"
-                        data-ga-label={pContent.isin}
+                        data-ga-label={stockQuote.isin}
                         data-ga-custom-properties="{%22article_id%22: null, %event_value%22: null, %page_notification%22: null, %22section%22: null, %22subsection%22: null}"
                     >
-                        {pContent['data-name'] ? (
-                            <span>{pContent['data-name']}</span>
+                        {pContent['dataName'] ? (
+                            <span>{pContent['dataName']}</span>
                         ) : null}
-                        {pContent['data-price'] ? (
+                        {pContent['dataPrice'] ? (
                             <span>
-                                {pContent['data-currency'] ?? '$'}
-                                {pContent['data-price']}
+                                {pContent['dataCurrency'] ?? '$'}
+                                {pContent['dataPrice']}
                             </span>
                         ) : null}
-                        {pContent['data-difference'] ? (
+                        {pContent['dataDifference'] ? (
                             <span className="drop">
-                                {pContent['data-difference']}
+                                {pContent['dataDifference']}
                             </span>
                         ) : null}
                     </a>
                 );
                 break;
             case '#text':
-                jsx.push(pContent.content);
+                jsx.push(
+                    <Fragment key={`${key}-${idx}`}>
+                        {pContent.content}
+                    </Fragment>
+                );
                 break;
             default:
                 jsx.push(
                     React.createElement(
                         pContent.name,
                         {
-                            key: pContent.key,
+                            key: `${key}-${idx}`,
                             ...pContent.attributes,
                         },
                         pContent.content
@@ -93,131 +106,96 @@ function mergeParagraph(paragraphContents: any[], key?: string | number) {
         }
     });
 
-    return <p {...(key ? { key: key } : {})}>{jsx}</p>;
+    return <p key={key}>{jsx}</p>;
 }
 
-export function mergeInlineContent(doc: any) {
+export function mergeInlineContent(fdmgObjects: fdmgObject[]) {
     const jsx: JSX.Element[] = [];
-    doc.forEach((content) => {
+    fdmgObjects.forEach((content, i) => {
         switch (content.name) {
             case 'h1':
-                jsx.push(
-                    <h1
-                        key={content.key}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(<h1 key={i}>{content.content}</h1>);
                 break;
             case 'h2':
-                jsx.push(
-                    <h2
-                        key={content.key}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(<h2 key={i}>{content.content}</h2>);
                 break;
             case 'h3':
-                jsx.push(
-                    <h3
-                        key={content.key}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(<h3 key={i}>{content.content}</h3>);
                 break;
             case 'h4':
-                jsx.push(
-                    <h4
-                        key={content.key}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(<h4 key={i}>{content.content}</h4>);
                 break;
             case 'h5':
-                jsx.push(
-                    <h5
-                        key={content.key}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(<h5 key={i}>{content.content}</h5>);
                 break;
             case 'h6':
-                jsx.push(
-                    <h6
-                        key={content.key}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(<h6 key={i}>{content.content}</h6>);
                 break;
             case 'p':
-                jsx.push(mergeParagraph(content.contents, content.key));
+                jsx.push(mergeParagraph(content.children, i));
                 break;
             case 'fdmg-bulletpoint':
-                jsx.push(<BulletPoint key={content.key} {...content} />);
+                jsx.push(<BulletPoint key={i} {...(content as any)} />);
                 break;
             case 'fdmg-image':
-                jsx.push(<ArticleImage key={content.key} {...content} />);
+                jsx.push(<ArticleImage key={i} {...(content as any)} />);
                 break;
             case 'fdmg-infographic':
-                jsx.push(<Infographic key={content.key} {...content} />);
+                jsx.push(<Infographic key={i} {...(content as any)} />);
                 break;
             case 'fdmg-infographic-extended':
-                jsx.push(
-                    <InfographicExtended key={content.key} {...content} />
-                );
+                jsx.push(<InfographicExtended key={i} {...(content as any)} />);
                 break;
             case 'fdmg-html-embed':
                 jsx.push(
-                    <HtmlEmbed
-                        key={content.key}
-                        html={content.dangerouslySetInnerHTML.__html}
-                    />
+                    <HtmlEmbed key={i} html={(content as fdmgHtmlEmbed).html} />
                 );
                 break;
             case 'fdmg-instagram':
-                jsx.push(<OEmbed key={content.key} {...content} />);
+                jsx.push(<OEmbed key={i} {...(content as any)} />);
                 break;
             case 'fdmg-number-frame':
-                jsx.push(<NumberFrame key={content.key} {...content} />);
+                jsx.push(<NumberFrame key={i} {...(content as any)} />);
                 break;
             case 'fdmg-pdf':
-                jsx.push(<RelatedPdf key={content.key} {...content} />);
+                jsx.push(<RelatedPdf key={i} {...(content as any)} />);
                 break;
             case 'fdmg-quote':
-                jsx.push(<Quote key={content.key} {...content} />);
+                jsx.push(<Quote key={i} {...(content as any)} />);
                 break;
             case 'fdmg-readmore':
-                jsx.push(<ReadMore key={content.key} {...content} />);
+                jsx.push(<ReadMore key={i} {...(content as any)} />);
                 break;
             case 'fdmg-related-link':
-                jsx.push(<LinkBlock key={content.key} {...content} />);
+                jsx.push(<LinkBlock key={i} {...(content as any)} />);
                 break;
             case 'fdmg-soundcloud':
-                jsx.push(<OEmbed key={content.key} {...content} />);
+                jsx.push(<OEmbed key={i} {...(content as any)} />);
                 break;
             case 'fdmg-stack-frame':
-                jsx.push(<WordFrame key={content.key} {...content} />);
+                jsx.push(<WordFrame key={i} {...(content as any)} />);
                 break;
             case 'fdmg-summary':
-                jsx.push(<Summary key={content.key} {...content} />);
+                jsx.push(<Summary key={i} {...(content as any)} />);
                 break;
             case 'fdmg-text-frame':
-                jsx.push(<TextFrame key={content.key} {...content} />);
+                jsx.push(<TextFrame key={i} {...(content as any)} />);
                 break;
             case 'fdmg-twitter':
-                jsx.push(<OEmbed key={content.key} {...content} />);
+                jsx.push(<OEmbed key={i} {...(content as any)} />);
                 break;
             case 'fdmg-vimeo':
-                jsx.push(<Vimeo key={content.key} {...content} />);
+                jsx.push(<Vimeo key={i} {...(content as any)} />);
                 break;
             case 'fdmg-youtube':
-                jsx.push(<Youtube key={content.key} {...content} />);
+                jsx.push(<Youtube key={i} {...(content as any)} />);
                 break;
             default:
                 // Treat non fdmg elements as normal HTML.
                 if (content.name.indexOf('fdmg-') === -1) {
                     jsx.push(
                         React.createElement(content.name, {
-                            key: content.key,
+                            key: i,
                             dangerouslySetInnerHTML: {
                                 __html: JSON.stringify(content, null, 2),
                             },
