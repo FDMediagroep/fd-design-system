@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { ArticleImage } from '../components/article-image/ArticleImage';
 import { Infographic } from '../components/infographic/Infographic';
 import { InfographicExtended } from '../components/article-image/InfographicExtended';
@@ -15,9 +15,9 @@ import { BulletPoint } from '../components/bullet-point/BulletPoint';
 import { OEmbed } from '../components/oembed/OEmbed';
 import { RelatedPdf } from '../components/related-pdf/RelatedPdf';
 import {
-    fdmgBulletPoints,
     fdmgHtmlEmbed,
     fdmgObject,
+    fdmgStockQuote,
 } from '@fdmg/article-xml-json';
 
 function decodeHtml(encodedHtml: string) {
@@ -44,16 +44,20 @@ function HtmlEmbed(props: any) {
     }
 }
 
-function mergeParagraph(paragraphContents: any[], key?: string | number) {
+function mergeParagraph(
+    paragraphContents: fdmgObject[],
+    key?: string | number
+) {
     const jsx: JSX.Element[] = [];
-    paragraphContents.forEach((pContent: any, idx: number) => {
+    paragraphContents?.forEach((pContent, idx: number) => {
         switch (pContent.name) {
             case 'fdmg-stock-quote':
+                const stockQuote = pContent as fdmgStockQuote;
                 jsx.push(
                     <a
-                        key={pContent.key}
-                        data-isin={pContent.isin}
-                        data-exchange={pContent.exchange}
+                        key={`${key}-${idx}`}
+                        data-isin={stockQuote.isin}
+                        data-exchange={stockQuote.exchange}
                         className="company-quote"
                         target="_blank"
                         rel="noreferrer noopener"
@@ -61,35 +65,39 @@ function mergeParagraph(paragraphContents: any[], key?: string | number) {
                         data-ga-category="articles"
                         data-ga4-category="user interactions"
                         data-ga-action="beurskoers click"
-                        data-ga-label={pContent.isin}
+                        data-ga-label={stockQuote.isin}
                         data-ga-custom-properties="{%22article_id%22: null, %event_value%22: null, %page_notification%22: null, %22section%22: null, %22subsection%22: null}"
                     >
-                        {pContent['data-name'] ? (
-                            <span>{pContent['data-name']}</span>
+                        {pContent['dataName'] ? (
+                            <span>{pContent['dataName']}</span>
                         ) : null}
-                        {pContent['data-price'] ? (
+                        {pContent['dataPrice'] ? (
                             <span>
-                                {pContent['data-currency'] ?? '$'}
-                                {pContent['data-price']}
+                                {pContent['dataCurrency'] ?? '$'}
+                                {pContent['dataPrice']}
                             </span>
                         ) : null}
-                        {pContent['data-difference'] ? (
+                        {pContent['dataDifference'] ? (
                             <span className="drop">
-                                {pContent['data-difference']}
+                                {pContent['dataDifference']}
                             </span>
                         ) : null}
                     </a>
                 );
                 break;
             case '#text':
-                jsx.push(pContent.content);
+                jsx.push(
+                    <Fragment key={`${key}-${idx}`}>
+                        {pContent.content}
+                    </Fragment>
+                );
                 break;
             default:
                 jsx.push(
                     React.createElement(
                         pContent.name,
                         {
-                            key: pContent.key,
+                            key: `${key}-${idx}`,
                             ...pContent.attributes,
                         },
                         pContent.content
@@ -98,7 +106,7 @@ function mergeParagraph(paragraphContents: any[], key?: string | number) {
         }
     });
 
-    return <p {...(key ? { key: key } : {})}>{jsx}</p>;
+    return <p key={key}>{jsx}</p>;
 }
 
 export function mergeInlineContent(fdmgObjects: fdmgObject[]) {
@@ -122,6 +130,7 @@ export function mergeInlineContent(fdmgObjects: fdmgObject[]) {
                 );
                 break;
             case 'h3':
+                console.log(content.content);
                 jsx.push(
                     <h3
                         key={i}
@@ -154,12 +163,7 @@ export function mergeInlineContent(fdmgObjects: fdmgObject[]) {
                 );
                 break;
             case 'p':
-                jsx.push(
-                    <p
-                        key={i}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(mergeParagraph(content.children, i));
                 break;
             case 'fdmg-bulletpoint':
                 jsx.push(<BulletPoint key={i} {...(content as any)} />);
