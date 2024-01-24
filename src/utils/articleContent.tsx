@@ -14,6 +14,11 @@ import { Youtube } from '../components/youtube/Youtube';
 import { BulletPoint } from '../components/bullet-point/BulletPoint';
 import { OEmbed } from '../components/oembed/OEmbed';
 import { RelatedPdf } from '../components/related-pdf/RelatedPdf';
+import {
+    fdmgBulletPoints,
+    fdmgHtmlEmbed,
+    fdmgObject,
+} from '@fdmg/article-xml-json';
 
 function decodeHtml(encodedHtml: string) {
     return encodedHtml
@@ -96,14 +101,14 @@ function mergeParagraph(paragraphContents: any[], key?: string | number) {
     return <p {...(key ? { key: key } : {})}>{jsx}</p>;
 }
 
-export function mergeInlineContent(doc: any) {
+export function mergeInlineContent(fdmgObjects: fdmgObject[]) {
     const jsx: JSX.Element[] = [];
-    doc.forEach((content) => {
+    fdmgObjects.forEach((content, i) => {
         switch (content.name) {
             case 'h1':
                 jsx.push(
                     <h1
-                        key={content.key}
+                        key={i}
                         dangerouslySetInnerHTML={{ __html: content.content }}
                     />
                 );
@@ -111,7 +116,7 @@ export function mergeInlineContent(doc: any) {
             case 'h2':
                 jsx.push(
                     <h2
-                        key={content.key}
+                        key={i}
                         dangerouslySetInnerHTML={{ __html: content.content }}
                     />
                 );
@@ -119,7 +124,7 @@ export function mergeInlineContent(doc: any) {
             case 'h3':
                 jsx.push(
                     <h3
-                        key={content.key}
+                        key={i}
                         dangerouslySetInnerHTML={{ __html: content.content }}
                     />
                 );
@@ -127,7 +132,7 @@ export function mergeInlineContent(doc: any) {
             case 'h4':
                 jsx.push(
                     <h4
-                        key={content.key}
+                        key={i}
                         dangerouslySetInnerHTML={{ __html: content.content }}
                     />
                 );
@@ -135,7 +140,7 @@ export function mergeInlineContent(doc: any) {
             case 'h5':
                 jsx.push(
                     <h5
-                        key={content.key}
+                        key={i}
                         dangerouslySetInnerHTML={{ __html: content.content }}
                     />
                 );
@@ -143,81 +148,81 @@ export function mergeInlineContent(doc: any) {
             case 'h6':
                 jsx.push(
                     <h6
-                        key={content.key}
+                        key={i}
                         dangerouslySetInnerHTML={{ __html: content.content }}
                     />
                 );
                 break;
             case 'p':
-                jsx.push(mergeParagraph(content.contents, content.key));
-                break;
-            case 'fdmg-bulletpoint':
-                jsx.push(<BulletPoint key={content.key} {...content} />);
-                break;
-            case 'fdmg-image':
-                jsx.push(<ArticleImage key={content.key} {...content} />);
-                break;
-            case 'fdmg-infographic':
-                jsx.push(<Infographic key={content.key} {...content} />);
-                break;
-            case 'fdmg-infographic-extended':
                 jsx.push(
-                    <InfographicExtended key={content.key} {...content} />
-                );
-                break;
-            case 'fdmg-html-embed':
-                jsx.push(
-                    <HtmlEmbed
-                        key={content.key}
-                        html={content.dangerouslySetInnerHTML.__html}
+                    <p
+                        key={i}
+                        dangerouslySetInnerHTML={{ __html: content.content }}
                     />
                 );
                 break;
+            case 'fdmg-bulletpoint':
+                jsx.push(<BulletPoint key={i} {...(content as any)} />);
+                break;
+            case 'fdmg-image':
+                jsx.push(<ArticleImage key={i} {...(content as any)} />);
+                break;
+            case 'fdmg-infographic':
+                jsx.push(<Infographic key={i} {...(content as any)} />);
+                break;
+            case 'fdmg-infographic-extended':
+                jsx.push(<InfographicExtended key={i} {...(content as any)} />);
+                break;
+            case 'fdmg-html-embed':
+                jsx.push(
+                    <HtmlEmbed key={i} html={(content as fdmgHtmlEmbed).html} />
+                );
+                break;
             case 'fdmg-instagram':
-                jsx.push(<OEmbed key={content.key} {...content} />);
+                jsx.push(<OEmbed key={i} {...(content as any)} />);
                 break;
             case 'fdmg-number-frame':
-                jsx.push(<NumberFrame key={content.key} {...content} />);
+                jsx.push(<NumberFrame key={i} {...(content as any)} />);
                 break;
             case 'fdmg-pdf':
-                jsx.push(<RelatedPdf key={content.key} {...content} />);
+                jsx.push(<RelatedPdf key={i} {...(content as any)} />);
                 break;
             case 'fdmg-quote':
-                jsx.push(<Quote key={content.key} {...content} />);
+                jsx.push(<Quote key={i} {...(content as any)} />);
                 break;
             case 'fdmg-readmore':
-                jsx.push(<ReadMore key={content.key} {...content} />);
+                jsx.push(<ReadMore key={i} {...(content as any)} />);
                 break;
             case 'fdmg-related-link':
-                jsx.push(<LinkBlock key={content.key} {...content} />);
+                jsx.push(<LinkBlock key={i} {...(content as any)} />);
                 break;
             case 'fdmg-soundcloud':
-                jsx.push(<OEmbed key={content.key} {...content} />);
+                jsx.push(<OEmbed key={i} {...(content as any)} />);
                 break;
             case 'fdmg-stack-frame':
-                jsx.push(<WordFrame key={content.key} {...content} />);
+                jsx.push(<WordFrame key={i} {...(content as any)} />);
                 break;
             case 'fdmg-summary':
-                jsx.push(<Summary key={content.key} {...content} />);
+                jsx.push(<Summary key={i} {...(content as any)} />);
                 break;
             case 'fdmg-text-frame':
-                jsx.push(<TextFrame key={content.key} {...content} />);
+                jsx.push(<TextFrame key={i} {...(content as any)} />);
                 break;
             case 'fdmg-twitter':
-                jsx.push(<OEmbed key={content.key} {...content} />);
+                jsx.push(<OEmbed key={i} {...(content as any)} />);
                 break;
             case 'fdmg-vimeo':
-                jsx.push(<Vimeo key={content.key} {...content} />);
+                jsx.push(<Vimeo key={i} {...(content as any)} />);
                 break;
             case 'fdmg-youtube':
-                jsx.push(<Youtube key={content.key} {...content} />);
+                jsx.push(<Youtube key={i} {...(content as any)} />);
                 break;
             default:
                 // Treat non fdmg elements as normal HTML.
                 if (content.name.indexOf('fdmg-') === -1) {
                     jsx.push(
                         React.createElement(content.name, {
-                            key: content.key,
+                            key: i,
                             dangerouslySetInnerHTML: {
                                 __html: JSON.stringify(content, null, 2),
                             },
