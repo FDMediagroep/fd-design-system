@@ -130,7 +130,6 @@ export function mergeInlineContent(fdmgObjects: fdmgObject[]) {
                 );
                 break;
             case 'h3':
-                console.log(content.content);
                 jsx.push(
                     <h3
                         key={i}
