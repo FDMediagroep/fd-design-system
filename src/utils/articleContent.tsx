@@ -114,52 +114,22 @@ export function mergeInlineContent(fdmgObjects: fdmgObject[]) {
     fdmgObjects.forEach((content, i) => {
         switch (content.name) {
             case 'h1':
-                jsx.push(
-                    <h1
-                        key={i}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(<h1 key={i}>{content.content}</h1>);
                 break;
             case 'h2':
-                jsx.push(
-                    <h2
-                        key={i}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(<h2 key={i}>{content.content}</h2>);
                 break;
             case 'h3':
-                jsx.push(
-                    <h3
-                        key={i}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(<h3 key={i}>{content.content}</h3>);
                 break;
             case 'h4':
-                jsx.push(
-                    <h4
-                        key={i}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(<h4 key={i}>{content.content}</h4>);
                 break;
             case 'h5':
-                jsx.push(
-                    <h5
-                        key={i}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(<h5 key={i}>{content.content}</h5>);
                 break;
             case 'h6':
-                jsx.push(
-                    <h6
-                        key={i}
-                        dangerouslySetInnerHTML={{ __html: content.content }}
-                    />
-                );
+                jsx.push(<h6 key={i}>{content.content}</h6>);
                 break;
             case 'p':
                 jsx.push(mergeParagraph(content.children, i));
