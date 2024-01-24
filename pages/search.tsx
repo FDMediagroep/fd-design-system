@@ -53,7 +53,7 @@ import {
 import {
     metaTitle as buttonDefaultTitle,
     metaDescription as buttonDefaultDescription,
-} from './button/default';
+} from './button/button';
 import {
     metaTitle as buttonFollowTitle,
     metaDescription as buttonFollowDescription,
@@ -258,7 +258,7 @@ const searchIndex: SearchIndex = {
         title: buttonCtaTitle,
         description: buttonCtaDescription,
     },
-    '/button/default': {
+    '/button/button': {
         title: buttonDefaultTitle,
         description: buttonDefaultDescription,
     },
