@@ -6,7 +6,7 @@ import { mergeInlineContent } from '../../../src/utils/articleContent';
 import PageStore from '../../../src/stores/PageStore';
 import { OEmbedLoader } from '../../../src/utils/OEmbedLoader';
 import { ArticleMeta } from '../../../src/components/article-meta/ArticleMeta';
-import { parseXMLToJSON } from '@fdmg/article-xml-json';
+import { parseXML } from '@fdmg/article-xml-json';
 import Head from 'next/head';
 import { GridContainer } from '@fdmg/css-grid/GridContainer';
 import { VerticalToolbar } from '../../../src/components/toolbar/VerticalToolbar';
@@ -23,7 +23,7 @@ interface Props {
 
 function Article(props: Props) {
     const [jsxContent] = useState(
-        mergeInlineContent(parseXMLToJSON(props.json.content))
+        mergeInlineContent(parseXML(props.json.content))
     );
 
     useEffect(() => {

@@ -747,7 +747,7 @@ function Foo(props: Props) {
 <details>
 <summary>Button</summary>
 
-[Demo](https://design-system.fd.nl/button/default)
+[Demo](https://design-system.fd.nl/button/button)
 
 Component CSS:
 
