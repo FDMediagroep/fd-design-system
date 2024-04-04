@@ -73,7 +73,7 @@
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
         "json-to-scss": "^1.6.2",
-        "markdown-it": "^14.0.0",
+        "markdown-it": "^14.1.0",
         "micro-cors": "^0.1.1",
         "mini-css-extract-plugin": "^2.8.1",
         "nookies": "^2.5.2",
