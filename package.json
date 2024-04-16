@@ -77,7 +77,7 @@
         "micro-cors": "^0.1.1",
         "mini-css-extract-plugin": "^2.8.1",
         "nookies": "^2.5.2",
-        "path-to-regexp": "^6.2.1",
+        "path-to-regexp": "^6.2.2",
         "postcss-flexbugs-fixes": "^5.0.2",
         "postcss-loader": "^8.1.1",
         "postcss-normalize": "^10.0.1",
