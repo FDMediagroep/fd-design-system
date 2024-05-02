@@ -4,7 +4,7 @@ import {
     AuthorInfo,
     getCssClassNames,
 } from '../src/components/author-info/AuthorInfo';
-import styles from './article-link-block.module.scss';
+import * as styles from './article-link-block.module.scss';
 import Head from 'next/head';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
 
@@ -36,7 +36,7 @@ function Page() {
 
             <Explain
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
-                previewClassName={styles.preview}
+                previewClassName={styles['preview']}
                 legend="Author Info"
                 reactComponentName="AuthorInfo"
                 description={

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Accordion.module.scss';
+import * as styles from './Accordion.module.scss';
 import { MinimiseIcon, ExpandIcon } from '../../design-tokens/icons';
 
 export interface Item {
@@ -17,7 +17,7 @@ interface Props {
 function Accordion(props: Props) {
     return (
         <div
-            className={`${styles.fdAccordion}${
+            className={`${styles['fdAccordion']}${
                 props.className ? ` ${props.className}` : ''
             }`}
         >
@@ -36,17 +36,17 @@ function Accordion(props: Props) {
                     />
                     <label
                         htmlFor={item.anchor ?? `q-${idx}`}
-                        className={`${styles.icon} ${styles.minimise}`}
+                        className={`${styles['icon']} ${styles['minimise']}`}
                     >
                         <MinimiseIcon />
                     </label>
                     <label
                         htmlFor={item.anchor ?? `q-${idx}`}
-                        className={`${styles.icon} ${styles.expand}`}
+                        className={`${styles['icon']} ${styles['expand']}`}
                     >
                         <ExpandIcon />
                     </label>
-                    <div className={styles.textContent}>
+                    <div className={styles['textContent']}>
                         <label htmlFor={item.anchor ?? `q-${idx}`}>
                             <h2>{item.title}</h2>
                         </label>
@@ -59,7 +59,7 @@ function Accordion(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdAccordion];
+    return [styles['fdAccordion']];
 }
 
 export { Accordion, getCssClassNames };

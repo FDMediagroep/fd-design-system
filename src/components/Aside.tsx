@@ -1,5 +1,5 @@
-import styles from './menu/Menu.module.scss';
-import asideStyles from './Aside.module.scss';
+import * as styles from './menu/Menu.module.scss';
+import * as asideStyles from './Aside.module.scss';
 import {
     CloseIcon,
     CollapseIcon,
@@ -75,7 +75,7 @@ function Aside(props: Props) {
                         aria-label="Toggle Main sub-menu"
                         onClick={handleToggle.bind(null, 'main')}
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <LogoFdIcon />
                         </span>
                         <span
@@ -109,7 +109,7 @@ function Aside(props: Props) {
                                 <span className="heading sans xxs">
                                     Brandbook
                                 </span>
-                                <span className={asideStyles.popup}>
+                                <span className={asideStyles['popup']}>
                                     <LinkWebsiteIcon />
                                 </span>
                             </a>
@@ -128,7 +128,7 @@ function Aside(props: Props) {
                                 onClick={handleNavigation}
                             >
                                 <span className="heading sans xxs">Colors</span>
-                                <span className={asideStyles.popup}>
+                                <span className={asideStyles['popup']}>
                                     <LinkWebsiteIcon />
                                 </span>
                             </a>
@@ -149,7 +149,7 @@ function Aside(props: Props) {
                                 <span className="heading sans xxs">
                                     Downloads
                                 </span>
-                                <span className={asideStyles.popup}>
+                                <span className={asideStyles['popup']}>
                                     <LinkWebsiteIcon />
                                 </span>
                             </a>
@@ -181,7 +181,7 @@ function Aside(props: Props) {
                         aria-label="Toggle Article sub-menu"
                         onClick={handleToggle.bind(null, 'article')}
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <NewspaperIcon />
                         </span>
                         <span
@@ -478,7 +478,7 @@ function Aside(props: Props) {
                         aria-label="Toggle Controls sub-menu"
                         onClick={handleToggle.bind(null, 'controls')}
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <PencilIcon />
                         </span>
                         <span
@@ -737,7 +737,7 @@ function Aside(props: Props) {
                         aria-label="Toggle Cards sub-menu"
                         onClick={handleToggle.bind(null, 'cards')}
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <EnvelopeIcon />
                         </span>
                         <span
@@ -960,7 +960,7 @@ function Aside(props: Props) {
                         aria-label="Toggle Grid sub-menu"
                         onClick={handleToggle.bind(null, 'grid')}
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <Windows8Icon />
                         </span>
                         <span
@@ -994,7 +994,7 @@ function Aside(props: Props) {
                                 <span className="heading sans xxs">
                                     CSS Grid
                                 </span>
-                                <span className={asideStyles.popup}>
+                                <span className={asideStyles['popup']}>
                                     <LinkWebsiteIcon />
                                 </span>
                             </a>
@@ -1063,7 +1063,7 @@ function Aside(props: Props) {
                                 <span className="heading sans xxs">
                                     Paddings/Margins system
                                 </span>
-                                <span className={asideStyles.popup}>
+                                <span className={asideStyles['popup']}>
                                     <LinkWebsiteIcon />
                                 </span>
                             </a>
@@ -1081,7 +1081,7 @@ function Aside(props: Props) {
                         aria-label="Toggle Typography sub-menu"
                         onClick={handleToggle.bind(null, 'typography')}
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <HamburgerIcon />
                         </span>
                         <span
@@ -1129,7 +1129,7 @@ function Aside(props: Props) {
                                 rel="noreferrer noopener"
                             >
                                 <span className="heading sans xxs">Docs</span>
-                                <span className={asideStyles.popup}>
+                                <span className={asideStyles['popup']}>
                                     <LinkWebsiteIcon />
                                 </span>
                             </a>
@@ -1147,7 +1147,7 @@ function Aside(props: Props) {
                         aria-label="Toggle miscellaneous sub-menu"
                         onClick={handleToggle.bind(null, 'misc')}
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <PaperclipIcon />
                         </span>
                         <span
@@ -1290,7 +1290,7 @@ function Aside(props: Props) {
                         target="_blank"
                         rel="noreferrer noopener"
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <GithubIcon />
                         </span>
                         <span
@@ -1298,7 +1298,7 @@ function Aside(props: Props) {
                         >
                             GitHub
                         </span>
-                        <span className={asideStyles.popup}>
+                        <span className={asideStyles['popup']}>
                             <LinkWebsiteIcon />
                         </span>
                     </a>

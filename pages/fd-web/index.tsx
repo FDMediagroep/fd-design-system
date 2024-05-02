@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.module.scss';
+import * as styles from './index.module.scss';
 import '@fdmg/css-grid/css/grid.css';
 import '@fdmg/css-grid/css/flex.css';
 import { VerticalCard1 } from '../../src/components/card/VerticalCard1';
@@ -21,7 +21,7 @@ function Page(props: Props) {
 
     try {
         return (
-            <section className={styles.page}>
+            <section className={styles['page']}>
                 <Head>
                     <meta name="robots" content="noindex" />
                 </Head>
@@ -35,12 +35,12 @@ function Page(props: Props) {
                         <GridContainer attributes={['xs-12', 'grid']}>
                             {singleOpeningTeaser && (
                                 <GridContainer
-                                    className={`ie-full-height ${styles.ie11FullHeight}`}
+                                    className={`ie-full-height ${styles['ie11FullHeight']}`}
                                     attributes={['xs-12', 'gap-bottom']}
                                 >
                                     <VerticalCard1
                                         id={singleOpeningTeaser.id}
-                                        className={`${styles.newsContainer} ${styles.fullHeight}`}
+                                        className={`${styles['newsContainer']} ${styles['fullHeight']}`}
                                         caption={singleOpeningTeaser?.title}
                                         intro={singleOpeningTeaser?.intro}
                                         label={
@@ -60,7 +60,7 @@ function Page(props: Props) {
                                 (teaser) => (
                                     <GridContainer
                                         key={`primary-${teaser.id}`}
-                                        className={`ie-full-height ${styles.ie11FullHeight}`}
+                                        className={`ie-full-height ${styles['ie11FullHeight']}`}
                                         attributes={[
                                             'xs-12',
                                             's-6',
@@ -72,7 +72,7 @@ function Page(props: Props) {
                                     >
                                         <VerticalCard1
                                             id={teaser.id}
-                                            className={`${styles.newsContainer} ${styles.fullHeight}`}
+                                            className={`${styles['newsContainer']} ${styles['fullHeight']}`}
                                             caption={teaser?.title}
                                             intro={teaser?.intro}
                                             label={
@@ -92,7 +92,7 @@ function Page(props: Props) {
                                 (teaser) => (
                                     <GridContainer
                                         key={`primary-${teaser.id}`}
-                                        className={`ie-full-height ${styles.ie11FullHeight}`}
+                                        className={`ie-full-height ${styles['ie11FullHeight']}`}
                                         attributes={[
                                             'xs-12',
                                             's-6',
@@ -104,7 +104,7 @@ function Page(props: Props) {
                                     >
                                         <VerticalCard1
                                             id={teaser.id}
-                                            className={`${styles.newsContainer} ${styles.fullHeight}`}
+                                            className={`${styles['newsContainer']} ${styles['fullHeight']}`}
                                             caption={teaser?.title}
                                             intro={teaser?.intro}
                                             label={
@@ -124,7 +124,7 @@ function Page(props: Props) {
                                 (teaser) => (
                                     <GridContainer
                                         key={`primary-${teaser.id}`}
-                                        className={`ie-full-height ${styles.ie11FullHeight}`}
+                                        className={`ie-full-height ${styles['ie11FullHeight']}`}
                                         attributes={[
                                             'xs-12',
                                             's-6',
@@ -136,7 +136,7 @@ function Page(props: Props) {
                                     >
                                         <VerticalCard1
                                             id={teaser.id}
-                                            className={`${styles.newsContainer} ${styles.fullHeight}`}
+                                            className={`${styles['newsContainer']} ${styles['fullHeight']}`}
                                             caption={teaser?.title}
                                             intro={teaser?.intro}
                                             label={
@@ -156,7 +156,7 @@ function Page(props: Props) {
                                 (teaser) => (
                                     <GridContainer
                                         key={`primary-${teaser.id}`}
-                                        className={`ie-full-height ${styles.ie11FullHeight}`}
+                                        className={`ie-full-height ${styles['ie11FullHeight']}`}
                                         attributes={[
                                             'xs-12',
                                             's-6',
@@ -168,7 +168,7 @@ function Page(props: Props) {
                                     >
                                         <VerticalCard1
                                             id={teaser.id}
-                                            className={`${styles.newsContainer} ${styles.fullHeight}`}
+                                            className={`${styles['newsContainer']} ${styles['fullHeight']}`}
                                             caption={teaser?.title}
                                             intro={teaser?.intro}
                                             label={
@@ -187,13 +187,13 @@ function Page(props: Props) {
                         </GridContainer>
                     </GridContainer>
                     <GridContainer
-                        className={`${styles.fullHeight}`}
+                        className={`${styles['fullHeight']}`}
                         attributes={['xs-12', 'l-3', 'gap-1', 'gap-bottom']}
                     >
                         <div className={`dummy-card full-width`}>
                             latest news
                         </div>
-                        <span className={`${styles.sticky} hide-lt-xl`}>
+                        <span className={`${styles['sticky']} hide-lt-xl`}>
                             AD
                         </span>
                     </GridContainer>
@@ -237,7 +237,7 @@ function Page(props: Props) {
                                                         return (
                                                             <GridContainer
                                                                 key={`${sectionModel.defaultCategoryModel.title}-${card.id}`}
-                                                                className={`ie-full-height ${styles.ie11FullHeight}`}
+                                                                className={`ie-full-height ${styles['ie11FullHeight']}`}
                                                                 attributes={[
                                                                     'xs-12',
                                                                     's-6',
@@ -249,7 +249,7 @@ function Page(props: Props) {
                                                             >
                                                                 <HybridCard1
                                                                     id={card.id}
-                                                                    className={`${styles.newsContainer} ${styles.fullHeight}`}
+                                                                    className={`${styles['newsContainer']} ${styles['fullHeight']}`}
                                                                     caption={
                                                                         card?.title
                                                                     }
@@ -270,7 +270,7 @@ function Page(props: Props) {
                                                         return (
                                                             <GridContainer
                                                                 key={`${sectionModel.defaultCategoryModel.title}-${card.id}`}
-                                                                className={`ie-full-height ${styles.ie11FullHeight}`}
+                                                                className={`ie-full-height ${styles['ie11FullHeight']}`}
                                                                 attributes={[
                                                                     'xs-12',
                                                                     's-6',
@@ -282,7 +282,7 @@ function Page(props: Props) {
                                                             >
                                                                 <HybridCard2
                                                                     id={card.id}
-                                                                    className={`${styles.newsContainer} ${styles.fullHeight}`}
+                                                                    className={`${styles['newsContainer']} ${styles['fullHeight']}`}
                                                                     caption={
                                                                         card?.title
                                                                     }

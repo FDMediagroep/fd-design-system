@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './RelatedPdf.module.scss';
+import * as styles from './RelatedPdf.module.scss';
 
 interface Props {
     fileId: string;
@@ -9,7 +9,7 @@ interface Props {
 function RelatedPdf(props: Props) {
     return (
         <a
-            className={styles.pdf}
+            className={styles['pdf']}
             href={`https://fd-binary-external-development.imgix.net/${props.fileName}?dl=${props.title}`}
         >
             <i className="ico ico-download">📎</i>
@@ -19,7 +19,7 @@ function RelatedPdf(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.pdf];
+    return [styles['pdf']];
 }
 
 export { RelatedPdf, getCssClassNames };

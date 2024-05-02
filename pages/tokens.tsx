@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './tokens.module.scss';
+import * as styles from './tokens.module.scss';
 import fs from 'fs';
 import path from 'path';
 import Head from 'next/head';
@@ -22,7 +22,7 @@ function Tokens(props: Props) {
     }
 
     const colorGroups = Object.entries(colors.colors).map((colors) => (
-        <div key={colors[0]} className={styles.group}>
+        <div key={colors[0]} className={styles['group']}>
             <h2>{colors[0]}</h2>
             <div>
                 {Object.entries(colors[1]).map((value) => {
@@ -30,7 +30,7 @@ function Tokens(props: Props) {
                         <div key={`${colors[0]}-${value[0]}`}>
                             <label
                                 htmlFor={`${colors[0]}-${value[0]}`}
-                                className={styles.colorTile}
+                                className={styles['colorTile']}
                                 style={{ backgroundColor: value[1] }}
                             />
                             <label htmlFor={`${colors[0]}-${value[0]}`}>
@@ -50,7 +50,7 @@ function Tokens(props: Props) {
     ));
 
     const fonts = Object.entries(typography['font-family']).map((fonts) => (
-        <div key={fonts[0]} className={styles.group}>
+        <div key={fonts[0]} className={styles['group']}>
             <div>
                 <label
                     htmlFor={`${fonts[0]}-${fonts[0]}`}
@@ -70,7 +70,7 @@ function Tokens(props: Props) {
     ));
 
     return (
-        <section className={styles.tokens}>
+        <section className={styles['tokens']}>
             <Head>
                 <title>
                     {`${metaTitle} - Design System - Het Financieele Dagblad`}
@@ -95,7 +95,7 @@ function Tokens(props: Props) {
                 />
             </fieldset>
 
-            <div className={styles.groupContainer}>{colorGroups}</div>
+            <div className={styles['groupContainer']}>{colorGroups}</div>
 
             <fieldset>
                 <legend>Typography:</legend>
@@ -105,7 +105,7 @@ function Tokens(props: Props) {
                 />
             </fieldset>
 
-            <div className={styles.fontsContainer}>
+            <div className={styles['fontsContainer']}>
                 <h2>Fonts</h2>
                 {fonts}
             </div>
@@ -118,13 +118,13 @@ function Tokens(props: Props) {
                 />
             </fieldset>
 
-            <div className={styles.fontsContainer}>
+            <div className={styles['fontsContainer']}>
                 <h2>SVG Icons</h2>
                 <div>
                     {props.icons.map((icon, idx) => (
                         <span
                             key={idx}
-                            className={`${styles.icon}`}
+                            className={`${styles['icon']}`}
                             dangerouslySetInnerHTML={{ __html: icon }}
                         />
                     ))}

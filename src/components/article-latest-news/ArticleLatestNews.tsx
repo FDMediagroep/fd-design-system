@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ArticleLatestNews.module.scss';
+import * as styles from './ArticleLatestNews.module.scss';
 import { ChevronRightIcon } from '../../design-tokens/icons';
 
 interface NewsItem {
@@ -25,7 +25,7 @@ export interface Props {
  */
 function ArticleLatestNews(props: Props) {
     return (
-        <div className={styles.fdLatestNews}>
+        <div className={styles['fdLatestNews']}>
             <h3 className="heading sans xs">
                 {props.title ?? 'Laatste nieuws'}
             </h3>
@@ -40,7 +40,7 @@ function ArticleLatestNews(props: Props) {
                             <time>{newsItem.dateTime}</time>
                             <span
                                 className={
-                                    newsItem.isRead ? styles.isRead : null
+                                    newsItem.isRead ? styles['isRead'] : null
                                 }
                             >
                                 {newsItem.title}
@@ -54,7 +54,7 @@ function ArticleLatestNews(props: Props) {
                 className="body-text sans s"
             >
                 {props.linkText ?? 'Lees al het laatste nieuws'}
-                <span className={styles.icon}>
+                <span className={styles['icon']}>
                     <ChevronRightIcon />
                 </span>
             </a>
@@ -63,7 +63,7 @@ function ArticleLatestNews(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdLatestNews, 'heading', 'body-text'];
+    return [styles['fdLatestNews'], 'heading', 'body-text'];
 }
 
 export { ArticleLatestNews, getCssClassNames };

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Button.module.scss';
+import * as styles from './Button.module.scss';
 
 type Sizes = 's' | 'm';
 
@@ -17,12 +17,12 @@ interface Props {
  * @param props
  */
 function Button(props: Props) {
-    const sizeClass = props.size === 'm' ? styles.m : '';
+    const sizeClass = props.size === 'm' ? styles['m'] : '';
 
     return (
         <button
             {...props}
-            className={`${styles.fdButton} ${sizeClass}${
+            className={`${styles['fdButton']} ${sizeClass}${
                 props.className ? ` ${props.className}` : ''
             }`}
         >
@@ -32,7 +32,7 @@ function Button(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdButton];
+    return [styles['fdButton']];
 }
 
 export { Button, getCssClassNames };

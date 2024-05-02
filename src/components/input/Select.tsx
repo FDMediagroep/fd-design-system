@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './Select.module.scss';
+import * as styles from './Select.module.scss';
 import { CheckIcon, DownThinIcon } from '../../design-tokens/icons';
 
 declare let localStorage: any;
@@ -125,11 +125,11 @@ function Select(props: Props) {
 
     return (
         <div
-            className={`${styles.fdSelect}${
+            className={`${styles['fdSelect']}${
                 props.className ? ` ${props.className}` : ''
             }`}
         >
-            <div className={styles.select}>
+            <div className={styles['select']}>
                 <select
                     {...props}
                     id={props.id}
@@ -148,28 +148,30 @@ function Select(props: Props) {
                 </select>
                 <div>
                     <label htmlFor={props.id}>{props.label ?? 'Value'}</label>
-                    <span className={styles.iconCheck}>
+                    <span className={styles['iconCheck']}>
                         <CheckIcon />
                     </span>
-                    <label htmlFor={props.id} className={styles.arrow}>
+                    <label htmlFor={props.id} className={styles['arrow']}>
                         <DownThinIcon />
                     </label>
                 </div>
                 {props.type !== 'date' && props.type !== 'datetime' ? (
                     <div
-                        className={`${styles.selectMessage} ${styles.errorMessage}`}
+                        className={`${styles['selectMessage']} ${styles['errorMessage']}`}
                     >
                         {props.errorMessage}
                     </div>
                 ) : null}
-                <div className={styles.selectMessage}>{props.description}</div>
+                <div className={styles['selectMessage']}>
+                    {props.description}
+                </div>
             </div>
         </div>
     );
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdSelect];
+    return [styles['fdSelect']];
 }
 
 export { Select, getCssClassNames };

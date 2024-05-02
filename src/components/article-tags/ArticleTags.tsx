@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ArticleTags.module.scss';
+import * as styles from './ArticleTags.module.scss';
 import {
     ButtonFollow,
     getCssClassNames as getButtonFollowCssClassNames,
@@ -60,7 +60,7 @@ function ArticleTags(props: Props) {
 
     return (
         <div
-            className={`${styles.fdArticleTags}${
+            className={`${styles['fdArticleTags']}${
                 props.className ? ` ${props.className}` : ''
             }`}
         >
@@ -77,8 +77,8 @@ function ArticleTags(props: Props) {
                 {props.tags.map((tag: Tag) => (
                     <li key={tag.uuid}>
                         <div
-                            className={`${styles.tagContainer}${
-                                tag.selected ? ` ${styles.selected}` : ''
+                            className={`${styles['tagContainer']}${
+                                tag.selected ? ` ${styles['selected']}` : ''
                             }`}
                         >
                             <a
@@ -89,11 +89,11 @@ function ArticleTags(props: Props) {
                             >
                                 {tag.tag}
                             </a>
-                            <span className={styles.tagControls}>
+                            <span className={styles['tagControls']}>
                                 <span
-                                    className={`${styles.alert}${
+                                    className={`${styles['alert']}${
                                         tag.alertSelected
-                                            ? ` ${styles.selected}`
+                                            ? ` ${styles['selected']}`
                                             : ''
                                     }`}
                                     data-addurl={
@@ -108,14 +108,14 @@ function ArticleTags(props: Props) {
                                     }
                                 >
                                     <span
-                                        className={styles.defaultIcon}
+                                        className={styles['defaultIcon']}
                                         data-tag={tag.tag}
                                         onClick={onEnableAlertClick}
                                     >
                                         <BellOIcon />
                                     </span>
                                     <span
-                                        className={styles.activeIcon}
+                                        className={styles['activeIcon']}
                                         data-tag={tag.tag}
                                         onClick={onDisableAlertClick}
                                     >
@@ -141,7 +141,7 @@ function ArticleTags(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdArticleTags, ...getButtonFollowCssClassNames()];
+    return [styles['fdArticleTags'], ...getButtonFollowCssClassNames()];
 }
 
 export { ArticleTags, getCssClassNames };

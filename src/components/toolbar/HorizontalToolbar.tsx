@@ -12,7 +12,7 @@ import {
     Button,
     getCssClassNames as getButtonCssClassNames,
 } from '../button/Button';
-import styles from './HorizontalToolbar.module.scss';
+import * as styles from './HorizontalToolbar.module.scss';
 
 export enum EventType {
     BOOKMARK = 'BOOKMARK',
@@ -45,57 +45,57 @@ export interface Props {
 function HorizontalToolbar(props: Props) {
     return (
         <section
-            className={`${props.className ?? ''} ${styles.horizontalToolbar}`}
+            className={`${props.className ?? ''} ${styles['horizontalToolbar']}`}
         >
             <Button
                 title="Deel via WhatsApp"
                 size="s"
                 onClick={props.onClick.bind(null, EventType.WHATSAPP, props)}
             >
-                <span className={styles.icon}>
+                <span className={styles['icon']}>
                     <WhatsAppIcon />
                 </span>
-                <span className={styles.ariaLabel}>Deel via WhatsApp</span>
+                <span className={styles['ariaLabel']}>Deel via WhatsApp</span>
             </Button>
             <Button
                 title="Deel via Twitter"
                 size="s"
                 onClick={props.onClick.bind(null, EventType.TWITTER, props)}
             >
-                <span className={styles.icon}>
+                <span className={styles['icon']}>
                     <TwitterIcon />
                 </span>
-                <span className={styles.ariaLabel}>Deel via Twitter</span>
+                <span className={styles['ariaLabel']}>Deel via Twitter</span>
             </Button>
             <Button
                 title="Deel via LinkedIn"
                 size="s"
                 onClick={props.onClick.bind(null, EventType.LINKED_IN, props)}
             >
-                <span className={styles.icon}>
+                <span className={styles['icon']}>
                     <LinkedInIcon />
                 </span>
-                <span className={styles.ariaLabel}>Deel via LinkedIn</span>
+                <span className={styles['ariaLabel']}>Deel via LinkedIn</span>
             </Button>
             <Button
                 title="Deel via Facebook"
                 size="s"
                 onClick={props.onClick.bind(null, EventType.FACEBOOK, props)}
             >
-                <span className={styles.icon}>
+                <span className={styles['icon']}>
                     <FacebookIcon />
                 </span>
-                <span className={styles.ariaLabel}>Deel via Facebook</span>
+                <span className={styles['ariaLabel']}>Deel via Facebook</span>
             </Button>
             <Button
                 title="Deel via E-mail"
                 size="s"
                 onClick={props.onClick.bind(null, EventType.EMAIL, props)}
             >
-                <span className={styles.icon}>
+                <span className={styles['icon']}>
                     <EnvelopeIcon />
                 </span>
-                <span className={styles.ariaLabel}>Deel via E-mail</span>
+                <span className={styles['ariaLabel']}>Deel via E-mail</span>
             </Button>
             <hr />
             <Button
@@ -104,20 +104,22 @@ function HorizontalToolbar(props: Props) {
                 className={props.bookmarked && `active`}
                 onClick={props.onClick.bind(null, EventType.BOOKMARK, props)}
             >
-                <span className={`${styles.icon} ${styles.bookmarkFill}`}>
+                <span className={`${styles['icon']} ${styles['bookmarkFill']}`}>
                     <BookmarkIcon />
                 </span>
-                <span className={`${styles.icon} ${styles.bookmarkClear}`}>
+                <span
+                    className={`${styles['icon']} ${styles['bookmarkClear']}`}
+                >
                     <BookmarkOIcon />
                 </span>
-                <span className={styles.ariaLabel}>Bewaren</span>
+                <span className={styles['ariaLabel']}>Bewaren</span>
             </Button>
         </section>
     );
 }
 
 function getCssClassNames(): string[] {
-    return [styles.horizontalToolbar, ...getButtonCssClassNames()];
+    return [styles['horizontalToolbar'], ...getButtonCssClassNames()];
 }
 
 export { HorizontalToolbar, getCssClassNames };

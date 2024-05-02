@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonFollow } from '../button/ButtonFollow';
-import styles from './RelatedTopics.module.scss';
+import * as styles from './RelatedTopics.module.scss';
 
 type Topic = {
     topic: string;

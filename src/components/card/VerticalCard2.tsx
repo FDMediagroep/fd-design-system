@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './VerticalCard2.module.scss';
+import * as styles from './VerticalCard2.module.scss';
 
 interface Props {
     style?: React.CSSProperties;
@@ -74,7 +74,7 @@ function VerticalCard2(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.verticalCard2];
+    return [styles['verticalCard2']];
 }
 
 export { VerticalCard2, getCssClassNames };

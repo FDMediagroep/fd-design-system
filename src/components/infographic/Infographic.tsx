@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Infographic.module.scss';
+import * as styles from './Infographic.module.scss';
 
 interface Props {
     height?: string;
@@ -9,7 +9,7 @@ interface Props {
 function Infographic(props: Props) {
     return (
         <iframe
-            className={styles.infographic}
+            className={styles['infographic']}
             src={props.src}
             height={props.height ?? 500}
         />
@@ -17,7 +17,7 @@ function Infographic(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.youtube];
+    return [styles['youtube']];
 }
 
 export { Infographic, getCssClassNames };

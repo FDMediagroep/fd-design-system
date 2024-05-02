@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ButtonCta.module.scss';
+import * as styles from './ButtonCta.module.scss';
 
 type Sizes = 's' | 'm';
 
@@ -17,12 +17,12 @@ interface Props {
  * @param props
  */
 function ButtonCta(props: Props) {
-    const sizeClass = props.size === 'm' ? styles.m : '';
+    const sizeClass = props.size === 'm' ? styles['m'] : '';
 
     return (
         <button
             {...props}
-            className={`${styles.fdButtonCta} ${sizeClass}${
+            className={`${styles['fdButtonCta']} ${sizeClass}${
                 props.className ? ` ${props.className}` : ''
             }`}
         >
@@ -32,7 +32,7 @@ function ButtonCta(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdButtonCta];
+    return [styles['fdButtonCta']];
 }
 
 export { ButtonCta, getCssClassNames };

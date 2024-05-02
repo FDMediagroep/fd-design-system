@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './OEmbed.module.scss';
+import * as styles from './OEmbed.module.scss';
 
 interface Props {
     type: 'twitter-embed' | 'soundcloud-embed' | 'instagram-embed';
@@ -8,14 +8,14 @@ interface Props {
 function OEmbed(props: Props) {
     return (
         <div
-            className={`${styles.oembed} ${props.type}`}
+            className={`${styles['oembed']} ${props.type}`}
             data-url={props.url}
         />
     );
 }
 
 function getCssClassNames(): string[] {
-    return [styles.oembed];
+    return [styles['oembed']];
 }
 
 export { OEmbed, getCssClassNames };

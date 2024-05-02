@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import styles from './CookieConsent.module.scss';
+import * as styles from './CookieConsent.module.scss';
 import {
     Button,
     getCssClassNames as getButtonCssClassNames,
@@ -132,8 +132,8 @@ function CookieConsent(props: Props) {
 
     return (
         <Modal
-            className={styles.fdCookieConsent}
-            contentBoxClassName={styles.contentBoxAdjust}
+            className={styles['fdCookieConsent']}
+            contentBoxClassName={styles['contentBoxAdjust']}
             disableBackgroundClose={true}
             hideCloseButton={true}
             hideCloseIcon={true}
@@ -158,7 +158,7 @@ function CookieConsent(props: Props) {
                                 </p>
 
                                 <h3>FDMG</h3>
-                                <div className={styles.settings}>
+                                <div className={styles['settings']}>
                                     <Checkbox
                                         id={VendorNames['fdmg']}
                                         label="FDMG"
@@ -181,7 +181,7 @@ function CookieConsent(props: Props) {
                                     />
                                 </div>
                                 <h3>Derde partijen</h3>
-                                <div className={styles.settings}>
+                                <div className={styles['settings']}>
                                     <Checkbox
                                         id={VendorNames['fdmg-personalized']}
                                         label="Personalisatie"
@@ -249,13 +249,19 @@ function CookieConsent(props: Props) {
                 ]}
             />
             <footer>
-                <Button onClick={handleClose} className={styles.button}>
+                <Button onClick={handleClose} className={styles['button']}>
                     {props.closeLabel ?? 'Close'}
                 </Button>
-                <ButtonGhost onClick={handleDenyAll} className={styles.button}>
+                <ButtonGhost
+                    onClick={handleDenyAll}
+                    className={styles['button']}
+                >
                     {props.denyAllLabel ?? 'Deny all'}
                 </ButtonGhost>
-                <ButtonCta onClick={handleAcceptAll} className={styles.button}>
+                <ButtonCta
+                    onClick={handleAcceptAll}
+                    className={styles['button']}
+                >
                     {props.acceptAllLabel ?? 'Accept all'}
                 </ButtonCta>
             </footer>
@@ -265,7 +271,7 @@ function CookieConsent(props: Props) {
 
 function getCssClassNames(): string[] {
     return [
-        styles.fdCookieConsent,
+        styles['fdCookieConsent'],
         ...getLockedContentCssClassNames(),
         ...getModalCssClassNames(),
         ...getAccordionCssClassNames(),

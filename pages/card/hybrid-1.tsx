@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './cards.module.scss';
+import * as styles from './cards.module.scss';
 import { Explain } from '../../src/components/Explain';
 import {
     HybridCard1,
@@ -78,7 +78,7 @@ function Page() {
             </Head>
 
             <Explain
-                previewClassName={`${styles.hybrid1Grid} grid`}
+                previewClassName={`${styles['hybrid1Grid']} grid`}
                 anchor="hybrid1"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Hybrid Card 1"

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './HorizontalCard1.module.scss';
+import * as styles from './HorizontalCard1.module.scss';
 
 interface Props {
     id: string;
@@ -24,9 +24,9 @@ function HorizontalCard1(props: Props) {
     return (
         <article
             style={props.style}
-            className={`${styles.horizontalCard1}${
+            className={`${styles['horizontalCard1']}${
                 props.className ? ` ${props.className}` : ''
-            }${props.isRead ? ` ${styles.isRead}` : ''} xs__p+4`}
+            }${props.isRead ? ` ${styles['isRead']}` : ''} xs__p+4`}
             id={props.id}
         >
             <a href={props.url} aria-label={props.title}>
@@ -45,28 +45,30 @@ function HorizontalCard1(props: Props) {
                 )}
 
                 {!props.imageUrl && !props.imageComponent && (
-                    <div className={`${styles.figure} ${styles.empty} xs__m-0`}>
+                    <div
+                        className={`${styles['figure']} ${styles['empty']} xs__m-0`}
+                    >
                         <img src="/assets/images/fd-logo.svg" alt="FD-Logo" />
                     </div>
                 )}
 
-                <div className={`${styles.teaserText} xs__pl+4 s__p+4`}>
+                <div className={`${styles['teaserText']} xs__pl+4 s__p+4`}>
                     <div
-                        className={`${styles.meta} xs__m-0 xs__mb+2 body-text sans xs`}
+                        className={`${styles['meta']} xs__m-0 xs__mb+2 body-text sans xs`}
                     >
                         <time>{props.time}</time>
 
                         {props.label && (
                             <>
-                                <span className={styles.dot}>•</span>
-                                <span className={styles.prefix}>
+                                <span className={styles['dot']}>•</span>
+                                <span className={styles['prefix']}>
                                     {props.label}
                                 </span>
                             </>
                         )}
                     </div>
 
-                    <div className={styles.textContainer}>
+                    <div className={styles['textContainer']}>
                         <h1 className="heading serif s xs__m-0">
                             {props.title}
                         </h1>
@@ -78,7 +80,7 @@ function HorizontalCard1(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.horizontalCard1];
+    return [styles['horizontalCard1']];
 }
 
 export { HorizontalCard1, getCssClassNames };

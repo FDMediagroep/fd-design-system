@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ArticleImage.module.scss';
+import * as styles from './ArticleImage.module.scss';
 
 interface Props {
     baseUrl?: string;
@@ -14,7 +14,7 @@ interface Props {
  */
 function ArticleImage(props: Props) {
     return (
-        <figure className={styles.articleImage}>
+        <figure className={styles['articleImage']}>
             <picture>
                 <source
                     media="(max-width:640px)"
@@ -52,10 +52,10 @@ function ArticleImage(props: Props) {
             </picture>
             <figcaption>
                 {props.caption && (
-                    <span className={styles.caption}>{props.caption}</span>
+                    <span className={styles['caption']}>{props.caption}</span>
                 )}
                 {props.credit && (
-                    <span className={styles.credit}>{props.credit}</span>
+                    <span className={styles['credit']}>{props.credit}</span>
                 )}
             </figcaption>
         </figure>
@@ -63,7 +63,7 @@ function ArticleImage(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.articleImage];
+    return [styles['articleImage']];
 }
 
 export { ArticleImage, getCssClassNames };

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ButtonFollow.module.scss';
+import * as styles from './ButtonFollow.module.scss';
 
 interface Props {
     className?: string;
@@ -21,7 +21,7 @@ function ButtonFollow(props: Props) {
         <>
             <button
                 {...props}
-                className={`${styles.fdFollowButton}${
+                className={`${styles['fdFollowButton']}${
                     props.className ? ` ${props.className}` : ''
                 }`}
                 data-tag={props.tag}
@@ -29,11 +29,15 @@ function ButtonFollow(props: Props) {
                 data-addurl={props.addUrl ?? '/add-interest'}
                 data-deleteurl={props.removeUrl ?? '/delete-interest'}
             >
-                <span className={styles.cross} />{' '}
-                <span className={`${styles.buttonText} ${styles.defaultText}`}>
+                <span className={styles['cross']} />{' '}
+                <span
+                    className={`${styles['buttonText']} ${styles['defaultText']}`}
+                >
                     {props.addText ?? 'Volg'}
                 </span>
-                <span className={`${styles.buttonText} ${styles.activeText}`}>
+                <span
+                    className={`${styles['buttonText']} ${styles['activeText']}`}
+                >
                     {props.removeText ?? 'Ontvolg'}
                 </span>
             </button>
@@ -42,7 +46,7 @@ function ButtonFollow(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdFollowButton];
+    return [styles['fdFollowButton']];
 }
 
 export { ButtonFollow, getCssClassNames };

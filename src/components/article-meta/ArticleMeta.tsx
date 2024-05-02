@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ArticleMeta.module.scss';
+import * as styles from './ArticleMeta.module.scss';
 
 type Author = {
     id: number;
@@ -18,7 +18,7 @@ interface Props {
  */
 function ArticleMeta(props: Props) {
     return (
-        <section className={styles.meta}>
+        <section className={styles['meta']}>
             <span>
                 {props.authors.map((author) => {
                     if (author?.directory) {
@@ -26,7 +26,7 @@ function ArticleMeta(props: Props) {
                             <a
                                 key={author.fullName}
                                 href={`/auteur/${author.directory}`}
-                                className={styles.author}
+                                className={styles['author']}
                             >
                                 {author.fullName}
                             </a>
@@ -35,7 +35,7 @@ function ArticleMeta(props: Props) {
                         return (
                             <span
                                 key={author.fullName}
-                                className={styles.author}
+                                className={styles['author']}
                             >
                                 {author.fullName}
                             </span>
@@ -49,7 +49,7 @@ function ArticleMeta(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.meta];
+    return [styles['meta']];
 }
 
 export { ArticleMeta, getCssClassNames };

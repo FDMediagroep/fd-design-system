@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import styles from './LockedContent.module.scss';
+import * as styles from './LockedContent.module.scss';
 import { SpyglassIcon } from '../../design-tokens/icons';
 import CookieConsentStore, { VendorNames } from './CookieConsentStore';
 
@@ -97,15 +97,15 @@ function LockedContent(props: Props) {
     return unlocked ? (
         <span ref={unlockedRef}>{props.children}</span>
     ) : (
-        <div className={styles.fdLockedContent}>
+        <div className={styles['fdLockedContent']}>
             <div
-                className={styles.blockedContentContainer}
+                className={styles['blockedContentContainer']}
                 tabIndex={0}
                 onClick={unlock}
                 onKeyPress={handleActivation}
             >
-                <span className={styles.lockText}>
-                    <span className={styles.lock}>
+                <span className={styles['lockText']}>
+                    <span className={styles['lock']}>
                         <SpyglassIcon />
                     </span>{' '}
                     <span>{props.lockDescription}</span>
@@ -116,7 +116,7 @@ function LockedContent(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdLockedContent];
+    return [styles['fdLockedContent']];
 }
 
 export { LockedContent, getCssClassNames };

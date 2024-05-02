@@ -8,7 +8,8 @@ const customJestConfig = {
     coverageReporters: ['lcov', 'text'],
     testPathIgnorePatterns: ['/cypress/', '__tests__/mockdata/'],
     moduleNameMapper: {
-        '\\.(css|less|scss|sss|styl)$': 'identity-obj-proxy',
+        '^.+\\.(svg)$': '<rootDir>/__mocks__/fileMock.js',
+        '\\.(css|less|scss|sss|styl)$': '<rootDir>/__mocks__/styleMock.js',
     },
     setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
     testEnvironment: 'jest-environment-jsdom',
@@ -23,19 +24,4 @@ const customJestConfig = {
     },
 };
 
-/**
- * We handle SVG in our own way instead of letting Next.js use next/image.
- * @param {} config
- * @returns
- */
-const fdmgJestConfig = async (config) => {
-    const nextConfig = { ...config };
-    nextConfig.moduleNameMapper = {
-        '^.+\\.(svg)$': '<rootDir>/__mocks__/fileMock.js',
-        ...nextConfig.moduleNameMapper,
-    };
-    return nextConfig;
-};
-
-// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
-module.exports = fdmgJestConfig(customJestConfig);
+module.exports = customJestConfig;

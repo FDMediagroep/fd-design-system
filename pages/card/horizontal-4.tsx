@@ -2,7 +2,7 @@ import React from 'react';
 import { Explain } from '../../src/components/Explain';
 import Head from 'next/head';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
-import styles from './cards.module.scss';
+import * as styles from './cards.module.scss';
 import {
     HorizontalCard4,
     getCssClassNames,
@@ -64,7 +64,7 @@ function Page() {
             </Head>
 
             <Explain
-                previewClassName={`${styles.horizontalGrid} ${styles.autoMinHeight} grid`}
+                previewClassName={`${styles['horizontalGrid']} ${styles['autoMinHeight']} grid`}
                 anchor="horizontal4"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Horizontal Card 4"

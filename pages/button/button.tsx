@@ -3,7 +3,7 @@ import { Explain } from '../../src/components/Explain';
 import { Button, getCssClassNames } from '../../src/components/button/Button';
 import Head from 'next/head';
 import { EnvelopeIcon } from '../../src/design-tokens/icons';
-import styles from './buttons.module.scss';
+import * as styles from './buttons.module.scss';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
 
 export const metaTitle = 'Neutral Button';
@@ -28,7 +28,7 @@ function Page() {
             </Head>
 
             <Explain
-                previewClassName={styles.buttons}
+                previewClassName={styles['buttons']}
                 anchor="default"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Button Neutral (default)"
@@ -65,7 +65,7 @@ function Page() {
             </Explain>
 
             <Explain
-                previewClassName={styles.buttons}
+                previewClassName={styles['buttons']}
                 anchor="m"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Button Neutral (M)"

@@ -6,7 +6,7 @@ import {
 } from '../../src/components/button/ButtonGhost';
 import Head from 'next/head';
 import { EnvelopeIcon } from '../../src/design-tokens/icons';
-import styles from './buttons.module.scss';
+import * as styles from './buttons.module.scss';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
 
 export const metaTitle = 'Ghost Button';
@@ -31,7 +31,7 @@ function Page() {
             </Head>
 
             <Explain
-                previewClassName={styles.buttons}
+                previewClassName={styles['buttons']}
                 anchor="default"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Ghost Button (default)"
@@ -85,7 +85,7 @@ function Page() {
             </Explain>
 
             <Explain
-                previewClassName={styles.buttons}
+                previewClassName={styles['buttons']}
                 anchor="m"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Ghost Button (M)"

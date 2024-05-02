@@ -6,7 +6,7 @@ import {
 } from '../../src/components/card/HorizontalCard2';
 import Head from 'next/head';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
-import styles from './cards.module.scss';
+import * as styles from './cards.module.scss';
 
 const horizontalCards2: any = [
     {
@@ -60,7 +60,7 @@ function Page() {
             </Head>
 
             <Explain
-                previewClassName={`${styles.horizontalGrid} grid`}
+                previewClassName={`${styles['horizontalGrid']} grid`}
                 anchor="horizontal2"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Horizontal Card 2"

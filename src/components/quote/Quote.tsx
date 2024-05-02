@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Quote.module.scss';
+import * as styles from './Quote.module.scss';
 
 interface Props {
     className?: string;
@@ -10,7 +10,7 @@ interface Props {
 function Quote(props: Props) {
     return (
         <figure
-            className={`${styles.quote}${
+            className={`${styles['quote']}${
                 props.className ? ` ${props.className}` : ``
             }`}
         >
@@ -21,7 +21,7 @@ function Quote(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.quote];
+    return [styles['quote']];
 }
 
 export { Quote, getCssClassNames };

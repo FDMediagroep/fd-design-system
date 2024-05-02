@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './InfographicExtended.module.scss';
+import * as styles from './InfographicExtended.module.scss';
 
 interface Props {
     darkModeInvert?: boolean;
@@ -19,8 +19,8 @@ interface Props {
 function InfographicExtended(props: Props) {
     return (
         <figure
-            className={`${styles.infographicExtended}${
-                props.darkModeInvert ? ` ${styles.invertable}` : ''
+            className={`${styles['infographicExtended']}${
+                props.darkModeInvert ? ` ${styles['invertable']}` : ''
             }`}
         >
             <picture>
@@ -58,7 +58,7 @@ function InfographicExtended(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.infographicExtended];
+    return [styles['infographicExtended']];
 }
 
 export { InfographicExtended, getCssClassNames };
