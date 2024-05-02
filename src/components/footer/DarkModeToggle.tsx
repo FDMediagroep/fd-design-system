@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ThemeStore, { Theme } from '../../stores/ThemeStore';
-import styles from './Footer.module.scss';
+import * as styles from './Footer.module.scss';
 
 export function DarkModeToggle() {
     const [theme, setTheme] = useState(ThemeStore.getTheme());
@@ -33,7 +33,7 @@ export function DarkModeToggle() {
             <label>Theme:</label>
             <button
                 className={`body-text sans xs system${
-                    theme === 'system' ? ` ${styles.active}` : ''
+                    theme === 'system' ? ` ${styles['active']}` : ''
                 }`}
                 onClick={handleThemeChange.bind(null, 'system')}
             >
@@ -42,7 +42,7 @@ export function DarkModeToggle() {
             <span>&nbsp;|&nbsp;</span>
             <button
                 className={`body-text sans xs light${
-                    theme === 'light' ? ` ${styles.active}` : ''
+                    theme === 'light' ? ` ${styles['active']}` : ''
                 }`}
                 onClick={handleThemeChange.bind(null, 'light')}
             >
@@ -51,7 +51,7 @@ export function DarkModeToggle() {
             <span>&nbsp;|&nbsp;</span>
             <button
                 className={`body-text sans xs dark${
-                    theme === 'dark' ? ` ${styles.active}` : ''
+                    theme === 'dark' ? ` ${styles['active']}` : ''
                 }`}
                 onClick={handleThemeChange.bind(null, 'dark')}
             >

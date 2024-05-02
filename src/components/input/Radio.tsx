@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Radio.module.scss';
+import * as styles from './Radio.module.scss';
 
 export interface Props {
     /**
@@ -42,7 +42,7 @@ function Radio(props: Props) {
 
     return (
         <label
-            className={`${styles.fdRadio}${className ? ` ${className}` : ''}`}
+            className={`${styles['fdRadio']}${className ? ` ${className}` : ''}`}
         >
             <input
                 {...rest}
@@ -53,13 +53,13 @@ function Radio(props: Props) {
                 defaultChecked={defaultChecked}
                 aria-label={label}
             />
-            <span className={styles.radio}>{label}</span>
+            <span className={styles['radio']}>{label}</span>
         </label>
     );
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdRadio];
+    return [styles['fdRadio']];
 }
 
 export { Radio, getCssClassNames };

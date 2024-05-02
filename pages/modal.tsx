@@ -3,7 +3,7 @@ import { Explain } from '../src/components/Explain';
 import { Modal, getCssClassNames } from '../src/components/modal/Modal';
 import Head from 'next/head';
 import { Switch } from '../src/components/input/Switch';
-import styles from './modal.module.scss';
+import * as styles from './modal.module.scss';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
 import { ButtonCta } from '../src/deno';
 
@@ -61,7 +61,7 @@ function Page() {
                 }
             >
                 <Modal
-                    contentBoxClassName={styles.modal}
+                    contentBoxClassName={styles['modal']}
                     opened={opened}
                     onClose={handleModalClose}
                 >

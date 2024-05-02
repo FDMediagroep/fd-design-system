@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './VerticalCard1.module.scss';
+import * as styles from './VerticalCard1.module.scss';
 
 interface Props {
     style?: React.CSSProperties;
@@ -26,9 +26,9 @@ function VerticalCard1(props: Props) {
     return (
         <article
             style={props.style}
-            className={`${styles.verticalCard1}${
+            className={`${styles['verticalCard1']}${
                 props.className ? ` ${props.className}` : ''
-            }${props.isRead ? ` ${styles.isRead}` : ''}`}
+            }${props.isRead ? ` ${styles['isRead']}` : ''}`}
             id={props.id}
             aria-label={props.title}
         >
@@ -65,12 +65,12 @@ function VerticalCard1(props: Props) {
                     <figcaption>{props.caption}</figcaption>
                 </figure>
 
-                <div className={styles.teaserText}>
+                <div className={styles['teaserText']}>
                     {props.label && (
                         <div
-                            className={`${styles.meta} xs__mb+2 body-text sans xs`}
+                            className={`${styles['meta']} xs__mb+2 body-text sans xs`}
                         >
-                            <span className={styles.prefix}>
+                            <span className={styles['prefix']}>
                                 {props.readingTime && (
                                     <span className={styles['reading-time']}>
                                         {props.readingTime} min leestijd •{' '}
@@ -82,9 +82,9 @@ function VerticalCard1(props: Props) {
                     )}
                     {!props.label && props.readingTime && (
                         <div
-                            className={`${styles.meta} xs__mb+2 body-text sans xs`}
+                            className={`${styles['meta']} xs__mb+2 body-text sans xs`}
                         >
-                            <span className={styles.prefix}>
+                            <span className={styles['prefix']}>
                                 <span className={styles['reading-time']}>
                                     {props.readingTime} min leestijd
                                 </span>
@@ -97,7 +97,7 @@ function VerticalCard1(props: Props) {
                             {props.title}
                         </h1>
                         <p
-                            className={`${styles.intro} body-text sans s xs__m-0 xs__mt+2`}
+                            className={`${styles['intro']} body-text sans s xs__m-0 xs__mt+2`}
                         >
                             {props.intro}
                         </p>
@@ -109,7 +109,7 @@ function VerticalCard1(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.verticalCard1];
+    return [styles['verticalCard1']];
 }
 
 export { VerticalCard1, getCssClassNames };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BookmarkIcon, BookmarkOIcon } from '../../../design-tokens/icons';
-import styles from './Footer.module.scss';
+import * as styles from './Footer.module.scss';
 
 interface Props {
     className?: string;
@@ -12,7 +12,7 @@ interface Props {
 function Footer(props: Props) {
     return (
         <footer
-            className={`${styles.footer}${
+            className={`${styles['footer']}${
                 props.className ? ` ${props.className}` : ''
             } xs__p-0 xs__pr+4 xs__pb+4 xs__pl+4`}
         >
@@ -20,7 +20,7 @@ function Footer(props: Props) {
                 <a onClick={props.onBookmark} className="xs__mt+2">
                     {props.bookmarked ? (
                         <span
-                            className={`${styles.icon}${
+                            className={`${styles['icon']}${
                                 props.iconSpanClassName
                                     ? ` ${props.iconSpanClassName}`
                                     : ''
@@ -30,7 +30,7 @@ function Footer(props: Props) {
                         </span>
                     ) : (
                         <span
-                            className={`${styles.icon}${
+                            className={`${styles['icon']}${
                                 props.iconSpanClassName
                                     ? ` ${props.iconSpanClassName}`
                                     : ''
@@ -47,7 +47,7 @@ function Footer(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.footer];
+    return [styles['footer']];
 }
 
 export { Footer, getCssClassNames };

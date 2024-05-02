@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './BulletPoint.module.scss';
+import * as styles from './BulletPoint.module.scss';
 import { BulletIcon, BulletRedIcon } from '../../design-tokens/icons';
 
 export type Alignment = 'block' | 'right';
@@ -18,18 +18,18 @@ function BulletPoint(props: Props) {
     return (
         <div
             data-variant={props.variant}
-            className={`${styles.bulletPoint} ${
-                props.alignment === 'right' ? styles.right : ''
+            className={`${styles['bulletPoint']} ${
+                props.alignment === 'right' ? styles['right'] : ''
             }`}
         >
             {props.bullets.map((bullet, idx) => (
                 <p key={idx}>
                     {props.variant ? (
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <BulletRedIcon />
                         </span>
                     ) : (
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <BulletIcon />
                         </span>
                     )}
@@ -41,7 +41,7 @@ function BulletPoint(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.bulletPoint];
+    return [styles['bulletPoint']];
 }
 
 export { BulletPoint, getCssClassNames };

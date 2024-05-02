@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './VerticalCard6.module.scss';
+import * as styles from './VerticalCard6.module.scss';
 
 interface Props {
     style?: React.CSSProperties;
@@ -22,7 +22,7 @@ function VerticalCard6(props: Props) {
     return (
         <article
             style={props.style}
-            className={`${styles.verticalCard6}${
+            className={`${styles['verticalCard6']}${
                 props.className ? ` ${props.className}` : ''
             }`}
             id={props.id}
@@ -41,14 +41,14 @@ function VerticalCard6(props: Props) {
                 )}
                 {!props.imageUrl && !props.imageComponent && (
                     <div
-                        className={`${styles.figure} ${styles.empty} xs__m-0 s__mt-4 s__mb-0`}
+                        className={`${styles['figure']} ${styles['empty']} xs__m-0 s__mt-4 s__mb-0`}
                     >
                         <img src="/assets/images/fd-logo.svg" alt="FD-Logo" />
                     </div>
                 )}
 
                 <div
-                    className={`${styles.teaserText} xs__p+4 m__p-0 xs__p+2 m__p+4`}
+                    className={`${styles['teaserText']} xs__p+4 m__p-0 xs__p+2 m__p+4`}
                 >
                     {props.label && (
                         <div className={`xs__mb+2 body-text sans xs`}>
@@ -75,7 +75,7 @@ function VerticalCard6(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.verticalCard6];
+    return [styles['verticalCard6']];
 }
 
 export { VerticalCard6, getCssClassNames };

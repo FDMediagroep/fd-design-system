@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import styles from './Styles.module.scss';
-import articleStyles from '../[section]/[id]/Article.module.scss';
+import * as styles from './Styles.module.scss';
+import * as articleStyles from '../[section]/[id]/Article.module.scss';
 import { Quote } from '../../src/components/quote/Quote';
 import { NumberFrame } from '../../src/components/numberframe/NumberFrame';
 import { WordFrame } from '../../src/components/wordframe/WordFrame';
@@ -67,14 +67,14 @@ function JorienBeukers() {
             </Head>
 
             <article
-                className={`${styles.hallOfFame} ${articleStyles.article}`}
+                className={`${styles['hallOfFame']} ${articleStyles['article']}`}
             >
                 <header>
                     <h1>JBreaking News</h1>
                 </header>
 
                 <ArticleMeta authors={[{ id: 1, fullName: 'Carlo M.' }]} />
-                <div className={styles.embedContainer}>
+                <div className={styles['embedContainer']}>
                     <iframe
                         width="560"
                         height="315"

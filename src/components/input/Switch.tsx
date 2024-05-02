@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Switch.module.scss';
+import * as styles from './Switch.module.scss';
 
 export interface Props {
     /**
@@ -41,7 +41,7 @@ function Switch(props: Props) {
 
     return (
         <div
-            className={`${styles.fdInputSwitch}${
+            className={`${styles['fdInputSwitch']}${
                 className ? ` ${className}` : ''
             }`}
         >
@@ -55,15 +55,15 @@ function Switch(props: Props) {
                     defaultChecked={defaultChecked}
                     aria-label={label}
                 />
-                <span className={styles.switch} />
-                <span className={styles.switchLabel}>{label}</span>
+                <span className={styles['switch']} />
+                <span className={styles['switchLabel']}>{label}</span>
             </label>
         </div>
     );
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdInputSwitch];
+    return [styles['fdInputSwitch']];
 }
 
 export { Switch, getCssClassNames };

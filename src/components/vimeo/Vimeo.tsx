@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './Vimeo.module.scss';
+import * as styles from './Vimeo.module.scss';
 
 interface Props {
     id: string;
 }
 function Vimeo(props: Props) {
     return (
-        <div className={styles.vimeo}>
+        <div className={styles['vimeo']}>
             <iframe
                 src={`https://player.vimeo.com/video/${props.id}?badge=0`}
                 frameBorder="0"
@@ -17,7 +17,7 @@ function Vimeo(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.vimeo];
+    return [styles['vimeo']];
 }
 
 export { Vimeo, getCssClassNames };

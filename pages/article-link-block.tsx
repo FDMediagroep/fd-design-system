@@ -5,7 +5,7 @@ import {
     getCssClassNames,
 } from '../src/components/article-link-block/LinkBlock';
 import PageStore from '../src/stores/PageStore';
-import styles from './article-link-block.module.scss';
+import * as styles from './article-link-block.module.scss';
 import Head from 'next/head';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
 
@@ -44,7 +44,7 @@ function Page() {
             <Explain
                 anchor="default"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
-                previewClassName={styles.preview}
+                previewClassName={styles['preview']}
                 legend="Link Block"
                 reactComponentName="LinkBlock"
                 description={
@@ -64,7 +64,7 @@ function Page() {
             <Explain
                 anchor="align-right"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
-                previewClassName={styles.preview}
+                previewClassName={styles['preview']}
                 legend="Link Block (align: right)"
                 reactComponentName="LinkBlock"
                 description={

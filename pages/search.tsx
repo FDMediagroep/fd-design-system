@@ -7,7 +7,7 @@ import { GridContainer } from '@fdmg/css-grid/GridContainer';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import styles from './search.module.scss';
+import * as styles from './search.module.scss';
 
 import { metaTitle as abTitle, metaDescription as abDescription } from './ab';
 import {
@@ -423,14 +423,17 @@ export default function Page() {
     useEffect(() => {
         const observer = new MutationObserver(() => {
             interceptLinks(
-                document.querySelectorAll(`.${styles.searchResults} a[href]`)
+                document.querySelectorAll(`.${styles['searchResults']} a[href]`)
             );
         });
-        observer.observe(document.querySelector(`.${styles.searchResults}`), {
-            attributes: true,
-            childList: true,
-            subtree: true,
-        });
+        observer.observe(
+            document.querySelector(`.${styles['searchResults']}`),
+            {
+                attributes: true,
+                childList: true,
+                subtree: true,
+            }
+        );
         return () => {
             observer.disconnect();
         };
@@ -457,7 +460,7 @@ export default function Page() {
     }, [searchString]);
 
     return (
-        <section className={styles.search}>
+        <section className={styles['search']}>
             <Head>
                 <title>Search - Design System - Het Financieele Dagblad</title>
                 <meta
@@ -480,7 +483,7 @@ export default function Page() {
             </Head>
 
             <GridContainer
-                className={styles.searchContent}
+                className={styles['searchContent']}
                 attributes={['grid']}
             >
                 <GridContainer attributes={['xs-12']}>
@@ -489,12 +492,12 @@ export default function Page() {
                         action="/search"
                         onSubmit={handleSearchSubmit}
                     >
-                        <div className={styles.searchForm}>
+                        <div className={styles['searchForm']}>
                             {searchString ? (
                                 <TextInput
                                     key={searchString}
                                     id="searchString"
-                                    className={styles.searchTextInput}
+                                    className={styles['searchTextInput']}
                                     label="Search"
                                     name="q"
                                     aria-label="Search text"
@@ -504,7 +507,7 @@ export default function Page() {
                                 <TextInput
                                     key="noSearchString"
                                     id="searchString"
-                                    className={styles.searchTextInput}
+                                    className={styles['searchTextInput']}
                                     label="Search"
                                     name="q"
                                     aria-label="Search text"
@@ -513,7 +516,7 @@ export default function Page() {
                         </div>
                     </form>
                     {results?.length ? <h2>{results.length} Results</h2> : null}
-                    <div className={styles.searchResults}>
+                    <div className={styles['searchResults']}>
                         {results.map((result, idx) => {
                             const path = `${result[0]}`;
                             const title = result[1].title;

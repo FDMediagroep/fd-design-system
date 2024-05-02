@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './NumberFrame.module.scss';
+import * as styles from './NumberFrame.module.scss';
 
 interface Props {
     number: string;
@@ -8,7 +8,7 @@ interface Props {
 
 function NumberFrame(props: Props) {
     return (
-        <div className={styles.numberFrame}>
+        <div className={styles['numberFrame']}>
             <h2>{props.number}</h2>
             <p>{props.description}</p>
         </div>
@@ -16,7 +16,7 @@ function NumberFrame(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.numberFrame];
+    return [styles['numberFrame']];
 }
 
 export { NumberFrame, getCssClassNames };

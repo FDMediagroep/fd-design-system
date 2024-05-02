@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './StockTicker.module.scss';
+import * as styles from './StockTicker.module.scss';
 import { ValueUpIcon, ValueDownIcon } from '../../design-tokens/icons';
 
 export type Stock = {
@@ -33,9 +33,9 @@ function StockTicker(props: Props) {
     function getUpOrDownClass(current, next) {
         let className = '';
         if (current > next) {
-            className = styles.down;
+            className = styles['down'];
         } else if (current < next) {
-            className = styles.up;
+            className = styles['up'];
         }
 
         return className;
@@ -43,16 +43,16 @@ function StockTicker(props: Props) {
 
     function getStockContainerBg(current) {
         if (current > 0) {
-            return styles.stockContainerPositive;
+            return styles['stockContainerPositive'];
         } else if (current < 0) {
-            return styles.stockContainerNegative;
+            return styles['stockContainerNegative'];
         }
     }
 
     return (
         <section
             className={`${props.className ? `${props.className} ` : ''}${
-                styles.stockTicker
+                styles['stockTicker']
             }`}
         >
             {current.map((stock) => {
@@ -60,33 +60,33 @@ function StockTicker(props: Props) {
                     <a
                         key={stock.name}
                         className={`${
-                            styles.stockContainer
+                            styles['stockContainer']
                         } ${getStockContainerBg(stock.percentage)} ${
-                            stock.open ? '' : styles.closed
+                            stock.open ? '' : styles['closed']
                         }`}
                         href={stock.href}
                     >
-                        <div className={styles.arrow}>
+                        <div className={styles['arrow']}>
                             {stock.percentage >= 0 ? (
-                                <span className={styles.icon}>
+                                <span className={styles['icon']}>
                                     <ValueUpIcon />
                                 </span>
                             ) : (
-                                <span className={styles.icon}>
+                                <span className={styles['icon']}>
                                     <ValueDownIcon />
                                 </span>
                             )}
                         </div>
-                        <span className={styles.stock}>
-                            <span className={styles.stockName}>
+                        <span className={styles['stock']}>
+                            <span className={styles['stockName']}>
                                 {stock.name}
                             </span>
                             <span
-                                className={`${styles.price} ${
+                                className={`${styles['price']} ${
                                     next.length && stock.open
-                                        ? styles.transitioning
+                                        ? styles['transitioning']
                                         : ''
-                                } ${stock.open ? '' : styles.closed}`}
+                                } ${stock.open ? '' : styles['closed']}`}
                             >
                                 {next.map((nextStock) => {
                                     if (nextStock.name === stock.name) {
@@ -99,12 +99,12 @@ function StockTicker(props: Props) {
                                                 key={nextStock.name}
                                             >
                                                 <span
-                                                    className={`${styles.next} ${upDownClass}`}
+                                                    className={`${styles['next']} ${upDownClass}`}
                                                 >
                                                     {nextStock.price}
                                                 </span>
                                                 <span
-                                                    className={`${styles.current} ${upDownClass}`}
+                                                    className={`${styles['current']} ${upDownClass}`}
                                                 >
                                                     {stock.price}
                                                 </span>
@@ -115,13 +115,13 @@ function StockTicker(props: Props) {
                                 {stock.price}
                             </span>
                             <span
-                                className={`${styles.percentage} 
+                                className={`${styles['percentage']} 
                                 ${
                                     next.length && stock.open
-                                        ? styles.transitioning
+                                        ? styles['transitioning']
                                         : ''
-                                } ${styles.percentage} ${
-                                    stock.open ? '' : styles.closed
+                                } ${styles['percentage']} ${
+                                    stock.open ? '' : styles['closed']
                                 }`}
                             >
                                 {next.map((nextStock) => {
@@ -136,7 +136,7 @@ function StockTicker(props: Props) {
                                             >
                                                 <span
                                                     key={nextStock.name}
-                                                    className={`${styles.next} ${upDownClass}`}
+                                                    className={`${styles['next']} ${upDownClass}`}
                                                 >
                                                     {nextStock.percentage > 0
                                                         ? '+'
@@ -145,7 +145,7 @@ function StockTicker(props: Props) {
                                                 </span>
 
                                                 <span
-                                                    className={`${styles.current} ${upDownClass}`}
+                                                    className={`${styles['current']} ${upDownClass}`}
                                                 >
                                                     {nextStock.percentage > 0
                                                         ? '+'
@@ -168,7 +168,7 @@ function StockTicker(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.stockTicker];
+    return [styles['stockTicker']];
 }
 
 export { getCssClassNames, StockTicker };

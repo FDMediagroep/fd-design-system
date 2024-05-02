@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import styles from './HorizontalCard3.module.scss';
+import * as styles from './HorizontalCard3.module.scss';
 
 interface Props {
     id: string;
@@ -22,9 +22,9 @@ interface Props {
 function HorizontalCard3(props: Props) {
     return (
         <article
-            className={`${styles.horizontalCard3}${
+            className={`${styles['horizontalCard3']}${
                 props.className ? ` ${props.className}` : ''
-            }${props.isRead ? ` ${styles.isRead}` : ''} xs__p+4`}
+            }${props.isRead ? ` ${styles['isRead']}` : ''} xs__p+4`}
             id={props.id}
         >
             <a href={props.url} aria-label={props.title}>
@@ -43,12 +43,14 @@ function HorizontalCard3(props: Props) {
                 )}
 
                 {!props.imageUrl && !props.imageComponent && (
-                    <div className={`${styles.figure} ${styles.empty} xs__m-0`}>
+                    <div
+                        className={`${styles['figure']} ${styles['empty']} xs__m-0`}
+                    >
                         <img src="/assets/images/fd-logo.svg" alt="FD-Logo" />
                     </div>
                 )}
 
-                <div className={`${styles.teaserText} xs__pl+4 s__p+4`}>
+                <div className={`${styles['teaserText']} xs__pl+4 s__p+4`}>
                     <h1 className="heading serif xs xs__m-0">{props.title}</h1>
                 </div>
             </a>
@@ -57,7 +59,7 @@ function HorizontalCard3(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.horizontalCard3];
+    return [styles['horizontalCard3']];
 }
 
 export { HorizontalCard3, getCssClassNames };

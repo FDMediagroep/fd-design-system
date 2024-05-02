@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './HybridCard4.module.scss';
+import * as styles from './HybridCard4.module.scss';
 
 interface Props {
     style?: React.CSSProperties;
@@ -22,7 +22,7 @@ function HybridCard4(props: Props) {
     return (
         <article
             style={props.style}
-            className={`${styles.hybridCard4}${
+            className={`${styles['hybridCard4']}${
                 props.className ? ` ${props.className}` : ''
             } xs__p+4 s__p-0`}
             id={props.id}
@@ -40,12 +40,16 @@ function HybridCard4(props: Props) {
                     </figure>
                 )}
                 {!props.imageUrl && !props.imageComponent && (
-                    <div className={`${styles.figure} ${styles.empty} xs__m-0`}>
+                    <div
+                        className={`${styles['figure']} ${styles['empty']} xs__m-0`}
+                    >
                         <img src="/assets/images/fd-logo.svg" alt="FD-Logo" />
                     </div>
                 )}
 
-                <div className={`${styles.teaserText} xs__pl+4 s__p+4 m__p+4`}>
+                <div
+                    className={`${styles['teaserText']} xs__pl+4 s__p+4 m__p+4`}
+                >
                     {props.label && (
                         <span className={`xs__mb+2  body-text sans xs`}>
                             {props.readingTime && (
@@ -72,7 +76,7 @@ function HybridCard4(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.hybridCard4];
+    return [styles['hybridCard4']];
 }
 
 export { HybridCard4, getCssClassNames };
