@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import styles from './Menu.module.scss';
-import buttonStyles from './MenuButton.module.scss';
+import * as styles from './Menu.module.scss';
+import * as buttonStyles from './MenuButton.module.scss';
 import {
     CloseIcon,
     GithubIcon,
@@ -188,7 +188,7 @@ function Menu(props: Props) {
         <div
             ref={menuRef}
             className={`${styles['header-placeholder']}${
-                stickyState ? ` ${styles.stickied}` : ''
+                stickyState ? ` ${styles['stickied']}` : ''
             }${props.className ? ` ${props.className}` : ''}`}
         >
             <header
@@ -203,7 +203,7 @@ function Menu(props: Props) {
                         <ul
                             className={`${styles['left-menu']} xs__p-0 xs__m-0`}
                         >
-                            <li className={showAside ? styles.expanded : ''}>
+                            <li className={showAside ? styles['expanded'] : ''}>
                                 <button
                                     className={`${styles['aside-menu-button']} ${styles['menu-button']} ${styles['main-link']}`}
                                     data-ga-name="menu_click"
@@ -236,7 +236,7 @@ function Menu(props: Props) {
                                     aria-label="Home"
                                     title="Home"
                                 >
-                                    <span className={styles.logo} />
+                                    <span className={styles['logo']} />
                                     <span className={styles['aria-label']}>
                                         Home
                                     </span>
@@ -285,7 +285,7 @@ function Menu(props: Props) {
                             <li
                                 className={`${
                                     styles['show-profile-highlight']
-                                } ${showProfile ? styles.expanded : ''}`}
+                                } ${showProfile ? styles['expanded'] : ''}`}
                             >
                                 <button
                                     className={`${styles['profile-button']} ${styles['menu-button']}`}
@@ -321,7 +321,7 @@ function Menu(props: Props) {
                             <li
                                 className={`${
                                     styles['show-search-highlight']
-                                } ${showSearchBar ? styles.expanded : ''}`}
+                                } ${showSearchBar ? styles['expanded'] : ''}`}
                             >
                                 <button
                                     className={`${styles['search-button']} ${styles['menu-button']}`}
@@ -350,8 +350,8 @@ function Menu(props: Props) {
                             className={`${
                                 styles['header-background-overlay']
                             } ${hidden ? styles['hidden-menu-item'] : ''} ${
-                                backgroundOverlay ? styles.show : ''
-                            } ${hiding ? styles.hiding : ''}`}
+                                backgroundOverlay ? styles['show'] : ''
+                            } ${hiding ? styles['hiding'] : ''}`}
                             data-ga-name="menu_click"
                             data-ga-category="user interactions"
                             data-ga-action="menu click"
@@ -400,8 +400,8 @@ function Menu(props: Props) {
             <div
                 className={`${styles['mobile-header-background-overlay']} ${
                     hidden ? styles['hidden-menu-item'] : ''
-                } ${backgroundOverlay ? styles.show : ''} ${
-                    hiding ? styles.hiding : ''
+                } ${backgroundOverlay ? styles['show'] : ''} ${
+                    hiding ? styles['hiding'] : ''
                 }`}
                 data-ga-name="menu_click"
                 data-ga-category="user interactions"
@@ -416,7 +416,7 @@ function Menu(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.menu];
+    return [styles['menu']];
 }
 
 export { Menu, getCssClassNames };

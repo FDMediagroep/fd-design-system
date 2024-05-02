@@ -5,7 +5,7 @@ import {
     getCssClassNames,
 } from '../src/components/bullet-point/BulletPoint';
 import PageStore from '../src/stores/PageStore';
-import styles from './article-bullet-point.module.scss';
+import * as styles from './article-bullet-point.module.scss';
 import Head from 'next/head';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
 
@@ -52,7 +52,7 @@ function Page() {
             <Explain
                 anchor="default"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
-                previewClassName={styles.preview}
+                previewClassName={styles['preview']}
                 legend="Bullet point"
                 reactComponentName="BulletPoint"
                 description={
@@ -68,7 +68,7 @@ function Page() {
             <Explain
                 anchor="align-right"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
-                previewClassName={styles.preview}
+                previewClassName={styles['preview']}
                 legend="Bullet point (align: right)"
                 reactComponentName="BulletPoint"
                 description={
@@ -84,7 +84,7 @@ function Page() {
             <Explain
                 anchor="variant-1"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
-                previewClassName={styles.preview}
+                previewClassName={styles['preview']}
                 legend="Summary (variant-1)"
                 reactComponentName="BulletPoint"
                 description={
@@ -100,7 +100,7 @@ function Page() {
             <Explain
                 anchor="variant-1-align-right"
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
-                previewClassName={styles.preview}
+                previewClassName={styles['preview']}
                 legend="Bullet point (variant-1, align: right)"
                 reactComponentName="BulletPoint"
                 description={

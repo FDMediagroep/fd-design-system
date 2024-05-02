@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './AuthorInfo.module.scss';
+import * as styles from './AuthorInfo.module.scss';
 import {
     ButtonFollow,
     getCssClassNames as getFollowButtonCssClassNames,
@@ -38,18 +38,18 @@ function AuthorInfo(props: Props) {
 
     return (
         <div
-            className={`${styles.fdAuthorInfo}${
+            className={`${styles['fdAuthorInfo']}${
                 props.className ? ` ${props.className}` : ''
             }`}
         >
-            <div className={styles.profile}>
+            <div className={styles['profile']}>
                 <img src={props.imageUrl} alt={props.title} />
                 <h3>{props.title}</h3>
-                <div className={styles.description}>{props.description}</div>
+                <div className={styles['description']}>{props.description}</div>
             </div>
-            <div className={styles.controls}>
+            <div className={styles['controls']}>
                 <ButtonFollow
-                    className={styles.followButton}
+                    className={styles['followButton']}
                     selected={props.followed}
                     tag={props.title}
                     onClick={onFollowAuthorClick}
@@ -57,35 +57,35 @@ function AuthorInfo(props: Props) {
                 />
                 {props.onEmailClick ? (
                     <Button
-                        className={styles.button}
+                        className={styles['button']}
                         onClick={props.onEmailClick}
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <EnvelopeIcon />
                         </span>
-                        <span className={styles.buttonText}>E-mail</span>
+                        <span className={styles['buttonText']}>E-mail</span>
                     </Button>
                 ) : null}
                 {props.onTwitterClick ? (
                     <Button
-                        className={styles.button}
+                        className={styles['button']}
                         onClick={props.onTwitterClick}
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <TwitterIcon />
                         </span>
-                        <span className={styles.buttonText}>Twitter</span>
+                        <span className={styles['buttonText']}>Twitter</span>
                     </Button>
                 ) : null}
                 {props.onLinkedInClick ? (
                     <Button
-                        className={styles.button}
+                        className={styles['button']}
                         onClick={props.onLinkedInClick}
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <LinkedInIcon />
                         </span>
-                        <span className={styles.buttonText}>LinkedIn</span>
+                        <span className={styles['buttonText']}>LinkedIn</span>
                     </Button>
                 ) : null}
             </div>
@@ -95,7 +95,7 @@ function AuthorInfo(props: Props) {
 
 function getCssClassNames(): string[] {
     return [
-        styles.fdAuthorInfo,
+        styles['fdAuthorInfo'],
         ...getFollowButtonCssClassNames(),
         ...getButtonCssClassNames(),
     ];

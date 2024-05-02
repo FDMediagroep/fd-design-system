@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './TextInput.module.scss';
+import * as styles from './TextInput.module.scss';
 import { CheckIcon } from '../../design-tokens/icons';
 
 declare let localStorage: any;
@@ -192,11 +192,11 @@ function TextInput(props: Props) {
 
     return (
         <div
-            className={`${styles.fdInput}${
+            className={`${styles['fdInput']}${
                 props.className ? ` ${props.className}` : ''
             }`}
         >
-            <div className={styles.input}>
+            <div className={styles['input']}>
                 <input
                     {...props}
                     id={props.id}
@@ -221,25 +221,27 @@ function TextInput(props: Props) {
                 />
                 <div>
                     <label htmlFor={props.id}>{props.label ?? 'Value'}</label>
-                    <span className={styles.iconCheck}>
+                    <span className={styles['iconCheck']}>
                         <CheckIcon />
                     </span>
                 </div>
                 {props.type !== 'date' && props.type !== 'datetime' ? (
                     <div
-                        className={`${styles.inputMessage} ${styles.errorMessage}`}
+                        className={`${styles['inputMessage']} ${styles['errorMessage']}`}
                     >
                         {props.errorMessage}
                     </div>
                 ) : null}
-                <div className={styles.inputMessage}>{props.description}</div>
+                <div className={styles['inputMessage']}>
+                    {props.description}
+                </div>
             </div>
         </div>
     );
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdInput];
+    return [styles['fdInput']];
 }
 
 export { TextInput, getCssClassNames };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Explain } from '../../src/components/Explain';
 import Head from 'next/head';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
-import styles from './cards.module.scss';
+import * as styles from './cards.module.scss';
 import {
     HybridCard4,
     getCssClassNames,
@@ -61,7 +61,7 @@ function Page() {
 
             <Explain
                 anchor="hybrid4"
-                previewClassName={`${styles.autoMinHeight} grid`}
+                previewClassName={`${styles['autoMinHeight']} grid`}
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
                 legend="Hybrid Card 4"
                 reactComponentName="HybridCard4"

@@ -1,4 +1,4 @@
-import styles from './Menu.module.scss';
+import * as styles from './Menu.module.scss';
 import {
     ClockIcon,
     CloseIcon,
@@ -64,7 +64,7 @@ function Aside(props: Props) {
 
                 <li>
                     <form
-                        className={`${styles.search} xs__m+4`}
+                        className={`${styles['search']} xs__m+4`}
                         action="/search"
                         onSubmit={handleSearch}
                     >
@@ -91,7 +91,7 @@ function Aside(props: Props) {
                         data-ga-action="menu click"
                         data-ga-label="https://fd.nl/mijn-nieuws"
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <HeartOIcon />
                         </span>
                         <span
@@ -111,7 +111,7 @@ function Aside(props: Props) {
                         data-ga-action="menu click"
                         data-ga-label="https://fd.nl/net-binnen"
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <ClockIcon />
                         </span>
                         <span
@@ -133,12 +133,12 @@ function Aside(props: Props) {
                         onClick={handleToggle.bind(null, 'beurs')}
                     >
                         <span
-                            className={`${styles.icon} ${styles['collapsed-icon']}`}
+                            className={`${styles['icon']} ${styles['collapsed-icon']}`}
                         >
                             <GraphOIcon />
                         </span>
                         <span
-                            className={`${styles.icon} ${styles['expanded-icon']}`}
+                            className={`${styles['icon']} ${styles['expanded-icon']}`}
                         >
                             <GraphIcon />
                         </span>
@@ -319,7 +319,7 @@ function Aside(props: Props) {
                         data-ga-action="menu click"
                         data-ga-label="https://fd.nl/krant"
                     >
-                        <span className={styles.icon}>
+                        <span className={styles['icon']}>
                             <EditionsIcon />
                         </span>
                         <span
@@ -339,7 +339,7 @@ function Aside(props: Props) {
                     <ul className="xs__p-0  xs__p+4">
                         <li className=" xs__mb+4">
                             <h3
-                                className={`heading sans xxs xs__m-0 ${styles.label}`}
+                                className={`heading sans xxs xs__m-0 ${styles['label']}`}
                             >
                                 SECTIES
                             </h3>

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { CollapseIcon, ExpandIcon } from '../design-tokens/icons';
 import ThemeStore, { Theme } from '../stores/ThemeStore';
 import { Radio } from './input/Radio';
-import styles from './menu/Menu.module.scss';
+import * as styles from './menu/Menu.module.scss';
 
 interface Props {
     groupName?: string;
@@ -87,7 +87,7 @@ function Themes(props: Props) {
 
     return (
         <section
-            className={`${styles.theme} xs__m-0 xs__pt+4 xs__pb+4 xs__ml-4 xs__mr-4 xs__mb-4`}
+            className={`${styles['theme']} xs__m-0 xs__pt+4 xs__pb+4 xs__ml-4 xs__mr-4 xs__mb-4`}
         >
             <div className="xs__pl+4 xs__pr+4">
                 <button

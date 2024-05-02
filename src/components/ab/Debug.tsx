@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Debug.module.scss';
+import * as styles from './Debug.module.scss';
 import { CloseIcon } from '../../design-tokens/icons';
 import { Modal } from '../modal/Modal';
 
@@ -20,16 +20,16 @@ export function Debug(props: Props) {
 
     return (
         <Modal
-            className={`${styles.debug} debug-modal`}
+            className={`${styles['debug']} debug-modal`}
             opened={props.open}
             onClose={props.handleClose}
         >
             <div>
-                <section className={styles.content}>
+                <section className={styles['content']}>
                     <h2>
                         {props.name}
                         <span
-                            className={styles.icon}
+                            className={styles['icon']}
                             onClick={handleRemoveExperiment}
                             title="Remove experiment cookie"
                         >

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './FinancialAgenda.module.scss';
+import * as styles from './FinancialAgenda.module.scss';
 
 type AgendaItem = {
     date: string;
@@ -13,7 +13,7 @@ interface Props {
 
 function FinancialAgenda(props: Props) {
     return (
-        <div className={styles.financialAgenda}>
+        <div className={styles['financialAgenda']}>
             <table>
                 <thead>
                     <tr>
@@ -54,7 +54,7 @@ function FinancialAgenda(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.financialAgenda];
+    return [styles['financialAgenda']];
 }
 
 export { FinancialAgenda, getCssClassNames };

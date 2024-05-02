@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './BreakingSwitch.module.scss';
+import * as styles from './BreakingSwitch.module.scss';
 import { CheckIcon, CloseIcon } from '../../design-tokens/icons';
 
 export interface Props {
@@ -16,19 +16,19 @@ export default function BreakingSwitch(props: Props) {
     return (
         <>
             <div
-                className={`${styles.breakingSwitch}${
+                className={`${styles['breakingSwitch']}${
                     props.className ? ` ${props.className}` : ''
                 }`}
             >
                 <h3>{props.label ? props.label : 'Breaking nieuws alert'}</h3>
-                <div className={styles.content}>
-                    <span className={styles.description}>
+                <div className={styles['content']}>
+                    <span className={styles['description']}>
                         {props.description
                             ? props.description
                             : 'Ontvang een e-mail alert bij belangrijk FD Nieuws'}
                     </span>
                     <label
-                        className={styles.switch}
+                        className={styles['switch']}
                         data-addurl={
                             props.subscribeUrl
                                 ? props.subscribeUrl
@@ -42,7 +42,7 @@ export default function BreakingSwitch(props: Props) {
                     >
                         <input
                             type="checkbox"
-                            className={styles.switchInput}
+                            className={styles['switchInput']}
                             onChange={props.onChange}
                             checked={props.checked}
                             aria-label={
@@ -51,15 +51,15 @@ export default function BreakingSwitch(props: Props) {
                                     : 'Ontvang een e-mail alert bij belangrijk FD Nieuws'
                             }
                         />
-                        <span className={styles.switchLabel}>
-                            <span className={styles.iconCheck}>
+                        <span className={styles['switchLabel']}>
+                            <span className={styles['iconCheck']}>
                                 <CheckIcon />
                             </span>
-                            <span className={styles.iconTimes}>
+                            <span className={styles['iconTimes']}>
                                 <CloseIcon />
                             </span>
                         </span>
-                        <span className={styles.switchHandle} />
+                        <span className={styles['switchHandle']} />
                     </label>
                 </div>
             </div>
@@ -68,7 +68,7 @@ export default function BreakingSwitch(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.breakingSwitch];
+    return [styles['breakingSwitch']];
 }
 
 export { BreakingSwitch, getCssClassNames };

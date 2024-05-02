@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '@fdmg/css-grid/css/grid.css';
 import '@fdmg/css-grid/css/flex.css';
-import styles from './Article.module.scss';
+import * as styles from './Article.module.scss';
 import { mergeInlineContent } from '../../../src/utils/articleContent';
 import PageStore from '../../../src/stores/PageStore';
 import { OEmbedLoader } from '../../../src/utils/OEmbedLoader';
@@ -52,7 +52,7 @@ function Article(props: Props) {
 
     try {
         return (
-            <article className={styles.article}>
+            <article className={styles['article']}>
                 <Head>
                     <meta name="robots" content="noindex" />
                 </Head>
@@ -79,7 +79,7 @@ function Article(props: Props) {
                         ]}
                     >
                         <GridContainer
-                            className={styles.content}
+                            className={styles['content']}
                             attributes={['grid']}
                         >
                             <GridContainer attributes={['xs-12', 'gap-bottom']}>
@@ -92,7 +92,7 @@ function Article(props: Props) {
                                     />
 
                                     <h1>{props.json.title}</h1>
-                                    <p className={styles.intro}>
+                                    <p className={styles['intro']}>
                                         {props.json.intro}
                                     </p>
                                 </header>
@@ -110,12 +110,12 @@ function Article(props: Props) {
                     />
 
                     <GridContainer
-                        className={styles.fullHeight}
+                        className={styles['fullHeight']}
                         attributes={['m-1', 'hide-lt-m', 'gap-1', 'gap-2']}
                     >
                         <VerticalToolbar
                             id="12345"
-                            className={`${styles.left} ${styles.sticky}`}
+                            className={`${styles['left']} ${styles['sticky']}`}
                             bookmarked={false}
                             onClick={console.log}
                         />
@@ -131,7 +131,7 @@ function Article(props: Props) {
                         ]}
                     >
                         <GridContainer
-                            className={styles.content}
+                            className={styles['content']}
                             attributes={['grid']}
                         >
                             <GridContainer attributes={['xs-12', 'gap-bottom']}>
@@ -140,10 +140,12 @@ function Article(props: Props) {
                         </GridContainer>
                     </GridContainer>
                     <GridContainer
-                        className={styles.fullHeight}
+                        className={styles['fullHeight']}
                         attributes={['l-4', 'hide-lt-l', 'gap-2']}
                     >
-                        <span className={`${styles.right} ${styles.sticky}`}>
+                        <span
+                            className={`${styles['right']} ${styles['sticky']}`}
+                        >
                             AD
                         </span>
                     </GridContainer>

@@ -5,7 +5,7 @@ import React, {
     useRef,
     CSSProperties,
 } from 'react';
-import styles from './Explain.module.scss';
+import * as styles from './Explain.module.scss';
 import { getCodePenData } from '../utils/codepen';
 import { renderToString } from 'react-dom/server';
 import pretty from 'pretty';
@@ -204,11 +204,11 @@ function Explain(props: Props) {
     return (
         <>
             {props.anchor ? <a id={props.anchor} /> : null}
-            <h2 className={styles.title}>
+            <h2 className={styles['title']}>
                 {props.legend}
                 {props.anchor ? (
                     <button
-                        className={styles.anchor}
+                        className={styles['anchor']}
                         onClick={copyAnchor.bind(null, props.anchor)}
                         title="Copy link"
                         aria-label={`Copy link to ${props.legend}`}
@@ -218,7 +218,7 @@ function Explain(props: Props) {
                 ) : null}
             </h2>
             {props.description && (
-                <section className={styles.description}>
+                <section className={styles['description']}>
                     {props.description}
                 </section>
             )}
@@ -226,9 +226,9 @@ function Explain(props: Props) {
                 <form
                     ref={formRef}
                     style={props.previewStyle}
-                    className={`${styles.previewContainer}${
+                    className={`${styles['previewContainer']}${
                         props.previewFlexDirection === 'row'
-                            ? ` ${styles.row}`
+                            ? ` ${styles['row']}`
                             : ''
                     }${
                         props.previewClassName
@@ -241,7 +241,7 @@ function Explain(props: Props) {
                 </form>
             )}
             {!props.hideExternalCodeEditors && (
-                <footer className={styles.footer}>
+                <footer className={styles['footer']}>
                     <form
                         target="_blank"
                         action="https://codepen.io/pen/define/"
@@ -261,7 +261,7 @@ function Explain(props: Props) {
                             )}
                         />
                         <input
-                            className={styles.invertable}
+                            className={styles['invertable']}
                             type="image"
                             src="/assets/codepen/Button-Black.png"
                             width="16"
@@ -309,29 +309,29 @@ function Explain(props: Props) {
             )}
 
             <h3
-                className={styles.codeToggle}
+                className={styles['codeToggle']}
                 onClick={handleCodeToggle}
                 title="Toggle code"
             >
                 Code: {showCode ? '🔽' : '🔼'}
             </h3>
             <section
-                className={`${styles.codeContainer}${
-                    showCode ? '' : ` ${styles.hideCode}`
+                className={`${styles['codeContainer']}${
+                    showCode ? '' : ` ${styles['hideCode']}`
                 }`}
             >
                 {!props.hideCSS && (
                     <section>
                         <section>
                             <a
-                                className={styles.copyIcon}
+                                className={styles['copyIcon']}
                                 onClick={copyCss}
                                 title="Copy CSS to clipboard"
                             >
                                 📋
                             </a>
                             <a
-                                className={styles.copyIconLabel}
+                                className={styles['copyIconLabel']}
                                 href={`data:text/plain;charset=utf-16le;base64,${cssBase64}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -342,7 +342,7 @@ function Explain(props: Props) {
                             </a>
                         </section>
                         <textarea
-                            className={styles.textArea}
+                            className={styles['textArea']}
                             value={css}
                             readOnly={true}
                         />
@@ -352,7 +352,7 @@ function Explain(props: Props) {
                     <section>
                         <section>
                             <a
-                                className={styles.copyIcon}
+                                className={styles['copyIcon']}
                                 onClick={copyHtml}
                                 title="Copy HTML to clipboard"
                             >
@@ -361,7 +361,7 @@ function Explain(props: Props) {
                             HTML
                         </section>
                         <textarea
-                            className={styles.textArea}
+                            className={styles['textArea']}
                             value={html}
                             readOnly={true}
                         />
@@ -371,7 +371,7 @@ function Explain(props: Props) {
                     <section>
                         <section>
                             <a
-                                className={styles.copyIcon}
+                                className={styles['copyIcon']}
                                 onClick={copyReact}
                                 title="Copy React code to clipboard"
                             >
@@ -380,7 +380,7 @@ function Explain(props: Props) {
                             React
                         </section>
                         <textarea
-                            className={styles.textArea}
+                            className={styles['textArea']}
                             value={react}
                             readOnly={true}
                         />
@@ -388,7 +388,7 @@ function Explain(props: Props) {
                 )}
             </section>
 
-            <section className={styles.tags}>
+            <section className={styles['tags']}>
                 {!!tags?.length && <span>Synonyms:</span>}
                 {tags?.map((tag) => (
                     <Link key={tag} href={destination} as={`/${tag}`}>

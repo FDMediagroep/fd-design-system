@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Checkbox.module.scss';
+import * as styles from './Checkbox.module.scss';
 
 export interface Props {
     /**
@@ -38,7 +38,7 @@ export interface Props {
 export default function Checkbox(props: Props) {
     return (
         <label
-            className={`${styles.fdCheckbox}${
+            className={`${styles['fdCheckbox']}${
                 props.className ? ` ${props.className}` : ''
             }`}
         >
@@ -51,13 +51,13 @@ export default function Checkbox(props: Props) {
                 defaultChecked={props.defaultChecked}
                 aria-label={props.label}
             />
-            <span className={styles.checkbox}>{props.label}</span>
+            <span className={styles['checkbox']}>{props.label}</span>
         </label>
     );
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdCheckbox];
+    return [styles['fdCheckbox']];
 }
 
 export { Checkbox, getCssClassNames };

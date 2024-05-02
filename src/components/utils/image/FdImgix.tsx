@@ -1,7 +1,7 @@
 import React from 'react';
 import Imgix, { SharedImgixAndSourceProps } from 'react-imgix';
 
-import styles from './FdImage.module.scss';
+import * as styles from './FdImage.module.scss';
 
 type cssValue = `${number}${'px' | 'rem' | 'vw'}`;
 
@@ -102,7 +102,7 @@ export function FdImgix({
         <>
             {!imgixProps.src && (
                 <Imgix
-                    className={`${styles.image} ${className}`}
+                    className={`${styles['image']} ${className}`}
                     sizes={imageSizesWidth.join(', ')}
                     {...(imgixProps as SharedImgixAndSourceProps)}
                     src={`${noImagePlaceholder}`}
@@ -110,7 +110,7 @@ export function FdImgix({
             )}
             {imgixProps.src && (
                 <Imgix
-                    className={`${styles.image} ${className}`}
+                    className={`${styles['image']} ${className}`}
                     sizes={imageSizesWidth.join(', ')}
                     {...(imgixProps as SharedImgixAndSourceProps)}
                 />

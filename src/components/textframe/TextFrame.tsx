@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TextFrame.module.scss';
+import * as styles from './TextFrame.module.scss';
 
 interface Props {
     alignment?: 'block' | 'right' | any;
@@ -11,8 +11,8 @@ interface Props {
 function TextFrame(props: Props) {
     return (
         <div
-            className={`${styles.textFrame} ${
-                props.alignment === 'right' ? styles.right : ''
+            className={`${styles['textFrame']} ${
+                props.alignment === 'right' ? styles['right'] : ''
             }`}
         >
             <h3 className="heading sans s">{props.title}</h3>
@@ -47,7 +47,7 @@ function TextFrame(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.textFrame];
+    return [styles['textFrame']];
 }
 
 export { TextFrame, getCssClassNames };

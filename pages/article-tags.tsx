@@ -4,7 +4,7 @@ import {
     ArticleTags,
     getCssClassNames,
 } from '../src/components/article-tags/ArticleTags';
-import styles from './article-link-block.module.scss';
+import * as styles from './article-link-block.module.scss';
 import PageStore from '../src/stores/PageStore';
 import Head from 'next/head';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
@@ -112,7 +112,7 @@ function Page() {
 
             <Explain
                 cssClassNames={[...getCssClassNames(), ...globalCssClassNames]}
-                previewClassName={styles.preview}
+                previewClassName={styles['preview']}
                 legend="Article tags"
                 description={
                     <>

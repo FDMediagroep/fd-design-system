@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ABProvider, Experiment, Variant } from '../src/components/ab/ab';
 import { parseCookies } from 'nookies';
-import styles from './ab.module.scss';
+import * as styles from './ab.module.scss';
 import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 
@@ -22,7 +22,7 @@ function Demo(props: Props) {
     }
 
     return (
-        <div className={styles.ab}>
+        <div className={styles['ab']}>
             <Head>
                 <title>
                     {`${metaTitle} - Design System - Het Financieele Dagblad`}

@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import Script from 'next/script';
-import styles from './cookieconsent.module.scss';
+import * as styles from './cookieconsent.module.scss';
 import { Explain } from '../src/components/Explain';
 import Head from 'next/head';
 import { Switch } from '../src/components/input/Switch';
@@ -67,7 +67,7 @@ function Page() {
     }, []);
 
     return (
-        <div className={styles.cookieConsent}>
+        <div className={styles['cookieConsent']}>
             <Head>
                 <title>
                     {`${metaTitle} - Design System - Het Financieele Dagblad`}
@@ -485,8 +485,8 @@ async function checkCookieconsent() {
                         </>
                     }
                     title={
-                        <header className={styles.header}>
-                            <span className={styles.icon}>
+                        <header className={styles['header']}>
+                            <span className={styles['icon']}>
                                 <FdmgIcon />
                             </span>
                         </header>

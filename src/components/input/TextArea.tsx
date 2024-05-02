@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './TextArea.module.scss';
+import * as styles from './TextArea.module.scss';
 import { wordCount } from '../../utils/words';
 import { CheckIcon } from '../../design-tokens/icons';
 declare let localStorage: any;
@@ -155,11 +155,11 @@ function TextArea(props: Props) {
 
     return (
         <div
-            className={`${styles.fdTextArea}${
+            className={`${styles['fdTextArea']}${
                 props.className ? ` ${props.className}` : ''
             }`}
         >
-            <div className={styles.textArea}>
+            <div className={styles['textArea']}>
                 <textarea
                     {...props}
                     data-show-error={showMaxWordsError}
@@ -182,16 +182,16 @@ function TextArea(props: Props) {
                 />
                 <div>
                     <label htmlFor={props.id}>{props.label ?? 'Value'}</label>
-                    <span className={styles.iconCheck}>
+                    <span className={styles['iconCheck']}>
                         <CheckIcon />
                     </span>
                 </div>
                 <div
-                    className={`${styles.textareaMessage} ${styles.errorMessage}`}
+                    className={`${styles['textareaMessage']} ${styles['errorMessage']}`}
                 >
                     {errorMessage}
                 </div>
-                <div className={styles.textareaMessage}>
+                <div className={styles['textareaMessage']}>
                     {props.description}
                 </div>
             </div>
@@ -200,7 +200,7 @@ function TextArea(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdTextArea];
+    return [styles['fdTextArea']];
 }
 
 export { TextArea, getCssClassNames };

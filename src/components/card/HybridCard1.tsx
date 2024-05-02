@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './HybridCard1.module.scss';
+import * as styles from './HybridCard1.module.scss';
 
 export type Variants = 'default' | 'variant-1';
 
@@ -31,9 +31,9 @@ function HybridCard1(props: Props) {
     return (
         <article
             style={props.style}
-            className={`${styles.hybridCard1}${
+            className={`${styles['hybridCard1']}${
                 props.className ? ` ${props.className}` : ''
-            }${props.isRead ? ` ${styles.isRead}` : ''} xs__p+4 s__p-0`}
+            }${props.isRead ? ` ${styles['isRead']}` : ''} xs__p+4 s__p-0`}
             id={props.id}
         >
             <a
@@ -72,13 +72,13 @@ function HybridCard1(props: Props) {
                 )}
 
                 <div
-                    className={`${styles.teaserText}  xs__pl+4 s__pr-0 s__pb-0 s__pl-0`}
+                    className={`${styles['teaserText']}  xs__pl+4 s__pr-0 s__pb-0 s__pl-0`}
                 >
                     {props.label && (
                         <div
-                            className={`${styles.meta} xs__mb+2 body-text sans xs`}
+                            className={`${styles['meta']} xs__mb+2 body-text sans xs`}
                         >
-                            <span className={styles.prefix}>
+                            <span className={styles['prefix']}>
                                 {props.readingTime && (
                                     <span className={styles['reading-time']}>
                                         {props.readingTime} min leestijd •{' '}
@@ -90,9 +90,9 @@ function HybridCard1(props: Props) {
                     )}
                     {!props.label && props.readingTime && (
                         <div
-                            className={`${styles.meta} xs__mb+2 body-text sans xs`}
+                            className={`${styles['meta']} xs__mb+2 body-text sans xs`}
                         >
-                            <span className={styles.prefix}>
+                            <span className={styles['prefix']}>
                                 <span className={styles['reading-time']}>
                                     {props.readingTime} min leestijd
                                 </span>
@@ -100,14 +100,14 @@ function HybridCard1(props: Props) {
                         </div>
                     )}
 
-                    <div className={styles.textContainer}>
+                    <div className={styles['textContainer']}>
                         <h1 className="heading serif xs xs__m-0">
                             {props.title}
                         </h1>
 
                         {props.intro && (
                             <p
-                                className={`${styles.intro} body-text sans s xs__m-0 xs__mt+2`}
+                                className={`${styles['intro']} body-text sans s xs__m-0 xs__mt+2`}
                             >
                                 {props.intro}
                             </p>
@@ -120,7 +120,7 @@ function HybridCard1(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.hybridCard1];
+    return [styles['hybridCard1']];
 }
 
 export { HybridCard1, getCssClassNames };

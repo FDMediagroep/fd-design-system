@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Tooltip.module.scss';
+import * as styles from './Tooltip.module.scss';
 import TooltipStore from '../stores/TooltipStore';
 
 type Token = {
@@ -36,7 +36,7 @@ function Tooltip() {
     }
 
     return tooltipSummary ? (
-        <div className={styles.tooltip} onClick={handleClick}>
+        <div className={styles['tooltip']} onClick={handleClick}>
             <h3>Design Tokens</h3>
             {styleProps.map((styleProp) => {
                 if (tooltipSummary[styleProp]) {

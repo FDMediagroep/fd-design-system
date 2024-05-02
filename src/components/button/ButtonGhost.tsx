@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ButtonGhost.module.scss';
+import * as styles from './ButtonGhost.module.scss';
 
 type Sizes = 's' | 'm';
 
@@ -17,12 +17,12 @@ interface Props {
  * @param props
  */
 function ButtonGhost(props: Props) {
-    const sizeClass = props.size === 'm' ? styles.m : '';
+    const sizeClass = props.size === 'm' ? styles['m'] : '';
 
     return (
         <button
             {...props}
-            className={`${styles.fdButtonGhost} ${sizeClass}${
+            className={`${styles['fdButtonGhost']} ${sizeClass}${
                 props.className ? ` ${props.className}` : ''
             }`}
         >
@@ -32,7 +32,7 @@ function ButtonGhost(props: Props) {
 }
 
 function getCssClassNames(): string[] {
-    return [styles.fdButtonGhost];
+    return [styles['fdButtonGhost']];
 }
 
 export { ButtonGhost, getCssClassNames };

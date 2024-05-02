@@ -8,7 +8,7 @@ import {
     TwitterIcon,
 } from '../../design-tokens/icons';
 import { DarkModeToggle } from './DarkModeToggle';
-import styles from './Footer.module.scss';
+import * as styles from './Footer.module.scss';
 
 function Footer() {
     const footerRef = useRef<HTMLElement>();
@@ -82,11 +82,11 @@ function Footer() {
                             onKeyDown={handleKeyDown}
                         >
                             <span>Over FD</span>
-                            <span className={styles.icon}>
-                                <span className={styles.collapse}>
+                            <span className={styles['icon']}>
+                                <span className={styles['collapse']}>
                                     <CollapseIcon />
                                 </span>
-                                <span className={styles.expand}>
+                                <span className={styles['expand']}>
                                     <ExpandIcon />
                                 </span>
                             </span>
@@ -167,11 +167,11 @@ function Footer() {
                             onKeyDown={handleKeyDown}
                         >
                             <span>Algemeen</span>
-                            <span className={styles.icon}>
-                                <span className={styles.collapse}>
+                            <span className={styles['icon']}>
+                                <span className={styles['collapse']}>
                                     <CollapseIcon />
                                 </span>
-                                <span className={styles.expand}>
+                                <span className={styles['expand']}>
                                     <ExpandIcon />
                                 </span>
                             </span>
@@ -254,11 +254,11 @@ function Footer() {
                             onKeyDown={handleKeyDown}
                         >
                             <span>Service</span>
-                            <span className={styles.icon}>
-                                <span className={styles.collapse}>
+                            <span className={styles['icon']}>
+                                <span className={styles['collapse']}>
                                     <CollapseIcon />
                                 </span>
-                                <span className={styles.expand}>
+                                <span className={styles['expand']}>
                                     <ExpandIcon />
                                 </span>
                             </span>
@@ -337,11 +337,11 @@ function Footer() {
                             onKeyDown={handleKeyDown}
                         >
                             <span>Producten</span>
-                            <span className={styles.icon}>
-                                <span className={styles.collapse}>
+                            <span className={styles['icon']}>
+                                <span className={styles['collapse']}>
                                     <CollapseIcon />
                                 </span>
-                                <span className={styles.expand}>
+                                <span className={styles['expand']}>
                                     <ExpandIcon />
                                 </span>
                             </span>
@@ -424,11 +424,11 @@ function Footer() {
                             onKeyDown={handleKeyDown}
                         >
                             <span>Van onze partners</span>
-                            <span className={styles.icon}>
-                                <span className={styles.collapse}>
+                            <span className={styles['icon']}>
+                                <span className={styles['collapse']}>
                                     <CollapseIcon />
                                 </span>
-                                <span className={styles.expand}>
+                                <span className={styles['expand']}>
                                     <ExpandIcon />
                                 </span>
                             </span>
@@ -478,11 +478,11 @@ function Footer() {
                             onKeyDown={handleKeyDown}
                         >
                             <span>Meer van FDMG</span>
-                            <span className={styles.icon}>
-                                <span className={styles.collapse}>
+                            <span className={styles['icon']}>
+                                <span className={styles['collapse']}>
                                     <CollapseIcon />
                                 </span>
-                                <span className={styles.expand}>
+                                <span className={styles['expand']}>
                                     <ExpandIcon />
                                 </span>
                             </span>
@@ -628,7 +628,7 @@ function Footer() {
                 </li>
             </ul>
 
-            <section className={`${styles.social} xs__ml+4 xs__mr+4`}>
+            <section className={`${styles['social']} xs__ml+4 xs__mr+4`}>
                 <a
                     href="https://www.linkedin.com/company/het-financieele-dagblad"
                     data-ga-name="footer_menu_click"
@@ -637,7 +637,7 @@ function Footer() {
                     data-ga-label="https://www.linkedin.com/company/het-financieele-dagblad"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${styles.icon} xs__p+4`}
+                    className={`${styles['icon']} xs__p+4`}
                 >
                     <LinkedInIcon />
                 </a>
@@ -649,7 +649,7 @@ function Footer() {
                     data-ga-label="https://twitter.com/FD_Nieuws"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${styles.icon} xs__p+4`}
+                    className={`${styles['icon']} xs__p+4`}
                 >
                     <TwitterIcon />
                 </a>
@@ -661,7 +661,7 @@ function Footer() {
                     data-ga-label="https://nl-nl.facebook.com/Hetfd"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${styles.icon} xs__p+4`}
+                    className={`${styles['icon']} xs__p+4`}
                 >
                     <FacebookIcon />
                 </a>
@@ -673,7 +673,7 @@ function Footer() {
                     data-ga-label="https://www.instagram.com/financieeledagblad/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${styles.icon} xs__p+4`}
+                    className={`${styles['icon']} xs__p+4`}
                 >
                     <InstagramIcon />
                 </a>

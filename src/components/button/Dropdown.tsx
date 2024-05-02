@@ -7,7 +7,7 @@ import {
     GooglePodcastsIcon,
     SpotifyIcon,
 } from '../../design-tokens/icons';
-import styles from './Dropdown.module.scss';
+import * as styles from './Dropdown.module.scss';
 
 type Sizes = 's' | 'm';
 
@@ -31,7 +31,7 @@ interface Props {
 function Dropdown(props: Props) {
     const buttonRef = useRef();
     const [expanded, setExpanded] = useState(false);
-    const sizeClass = props.size === 'm' ? styles.m : '';
+    const sizeClass = props.size === 'm' ? styles['m'] : '';
 
     useEffect(() => {
         if (buttonRef.current) {
