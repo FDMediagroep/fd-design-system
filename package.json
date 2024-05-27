@@ -90,7 +90,7 @@
         "react-dom": "^18.3.1",
         "react-element-to-jsx-string": "^15.0.0",
         "react-svg-loader": "^3.0.3",
-        "sass": "^1.77.1",
+        "sass": "^1.77.2",
         "sass-loader": "^14.2.1",
         "style-loader": "^4.0.0",
         "ts-jest": "^29.1.2",
