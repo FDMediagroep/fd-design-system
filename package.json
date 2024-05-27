@@ -44,7 +44,7 @@
         "@fdmg/article-xml-json": "^2.0.45",
         "@fdmg/css-grid": "^2.0.45",
         "@fdmg/resubstitute": "^0.1.29",
-        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/jest-dom": "^6.4.5",
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "^14.5.2",
         "@types/cssbeautify": "^0.3.5",
