@@ -82,7 +82,7 @@
         "postcss-loader": "^8.1.1",
         "postcss-normalize": "^10.0.1",
         "postcss-preset-env": "^9.5.14",
-        "prettier": "^3.2.5",
+        "prettier": "^3.3.1",
         "pretty": "^2.0.0",
         "punycode": "^2.3.1",
         "raw-loader": "^4.0.2",
