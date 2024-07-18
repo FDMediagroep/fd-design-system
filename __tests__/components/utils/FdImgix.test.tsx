@@ -57,7 +57,7 @@ describe('FdImgix', () => {
     describe('sizes', () => {
         type imageSizeWidthS = [
             Parameters<typeof FdImgix>[0]['imageSizes']['widthS'],
-            string
+            string,
         ];
 
         it('should render crops if given to the component', () => {
@@ -101,7 +101,7 @@ describe('FdImgix', () => {
 
         type imageSizeWidthM = [
             Parameters<typeof FdImgix>[0]['imageSizes']['widthM'],
-            string
+            string,
         ];
 
         test.each<imageSizeWidthM>([
@@ -125,7 +125,7 @@ describe('FdImgix', () => {
 
         type imageSizeWidthL = [
             Parameters<typeof FdImgix>[0]['imageSizes']['widthL'],
-            string
+            string,
         ];
 
         test.each<imageSizeWidthL>([
