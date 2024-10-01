@@ -80,7 +80,7 @@
         "path-to-regexp": "^7.1.0",
         "postcss-flexbugs-fixes": "^5.0.2",
         "postcss-loader": "^8.1.1",
-        "postcss-normalize": "^10.0.1",
+        "postcss-normalize": "^13.0.1",
         "postcss-preset-env": "^10.0.5",
         "prettier": "^3.3.3",
         "pretty": "^2.0.0",
