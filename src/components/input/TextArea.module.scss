@@ -79,6 +79,10 @@
             border-bottom: 2px solid var(--input-underline);
             color: var(--input-color);
             background-color: var(--input-background);
+            box-sizing: border-box;
+            width: 100%;
+            outline: none;
+            margin: unset;
 
             &::placeholder {
                 color: var(--input-placeholder);
@@ -107,11 +111,6 @@
                     color: var(--input-helper-text-disabled);
                 }
             }
-
-            box-sizing: border-box;
-            width: 100%;
-            outline: none;
-            margin: unset;
         }
 
         .textareaMessage {
@@ -147,25 +146,33 @@
         ~ div
         > label
         ~ .iconCheck,
-    textarea:not(:required):valid:not([placeholder=' ']):not([data-show-error='true'])
+    textarea:not(:required):valid:not([placeholder=' ']):not(
+            [data-show-error='true']
+        )
         ~ div
         > label
         ~ .iconCheck {
         opacity: 1;
     }
-    textarea:not(:required):not(:placeholder-shown):not([data-show-error='true']):valid
+    textarea:not(:required):not(:placeholder-shown):not(
+            [data-show-error='true']
+        ):valid
         ~ div
         > label
         ~ .iconCheck {
         opacity: 1;
     }
-    textarea:not(:required):not(:-ms-input-placeholder):not([data-show-error='true']):valid
+    textarea:not(:required):not(:-ms-input-placeholder):not(
+            [data-show-error='true']
+        ):valid
         ~ div
         > label
         ~ .iconCheck {
         opacity: 1;
     }
-    textarea:required:not(:valid):not(:disabled):not(:placeholder-shown):not(:focus) {
+    textarea:required:not(:valid):not(:disabled):not(:placeholder-shown):not(
+            :focus
+        ) {
         color: var(--input-error);
 
         ~ label {
@@ -173,7 +180,9 @@
         }
     }
     textarea[data-show-error='true'] ~ .errorMessage:not(:empty),
-    textarea:required:not(:valid):not(:disabled):not(:placeholder-shown):not(:focus)
+    textarea:required:not(:valid):not(:disabled):not(:placeholder-shown):not(
+            :focus
+        )
         ~ .errorMessage:not(:empty) {
         max-height: 5rem;
         opacity: 1;
@@ -189,7 +198,9 @@
             color: var(--input-error);
         }
     }
-    textarea:required:not(:valid):not(:disabled):not(:-ms-input-placeholder):not(:focus)
+    textarea:required:not(:valid):not(:disabled):not(
+            :-ms-input-placeholder
+        ):not(:focus)
         ~ .errorMessage:not(:empty) {
         max-height: 5rem;
         opacity: 1;

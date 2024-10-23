@@ -26,11 +26,14 @@
     border: none;
     text-align: center;
     background-position: center;
-    transition: transform 0.05s ease-out, background-color 0.1s;
+    transition:
+        transform 0.05s ease-out,
+        background-color 0.1s;
     border-radius: 0;
     font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     font-weight: normal;
     letter-spacing: -0.1px;
+    background-color: var(--button-cta);
     @media screen and (max-width: map-deep-get($media, 'sizes', 's')) {
         width: 100%;
     }
@@ -39,7 +42,6 @@
         display: inline-flex;
     }
 
-    background-color: var(--button-cta);
     &:hover {
         background-color: var(--button-cta-hover);
     }
@@ -98,21 +100,20 @@
     }
 
     &:active {
+        transform: scale(0.98);
+        background-color: var(--button-cta-active);
         &:before {
             content: '';
             animation: rippleReverse;
             animation-duration: 0.5s;
             animation-delay: 0.1s;
         }
-        transform: scale(0.98);
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             transform: scale(0.95);
             &.m {
                 transform: scale(0.98);
             }
         }
-
-        background-color: var(--button-cta-active);
     }
 
     &:hover {

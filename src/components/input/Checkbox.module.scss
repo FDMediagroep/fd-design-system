@@ -51,11 +51,10 @@
     input:hover,
     input:focus {
         ~ .checkbox {
+            color: var(--checkbox-label-hover);
             &:before {
                 background-color: var(--checkbox-hover);
             }
-
-            color: var(--checkbox-label-hover);
         }
     }
 

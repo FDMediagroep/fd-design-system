@@ -20,11 +20,11 @@
         display: flex;
         flex: 1 1 auto;
         flex-direction: row;
+        text-decoration: none;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             min-height: 100px;
             flex-direction: column;
         }
-        text-decoration: none;
         &:hover h1 {
             text-decoration: underline;
         }
@@ -120,6 +120,7 @@
     }
 
     &.isRead:not(:hover):not(:active) {
+        background-color: var(--card-visited);
         figure {
             filter: grayscale(1) sepia(0.15);
         }
@@ -128,8 +129,6 @@
         .textContainer h1 {
             color: var(--card-text-visited);
         }
-
-        background-color: var(--card-visited);
     }
 
     &:focus:not(:active),

@@ -42,11 +42,11 @@
         picture {
             position: relative;
             width: 80px;
+            overflow: hidden;
             @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
                 width: 112px;
                 height: 112px;
             }
-            overflow: hidden;
             > img {
                 display: block;
                 position: absolute;

@@ -49,12 +49,6 @@
         max-width: 640px;
         color: var(--content-copy);
         background-color: var(--card-2);
-        /* IE11 */
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #191919;
-            background-color: rgba(0, 0, 0, 0.03);
-        }
         font-size: 0.8em;
         font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;
@@ -74,11 +68,6 @@
             display: table-cell;
             vertical-align: inherit;
             border-bottom: 1px solid var(--dividers);
-            /* IE11 */
-            @media screen and (-ms-high-contrast: active),
-                (-ms-high-contrast: none) {
-                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            }
         }
     }
 
@@ -90,11 +79,6 @@
         padding: 0.5em 1em 0.5em 0.1em;
         border-bottom: 1px solid var(--dividers);
         color: var(--primary);
-        /* IE11 */
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            color: #49a4a2;
-        }
         font-weight: bold;
         text-align: left;
     }
@@ -102,11 +86,6 @@
         width: 100%;
         padding: 1em;
         border-bottom: 1px solid var(--dividers);
-        /* IE11 */
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
         box-sizing: border-box;
         margin-top: 1em;
         display: table-row;
@@ -118,10 +97,5 @@
         display: table-cell;
         vertical-align: inherit;
         border-bottom: 1px solid var(--dividers);
-        /* IE11 */
-        @media screen and (-ms-high-contrast: active),
-            (-ms-high-contrast: none) {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
     }
 }

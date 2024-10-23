@@ -26,11 +26,18 @@
     border: none;
     text-align: center;
     background-position: center;
-    transition: transform 0.05s ease-out, background-color 0.1s;
+    transition:
+        transform 0.05s ease-out,
+        background-color 0.1s;
     border-radius: 0;
     font-family: map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     font-weight: normal;
     letter-spacing: -0.1px;
+    background-color: var(--button-ghost);
+    outline-style: solid;
+    outline-width: 1px;
+    outline-offset: -1px;
+    outline-color: var(--button-ghost-text);
     @media screen and (max-width: map-deep-get($media, 'sizes', 's')) {
         width: 100%;
     }
@@ -46,15 +53,10 @@
         margin: 0 0.5rem;
     }
 
-    background-color: var(--button-ghost);
-    outline-style: solid;
-    outline-width: 1px;
-    outline-offset: -1px;
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         outline-width: 1.5px;
         outline-offset: -1.5px;
     }
-    outline-color: var(--button-ghost-text);
     &:hover {
         color: var(--button-ghost-hover);
         outline-color: var(--button-ghost-hover);
@@ -115,6 +117,9 @@
     }
 
     &:active {
+        transform: scale(0.98);
+        color: var(--button-ghost-active-text);
+        background-color: var(--button-ghost-active);
         &:before {
             content: '';
             animation: rippleReverse;
@@ -122,7 +127,6 @@
             animation-delay: 0.1s;
         }
 
-        transform: scale(0.98);
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             transform: scale(0.95);
             &.m {
@@ -130,8 +134,6 @@
             }
         }
 
-        color: var(--button-ghost-active-text);
-        background-color: var(--button-ghost-active);
         svg {
             fill: var(--button-ghost-active-text);
         }

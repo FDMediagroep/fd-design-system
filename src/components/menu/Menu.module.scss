@@ -156,24 +156,24 @@
 
         .fd-button,
         .fd-button-cta {
+            color: white;
             &:focus,
             &:active,
             &:hover {
                 color: white;
             }
-            color: white;
         }
 
         .centered {
             box-sizing: border-box;
             height: 100%;
             width: 100%;
-            @media screen and (max-width: (640px - 0.02px)) {
-                background-color: var(--navigation-background);
-            }
             display: block;
             position: relative;
             max-width: 1064px;
+            @media screen and (max-width: (640px - 0.02px)) {
+                background-color: var(--navigation-background);
+            }
             @media only screen and (min-width: 768px) {
                 max-width: 768px;
             }
@@ -218,11 +218,11 @@
                 height: auto;
                 overflow-y: auto;
                 max-height: calc(100vh - 60px);
+                background: var(--sub-navigation-background);
                 @media screen and (min-width: 640px) {
                     width: 180px;
                     position: absolute;
                 }
-                background: var(--sub-navigation-background);
                 li {
                     float: none;
                     flex: 1 1 auto;
@@ -339,6 +339,8 @@
 
     .main-link {
         cursor: pointer;
+        max-width: 50px;
+        text-align: center;
         &:not(:hover):not(:active):not(:focus) {
             color: var(--navigation-item);
             svg path {
@@ -346,8 +348,6 @@
             }
         }
 
-        max-width: 50px;
-        text-align: center;
         @media screen and (min-width: 640px) {
             max-width: none;
             text-align: none;
@@ -594,13 +594,13 @@
                 height: 100%;
                 border: none;
                 border-radius: 0;
+                color: var(--content-copy);
+                background-color: var(--navigation-background);
                 &:active,
                 &:focus {
                     outline: none;
                 }
 
-                color: var(--content-copy);
-                background-color: var(--navigation-background);
                 &::placeholder {
                     /* Chrome, Firefox, Opera, Safari 10.1+ */
                     color: var(--input-label);
@@ -737,10 +737,10 @@
         left: -376px;
         bottom: 0;
         width: 100vw;
+        background-color: var(--sub-navigation-background);
         @media screen and (min-width: 640px) {
             width: 376px;
         }
-        background-color: var(--sub-navigation-background);
         .expanded {
             background-color: var(--navigation-background);
         }
