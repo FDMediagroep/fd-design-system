@@ -50,10 +50,10 @@
         position: relative;
         display: flex;
         flex: 0 0 80px;
+        overflow: hidden;
         @media screen and (min-width: 641px) {
             flex: 0 0 112px;
         }
-        overflow: hidden;
 
         img {
             display: block;
@@ -67,10 +67,10 @@
         picture {
             position: relative;
             width: 80px;
+            overflow: hidden;
             @media screen and (min-width: 641px) {
                 width: 112px;
             }
-            overflow: hidden;
         }
 
         figcaption {

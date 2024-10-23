@@ -44,6 +44,8 @@
 
     .newsContainer {
         flex: 1 1 100%;
+        display: flex;
+        overflow: hidden;
         @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
             flex: 1 1 calc(50% - 1rem);
         }
@@ -53,8 +55,6 @@
         @media screen and (min-width: map-deep-get($media, 'sizes', 'xl')) {
             flex: 1 1 calc(25% - 1rem);
         }
-        display: flex;
-        overflow: hidden;
     }
 
     .ie11FullHeight,

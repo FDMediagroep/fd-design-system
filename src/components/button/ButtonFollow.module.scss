@@ -22,13 +22,6 @@
         color: var(--button-follow-text-hover);
     }
     .cross {
-        &:before {
-            content: '+';
-            display: block;
-            width: 10px;
-            height: 10px;
-            line-height: 10px;
-        }
         display: inline-block;
         transform: rotate(0deg);
         transition: transform 0.5s;
@@ -36,6 +29,13 @@
         font-size: 1.25rem;
         position: relative;
         top: 2px;
+        &:before {
+            content: '+';
+            display: block;
+            width: 10px;
+            height: 10px;
+            line-height: 10px;
+        }
     }
 
     .buttonText {

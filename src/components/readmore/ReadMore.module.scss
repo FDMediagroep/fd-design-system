@@ -6,6 +6,12 @@
 .readMore {
     margin: 3rem 0;
     width: 100%;
+    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: var(--card-2);
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
+    color: var(--content-copy);
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         margin: 3.5rem 0;
     }
@@ -13,9 +19,6 @@
         margin: 4rem 0;
     }
 
-    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         font-size: 1.0625rem;
         line-height: 1.471;
@@ -24,9 +27,6 @@
         font-size: 1.1875rem;
         line-height: 1.474;
     }
-    background-color: var(--card-2);
-    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
-    color: var(--content-copy);
     h3,
     p {
         display: block;
@@ -42,6 +42,9 @@
     h3 {
         font-size: 1.125rem;
         line-height: 1.222;
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+        margin: 0;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             font-size: 1.1875rem;
             line-height: 1.316;
@@ -50,9 +53,6 @@
             font-size: 1.3125rem;
             line-height: 1.333;
         }
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
-        margin: 0;
     }
 
     p {
@@ -60,10 +60,10 @@
         box-sizing: border-box;
         margin: 0;
         display: inline-block;
+        width: 100%;
         &:empty {
             display: none;
         }
-        width: 100%;
         a {
             text-decoration: none;
             color: var(--link);

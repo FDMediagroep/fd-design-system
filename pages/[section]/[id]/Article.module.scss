@@ -19,6 +19,8 @@
             line-height: 1.08em;
             font-size: 1.5625rem;
             margin: 1rem 0;
+            font-family: map-deep-get($typography, 'font-family', 'bold-serif'),
+                serif;
             @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
                 font-size: 2.8125rem;
             }
@@ -26,8 +28,6 @@
                 font-size: 3.25rem;
                 max-width: 88%;
             }
-            font-family: map-deep-get($typography, 'font-family', 'bold-serif'),
-                serif;
         }
     }
 
@@ -66,6 +66,10 @@
 
     .intro {
         font-size: 1.375rem;
+        font-family: map-deep-get($typography, 'font-family', 'regular-serif'),
+            serif;
+        line-height: 1.2;
+        margin: 0;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             font-size: 1.5625rem;
         }
@@ -73,24 +77,20 @@
             font-size: 1.75rem;
             width: 84%;
         }
-        font-family: map-deep-get($typography, 'font-family', 'regular-serif'),
-            serif;
-        line-height: 1.2;
-        margin: 0;
     }
 
     > p {
         margin: 0 0 0.5rem 0;
         line-height: 1.5;
         font-size: 1.125rem;
+        font-family: map-deep-get($typography, 'font-family', 'regular-serif'),
+            serif;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             font-size: 1.1875rem;
         }
         @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
             font-size: 1.3125rem;
         }
-        font-family: map-deep-get($typography, 'font-family', 'regular-serif'),
-            serif;
 
         > a {
             text-decoration: none;

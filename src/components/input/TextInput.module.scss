@@ -13,9 +13,6 @@
         input {
             color: var(--input-color);
             background-color: var(--input-background);
-            &::-webkit-calendar-picker-indicator {
-                filter: var(--input-date-picker-calendar-fill);
-            }
             transition: border 0.15s linear;
             font-family: map-deep-get($typography, 'font-family', 'regular'),
                 sans-serif;
@@ -24,13 +21,23 @@
             vertical-align: bottom;
             border: none;
             border-radius: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: unset;
+            outline: none;
+            margin: unset;
+            border-bottom: 2px solid var(--input-underline);
+
+            &::-webkit-calendar-picker-indicator {
+                filter: var(--input-date-picker-calendar-fill);
+            }
+
             &[type='date'],
             &[type='month'],
             &[type='datetime'] {
                 -webkit-appearance: none;
                 min-width: 175px;
             }
-            border-bottom: 2px solid var(--input-underline);
             &::placeholder {
                 color: var(--input-placeholder);
             }
@@ -68,12 +75,6 @@
                     color: var(--input-helper-text-disabled);
                 }
             }
-
-            box-sizing: border-box;
-            width: 100%;
-            height: unset;
-            outline: none;
-            margin: unset;
         }
         label {
             font-family: map-deep-get($typography, 'font-family', 'regular'),
@@ -93,7 +94,9 @@
             overflow: hidden;
             cursor: text;
         }
-        input:not([type='month']):not([type='date']):not([type='datetime']):not([placeholder=' '])
+        input:not([type='month']):not([type='date']):not([type='datetime']):not(
+                [placeholder=' ']
+            )
             ~ div
             > label {
             font-size: 0.875rem;
@@ -165,7 +168,11 @@
         ~ .iconCheck {
         opacity: 1;
     }
-    input:not([type='date']):not([type='month']):not([type='datetime']):required:not(:disabled):not(:valid):not(:placeholder-shown):not(:focus) {
+    input:not([type='date']):not([type='month']):not(
+            [type='datetime']
+        ):required:not(:disabled):not(:valid):not(:placeholder-shown):not(
+            :focus
+        ) {
         &:not(:hover) {
             border-color: var(--input-error);
         }
@@ -174,13 +181,17 @@
             color: var(--input-error);
         }
     }
-    input:required:not(:valid):not(:disabled):not(:placeholder-shown):not(:focus)
+    input:required:not(:valid):not(:disabled):not(:placeholder-shown):not(
+            :focus
+        )
         ~ .errorMessage:not(:empty) {
         max-height: 5rem;
         opacity: 1;
         margin: 0.5rem 1rem;
     }
-    input:required:not(:valid):not(:disabled):not(:-ms-input-placeholder):not(:focus)
+    input:required:not(:valid):not(:disabled):not(:-ms-input-placeholder):not(
+            :focus
+        )
         ~ .errorMessage:not(:empty) {
         max-height: 5rem;
         opacity: 1;

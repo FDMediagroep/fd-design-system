@@ -26,6 +26,10 @@
     h3 {
         font-size: 1.125rem;
         line-height: 1.222;
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+        margin: 0;
+        color: var(--content-copy);
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             font-size: 1.1875rem;
             line-height: 1.316;
@@ -34,10 +38,6 @@
             font-size: 1.3125rem;
             line-height: 1.333;
         }
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
-        margin: 0;
-        color: var(--content-copy);
     }
 
     .content {
@@ -87,7 +87,9 @@
             text-transform: uppercase;
             background: var(--dividers);
             border-radius: 28px;
-            transition: opacity 0.15s ease-out, background 0.15s ease-out;
+            transition:
+                opacity 0.15s ease-out,
+                background 0.15s ease-out;
             .iconCheck,
             .iconTimes {
                 display: flex;
