@@ -102,7 +102,7 @@
   },
   "dependencies": {
     "js-cookie": "^3.0.5",
-    "react-imgix": "^9.8.1"
+    "react-imgix": "^9.10.0"
   },
   "browserslist": {
     "production": [
