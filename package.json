@@ -41,7 +41,7 @@
   "author": "Willem Liu",
   "license": "ISC",
   "devDependencies": {
-    "@fdmg/article-xml-json": "^2.0.52",
+    "@fdmg/article-xml-json": "^2.0.56",
     "@fdmg/css-grid": "^2.0.50",
     "@fdmg/resubstitute": "^0.1.35",
     "@testing-library/jest-dom": "^6.6.3",
