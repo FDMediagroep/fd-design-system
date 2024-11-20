@@ -18,10 +18,10 @@
         flex-direction: row;
         flex: 1 1 auto;
         align-items: center;
+        justify-content: center;
         @media screen and (min-width: map-deep-get($media, 'sizes', 'm')) {
             align-items: flex-start;
         }
-        justify-content: center;
         &:not(:first-child) {
             margin-left: 1rem;
         }
@@ -141,6 +141,7 @@
             color: var(--content-copy);
         }
         &.up {
+            animation-name: up;
             top: 21px;
             @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
                 top: 15.5px;
@@ -148,9 +149,9 @@
             @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
                 top: 18px;
             }
-            animation-name: up;
         }
         &.down {
+            animation-name: down;
             top: -21px;
             @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
                 top: -15.5px;
@@ -158,7 +159,6 @@
             @media screen and (min-width: map-deep-get($media, 'sizes', 'l')) {
                 top: -18px;
             }
-            animation-name: down;
         }
     }
 

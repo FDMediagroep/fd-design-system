@@ -29,6 +29,7 @@
         font-weight: normal;
         letter-spacing: -0.1px;
         width: 100%;
+        background-color: var(--button);
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             width: auto;
         }
@@ -37,7 +38,6 @@
             display: inline-flex;
         }
 
-        background-color: var(--button);
         &:hover {
             background-color: var(--button-hover);
         }

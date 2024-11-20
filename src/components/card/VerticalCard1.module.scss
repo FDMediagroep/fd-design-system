@@ -60,6 +60,7 @@
     }
 
     &.isRead:not(:hover):not(:active) {
+        background-color: var(--card-visited);
         figure {
             filter: grayscale(1) sepia(0.15);
         }
@@ -69,8 +70,6 @@
         .teaserText p {
             color: var(--card-text-visited);
         }
-
-        background-color: var(--card-visited);
     }
 
     &:focus:not(:active),

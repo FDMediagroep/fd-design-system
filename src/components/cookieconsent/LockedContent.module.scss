@@ -35,14 +35,14 @@
             cursor: pointer;
             padding: 1rem;
             font-size: 1rem;
-            @media only screen and (min-width: 641px) {
-                font-size: 17px;
-            }
             font-family: 'ProximaNovaRegular', sans-serif;
             line-height: 1.2em;
             box-sizing: border-box;
             z-index: 1;
             color: var(--content-copy);
+            @media only screen and (min-width: 641px) {
+                font-size: 17px;
+            }
         }
         .lock {
             margin-right: 1rem;

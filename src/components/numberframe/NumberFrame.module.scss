@@ -6,6 +6,7 @@
 .numberFrame {
     margin: 3rem 0;
     width: 100%;
+    color: var(--numberframe);
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         margin: 3.5rem 0;
     }
@@ -13,7 +14,6 @@
         margin: 4rem 0;
     }
 
-    color: var(--numberframe);
     h2 {
         line-height: 1;
         margin: 0;

@@ -8,6 +8,9 @@
     font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     font-size: 1.0625rem;
     line-height: 1.529;
+    color: var(--content-copy);
+    background-color: var(--card-2);
+    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         font-size: 1.1875rem;
         line-height: 1.474;
@@ -17,9 +20,6 @@
         line-height: 1.429;
     }
 
-    color: var(--content-copy);
-    background-color: var(--card-2);
-    box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
     section {
         padding: 1rem;
         display: flex;

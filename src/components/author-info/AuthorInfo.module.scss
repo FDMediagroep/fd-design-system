@@ -12,12 +12,12 @@
         font-size: 1rem;
         line-height: 1.5;
         margin-bottom: 0.5rem;
-        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
-            font-size: 1.0625rem;
-        }
         font-family: map-deep-get($typography, 'font-family', 'bold'),
             sans-serif;
         color: var(--content-copy);
+        @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+            font-size: 1.0625rem;
+        }
     }
 
     .profile,

@@ -47,11 +47,11 @@
     }
     input:focus ~ .radio,
     input:hover ~ .radio {
+        color: var(--radio-label-hover);
         &:before {
             border-color: var(--radio-border);
             background-color: var(--radio-hover);
         }
-        color: var(--radio-label-hover);
     }
     input:focus ~ .radio {
         &:before {

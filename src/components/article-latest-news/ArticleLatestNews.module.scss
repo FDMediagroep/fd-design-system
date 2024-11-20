@@ -27,19 +27,19 @@
         display: block;
         border-top: 1px solid var(--dividers);
         color: var(--content-copy);
+        text-decoration: none;
         .isRead {
             opacity: 0.6;
         }
         &:hover {
+            color: var(--primary);
             .is-read {
                 text-decoration: underline;
             }
-            color: var(--primary);
             .icon svg {
                 fill: var(--primary);
             }
         }
-        text-decoration: none;
     }
     .icon {
         position: absolute;

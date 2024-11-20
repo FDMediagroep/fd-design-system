@@ -10,6 +10,10 @@
     h3 {
         font-size: 1.125rem;
         line-height: 1.222;
+        font-family: map-deep-get($typography, 'font-family', 'bold'),
+            sans-serif;
+        padding: 0.5rem 1rem;
+        margin: 0;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
             font-size: 1.1875rem;
             line-height: 1.316;
@@ -18,10 +22,6 @@
             font-size: 1.3125rem;
             line-height: 1.333;
         }
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
-        padding: 0.5rem 1rem;
-        margin: 0;
     }
 
     h3 a {
@@ -49,9 +49,6 @@
         position: relative;
         top: 5px;
         color: var(--content-copy);
-        &:hover {
-            color: var(--primary);
-        }
         display: block;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -59,6 +56,9 @@
         text-decoration: none;
         font-family: map-deep-get($typography, 'font-family', 'regular'),
             sans-serif;
+        &:hover {
+            color: var(--primary);
+        }
     }
     .tagControls {
         display: flex;

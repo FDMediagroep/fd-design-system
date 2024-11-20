@@ -39,10 +39,10 @@
         border-bottom: 1px solid var(--dividers);
     }
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
+        flex-direction: row !important;
+        flex-wrap: wrap;
         > *:not(:last-child) {
             border: none;
         }
-        flex-direction: row !important;
-        flex-wrap: wrap;
     }
 }
