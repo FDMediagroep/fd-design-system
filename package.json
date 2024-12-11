@@ -56,7 +56,7 @@
         "@types/node": "^22.10.1",
         "@types/react": "18.3.12",
         "@types/react-dom": "18.3.1",
-        "@types/react-imgix": "^9.5.3",
+        "@types/react-imgix": "^9.5.4",
         "autoprefixer": "^10.4.20",
         "copy-webpack-plugin": "^12.0.2",
         "copyfiles": "^2.4.1",
