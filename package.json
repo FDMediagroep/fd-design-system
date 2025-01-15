@@ -98,7 +98,7 @@
         "ts-node": "^10.9.2",
         "typescript": "^5.7.2",
         "webpack-bundle-analyzer": "^4.10.2",
-        "webpack-cli": "^5.1.4"
+        "webpack-cli": "^6.0.1"
     },
     "dependencies": {
         "js-cookie": "^3.0.5",
