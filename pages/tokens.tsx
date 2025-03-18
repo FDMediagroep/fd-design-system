@@ -151,10 +151,7 @@ export async function getStaticProps() {
 
     const updated = new Date().toLocaleString();
     return {
-        props: {
-            icons,
-            updated,
-        },
+        props: { icons, updated },
         // we will attempt to re-generate the page:
         // - when a request comes in
         // - at most once every 10 seconds

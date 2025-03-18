@@ -1,3 +1,5 @@
+> :exclamation: **DEPRECATED** :exclamation: : Sunsetting.
+
 <p align="center">
     <a href="https://design-system.fd.nl" target="_BLANK" rel="noopener noreferrer">
         <img width="160" src="https://github.com/FDMediagroep/fd-design-system/raw/master/public/assets/icons/logo.svg?sanitize=true" alt="FD Design System">

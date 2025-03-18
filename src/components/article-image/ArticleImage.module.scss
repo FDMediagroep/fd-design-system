@@ -1,7 +1,7 @@
-@import '../../utils/map-deep-get.scss';
-@import '../../design-tokens/colors.scss';
-@import '../../design-tokens/media.scss';
-@import '../../design-tokens/typography.scss';
+@use '../../utils/map-deep-get.scss' as *;
+@use '../../design-tokens/colors.scss' as *;
+@use '../../design-tokens/media.scss' as *;
+@use '../../design-tokens/typography.scss' as *;
 
 .articleImage {
     margin: 0 0 2.5rem 0;
@@ -11,8 +11,8 @@
     }
 
     figcaption {
-        font-family: map-deep-get($typography, 'font-family', 'regular'),
-            sans-serif;
+        font-family:
+            map-deep-get($typography, 'font-family', 'regular'), sans-serif;
         line-height: 1.2;
         font-size: 0.8125rem;
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {

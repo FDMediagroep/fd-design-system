@@ -1,6 +1,6 @@
-@import '../src/utils/map-deep-get.scss';
-@import '../src/design-tokens/colors.scss';
-@import '../src/design-tokens/typography.scss';
+@use '../src/utils/map-deep-get.scss' as *;
+@use '../src/design-tokens/colors.scss' as *;
+@use '../src/design-tokens/typography.scss' as *;
 
 html {
     overflow-x: hidden;
@@ -9,7 +9,9 @@ html {
 html,
 html.dark,
 html.light {
-    transition: background-color 0.2s linear, color 0.2s linear;
+    transition:
+        background-color 0.2s linear,
+        color 0.2s linear;
     color: var(--content-copy);
     background-color: var(--product-background);
 }
@@ -18,7 +20,8 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+    font-family:
+        map-deep-get($typography, 'font-family', 'regular'), sans-serif;
 }
 
 @supports (-webkit-touch-callout: none) {

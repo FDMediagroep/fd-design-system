@@ -1,6 +1,6 @@
-@import './mixins/dark-tokens.scss';
-@import './mixins/light-tokens.scss';
-@import './typography/typography.scss';
+@use './mixins/dark-tokens.scss' as *;
+@use './mixins/light-tokens.scss' as *;
+@use './typography/typography.scss' as *;
 
 /**
  * This is the place to put some design tokens.

@@ -1,5 +1,5 @@
-@import '../../utils/map-deep-get.scss';
-@import '../../design-tokens/colors.scss';
+@use '../../utils/map-deep-get.scss' as *;
+@use '../../design-tokens/colors.scss' as *;
 
 .fd-footer {
     overflow: hidden; // IE11

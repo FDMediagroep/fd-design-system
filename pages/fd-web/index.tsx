@@ -401,10 +401,7 @@ export async function getStaticProps({ params }) {
     // }
 
     return {
-        props: {
-            data,
-            timestamp: +new Date(),
-        },
+        props: { data, timestamp: +new Date() },
         // we will attempt to re-generate the page:
         // - when a request comes in
         // - at most once every 10 seconds

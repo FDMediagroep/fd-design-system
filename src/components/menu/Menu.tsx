@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { JSX, useCallback, useEffect, useRef, useState } from 'react';
 import * as styles from './Menu.module.scss';
 import * as buttonStyles from './MenuButton.module.scss';
 import {

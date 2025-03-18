@@ -11,7 +11,7 @@ import { DarkModeToggle } from './DarkModeToggle';
 import * as styles from './Footer.module.scss';
 
 function Footer() {
-    const footerRef = useRef<HTMLElement>();
+    const footerRef = useRef<HTMLElement>(null);
     const [controls, setControls] = useState([]);
 
     useEffect(() => {

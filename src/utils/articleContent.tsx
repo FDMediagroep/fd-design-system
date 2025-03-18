@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, JSX, useEffect, useState } from 'react';
 import { ArticleImage } from '../components/article-image/ArticleImage';
 import { Infographic } from '../components/infographic/Infographic';
 import { InfographicExtended } from '../components/article-image/InfographicExtended';
@@ -96,10 +96,7 @@ function mergeParagraph(
                 jsx.push(
                     React.createElement(
                         pContent.name,
-                        {
-                            key: `${key}-${idx}`,
-                            ...pContent.attributes,
-                        },
+                        { key: `${key}-${idx}`, ...pContent.attributes },
                         pContent.content
                     )
                 );

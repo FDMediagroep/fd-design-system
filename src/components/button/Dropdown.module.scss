@@ -1,7 +1,7 @@
-@import '../../utils/map-deep-get.scss';
-@import '../../design-tokens/colors.scss';
-@import '../../design-tokens/media.scss';
-@import '../../design-tokens/typography.scss';
+@use '../../utils/map-deep-get.scss' as *;
+@use '../../design-tokens/colors.scss' as *;
+@use '../../design-tokens/media.scss' as *;
+@use '../../design-tokens/typography.scss' as *;
 
 .fd-dropdown {
     position: relative;
@@ -24,8 +24,8 @@
         border: none;
         text-align: center;
         border-radius: 0;
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
+        font-family:
+            map-deep-get($typography, 'font-family', 'bold'), sans-serif;
         font-weight: normal;
         letter-spacing: -0.1px;
         width: 100%;

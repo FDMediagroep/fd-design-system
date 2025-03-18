@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { JSX } from 'react';
 import * as styles from './HorizontalCard3.module.scss';
 
 interface Props {

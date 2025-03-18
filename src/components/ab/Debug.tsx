@@ -37,7 +37,7 @@ export function Debug(props: Props) {
                         </span>
                     </h2>
                     {props.children.map(
-                        (child: React.ReactElement, idx: number) => (
+                        (child: React.ReactElement<any>, idx: number) => (
                             <label key={child.props.name}>
                                 <input
                                     type="radio"

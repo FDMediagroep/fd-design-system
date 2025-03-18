@@ -1,7 +1,7 @@
-@import '../../utils/map-deep-get.scss';
-@import '../../design-tokens/colors.scss';
-@import '../../design-tokens/media.scss';
-@import '../../design-tokens/typography.scss';
+@use '../../utils/map-deep-get.scss' as *;
+@use '../../design-tokens/colors.scss' as *;
+@use '../../design-tokens/media.scss' as *;
+@use '../../design-tokens/typography.scss' as *;
 
 .summary {
     margin: 2.5rem 0;
@@ -10,8 +10,9 @@
         color: var(--content-copy);
         margin-bottom: 1rem;
         position: relative;
-        background: linear-gradient(var(--dividers), var(--dividers)) 0 0/100%
-                1px no-repeat,
+        background:
+            linear-gradient(var(--dividers), var(--dividers)) 0 0/100% 1px
+                no-repeat,
             linear-gradient(var(--dividers), var(--dividers)) 0 4px/100% 1px
                 no-repeat,
             linear-gradient(var(--dividers), var(--dividers)) 0 8px/100% 1px

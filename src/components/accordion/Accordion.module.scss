@@ -1,11 +1,12 @@
-@import '../../utils/map-deep-get.scss';
-@import '../../design-tokens/colors.scss';
-@import '../../design-tokens/media.scss';
-@import '../../design-tokens/typography.scss';
+@use '../../utils/map-deep-get.scss' as *;
+@use '../../design-tokens/colors.scss' as *;
+@use '../../design-tokens/media.scss' as *;
+@use '../../design-tokens/typography.scss' as *;
 
 .fdAccordion {
     margin: 1rem 0;
-    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+    font-family:
+        map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     font-size: 1.0625rem;
     line-height: 1.529;
     color: var(--content-copy);
@@ -34,8 +35,8 @@
         cursor: pointer;
         margin: 0;
         font-weight: normal;
-        font-family: map-deep-get($typography, 'font-family', 'regular'),
-            sans-serif;
+        font-family:
+            map-deep-get($typography, 'font-family', 'regular'), sans-serif;
 
         font-size: 1.0625rem;
         line-height: 1.529;
@@ -82,8 +83,8 @@
     }
 
     input:checked ~ .textContent label h2 {
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
+        font-family:
+            map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     }
 
     .icon {

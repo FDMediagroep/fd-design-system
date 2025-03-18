@@ -24,7 +24,7 @@ export interface Props {
 }
 
 export default function Modal(props: Props) {
-    const dialogRef = useRef<HTMLDialogElement>();
+    const dialogRef = useRef<HTMLDialogElement>(null);
     const [closing, setClosing] = useState(false);
     const { onClose } = props;
 

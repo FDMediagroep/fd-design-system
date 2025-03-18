@@ -29,7 +29,7 @@ interface Props {
  * @param props
  */
 function Dropdown(props: Props) {
-    const buttonRef = useRef();
+    const buttonRef = useRef(null);
     const [expanded, setExpanded] = useState(false);
     const sizeClass = props.size === 'm' ? styles['m'] : '';
 

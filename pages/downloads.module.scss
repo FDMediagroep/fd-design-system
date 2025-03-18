@@ -1,9 +1,9 @@
-@import '@import ' ../src/utils/map-deep-get.scss ';';
-@import '../src/design-tokens/typography.scss';
+@use '@import ' ../src/utils/map-deep-get.scss ';' as *;
+@use '../src/design-tokens/typography.scss' as *;
 
 .downloads {
     h1 {
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
+        font-family:
+            map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     }
 }
