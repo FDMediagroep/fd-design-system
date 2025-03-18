@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './Vimeo.module.scss';
+import styles from './Vimeo.module.scss';
 
 interface Props {
     id: string;

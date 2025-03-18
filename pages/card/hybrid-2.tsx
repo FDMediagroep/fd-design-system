@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './cards.module.scss';
+import styles from './cards.module.scss';
 import { Explain } from '../../src/components/Explain';
 import {
     HybridCard2,

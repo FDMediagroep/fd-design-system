@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './TextFrame.module.scss';
+import styles from './TextFrame.module.scss';
 
 interface Props {
     alignment?: 'block' | 'right' | any;

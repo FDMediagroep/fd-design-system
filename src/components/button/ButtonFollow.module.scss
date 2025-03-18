@@ -1,6 +1,6 @@
-@import '../../utils/map-deep-get.scss';
-@import '../../design-tokens/colors.scss';
-@import '../../design-tokens/typography.scss';
+@use '../../utils/map-deep-get.scss' as *;
+@use '../../design-tokens/colors.scss' as *;
+@use '../../design-tokens/typography.scss' as *;
 
 .fdFollowButton {
     position: relative;
@@ -12,7 +12,8 @@
     background-color: var(--button-follow);
     cursor: pointer;
     transition: background-color 0.2s;
-    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+    font-family:
+        map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     font-size: 0.875rem;
 
     &:hover,

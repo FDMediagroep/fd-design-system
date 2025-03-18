@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './InfographicExtended.module.scss';
+import styles from './InfographicExtended.module.scss';
 
 interface Props {
     darkModeInvert?: boolean;

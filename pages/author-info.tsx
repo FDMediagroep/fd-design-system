@@ -4,7 +4,7 @@ import {
     AuthorInfo,
     getCssClassNames,
 } from '../src/components/author-info/AuthorInfo';
-import * as styles from './article-link-block.module.scss';
+import styles from './article-link-block.module.scss';
 import Head from 'next/head';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
 

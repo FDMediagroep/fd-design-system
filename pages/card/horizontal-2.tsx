@@ -6,7 +6,7 @@ import {
 } from '../../src/components/card/HorizontalCard2';
 import Head from 'next/head';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
-import * as styles from './cards.module.scss';
+import styles from './cards.module.scss';
 
 const horizontalCards2: any = [
     {

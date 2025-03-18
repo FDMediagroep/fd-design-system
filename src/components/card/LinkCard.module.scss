@@ -1,7 +1,7 @@
-@import '../../utils/map-deep-get.scss';
-@import '../../design-tokens/colors.scss';
-@import '../../design-tokens/media.scss';
-@import '../../design-tokens/typography.scss';
+@use '../../utils/map-deep-get.scss' as *;
+@use '../../design-tokens/colors.scss' as *;
+@use '../../design-tokens/media.scss' as *;
+@use '../../design-tokens/typography.scss' as *;
 
 .linkCard {
     box-shadow: 0 1px 0.2px rgba(0, 0, 0, 0.1);
@@ -26,8 +26,8 @@
     h3 {
         font-size: 1.125rem;
         line-height: 1.222;
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
+        font-family:
+            map-deep-get($typography, 'font-family', 'bold'), sans-serif;
         margin: 0;
         color: var(--content-copy);
         @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
@@ -44,8 +44,8 @@
         position: relative;
         display: block;
         padding-right: 40px;
-        font-family: map-deep-get($typography, 'font-family', 'regular'),
-            sans-serif;
+        font-family:
+            map-deep-get($typography, 'font-family', 'regular'), sans-serif;
         border-top: 1px solid var(--dividers);
         line-height: 1.2em;
         color: var(--content-copy);

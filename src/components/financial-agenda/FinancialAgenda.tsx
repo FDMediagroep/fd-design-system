@@ -1,11 +1,7 @@
 import React from 'react';
-import * as styles from './FinancialAgenda.module.scss';
+import styles from './FinancialAgenda.module.scss';
 
-type AgendaItem = {
-    date: string;
-    source: string;
-    description: string;
-};
+type AgendaItem = { date: string; source: string; description: string };
 
 interface Props {
     agendaItems?: AgendaItem[];

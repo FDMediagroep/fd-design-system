@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './ButtonFollow.module.scss';
+import styles from './ButtonFollow.module.scss';
 
 interface Props {
     className?: string;

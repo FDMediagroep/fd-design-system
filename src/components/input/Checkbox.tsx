@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './Checkbox.module.scss';
+import styles from './Checkbox.module.scss';
 
 export interface Props {
     /**

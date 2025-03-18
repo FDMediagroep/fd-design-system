@@ -1,7 +1,7 @@
 import React from 'react';
 import { Explain } from '../src/components/Explain';
 import Head from 'next/head';
-import * as styles from './grid.module.scss';
+import styles from './grid.module.scss';
 import { GridContainer } from '@fdmg/css-grid/GridContainer';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
 

@@ -1,5 +1,5 @@
 import React, { JSX } from 'react';
-import * as styles from './HorizontalCard1.module.scss';
+import styles from './HorizontalCard1.module.scss';
 
 interface Props {
     id: string;

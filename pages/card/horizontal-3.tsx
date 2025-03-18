@@ -6,7 +6,7 @@ import {
 } from '../../src/components/card/HorizontalCard3';
 import Head from 'next/head';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
-import * as styles from './cards.module.scss';
+import styles from './cards.module.scss';
 import { FdImgix } from '../../src/components/utils/image/FdImgix';
 
 const horizontalCards3: any = [

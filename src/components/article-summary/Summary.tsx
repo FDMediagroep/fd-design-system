@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './Summary.module.scss';
+import styles from './Summary.module.scss';
 
 export type Variants = 'default' | 'variant-1' | 'variant-2';
 

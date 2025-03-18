@@ -1,6 +1,6 @@
-@import '../../utils/map-deep-get.scss';
-@import '../../design-tokens/colors.scss';
-@import '../../design-tokens/typography.scss';
+@use '../../utils/map-deep-get.scss' as *;
+@use '../../design-tokens/colors.scss' as *;
+@use '../../design-tokens/typography.scss' as *;
 
 .bulletPoint {
     clear: both;
@@ -24,8 +24,8 @@
         color: var(--content-copy);
         font-weight: normal;
         font-size: 1.25rem;
-        font-family: map-deep-get($typography, 'font-family', 'regular'),
-            sans-serif;
+        font-family:
+            map-deep-get($typography, 'font-family', 'regular'), sans-serif;
         line-height: 1.2;
     }
 

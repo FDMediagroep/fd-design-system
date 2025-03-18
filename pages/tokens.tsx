@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './tokens.module.scss';
+import styles from './tokens.module.scss';
 import fs from 'fs';
 import path from 'path';
 import Head from 'next/head';
@@ -151,10 +151,7 @@ export async function getStaticProps() {
 
     const updated = new Date().toLocaleString();
     return {
-        props: {
-            icons,
-            updated,
-        },
+        props: { icons, updated },
         // we will attempt to re-generate the page:
         // - when a request comes in
         // - at most once every 10 seconds

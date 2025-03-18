@@ -1,5 +1,5 @@
 import React, { JSX, useCallback, useEffect, useState } from 'react';
-import * as styles from './CookieConsent.module.scss';
+import styles from './CookieConsent.module.scss';
 import {
     Button,
     getCssClassNames as getButtonCssClassNames,

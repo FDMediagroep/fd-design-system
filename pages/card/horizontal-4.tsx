@@ -2,7 +2,7 @@ import React from 'react';
 import { Explain } from '../../src/components/Explain';
 import Head from 'next/head';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
-import * as styles from './cards.module.scss';
+import styles from './cards.module.scss';
 import {
     HorizontalCard4,
     getCssClassNames,

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './Button.module.scss';
+import styles from './Button.module.scss';
 
 type Sizes = 's' | 'm';
 

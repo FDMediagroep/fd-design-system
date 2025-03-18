@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './BreakingSwitch.module.scss';
+import styles from './BreakingSwitch.module.scss';
 import { CheckIcon, CloseIcon } from '../../design-tokens/icons';
 
 export interface Props {

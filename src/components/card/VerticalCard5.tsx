@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dropdown } from '../button/Dropdown';
-import * as styles from './VerticalCard5.module.scss';
+import styles from './VerticalCard5.module.scss';
 
 interface Props {
     id: string;

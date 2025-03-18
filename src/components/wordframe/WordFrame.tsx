@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './WordFrame.module.scss';
+import styles from './WordFrame.module.scss';
 
 interface Props {
     title: string;

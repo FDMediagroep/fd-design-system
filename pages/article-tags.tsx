@@ -4,7 +4,7 @@ import {
     ArticleTags,
     getCssClassNames,
 } from '../src/components/article-tags/ArticleTags';
-import * as styles from './article-link-block.module.scss';
+import styles from './article-link-block.module.scss';
 import PageStore from '../src/stores/PageStore';
 import Head from 'next/head';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
@@ -14,21 +14,9 @@ export const metaDescription = 'Article tags, used to display tags in articles';
 
 function Page() {
     const [tags, setTags] = useState([
-        {
-            tag: 'Detailhandel',
-            uuid: '1',
-        },
-        {
-            selected: true,
-            tag: 'Eten & Drinken',
-            uuid: '2',
-        },
-        {
-            alertSelected: true,
-            selected: true,
-            tag: 'Supermarkt',
-            uuid: '3',
-        },
+        { tag: 'Detailhandel', uuid: '1' },
+        { selected: true, tag: 'Eten & Drinken', uuid: '2' },
+        { alertSelected: true, selected: true, tag: 'Supermarkt', uuid: '3' },
     ]);
 
     /**
@@ -82,11 +70,7 @@ function Page() {
         setTags(
             tags.map((tag: any) => {
                 if (tag.tag === theTag) {
-                    return {
-                        ...tag,
-                        selected: false,
-                        alertSelected: false,
-                    };
+                    return { ...tag, selected: false, alertSelected: false };
                 } else {
                     return tag;
                 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './NumberFrame.module.scss';
+import styles from './NumberFrame.module.scss';
 
 interface Props {
     number: string;

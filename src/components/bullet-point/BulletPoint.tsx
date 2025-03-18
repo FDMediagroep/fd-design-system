@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './BulletPoint.module.scss';
+import styles from './BulletPoint.module.scss';
 import { BulletIcon, BulletRedIcon } from '../../design-tokens/icons';
 
 export type Alignment = 'block' | 'right';

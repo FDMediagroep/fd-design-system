@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '@fdmg/css-grid/css/grid.css';
 import '@fdmg/css-grid/css/flex.css';
-import * as styles from './Article.module.scss';
+import styles from './Article.module.scss';
 import { mergeInlineContent } from '../../../src/utils/articleContent';
 import PageStore from '../../../src/stores/PageStore';
 import { OEmbedLoader } from '../../../src/utils/OEmbedLoader';
@@ -202,12 +202,7 @@ export const getStaticProps: GetStaticProps = async (
             },
         }
     ).then((res) => res.json());
-    return {
-        props: {
-            json,
-        },
-        revalidate: 1,
-    };
+    return { props: { json }, revalidate: 1 };
 };
 
 export default Article;

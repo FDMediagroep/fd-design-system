@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './Infographic.module.scss';
+import styles from './Infographic.module.scss';
 
 interface Props {
     height?: string;

@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import Script from 'next/script';
-import * as styles from './cookieconsent.module.scss';
+import styles from './cookieconsent.module.scss';
 import { Explain } from '../src/components/Explain';
 import Head from 'next/head';
 import { Switch } from '../src/components/input/Switch';
@@ -15,9 +15,7 @@ import { FdmgIcon } from '../src/design-tokens/icons';
 import PageStore from '../src/stores/PageStore';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
 import MarkdownIt from 'markdown-it';
-const md = new MarkdownIt({
-    html: true,
-});
+const md = new MarkdownIt({ html: true });
 
 export const metaTitle = 'CookieConsent';
 export const metaDescription =

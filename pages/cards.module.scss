@@ -1,6 +1,6 @@
-@import '../src/utils/map-deep-get.scss';
-@import '../src/design-tokens/media.scss';
-@import '../src/design-tokens/colors.scss';
+@use '../src/utils/map-deep-get.scss' as *;
+@use '../src/design-tokens/media.scss' as *;
+@use '../src/design-tokens/colors.scss' as *;
 
 .table {
     &,

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './HybridCard1.module.scss';
+import styles from './HybridCard1.module.scss';
 
 export type Variants = 'default' | 'variant-1';
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { CollapseIcon, ExpandIcon } from '../design-tokens/icons';
 import ThemeStore, { Theme } from '../stores/ThemeStore';
 import { Radio } from './input/Radio';
-import * as styles from './menu/Menu.module.scss';
+import styles from './menu/Menu.module.scss';
 
 interface Props {
     groupName?: string;

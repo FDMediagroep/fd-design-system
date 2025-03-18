@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, JSX } from 'react';
-import * as styles from './LockedContent.module.scss';
+import styles from './LockedContent.module.scss';
 import { SpyglassIcon } from '../../design-tokens/icons';
 import CookieConsentStore, { VendorNames } from './CookieConsentStore';
 

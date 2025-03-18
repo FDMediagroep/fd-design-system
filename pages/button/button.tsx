@@ -3,7 +3,7 @@ import { Explain } from '../../src/components/Explain';
 import { Button, getCssClassNames } from '../../src/components/button/Button';
 import Head from 'next/head';
 import { EnvelopeIcon } from '../../src/design-tokens/icons';
-import * as styles from './buttons.module.scss';
+import styles from './buttons.module.scss';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
 
 export const metaTitle = 'Neutral Button';

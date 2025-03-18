@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './Youtube.module.scss';
+import styles from './Youtube.module.scss';
 
 interface Props {
     id: string;

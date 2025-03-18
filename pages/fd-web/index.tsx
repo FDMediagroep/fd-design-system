@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './index.module.scss';
+import styles from './index.module.scss';
 import '@fdmg/css-grid/css/grid.css';
 import '@fdmg/css-grid/css/flex.css';
 import { VerticalCard1 } from '../../src/components/card/VerticalCard1';
@@ -401,10 +401,7 @@ export async function getStaticProps({ params }) {
     // }
 
     return {
-        props: {
-            data,
-            timestamp: +new Date(),
-        },
+        props: { data, timestamp: +new Date() },
         // we will attempt to re-generate the page:
         // - when a request comes in
         // - at most once every 10 seconds

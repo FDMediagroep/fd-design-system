@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './ButtonGhost.module.scss';
+import styles from './ButtonGhost.module.scss';
 
 type Sizes = 's' | 'm';
 

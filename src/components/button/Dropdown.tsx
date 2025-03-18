@@ -7,7 +7,7 @@ import {
     GooglePodcastsIcon,
     SpotifyIcon,
 } from '../../design-tokens/icons';
-import * as styles from './Dropdown.module.scss';
+import styles from './Dropdown.module.scss';
 
 type Sizes = 's' | 'm';
 

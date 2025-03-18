@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "installCommand": "npm install --legacy-peer-deps",
     "regions": ["dub1"],
     "headers": [
         {

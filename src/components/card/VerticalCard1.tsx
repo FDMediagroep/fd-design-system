@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './VerticalCard1.module.scss';
+import styles from './VerticalCard1.module.scss';
 
 interface Props {
     style?: React.CSSProperties;

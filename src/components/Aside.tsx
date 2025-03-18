@@ -1,4 +1,4 @@
-import * as styles from './menu/Menu.module.scss';
+import styles from './menu/Menu.module.scss';
 import * as asideStyles from './Aside.module.scss';
 import {
     CloseIcon,

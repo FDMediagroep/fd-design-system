@@ -14,7 +14,7 @@ import {
     Button,
     getCssClassNames as getButtonCssClassNames,
 } from '../button/Button';
-import * as styles from './VerticalToolbar.module.scss';
+import styles from './VerticalToolbar.module.scss';
 
 export enum EventType {
     BOOKMARK = 'BOOKMARK',

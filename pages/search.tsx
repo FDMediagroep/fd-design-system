@@ -7,7 +7,7 @@ import { GridContainer } from '@fdmg/css-grid/GridContainer';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import * as styles from './search.module.scss';
+import styles from './search.module.scss';
 
 import { metaTitle as abTitle, metaDescription as abDescription } from './ab';
 import {
@@ -206,22 +206,11 @@ import { TextInput } from '../src/components/input/TextInput';
 import { handleSearchSubmit, interceptLinks } from '../src/utils/search';
 import { HorizontalCard2 } from '../src/deno';
 
-type SearchIndex = {
-    [x: string]: {
-        title: string;
-        description: string;
-    };
-};
+type SearchIndex = { [x: string]: { title: string; description: string } };
 
 const searchIndex: SearchIndex = {
-    '/ab': {
-        title: abTitle,
-        description: abDescription,
-    },
-    '/accordion': {
-        title: accordionTitle,
-        description: accordionDescription,
-    },
+    '/ab': { title: abTitle, description: abDescription },
+    '/accordion': { title: accordionTitle, description: accordionDescription },
     '/article-bullet-point': {
         title: articleBulletPointTitle,
         description: articleBulletPointDescription,
@@ -254,10 +243,7 @@ const searchIndex: SearchIndex = {
         title: articleTagsPointTitle,
         description: articleTagsPointDescription,
     },
-    '/button/cta': {
-        title: buttonCtaTitle,
-        description: buttonCtaDescription,
-    },
+    '/button/cta': { title: buttonCtaTitle, description: buttonCtaDescription },
     '/button/button': {
         title: buttonDefaultTitle,
         description: buttonDefaultDescription,
@@ -322,10 +308,7 @@ const searchIndex: SearchIndex = {
         title: financialAgendaTitle,
         description: financialAgendaDescription,
     },
-    '/grid': {
-        title: gridTitle,
-        description: gridDescription,
-    },
+    '/grid': { title: gridTitle, description: gridDescription },
     '/input/breaking-switch': {
         title: breakingSwitchTitle,
         description: breakingSwitchDescription,
@@ -346,18 +329,9 @@ const searchIndex: SearchIndex = {
         title: mobileinputTitle,
         description: mobileinputDescription,
     },
-    '/input/radio': {
-        title: radioTitle,
-        description: radioDescription,
-    },
-    '/input/select': {
-        title: selectTitle,
-        description: selectDescription,
-    },
-    '/input/switch': {
-        title: switchTitle,
-        description: switchDescription,
-    },
+    '/input/radio': { title: radioTitle, description: radioDescription },
+    '/input/select': { title: selectTitle, description: selectDescription },
+    '/input/switch': { title: switchTitle, description: switchDescription },
     '/input/textarea': {
         title: textareaTitle,
         description: textareaDescription,
@@ -366,34 +340,19 @@ const searchIndex: SearchIndex = {
         title: textinputTitle,
         description: textinputDescription,
     },
-    '/modal': {
-        title: modalTitle,
-        description: modalDescription,
-    },
+    '/modal': { title: modalTitle, description: modalDescription },
     '/numberframe': {
         title: numberframeTitle,
         description: numberframeDescription,
     },
-    '/quote': {
-        title: quoteTitle,
-        description: quoteDescription,
-    },
-    '/readmore': {
-        title: readmoreTitle,
-        description: readmoreDescription,
-    },
+    '/quote': { title: quoteTitle, description: quoteDescription },
+    '/readmore': { title: readmoreTitle, description: readmoreDescription },
     '/stock-ticker': {
         title: stockTickerTitle,
         description: stockTickerDescription,
     },
-    '/textframe': {
-        title: textframeTitle,
-        description: textframeDescription,
-    },
-    '/tokens': {
-        title: tokensTitle,
-        description: tokensDescription,
-    },
+    '/textframe': { title: textframeTitle, description: textframeDescription },
+    '/tokens': { title: tokensTitle, description: tokensDescription },
     '/toolbar/horizontal': {
         title: toolbarHorizontalTitle,
         description: toolbarHorizontalDescription,
@@ -406,10 +365,7 @@ const searchIndex: SearchIndex = {
         title: typographyTitle,
         description: typographyDescription,
     },
-    '/wordframe': {
-        title: wordframeTitle,
-        description: wordframeDescription,
-    },
+    '/wordframe': { title: wordframeTitle, description: wordframeDescription },
 };
 
 export default function Page() {
@@ -428,11 +384,7 @@ export default function Page() {
         });
         observer.observe(
             document.querySelector(`.${styles['searchResults']}`),
-            {
-                attributes: true,
-                childList: true,
-                subtree: true,
-            }
+            { attributes: true, childList: true, subtree: true }
         );
         return () => {
             observer.disconnect();

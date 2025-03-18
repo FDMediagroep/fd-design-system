@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ThemeStore, { Theme } from '../../stores/ThemeStore';
-import * as styles from './Footer.module.scss';
+import styles from './Footer.module.scss';
 
 export function DarkModeToggle() {
     const [theme, setTheme] = useState(ThemeStore.getTheme());

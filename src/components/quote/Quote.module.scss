@@ -1,7 +1,7 @@
-@import '../../utils/map-deep-get.scss';
-@import '../../design-tokens/colors.scss';
-@import '../../design-tokens/media.scss';
-@import '../../design-tokens/typography.scss';
+@use '../../utils/map-deep-get.scss' as *;
+@use '../../design-tokens/colors.scss' as *;
+@use '../../design-tokens/media.scss' as *;
+@use '../../design-tokens/typography.scss' as *;
 
 .quote {
     margin: 3rem 0;
@@ -12,8 +12,8 @@
         display: block;
         font-weight: normal;
         font-size: 1.5rem;
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
+        font-family:
+            map-deep-get($typography, 'font-family', 'bold'), sans-serif;
         color: var(--quote);
         line-height: 1.333;
         margin: 0;
@@ -38,8 +38,8 @@
         margin-top: 1rem;
         padding: 0;
         color: var(--quote);
-        font-family: map-deep-get($typography, 'font-family', 'regular'),
-            sans-serif;
+        font-family:
+            map-deep-get($typography, 'font-family', 'regular'), sans-serif;
         font-size: 1rem;
         display: inline-block;
     }
