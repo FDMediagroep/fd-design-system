@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ArticleTags.module.scss';
+import * as styles from './ArticleTags.module.scss';
 import {
     ButtonFollow,
     getCssClassNames as getButtonFollowCssClassNames,

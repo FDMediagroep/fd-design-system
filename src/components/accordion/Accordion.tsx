@@ -1,5 +1,5 @@
 import React, { JSX } from 'react';
-import styles from './Accordion.module.scss';
+import * as styles from './Accordion.module.scss';
 import { MinimiseIcon, ExpandIcon } from '../../design-tokens/icons';
 
 export interface Item {

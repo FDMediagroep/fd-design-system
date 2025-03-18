@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Debug.module.scss';
+import * as styles from './Debug.module.scss';
 import { CloseIcon } from '../../design-tokens/icons';
 import { Modal } from '../modal/Modal';
 

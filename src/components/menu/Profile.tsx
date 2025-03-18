@@ -9,7 +9,7 @@ import { Button } from '../button/Button';
 import { ButtonCta } from '../button/ButtonCta';
 import { ButtonGhost } from '../button/ButtonGhost';
 import { Themes } from '../Themes';
-import styles from './Menu.module.scss';
+import * as styles from './Menu.module.scss';
 import * as buttonStyles from './MenuButton.module.scss';
 
 interface ProgressBlock {

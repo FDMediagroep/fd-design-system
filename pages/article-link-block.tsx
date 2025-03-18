@@ -5,7 +5,7 @@ import {
     getCssClassNames,
 } from '../src/components/article-link-block/LinkBlock';
 import PageStore from '../src/stores/PageStore';
-import styles from './article-link-block.module.scss';
+import * as styles from './article-link-block.module.scss';
 import Head from 'next/head';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
 

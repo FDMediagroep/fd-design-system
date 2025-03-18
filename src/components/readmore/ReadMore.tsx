@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ReadMore.module.scss';
+import * as styles from './ReadMore.module.scss';
 
 export type Variants = 'default' | 'variant-1' | 'variant-2';
 

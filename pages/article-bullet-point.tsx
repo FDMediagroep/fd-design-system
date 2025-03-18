@@ -5,7 +5,7 @@ import {
     getCssClassNames,
 } from '../src/components/bullet-point/BulletPoint';
 import PageStore from '../src/stores/PageStore';
-import styles from './article-bullet-point.module.scss';
+import * as styles from './article-bullet-point.module.scss';
 import Head from 'next/head';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
 

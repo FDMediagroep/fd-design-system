@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Radio.module.scss';
+import * as styles from './Radio.module.scss';
 
 export interface Props {
     /**

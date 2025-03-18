@@ -1,7 +1,7 @@
 import React, { JSX } from 'react';
 import Imgix, { SharedImgixAndSourceProps } from 'react-imgix';
 
-import styles from './FdImage.module.scss';
+import * as styles from './FdImage.module.scss';
 
 type cssValue = `${number}${'px' | 'rem' | 'vw'}`;
 

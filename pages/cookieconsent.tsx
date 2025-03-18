@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import Script from 'next/script';
-import styles from './cookieconsent.module.scss';
+import * as styles from './cookieconsent.module.scss';
 import { Explain } from '../src/components/Explain';
 import Head from 'next/head';
 import { Switch } from '../src/components/input/Switch';

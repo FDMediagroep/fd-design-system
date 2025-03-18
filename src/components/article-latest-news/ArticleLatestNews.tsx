@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ArticleLatestNews.module.scss';
+import * as styles from './ArticleLatestNews.module.scss';
 import { ChevronRightIcon } from '../../design-tokens/icons';
 
 interface NewsItem {

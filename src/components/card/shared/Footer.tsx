@@ -1,6 +1,6 @@
 import React from 'react';
 import { BookmarkIcon, BookmarkOIcon } from '../../../design-tokens/icons';
-import styles from './Footer.module.scss';
+import * as styles from './Footer.module.scss';
 
 interface Props {
     className?: string;

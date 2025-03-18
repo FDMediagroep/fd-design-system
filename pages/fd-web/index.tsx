@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.module.scss';
+import * as styles from './index.module.scss';
 import '@fdmg/css-grid/css/grid.css';
 import '@fdmg/css-grid/css/flex.css';
 import { VerticalCard1 } from '../../src/components/card/VerticalCard1';

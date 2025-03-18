@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './StockTicker.module.scss';
+import * as styles from './StockTicker.module.scss';
 import { ValueUpIcon, ValueDownIcon } from '../../design-tokens/icons';
 
 export type Stock = {

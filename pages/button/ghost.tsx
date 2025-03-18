@@ -6,7 +6,7 @@ import {
 } from '../../src/components/button/ButtonGhost';
 import Head from 'next/head';
 import { EnvelopeIcon } from '../../src/design-tokens/icons';
-import styles from './buttons.module.scss';
+import * as styles from './buttons.module.scss';
 import { globalCssClassNames } from '../../src/utils/globalCssClassNames';
 
 export const metaTitle = 'Ghost Button';

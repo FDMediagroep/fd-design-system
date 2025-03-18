@@ -1,5 +1,5 @@
 import React, { JSX, useCallback, useEffect, useRef, useState } from 'react';
-import styles from './Menu.module.scss';
+import * as styles from './Menu.module.scss';
 import * as buttonStyles from './MenuButton.module.scss';
 import {
     CloseIcon,

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './FinancialAgenda.module.scss';
+import * as styles from './FinancialAgenda.module.scss';
 
 type AgendaItem = { date: string; source: string; description: string };
 

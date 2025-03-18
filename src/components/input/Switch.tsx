@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Switch.module.scss';
+import * as styles from './Switch.module.scss';
 
 export interface Props {
     /**

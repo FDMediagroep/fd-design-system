@@ -7,7 +7,7 @@ import { GridContainer } from '@fdmg/css-grid/GridContainer';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import styles from './search.module.scss';
+import * as styles from './search.module.scss';
 
 import { metaTitle as abTitle, metaDescription as abDescription } from './ab';
 import {

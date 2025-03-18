@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ArticleImage.module.scss';
+import * as styles from './ArticleImage.module.scss';
 
 interface Props {
     baseUrl?: string;

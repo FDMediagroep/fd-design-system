@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Quote.module.scss';
+import * as styles from './Quote.module.scss';
 
 interface Props {
     className?: string;

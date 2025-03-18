@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LinkBlock.module.scss';
+import * as styles from './LinkBlock.module.scss';
 import { ChevronRightIcon } from '../../design-tokens/icons';
 
 interface Props {

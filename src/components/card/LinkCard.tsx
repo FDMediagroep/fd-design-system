@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LinkCard.module.scss';
+import * as styles from './LinkCard.module.scss';
 import { ChevronRightIcon } from '../../design-tokens/icons';
 
 export interface Props {

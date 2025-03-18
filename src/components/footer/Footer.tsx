@@ -8,7 +8,7 @@ import {
     TwitterIcon,
 } from '../../design-tokens/icons';
 import { DarkModeToggle } from './DarkModeToggle';
-import styles from './Footer.module.scss';
+import * as styles from './Footer.module.scss';
 
 function Footer() {
     const footerRef = useRef<HTMLElement>(null);

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './HorizontalCard2.module.scss';
+import * as styles from './HorizontalCard2.module.scss';
 
 interface Props {
     style?: React.CSSProperties;

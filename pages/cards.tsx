@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './cards.module.scss';
+import * as styles from './cards.module.scss';
 import Link from 'next/link';
 import Head from 'next/head';
 

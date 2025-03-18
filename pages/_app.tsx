@@ -7,7 +7,7 @@ import '../src/design-tokens/design-tokens.scss';
 import './_app.scss';
 import './_app_markdown.scss';
 import './_app_a11y-dark.scss';
-import styles from './_app.module.scss';
+import * as styles from './_app.module.scss';
 import PageStore, { Page } from '../src/stores/PageStore';
 import Head from 'next/head';
 import { Tooltip } from '../src/components/Tooltip';

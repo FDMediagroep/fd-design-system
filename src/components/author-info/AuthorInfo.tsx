@@ -1,5 +1,5 @@
 import React, { JSX } from 'react';
-import styles from './AuthorInfo.module.scss';
+import * as styles from './AuthorInfo.module.scss';
 import {
     ButtonFollow,
     getCssClassNames as getFollowButtonCssClassNames,

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './Select.module.scss';
+import * as styles from './Select.module.scss';
 import { CheckIcon, DownThinIcon } from '../../design-tokens/icons';
 
 declare let localStorage: any;

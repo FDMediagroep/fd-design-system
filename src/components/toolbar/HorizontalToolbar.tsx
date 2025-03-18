@@ -12,7 +12,7 @@ import {
     Button,
     getCssClassNames as getButtonCssClassNames,
 } from '../button/Button';
-import styles from './HorizontalToolbar.module.scss';
+import * as styles from './HorizontalToolbar.module.scss';
 
 export enum EventType {
     BOOKMARK = 'BOOKMARK',

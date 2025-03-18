@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ArticleMeta.module.scss';
+import * as styles from './ArticleMeta.module.scss';
 
 type Author = { id: number; fullName: string; directory?: string };
 

@@ -1,4 +1,4 @@
-import styles from './Menu.module.scss';
+import * as styles from './Menu.module.scss';
 import {
     ClockIcon,
     CloseIcon,

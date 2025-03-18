@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './tokens.module.scss';
+import * as styles from './tokens.module.scss';
 import fs from 'fs';
 import path from 'path';
 import Head from 'next/head';

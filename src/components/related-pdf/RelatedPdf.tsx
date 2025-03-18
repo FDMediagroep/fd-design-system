@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './RelatedPdf.module.scss';
+import * as styles from './RelatedPdf.module.scss';
 
 interface Props {
     fileId: string;

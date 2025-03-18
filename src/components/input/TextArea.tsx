@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './TextArea.module.scss';
+import * as styles from './TextArea.module.scss';
 import { wordCount } from '../../utils/words';
 import { CheckIcon } from '../../design-tokens/icons';
 declare let localStorage: any;

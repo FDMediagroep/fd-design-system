@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './OEmbed.module.scss';
+import * as styles from './OEmbed.module.scss';
 
 interface Props {
     type: 'twitter-embed' | 'soundcloud-embed' | 'instagram-embed';

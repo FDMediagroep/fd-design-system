@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styles from './Styles.module.scss';
+import * as styles from './Styles.module.scss';
 import * as articleStyles from '../[section]/[id]/Article.module.scss';
 import { Quote } from '../../src/components/quote/Quote';
 import { NumberFrame } from '../../src/components/numberframe/NumberFrame';

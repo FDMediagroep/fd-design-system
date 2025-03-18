@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Tooltip.module.scss';
+import * as styles from './Tooltip.module.scss';
 import TooltipStore from '../stores/TooltipStore';
 
 type Token = { name: string; rgb: string; hex: string };

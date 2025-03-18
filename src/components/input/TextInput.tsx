@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './TextInput.module.scss';
+import * as styles from './TextInput.module.scss';
 import { CheckIcon } from '../../design-tokens/icons';
 
 declare let localStorage: any;
