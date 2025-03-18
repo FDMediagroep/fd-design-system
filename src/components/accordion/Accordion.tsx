@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import * as styles from './Accordion.module.scss';
 import { MinimiseIcon, ExpandIcon } from '../../design-tokens/icons';
 

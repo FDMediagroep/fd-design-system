@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import Imgix, { SharedImgixAndSourceProps } from 'react-imgix';
 
 import * as styles from './FdImage.module.scss';

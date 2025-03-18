@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import * as styles from './VerticalCard6.module.scss';
 
 interface Props {
