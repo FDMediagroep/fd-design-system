@@ -3,7 +3,7 @@
 exports[`HybridCard1 should render is-read correctly 1`] = `
 <div>
   <article
-    class="hybridCard1 isRead xs__p+4 s__p-0"
+    class="undefined undefined xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -25,27 +25,23 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
+        class="undefined  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans xs"
+          class="undefined xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif xs xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="intro body-text sans s xs__m-0 xs__mt+2"
+            class="undefined body-text sans s xs__m-0 xs__mt+2"
           >
             This is the intro
           </p>
@@ -59,7 +55,7 @@ exports[`HybridCard1 should render is-read correctly 1`] = `
 exports[`HybridCard1 should render themes correctly 1`] = `
 <div>
   <article
-    class="hybridCard1 xs__p+4 s__p-0"
+    class="undefined xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -81,27 +77,23 @@ exports[`HybridCard1 should render themes correctly 1`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
+        class="undefined  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans xs"
+          class="undefined xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif xs xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="intro body-text sans s xs__m-0 xs__mt+2"
+            class="undefined body-text sans s xs__m-0 xs__mt+2"
           >
             This is the intro
           </p>
@@ -115,7 +107,7 @@ exports[`HybridCard1 should render themes correctly 1`] = `
 exports[`HybridCard1 should render themes correctly 2`] = `
 <div>
   <article
-    class="hybridCard1 xs__p+4 s__p-0"
+    class="undefined xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -137,27 +129,23 @@ exports[`HybridCard1 should render themes correctly 2`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
+        class="undefined  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans xs"
+          class="undefined xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif xs xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="intro body-text sans s xs__m-0 xs__mt+2"
+            class="undefined body-text sans s xs__m-0 xs__mt+2"
           >
             This is the intro
           </p>
@@ -171,7 +159,7 @@ exports[`HybridCard1 should render themes correctly 2`] = `
 exports[`HybridCard1 should render themes correctly 3`] = `
 <div>
   <article
-    class="hybridCard1 xs__p+4 s__p-0"
+    class="undefined xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -193,27 +181,23 @@ exports[`HybridCard1 should render themes correctly 3`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
+        class="undefined  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans xs"
+          class="undefined xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif xs xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="intro body-text sans s xs__m-0 xs__mt+2"
+            class="undefined body-text sans s xs__m-0 xs__mt+2"
           >
             This is the intro
           </p>
@@ -227,7 +211,7 @@ exports[`HybridCard1 should render themes correctly 3`] = `
 exports[`HybridCard1 should render themes correctly 4`] = `
 <div>
   <article
-    class="hybridCard1 xs__p+4 s__p-0"
+    class="undefined xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -249,27 +233,23 @@ exports[`HybridCard1 should render themes correctly 4`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
+        class="undefined  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans xs"
+          class="undefined xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif xs xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="intro body-text sans s xs__m-0 xs__mt+2"
+            class="undefined body-text sans s xs__m-0 xs__mt+2"
           >
             This is the intro
           </p>
@@ -283,7 +263,7 @@ exports[`HybridCard1 should render themes correctly 4`] = `
 exports[`HybridCard1 should render themes correctly 5`] = `
 <div>
   <article
-    class="hybridCard1 xs__p+4 s__p-0"
+    class="undefined xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -305,27 +285,23 @@ exports[`HybridCard1 should render themes correctly 5`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
+        class="undefined  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans xs"
+          class="undefined xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif xs xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="intro body-text sans s xs__m-0 xs__mt+2"
+            class="undefined body-text sans s xs__m-0 xs__mt+2"
           >
             This is the intro
           </p>
@@ -339,7 +315,7 @@ exports[`HybridCard1 should render themes correctly 5`] = `
 exports[`HybridCard1 should render themes correctly 6`] = `
 <div>
   <article
-    class="hybridCard1 xs__p+4 s__p-0"
+    class="undefined xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -361,27 +337,23 @@ exports[`HybridCard1 should render themes correctly 6`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
+        class="undefined  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans xs"
+          class="undefined xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif xs xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="intro body-text sans s xs__m-0 xs__mt+2"
+            class="undefined body-text sans s xs__m-0 xs__mt+2"
           >
             This is the intro
           </p>
@@ -395,7 +367,7 @@ exports[`HybridCard1 should render themes correctly 6`] = `
 exports[`HybridCard1 should render themes correctly 7`] = `
 <div>
   <article
-    class="hybridCard1 xs__p+4 s__p-0"
+    class="undefined xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -417,27 +389,23 @@ exports[`HybridCard1 should render themes correctly 7`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
+        class="undefined  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans xs"
+          class="undefined xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif xs xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="intro body-text sans s xs__m-0 xs__mt+2"
+            class="undefined body-text sans s xs__m-0 xs__mt+2"
           >
             This is the intro
           </p>
@@ -451,7 +419,7 @@ exports[`HybridCard1 should render themes correctly 7`] = `
 exports[`HybridCard1 should render themes correctly 8`] = `
 <div>
   <article
-    class="hybridCard1 xs__p+4 s__p-0"
+    class="undefined xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -473,27 +441,23 @@ exports[`HybridCard1 should render themes correctly 8`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
+        class="undefined  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans xs"
+          class="undefined xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif xs xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="intro body-text sans s xs__m-0 xs__mt+2"
+            class="undefined body-text sans s xs__m-0 xs__mt+2"
           >
             This is the intro
           </p>
@@ -507,7 +471,7 @@ exports[`HybridCard1 should render themes correctly 8`] = `
 exports[`HybridCard1 should render variant-1 correctly 1`] = `
 <div>
   <article
-    class="hybridCard1 xs__p+4 s__p-0"
+    class="undefined xs__p+4 s__p-0"
     id="1"
   >
     <a
@@ -529,27 +493,23 @@ exports[`HybridCard1 should render variant-1 correctly 1`] = `
         </figcaption>
       </figure>
       <div
-        class="teaserText  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
+        class="undefined  xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans xs"
+          class="undefined xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif xs xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="intro body-text sans s xs__m-0 xs__mt+2"
+            class="undefined body-text sans s xs__m-0 xs__mt+2"
           >
             This is the intro
           </p>

@@ -3,7 +3,7 @@
 exports[`ButtonGhost should handle sizes correctly 1`] = `
 <div>
   <button
-    class="fdButtonGhost "
+    class="undefined "
   >
     Knopje
   </button>
@@ -13,7 +13,7 @@ exports[`ButtonGhost should handle sizes correctly 1`] = `
 exports[`ButtonGhost should handle sizes correctly 2`] = `
 <div>
   <button
-    class="fdButtonGhost m"
+    class="undefined undefined"
   >
     Knopje
   </button>

@@ -3,7 +3,7 @@
 exports[`HorizontalCard4 should render is-read correctly 1`] = `
 <div>
   <article
-    class="fdHorizontalCard4 isRead xs__p+4"
+    class="undefined undefined xs__p+4"
     id="1"
   >
     <a
@@ -14,7 +14,7 @@ exports[`HorizontalCard4 should render is-read correctly 1`] = `
         class="xs__m-0"
       >
         <img
-          class="image "
+          class="undefined "
           sizes="(min-width: 1080px) 244px, (min-width: 768px) 244px, 160px"
           src="https://images.example.com/image.png?auto=format&ixlib=react-9.10.0"
           srcset="https://images.example.com/image.png?auto=format&ixlib=react-9.10.0&w=100 100w,
@@ -52,28 +52,22 @@ https://images.example.com/image.png?auto=format&ixlib=react-9.10.0&w=8192 8192w
         <figcaption />
       </figure>
       <div
-        class="teaserText xs__pl+4 s__p+4"
+        class="undefined xs__pl+4 s__p+4"
       >
         <div
-          class="meta xs__m-0 xs__mb+2 body-text sans xs"
+          class="undefined xs__m-0 xs__mb+2 body-text sans xs"
         >
           <time>
             11:40
           </time>
-          <span
-            class="dot"
-          >
+          <span>
             •
           </span>
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif s xs__m-0"
           >

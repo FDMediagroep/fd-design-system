@@ -3,7 +3,7 @@
 exports[`HybridCard2 should render is-read correctly 1`] = `
 <div>
   <article
-    class="hybridCard2 isRead"
+    class="undefined undefined"
     id="1"
   >
     <a
@@ -35,20 +35,16 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
         <figcaption />
       </figure>
       <div
-        class="teaserText xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
+        class="undefined xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans xs"
+          class="undefined xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif xs xs__m-0"
           >
@@ -64,7 +60,7 @@ exports[`HybridCard2 should render is-read correctly 1`] = `
 exports[`HybridCard2 should render variant-1 correctly 1`] = `
 <div>
   <article
-    class="hybridCard2"
+    class="undefined"
     id="1"
   >
     <a
@@ -96,20 +92,16 @@ exports[`HybridCard2 should render variant-1 correctly 1`] = `
         <figcaption />
       </figure>
       <div
-        class="teaserText xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
+        class="undefined xs__pl+4 s__pr-0 s__pb-0 s__pl-0"
       >
         <div
-          class="meta xs__mb+2 body-text sans xs"
+          class="undefined xs__mb+2 body-text sans xs"
         >
-          <span
-            class="prefix"
-          >
+          <span>
             Ondernemen
           </span>
         </div>
-        <div
-          class="textContainer"
-        >
+        <div>
           <h1
             class="heading serif xs xs__m-0"
           >

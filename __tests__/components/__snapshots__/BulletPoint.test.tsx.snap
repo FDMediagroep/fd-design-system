@@ -3,12 +3,10 @@
 exports[`BulletPoint should align correctly 1`] = `
 <div>
   <div
-    class="bulletPoint "
+    class="undefined "
   >
     <p>
-      <span
-        class="icon"
-      >
+      <span>
         <test-file-stub />
       </span>
       <span>
@@ -16,9 +14,7 @@ exports[`BulletPoint should align correctly 1`] = `
       </span>
     </p>
     <p>
-      <span
-        class="icon"
-      >
+      <span>
         <test-file-stub />
       </span>
       <span>
@@ -26,9 +22,7 @@ exports[`BulletPoint should align correctly 1`] = `
       </span>
     </p>
     <p>
-      <span
-        class="icon"
-      >
+      <span>
         <test-file-stub />
       </span>
       <span>
@@ -42,12 +36,10 @@ exports[`BulletPoint should align correctly 1`] = `
 exports[`BulletPoint should align correctly 2`] = `
 <div>
   <div
-    class="bulletPoint right"
+    class="undefined undefined"
   >
     <p>
-      <span
-        class="icon"
-      >
+      <span>
         <test-file-stub />
       </span>
       <span>
@@ -55,9 +47,7 @@ exports[`BulletPoint should align correctly 2`] = `
       </span>
     </p>
     <p>
-      <span
-        class="icon"
-      >
+      <span>
         <test-file-stub />
       </span>
       <span>
@@ -65,9 +55,7 @@ exports[`BulletPoint should align correctly 2`] = `
       </span>
     </p>
     <p>
-      <span
-        class="icon"
-      >
+      <span>
         <test-file-stub />
       </span>
       <span>
@@ -81,13 +69,11 @@ exports[`BulletPoint should align correctly 2`] = `
 exports[`BulletPoint should render variants correctly 1`] = `
 <div>
   <div
-    class="bulletPoint "
+    class="undefined "
     data-variant="variant-1"
   >
     <p>
-      <span
-        class="icon"
-      >
+      <span>
         <test-file-stub />
       </span>
       <span>
@@ -95,9 +81,7 @@ exports[`BulletPoint should render variants correctly 1`] = `
       </span>
     </p>
     <p>
-      <span
-        class="icon"
-      >
+      <span>
         <test-file-stub />
       </span>
       <span>
@@ -105,9 +89,7 @@ exports[`BulletPoint should render variants correctly 1`] = `
       </span>
     </p>
     <p>
-      <span
-        class="icon"
-      >
+      <span>
         <test-file-stub />
       </span>
       <span>
