@@ -1,7 +1,7 @@
-@import '../../utils/map-deep-get.scss';
-@import '../../design-tokens/colors.scss';
-@import '../../design-tokens/media.scss';
-@import '../../design-tokens/typography.scss';
+@use '../../utils/map-deep-get.scss' as *;
+@use '../../design-tokens/colors.scss' as *;
+@use '../../design-tokens/media.scss' as *;
+@use '../../design-tokens/typography.scss' as *;
 
 .horizontalCard1 {
     transition: box-shadow 0.15s linear;
@@ -59,8 +59,8 @@
 
         figcaption {
             display: none;
-            font-family: map-deep-get($typography, 'font-family', 'bold'),
-                sans-serif;
+            font-family:
+                map-deep-get($typography, 'font-family', 'bold'), sans-serif;
         }
     }
 
@@ -103,8 +103,8 @@
             color: var(--card);
             background-color: var(--primary);
             line-height: 2em;
-            font-family: map-deep-get($typography, 'font-family', 'bold'),
-                sans-serif;
+            font-family:
+                map-deep-get($typography, 'font-family', 'bold'), sans-serif;
             text-transform: uppercase;
         }
 

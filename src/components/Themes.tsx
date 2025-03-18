@@ -12,7 +12,7 @@ interface Props {
 function Themes(props: Props) {
     const [theme, setTheme] = useState(ThemeStore.getTheme());
     const [userMenuThemeExpanded, setUserMenuThemeExpanded] = useState(false);
-    const toggleButtonRef = useRef<HTMLButtonElement>();
+    const toggleButtonRef = useRef<HTMLButtonElement>(null);
 
     function changeTheme(theme: Theme) {
         switch (theme) {

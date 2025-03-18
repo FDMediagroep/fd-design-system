@@ -1,6 +1,6 @@
-@import '../src/utils/map-deep-get.scss';
-@import '../src/design-tokens/colors.scss';
-@import '../src/design-tokens/media.scss';
+@use '../src/utils/map-deep-get.scss' as *;
+@use '../src/design-tokens/colors.scss' as *;
+@use '../src/design-tokens/media.scss' as *;
 
 .search {
     .searchContent {

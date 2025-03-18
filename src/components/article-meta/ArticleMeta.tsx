@@ -1,11 +1,7 @@
 import React from 'react';
 import * as styles from './ArticleMeta.module.scss';
 
-type Author = {
-    id: number;
-    fullName: string;
-    directory?: string;
-};
+type Author = { id: number; fullName: string; directory?: string };
 
 interface Props {
     authors: Author[];

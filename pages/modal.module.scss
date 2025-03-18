@@ -1,5 +1,5 @@
-@import '../src/utils/map-deep-get.scss';
-@import '../src/design-tokens/typography.scss';
+@use '../src/utils/map-deep-get.scss' as *;
+@use '../src/design-tokens/typography.scss' as *;
 
 .modal {
     h1,
@@ -10,7 +10,7 @@
     h6 {
         font-size: 22px;
         line-height: 1.1;
-        font-family: map-deep-get($typography, 'font-family', 'bold'),
-            sans-serif;
+        font-family:
+            map-deep-get($typography, 'font-family', 'bold'), sans-serif;
     }
 }

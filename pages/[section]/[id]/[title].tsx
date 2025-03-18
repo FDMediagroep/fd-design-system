@@ -202,12 +202,7 @@ export const getStaticProps: GetStaticProps = async (
             },
         }
     ).then((res) => res.json());
-    return {
-        props: {
-            json,
-        },
-        revalidate: 1,
-    };
+    return { props: { json }, revalidate: 1 };
 };
 
 export default Article;

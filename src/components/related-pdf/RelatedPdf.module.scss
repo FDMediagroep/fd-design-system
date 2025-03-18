@@ -1,7 +1,7 @@
-@import '../../utils/map-deep-get.scss';
-@import '../../design-tokens/colors.scss';
-@import '../../design-tokens/media.scss';
-@import '../../design-tokens/typography.scss';
+@use '../../utils/map-deep-get.scss' as *;
+@use '../../design-tokens/colors.scss' as *;
+@use '../../design-tokens/media.scss' as *;
+@use '../../design-tokens/typography.scss' as *;
 
 .pdf {
     display: flex;
@@ -13,7 +13,8 @@
     color: var(--content-copy);
     background: var(--card-2);
     box-shadow: 0 2px 0.2px rgba(0, 0, 0, 0.1);
-    font-family: map-deep-get($typography, 'font-family', 'regular'), sans-serif;
+    font-family:
+        map-deep-get($typography, 'font-family', 'regular'), sans-serif;
     @media screen and (min-width: map-deep-get($media, 'sizes', 's')) {
         float: right;
         margin: 40px 0 40px 60px;

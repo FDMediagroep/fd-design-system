@@ -25,7 +25,7 @@ interface Props {
 }
 
 function Aside(props: Props) {
-    const asideRef = useRef<HTMLElement>();
+    const asideRef = useRef<HTMLElement>(null);
     const router = useRouter();
     const [expanded, setExpanded] = useState([]);
 

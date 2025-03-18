@@ -1,5 +1,5 @@
-@import '../../utils/map-deep-get.scss';
-@import '../colors.scss';
+@use '../../utils/map-deep-get.scss' as *;
+@use '../colors.scss' as *;
 
 @mixin dark-tokens {
     --filter-invert: invert(1);
@@ -90,7 +90,12 @@
     --input-label-focus: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --input-color: #{map-deep-get($colors, 'colors', 'neutral', 90)};
     --input-underline: #{map-deep-get($colors, 'colors', 'neutral', 60)};
-    --input-underline-disabled: #{map-deep-get($colors, 'colors', 'neutral', 30)};
+    --input-underline-disabled: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            30
+        )};
     --input-underline-hover: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --input-underline-focus: #{map-deep-get($colors, 'colors', 'primary', 50)};
     --input-valid: #{map-deep-get($colors, 'colors', 'primary', 50)};
@@ -204,7 +209,12 @@
         )};
     --button-ghost-hover: #{map-deep-get($colors, 'colors', 'primary', 75)};
     --button-ghost-focus: #{map-deep-get($colors, 'colors', 'neutral', 80)};
-    --button-ghost-active-text: #{map-deep-get($colors, 'colors', 'primary', 75)};
+    --button-ghost-active-text: #{map-deep-get(
+            $colors,
+            'colors',
+            'primary',
+            75
+        )};
     --button-ghost-active: #{map-deep-get($colors, 'colors', 'primary', 25)};
     --button-ghost-disabled: #{map-deep-get($colors, 'colors', 'neutral', 30)};
     --button-follow-text: #{map-deep-get($colors, 'colors', 'neutral', 10)};
@@ -229,7 +239,12 @@
             10
         )};
     --button-follow-hover: #{map-deep-get($colors, 'colors', 'neutral', 10)};
-    --button-follow-text-hover: #{map-deep-get($colors, 'colors', 'neutral', 90)};
+    --button-follow-text-hover: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            90
+        )};
     --button-follow-outline: #{map-deep-get($colors, 'colors', 'neutral', 90)};
 
     --upsell-gradient: linear-gradient(
@@ -309,7 +324,12 @@
      */
     --radar-stock: #{map-deep-get($colors, 'colors', 'neutral', 50)};
     --stock-ticker-stock: #{map-deep-get($colors, 'colors', 'neutral', 70)};
-    --stock-ticker-description: #{map-deep-get($colors, 'colors', 'neutral', 60)};
+    --stock-ticker-description: #{map-deep-get(
+            $colors,
+            'colors',
+            'neutral',
+            60
+        )};
     --stock-ticker-negative: #{map-deep-get($colors, 'colors', 'negative', 50)};
     --stock-ticker-price: #{map-deep-get($colors, 'colors', 'neutral', 70)};
     --fondsnieuws-logo-color: white;

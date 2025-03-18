@@ -15,9 +15,7 @@ import { FdmgIcon } from '../src/design-tokens/icons';
 import PageStore from '../src/stores/PageStore';
 import { globalCssClassNames } from '../src/utils/globalCssClassNames';
 import MarkdownIt from 'markdown-it';
-const md = new MarkdownIt({
-    html: true,
-});
+const md = new MarkdownIt({ html: true });
 
 export const metaTitle = 'CookieConsent';
 export const metaDescription =
