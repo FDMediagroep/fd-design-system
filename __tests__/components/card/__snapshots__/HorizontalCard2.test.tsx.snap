@@ -3,7 +3,7 @@
 exports[`HorizontalCard2 should render is-read correctly 1`] = `
 <div>
   <article
-    class="undefined undefined"
+    class="horizontalCard2 isRead"
     id="1"
   >
     <a
@@ -12,29 +12,35 @@ exports[`HorizontalCard2 should render is-read correctly 1`] = `
       href="https://example.com/1/This is the title"
     >
       <div
-        class="undefined xs__pl+4 s__p+4"
+        class="teaserText xs__pl+4 s__p+4"
       >
         <div
-          class="undefined xs__m-0 xs__mb+2 body-text sans xs"
+          class="meta xs__m-0 xs__mb+2 body-text sans xs"
         >
           <time>
             11:50
           </time>
-          <span>
+          <span
+            class="dot"
+          >
             •
           </span>
-          <span>
+          <span
+            class="prefix"
+          >
             Ondernemen
           </span>
         </div>
-        <div>
+        <div
+          class="textContainer"
+        >
           <h1
             class="heading serif s xs__m-0"
           >
             This is the title
           </h1>
           <p
-            class="undefined body-text sans s xs__m-0 xs__mt+1"
+            class="intro body-text sans s xs__m-0 xs__mt+1"
           >
             This is the intro of the card
           </p>

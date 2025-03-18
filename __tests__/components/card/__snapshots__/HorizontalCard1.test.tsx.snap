@@ -3,7 +3,7 @@
 exports[`HorizontalCard1 should render is-read correctly 1`] = `
 <div>
   <article
-    class="undefined undefined xs__p+4"
+    class="horizontalCard1 isRead xs__p+4"
     id="1"
   >
     <a
@@ -22,22 +22,28 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
         <figcaption />
       </figure>
       <div
-        class="undefined xs__pl+4 s__p+4"
+        class="teaserText xs__pl+4 s__p+4"
       >
         <div
-          class="undefined xs__m-0 xs__mb+2 body-text sans xs"
+          class="meta xs__m-0 xs__mb+2 body-text sans xs"
         >
           <time>
             11:40
           </time>
-          <span>
+          <span
+            class="dot"
+          >
             •
           </span>
-          <span>
+          <span
+            class="prefix"
+          >
             Ondernemen
           </span>
         </div>
-        <div>
+        <div
+          class="textContainer"
+        >
           <h1
             class="heading serif s xs__m-0"
           >
@@ -53,7 +59,7 @@ exports[`HorizontalCard1 should render is-read correctly 1`] = `
 exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
 <div>
   <article
-    class="undefined xs__p+4"
+    class="horizontalCard1 xs__p+4"
     id="1"
   >
     <a
@@ -72,22 +78,28 @@ exports[`HorizontalCard1 should render variant-1 correctly 1`] = `
         <figcaption />
       </figure>
       <div
-        class="undefined xs__pl+4 s__p+4"
+        class="teaserText xs__pl+4 s__p+4"
       >
         <div
-          class="undefined xs__m-0 xs__mb+2 body-text sans xs"
+          class="meta xs__m-0 xs__mb+2 body-text sans xs"
         >
           <time>
             11:40
           </time>
-          <span>
+          <span
+            class="dot"
+          >
             •
           </span>
-          <span>
+          <span
+            class="prefix"
+          >
             Ondernemen
           </span>
         </div>
-        <div>
+        <div
+          class="textContainer"
+        >
           <h1
             class="heading serif s xs__m-0"
           >

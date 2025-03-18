@@ -3,25 +3,31 @@
 exports[`Dropdown should handle sizes correctly 1`] = `
 <div>
   <div
-    class="undefined grid"
+    class="fd-dropdown grid"
   >
     <button
       aria-expanded="false"
-      class="xs-12  undefined"
+      class="xs-12  fd-dropdown-button"
     >
       <span
         class="xs__mr+1"
       >
         Knopje
       </span>
-      <span>
+      <span
+        class="collapse-icon"
+      >
         <test-file-stub />
       </span>
-      <span>
+      <span
+        class="expand-icon"
+      >
         <test-file-stub />
       </span>
     </button>
-    <nav>
+    <nav
+      class="fd-dropdown-items"
+    >
       <ul>
         <li>
           <a
@@ -30,7 +36,9 @@ exports[`Dropdown should handle sizes correctly 1`] = `
             target="_blank"
           >
             <span>
-              <span>
+              <span
+                class="podcast-icon"
+              >
                 <test-file-stub />
               </span>
               <span>
@@ -46,7 +54,9 @@ exports[`Dropdown should handle sizes correctly 1`] = `
             target="_blank"
           >
             <span>
-              <span>
+              <span
+                class="podcast-icon"
+              >
                 <test-file-stub />
               </span>
               <span>
@@ -62,7 +72,9 @@ exports[`Dropdown should handle sizes correctly 1`] = `
             target="_blank"
           >
             <span>
-              <span>
+              <span
+                class="podcast-icon"
+              >
                 <test-file-stub />
               </span>
               <span>
@@ -80,25 +92,31 @@ exports[`Dropdown should handle sizes correctly 1`] = `
 exports[`Dropdown should handle sizes correctly 2`] = `
 <div>
   <div
-    class="undefined grid"
+    class="fd-dropdown grid"
   >
     <button
       aria-expanded="false"
-      class="xs-12 undefined undefined"
+      class="xs-12 m fd-dropdown-button"
     >
       <span
         class="xs__mr+1"
       >
         Knopje
       </span>
-      <span>
+      <span
+        class="collapse-icon"
+      >
         <test-file-stub />
       </span>
-      <span>
+      <span
+        class="expand-icon"
+      >
         <test-file-stub />
       </span>
     </button>
-    <nav>
+    <nav
+      class="fd-dropdown-items"
+    >
       <ul>
         <li>
           <a
@@ -107,7 +125,9 @@ exports[`Dropdown should handle sizes correctly 2`] = `
             target="_blank"
           >
             <span>
-              <span>
+              <span
+                class="podcast-icon"
+              >
                 <test-file-stub />
               </span>
               <span>
@@ -123,7 +143,9 @@ exports[`Dropdown should handle sizes correctly 2`] = `
             target="_blank"
           >
             <span>
-              <span>
+              <span
+                class="podcast-icon"
+              >
                 <test-file-stub />
               </span>
               <span>
@@ -139,7 +161,9 @@ exports[`Dropdown should handle sizes correctly 2`] = `
             target="_blank"
           >
             <span>
-              <span>
+              <span
+                class="podcast-icon"
+              >
                 <test-file-stub />
               </span>
               <span>

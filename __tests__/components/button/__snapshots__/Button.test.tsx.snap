@@ -3,7 +3,7 @@
 exports[`Button should handle sizes correctly 1`] = `
 <div>
   <button
-    class="undefined "
+    class="fdButton "
   >
     Knopje
   </button>
@@ -13,7 +13,7 @@ exports[`Button should handle sizes correctly 1`] = `
 exports[`Button should handle sizes correctly 2`] = `
 <div>
   <button
-    class="undefined undefined"
+    class="fdButton m"
   >
     Knopje
   </button>
