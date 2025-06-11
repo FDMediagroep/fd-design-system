@@ -18,11 +18,11 @@ describe('ButtonFollow', () => {
             <ButtonFollow tag="test-tag" onClick={spy} />
         );
 
-        expect(spy).toBeCalledTimes(0);
-        fireEvent.click(container.querySelector('button'));
-        expect(spy).toBeCalledTimes(1);
-        fireEvent.click(container.querySelector('button'));
-        expect(spy).toBeCalledTimes(2);
+        expect(spy).toHaveBeenCalledTimes(0);
+        fireEvent.click(container.querySelector('button')!);
+        expect(spy).toHaveBeenCalledTimes(1);
+        fireEvent.click(container.querySelector('button')!);
+        expect(spy).toHaveBeenCalledTimes(2);
     });
 
     test('should handle select correctly', () => {

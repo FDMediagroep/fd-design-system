@@ -19,11 +19,11 @@ describe('ButtonCta', () => {
         );
 
         expect(getByText('Knopje')).toBeTruthy();
-        expect(spy).toBeCalledTimes(0);
+        expect(spy).toHaveBeenCalledTimes(0);
         fireEvent.click(container.querySelector('button'));
-        expect(spy).toBeCalledTimes(1);
+        expect(spy).toHaveBeenCalledTimes(1);
         fireEvent.click(container.querySelector('button'));
-        expect(spy).toBeCalledTimes(2);
+        expect(spy).toHaveBeenCalledTimes(2);
     });
 
     test('should handle sizes correctly', () => {
