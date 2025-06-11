@@ -56,15 +56,15 @@ describe('AuthorInfo', () => {
                 onTwitterClick={spy}
             />
         );
-        expect(spy).toBeCalledTimes(0);
+        expect(spy).toHaveBeenCalledTimes(0);
         fireEvent.click(getByText('e-mail', { exact: false }));
-        expect(spy).toBeCalledTimes(1);
+        expect(spy).toHaveBeenCalledTimes(1);
         fireEvent.click(getByText('twitter', { exact: false }));
-        expect(spy).toBeCalledTimes(2);
+        expect(spy).toHaveBeenCalledTimes(2);
         fireEvent.click(getByText('LinkedIn', { exact: false }));
-        expect(spy).toBeCalledTimes(3);
+        expect(spy).toHaveBeenCalledTimes(3);
         fireEvent.click(getByText('Volg deze auteur'));
-        expect(spy).toBeCalledTimes(4);
+        expect(spy).toHaveBeenCalledTimes(4);
     });
 
     test('should have correct class name', () => {

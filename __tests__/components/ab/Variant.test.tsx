@@ -24,8 +24,8 @@ describe('AB Variant', () => {
 
         expect(getByText('Headline 1', { exact: false })).toBeTruthy();
 
-        expect(spy).toBeCalledTimes(0);
+        expect(spy).toHaveBeenCalledTimes(0);
         fireEvent.click(container.querySelector('h1')!);
-        expect(spy).toBeCalledTimes(1);
+        expect(spy).toHaveBeenCalledTimes(1);
     });
 });

@@ -31,13 +31,13 @@ describe('Horizontal toolbar', () => {
             <HorizontalToolbar id="12345" onClick={spy} />
         );
 
-        expect(spy).toBeCalledTimes(0);
-        fireEvent.click(container.querySelector('button[title="Bewaren"]'));
-        expect(spy).toBeCalledTimes(1);
+        expect(spy).toHaveBeenCalledTimes(0);
+        fireEvent.click(container.querySelector('button[title="Bewaren"]')!);
+        expect(spy).toHaveBeenCalledTimes(1);
         fireEvent.click(
-            container.querySelector('button[title="Deel via E-mail"]')
+            container.querySelector('button[title="Deel via E-mail"]')!
         );
-        expect(spy).toBeCalledTimes(2);
+        expect(spy).toHaveBeenCalledTimes(2);
     });
 
     test('should return props in click event', () => {
@@ -57,7 +57,7 @@ describe('Horizontal toolbar', () => {
         fireEvent.click(
             renderResult.container.querySelector(
                 'button[title="Deel via WhatsApp"]'
-            )
+            )!
         );
 
         spy = (clickEvent: EventType, props: Props) => {
@@ -75,7 +75,7 @@ describe('Horizontal toolbar', () => {
         fireEvent.click(
             renderResult.container.querySelector(
                 'button[title="Deel via Twitter"]'
-            )
+            )!
         );
 
         spy = (clickEvent: EventType, props: Props) => {
@@ -92,7 +92,7 @@ describe('Horizontal toolbar', () => {
         fireEvent.click(
             renderResult.container.querySelector(
                 'button[title="Deel via LinkedIn"]'
-            )
+            )!
         );
 
         spy = (clickEvent: EventType, props: Props) => {
@@ -109,7 +109,7 @@ describe('Horizontal toolbar', () => {
         fireEvent.click(
             renderResult.container.querySelector(
                 'button[title="Deel via Facebook"]'
-            )
+            )!
         );
 
         spy = (clickEvent: EventType, props: Props) => {
@@ -126,7 +126,7 @@ describe('Horizontal toolbar', () => {
         fireEvent.click(
             renderResult.container.querySelector(
                 'button[title="Deel via E-mail"]'
-            )
+            )!
         );
 
         spy = (clickEvent: EventType, props: Props) => {
@@ -134,7 +134,7 @@ describe('Horizontal toolbar', () => {
         };
         renderResult = render(<HorizontalToolbar id="12345" onClick={spy} />);
         fireEvent.click(
-            renderResult.container.querySelector('button[title="Bewaren"]')
+            renderResult.container.querySelector('button[title="Bewaren"]')!
         );
     });
 

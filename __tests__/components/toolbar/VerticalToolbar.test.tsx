@@ -27,13 +27,13 @@ describe('Vertical toolbar', () => {
             <VerticalToolbar id="12345" onClick={spy} />
         );
 
-        expect(spy).toBeCalledTimes(0);
+        expect(spy).toHaveBeenCalledTimes(0);
         fireEvent.click(container.querySelector('button[title="Bewaren"]'));
-        expect(spy).toBeCalledTimes(1);
+        expect(spy).toHaveBeenCalledTimes(1);
         fireEvent.click(
             container.querySelector('button[title="Deel via E-mail"]')
         );
-        expect(spy).toBeCalledTimes(2);
+        expect(spy).toHaveBeenCalledTimes(2);
     });
 
     test('should return props in click event', () => {
