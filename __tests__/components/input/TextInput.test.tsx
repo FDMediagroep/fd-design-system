@@ -98,13 +98,13 @@ describe('TextInput', () => {
         );
 
         expect(findByDisplayValue('value from localStorage')).toBeTruthy();
-        fireEvent.change(container.querySelector('#TextInputId'), {
+        fireEvent.change(container.querySelector('#TextInputId')!, {
             target: { value: 'changed value' },
         });
         expect(localStorage.getItem('fd-input-TextInputId')).toBe(
             'changed value'
         );
-        fireEvent.change(container.querySelector('#TextInputId'), {
+        fireEvent.change(container.querySelector('#TextInputId')!, {
             target: { value: '' },
         });
         expect(localStorage.getItem('fd-input-TextInputId')).toBeFalsy();

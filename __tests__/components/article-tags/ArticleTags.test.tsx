@@ -66,27 +66,27 @@ describe('AuthorInfo', () => {
             'button:not([data-selected])'
         )[0];
 
-        expect(spy).toBeCalledTimes(0);
+        expect(spy).toHaveBeenCalledTimes(0);
         fireEvent.click(followButton);
-        expect(spy).toBeCalledTimes(1);
+        expect(spy).toHaveBeenCalledTimes(1);
 
         const unfollowButton = container.querySelectorAll(
             'button[data-selected="true"]'
         )[0];
         fireEvent.click(unfollowButton);
-        expect(spy).toBeCalledTimes(2);
+        expect(spy).toHaveBeenCalledTimes(2);
 
         const setAlertButton = container.querySelectorAll(
             'span[data-tag="Eten & Drinken"]'
         )[0];
         fireEvent.click(setAlertButton);
-        expect(spy).toBeCalledTimes(3);
+        expect(spy).toHaveBeenCalledTimes(3);
 
         const removeAlertButton = container.querySelectorAll(
             'span[data-tag="Eten & Drinken"]'
         )[1];
         fireEvent.click(removeAlertButton);
-        expect(spy).toBeCalledTimes(4);
+        expect(spy).toHaveBeenCalledTimes(4);
     });
 
     test('should have correct class name', () => {

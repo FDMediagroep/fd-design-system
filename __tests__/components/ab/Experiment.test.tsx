@@ -40,9 +40,9 @@ describe('AB Experiment', () => {
             </Experiment>
         );
 
-        expect(spy).toBeCalledTimes(0);
+        expect(spy).toHaveBeenCalledTimes(0);
         fireEvent.click(getByText('Headline 1', { exact: false }));
-        expect(spy).toBeCalledTimes(1);
+        expect(spy).toHaveBeenCalledTimes(1);
     });
 
     test('should handle debug correctly', async () => {
