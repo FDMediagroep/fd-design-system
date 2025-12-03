@@ -76,7 +76,7 @@
         "json-to-scss": "^1.6.2",
         "markdown-it": "^14.1.0",
         "micro-cors": "^0.1.1",
-        "mini-css-extract-plugin": "^2.9.2",
+        "mini-css-extract-plugin": "^2.9.4",
         "next": "^15.3.6",
         "nookies": "^2.5.2",
         "path-to-regexp": "^7.2.0",
