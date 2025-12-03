@@ -58,7 +58,7 @@
         "@types/react": "19.0.11",
         "@types/react-dom": "19.0.4",
         "@types/react-imgix": "^9.5.4",
-        "autoprefixer": "^10.4.21",
+        "autoprefixer": "^10.4.22",
         "copy-webpack-plugin": "^13.0.0",
         "copyfiles": "^2.4.1",
         "cross-env": "^10.0.0",
