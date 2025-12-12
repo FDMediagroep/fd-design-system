@@ -68,7 +68,7 @@
         "eslint-config-next": "^15.4.3",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-next": "^0.0.0",
-        "eslint-plugin-prettier": "^5.5.3",
+        "eslint-plugin-prettier": "^5.5.4",
         "fetch-jsonp": "^1.3.0",
         "jest": "^30.0.0",
         "jest-environment-jsdom": "^30.0.5",
