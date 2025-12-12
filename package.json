@@ -42,7 +42,7 @@
     "license": "ISC",
     "devDependencies": {
         "@fdmg/article-xml-json": "^2.0.57",
-        "@fdmg/css-grid": "^2.0.52",
+        "@fdmg/css-grid": "^2.0.53",
         "@fdmg/resubstitute": "^0.1.42",
         "@testing-library/dom": "^10.4.0",
         "@testing-library/jest-dom": "^6.7.0",
