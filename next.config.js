@@ -81,13 +81,18 @@ module.exports = {
             test: /\.svg$/i,
             use: [
                 {
-                    loader: 'react-svg-loader',
+                    loader: '@svgr/webpack',
                     options: {
-                        jsx: false, // true outputs JSX tags
-                        svgo: {
+                        svgoConfig: {
                             plugins: [
                                 {
-                                    removeViewBox: false,
+                                    name: 'preset-default',
+                                    params: {
+                                        overrides: {
+                                            cleanupIds: false,
+                                            removeViewBox: false,
+                                        },
+                                    },
                                 },
                             ],
                         },
