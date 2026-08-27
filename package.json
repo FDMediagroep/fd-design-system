@@ -93,7 +93,7 @@
         "react-dom": "^18.3.1",
         "react-element-to-jsx-string": "^15.0.0",
         "react-imgix": "^9.10.0",
-        "sass": "^1.89.2",
+        "sass": "^1.103.1",
         "sass-loader": "^16.0.5",
         "style-loader": "^4.0.0",
         "ts-jest": "^29.4.0",
